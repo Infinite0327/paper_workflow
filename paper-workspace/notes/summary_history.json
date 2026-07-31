@@ -1,0 +1,2792 @@
+{
+  "batches": [
+    {
+      "batch_label": "LLM agents research directions 2024-2026",
+      "created_at": "2026-07-23T20:21:10",
+      "source_hash": "679a9c02fd4da0c5ae3010447770a3e194f23962a4d91814be97aa1ab4ab7a4c",
+      "summary_ids": [
+        "link:https://link.springer.com/article/10.1007/s11704-024-40231-1",
+        "link:https://link.springer.com/article/10.1007/s10462-025-11471-9",
+        "link:https://arxiv.org/abs/2412.13178",
+        "link:https://proceedings.mlr.press/v317/wu26a.html",
+        "link:https://link.springer.com/article/10.1007/s41019-025-00296-9"
+      ],
+      "summaries": [
+        {
+          "title": "A survey on large language model based autonomous agents",
+          "basic_info": {
+            "authors": [
+              "Lei Wang",
+              "Chen Ma",
+              "Xueyang Feng",
+              "Zeyu Zhang",
+              "Hao Yang",
+              "Jingsen Zhang",
+              "Zhiyuan Chen",
+              "Jiakai Tang",
+              "Xu Chen",
+              "Yankai Lin",
+              "Wayne Xin Zhao",
+              "Zhewei Wei",
+              "Ji-Rong Wen"
+            ],
+            "year": 2024,
+            "venue": "Frontiers of Computer Science",
+            "links": [
+              "https://link.springer.com/article/10.1007/s11704-024-40231-1",
+              "https://arxiv.org/abs/2308.11432"
+            ],
+            "pdf_status": "downloaded",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\deep-read\\survey-llm-autonomous-agents.pdf",
+            "tags": [
+              "survey",
+              "classic"
+            ],
+            "why_selected": "This is the best broad entry point for LLM-based autonomous agents because it organizes architecture, applications, and evaluation in one framework."
+          },
+          "what_why": "这篇综述解决的是“LLM-based autonomous agents 到底由哪些模块组成、能做什么、怎么评估”的入门问题。传统 autonomous agent 研究常在受限环境里训练策略，而 LLM 让 agent 可以通过自然语言理解、推理、规划、记忆和工具使用进入更开放的任务环境。对新手来说，这篇论文的价值在于给出全景地图：先理解 agent architecture，再看 application，最后看 evaluation。",
+          "method": "论文不是提出新算法，而是做系统综述。它把 LLM agent 架构拆成 profiling module、memory module、planning module 和 action module。其中 memory 又区分短期记忆、长期记忆和 hybrid memory；planning 讨论单路径推理、多路径推理、外部 planner、反馈驱动修正；action 则包括工具使用、代码执行、API 调用和环境交互。",
+          "innovation": "主要贡献是提出一个统一分类框架，把分散的 LLM agent 工作放到 construction-application-evaluation 三条线里。它把 memory、planning、action 这些概念和具体论文对应起来，对找研究方向特别有用。相对只讲 prompting 或只讲工具调用的综述，它更像“总目录”。",
+          "experiments": "作为 survey，没有自建实验。它整理了已有工作中的应用和评估方式。评估部分区分 subjective evaluation 和 objective evaluation，并指出 objective evaluation 需要同时考虑 metrics、protocols 和 benchmarks。常见指标包括 task success、efficiency、human preference、social/emotional behavior 等。",
+          "reliability_limits": "证据强度适合作为入门综述和 related work 框架，但不适合作为某个具体 benchmark 的最新结论。论文覆盖到 2024 年，后续的 agent safety、MCP tool use、long-term memory benchmark 等方向需要补新文献。另一个局限是很多分类仍偏概念层，缺少统一实证比较。",
+          "reading_guide": "先读 Section 2 的 architecture design，尤其是 profiling/memory/planning/action；再读 Fig. 5 和 Section 4 的 evaluation；最后看 challenges/future directions。对你找方向最有用的是 memory、planning with feedback、objective evaluation 这几块。",
+          "metrics": "无"
+        },
+        {
+          "title": "From language to action: a review of large language models as autonomous agents and tool users",
+          "basic_info": {
+            "authors": [
+              "Sadia Sultana Chowa",
+              "Riasad Alvi",
+              "Subhey Sadi Rahman",
+              "Md Abdur Rahman",
+              "Mohaimenul Azam Khan Raiaan",
+              "Md Rafiqul Islam",
+              "Mukhtar Hussain",
+              "Sami Azam"
+            ],
+            "year": 2026,
+            "venue": "Artificial Intelligence Review",
+            "links": [
+              "https://link.springer.com/article/10.1007/s10462-025-11471-9",
+              "https://link.springer.com/content/pdf/10.1007/s10462-025-11471-9.pdf"
+            ],
+            "pdf_status": "not_downloaded_timeout",
+            "tags": [
+              "survey",
+              "tool use",
+              "multi-agent"
+            ],
+            "why_selected": "This recent review focuses on the transition from language models to action-capable agents and tool users, matching the user's direction-finding goal."
+          },
+          "what_why": "这篇综述关注的是 LLM 如何从 language model 变成 action-capable agent。问题核心是：LLM 不只是生成文本，还要解释指令、拆解连续任务、调用工具、接受反馈、在单智能体或多智能体系统里完成真实任务。它试图回答 2023-2025 年高质量会议/期刊里 LLM agent 的架构、认知机制、工具集成、benchmark 和未来方向。",
+          "method": "论文采用系统综述方式，筛选 2023-2025 年 A*/A-ranked conferences 和 Q1 journals 的论文，并围绕 7 个 research questions 组织内容。它分析 single-agent 与 multi-agent systems、external tools、reasoning、planning、memory、prompting/fine-tuning 以及 benchmarks and assessment protocols。",
+          "innovation": "它的价值在于把 autonomous agents 和 tool users 放在同一条主线里看：从自然语言理解到工具调用，再到反馈驱动的连续行动。它还整理了 68 个公开数据集，用来评估不同任务上的 LLM-based agents。对你找研究方向来说，它比单篇方法论文更适合定位“哪些方向已经拥挤，哪些问题仍未解决”。",
+          "experiments": "作为 review，没有新实验。页面摘要显示它分析了 68 个公开数据集，并讨论当前 benchmarks、assessment protocols、verifiable reasoning、self-improvement 和 personalization。由于 PDF 下载超时，本总结基于 Springer HTML 元数据和摘要，细节置信度低于已下载正文的 4 篇。",
+          "reliability_limits": "优点是时间新、覆盖面广，且明确面向 tool users。局限是目前只核对到 HTML 摘要，没有完整 PDF 文本，因此不能确认其 7 个 research questions 和 10 个 future directions 的逐项细节。正式引用或写综述前建议重新下载 PDF 或通过学校网络访问。",
+          "reading_guide": "先读 abstract 和 introduction，确认它的 7 个 research questions；然后读 benchmark/dataset section，看 68 个数据集如何分类；最后读 future directions，用来和 SafeAgentBench、AMP、tool-learning survey 交叉定位研究空白。",
+          "metrics": "无"
+        },
+        {
+          "title": "SafeAgentBench: A Benchmark for Safe Task Planning of Embodied LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Sheng Yin",
+              "Xianghe Pang",
+              "Yuanzhuo Ding",
+              "Menglan Chen",
+              "Yutong Bi",
+              "Yichen Xiong",
+              "Wenhao Huang",
+              "Siheng Chen"
+            ],
+            "year": 2024,
+            "venue": "arXiv / benchmark paper",
+            "links": [
+              "https://arxiv.org/abs/2412.13178",
+              "https://github.com/shengyin1224/SafeAgentBench",
+              "https://huggingface.co/datasets/safeagentbench/SafeAgentBench"
+            ],
+            "pdf_status": "downloaded",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\deep-read\\safeagentbench.pdf",
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "safety"
+            ],
+            "why_selected": "It turns agent safety into an executable benchmark, which is more actionable than a pure survey."
+          },
+          "what_why": "这篇论文解决的是 embodied LLM agents 在执行任务时是否具有 safety awareness 的问题。已有 embodied planning benchmark 多关注能不能完成任务，却较少测试 agent 面对危险指令时是否会拒绝、规避或安全失败。作者认为，如果 agent 能很好地规划，也可能更高效地执行危险任务，因此需要专门评估安全规划。",
+          "method": "论文提出 SafeAgentBench，由三部分组成：750 个可执行任务的数据集、SafeAgentEnv 具身环境、以及 execution-based 和 semantic LLM-based 两种评估方法。任务覆盖 10 类潜在危险、3 种任务类型：detailed tasks、abstract tasks 和 long-horizon tasks。环境基于 AI2-THOR 和低层控制器，支持 17 个 high-level actions 和多智能体执行。",
+          "innovation": "创新点在于把 agent safety 从静态文本判断推进到 interactive simulation 里的可执行任务规划。它同时覆盖 explicit hazards 和 implicit hazards，并引入 safe control tasks 对照。相比只看任务成功率的 benchmark，它把拒绝危险任务、避免风险执行、长程安全完成都纳入评价。",
+          "experiments": "数据集包含 750 个任务，其中 450 个有安全风险，300 个为对应安全任务。实验评估 9 个代表性 embodied LLM agent baseline，并用 GPT-4、Gemini-2.5-pro、Llama3-8B、Qwen2-7B、DeepSeek-V2.5 等模型比较。指标包括 rejection rate、risk/success rate、execution rate、usage time，长程任务还看 completed-and-safe、completed-but-unsafe、incomplete。关键结果：最安全的 baseline 在 detailed hazardous tasks 上也只有 10% 拒绝率，abstract hazardous tasks 上 ReAct 最高约 32%；长程任务中 ProgPrompt/相关基线有 50%-70% 安全完成区间；换更强 LLM 并不能显著提升安全意识，agent 架构影响更大。",
+          "reliability_limits": "证据强度较高，因为有数据集、环境、代码和多 baseline。局限是任务生成使用 GPT-4，再经过筛选和人工审核，仍可能带有生成偏差；环境是仿真环境，和真实机器人部署有差距；LLM-as-judge 虽有人类一致性验证，仍可能受模型偏差影响。",
+          "reading_guide": "先读 abstract 和 Fig. 1；然后读 Section 3 dataset composition；再读 Section 4 evaluation metrics；最后重点看 Table 2、Fig. 4、Fig. 5 和 Section 5.6。若你想做 agent safety/evaluation，这篇最值得复现。",
+          "metrics": "拒绝率：衡量对危险任务的拒绝程度，越高越安全；抽象危险任务最高约32%。\n风险/成功率、执行率、耗时：分别衡量危险执行、任务完成和成本；长程任务优先比较安全完成率。部分基线的安全完成率约为50%–70%。"
+        },
+        {
+          "title": "Agent-Memory Protocol: A Privacy-Focused Protocol for LLM Agents and User Memory Interaction",
+          "basic_info": {
+            "authors": [
+              "Junde Wu",
+              "Minhao Hu",
+              "Jiayuan Zhu",
+              "Jiaye Wang",
+              "Yueming Jin"
+            ],
+            "year": 2026,
+            "venue": "PMLR",
+            "links": [
+              "https://proceedings.mlr.press/v317/wu26a.html",
+              "https://raw.githubusercontent.com/mlresearch/v317/main/assets/wu26a/wu26a.pdf"
+            ],
+            "pdf_status": "downloaded",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\deep-read\\agent-memory-protocol.pdf",
+            "tags": [
+              "memory",
+              "safety",
+              "privacy",
+              "replication-friendly"
+            ],
+            "why_selected": "It provides a concrete protocol for privacy-preserving long-term memory, a promising research direction for practical LLM agents."
+          },
+          "what_why": "这篇论文解决的是 long-term memory 和 privacy 之间的冲突。LLM agent 要跨会话记住用户偏好、历史行为和上下文，但如果直接把原始记忆放进 prompt、检索结果或日志，就会把个人身份信息暴露给外部模型或第三方基础设施。论文目标是让 agent 能使用长期记忆，同时保证敏感标识符不越过用户信任边界。",
+          "method": "作者提出 Agent-Memory Protocol（AMP），核心是三个确定性操作：APPEND / PACK / HYDRATE。APPEND 在写入记忆时做 redact at rest，把姓名、邮箱、日期、账号等替换成稳定 placeholder；PACK 按当前任务构造 token-budgeted redacted memory pack；HYDRATE 在模型输出后，只在本地 trusted endpoint 上把 placeholder 还原为真实实体。传输层使用 JSON over mTLS/local socket，消息带 timestamp、nonce、Ed25519 signature，以支持鉴权、防重放和审计。",
+          "innovation": "创新点是把隐私保护从基础设施层提升到 language-level protocol。传统 memory/RAG 方法关注检索质量和 token 效率，但常把明文记忆送进模型。AMP 用 redaction-hydration boundary 把“模型推理所需语义”和“用户身份信息”解耦，并允许与 MCP、A2A 这类 agent/tool 协议组合。",
+          "experiments": "论文主要是协议设计和 case study，不是大规模 benchmark。它展示了医疗场景 radiology rescheduling 和金融场景 portfolio transfer/tax planning。实现细节显示 PACK 使用 Sentence-BERT over redacted text，pack construction 在 Apple M2 CPU 上小于 50ms，hydration 小于 10ms，placeholder 增加约 7.3% 存储开销。没有看到与 MemGPT、LangMem、Zep 等系统的系统性准确率对比。",
+          "reliability_limits": "这是强设计论文，但实证证据有限。协议合理、可实现、问题重要，但还需要更大规模实验验证：脱敏是否降低任务成功率、NER 错漏如何影响隐私、placeholder 是否被模型错误改写、多 agent 场景下权限如何组合。适合做后续研究，而不是直接当作已充分验证的最终方案。",
+          "reading_guide": "先读 abstract 和 Problem Setting；然后读 AMP 的 APPEND/PACK/HYDRATE；再读 transport handshake；最后读两个 case studies。若你想做 memory + privacy，这篇可以作为研究起点：补 benchmark、补攻击测试、补效用-隐私权衡实验。",
+          "metrics": "打包耗时：小于50毫秒；还原耗时：小于10毫秒；存储开销：约7.3%。耗时和存储开销越低越好。"
+        },
+        {
+          "title": "LLM-Based Agents for Tool Learning: A Survey",
+          "basic_info": {
+            "authors": [
+              "Weikai Xu",
+              "Chengrui Huang",
+              "Shen Gao",
+              "Shuo Shang"
+            ],
+            "year": 2025,
+            "venue": "Data Science and Engineering",
+            "links": [
+              "https://link.springer.com/article/10.1007/s41019-025-00296-9",
+              "https://link.springer.com/content/pdf/10.1007/s41019-025-00296-9.pdf"
+            ],
+            "pdf_status": "downloaded",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\deep-read\\tool-learning-survey.pdf",
+            "tags": [
+              "survey",
+              "tool use",
+              "benchmark"
+            ],
+            "why_selected": "Tool use is one of the central capabilities of autonomous agents; this survey gives concrete task definitions, datasets, and metrics."
+          },
+          "what_why": "这篇综述解决的是 LLM-based agents 如何学习和使用工具的问题。LLM 本身受训练数据、幻觉和实时能力限制，很多真实任务需要 API、搜索、代码执行、多模态模型或外部数据库。论文把 tool learning 定义为 agent 判断是否需要工具、检索哪个工具、如何调用工具并利用反馈完成任务的能力。",
+          "method": "论文系统整理 tool-learning agent 的典型架构和三类核心子任务：tool invocation、tool retrieval、tool planning/usage。它区分 training-based 和 non-training-based 工具检索方法，讨论依赖模型自身推理或外部 reasoning tools 的规划方式，并扩展到 multimodal tools。",
+          "innovation": "主要贡献是把工具学习从零散的 API 调用论文整理成一个任务框架：When/Which/How，也就是何时用工具、用哪个工具、怎么用。它还把 benchmark、指标、应用场景和安全伦理问题放在一起，适合用来定位 tool-use agent 的研究空白。",
+          "experiments": "作为 survey，没有新实验。它整理了大量工具学习 benchmark 和指标。文中列出 API-Bank、APIBench、ToolBench、ToolQA、ToolAlpaca、RestBench、TOOLE、StableToolBench、ToolEyes、InjectAgent、Noisy-ToolBench 等。例子包括 ToolBench/RapidAPI 约 16k APIs，ToolAlpaca 约 400 APIs 和 3938 tool-use instances，InjectAgent 覆盖 17 个用户工具和 62 个攻击工具、1054 个测试样例。指标包括 tool invocation accuracy、tool retrieval accuracy、parameter correctness、task success、robustness/security、manual assessment 和 LLM-based assessment。",
+          "reliability_limits": "综述覆盖面很强，但它本身不验证某个新方法。工具学习领域 benchmark 很碎片化，真实 API 会变化，虚拟 API 又可能损失现实性。因此读这篇时要注意：它给的是 map，不是最终标准答案。对研究来说，稳定可复现的 tool-use evaluation 仍然是机会。",
+          "reading_guide": "先读 abstract 和 Section 2 的 task definition，记住 Three Ws；再读 Section 3/4 的 tool retrieval 和 tool planning；重点读 Section 7 的 benchmarks 和 metrics；最后读 safety/ethics 部分。若你想做 tool-use safety/evaluation，这篇和 SafeAgentBench 应该一起读。",
+          "metrics": "无"
+        }
+      ]
+    },
+    {
+      "batch_label": "LLM agents recent research directions memory planning tool use multi-agent computer use evaluation safety efficiency",
+      "created_at": "2026-07-28T16:54:59",
+      "source_hash": "a56f310fbe9358b4349e9cf051f2e675b4533d5ee217a4944867861ea1e0f658",
+      "summary_ids": [
+        "link:http://arxiv.org/abs/2603.22862v2",
+        "link:https://doi.org/10.3390/axioms15060415",
+        "link:http://arxiv.org/abs/2601.10758v3",
+        "link:https://doi.org/10.20944/preprints202604.1148.v1",
+        "link:http://arxiv.org/abs/2511.06396v3",
+        "link:https://doi.org/10.18653/v1/2026.acl-long.584",
+        "link:http://arxiv.org/abs/2506.07217v2",
+        "link:https://doi.org/10.36227/techrxiv.177006109.97957916/v1",
+        "link:https://doi.org/10.54254/2755-2721/2026.tj28954",
+        "link:https://doi.org/10.21203/rs.3.rs-9839978/v1",
+        "link:http://arxiv.org/abs/2401.07324v3",
+        "link:http://arxiv.org/abs/2412.20138v7",
+        "link:http://arxiv.org/abs/2603.04428v1",
+        "link:http://arxiv.org/abs/2604.09937v1",
+        "link:http://arxiv.org/abs/2006.06026v1",
+        "link:https://doi.org/10.2139/ssrn.6616122",
+        "link:https://doi.org/10.52710/cfs.951",
+        "link:http://arxiv.org/abs/2508.08322v1",
+        "link:http://arxiv.org/abs/2602.03128v1",
+        "link:http://arxiv.org/abs/2506.18783v1",
+        "link:http://arxiv.org/abs/2602.13713v2",
+        "link:http://arxiv.org/abs/2512.18950v1",
+        "link:https://doi.org/10.20517/aiagent.2025.06",
+        "link:http://arxiv.org/abs/2505.21964v2",
+        "link:https://doi.org/10.64917/feaiml/volume02issue12-05",
+        "link:https://doi.org/10.36227/techrxiv.176539617.79044553/v1",
+        "link:http://arxiv.org/abs/2603.05980v1",
+        "link:https://openalex.org/w4406842332",
+        "link:https://openalex.org/w4411700982",
+        "link:https://doi.org/10.20944/preprints202512.2497.v1",
+        "link:http://arxiv.org/abs/2412.05449v1",
+        "link:https://openalex.org/w4390832893",
+        "link:https://doi.org/10.65109/brag3288",
+        "link:http://arxiv.org/abs/2512.15790v1",
+        "link:http://arxiv.org/abs/2601.11903v1",
+        "link:https://doi.org/10.18653/v1/2025.findings-naacl.54",
+        "link:https://openalex.org/w4412004157",
+        "link:https://doi.org/10.18653/v1/2025.insights-1.14",
+        "link:http://arxiv.org/abs/2510.13343v1",
+        "link:https://doi.org/10.59256/ijrtmr.20260602033"
+      ],
+      "summaries": [
+        {
+          "title": "The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration",
+          "basic_info": {
+            "authors": [
+              "Haoyuan Xu",
+              "Chang Li",
+              "Xinyan Ma",
+              "Xianhao Ou",
+              "Zihan Zhang",
+              "Tao He",
+              "Xiangyu Liu",
+              "Zixiang Wang",
+              "Jiafeng Liang",
+              "Zheng Chu",
+              "Runxuan Liu",
+              "Rongchuan Mu",
+              "Dandan Tu",
+              "Ming Liu",
+              "Bing Qin"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2603.22862v2",
+              "https://arxiv.org/pdf/2603.22862v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-The-Evolution-of-Tool-Use-in-LLM-Agents-From-Single-Tool-Call-to-Multi-Tool-Orchestration.pdf",
+            "tags": [
+              "survey",
+              "benchmark",
+              "latest-sota",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "这篇综述研究工具型智能体如何从单次调用发展为长程多工具编排，重点是中间状态、执行反馈、动态环境以及安全、成本和可验证性约束。\n\n核心概念\n- 单工具调用与长程编排\n- 规划、执行反馈与状态管理\n- 安全、成本、可验证性与评测",
+          "method": "统一单工具调用与多工具编排的任务定义，再从推理时规划、训练轨迹、安全控制、资源效率、开放环境能力和评测六个维度组织文献。\n\n方法与结构\n- 单工具调用与长程编排\n- 规划、执行反馈与状态管理\n- 安全、成本、可验证性与评测",
+          "innovation": "本文的具体贡献在于把“单工具调用与长程编排”与“规划、执行反馈与状态管理”放入同一研究或评测框架，并围绕“安全、成本、可验证性与评测”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "系统综述，没有自建实验；通过文献分类比较工具编排方法、应用和基准。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读摘要和分类框架，再读方法分类、基准/数据集表，最后读挑战与未来方向；引用前核对具体条目的原始论文。"
+        },
+        {
+          "title": "Graph-Structured Persistent Memory for Efficient LLM-Based Computer Use Agents",
+          "basic_info": {
+            "authors": [
+              "Danylo Vorvul",
+              "Andrii Musienko",
+              "Iryna Galchenko",
+              "Mykola Myroniuk",
+              "Andrii Sobchuk"
+            ],
+            "year": 2026,
+            "venue": "Axioms",
+            "links": [
+              "https://doi.org/10.3390/axioms15060415"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "计算机使用智能体会反复解决已经遇到的界面子任务，导致 token 与时间浪费；论文研究如何用持久记忆复用界面经验。\n\n核心概念\n- 界面状态节点\n- 动作序列边\n- 记忆覆盖、任务可达性与闭环反馈",
+          "method": "以有向图保存界面状态和动作序列，并用 Manager-Worker 架构在记忆检索与重新规划之间选择。\n\n方法与结构\n- 界面状态节点\n- 动作序列边\n- 记忆覆盖、任务可达性与闭环反馈",
+          "innovation": "本文的具体贡献在于把“界面状态节点”与“动作序列边”放入同一研究或评测框架，并围绕“记忆覆盖、任务可达性与闭环反馈”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在 OSWorld 上与无记忆基线比较短程和长程界面任务，重点验证成本下降而非成功率提升。",
+          "metrics": "token 消耗和执行时间：均约降低 50%，越低越好；任务成功率：15 步约 36.9%，50 步约 46.9%，越高越好。",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Agents at Risk: How Users Unwittingly Undermine LLM Safety",
+          "basic_info": {
+            "authors": [
+              "Fengchao Chen",
+              "Tingmin Wu",
+              "Van Nguyen",
+              "Surya. Nepal",
+              "Carsten Rudolph"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2601.10758v3",
+              "https://arxiv.org/pdf/2601.10758v3"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Agents-at-Risk-How-Users-Unwittingly-Undermine-LLM-Safety.pdf",
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文研究正常用户如何在不知情的情况下把攻击内容带入智能体上下文，从而绕过只防御外部检索内容的提示注入方案。\n\n核心概念\n- 上下文混淆\n- 用户转递的攻击内容\n- 任务实体验证与默认安全检查",
+          "method": "提出用户转递上下文操纵攻击，把对抗性任务实体嵌入用户请求，并与五类攻击基线、预防型和检测型防御比较。\n\n方法与结构\n- 上下文混淆\n- 用户转递的攻击内容\n- 任务实体验证与默认安全检查",
+          "innovation": "本文的具体贡献在于把“上下文混淆”与“用户转递的攻击内容”放入同一研究或评测框架，并围绕“任务实体验证与默认安全检查”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "比较五类提示注入基线、三种预防型防御和三种检测型防御，并测试 12 个商业智能体。",
+          "metrics": "攻击成功率和防御绕过率：衡量攻击有效性，越低越安全；论文比较 12 个商业智能体，但摘要未给统一关键数值。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "Functional Stability and Adaptive Control in LLM-Based Computer Use Agents via Graph-Structured Persistent Memory",
+          "basic_info": {
+            "authors": [
+              "Danylo Vorvul",
+              "Andrii Musienko",
+              "Iryna Galchenko",
+              "Mykola Myroniuk",
+              "Andrii Sobchuk"
+            ],
+            "year": null,
+            "venue": "未记录",
+            "links": [
+              "https://doi.org/10.20944/preprints202604.1148.v1"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文继续研究图结构持久记忆是否能让计算机使用智能体在扰动下保持功能稳定，并降低重复规划成本。\n\n核心概念\n- 图结构记忆\n- 功能稳定类比\n- 记忆检索与新规划切换",
+          "method": "把 Manager-Worker 解释为闭环系统，记忆提供经验反馈；在记忆路径与新规划之间的选择被视为自适应控制。\n\n方法与结构\n- 图结构记忆\n- 功能稳定类比\n- 记忆检索与新规划切换",
+          "innovation": "本文的具体贡献在于把“图结构记忆”与“功能稳定类比”放入同一研究或评测框架，并围绕“记忆检索与新规划切换”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在 OSWorld 上比较图记忆与无记忆基线，验证效率、成功率和扰动下的稳健性。",
+          "metrics": "token 消耗和执行时间：均约降低 50%，越低越好；任务成功率：15 步约 36.9%，50 步约 46.9%，越高越好。",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Efficient LLM Safety Evaluation through Multi-Agent Debate",
+          "basic_info": {
+            "authors": [
+              "Dachuan Lin",
+              "Guobin Shen",
+              "Zihao Yang",
+              "Tianrong Liu",
+              "Dongcheng Zhao",
+              "Yi Zeng"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2511.06396v3",
+              "https://arxiv.org/pdf/2511.06396v3"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Efficient-LLM-Safety-Evaluation-through-Multi-Agent-Debate.pdf",
+            "tags": [
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "强模型担任安全裁判时成本较高，论文研究能否用多个较小代理辩论，提高安全判断可靠性并降低评测成本。\n\n核心概念\n- 人工标注越狱数据\n- 批评者-辩护者-裁判\n- 判断可靠性与成本权衡",
+          "method": "构建 HAJailBench，并设置批评者、辩护者和裁判三个角色，在统一安全准则下进行少轮辩论。\n\n方法与结构\n- 人工标注越狱数据\n- 批评者-辩护者-裁判\n- 判断可靠性与成本权衡",
+          "innovation": "本文的具体贡献在于把“人工标注越狱数据”与“批评者-辩护者-裁判”放入同一研究或评测框架，并围绕“判断可靠性与成本权衡”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "使用 11100 条人工标注交互的 HAJailBench，比较小模型提示基线、既有多智能体裁判与 GPT-4o 成本。",
+          "metrics": "安全判断准确性、一致性和评测成本：前两者越高越好，成本越低越好；摘要未给统一关键数值。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents",
+          "basic_info": {
+            "authors": [
+              "Jiayu Liu",
+              "Cheng Qian",
+              "Zhaochen Su",
+              "Qing Zong",
+              "Shijue Huang",
+              "Bingxiang He",
+              "Yi R. Fung"
+            ],
+            "year": 2026,
+            "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+            "links": [
+              "https://doi.org/10.18653/v1/2026.acl-long.584"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "CostBench 关注工具型智能体能否在多轮动态环境中完成成本最优规划，并在工具或环境变化后及时调整。\n\n核心概念\n- 多轮规划\n- 动态环境适应\n- 任务成功与调用成本联合评估",
+          "method": "正式元数据表明其围绕多轮规划、动态适应和工具调用成本构建评测；接口没有摘要，具体任务和算法需以全文为准。\n\n方法与结构\n- 多轮规划\n- 动态环境适应\n- 任务成功与调用成本联合评估",
+          "innovation": "本文的具体贡献在于把“多轮规划”与“动态环境适应”放入同一研究或评测框架，并围绕“任务成功与调用成本联合评估”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "BIMgent: Towards Autonomous Building Modeling via Computer-use Agents",
+          "basic_info": {
+            "authors": [
+              "Zihan Deng",
+              "Changyu Du",
+              "Stavros Nousias",
+              "André Borrmann"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2506.07217v2",
+              "https://arxiv.org/pdf/2506.07217v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-BIMgent-Towards-Autonomous-Building-Modeling-via-Computer-use-Agents.pdf",
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "通用计算机使用基准很少覆盖建筑建模，论文研究智能体能否通过图形界面自主完成开放式三维建筑设计。\n\n核心概念\n- 多模态设计输入\n- 软件专用工作流规划\n- 建筑建模界面执行",
+          "method": "BIMgent 使用多模态模型理解概念设计，规划建筑软件工作流，再执行图形界面操作完成建模或重建。\n\n方法与结构\n- 多模态设计输入\n- 软件专用工作流规划\n- 建筑建模界面执行",
+          "innovation": "本文的具体贡献在于把“多模态设计输入”与“软件专用工作流规划”放入同一研究或评测框架，并围绕“建筑建模界面执行”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "包含文本概念设计和既有建筑方案重建两类真实建模任务，并与不能完成任务的基线比较。",
+          "metrics": "任务成功率：BIMgent 为 32%，对比基线为 0%，越高越好。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "Secure-by-Default Guardrails for MCP-Based Tool Use in Multi-Modal LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Yoshihiro Ando"
+            ],
+            "year": null,
+            "venue": "未记录",
+            "links": [
+              "https://doi.org/10.36227/techrxiv.177006109.97957916/v1"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "MCP 让智能体可以执行工具和访问本地或远程资源，也扩大了提示注入和权限滥用风险；论文研究默认安全的工具调用边界。\n\n核心概念\n- 工具注册与可读说明\n- 角色权限与只读边界\n- 策略检查、输入验证和人工批准",
+          "method": "llm-cli 结合插件工具注册表、工具调用说明、基于角色的权限限制，以及命令和文件路径的运行时验证。\n\n方法与结构\n- 工具注册与可读说明\n- 角色权限与只读边界\n- 策略检查、输入验证和人工批准",
+          "innovation": "本文的具体贡献在于把“工具注册与可读说明”与“角色权限与只读边界”放入同一研究或评测框架，并围绕“策略检查、输入验证和人工批准”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Empowering LLM-based Agents: Methods and Challenges in Tool Use",
+          "basic_info": {
+            "authors": [
+              "Xinyue Du"
+            ],
+            "year": 2025,
+            "venue": "Applied and Computational Engineering",
+            "links": [
+              "https://doi.org/10.54254/2755-2721/2026.tj28954"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "survey",
+              "latest-sota",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "这篇综述讨论工具使用如何弥补模型知识静态、无法执行操作的限制，并梳理从函数调用到动态检索和自主创建工具的演进。\n\n核心概念\n- 工具调用机制\n- 动态检索与工具创建\n- 知识冲突、上下文退化与安全",
+          "method": "通过系统综述整理工具型智能体架构、调用机制、动态工具检索、自主工具创建，以及知识冲突、长上下文退化和安全问题。\n\n方法与结构\n- 工具调用机制\n- 动态检索与工具创建\n- 知识冲突、上下文退化与安全",
+          "innovation": "本文的具体贡献在于把“工具调用机制”与“动态检索与工具创建”放入同一研究或评测框架，并围绕“知识冲突、上下文退化与安全”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "综述，没有自建实验；摘要未提供可单独报告的实验结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Agentic and Multi-agent Systems: A Systematic Review of Tool Use, Benchmarks, and Governance",
+          "basic_info": {
+            "authors": [
+              "Audrey Rah"
+            ],
+            "year": null,
+            "venue": "未记录",
+            "links": [
+              "https://doi.org/10.21203/rs.3.rs-9839978/v1"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "survey",
+              "benchmark",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文试图把分散的智能体与多智能体研究统一到架构、基准、应用、安全和治理框架中。\n\n核心概念\n- 规划、记忆、工具与协作架构\n- 软件、网页和计算机使用应用\n- 自主性等级、风险与治理",
+          "method": "综述 2022-2026 年文献，并提出五级自主性与治理模型，按照行动权限、运行风险和监督需求分类。\n\n方法与结构\n- 规划、记忆、工具与协作架构\n- 软件、网页和计算机使用应用\n- 自主性等级、风险与治理",
+          "innovation": "本文的具体贡献在于把“规划、记忆、工具与协作架构”与“软件、网页和计算机使用应用”放入同一研究或评测框架，并围绕“自主性等级、风险与治理”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "系统综述，没有自建实验；证据来自 2022-2026 年文献、基准和治理资料。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Small LLMs Are Weak Tool Learners: A Multi-LLM Agent",
+          "basic_info": {
+            "authors": [
+              "Weizhou Shen",
+              "Chenliang Li",
+              "Hongzhan Chen",
+              "Ming Yan",
+              "Xiaojun Quan",
+              "Hehong Chen",
+              "Ji Zhang",
+              "Fei Huang"
+            ],
+            "year": 2024,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2401.07324v3",
+              "https://arxiv.org/pdf/2401.07324v3"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2024-Small-LLMs-Are-Weak-Tool-Learners-A-Multi-LLM-Agent.pdf",
+            "tags": [
+              "benchmark",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "小模型很难同时完成规划、工具调用和结果总结，论文研究把能力拆给多个专门模型是否更有效。\n\n核心概念\n- 规划者\n- 工具调用者\n- 结果总结者与两阶段训练",
+          "method": "设置规划者、调用者和总结者三个模型，并采用先全任务微调、再按子任务继续微调的两阶段训练。\n\n方法与结构\n- 规划者\n- 工具调用者\n- 结果总结者与两阶段训练",
+          "innovation": "本文的具体贡献在于把“规划者”与“工具调用者”放入同一研究或评测框架，并围绕“结果总结者与两阶段训练”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "论文包含实证评估；本总结记录摘要或正文中可明确核对的指标，完整基线和设置应查看原文实验部分。",
+          "metrics": "工具任务表现：比较多模型分工框架与单模型基线，越高越好；摘要未给关键数值。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "basic_info": {
+            "authors": [
+              "Yijia Xiao",
+              "Edward Sun",
+              "Di Luo",
+              "Wei Wang"
+            ],
+            "year": 2024,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2412.20138v7",
+              "https://arxiv.org/pdf/2412.20138v7"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2024-TradingAgents-Multi-Agents-LLM-Financial-Trading-Framework.pdf",
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文研究多智能体能否模拟交易公司的角色分工，以协作方式完成市场分析、观点辩论、风险控制和交易决策。\n\n核心概念\n- 专业分析角色\n- 多观点辩论\n- 风险管理与交易执行",
+          "method": "设置基本面、情绪、技术分析、看多与看空研究、风险管理和交易角色，通过辩论与历史数据汇总决策。\n\n方法与结构\n- 专业分析角色\n- 多观点辩论\n- 风险管理与交易执行",
+          "innovation": "本文的具体贡献在于把“专业分析角色”与“多观点辩论”放入同一研究或评测框架，并围绕“风险管理与交易执行”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "论文包含实证评估；本总结记录摘要或正文中可明确核对的指标，完整基线和设置应查看原文实验部分。",
+          "metrics": "累计收益和夏普比率：越高越好；最大回撤：越低越好；摘要未给统一数值。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "Agent Memory Below the Prompt: Persistent Q4 KV Cache for Multi-Agent LLM Inference on Edge Devices",
+          "basic_info": {
+            "authors": [
+              "Yakov Pyotr Shkolnikov"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2603.04428v1",
+              "https://arxiv.org/pdf/2603.04428v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Agent-Memory-Below-the-Prompt-Persistent-Q4-KV-Cache-for-Multi-Agent-LLM-Inference-on-Edge-Devices.pdf",
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "边缘设备无法同时保留多个智能体的完整 KV cache，反复换入会触发昂贵的重新预填充；论文研究持久化量化缓存。\n\n核心概念\n- Q4 持久缓存\n- 多智能体缓存隔离与批处理\n- 跨阶段状态恢复",
+          "method": "将每个智能体的 KV cache 以 Q4 格式保存到磁盘，结合隔离块池、批量量化缓存和跨阶段上下文注入直接恢复注意力状态。\n\n方法与结构\n- Q4 持久缓存\n- 多智能体缓存隔离与批处理\n- 跨阶段状态恢复",
+          "innovation": "本文的具体贡献在于把“Q4 持久缓存”与“多智能体缓存隔离与批处理”放入同一研究或评测框架，并围绕“跨阶段状态恢复”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在 Gemma、DeepSeek-Coder 和 Llama 三种架构及多种上下文长度上测量恢复延迟、容量和困惑度。",
+          "metrics": "首 token 延迟：最高改善 136 倍；可容纳上下文数：Q4 为 FP16 的 4 倍；困惑度变化：Gemma -0.7%、Llama +2.8%、DeepSeek +3.0%。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "HealthAdminBench: Evaluating Computer-Use Agents on Healthcare Administration Tasks",
+          "basic_info": {
+            "authors": [
+              "Suhana Bedi",
+              "Ryan Welch",
+              "Ethan Steinberg",
+              "Michael Wornow",
+              "Taeil Matthew Kim",
+              "Haroun Ahmed",
+              "Peter Sterling",
+              "Bravim Purohit",
+              "Qurat Akram",
+              "Angelic Acosta",
+              "Esther Nubla",
+              "Pritika Sharma",
+              "Michael A. Pfeffer",
+              "Sanmi Koyejo",
+              "Nigam H. Shah"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2604.09937v1",
+              "https://arxiv.org/pdf/2604.09937v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-HealthAdminBench-Evaluating-Computer-Use-Agents-on-Healthcare-Administration-Tasks.pdf",
+            "tags": [
+              "benchmark"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "医疗行政任务成本高、流程长且跨多个系统，论文研究计算机使用智能体能否可靠处理授权、申诉和设备订单。\n\n核心概念\n- 医疗行政图形界面\n- 授权、拒付申诉与设备订单\n- 端到端任务和细粒度子任务评测",
+          "method": "HealthAdminBench 构建电子病历、两个付款方门户和传真系统四种界面，把 135 个任务拆成 1698 个可验证子任务。\n\n方法与结构\n- 医疗行政图形界面\n- 授权、拒付申诉与设备订单\n- 端到端任务和细粒度子任务评测",
+          "innovation": "本文的具体贡献在于把“医疗行政图形界面”与“授权、拒付申诉与设备订单”放入同一研究或评测框架，并围绕“端到端任务和细粒度子任务评测”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "评估七种代理配置及多种提示和观察设置，任务覆盖四个医疗行政界面。",
+          "metrics": "端到端任务成功率：最佳 36.3%；子任务成功率：最高 82.8%，均越高越好。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "Report from the NSF Future Directions Workshop, Toward User-Oriented Agents: Research Directions and Challenges",
+          "basic_info": {
+            "authors": [
+              "Maxine Eskenazi",
+              "Tiancheng Zhao"
+            ],
+            "year": 2020,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2006.06026v1",
+              "https://arxiv.org/pdf/2006.06026v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2020-Report-from-the-NSF-Future-Directions-Workshop-Toward-User-Oriented-Agents-Research-Directions-and-Challenges.pdf",
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "这份 NSF 工作坊报告从用户导向角度讨论智能体应如何理解目标、与人协作并在开放环境中行动，是方向背景材料而非近期方法论文。\n\n核心概念\n- 用户目标与偏好\n- 人机协作\n- 开放环境中的长期研究挑战",
+          "method": "汇总 27 位参与者的研究议题和未来挑战，形成用户导向智能体的研究议程。\n\n方法与结构\n- 用户目标与偏好\n- 人机协作\n- 开放环境中的长期研究挑战",
+          "innovation": "本文的具体贡献在于把“用户目标与偏好”与“人机协作”放入同一研究或评测框架，并围绕“开放环境中的长期研究挑战”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "工作坊报告，不属于算法实验；证据是参与者报告和讨论形成的研究议程。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "Layered Convergence in Autonomous Agent Memory: A Multi-Model Cognitive Architecture for Persistent Recall in Long-Running LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Lance Harris"
+            ],
+            "year": null,
+            "venue": "未记录",
+            "links": [
+              "https://doi.org/10.2139/ssrn.6616122"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "长程智能体需要同时保持身份、约束、语义、反馈关系和时间知识，单一记忆机制难以覆盖所有失效模式。\n\n核心概念\n- 五层互补记忆\n- 跨域时间知识图\n- 组合消融与贡献分解",
+          "method": "并行组合身份提示、结构化约束、向量语义、关系学习和分层时间知识图五种记忆，再用组合消融和 Shapley 分解评估贡献。\n\n方法与结构\n- 五层互补记忆\n- 跨域时间知识图\n- 组合消融与贡献分解",
+          "innovation": "本文的具体贡献在于把“五层互补记忆”与“跨域时间知识图”放入同一研究或评测框架，并围绕“组合消融与贡献分解”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "对五种记忆的全部 32 种组合做消融，共 3520 次运行，并用 Shapley 值分解贡献。",
+          "metrics": "组合消融共 3520 次；约束能力中模型 II 的贡献为 104%，检索能力中模型 V 的贡献为 100%。",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Responsible LLM Systems: Governance, Safety, and Evaluation Frameworks for Enterprise AI Agents",
+          "basic_info": {
+            "authors": [
+              "Koushik Anitha Raja"
+            ],
+            "year": 2026,
+            "venue": "Computer Fraud and Security",
+            "links": [
+              "https://doi.org/10.52710/cfs.951"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "企业智能体不仅要完成任务，还要满足安全、审计和合规要求；论文研究如何把治理转化为可测协议与产物。\n\n核心概念\n- 企业威胁模型\n- 可量化安全评测\n- 合规、审计与治理制品",
+          "method": "结合企业威胁建模、带阈值的评测协议和合规治理制品，组织部署前后的安全与责任控制。\n\n方法与结构\n- 企业威胁模型\n- 可量化安全评测\n- 合规、审计与治理制品",
+          "innovation": "本文的具体贡献在于把“企业威胁模型”与“可量化安全评测”放入同一研究或评测框架，并围绕“合规、审计与治理制品”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code",
+          "basic_info": {
+            "authors": [
+              "Muhammad Haseeb"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2508.08322v1",
+              "https://arxiv.org/pdf/2508.08322v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Context-Engineering-for-Multi-Agent-LLM-Code-Assistants-Using-Elicit-NotebookLM-ChatGPT-and-Claude-Code.pdf",
+            "tags": [
+              "latest-sota",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "代码助手在需求、文献、文档和实现之间容易丢失上下文，论文研究如何通过多工具上下文工程维持任务一致性。\n\n核心概念\n- 需求澄清\n- 文献与文档上下文注入\n- 多智能体代码生成和验证",
+          "method": "流水线依次使用意图翻译、语义文献检索、文档综合和多智能体代码生成验证，把不同来源组织为可执行上下文。\n\n方法与结构\n- 需求澄清\n- 文献与文档上下文注入\n- 多智能体代码生成和验证",
+          "innovation": "本文的具体贡献在于把“需求澄清”与“文献与文档上下文注入”放入同一研究或评测框架，并围绕“多智能体代码生成和验证”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis",
+          "basic_info": {
+            "authors": [
+              "Abdelghny Orogat",
+              "Ana Rostam",
+              "Essam Mansour"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2602.03128v1",
+              "https://arxiv.org/pdf/2602.03128v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Understanding-Multi-Agent-LLM-Frameworks-A-Unified-Benchmark-and-Experimental-Analysis.pdf",
+            "tags": [
+              "survey",
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "不同多智能体框架的架构选择可能造成数量级的延迟和显著准确率差异，但缺少统一的框架级比较。\n\n核心概念\n- 框架架构分类\n- 统一执行管线\n- 延迟、规划和协作的受控比较",
+          "method": "提出架构分类和 MAFBench，在标准执行管线中联合评估编排开销、记忆、规划、专长与协作。\n\n方法与结构\n- 框架架构分类\n- 统一执行管线\n- 延迟、规划和协作的受控比较",
+          "innovation": "本文的具体贡献在于把“框架架构分类”与“统一执行管线”放入同一研究或评测框架，并围绕“延迟、规划和协作的受控比较”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在标准化管线中对多个常用多智能体框架进行受控比较。",
+          "metrics": "延迟：框架选择可相差超过 100 倍，越低越好；规划准确率最多下降 30%；协作成功率可从 90% 以上降至 30% 以下。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读摘要和分类框架，再读方法分类、基准/数据集表，最后读挑战与未来方向；引用前核对具体条目的原始论文。"
+        },
+        {
+          "title": "TRIZ Agents: A Multi-Agent LLM Approach for TRIZ-Based Innovation",
+          "basic_info": {
+            "authors": [
+              "Kamil Szczepanik",
+              "Jarosław A. Chudziak"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2506.18783v1",
+              "https://arxiv.org/pdf/2506.18783v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-TRIZ-Agents-A-Multi-Agent-LLM-Approach-for-TRIZ-Based-Innovation.pdf",
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文研究多智能体能否把 TRIZ 创新方法转化为角色化、可讨论的创意生成流程。\n\n核心概念\n- 问题与矛盾建模\n- TRIZ 原理调用\n- 多角色方案生成与评议",
+          "method": "多个智能体围绕问题分析、矛盾识别、TRIZ 原理选择和方案评议协作，形成结构化创新过程。\n\n方法与结构\n- 问题与矛盾建模\n- TRIZ 原理调用\n- 多角色方案生成与评议",
+          "innovation": "本文的具体贡献在于把“问题与矛盾建模”与“TRIZ 原理调用”放入同一研究或评测框架，并围绕“多角色方案生成与评议”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis",
+          "basic_info": {
+            "authors": [
+              "Maciej Uberna",
+              "Michał Wawer",
+              "Jarosław A. Chudziak",
+              "Marcin Koszowy"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2602.13713v2",
+              "https://arxiv.org/pdf/2602.13713v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-On-Theoretically-Driven-LLM-Agents-for-Multi-Dimensional-Discourse-Analysis.pdf",
+            "tags": [
+              "benchmark",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文研究理论知识能否帮助智能体完成多维话语分析，避免纯零样本判断缺少可解释依据。\n\n核心概念\n- 论证理论知识\n- 检索增强智能体\n- 多维话语标签比较",
+          "method": "构建两个平行系统：一个通过检索增强注入论证理论，另一个作为零样本基线，再比较多类语境识别。\n\n方法与结构\n- 论证理论知识\n- 检索增强智能体\n- 多维话语标签比较",
+          "innovation": "本文的具体贡献在于把“论证理论知识”与“检索增强智能体”放入同一研究或评测框架，并围绕“多维话语标签比较”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "比较注入论证理论的检索增强系统与结构相同的零样本系统。",
+          "metrics": "宏平均 F1：检索增强系统相对零样本基线提高近 30%，越高越好。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "Learning Hierarchical Procedural Memory for LLM Agents through Bayesian Selection and Contrastive Refinement",
+          "basic_info": {
+            "authors": [
+              "Saman Forouzandeh",
+              "Wei Peng",
+              "Parham Moradi",
+              "Xinghuo Yu",
+              "Mahdi Jalili"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2512.18950v1",
+              "https://arxiv.org/pdf/2512.18950v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Learning-Hierarchical-Procedural-Memory-for-LLM-Agents-through-Bayesian-Selection-and-Contrastive-Refinement.pdf",
+            "tags": [
+              "benchmark",
+              "latest-sota",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "长程任务需要可复用的程序记忆，但原始轨迹冗长且容易互相冲突；论文研究如何学习层次化操作程序。\n\n核心概念\n- 轨迹到层次化程序\n- 贝叶斯程序选择\n- 对比精炼与持续更新",
+          "method": "MACLA 用贝叶斯选择挑选程序，以对比式精炼合并成功和失败经验，在不更新模型参数的情况下持续改进。\n\n方法与结构\n- 轨迹到层次化程序\n- 贝叶斯程序选择\n- 对比精炼与持续更新",
+          "innovation": "本文的具体贡献在于把“轨迹到层次化程序”与“贝叶斯程序选择”放入同一研究或评测框架，并围绕“对比精炼与持续更新”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在 ALFWorld、WebShop、TravelPlanner 和 InterCodeSQL 四个基准上比较多种记忆和训练基线。",
+          "metrics": "四基准平均表现 78.1%；ALFWorld 未见任务 90.3%；程序构建 56 秒，比参数训练基线快 2800 倍；2851 条轨迹压缩为 187 个程序。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "From single-agent to multi-agent: a comprehensive review of LLM-based legal agents",
+          "basic_info": {
+            "authors": [
+              "Se Yang",
+              "Zhe Yang",
+              "Yutong Liu",
+              "Hongtao Wang"
+            ],
+            "year": 2025,
+            "venue": "AI Agent",
+            "links": [
+              "https://doi.org/10.20517/aiagent.2025.06"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "survey",
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "这篇综述梳理法律智能体从单体到多智能体的发展，以及法律任务对可信性、跨法域知识和伦理治理的特殊要求。\n\n核心概念\n- 法律任务与基准\n- 单体可信性和多体协作\n- 跨法域知识图与伦理治理",
+          "method": "按照法律检索、问答、判决预测和文本生成组织任务与基准，再比较单智能体和多智能体方法。\n\n方法与结构\n- 法律任务与基准\n- 单体可信性和多体协作\n- 跨法域知识图与伦理治理",
+          "innovation": "本文的具体贡献在于把“法律任务与基准”与“单体可信性和多体协作”放入同一研究或评测框架，并围绕“跨法域知识图与伦理治理”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "综述，没有自建实验；整理法律任务、基准和单体/多体方法。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "UI-Evol: Automatic Knowledge Evolving for Computer Use Agents",
+          "basic_info": {
+            "authors": [
+              "Ziyun Zhang",
+              "Xinyi Liu",
+              "Xiaoyi Zhang",
+              "Jun Wang",
+              "Gang Chen",
+              "Yan Lu"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2505.21964v2",
+              "https://arxiv.org/pdf/2505.21964v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-UI-Evol-Automatic-Knowledge-Evolving-for-Computer-Use-Agents.pdf",
+            "tags": [
+              "benchmark",
+              "latest-sota"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "外部知识即使内容正确，也可能无法转化为成功的界面操作；论文研究如何让计算机使用智能体从真实执行中更新知识。\n\n核心概念\n- 知识-执行缺口\n- 轨迹回溯\n- 知识批评和自动演化",
+          "method": "UI-Evol 包含回溯阶段和批评阶段：先从交互轨迹提取忠实动作序列，再与外部参考比较并修订知识。\n\n方法与结构\n- 知识-执行缺口\n- 轨迹回溯\n- 知识批评和自动演化",
+          "innovation": "本文的具体贡献在于把“知识-执行缺口”与“轨迹回溯”放入同一研究或评测框架，并围绕“知识批评和自动演化”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在 OSWorld 与 Agent S2 上评估知识演化模块，并观察执行成功和行为波动。",
+          "metrics": "知识正确率达到 90% 时，执行成功率仍只有 41%；两者均越高越好，差距用于衡量知识转化失败。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "LLM-Driven Voice Agents That Collaboratively Talk to Each Other: Towards Vocal Multi- Agent Systems",
+          "basic_info": {
+            "authors": [
+              "Navneet Dalipkumar Magotra"
+            ],
+            "year": 2025,
+            "venue": "Frontiers in Emerging Artificial Intelligence and Machine Learning",
+            "links": [
+              "https://doi.org/10.64917/feaiml/volume02issue12-05"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文探索多个语音智能体能否以可听、可解释的方式相互协作，而不是由单一助手处理所有请求。\n\n核心概念\n- 语音化多智能体\n- 专业角色协作\n- 透明度、隐私与认知负荷",
+          "method": "在智能厨房原型中设置烹饪、营养和库存角色，让它们用语音对话共同解决用户请求。\n\n方法与结构\n- 语音化多智能体\n- 专业角色协作\n- 透明度、隐私与认知负荷",
+          "innovation": "本文的具体贡献在于把“语音化多智能体”与“专业角色协作”放入同一研究或评测框架，并围绕“透明度、隐私与认知负荷”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Memory in LLM-based Multi-agent Systems: Mechanisms, Challenges, and Collective Intelligence",
+          "basic_info": {
+            "authors": [
+              "Shanglin Wu",
+              "Kai Shu"
+            ],
+            "year": null,
+            "venue": "未记录",
+            "links": [
+              "https://doi.org/10.36227/techrxiv.176539617.79044553/v1"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "survey",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "多智能体记忆不是单智能体记忆的简单复制，它还要处理共享、同步、权限、扩展和团队演化。\n\n核心概念\n- 共享认知基础设施\n- 同步与访问控制\n- 团队长期协调和集体智能",
+          "method": "综述记忆架构、管理操作、评测和应用，提出多智能体记忆的设计空间和关键定义。\n\n方法与结构\n- 共享认知基础设施\n- 同步与访问控制\n- 团队长期协调和集体智能",
+          "innovation": "本文的具体贡献在于把“共享认知基础设施”与“同步与访问控制”放入同一研究或评测框架，并围绕“团队长期协调和集体智能”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "综述，没有自建实验；分类多智能体记忆的架构、管理、评测和应用。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "An Interactive Multi-Agent System for Evaluation of New Product Concepts",
+          "basic_info": {
+            "authors": [
+              "Bin Xuan",
+              "Ruo Ai",
+              "Hakyeon Lee"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2603.05980v1",
+              "https://arxiv.org/pdf/2603.05980v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-An-Interactive-Multi-Agent-System-for-Evaluation-of-New-Product-Concepts.pdf",
+            "tags": [
+              "survey",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "企业的新产品概念评估依赖专家且成本高，论文研究多智能体能否给出接近行业专家的技术和市场判断。\n\n核心概念\n- 技术可行性\n- 市场可行性\n- 八角色证据检索与结构化讨论",
+          "method": "设置八个研发、市场等专业角色，利用检索增强和实时搜索收集证据，再按技术可行性与市场可行性讨论。\n\n方法与结构\n- 技术可行性\n- 市场可行性\n- 八角色证据检索与结构化讨论",
+          "innovation": "本文的具体贡献在于把“技术可行性”与“市场可行性”放入同一研究或评测框架，并围绕“八角色证据检索与结构化讨论”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "以专业显示器产品概念为案例，将多智能体排序与资深行业专家判断比较。",
+          "metrics": "评估排序与资深行业专家的一致性：越高越好；摘要未给具体系数。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读摘要和分类框架，再读方法分类、基准/数据集表，最后读挑战与未来方向；引用前核对具体条目的原始论文。"
+        },
+        {
+          "title": "LLM Agents for Smart City Management: Enhancing Decision Support Through Multi-Agent AI Systems",
+          "basic_info": {
+            "authors": [
+              "Anna V. Kalyuzhnaya",
+              "Sergey Mityagin",
+              "Elizaveta Lutsenko",
+              "Andrey Getmanov",
+              "Yaroslav Aksenkin",
+              "Kamil Fatkhiev",
+              "Kirill Fedorin",
+              "Nikolay O. Nikitin",
+              "Natalia Chichkova",
+              "Vladimir Vorona",
+              "Alexander V. Boukhanovsky"
+            ],
+            "year": 2025,
+            "venue": "Smart Cities",
+            "links": [
+              "https://openalex.org/W4406842332",
+              "https://www.mdpi.com/2624-6511/8/1/19/pdf?version=1737737853"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文研究多智能体如何为智慧城市管理整合异构信息并提供决策支持。\n\n核心概念\n- 城市管理数据\n- 多角色决策支持\n- 治理与部署约束",
+          "method": "正式元数据只表明其采用面向智慧城市的多智能体决策框架；接口没有摘要，角色分工和实验设置需以全文为准。\n\n方法与结构\n- 城市管理数据\n- 多角色决策支持\n- 治理与部署约束",
+          "innovation": "本文的具体贡献在于把“城市管理数据”与“多角色决策支持”放入同一研究或评测框架，并围绕“治理与部署约束”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "LLM-Based Agents for Tool Learning: A Survey",
+          "basic_info": {
+            "authors": [
+              "Weikai Xu",
+              "Chengrui Huang",
+              "Shen Gao",
+              "Shuo Shang"
+            ],
+            "year": 2025,
+            "venue": "Data Science and Engineering",
+            "links": [
+              "https://openalex.org/W4411700982",
+              "https://link.springer.com/content/pdf/10.1007/s41019-025-00296-9.pdf"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-LLM-Based-Agents-for-Tool-Learning-A-Survey.pdf",
+            "tags": [
+              "survey"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "这篇综述系统整理智能体如何判断何时用工具、检索哪个工具、如何规划调用并利用执行反馈。\n\n核心概念\n- 何时、哪个、如何使用工具\n- 训练式与非训练式检索\n- 规划、反馈、基准与安全",
+          "method": "按照工具调用、工具检索、工具规划和多模态扩展组织方法，同时汇总数据集、基准、指标与安全问题。\n\n方法与结构\n- 何时、哪个、如何使用工具\n- 训练式与非训练式检索\n- 规划、反馈、基准与安全",
+          "innovation": "本文的具体贡献在于把“何时、哪个、如何使用工具”与“训练式与非训练式检索”放入同一研究或评测框架，并围绕“规划、反馈、基准与安全”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "综述，没有自建实验；汇总工具调用、检索、规划相关基准和指标。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读摘要和分类框架，再读方法分类、基准/数据集表，最后读挑战与未来方向；引用前核对具体条目的原始论文。"
+        },
+        {
+          "title": "SecureGov-Agent: A Governance-Centric Multi-Agent Framework for Privacy-Preserving and Attack-Resilient LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Jinyu Chen",
+              "Jixiao Yang",
+              "Ziyang Zeng",
+              "Zixiao Huang",
+              "Jinming Li",
+              "Yutong Wang"
+            ],
+            "year": null,
+            "venue": "未记录",
+            "links": [
+              "https://doi.org/10.20944/preprints202512.2497.v1"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "多智能体系统同时面临后门、提示注入和隐私泄露，论文研究统一治理代理能否综合监控这些风险。\n\n核心概念\n- 治理代理\n- 多视角风险评分\n- 通信审计、工具策略与对抗训练",
+          "method": "设置专门 Governance Agent 审计通信和工具调用，以内容、隐私和行为异常三视角风险评分动态调整信任。\n\n方法与结构\n- 治理代理\n- 多视角风险评分\n- 通信审计、工具策略与对抗训练",
+          "innovation": "本文的具体贡献在于把“治理代理”与“多视角风险评分”放入同一研究或评测框架，并围绕“通信审计、工具策略与对抗训练”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在医疗咨询、金融建议和文档处理三类场景比较安全、隐私、效率与任务效果。",
+          "metrics": "攻击成功率降低 73.2%；隐私泄露率降低 81.4%，最终泄露率 6.8%；任务完成率 89.7%；延迟开销 15.3%。",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Towards Effective GenAI Multi-Agent Collaboration: Design and Evaluation for Enterprise Applications",
+          "basic_info": {
+            "authors": [
+              "Raphael Shu",
+              "Nilaksh Das",
+              "Michelle Yuan",
+              "Monica Sunkara",
+              "Yi Zhang"
+            ],
+            "year": 2024,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2412.05449v1",
+              "https://arxiv.org/pdf/2412.05449v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2024-Towards-Effective-GenAI-Multi-Agent-Collaboration-Design-and-Evaluation-for-Enterprise-Applications.pdf",
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "企业多智能体系统需要在协作成功率和编排开销之间取舍，论文研究协调与路由两种模式。\n\n核心概念\n- 并行协调\n- 载荷引用\n- 选择性路由与延迟优化",
+          "method": "协调模式支持并行通信和载荷引用，路由模式负责高效转发并在适当情况下绕过完整编排。\n\n方法与结构\n- 并行协调\n- 载荷引用\n- 选择性路由与延迟优化",
+          "innovation": "本文的具体贡献在于把“并行协调”与“载荷引用”放入同一研究或评测框架，并围绕“选择性路由与延迟优化”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在三个企业领域的公开手工场景中比较协调模式、路由模式和单智能体基线。",
+          "metrics": "端到端目标成功率 90%；相对单智能体最高提高 70%；载荷引用使代码任务提高 23%；延迟越低越好。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "Personal LLM Agents: Insights and Survey about the Capability, Efficiency and Security",
+          "basic_info": {
+            "authors": [
+              "Yuanchun Li",
+              "Hao Wen",
+              "Weijun Wang",
+              "Xiangyu Li",
+              "Yi-Zhen Yuan",
+              "Guohong Liu",
+              "Jiacheng Liu",
+              "Wenxing Xu",
+              "Xiang Wang",
+              "Yi Sun",
+              "Rui Kong",
+              "Yile Wang",
+              "Hanfei Geng",
+              "Jian Luan",
+              "Xuefeng Jin",
+              "Zilong Ye",
+              "Guanjing Xiong",
+              "Fan Zhang",
+              "Xiang Li",
+              "Mengwei Xu",
+              "Zhijun Li",
+              "Peng Li",
+              "Yang Liu",
+              "Ya-Qin Zhang",
+              "Yunxin Liu"
+            ],
+            "year": 2024,
+            "venue": "arXiv (Cornell University)",
+            "links": [
+              "https://openalex.org/W4390832893",
+              "https://arxiv.org/pdf/2401.05459"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2024-Personal-LLM-Agents-Insights-and-Survey-about-the-Capability-Efficiency-and-Security.pdf",
+            "tags": [
+              "survey"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "个人智能体要长期服务用户，需要同时考虑能力、效率和安全，不能只追求任务完成。\n\n核心概念\n- 个人任务能力\n- 运行和上下文效率\n- 隐私、安全与个性化",
+          "method": "综述个人智能体的能力构成、资源效率、隐私安全和长期个性化问题。\n\n方法与结构\n- 个人任务能力\n- 运行和上下文效率\n- 隐私、安全与个性化",
+          "innovation": "本文的具体贡献在于把“个人任务能力”与“运行和上下文效率”放入同一研究或评测框架，并围绕“隐私、安全与个性化”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "综述，没有自建实验；摘要未提供可单独报告的实验结果。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读摘要和分类框架，再读方法分类、基准/数据集表，最后读挑战与未来方向；引用前核对具体条目的原始论文。"
+        },
+        {
+          "title": "IntentCUA: Learning Intent-level Representations for Skill Abstraction and Multi-Agent Planning in Computer-Use Agents",
+          "basic_info": {
+            "authors": [
+              "Seoyoung Lee",
+              "Seobin Yoon",
+              "Seongbeen Lee",
+              "Yoojung Chun",
+              "Dayoung Park",
+              "Doyeon Kim",
+              "Joo Yong Sim"
+            ],
+            "year": null,
+            "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+            "links": [
+              "https://doi.org/10.65109/brag3288"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "计算机使用智能体需要把低层界面动作抽象为可复用技能，并在多智能体间按意图分配和规划。\n\n核心概念\n- 意图级表示\n- 界面技能抽象\n- 多智能体任务规划",
+          "method": "从正式元数据可确认其学习意图级表示，用于技能抽象和多智能体规划；接口缺少摘要，训练目标与实验需读全文。\n\n方法与结构\n- 意图级表示\n- 界面技能抽象\n- 多智能体任务规划",
+          "innovation": "本文的具体贡献在于把“意图级表示”与“界面技能抽象”放入同一研究或评测框架，并围绕“多智能体任务规划”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)",
+          "basic_info": {
+            "authors": [
+              "Akhil Sharma",
+              "Shaikh Yaser Arafat",
+              "Jai Kumar Sharma",
+              "Ken Huang"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2512.15790v1",
+              "https://arxiv.org/pdf/2512.15790v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Bilevel-Optimization-for-Covert-Memory-Tampering-in-Heterogeneous-Multi-Agent-Architectures-XAMT.pdf",
+            "tags": [
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "集中记忆会成为异构多智能体系统的共同攻击面，论文研究如何用极少污染实现隐蔽记忆篡改。\n\n核心概念\n- 集中记忆攻击面\n- 双层优化\n- MARL 经验池与 RAG 知识库污染",
+          "method": "XAMT 把攻击建模为双层优化：上层最小化扰动以保持隐蔽，下层最大化系统行为向攻击目标偏移。\n\n方法与结构\n- 集中记忆攻击面\n- 双层优化\n- MARL 经验池与 RAG 知识库污染",
+          "innovation": "本文的具体贡献在于把“集中记忆攻击面”与“双层优化”放入同一研究或评测框架，并围绕“MARL 经验池与 RAG 知识库污染”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "使用 SMAC 和 SafeRAG 协议测试低比例记忆污染。",
+          "metrics": "污染比例：MARL 不超过 1%，RAG 不超过 0.1%；攻击效果和隐蔽性需结合正文表格判断。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "AEMA: Verifiable Evaluation Framework for Trustworthy and Controlled Agentic LLM Systems",
+          "basic_info": {
+            "authors": [
+              "YenTing Lee",
+              "Keerthi Koneru",
+              "Zahra Moslemi",
+              "Sheethal Kumar",
+              "Ramesh Radhakrishnan"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2601.11903v1",
+              "https://arxiv.org/pdf/2601.11903v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-AEMA-Verifiable-Evaluation-Framework-for-Trustworthy-and-Controlled-Agentic-LLM-Systems.pdf",
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "单次回答打分无法评价长程多智能体流程，论文研究可审计、可扩展的过程级评测。\n\n核心概念\n- 过程感知评测\n- 多步执行与汇总\n- 人工监督、审计和可追溯性",
+          "method": "AEMA 在人工监督下规划、执行并汇总多步评测，保留异构工作流的过程记录和证据。\n\n方法与结构\n- 过程感知评测\n- 多步执行与汇总\n- 人工监督、审计和可追溯性",
+          "innovation": "本文的具体贡献在于把“过程感知评测”与“多步执行与汇总”放入同一研究或评测框架，并围绕“人工监督、审计和可追溯性”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在模拟企业工作流中与单一模型裁判比较稳定性、人类一致性和可追溯性。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "Efficient Multi-Agent Collaboration with Tool Use for Online Planning in Complex Table Question Answering",
+          "basic_info": {
+            "authors": [
+              "Wei Zhou",
+              "Mohsen Mesgar",
+              "Annemarie Friedrich",
+              "Heike Adel"
+            ],
+            "year": 2025,
+            "venue": "Findings of the Association for Computational Linguistics: NAACL 2025",
+            "links": [
+              "https://doi.org/10.18653/v1/2025.findings-naacl.54"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "复杂表格问答需要在线规划、工具使用和多角色协作，论文研究如何在推理过程中分配这些能力。\n\n核心概念\n- 表格证据定位\n- 在线工具规划\n- 多智能体协作推理",
+          "method": "正式元数据表明其结合多智能体协作、工具调用和在线规划处理复杂表格问答；接口无摘要，具体角色和算法需读全文。\n\n方法与结构\n- 表格证据定位\n- 在线工具规划\n- 多智能体协作推理",
+          "innovation": "本文的具体贡献在于把“表格证据定位”与“在线工具规划”放入同一研究或评测框架，并围绕“多智能体协作推理”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "An organizational theory for multi-agent interactions integrating human agents, LLMs, and specialized AI",
+          "basic_info": {
+            "authors": [
+              "Uwe M. Borghoff",
+              "Paolo Bottoni",
+              "Remo Pareschi"
+            ],
+            "year": 2025,
+            "venue": "Discover Computing",
+            "links": [
+              "https://openalex.org/W4412004157",
+              "https://link.springer.com/content/pdf/10.1007/s10791-025-09667-2.pdf"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-An-organizational-theory-for-multi-agent-interactions-integrating-human-agents-LLMs-and-specialized-AI.pdf",
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "论文尝试用组织理论解释人类、语言模型智能体和专用 AI 如何形成混合团队。\n\n核心概念\n- 人类与 AI 角色\n- 权责和协调机制\n- 混合组织的信息流",
+          "method": "从角色、权责、协调和信息流角度建立混合多智能体组织框架；具体实证设置需按全文核对。\n\n方法与结构\n- 人类与 AI 角色\n- 权责和协调机制\n- 混合组织的信息流",
+          "innovation": "本文的具体贡献在于把“人类与 AI 角色”与“权责和协调机制”放入同一研究或评测框架，并围绕“混合组织的信息流”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读问题定义和系统总图，再按方法模块逐节阅读，最后核对实验设置、主结果表、消融和局限。"
+        },
+        {
+          "title": "Self Knowledge-Tracing for Tool Use (SKT-Tool): Helping LLM Agents Understand Their Capabilities in Tool Use",
+          "basic_info": {
+            "authors": [
+              "Joshua Vigel",
+              "Renpei Cai",
+              "Eleanor Chen",
+              "Anish Neema",
+              "Austen Liao",
+              "Kevin Zhu",
+              "Sean O’brien"
+            ],
+            "year": 2025,
+            "venue": "The Sixth Workshop on Insights from Negative Results in NLP",
+            "links": [
+              "https://doi.org/10.18653/v1/2025.insights-1.14"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "工具型智能体需要知道自己会什么、不会什么，才能避免错误选工具或盲目调用。\n\n核心概念\n- 工具能力自知\n- 能力状态追踪\n- 选择、拒绝与调用决策",
+          "method": "SKT-Tool 让智能体追踪自身工具能力，并把能力判断用于工具选择和执行决策；接口无摘要，训练与实验细节需读全文。\n\n方法与结构\n- 工具能力自知\n- 能力状态追踪\n- 选择、拒绝与调用决策",
+          "innovation": "本文的具体贡献在于把“工具能力自知”与“能力状态追踪”放入同一研究或评测框架，并围绕“选择、拒绝与调用决策”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "现有摘要或正式元数据没有提供足以可靠复述的实验设置和结果。",
+          "metrics": "无",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        },
+        {
+          "title": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
+          "basic_info": {
+            "authors": [
+              "Shota Takayama",
+              "Katsuhide Fujita"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2510.13343v1",
+              "https://arxiv.org/pdf/2510.13343v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-AOAD-MAT-Transformer-based-multi-agent-deep-reinforcement-learning-model-considering-agents-order-of-action-decisio.pdf",
+            "tags": [
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "多智能体强化学习通常固定代理行动顺序，论文研究动态决定谁先行动是否能提高协作。\n\n核心概念\n- 行动顺序建模\n- 下一代理预测\n- Transformer actor-critic 与 PPO",
+          "method": "AOAD-MAT 在 Transformer actor-critic 中加入下一行动代理预测子任务，并与 PPO 损失联合训练。\n\n方法与结构\n- 行动顺序建模\n- 下一代理预测\n- Transformer actor-critic 与 PPO",
+          "innovation": "本文的具体贡献在于把“行动顺序建模”与“下一代理预测”放入同一研究或评测框架，并围绕“Transformer actor-critic 与 PPO”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "在 StarCraft Multi-Agent Challenge 和 Multi-Agent MuJoCo 上与 MAT 等基线比较。",
+          "metrics": "基准为 StarCraft Multi-Agent Challenge 和 Multi-Agent MuJoCo；论文报告优于 MAT 等基线，但摘要未给关键数值。",
+          "reliability_limits": "已下载合法全文并完成文本提取；本条按全文和摘要整理，但表格、公式与视觉内容仍应回到原页核对。",
+          "reading_guide": "先读任务定义和数据构成，再读评测协议与指标，最后核对主结果表、消融和失败案例。"
+        },
+        {
+          "title": "Multi-Agent LLM Framework for Autonomous Network Fault Remediation",
+          "basic_info": {
+            "authors": [
+              "Baddipadiga Praneeth Reddy"
+            ],
+            "year": 2026,
+            "venue": "International Journal Of Recent Trends In Multidisciplinary Research",
+            "links": [
+              "https://doi.org/10.59256/ijrtmr.20260602033"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "benchmark",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "本轮要求检索到的相关论文全部使用统一完整总结流程。"
+          },
+          "what_why": "企业网络故障处理跨检测、诊断、修复和监督多个环节，论文研究多智能体能否自动闭环处置。\n\n核心概念\n- 故障采集\n- 诊断与厂商知识\n- 自动修复和监督",
+          "method": "设置采集、诊断、修复和监督四个代理，每个代理用检索增强获得网络上下文和厂商知识。\n\n方法与结构\n- 故障采集\n- 诊断与厂商知识\n- 自动修复和监督",
+          "innovation": "本文的具体贡献在于把“故障采集”与“诊断与厂商知识”放入同一研究或评测框架，并围绕“自动修复和监督”给出方法、分类或证据。该贡献的成立范围需结合证据与局限理解。",
+          "experiments": "使用三个厂商的网络故障数据评估自动诊断和修复。",
+          "metrics": "常见故障自动解决率 91.4%；平均修复时间降低 68%；误报率低于 2.3%。",
+          "reliability_limits": "未取得可合法下载或可提取的全文；本条依据官方元数据与摘要，方法和结果细节置信度较低。",
+          "reading_guide": "当前先读论文页和摘要；取得合法全文后，优先核对方法、实验设置、指标定义和主要结果表。"
+        }
+      ]
+    },
+    {
+      "batch_label": "LLM 智能体后训练、工具强化学习、轨迹信用分配与自进化经验学习：25 篇统一精读",
+      "created_at": "2026-07-29T08:14:01",
+      "source_hash": "4acda7880186a532b6769f418a7f521e1d770988838e9f989949a353363da7be",
+      "summary_ids": [
+        "link:http://arxiv.org/abs/2602.12268v2",
+        "link:http://arxiv.org/abs/2509.06980v1",
+        "link:http://arxiv.org/abs/2508.18669v1",
+        "link:http://arxiv.org/abs/2601.22607v3",
+        "link:http://arxiv.org/abs/2604.02869v1",
+        "link:http://arxiv.org/abs/2509.20616v2",
+        "link:http://arxiv.org/abs/2510.24126v1",
+        "link:http://arxiv.org/abs/2603.21972v1",
+        "link:http://arxiv.org/abs/2509.22601v4",
+        "link:http://arxiv.org/abs/2605.26684v2",
+        "link:http://arxiv.org/abs/2502.14276v2",
+        "link:http://arxiv.org/abs/2603.08754v1",
+        "link:http://arxiv.org/abs/2602.16165v2",
+        "link:http://arxiv.org/abs/2605.21768v1",
+        "link:http://arxiv.org/abs/2403.02502v2",
+        "link:http://arxiv.org/abs/2511.20857v2",
+        "link:http://arxiv.org/abs/2508.07407v2",
+        "link:http://arxiv.org/abs/2603.25111v2",
+        "link:https://openreview.net/forum?id=z9mxthgwqf",
+        "link:https://arxiv.org/abs/2508.19005",
+        "link:https://arxiv.org/abs/2605.29225",
+        "link:https://arxiv.org/abs/2605.17721",
+        "link:https://arxiv.org/abs/2605.18421",
+        "link:https://openreview.net/forum?id=gnwntstp3r",
+        "link:https://arxiv.org/abs/2511.10395"
+      ],
+      "summaries": [
+        {
+          "title": "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use",
+          "basic_info": {
+            "authors": [
+              "Zhen Zhang",
+              "Kaiqiang Song",
+              "Xun Wang",
+              "Yebowen Hu",
+              "Weixiang Yan",
+              "Chenyang Zhao",
+              "Henry Peng Zou",
+              "Haoyun Deng",
+              "Sathish Reddy Indurthi",
+              "Shujian Liu",
+              "Simin Ma",
+              "Xiaoyang Wang",
+              "Xin Eric Wang",
+              "Song Wang"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2602.12268v2",
+              "https://arxiv.org/pdf/2602.12268v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-CM2-Reinforcement-Learning-with-Checklist-Rewards-for-Multi-Turn-and-Multi-Step-Agentic-Tool-Use.pdf",
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "开放式、多轮、多步工具任务很难获得可程序验证的最终奖励。CM2 的目标是把模糊行为要求改写为稳定、可归因的训练信号，使工具型智能体可以在低环境工程成本下做强化学习。\n\n核心概念\n- 清单奖励：把一轮中的预期行为拆成带证据依据的二元检查项。\n- 稀疏赋分与稠密标准：只在关键位置给奖励，但检查标准覆盖全过程。\n- 多轮状态：同时约束对话理解、工具选择、参数和后续响应。\n- 模拟工具环境：以语言模型模拟大规模工具，减少维护可执行沙箱的成本。",
+          "method": "CM2 先为每个训练样例生成结构化行为清单，再由判断模型逐项核验轨迹证据，最后把清单结果转成强化学习奖励。\n\n方法结构\n- 清单构造：记录检查项、适用轮次、证据位置和判断元数据。\n- 轨迹采样：智能体与模拟用户、模拟工具完成多轮交互。\n- 奖励判断：逐项分类，避免一个总分掩盖具体失败原因。\n- 策略更新：以清单奖励训练 8B 基座模型，并与监督微调比较。",
+          "innovation": "贡献在于不要求每个真实任务都编写可执行验证器，而是把开放式意图变成细粒度、可审计的判断任务；这种设计兼顾了奖励稳定性和工具覆盖规模。",
+          "experiments": "使用约 8000 条强化学习样例训练 8B 模型，在 tau-Bench、BFCL-V4 与 ToolSandbox 上与监督微调和同尺寸开放模型比较。",
+          "metrics": "相对监督微调，tau-Bench 提升 8 个百分点，BFCL-V4 提升 10 个百分点，ToolSandbox 提升 12 个百分点。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读清单奖励定义和证据格式，再看模拟环境与训练流程，最后核对三套工具基准的主结果和判断模型消融。"
+        },
+        {
+          "title": "RLFactory: A Plug-and-Play Reinforcement Learning Post-Training Framework for LLM Multi-Turn Tool-Use",
+          "basic_info": {
+            "authors": [
+              "Jiajun Chai",
+              "Guojun Yin",
+              "Zekun Xu",
+              "Chuhuai Yue",
+              "Yi Jia",
+              "Siyu Xia",
+              "Xiaohan Wang",
+              "Jiwen Jiang",
+              "Xiaoguang Li",
+              "Chengqi Dong",
+              "Hang He",
+              "Wei Lin"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2509.06980v1",
+              "https://arxiv.org/pdf/2509.06980v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-RLFactory-A-Plug-and-Play-Reinforcement-Learning-Post-Training-Framework-for-LLM-Multi-Turn-Tool-Use.pdf",
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "多轮工具强化学习常被工具接口差异、同步调用瓶颈和奖励实现耦合拖慢。RLFactory 试图把工具执行、轨迹生成和策略更新拆开，形成可替换的通用后训练框架。\n\n核心概念\n- 异构工具接入：统一搜索、代码或其他接口的调用协议。\n- 异步执行：并行等待外部工具，减少训练空转。\n- 奖励层：兼容规则判断、模型判断和工具验证。\n- 闭环状态：用工具观察标记重构多轮决策过程。",
+          "method": "框架按照生成、解析、调用、观察、更新的循环运行，并用解耦架构让工具端和训练端可以独立扩展。\n\n方法结构\n- 异步调用器：以 asyncio 管理并发工具请求。\n- 轨迹解析器：识别工具名、参数和观察边界。\n- 奖励适配器：为不同任务组合多种奖励来源。\n- 策略训练：在重构的多轮决策状态上执行强化学习更新。",
+          "innovation": "它的价值主要是工程统一：同一训练主干可以更换工具和奖励，而无需为每个任务重写整套强化学习代码。",
+          "experiments": "以 Qwen3-4B 在 Search-R1 流程中训练，并在 Natural Questions 上与更大模型及相近强化学习方案比较，同时测量训练吞吐。",
+          "metrics": "Natural Questions 测试得分 0.486，高于 Qwen2.5-7B-Instruct-GRPO 的 0.473；训练吞吐提高 6.8 倍。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先看整体架构图与观察标记，再读异步工具调用和奖励接口，最后核对 Search-R1 配置、吞吐测量口径与结果表。"
+        },
+        {
+          "title": "MUA-RL: Multi-turn User-interacting Agent Reinforcement Learning for agentic tool use",
+          "basic_info": {
+            "authors": [
+              "Weikang Zhao",
+              "Xili Wang",
+              "Chengdi Ma",
+              "Lingbin Kong",
+              "Zhaohua Yang",
+              "Mingxiang Tuo",
+              "Xiaowei Shi",
+              "Yitao Zhai",
+              "Xunliang Cai"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2508.18669v1",
+              "https://arxiv.org/pdf/2508.18669v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-MUA-RL-Multi-turn-User-interacting-Agent-Reinforcement-Learning-for-agentic-tool-use.pdf",
+            "tags": [
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "真实用户会在交互中补充、纠正或改变需求，静态任务描述无法训练这种动态适应能力。MUA-RL 把模拟用户直接放进强化学习循环，让智能体同时学习沟通和工具执行。\n\n核心概念\n- 动态需求：用户意图在多轮中逐步显现。\n- 沟通策略：智能体需要判断何时追问而不是立即调用工具。\n- 工具执行：在澄清后选择工具、填参数并处理反馈。\n- 用户模拟：训练阶段产生不确定、带变化的交互轨迹。",
+          "method": "每个训练回合由智能体、语言模型用户和工具环境共同构成，奖励根据任务完成与交互质量驱动策略更新。\n\n方法结构\n- 用户角色采样：生成不同偏好、约束和需求变化。\n- 多轮对话：智能体追问、确认并跟踪状态。\n- 工具调用：执行可观察操作并将结果带回对话。\n- 端到端训练：对完整交互轨迹进行强化学习。",
+          "innovation": "主要创新是把动态用户从离线数据生成器提升为训练环境中的参与者，使沟通行为和工具行为可以联合优化。",
+          "experiments": "在 TAU2 的零售、航空、电信任务，以及 BFCL-V3 多轮任务和 ACEBench Agent 上评估 32B 模型，并与更大的开放模型比较。",
+          "metrics": "TAU2 零售 67.3，航空 45.4，电信 28.3；BFCL-V3 多轮 28.4；ACEBench Agent 82.5。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读用户模拟与状态变化定义，再看奖励如何同时覆盖沟通和工具结果，最后逐项核对五个基准的设置与失败案例。"
+        },
+        {
+          "title": "From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents",
+          "basic_info": {
+            "authors": [
+              "Jiaxuan Gao",
+              "Jiaao Chen",
+              "Chuyi He",
+              "Shusheng Xu",
+              "Di Jin",
+              "Yi Wu"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2601.22607v3",
+              "https://arxiv.org/pdf/2601.22607v3"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-From-Self-Evolving-Synthetic-Data-to-Verifiable-Reward-RL-Post-Training-Multi-turn-Interactive-Tool-Using-Agents.pdf",
+            "tags": [
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "复杂工具交互既缺高质量多轮数据，也容易受用户模拟噪声影响。该工作把自进化数据合成与可验证奖励强化学习串成一条后训练流水线。\n\n核心概念\n- 自进化数据：生成器根据失败反馈更新提示和工作流。\n- 层级多智能体：不同角色负责场景、对话、工具和质量检查。\n- 实例验证器：每条合成任务同时生成可执行检查器。\n- 分阶段后训练：先训练用户模型，再训练工具智能体。",
+          "method": "EigenData 先合成带工具依据的多轮对话和逐实例验证器，再用动态过滤后的组相对策略优化训练智能体。\n\n方法结构\n- 任务生成：构造可执行目标和工具环境。\n- 对话合成：产生用户变化与多步调用轨迹。\n- 闭环修正：根据验证失败更新生成提示和流程。\n- 强化学习：使用轨迹级相对优势与动态样本过滤。",
+          "innovation": "不同于只合成对话文本，它为每个任务同时产生验证机制，从而把数据规模化和奖励可靠性放进同一闭环。",
+          "experiments": "在 tau2-bench 的航空和电信环境评估，并比较监督微调、强化学习版本和前沿模型。",
+          "metrics": "航空任务单次通过率 73.0%，电信任务单次通过率 98.3%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先看 EigenData 的角色分工和闭环修正，再读实例验证器生成，最后核对用户模型训练、动态过滤和 tau2-bench 主表。"
+        },
+        {
+          "title": "Multi-Turn Reinforcement Learning for Tool-Calling Agents with Iterative Reward Calibration",
+          "basic_info": {
+            "authors": [
+              "Wachiravit Modecrua",
+              "Krittanon Kaewtawee",
+              "Krittin Pachtrachai",
+              "Touchapon Kraisingkorn"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2604.02869v1",
+              "https://arxiv.org/pdf/2604.02869v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Multi-Turn-Reinforcement-Learning-for-Tool-Calling-Agents-with-Iterative-Reward-Calibration.pdf",
+            "tags": [
+              "benchmark",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "多轮工具任务奖励稀疏，但随意添加逐轮奖励会把优势方向带偏。论文的核心问题不是奖励越密越好，而是逐轮奖励能否区分真正有价值的动作。\n\n核心概念\n- 奖励判别力：检查一个信号是否区分成功与失败轨迹。\n- 优势方向：逐轮奖励不能与最终目标产生相反更新。\n- 多轮组相对优化：按完整交互比较样本。\n- 词元级更新：细化工具调用与回答片段的训练信号。",
+          "method": "方法把 MT-GRPO 与 GTPO 结合，并用训练轨迹的经验分析反复校准逐轮奖励。\n\n方法结构\n- 采样与诊断：统计各逐轮奖励在成功和失败轨迹上的分布。\n- 奖励校准：保留有判别力且方向一致的信号。\n- 混合优势：组合轨迹级和词元级更新。\n- 重复验证：每次调整后重新检查性能而非凭直觉加奖励。",
+          "innovation": "论文明确展示了错误的稠密奖励可让结果下降，并给出一套基于数据判别力的奖励设计程序，而非固定奖励公式。",
+          "experiments": "在 Tau-Bench 航空客服任务训练 Qwen3.5-4B 与 Qwen3-30B-A3B，并与原模型、GPT-4.1、GPT-4o 和 Claude Sonnet 4.5 比较。",
+          "metrics": "朴素逐轮奖励最多降低 14 个百分点；4B 模型由 63.8% 提升到 66.7%；30B 混合专家模型由 58.0% 提升到 69.5%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "优先读奖励误配案例和判别分析，再看混合优势公式，最后核对两个模型规模的训练曲线与主结果。"
+        },
+        {
+          "title": "Training Task Reasoning LLM Agents for Multi-turn Task Planning via Single-turn Reinforcement Learning",
+          "basic_info": {
+            "authors": [
+              "Hanjiang Hu",
+              "Changliu Liu",
+              "Na Li",
+              "Yebin Wang"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2509.20616v2",
+              "https://arxiv.org/pdf/2509.20616v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Training-Task-Reasoning-LLM-Agents-for-Multi-turn-Task-Planning-via-Single-turn-Reinforcement-Learning.pdf",
+            "tags": [
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "直接在长程环境中做强化学习成本高、奖励稀疏。论文把多轮规划转换成单轮任务推理，用专家轨迹提供稠密可验证监督。\n\n核心概念\n- 任务转换：把环境中的多步决策压缩为单轮推理问题。\n- 专家轨迹：提供子任务顺序和可验证中间目标。\n- 最短轮次：理论分析连接单轮改进与多轮成功概率。\n- 短子任务泛化：长程训练应迁移到较短规划片段。",
+          "method": "训练阶段只优化单轮任务推理，部署阶段再把推理结果作为多轮执行计划。\n\n方法结构\n- 轨迹抽取：从专家演示构建任务推理样例。\n- 稠密奖励：逐项验证计划与专家结构的一致性。\n- GRPO 更新：在单轮样例上进行组相对策略优化。\n- 多轮执行：将计划映射回环境中的连续动作。",
+          "innovation": "它用任务表示变换绕开昂贵的多轮在线强化学习，并给出单轮优化为何能改善多轮成功率的理论下界。",
+          "experiments": "在复杂任务规划基准上训练 1.5B 模型，并与最高 14B 的基线比较长程任务成功率。",
+          "metrics": "1.5B 模型在长程规划任务上达到 70% 成功率，并超过最高 14B 的比较模型。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读问题转换和理论命题，再核对专家轨迹如何产生奖励，最后看不同任务长度与模型规模的结果。"
+        },
+        {
+          "title": "Reinforcement Learning for Long-Horizon Multi-Turn Search Agents",
+          "basic_info": {
+            "authors": [
+              "Vivek Kalyan",
+              "Martin Andrews"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2510.24126v1",
+              "https://arxiv.org/pdf/2510.24126v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Reinforcement-Learning-for-Long-Horizon-Multi-Turn-Search-Agents.pdf",
+            "tags": [
+              "benchmark",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "提示工程能让搜索智能体工作，但难以从大量历史尝试中持续改进。论文检验强化学习是否能提升法律文档搜索中的长程检索、证据整合和停止决策。\n\n核心概念\n- 长程检索：允许智能体多轮查询和阅读。\n- 工具反馈：每次搜索结果改变后续查询。\n- 经验学习：用成功与失败轨迹更新策略。\n- 轮次预算：分析训练和测试时允许的交互长度。",
+          "method": "研究在法律文档搜索环境中采样多轮搜索轨迹，以最终答案正确性训练 14B 智能体，并系统限制训练或测试轮次。\n\n方法结构\n- 问题分解：从法律问题生成检索子目标。\n- 多轮搜索：反复查询、筛选和综合证据。\n- 结果奖励：以最终准确性驱动强化学习。\n- 轮次消融：比较短轨迹与长轨迹的能力差异。",
+          "innovation": "贡献在于证明长程工具轨迹的强化学习收益不仅来自更强模型，也来自让策略学会如何使用额外交互预算。",
+          "experiments": "在法律文档搜索基准比较 14B 强化学习模型和前沿模型，并在不同轮次限制下评估准确率。",
+          "metrics": "14B 强化学习模型准确率 85%，高于前沿模型的 78%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读环境与奖励定义，再看轮次限制实验，最后核对搜索轨迹示例是否真的表现出更好的证据组合。"
+        },
+        {
+          "title": "Demystifying Reinforcement Learning for Long-Horizon Tool-Using Agents: A Comprehensive Recipe",
+          "basic_info": {
+            "authors": [
+              "Xixi Wu",
+              "Qianguo Sun",
+              "Ruiyang Zhang",
+              "Chao Song",
+              "Junlong Wu",
+              "Yiyan Qi",
+              "Hong Cheng"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2603.21972v1",
+              "https://arxiv.org/pdf/2603.21972v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Demystifying-Reinforcement-Learning-for-Long-Horizon-Tool-Using-Agents-A-Comprehensive-Recipe.pdf",
+            "tags": [
+              "latest-sota",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "长程智能体强化学习缺少可迁移的实践配方。论文用控制变量实验回答奖励、模型大小、训练数据、算法和环境稳定性如何共同影响结果。\n\n核心概念\n- 奖励塑形：小模型和大模型需要不同密度的奖励。\n- 模型规模：能力基础决定探索与收敛方式。\n- 数据组成：难度比例影响域内和域外泛化。\n- 算法选择：不同策略优化方法的收益依赖任务与规模。\n- 环境稳定：工具或状态波动会直接破坏策略学习。",
+          "method": "研究以 TravelPlanner 为统一试验台，沿五个轴做系统消融，再把结论组合成推荐训练配方。\n\n方法结构\n- 五轴实验矩阵：奖励、规模、数据、算法、环境。\n- 难度分层：比较简单、中等和困难任务的混合比例。\n- 域外评估：检查配方是否只记住训练分布。\n- 综合配方：按模型规模选择奖励与探索策略。",
+          "innovation": "创新不在单一算法，而在把常见经验拆成可重复的控制实验，并总结七条可操作结论。",
+          "experiments": "在 TravelPlanner 上进行大量消融，比较不同规模模型、约 1000 条及其他规模训练集、不同奖励和环境稳定设置。",
+          "metrics": "TravelPlanner 的 1.5B 模型中，监督微调成功率 6.9%，SUM 奖励训练后为 33.1%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先看五轴实验设计和七条结论，再核对约 1000 条样本的甜点区间，最后看环境不稳定导致策略退化的证据。"
+        },
+        {
+          "title": "Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning",
+          "basic_info": {
+            "authors": [
+              "Yulei Qin",
+              "Xiaoyu Tan",
+              "Zhengbao He",
+              "Gang Li",
+              "Haojia Lin",
+              "Zongyi Li",
+              "Zihan Xu",
+              "Yuchen Shi",
+              "Siqi Cai",
+              "Renting Rui",
+              "Shaofei Cai",
+              "Yuzheng Cai",
+              "Xuan Zhang",
+              "Sheng Ye",
+              "Ke Li",
+              "Xing Sun"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2509.22601v4",
+              "https://arxiv.org/pdf/2509.22601v4"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "长程稀疏奖励任务需要先探索再利用，但机械提高策略熵会造成多轮分布漂移。SPEAR 用智能体自己的成功经验逐阶段调整探索强度。\n\n核心概念\n- 自模仿：把高回报轨迹放入回放缓冲区。\n- 渐进探索：早期鼓励频繁工具交互，后期降低无效发散。\n- 内在奖励：奖励新颖或有信息的探索行为。\n- 课程调度：按训练阶段协调探索和成功经验复用。",
+          "method": "SPEAR 在基础自模仿学习上加入策略熵课程，并结合工业强化学习优化形成强基线 Dr.BoT。\n\n方法结构\n- 经验收集：保存成功或高价值轨迹。\n- 早期阶段：提高工具探索和内在奖励权重。\n- 收敛阶段：强化成功策略的离线复用。\n- 稳定训练：控制熵坍缩和过度发散。",
+          "innovation": "它把探索利用平衡从固定超参数改成由训练阶段和自身经验共同驱动的课程，并保持较低运行额外开销。",
+          "experiments": "在 ALFWorld、WebShop、AIME24 和 AIME25 上比较 GRPO、GiGPO、Dr.BoT 及其加入 SPEAR 后的表现。",
+          "metrics": "ALFWorld 对三类基线最高提升 16.1%、5.1%、8.6%；WebShop 最高提升 20.7%、11.8%、13.9%；AIME24 和 AIME25 分别最高提升 3.8% 和 6.1%。",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先看熵课程和回放缓冲区，再读三个基线的公平比较设置，最后核对四个基准的增益和额外计算成本。"
+        },
+        {
+          "title": "Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning",
+          "basic_info": {
+            "authors": [
+              "Xin Cheng",
+              "Shuo He",
+              "Lang Feng",
+              "HaiYang Xu",
+              "Ming Yan",
+              "Lei Feng",
+              "Bo An"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2605.26684v2",
+              "https://arxiv.org/pdf/2605.26684v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Beyond-Trajectory-Level-Attribution-Graph-Based-Credit-Assignment-for-Agentic-Reinforcement-Learning.pdf",
+            "tags": [
+              "benchmark",
+              "latest-sota",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "只按最终成败给整条轨迹同一信用，会丢掉失败轨迹中的好步骤。GraphGPO 把多条轨迹合并成状态转移图，利用全局结构估计每一步是否接近目标。\n\n核心概念\n- 跨轨迹状态图：把共享或相似状态放进同一图。\n- 目标距离：估计每个状态到任务完成的距离。\n- 边级信用：根据一步转移缩短目标距离的程度赋值。\n- 失败轨迹复用：保留其中真正推进任务的动作。",
+          "method": "方法先聚合一组采样轨迹，再在图上计算状态距离和边优势，最后以边级优势替代粗粒度轨迹优势。\n\n方法结构\n- 状态归并：构建统一状态转移图。\n- 全局估值：从目标节点反推各状态距离。\n- 图优势：比较动作前后距离变化。\n- 策略更新：将图级信用传回对应动作词元。",
+          "innovation": "它把信用分配从单条轨迹内部提升到跨轨迹图结构，使同一局部决策可以由多次尝试共同校准。",
+          "experiments": "在多套高难度智能体基准上与组相对强化学习方法比较训练效率和最终性能，并进行图结构信用消融。",
+          "metrics": "Sokoban 上，GraphGPO 成功率 86.98%，高于 GiGPO 的 76.92% 和 GRPO 的 67.1%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读状态归并和目标距离定义，再看图优势如何映射回词元，最后核对训练效率、失败轨迹利用和消融。"
+        },
+        {
+          "title": "STeCa: Step-level Trajectory Calibration for LLM Agent Learning",
+          "basic_info": {
+            "authors": [
+              "Hanlin Wang",
+              "Jian Wang",
+              "Chak Tou Leong",
+              "Wenjie Li"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2502.14276v2",
+              "https://arxiv.org/pdf/2502.14276v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-STeCa-Step-level-Trajectory-Calibration-for-LLM-Agent-Learning.pdf",
+            "tags": [
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "长程轨迹会因早期小错误逐步偏离，单纯模仿成功轨迹无法告诉模型何时修正。STeCa 自动发现次优动作并构造校准后的替代轨迹。\n\n核心概念\n- 步级比较：在探索时比较当前动作与候选动作的奖励。\n- 及时校准：在错误发生位置修正，而不是只在终点解释失败。\n- 反思生成：由语言模型提出更合适的后续动作。\n- 对比训练：联合成功轨迹和校准轨迹。",
+          "method": "框架对探索轨迹逐步扫描，定位次优决策，调用反思模块重写局部行为，再用修正前后轨迹训练策略。\n\n方法结构\n- 探索采样：收集成功与失败轨迹。\n- 次优定位：用步级奖励比较找出偏航点。\n- 轨迹校准：从偏航点生成修正动作和后续路径。\n- 强化训练：把校准轨迹与成功轨迹共同用于更新。",
+          "innovation": "其核心不是对整条失败轨迹做泛化批评，而是自动形成可直接训练的局部纠错样本。",
+          "experiments": "在三类复杂交互任务上与行为克隆、偏好学习和其他轨迹优化方法比较，并分析校准时机对鲁棒性的影响。",
+          "metrics": "无",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读次优动作检测，再看反思如何保持后续轨迹可执行，最后核对代码仓库中的数据构造与鲁棒性实验。"
+        },
+        {
+          "title": "Hindsight Credit Assignment for Long-Horizon LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Hui-Ze Tan",
+              "Xiao-Wen Yang",
+              "Hao Chen",
+              "Jie-Jing Shao",
+              "Yi Wen",
+              "Yuteng Shen",
+              "Weihong Luo",
+              "Xiku Du",
+              "Lan-Zhe Guo",
+              "Yu-Feng Li"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2603.08754v1",
+              "https://arxiv.org/pdf/2603.08754v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Hindsight-Credit-Assignment-for-Long-Horizon-LLM-Agents.pdf",
+            "tags": [
+              "benchmark",
+              "latest-sota",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "GRPO 在长程任务中难以估计中间步骤价值，也缺少与具体状态匹配的基线。HCAPO 用任务完成后的全局信息回看关键决策。\n\n核心概念\n- 事后评论：让语言模型根据完整结果重新评估早期动作。\n- 步级价值：把终局经验转成中间状态的价值修正。\n- 多尺度优势：同时考虑局部动作和较长片段。\n- 关键状态：在真正改变后续结果的位置加强信用。",
+          "method": "HCAPO 用语言模型作为事后评论器修正步级 Q 值，再以多尺度优势补足中间状态基线。\n\n方法结构\n- 轨迹完成：先获得环境终局和稀疏奖励。\n- 事后推理：逐步判断哪些动作推动或阻碍成功。\n- 优势融合：组合局部与轨迹级信用。\n- 策略优化：在 WebShop、ALFWorld 等环境更新模型。",
+          "innovation": "它首次把事后信用分配系统化引入语言模型智能体，并用多尺度优势同时处理价值误差与基线错配。",
+          "experiments": "使用 Qwen2.5-7B-Instruct 在三套长程基准比较 HCAPO、GRPO 和其他强化学习方法。",
+          "metrics": "相对 GRPO，WebShop 成功率提高 7.7%，ALFWorld 成功率提高 13.8%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先看事后评论提示和 Q 值修正，再读多尺度优势，最后核对探索效率、轨迹长度和两个主要增益。"
+        },
+        {
+          "title": "HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents",
+          "basic_info": {
+            "authors": [
+              "Jiangweizhi Peng",
+              "Yuanxin Liu",
+              "Ruida Zhou",
+              "Charles Fleming",
+              "Zhaoran Wang",
+              "Alfredo Garcia",
+              "Mingyi Hong"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2602.16165v2",
+              "https://arxiv.org/pdf/2602.16165v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-HiPER-Hierarchical-Reinforcement-Learning-with-Explicit-Credit-Assignment-for-Large-Language-Model-Agents.pdf",
+            "tags": [
+              "benchmark",
+              "latest-sota",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "扁平策略把每一轮都当成同一层级动作，难以在长程任务中把最终奖励分给规划和执行。HiPER 显式分离高层子目标与低层动作。\n\n核心概念\n- 高层规划器：生成可持续多个步骤的子目标。\n- 低层执行器：在环境中完成子目标。\n- 时间抽象：一条高层决策对应一段动作序列。\n- 层级优势：分别评价计划质量和执行质量。",
+          "method": "策略被因式分解为规划器和执行器，HAE 在子目标区间聚合回报，并协调两个层级的参数更新。\n\n方法结构\n- 子目标生成：高层策略选择阶段目标。\n- 连续执行：低层策略完成多步工具操作。\n- 区间回报：对每个子目标对应的动作段累计奖励。\n- 双层更新：以无偏、低方差优势训练两个层级。",
+          "innovation": "贡献是让信用结构与智能体的计划执行结构一致，并证明层级优势相对扁平估计保持无偏且降低方差。",
+          "experiments": "以 Qwen2.5-7B-Instruct 在 ALFWorld 和 WebShop 上与最佳既有方法比较，重点分析多依赖子任务。",
+          "metrics": "ALFWorld 成功率 97.4%，WebShop 成功率 83.3%；分别高于最佳既有方法 6.6% 和 8.3%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读策略因式分解和 HAE 证明，再看子目标边界如何标注，最后核对长程子任务上的分项增益。"
+        },
+        {
+          "title": "Memory-R2: Fair Credit Assignment for Long-Horizon Memory-Augmented LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Sikuan Yan",
+              "Ahmed Bahloul",
+              "Ercong Nie",
+              "Susanna Schwarzmann",
+              "Riccardo Trivisonno",
+              "Volker Tresp",
+              "Yunpu Ma"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2605.21768v1",
+              "https://arxiv.org/pdf/2605.21768v1"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Memory-R2-Fair-Credit-Assignment-for-Long-Horizon-Memory-Augmented-LLM-Agents.pdf",
+            "tags": [
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "记忆写入会改变后续环境，不同采样轨迹因此不再共享同一中间状态，直接做组相对比较并不公平。Memory-R2 为记忆操作建立同状态下的局部比较。\n\n核心概念\n- 记忆环境耦合：过去的写、改、删动作改变未来观察。\n- 局部重采样：从同一记忆状态尝试不同操作结果。\n- 全局目标：仍保留跨会话的端到端任务奖励。\n- 记忆共学习：事实抽取器与记忆管理器共享模型主干。\n- 渐进时长：训练跨度从 8 会话增至 16 和 32 会话。",
+          "method": "LoGo-GRPO 组合全局组相对目标和局部同状态重采样，让长期目标与公平的记忆操作信用同时存在。\n\n方法结构\n- 全局轨迹：学习跨会话最终表现。\n- 局部重放：固定中间记忆状态比较不同写入决策。\n- 双角色提示：同一模型承担事实抽取和记忆管理。\n- 课程训练：逐步增加会话长度以稳定优化。",
+          "innovation": "它指出记忆强化学习违反普通组相对优化的同环境假设，并提出局部与全局结合的专用信用方案。",
+          "experiments": "在长程多会话记忆任务中比较普通 GRPO、局部或全局单独训练及 LoGo-GRPO，并测试 8、16、32 会话课程。",
+          "metrics": "无",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读不公平比较的反例，再看局部重采样与全局目标如何合并，最后核对不同会话长度的训练稳定性。"
+        },
+        {
+          "title": "Trial and Error: Exploration-Based Trajectory Optimization for LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Yifan Song",
+              "Da Yin",
+              "Xiang Yue",
+              "Jie Huang",
+              "Sujian Li",
+              "Bill Yuchen Lin"
+            ],
+            "year": 2024,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2403.02502v2",
+              "https://arxiv.org/pdf/2403.02502v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2024-Trial-and-Error-Exploration-Based-Trajectory-Optimization-for-LLM-Agents.pdf",
+            "tags": [
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "只模仿专家成功轨迹会浪费智能体自己的失败经验。ETO 把探索失败与后续成功组成对比轨迹，使模型学习哪些决策需要改变。\n\n核心概念\n- 主动探索：让当前策略在环境中产生真实失败。\n- 对比轨迹：把较差路径和改进路径配成偏好样本。\n- DPO 更新：直接提高较优轨迹的相对概率。\n- 迭代飞轮：新策略继续探索并产生下一轮训练数据。",
+          "method": "每一轮先用智能体采样任务轨迹，再从失败中构造偏好对，使用对比学习更新策略并重复。\n\n方法结构\n- 环境交互：收集任务完成和失败原因。\n- 偏好配对：组织失败轨迹与更优轨迹。\n- 策略优化：使用 DPO 等方法训练。\n- 循环迭代：以新策略继续生成更难、更有信息的经验。",
+          "innovation": "它把失败轨迹从应被丢弃的噪声变成训练数据，并展示在缺少专家演示时仍可形成持续改进。",
+          "experiments": "在三个复杂智能体任务上与只使用专家轨迹和其他基线比较，并评估任务效率及无专家设置。",
+          "metrics": "相对监督微调，论文报告挑战任务平均性能提高 22%。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先看对比轨迹如何配对，再读 DPO 训练和迭代停止条件，最后核对无专家演示实验。"
+        },
+        {
+          "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+          "basic_info": {
+            "authors": [
+              "Tianxin Wei",
+              "Noveen Sachdeva",
+              "Benjamin Coleman",
+              "Zhankui He",
+              "Yuanchen Bei",
+              "Xuying Ning",
+              "Mengting Ai",
+              "Yunzhe Li",
+              "Jingrui He",
+              "Ed H. Chi",
+              "Chi Wang",
+              "Shuo Chen",
+              "Fernando Pereira",
+              "Wang-Cheng Kang",
+              "Derek Zhiyuan Cheng"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2511.20857v2",
+              "https://arxiv.org/pdf/2511.20857v2"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "benchmark",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "传统记忆评测多是从静态对话中找答案，不能判断智能体是否会在任务流中积累并复用经验。Evo-Memory 把记忆放进连续任务流中评估。\n\n核心概念\n- 流式任务：数据按顺序到达，后续任务可受前序经验帮助。\n- 持续更新：每次交互后检索、整合和改写记忆。\n- 经验复用：区分保存事实与保存解决策略。\n- 模块对比：统一实现十余种代表性记忆方法。",
+          "method": "基准把十套多轮目标任务、单轮推理和问答数据重排为任务流，并提供 ExpRAG 与 ReMem 两个经验学习基线。\n\n方法结构\n- 顺序化数据：保持时间顺序和跨任务依赖。\n- ExpRAG：检索既往经验辅助当前任务。\n- ReMem：执行动作、思考、更新并精炼记忆。\n- 统一协议：比较十余种记忆模块的持续改进曲线。",
+          "innovation": "它把记忆评测目标从一次性检索正确率改成随部署推进的学习曲线，并同时提供统一实现和新的记忆更新基线。",
+          "experiments": "覆盖 10 套数据，比较十余种记忆模块、ExpRAG 和 ReMem，分析多轮目标任务与单轮推理问答的差异。",
+          "metrics": "无",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先读任务流构造和评测协议，再看 ExpRAG 与 ReMem，最后检查各记忆模块随任务序号变化的曲线。"
+        },
+        {
+          "title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+          "basic_info": {
+            "authors": [
+              "Jinyuan Fang",
+              "Yanwen Peng",
+              "Xi Zhang",
+              "Yingxu Wang",
+              "Xinhao Yi",
+              "Guibin Zhang",
+              "Yi Xu",
+              "Bin Wu",
+              "Siwei Liu",
+              "Zihao Li",
+              "Zhaochun Ren",
+              "Nikos Aletras",
+              "Xi Wang",
+              "Han Zhou",
+              "Zaiqiao Meng"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2508.07407v2",
+              "https://arxiv.org/pdf/2508.07407v2"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "survey",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "多数智能体部署后仍依赖人工修改配置，缺少从交互反馈持续适应的闭环。综述建立统一框架，解释智能体系统能进化什么、由谁优化以及如何评估风险。\n\n核心概念\n- 系统输入：任务、数据、环境反馈和用户信号。\n- 智能体系统：模型、记忆、工具、提示和工作流。\n- 环境：提供结果、约束与长期变化。\n- 优化器：负责选择、更新和验证进化动作。\n- 领域约束：编程、生物医学和金融的优化目标并不相同。",
+          "method": "综述以输入、智能体、环境、优化器四组件反馈环组织文献，再按被更新的系统部分、反馈形式和应用领域分类。\n\n方法结构\n- 概念边界：区分静态智能体、在线适应和真正持续进化。\n- 组件级进化：模型参数、记忆、工具和架构。\n- 反馈机制：标量奖励、文本批评、验证器和人类反馈。\n- 领域策略：分析不同专业场景的约束。\n- 治理问题：专门讨论评测、安全和伦理。",
+          "innovation": "价值在于把分散的自改进方法放进同一闭环，并明确进化对象和优化器角色，便于比较只改记忆、改策略或改整个工作流的方法。",
+          "experiments": "综述论文不提出单一新实验，主要系统整理已有方法、应用、评测与安全问题。",
+          "metrics": "无",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先读四组件反馈环和术语边界，再按模型、记忆、工具、架构四类进化方式阅读，最后看评测与安全章节。"
+        },
+        {
+          "title": "SEVerA: Verified Synthesis of Self-Evolving Agents",
+          "basic_info": {
+            "authors": [
+              "Debangshu Banerjee",
+              "Changming Xu",
+              "Eugene Ie",
+              "Ming Zhang",
+              "Daiyi Peng",
+              "Chu-Cheng Lin",
+              "Gagandeep Singh"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "http://arxiv.org/abs/2603.25111v2",
+              "https://arxiv.org/pdf/2603.25111v2"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-SEVerA-Verified-Synthesis-of-Self-Evolving-Agents.pdf",
+            "tags": [
+              "benchmark",
+              "latest-sota",
+              "replication-friendly",
+              "method"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "自进化智能体会自动生成和优化可执行程序，但性能提升不能以违反硬约束为代价。SEVerA 把形式化验证嵌入生成模型调用和后续学习。\n\n核心概念\n- 硬约束：必须对所有输入和参数都成立。\n- 软目标：在满足安全或正确性后继续提高任务效用。\n- 形式化输出契约：每次生成调用都声明一阶逻辑条件。\n- 验证后学习：先证明约束，再进行梯度优化。",
+          "method": "FGGM 用拒绝采样和已验证回退保证每次模型调用满足契约；SEVerA 再按搜索、验证、学习三阶段合成并优化智能体程序。\n\n方法结构\n- 搜索：生成包含受约束模型调用的候选程序。\n- 验证：对所有参数证明硬约束。\n- 回退：若采样不满足契约则返回已验证结果。\n- 学习：用 GRPO 等方法优化软目标而不破坏约束。",
+          "innovation": "它将形式化保证从最终程序扩展到程序内部的生成模型调用，并把验证问题与后续无约束性能学习分离。",
+          "experiments": "在 Dafny 程序验证、符号数学合成和策略合规工具使用基准上，与无约束方法及当时最佳基线比较。",
+          "metrics": "三类任务均实现 0 次约束违反，同时性能超过无约束和当时最佳比较方法。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先读 FGGM 契约语义和回退保证，再看三阶段流程，最后核对零违规口径与性能提升是否在同一测试集上比较。"
+        },
+        {
+          "title": "VerlTool: Towards Holistic Agentic Reinforcement Learning with Tool Use",
+          "basic_info": {
+            "authors": [
+              "Dongfu Jiang",
+              "Yi Lu",
+              "Zhuofeng Li",
+              "Zhiheng Lyu",
+              "Ping Nie",
+              "Haozhe Wang",
+              "Alex Su",
+              "Hui Chen",
+              "Kai Zou",
+              "Chao Du",
+              "Tianyu Pang",
+              "Wenhu Chen"
+            ],
+            "year": 2026,
+            "venue": "LLA 2026",
+            "links": [
+              "https://openreview.net/forum?id=z9MXthgwQf",
+              "https://openreview.net/pdf?id=z9MXthgwQf"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method",
+              "benchmark",
+              "replication-friendly"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "智能体强化学习代码常围绕单一任务搭建，难以扩展工具、模态和算法。VerlTool 提供与 VeRL 对齐的统一基础设施，目标是让不同工具任务共享训练主干。\n\n核心概念\n- 统一工具接口：覆盖代码、搜索、SQL、视觉等工具。\n- 多模态观察：轨迹可包含文本、图像和视频标记。\n- 异步轨迹：消除同步工具调用造成的等待。\n- 插件化扩展：用轻量 Python 定义新增工具。\n- 上游对齐：保持与 VeRL 的维护和算法兼容性。",
+          "method": "框架把智能体强化学习形式化为多轮轨迹，工具管理器负责调用和观察，异步执行器并发产生轨迹，训练器复用 VeRL 更新策略。\n\n方法结构\n- 工具注册：标准化输入输出与错误处理。\n- 异步采样：并发执行不同延迟的工具。\n- 多模态轨迹：统一保存动作、观察和奖励。\n- 训练与评估：跨六个领域复用相同框架。",
+          "innovation": "其创新主要在系统层：把分散的任务专用实现统一为可维护、可扩展且支持多模态工具的训练基础设施。",
+          "experiments": "覆盖数学推理、知识问答、SQL、视觉推理、网页搜索和软件工程六个领域，与任务专用系统比较效果和采样速度。",
+          "metrics": "异步轨迹执行接近 2 倍加速；六个领域整体达到与任务专用系统相当的性能。",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先看系统总图和工具接口，再读异步执行调度，最后核对六领域任务配置和速度测量。"
+        },
+        {
+          "title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+          "basic_info": {
+            "authors": [
+              "Yuxuan Cai",
+              "Yipeng Hao",
+              "Jie Zhou",
+              "Hang Yan",
+              "Zhikai Lei",
+              "Rui Zhen",
+              "Zhenhua Han",
+              "Yutao Yang",
+              "Junsong Li",
+              "Qianjun Pan",
+              "Tianyu Huai",
+              "Qin Chen",
+              "Xin Li",
+              "Kai Chen",
+              "Bo Zhang",
+              "Xipeng Qiu",
+              "Liang He"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "https://arxiv.org/abs/2508.19005",
+              "https://arxiv.org/pdf/2508.19005"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "benchmark",
+              "method",
+              "dataset"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "持续成长的智能体不能只在固定数据上优化，它需要主动获得经验、长期保存、抽象成技能并最终内化。ELL 给出从环境交互到能力增长的完整框架，并用 StuLife 测试。\n\n核心概念\n- 经验探索：主动与动态环境交互并生成相互依赖的轨迹。\n- 长期记忆：保存个人经验、领域知识和常识。\n- 技能学习：从重复模式中抽象、验证并复用技能。\n- 知识内化：把显式经验转成更直接的行为能力。\n- 主动性：从被动响应转向自发寻找学习机会。",
+          "method": "框架围绕四阶段循环运行；StuLife 用大学生活的连续状态、任务和选择检验记忆、迁移和自主行为。\n\n方法结构\n- 环境交互：在不断变化的学生状态下完成任务。\n- 记忆维护：跨阶段保存课程、人际与个人目标。\n- 技能抽象：提炼可跨场景复用的解决程序。\n- 内化与迁移：在新任务中减少显式检索依赖。\n- 三阶段十场景：覆盖入学、学习与个人发展。",
+          "innovation": "论文把自进化从单次反思扩展为经验、记忆、技能、内化的长期循环，并提供具备时间状态变化的完整评测环境。",
+          "experiments": "在 StuLife 上评估多种前沿语言模型与上下文工程方案，考察记忆保持、技能迁移和自发行为。",
+          "metrics": "无",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先读四原则，再看 StuLife 的三阶段十场景和状态变量，最后核对记忆、迁移、主动性三个评测维度。"
+        },
+        {
+          "title": "BenchTrace: A Benchmark for Testing Reflection Ability and Controlled Evolution in LLM Agents",
+          "basic_info": {
+            "authors": [
+              "Jiahao Huang",
+              "Fei Cheng",
+              "Junfeng Jiang",
+              "Zefan Yu",
+              "Akiko Aizawa"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "https://arxiv.org/abs/2605.29225",
+              "https://arxiv.org/pdf/2605.29225"
+            ],
+            "pdf_status": "downloaded_and_extracted",
+            "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-BenchTrace-A-Benchmark-for-Testing-Reflection-Ability-and-Controlled-Evolution-in-LLM-Agents.pdf",
+            "tags": [
+              "benchmark",
+              "dataset",
+              "latest-sota"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "任务分数提高并不证明反思正确，也无法定位某种失败是否被真正避免。BenchTrace 把反思诊断和受控进化分开评测。\n\n核心概念\n- 快照反思：从具体失败片段提问，检查是否识别根因。\n- 反思评测：分别测失败定位、诊断和修正建议。\n- 受控进化：把指定失败经验注入后续模拟。\n- 失败避免率：计算智能体是否避开目标失败。\n- 遗忘与负迁移：观察噪声积累和跨场景泛化。",
+          "method": "数据集包含 1821 个标注回合和六类任务；评测先问反思问题，再在可控环境中测试经验是否改变后续行为。\n\n方法结构\n- 失败快照标注：定位轨迹中的目标失败。\n- 定向问答：测试识别、诊断和改进。\n- 经验注入：控制给智能体哪些历史失败。\n- 行为仿真：测量后续是否避免同类错误。\n- 相关分析：比较反思质量与失败避免率。",
+          "innovation": "它首次把反思文本质量和实际行为改进建立受控对应关系，能够区分看似合理但无行为价值的反思。",
+          "experiments": "使用 Qwen3-32B 和 GPT-4.1，在六类任务上评估端到端反思、失败避免、噪声累积、遗忘和跨情境迁移。",
+          "metrics": "两种模型端到端反思通过率均低于 30%；完整正确的反思与更高失败避免率有强相关。",
+          "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+          "reading_guide": "先看 1821 回合如何标注，再读失败避免率定义，最后核对诊断瓶颈、遗忘和负迁移实验。"
+        },
+        {
+          "title": "EXG: Self-Evolving Agents with Experience Graphs",
+          "basic_info": {
+            "authors": [
+              "Yuxin Jin",
+              "Siyuan Zhang",
+              "Hanchen Wang",
+              "Lu Qin",
+              "Ying Zhang",
+              "Wenjie Zhang"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "https://arxiv.org/abs/2605.17721",
+              "https://arxiv.org/pdf/2605.17721"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method",
+              "benchmark",
+              "replication-friendly"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "自由文本反思和线性记忆容易积累碎片，难以跨任务定位可复用经验。EXG 用图显式连接任务、状态、动作、成功和失败。\n\n核心概念\n- 关系化经验：把经验单元及其因果或相似关系连成图。\n- 在线增长：执行过程中实时加入新经验。\n- 离线复用：将整理后的图作为外部记忆加载。\n- 成功与失败统一：既保存有效策略，也保存应避免路径。\n- 插件模式：可接入既有自进化智能体。",
+          "method": "智能体在每次任务后抽取经验节点与关系，查询图中的相关子图辅助新任务，并持续合并或修正经验。\n\n方法结构\n- 经验抽取：从轨迹识别任务条件、动作和结果。\n- 图更新：建立相似、前置、促进或冲突关系。\n- 子图检索：为当前任务取回结构化经验。\n- 在线与离线模式：分别支持即时成长和预构建记忆。",
+          "innovation": "创新在于将经验从独立文本条目升级为可查询的关系图，并同时覆盖在线成长和离线插件两种使用方式。",
+          "experiments": "在代码生成和推理基准上比较反思方法、非结构化记忆和 EXG 的在线、离线模式，同时测量性能与资源消耗。",
+          "metrics": "无",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先看图模式和关系类型，再读在线更新与子图检索，最后核对性能、存储和调用成本曲线。"
+        },
+        {
+          "title": "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective",
+          "basic_info": {
+            "authors": [
+              "Yuyao Wang",
+              "Zhongjian Zhang",
+              "Mo Chi",
+              "Kaichi Yu",
+              "Yuhan Li",
+              "Miao Peng",
+              "Bing Tong",
+              "Chen Zhang",
+              "Yan Zhou",
+              "Jia Li"
+            ],
+            "year": 2026,
+            "venue": "arXiv",
+            "links": [
+              "https://arxiv.org/abs/2605.18421",
+              "https://arxiv.org/pdf/2605.18421"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "benchmark",
+              "dataset",
+              "replication-friendly"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "不同记忆方法常在不同任务和协议下报告，无法判断何种记忆真正适合持续进化。EvoMemBench 用统一二维框架比较知识记忆和执行记忆。\n\n核心概念\n- 记忆范围：区分单回合内部和跨回合记忆。\n- 记忆内容：区分知识导向和执行导向。\n- 长上下文基线：检验复杂记忆是否优于直接保留历史。\n- 任务匹配：记忆形式必须与任务结构相符。\n- 统一协议：在同一模型和预算下比较 15 种方法。",
+          "method": "基准按范围和内容组织任务，将 15 种记忆方法与强长上下文基线放在标准化协议中评估。\n\n方法结构\n- 四象限任务：组合回合范围与记忆内容。\n- 知识任务：测试事实保存、更新和检索。\n- 执行任务：测试程序、策略和历史动作复用。\n- 受控预算：统一上下文、存储和检索设置。\n- 方法对照：比较检索式、程序式和长期记忆。",
+          "innovation": "它不预设某种记忆架构优越，而是揭示记忆有效性取决于上下文是否不足、任务难度和经验与任务结构的匹配。",
+          "experiments": "统一比较 15 种代表性记忆方法与长上下文基线，覆盖单回合、跨回合、知识和执行四类设置。",
+          "metrics": "无",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先看二维分类和任务覆盖，再核对 15 种方法的预算是否公平，最后关注长上下文仍具竞争力的条件。"
+        },
+        {
+          "title": "From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory",
+          "basic_info": {
+            "authors": [
+              "Yishuo Cai",
+              "Xingyu Guo",
+              "Xuancheng Huang",
+              "Jinhua Du",
+              "Can Huang",
+              "Wenxuan Huang",
+              "Wenhan Ma",
+              "Yuyang Hu",
+              "Aohan Zeng",
+              "Jie Tang",
+              "Xu Sun"
+            ],
+            "year": 2026,
+            "venue": "ICML 2026",
+            "links": [
+              "https://openreview.net/forum?id=gNWNtstp3r",
+              "https://openreview.net/pdf?id=gNWNtstp3r"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method",
+              "benchmark",
+              "replication-friendly"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "手写提示驱动的记忆更新不一定服务于长期任务结果。MemoPilot 冻结主智能体，只训练一个记忆副驾驶，使记忆内容直接为后续表现负责。\n\n核心概念\n- 冻结执行模型：不改变主语言模型参数。\n- 可训练记忆更新器：决定每轮保留、压缩和改写什么。\n- 多轮决策：记忆动作的价值由后续多轮表现体现。\n- 逐轮奖励：用下一轮结果提供更及时信号。\n- 同轮优势：跨采样比较同一轮的记忆更新。",
+          "method": "MemoPilot 把记忆写作视为多轮策略，用 multi-turn GRPO、逐轮代理回报和与上下文无关的轮级优势进行端到端训练。\n\n方法结构\n- 交互记录：收集当前游戏状态和历史记忆。\n- 记忆动作：生成下一轮可用的压缩策略。\n- 代理回报：用下一局表现评价当前记忆。\n- 组内比较：在相同轮次跨采样计算优势。\n- 迁移：将训练好的记忆器接到更强的冻结玩家。",
+          "innovation": "关键贡献是把记忆更新本身变成可强化学习的策略，而不是把记忆视为固定提示模板。",
+          "experiments": "在多轮石头剪刀布和有限德州扑克上，使用 Qwen2.5-14B 训练，并零样本迁移到 Qwen3-235B-A22B，与无记忆、完整历史和多种记忆方法比较。",
+          "metrics": "Elo 排名中有限德州扑克 1762，石头剪刀布 1590，均为第一；Qwen2.5-14B 玩家在第五轮的两个任务得分分别为 3.28 和 2.03。",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先看记忆策略的决策过程，再读轮级优势和代理回报，最后核对两个玩家规模的迁移与 Elo 计算。"
+        },
+        {
+          "title": "AgentEvolver: Towards Efficient Self-Evolving Agent System",
+          "basic_info": {
+            "authors": [
+              "Yunpeng Zhai",
+              "Shuchang Tao",
+              "Cheng Chen",
+              "Anni Zou",
+              "Ziqian Chen",
+              "Qingxu Fu",
+              "Shinji Mai",
+              "Li Yu",
+              "Jiaji Deng",
+              "Zouying Cao",
+              "Zhaoyang Liu",
+              "Bolin Ding",
+              "Jingren Zhou"
+            ],
+            "year": 2025,
+            "venue": "arXiv",
+            "links": [
+              "https://arxiv.org/abs/2511.10395",
+              "https://arxiv.org/pdf/2511.10395"
+            ],
+            "pdf_status": "abstract_or_metadata_only",
+            "pdf_path": null,
+            "tags": [
+              "method",
+              "benchmark",
+              "replication-friendly"
+            ],
+            "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+          },
+          "what_why": "人工造任务、随机探索和整轨迹奖励让智能体强化学习昂贵低效。AgentEvolver 让模型自己提出任务、利用经验导航，并细分状态动作贡献。\n\n核心概念\n- 自提问：基于环境语义主动生成可学习任务。\n- 自导航：复用经验并结合混合策略引导探索。\n- 自归因：区分轨迹中不同状态和动作的贡献。\n- 样本复用：从已有成功和失败中提取更密集训练信号。\n- 持续循环：任务生成、探索和更新相互促进。",
+          "method": "系统把三种机制组合成统一飞轮，从当前能力边界生成任务，用经验导航收集轨迹，再做细粒度信用分配。\n\n方法结构\n- 能力探测：发现尚未掌握但可学习的任务。\n- 任务生成：减少人工构造数据依赖。\n- 混合导航：在模型策略与经验路径之间选择。\n- 状态动作归因：为关键转移分配差异化奖励。\n- 循环训练：更新后重新探测能力边界。",
+          "innovation": "它将课程生成、探索策略和信用分配统一为自进化系统，而不是单独优化强化学习算法的一环。",
+          "experiments": "初步实验与传统强化学习基线比较任务构造成本、探索效率、样本利用和适应速度。",
+          "metrics": "无",
+          "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+          "reading_guide": "先看三种自机制的接口，再读任务生成与经验导航如何避免循环偏差，最后核对自归因和样本效率实验。"
+        }
+      ]
+    },
+    {
+      "batch_label": "Agent 选题形成：正式会议锚点",
+      "source_hash": "3d8268c9997f23261c4b42d9006442c26cb14770c96e3450aca03e9798445e38",
+      "summary_ids": [
+        "link:https://proceedings.mlr.press/v162/huang22a.html",
+        "link:https://react-lm.github.io/",
+        "link:https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-abstract-conference.html",
+        "link:https://proceedings.neurips.cc/paper/2022/hash/82ad13ec01f9d4c21a7e16fd0e1d2a18-abstract-conference.html",
+        "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/e9df36b21ff4ee211a8b71ee8b7e9f57-abstract-conference.html",
+        "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/28e50ee5b72e90b50e7196fde8ea260e-abstract-conference.html",
+        "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/25ae35b5b1738d80f1f03a8713e405ec-abstract-conference.html",
+        "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-abstract-conference.html",
+        "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-abstract-conference.html",
+        "link:https://aclanthology.org/2024.acl-long.850/",
+        "link:https://github.com/xlang-ai/osworld",
+        "link:https://openreview.net/forum?id=ronsxzpudn"
+      ],
+      "summaries": [
+        {
+          "title": "Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents",
+          "basic_info": {
+            "year": 2022,
+            "venue": "ICML 2022",
+            "tags": [
+              "method",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.mlr.press/v162/huang22a.html",
+              "https://proceedings.mlr.press/v162/huang22a/huang22a.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICML 2022 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "预训练语言模型虽含常识，但如何把文本知识转成可执行动作序列并处理环境反馈仍不清楚。\n\n核心问题\n- 任务边界：ALFRED 等具身任务与环境交互。\n- 研究主张：以语言模型生成候选动作，再由价值函数选择可执行动作，可在具身任务中利用零样本知识。",
+          "method": "方法概述：以语言模型生成候选动作，再由价值函数选择可执行动作，可在具身任务中利用零样本知识。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：以语言模型生成候选动作，再由价值函数选择可执行动作，可在具身任务中利用零样本知识。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "以语言模型生成候选动作，再由价值函数选择可执行动作，可在具身任务中利用零样本知识。",
+          "experiments": "数据集或环境：ALFRED 等具身任务与环境交互。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：任务成功率；具体数值需在原文表格核验。",
+          "reliability_limits": "局限与失败条件：价值函数与语言模型的组合对环境假设、动作空间和可见状态敏感。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+          "basic_info": {
+            "year": 2023,
+            "venue": "ICLR 2023",
+            "tags": [
+              "method",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://react-lm.github.io/",
+              "https://arxiv.org/pdf/2210.03629",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2023 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "只推理会脱离外部事实，只行动又难以维持计划和解释。\n\n核心问题\n- 任务边界：HotpotQA、FEVER、ALFWorld、WebShop 与 Wikipedia API。\n- 研究主张：交错生成推理轨迹与动作，可把外部观察反馈写回后续决策。",
+          "method": "方法概述：交错生成推理轨迹与动作，可把外部观察反馈写回后续决策。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：交错生成推理轨迹与动作，可把外部观察反馈写回后续决策。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "交错生成推理轨迹与动作，可把外部观察反馈写回后续决策。",
+          "experiments": "数据集或环境：HotpotQA、FEVER、ALFWorld、WebShop 与 Wikipedia API。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：任务成功率；官方论文报告其在 ALFWorld、WebShop 相比模仿或强化学习基线的绝对成功率提升分别为 34 和 10 个百分点。",
+          "reliability_limits": "局限与失败条件：提示格式、示例选择和工具反馈质量会显著影响结果；该方法本身不解决训练信用分配。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+          "basic_info": {
+            "year": 2023,
+            "venue": "NeurIPS 2023",
+            "tags": [
+              "method",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+              "https://proceedings.neurips.cc/paper_files/paper/2023/file/d842425e4bf79ba039352da0f658a906-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 NeurIPS 2023 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "工具调用训练常依赖大量人工标注，且很难让模型学会何时调用和如何整合返回结果。\n\n核心问题\n- 任务边界：计算器、问答、搜索、翻译、日历等 API。\n- 研究主张：用少量演示自监督生成 API 调用训练信号，使模型学习选择、参数化并使用工具结果。",
+          "method": "方法概述：用少量演示自监督生成 API 调用训练信号，使模型学习选择、参数化并使用工具结果。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：用少量演示自监督生成 API 调用训练信号，使模型学习选择、参数化并使用工具结果。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "用少量演示自监督生成 API 调用训练信号，使模型学习选择、参数化并使用工具结果。",
+          "experiments": "数据集或环境：计算器、问答、搜索、翻译、日历等 API。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：下游零样本表现；官方页称其可在多项任务上获得改进且不牺牲基础语言能力，具体数值需按任务表格引用。",
+          "reliability_limits": "局限与失败条件：工具集合固定且调用语法受控，不能直接代表动态、多轮、带权限约束的真实工具环境。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+          "basic_info": {
+            "year": 2022,
+            "venue": "NeurIPS 2022",
+            "tags": [
+              "method",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.neurips.cc/paper/2022/hash/82ad13ec01f9d4c21a7e16fd0e1d2a18-Abstract-Conference.html",
+              "https://proceedings.neurips.cc/paper_files/paper/2022/file/82ad13ec01f9d4c21a7e16fd0e1d2a18-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 NeurIPS 2022 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "开放网页交互的目标条件复杂、搜索空间大，纯文本问答无法测到真实操作链。\n\n核心问题\n- 任务边界：网页购物环境、商品检索与多步骤交互。\n- 研究主张：构建具有真实商品属性与交互步骤的网页购物环境，用可验证奖励评测智能体。",
+          "method": "方法概述：构建具有真实商品属性与交互步骤的网页购物环境，用可验证奖励评测智能体。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：构建具有真实商品属性与交互步骤的网页购物环境，用可验证奖励评测智能体。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "构建具有真实商品属性与交互步骤的网页购物环境，用可验证奖励评测智能体。",
+          "experiments": "数据集或环境：网页购物环境、商品检索与多步骤交互。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：任务奖励与成功率；具体数值需按官方论文表格核验。",
+          "reliability_limits": "局限与失败条件：模拟网站与真实网站仍有差距，且奖励设计会影响策略行为。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "AgentBench: Evaluating LLMs as Agents",
+          "basic_info": {
+            "year": 2024,
+            "venue": "ICLR 2024",
+            "tags": [
+              "benchmark",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.iclr.cc/paper_files/paper/2024/hash/e9df36b21ff4ee211a8b71ee8b7e9f57-Abstract-Conference.html",
+              "https://proceedings.iclr.cc/paper_files/paper/2024/file/e9df36b21ff4ee211a8b71ee8b7e9f57-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "单一任务或单一框架难以衡量智能体跨环境能力。\n\n核心问题\n- 任务边界：八类环境；官方页提供代码与数据。\n- 研究主张：以八类异构环境系统比较语言模型作为智能体时的能力与局限。",
+          "method": "方法概述：以八类异构环境系统比较语言模型作为智能体时的能力与局限。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：以八类异构环境系统比较语言模型作为智能体时的能力与局限。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "以八类异构环境系统比较语言模型作为智能体时的能力与局限。",
+          "experiments": "数据集或环境：八类环境；官方页提供代码与数据。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：各环境的任务得分；无单一统一指标。",
+          "reliability_limits": "局限与失败条件：跨环境封装与提示协议仍可能影响排名，不能把综合分数视为机制解释。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-World APIs",
+          "basic_info": {
+            "year": 2024,
+            "venue": "ICLR 2024",
+            "tags": [
+              "method",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.iclr.cc/paper_files/paper/2024/hash/28e50ee5b72e90b50e7196fde8ea260e-Abstract-Conference.html",
+              "https://proceedings.iclr.cc/paper_files/paper/2024/file/28e50ee5b72e90b50e7196fde8ea260e-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "真实 API 数量大、文档异构且调用链长，少量手工工具集不足以代表现实工具学习。\n\n核心问题\n- 任务边界：ToolBench、ToolEval、16,464 个 API、49 类。\n- 研究主张：从 49 个类别的 16,464 个真实 API 构建训练与评测框架 ToolBench/ToolEval。",
+          "method": "方法概述：从 49 个类别的 16,464 个真实 API 构建训练与评测框架 ToolBench/ToolEval。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：从 49 个类别的 16,464 个真实 API 构建训练与评测框架 ToolBench/ToolEval。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "从 49 个类别的 16,464 个真实 API 构建训练与评测框架 ToolBench/ToolEval。",
+          "experiments": "数据集或环境：ToolBench、ToolEval、16,464 个 API、49 类。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：工具调用完成质量与评测器判断；具体数值需以官方表格为准。",
+          "reliability_limits": "局限与失败条件：API 可用性与文档版本会改变实验条件，自动评测器本身也需校准。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "GAIA: a benchmark for General AI Assistants",
+          "basic_info": {
+            "year": 2024,
+            "venue": "ICLR 2024",
+            "tags": [
+              "benchmark",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25ae35b5b1738d80f1f03a8713e405ec-Abstract-Conference.html",
+              "https://proceedings.iclr.cc/paper_files/paper/2024/file/25ae35b5b1738d80f1f03a8713e405ec-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "对人类概念简单的多模态、检索与工具问题，现有通用助手仍常失败。\n\n核心问题\n- 任务边界：GAIA 466 个问题与公开排行榜。\n- 研究主张：提出 466 个需要推理、多模态、网页浏览与工具使用的真实问题，并保留部分答案用于排行榜。",
+          "method": "方法概述：提出 466 个需要推理、多模态、网页浏览与工具使用的真实问题，并保留部分答案用于排行榜。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：提出 466 个需要推理、多模态、网页浏览与工具使用的真实问题，并保留部分答案用于排行榜。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "提出 466 个需要推理、多模态、网页浏览与工具使用的真实问题，并保留部分答案用于排行榜。",
+          "experiments": "数据集或环境：GAIA 466 个问题与公开排行榜。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：正确率；官方页报告人类 92%，带插件的 GPT-4 为 15%。",
+          "reliability_limits": "局限与失败条件：任务规模有限，排行榜与题目暴露会带来污染风险；成功率不能解释具体失败步骤。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "SWE-bench: Can Language Models Resolve Real-world GitHub Issues?",
+          "basic_info": {
+            "year": 2024,
+            "venue": "ICLR 2024",
+            "tags": [
+              "benchmark",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-Abstract-Conference.html",
+              "https://proceedings.iclr.cc/paper_files/paper/2024/file/edac78c3e300629acfe6cbe9ca88fb84-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "现实软件问题常跨文件、长上下文并要求在执行环境中验证，传统代码生成评测覆盖不足。\n\n核心问题\n- 任务边界：2,294 个问题、12 个 Python 仓库、真实测试。\n- 研究主张：把真实 GitHub issue 与对应修复提交连接为可执行评测，要求智能体生成能通过测试的补丁。",
+          "method": "方法概述：把真实 GitHub issue 与对应修复提交连接为可执行评测，要求智能体生成能通过测试的补丁。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：把真实 GitHub issue 与对应修复提交连接为可执行评测，要求智能体生成能通过测试的补丁。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "把真实 GitHub issue 与对应修复提交连接为可执行评测，要求智能体生成能通过测试的补丁。",
+          "experiments": "数据集或环境：2,294 个问题、12 个 Python 仓库、真实测试。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：解决率；官方页报告当时最佳 Claude 2 为 1.96%。",
+          "reliability_limits": "局限与失败条件：数据污染、测试覆盖不全与基础设施差异会影响分数；单一解决率不呈现失败机制。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+          "basic_info": {
+            "year": 2024,
+            "venue": "ICLR 2024",
+            "tags": [
+              "method",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-Abstract-Conference.html",
+              "https://proceedings.iclr.cc/paper_files/paper/2024/file/4410c0711e9154a7a2d26f9b3816d1ef-Paper-Conference.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "现实网页任务需要跨站点、多步、状态相关的浏览与操作，静态网页基准不足。\n\n核心问题\n- 任务边界：四类网站环境与跨站任务。\n- 研究主张：搭建电商、社交论坛、协作软件和内容管理系统组成的可控网页环境。",
+          "method": "方法概述：搭建电商、社交论坛、协作软件和内容管理系统组成的可控网页环境。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：搭建电商、社交论坛、协作软件和内容管理系统组成的可控网页环境。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "搭建电商、社交论坛、协作软件和内容管理系统组成的可控网页环境。",
+          "experiments": "数据集或环境：四类网站环境与跨站任务。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：任务成功率；官方页报告其当时 GPT-4 智能体为 14.41%，人类为 78.24%。",
+          "reliability_limits": "局限与失败条件：环境仍是模拟实现，版本、登录状态和动作接口会影响结论。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents",
+          "basic_info": {
+            "year": 2024,
+            "venue": "ACL 2024 Long Paper",
+            "tags": [
+              "benchmark",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://aclanthology.org/2024.acl-long.850/",
+              "https://aclanthology.org/2024.acl-long.850.pdf",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ACL 2024 Long Paper Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "真实应用交互不可控、难复现，导致交互式代码智能体的评测与错误分析困难。\n\n核心问题\n- 任务边界：AppWorld 环境与官方仓库。\n- 研究主张：构建包含应用、人物与 API 的可控世界，以端到端任务验证交互式编码智能体。",
+          "method": "方法概述：构建包含应用、人物与 API 的可控世界，以端到端任务验证交互式编码智能体。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：构建包含应用、人物与 API 的可控世界，以端到端任务验证交互式编码智能体。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "构建包含应用、人物与 API 的可控世界，以端到端任务验证交互式编码智能体。",
+          "experiments": "数据集或环境：AppWorld 环境与官方仓库。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：任务成功率；具体结果需按 ACL 正文表格核验。",
+          "reliability_limits": "局限与失败条件：受控世界不等于生产应用；接口设计与任务分布可能限制外推。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+          "basic_info": {
+            "year": 2024,
+            "venue": "NeurIPS 2024",
+            "tags": [
+              "benchmark",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://github.com/xlang-ai/OSWorld",
+              "https://arxiv.org/pdf/2404.07972",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 NeurIPS 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "真实桌面操作存在视觉、应用状态与长程依赖，网页或 API 基准难以覆盖。\n\n核心问题\n- 任务边界：OSWorld 真实计算机环境和官方代码。\n- 研究主张：以真实计算机系统中的开放式多模态任务评测计算机操作智能体。",
+          "method": "方法概述：以真实计算机系统中的开放式多模态任务评测计算机操作智能体。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：以真实计算机系统中的开放式多模态任务评测计算机操作智能体。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "以真实计算机系统中的开放式多模态任务评测计算机操作智能体。",
+          "experiments": "数据集或环境：OSWorld 真实计算机环境和官方代码。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：端到端任务成功率；具体数值需以 NeurIPS 论文正文和版本说明为准。",
+          "reliability_limits": "局限与失败条件：环境部署重、版本敏感；评测结果受模型视觉能力和动作延迟共同影响。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        },
+        {
+          "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+          "basic_info": {
+            "year": 2025,
+            "venue": "ICLR 2025",
+            "tags": [
+              "benchmark",
+              "classic",
+              "replication-friendly"
+            ],
+            "links": [
+              "https://openreview.net/forum?id=roNSXZpUDN",
+              "https://openreview.net/pdf?id=roNSXZpUDN",
+              "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+            ],
+            "evidence_tier": "正式会议官方论文页",
+            "publication_status": "正式 ICLR 2025 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+          },
+          "what_why": "工具智能体必须同时处理用户对话、领域政策和多轮状态，单次函数调用无法反映真实服务任务。\n\n核心问题\n- 任务边界：零售与航空领域环境及官方排行榜。\n- 研究主张：构建面向用户、工具与政策交互的多轮评测，并加入严格的多次运行成功要求。",
+          "method": "方法概述：构建面向用户、工具与政策交互的多轮评测，并加入严格的多次运行成功要求。\n\n主要子概念\n- 任务建模：将论文所述问题转化为可执行或可评价的任务。\n- 核心机制：构建面向用户、工具与政策交互的多轮评测，并加入严格的多次运行成功要求。\n- 反馈闭环：根据环境、工具或验证信号更新后续决策。",
+          "innovation": "构建面向用户、工具与政策交互的多轮评测，并加入严格的多次运行成功要求。",
+          "experiments": "数据集或环境：零售与航空领域环境及官方排行榜。\n\n基线：详见官方论文；本卡不在未逐表核验前补写完整基线名单。\n\n主张支持方式：正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+          "metrics": "指标：任务成功率与连续多次成功率；官方论文报告当时多数智能体成功率不足 50%，连续八次成功率不足 25%。",
+          "reliability_limits": "局限与失败条件：官方排行榜已标注部分旧 few-shot 结果因数据泄漏而弃用，说明协议和污染必须纳入复现实验。\n\n证据层级：正式会议官方论文页；置信度：高。",
+          "reading_guide": "优先阅读官方论文的摘要、方法、实验设置、主结果表和局限讨论。后续问题：在统一模型、预算和环境版本下，该结论是否仍成立？"
+        }
+      ]
+    }
+  ]
+}

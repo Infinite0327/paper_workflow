@@ -1,0 +1,77 @@
+dataset:
+  data_path: '$ALFWORLD_DATA/json_2.1.1/train'
+  eval_id_data_path: null
+  eval_ood_data_path: null
+  num_train_games: 2
+  num_eval_games: 0
+
+logic:
+  domain: '$ALFWORLD_DATA/logic/alfred.pddl'
+  grammar: '$ALFWORLD_DATA/logic/alfred.twl2'
+
+env:
+  type: 'AlfredTWEnv'
+  domain_randomization: false
+  task_types: [1]
+  expert_timeout_steps: 50
+  expert_type: 'handcoded'
+  goal_desc_human_anns_prob: 0.0
+
+general:
+  random_seed: 42
+  use_cuda: true
+  visdom: false
+  task: 'alfred'
+  training_method: 'dagger'
+  save_path: '$ALFWORLD_RUN/outputs/smoke_textworld'
+  observation_pool_capacity: 3
+  hide_init_receptacles: false
+  training:
+    batch_size: 1
+    max_episode: 10
+    smoothing_eps: 0.1
+    optimizer:
+      learning_rate: 0.001
+      clip_grad_norm: 5
+  evaluate:
+    run_eval: false
+    batch_size: 1
+    env:
+      type: 'AlfredTWEnv'
+  checkpoint:
+    report_frequency: 1
+    experiment_tag: 'alfworld_text_smoke'
+    load_pretrained: false
+    load_from_tag: 'not loading anything'
+  model:
+    encoder_layers: 1
+    decoder_layers: 1
+    encoder_conv_num: 5
+    block_hidden_dim: 64
+    n_heads: 1
+    dropout: 0.1
+    block_dropout: 0.1
+    recurrent: true
+
+dagger:
+  action_space: 'generation'
+  max_target_length: 20
+  beam_width: 1
+  generate_top_k: 1
+  unstick_by_beam_search: false
+  training:
+    max_nb_steps_per_episode: 20
+  fraction_assist:
+    fraction_assist_anneal_episodes: 10
+    fraction_assist_anneal_from: 1.0
+    fraction_assist_anneal_to: 0.1
+  fraction_random:
+    fraction_random_anneal_episodes: 0
+    fraction_random_anneal_from: 0.0
+    fraction_random_anneal_to: 0.0
+  replay:
+    replay_memory_capacity: 100
+    update_per_k_game_steps: 5
+    replay_batch_size: 2
+    replay_sample_history_length: 2
+    replay_sample_update_from: 1

@@ -1,0 +1,298 @@
+{"kind":"deck","id":"pr/10yii2","name":"Deck"}
+{"kind":"layout","layoutId":"98fd5ab8-8302-4569-b629-ed5f5c5d6669","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"d6c69024-9ee8-4906-93f9-0b9a783f591d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/jtcjeu","slide":1,"title":"导师讨论用证据包","textShapes":5}
+{"kind":"textbox","id":"sh/x472tc3m","slide":1,"name":"cover-kicker","text":"导师讨论用证据包","textPreview":"导师讨论用证据包","textChars":8,"textLines":1,"bbox":[64,54,260,22]}
+{"kind":"textbox","id":"sh/ahgjyx4b","slide":1,"name":"cover-title","text":"Agent 领域选题形成","textPreview":"Agent 领域选题形成","textChars":12,"textLines":1,"bbox":[64,166,840,86]}
+{"kind":"textbox","id":"sh/vipkr2lw","slide":1,"name":"cover-sub","text":"从领域地图到可证伪的最小实验","textPreview":"从领域地图到可证伪的最小实验","textChars":14,"textLines":1,"bbox":[68,274,720,42]}
+{"kind":"shape","id":"sh/8fy1w7m5","slide":1,"name":"cover-rule","bbox":[64,342,656,0]}
+{"kind":"shape","id":"sh/9g72pc3q","slide":1,"name":"cover-callout","bbox":[64,412,1010,98]}
+{"kind":"textbox","id":"sh/mdwjux4z","slide":1,"name":"cover-callout-text","text":"目的：形成可追溯的候选与论证，供导师讨论、质疑和进一步收敛；\n不声称已经确定可投稿选题。","textPreview":"目的：形成可追溯的候选与论证，供导师讨论、质疑和进一步收敛； | 不声称已经确定可投稿选题。","textChars":44,"textLines":2,"bbox":[88,434,950,55]}
+{"kind":"textbox","id":"sh/ne5kn2lk","slide":1,"name":"cover-foot","text":"正式论文、预印本和跨论文推测分开标记；本人选择保留待本人填写。","textPreview":"正式论文、预印本和跨论文推测分开标记；本人选择保留待本人填写。","textChars":31,"textLines":1,"bbox":[68,570,860,29]}
+{"kind":"notes","id":"nt/jtcjeu","slide":1,"text":"[Sources]\nhttps://www.ccf.org.cn/Academic_Evaluation/By_category/\n\n[讲解提示]\n用一句话界定汇报边界：这是选题形成，而非对 CCF-A 投稿的承诺。"}
+{"kind":"slide","id":"sl/akq29v","slide":2,"title":"研究目标","textShapes":12}
+{"kind":"textbox","id":"sh/2twvqpk3","slide":2,"name":"kicker","text":"研究目标","textPreview":"研究目标","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/pw7el4je","slide":2,"name":"title","text":"交付不再以“读了多少篇”为终点","textPreview":"交付不再以“读了多少篇”为终点","textChars":15,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/ovedsz2t","slide":2,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/bypwne1k","slide":2,"name":"page","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/qxgvu9kz","slide":2,"name":"message","bbox":[56,175,1168,74]}
+{"kind":"textbox","id":"sh/d07epojq","slide":2,"name":"message-text","text":"中心判断：Agent 研究正在从“能否完成任务”转向“如何训练、评测、复用经验并保持安全”。","textPreview":"中心判断：Agent 研究正在从“能否完成任务”转向“如何训练、评测、复用经验并保持安全”。","textChars":46,"textLines":1,"bbox":[80,197,1100,34]}
+{"kind":"textbox","id":"sh/czydwj25","slide":2,"name":"bullet-296","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[78,296,22,28]}
+{"kind":"textbox","id":"sh/zmpwre1g","slide":2,"name":"bullet-text-296","text":"170 条去重元数据构成宽检索池，覆盖后训练、记忆、工具/计算机操作、评测与安全。","textPreview":"170 条去重元数据构成宽检索池，覆盖后训练、记忆、工具/计算机操作、评测与安全。","textChars":41,"textLines":1,"bbox":[108,296,1110,44]}
+{"kind":"textbox","id":"sh/y1gvytkv","slide":2,"name":"bullet-360","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[78,360,22,28]}
+{"kind":"textbox","id":"sh/ov6dwvit","slide":2,"name":"bullet-text-360","text":"核心证据集保留 12 篇正式会议锚点与 12 篇近期前沿信号；二者不等权。","textPreview":"核心证据集保留 12 篇正式会议锚点与 12 篇近期前沿信号；二者不等权。","textChars":37,"textLines":1,"bbox":[108,360,1110,44]}
+{"kind":"textbox","id":"sh/pwfe50jy","slide":2,"name":"bullet-424","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[78,424,22,28]}
+{"kind":"textbox","id":"sh/29ovul0n","slide":2,"name":"bullet-text-424","text":"输出：方向地图、缺口清单、3 个候选问题、实验资源入口和研究决策记录。","textPreview":"输出：方向地图、缺口清单、3 个候选问题、实验资源入口和研究决策记录。","textChars":35,"textLines":1,"bbox":[108,424,1110,44]}
+{"kind":"textbox","id":"sh/3axw3q18","slide":2,"name":"bullet-488","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[78,488,22,28]}
+{"kind":"textbox","id":"sh/czqd0vip","slide":2,"name":"bullet-text-488","text":"尚未提交任何计费 GPU 作业，因此没有把“计划中的实验”写成结果。","textPreview":"尚未提交任何计费 GPU 作业，因此没有把“计划中的实验”写成结果。","textChars":34,"textLines":1,"bbox":[108,488,1110,44]}
+{"kind":"notes","id":"nt/akq29v","slide":2,"text":"[Sources]\nhttps://www.ccf.org.cn/Academic_Evaluation/By_category/\n本地：paper-workspace/选题形成/保留证据集.json\n\n[讲解提示]\n强调证据纪律：不足的层级宁可留空，不用弱论文凑数。"}
+{"kind":"slide","id":"sl/0i3pb8","slide":3,"title":"领域地图","textShapes":28}
+{"kind":"textbox","id":"sh/ozetwnqh","slide":3,"name":"kicker","text":"领域地图","textPreview":"领域地图","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/ny5s3ipw","slide":3,"name":"title","text":"七条问题线：能力、环境与评价共同定义 Agent","textPreview":"七条问题线：能力、环境与评价共同定义 Agent","textChars":24,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/mxwbud8r","slide":3,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/1w3a1876","slide":3,"name":"page","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/0vuts3ql","slide":3,"name":"cell-56-178","bbox":[56,178,250,42]}
+{"kind":"textbox","id":"sh/zalszi90","slide":3,"name":"cell-t-56-178","text":"问题线","textPreview":"问题线","textChars":3,"textLines":1,"bbox":[66,186,230,28]}
+{"kind":"shape","id":"sh/e9cbqd8f","slide":3,"name":"cell-306-178","bbox":[306,178,480,42]}
+{"kind":"textbox","id":"sh/d83ax8ru","slide":3,"name":"cell-t-306-178","text":"科学问题","textPreview":"科学问题","textChars":4,"textLines":1,"bbox":[316,186,460,28]}
+{"kind":"shape","id":"sh/c7u9o3q9","slide":3,"name":"cell-786-178","bbox":[786,178,438,42]}
+{"kind":"textbox","id":"sh/qhw7qp83","slide":3,"name":"cell-t-786-178","text":"常用中文指标","textPreview":"常用中文指标","textChars":6,"textLines":1,"bbox":[796,186,418,28]}
+{"kind":"shape","id":"sh/bi5oju9o","slide":3,"name":"cell-56-220","bbox":[56,220,250,58]}
+{"kind":"textbox","id":"sh/c3epszqt","slide":3,"name":"cell-t-56-220","text":"能力获取与后训练","textPreview":"能力获取与后训练","textChars":8,"textLines":1,"bbox":[66,228,230,44]}
+{"kind":"shape","id":"sh/d476l4re","slide":3,"name":"cell-306-220","bbox":[306,220,480,58]}
+{"kind":"textbox","id":"sh/2dwnmp8r","slide":3,"name":"cell-t-306-220","text":"把多轮交互转为稳定训练信号","textPreview":"把多轮交互转为稳定训练信号","textChars":13,"textLines":1,"bbox":[316,228,460,44]}
+{"kind":"shape","id":"sh/3e5ofu9c","slide":3,"name":"cell-786-220","bbox":[786,220,438,58]}
+{"kind":"textbox","id":"sh/ofepozqx","slide":3,"name":"cell-t-786-220","text":"任务成功率、调用正确率、训练稳定性","textPreview":"任务成功率、调用正确率、训练稳定性","textChars":17,"textLines":1,"bbox":[796,228,418,44]}
+{"kind":"shape","id":"sh/pgn6hkri","slide":3,"name":"cell-56-278","bbox":[56,278,250,58]}
+{"kind":"textbox","id":"sh/e9cni58v","slide":3,"name":"cell-t-56-278","text":"长程决策与信用分配","textPreview":"长程决策与信用分配","textChars":9,"textLines":1,"bbox":[66,286,230,44]}
+{"kind":"shape","id":"sh/faloba9g","slide":3,"name":"cell-306-278","bbox":[306,278,480,58]}
+{"kind":"textbox","id":"sh/je14j6p8","slide":3,"name":"cell-t-306-278","text":"识别真正造成成败的关键步骤","textPreview":"识别真正造成成败的关键步骤","textChars":13,"textLines":1,"bbox":[316,286,460,44]}
+{"kind":"shape","id":"sh/it83q1on","slide":3,"name":"cell-786-278","bbox":[786,278,438,58]}
+{"kind":"textbox","id":"sh/5gjmlg7y","slide":3,"name":"cell-t-786-278","text":"成功率、步骤正确率、样本效率","textPreview":"成功率、步骤正确率、样本效率","textChars":14,"textLines":1,"bbox":[796,286,418,44]}
+{"kind":"shape","id":"sh/4falsb6t","slide":3,"name":"cell-56-336","bbox":[56,336,250,58]}
+{"kind":"textbox","id":"sh/ri14nqp4","slide":3,"name":"cell-t-56-336","text":"记忆与经验复用","textPreview":"记忆与经验复用","textChars":7,"textLines":1,"bbox":[66,344,230,44]}
+{"kind":"shape","id":"sh/6hs3uloj","slide":3,"name":"cell-306-336","bbox":[306,336,480,58]}
+{"kind":"textbox","id":"sh/tkjmp07a","slide":3,"name":"cell-t-306-336","text":"保存可迁移经验而不积累错误","textPreview":"保存可迁移经验而不积累错误","textChars":13,"textLines":1,"bbox":[316,344,460,44]}
+{"kind":"shape","id":"sh/sjalwv6p","slide":3,"name":"cell-786-336","bbox":[786,336,438,58]}
+{"kind":"textbox","id":"sh/7mhkbmp0","slide":3,"name":"cell-t-786-336","text":"复用率、错误复用率、令牌消耗","textPreview":"复用率、错误复用率、令牌消耗","textChars":14,"textLines":1,"bbox":[796,344,418,44]}
+{"kind":"shape","id":"sh/mlo3ih8f","slide":3,"name":"cell-56-394","bbox":[56,394,250,58]}
+{"kind":"textbox","id":"sh/cf29w3i1","slide":3,"name":"cell-t-56-394","text":"工具与计算机操作","textPreview":"工具与计算机操作","textChars":8,"textLines":1,"bbox":[66,402,230,44]}
+{"kind":"shape","id":"sh/dgba58jm","slide":3,"name":"cell-306-394","bbox":[306,394,480,58]}
+{"kind":"textbox","id":"sh/qdkrut0v","slide":3,"name":"cell-t-306-394","text":"在动态网页、界面和 API 中可靠执行","textPreview":"在动态网页、界面和 API 中可靠执行","textChars":19,"textLines":1,"bbox":[316,402,460,44]}
+{"kind":"shape","id":"sh/rets3y1g","slide":3,"name":"cell-786-394","bbox":[786,394,438,58]}
+{"kind":"textbox","id":"sh/4r29sj2p","slide":3,"name":"cell-t-786-394","text":"端到端成功率、时间、调用成本","textPreview":"端到端成功率、时间、调用成本","textChars":14,"textLines":1,"bbox":[796,402,418,44]}
+{"kind":"shape","id":"sh/psba1oja","slide":3,"name":"cell-56-452","bbox":[56,452,250,58]}
+{"kind":"textbox","id":"sh/2p0rq9kz","slide":3,"name":"cell-t-56-452","text":"多智能体协作与治理","textPreview":"多智能体协作与治理","textChars":9,"textLines":1,"bbox":[66,460,230,44]}
+{"kind":"shape","id":"sh/3qt8ze1k","slide":3,"name":"cell-306-452","bbox":[306,452,480,58]}
+{"kind":"textbox","id":"sh/8nm94ni9","slide":3,"name":"cell-t-306-452","text":"协调角色、状态与冲突","textPreview":"协调角色、状态与冲突","textChars":10,"textLines":1,"bbox":[316,460,460,44]}
+{"kind":"shape","id":"sh/98fadsju","slide":3,"name":"cell-786-452","bbox":[786,452,438,58]}
+{"kind":"textbox","id":"sh/5s76pkz6","slide":3,"name":"cell-t-786-452","text":"协作成功率、延迟、通信成本","textPreview":"协作成功率、延迟、通信成本","textChars":13,"textLines":1,"bbox":[796,460,418,44]}
+{"kind":"shape","id":"sh/krypwfil","slide":3,"name":"cell-56-510","bbox":[56,510,250,58]}
+{"kind":"textbox","id":"sh/jqponah0","slide":3,"name":"cell-t-56-510","text":"评测、泛化与可复现","textPreview":"评测、泛化与可复现","textChars":9,"textLines":1,"bbox":[66,518,230,44]}
+{"kind":"shape","id":"sh/ipw7u50f","slide":3,"name":"cell-306-510","bbox":[306,510,480,58]}
+{"kind":"textbox","id":"sh/tw76tkz2","slide":3,"name":"cell-t-306-510","text":"比较过程能力而非只看终局分数","textPreview":"比较过程能力而非只看终局分数","textChars":14,"textLines":1,"bbox":[316,518,460,44]}
+{"kind":"shape","id":"sh/svyp0fyh","slide":3,"name":"cell-786-510","bbox":[786,510,438,58]}
+{"kind":"textbox","id":"sh/7uporahc","slide":3,"name":"cell-t-786-510","text":"泛化差距、复现成功率、成本","textPreview":"泛化差距、复现成功率、成本","textChars":13,"textLines":1,"bbox":[796,518,418,44]}
+{"kind":"shape","id":"sh/6tg7yp0r","slide":3,"name":"cell-56-568","bbox":[56,568,250,58]}
+{"kind":"textbox","id":"sh/hkr6x4ze","slide":3,"name":"cell-t-56-568","text":"安全、可靠性与失效控制","textPreview":"安全、可靠性与失效控制","textChars":11,"textLines":1,"bbox":[66,576,230,44]}
+{"kind":"shape","id":"sh/gjip4zyt","slide":3,"name":"cell-306-568","bbox":[306,568,480,58]}
+{"kind":"textbox","id":"sh/y5s3y1gb","slide":3,"name":"cell-t-306-568","text":"在恶意内容与权限边界下可控执行","textPreview":"在恶意内容与权限边界下可控执行","textChars":15,"textLines":1,"bbox":[316,576,460,44]}
+{"kind":"shape","id":"sh/z614r6xw","slide":3,"name":"cell-786-568","bbox":[786,568,438,58]}
+{"kind":"textbox","id":"sh/07ul0ryh","slide":3,"name":"cell-t-786-568","text":"攻击成功率、误拒绝率、安全完成率","textPreview":"攻击成功率、误拒绝率、安全完成率","textChars":16,"textLines":1,"bbox":[796,576,418,44]}
+{"kind":"textbox","id":"sh/l83mtwfm","slide":3,"name":"cross","text":"跨方向维度：效率和资源成本 - 训练吞吐、端到端延迟、令牌消耗、工具调用成本、显存和卡时。","textPreview":"跨方向维度：效率和资源成本 - 训练吞吐、端到端延迟、令牌消耗、工具调用成本、显存和卡时。","textChars":45,"textLines":1,"bbox":[56,648,1090,24]}
+{"kind":"notes","id":"nt/0i3pb8","slide":3,"text":"[Sources]\n本地：paper-workspace/选题形成/方向地图.md\nhttps://www.ccf.org.cn/Academic_Evaluation/By_category/\n\n[讲解提示]\n领域地图按研究问题组织，而非只列 memory、planning、tool use 等模块名。"}
+{"kind":"slide","id":"sl/1xwgch","slide":4,"title":"证据锚点","textShapes":19}
+{"kind":"textbox","id":"sh/q18nyl47","slide":4,"name":"kicker","text":"证据锚点","textPreview":"证据锚点","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/d4z690ny","slide":4,"name":"title","text":"正式锚点把问题线落到可复现环境","textPreview":"正式锚点把问题线落到可复现环境","textChars":15,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/c3q50vmd","slide":4,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/3eho3q5w","slide":4,"name":"page","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/2donul4b","slide":4,"name":"cell-56-190","bbox":[56,190,175,46]}
+{"kind":"textbox","id":"sh/pgz65gnm","slide":4,"name":"cell-t-56-190","text":"主线","textPreview":"主线","textChars":2,"textLines":1,"bbox":[66,198,155,32]}
+{"kind":"shape","id":"sh/ofq5wvm1","slide":4,"name":"cell-231-190","bbox":[231,190,330,46]}
+{"kind":"textbox","id":"sh/na1ofa50","slide":4,"name":"cell-t-231-190","text":"代表论文","textPreview":"代表论文","textChars":4,"textLines":1,"bbox":[241,198,310,32]}
+{"kind":"shape","id":"sh/m9s7654f","slide":4,"name":"cell-561-190","bbox":[561,190,663,46]}
+{"kind":"textbox","id":"sh/4byxsfmp","slide":4,"name":"cell-t-561-190","text":"可观察失败 / 关键指标","textPreview":"可观察失败 / 关键指标","textChars":12,"textLines":1,"bbox":[571,198,643,32]}
+{"kind":"shape","id":"sh/5c7elknu","slide":4,"name":"cell-56-236","bbox":[56,236,175,92]}
+{"kind":"textbox","id":"sh/i9wvqp4j","slide":4,"name":"cell-t-56-236","text":"工具学习","textPreview":"工具学习","textChars":4,"textLines":1,"bbox":[66,244,155,78]}
+{"kind":"shape","id":"sh/3a5wja54","slide":4,"name":"cell-231-236","bbox":[231,236,330,92]}
+{"kind":"textbox","id":"sh/gnedofmd","slide":4,"name":"cell-t-231-236","text":"Toolformer；ToolLLM","textPreview":"Toolformer；ToolLLM","textChars":18,"textLines":1,"bbox":[241,244,310,78]}
+{"kind":"shape","id":"sh/h8nehkny","slide":4,"name":"cell-561-236","bbox":[561,236,663,92]}
+{"kind":"textbox","id":"sh/ulwvm547","slide":4,"name":"cell-t-561-236","text":"何时调用、怎样填参数与整合结果；ToolLLM 覆盖 16,464 个 API、49 类。","textPreview":"何时调用、怎样填参数与整合结果；ToolLLM 覆盖 16,464 个 API、49 类。","textChars":45,"textLines":1,"bbox":[571,244,643,78]}
+{"kind":"shape","id":"sh/vm5wfa5s","slide":4,"name":"cell-56-328","bbox":[56,328,175,92]}
+{"kind":"textbox","id":"sh/8jedkvmh","slide":4,"name":"cell-t-56-328","text":"网页与桌面","textPreview":"网页与桌面","textChars":5,"textLines":1,"bbox":[66,336,155,78]}
+{"kind":"shape","id":"sh/9kned0n2","slide":4,"name":"cell-231-328","bbox":[231,328,330,92]}
+{"kind":"textbox","id":"sh/9gfuhwfq","slide":4,"name":"cell-t-231-328","text":"WebArena；OSWorld","textPreview":"WebArena；OSWorld","textChars":16,"textLines":1,"bbox":[241,336,310,78]}
+{"kind":"shape","id":"sh/of6tore5","slide":4,"name":"cell-561-328","bbox":[561,328,663,92]}
+{"kind":"textbox","id":"sh/nedcfmxk","slide":4,"name":"cell-t-561-328","text":"跨站网页与真实计算机任务；WebArena 官方页：GPT-4 智能体 14.41%，人类 78.24%。","textPreview":"跨站网页与真实计算机任务；WebArena 官方页：GPT-4 智能体 14.41%，人类 78.24%。","textChars":53,"textLines":1,"bbox":[571,336,643,78]}
+{"kind":"shape","id":"sh/md4bmhwz","slide":4,"name":"cell-56-420","bbox":[56,420,175,92]}
+{"kind":"textbox","id":"sh/1cvudcfe","slide":4,"name":"cell-t-56-420","text":"评测","textPreview":"评测","textChars":2,"textLines":1,"bbox":[66,428,155,78]}
+{"kind":"shape","id":"sh/0bmtkre9","slide":4,"name":"cell-231-420","bbox":[231,420,330,92]}
+{"kind":"textbox","id":"sh/zadcbmxo","slide":4,"name":"cell-t-231-420","text":"AgentBench；GAIA；SWE-bench；τ-bench","textPreview":"AgentBench；GAIA；SWE-bench；τ-bench","textChars":33,"textLines":1,"bbox":[241,428,310,78]}
+{"kind":"shape","id":"sh/e94bihw3","slide":4,"name":"cell-561-420","bbox":[561,420,663,92]}
+{"kind":"textbox","id":"sh/l8zupgfy","slide":4,"name":"cell-t-561-420","text":"跨环境、真实软件修复与多轮服务交互；SWE-bench 初始最佳 Claude 2 为 1.96%。","textPreview":"跨环境、真实软件修复与多轮服务交互；SWE-bench 初始最佳 Claude 2 为 1.96%。","textChars":50,"textLines":1,"bbox":[571,428,643,78]}
+{"kind":"shape","id":"sh/k7qdgbed","slide":4,"name":"cell-56-512","bbox":[56,512,175,92]}
+{"kind":"textbox","id":"sh/2d0radcv","slide":4,"name":"cell-t-56-512","text":"规划","textPreview":"规划","textChars":2,"textLines":1,"bbox":[66,520,155,78]}
+{"kind":"shape","id":"sh/3e98jidg","slide":4,"name":"cell-231-512","bbox":[231,512,330,92]}
+{"kind":"textbox","id":"sh/4fi9cnu1","slide":4,"name":"cell-t-231-512","text":"零样本规划；ReAct；WebShop","textPreview":"零样本规划；ReAct；WebShop","textChars":19,"textLines":1,"bbox":[241,520,310,78]}
+{"kind":"shape","id":"sh/pgbalsv6","slide":4,"name":"cell-561-512","bbox":[561,512,663,92]}
+{"kind":"textbox","id":"sh/up0r6tcj","slide":4,"name":"cell-t-561-512","text":"文本知识无法自动变成稳定执行；ReAct 在 ALFWorld、WebShop 报告成功率绝对提升。","textPreview":"文本知识无法自动变成稳定执行；ReAct 在 ALFWorld、WebShop 报告成功率绝对提升。","textChars":50,"textLines":1,"bbox":[571,520,643,78]}
+{"kind":"textbox","id":"sh/fq98fyd4","slide":4,"name":"anchor-foot","text":"每篇的官方论文页、PDF 与用途均保存在“论文证据卡”。","textPreview":"每篇的官方论文页、PDF 与用途均保存在“论文证据卡”。","textChars":28,"textLines":1,"bbox":[56,627,700,24]}
+{"kind":"notes","id":"nt/1xwgch","slide":4,"text":"[Sources]\nhttps://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-Abstract-Conference.html\nhttps://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-Abstract-Conference.html\nhttps://proceedings.iclr.cc/paper_files/paper/2024/hash/28e50ee5b72e90b50e7196fde8ea260e-Abstract-Conference.html\nhttps://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html\nhttps://openreview.net/forum?id=roNSXZpUDN\n\n[讲解提示]\n说明这些数字只用于界定研究难度与环境，不用来跨系统宣称谁更好。"}
+{"kind":"slide","id":"sl/pxdnqr","slide":5,"title":"研究纪律","textShapes":10}
+{"kind":"textbox","id":"sh/tw3q98fm","slide":5,"name":"kicker","text":"研究纪律","textPreview":"研究纪律","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/69c7etgb","slide":5,"name":"title","text":"证据层级决定能说什么，不能说什么","textPreview":"证据层级决定能说什么，不能说什么","textChars":16,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/7ul87yxw","slide":5,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/gzepk3ed","slide":5,"name":"page","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/h0nqd8fy","slide":5,"name":"e-card-0","bbox":[64,194,320,282]}
+{"kind":"textbox","id":"sh/uxw7idw7","slide":5,"name":"e-title-0","text":"正式会议锚点","textPreview":"正式会议锚点","textChars":6,"textLines":1,"bbox":[84,222,280,42]}
+{"kind":"shape","id":"sh/fy58bixs","slide":5,"name":"e-line-0","bbox":[84,280,280,0]}
+{"kind":"textbox","id":"sh/w3ap8jy9","slide":5,"name":"e-text-0","text":"用于：定义问题、环境、公开指标和基线。\n不能：跨模型、跨环境直接排序。","textPreview":"用于：定义问题、环境、公开指标和基线。 | 不能：跨模型、跨环境直接排序。","textChars":35,"textLines":2,"bbox":[84,310,280,130]}
+{"kind":"shape","id":"sh/x4j6hofe","slide":5,"name":"e-card-1","bbox":[438,194,320,282]}
+{"kind":"textbox","id":"sh/xknqhg7m","slide":5,"name":"e-title-1","text":"近期前沿信号","textPreview":"近期前沿信号","textChars":6,"textLines":1,"bbox":[458,222,280,42]}
+{"kind":"shape","id":"sh/cje98bq1","slide":5,"name":"e-line-1","bbox":[458,280,280,0]}
+{"kind":"textbox","id":"sh/bil8f6pw","slide":5,"name":"e-text-1","text":"用于：发现信用分配、记忆与安全的新命题。\n不能：当作已验证结论或正式 CCF-A 论文。","textPreview":"用于：发现信用分配、记忆与安全的新命题。 | 不能：当作已验证结论或正式 CCF-A 论文。","textChars":44,"textLines":2,"bbox":[458,310,280,130]}
+{"kind":"shape","id":"sh/ahcr618b","slide":5,"name":"e-card-2","bbox":[812,194,320,282]}
+{"kind":"textbox","id":"sh/l8nqlg7y","slide":5,"name":"e-title-2","text":"跨论文综合","textPreview":"跨论文综合","textChars":5,"textLines":1,"bbox":[832,222,280,42]}
+{"kind":"shape","id":"sh/kne9cbqd","slide":5,"name":"e-line-2","bbox":[832,280,280,0]}
+{"kind":"textbox","id":"sh/zm58j6ps","slide":5,"name":"e-text-2","text":"用于：形成可证伪候选。\n不能：隐去推测性质，必须用同环境对照验证。","textPreview":"用于：形成可证伪候选。 | 不能：隐去推测性质，必须用同环境对照验证。","textChars":33,"textLines":2,"bbox":[832,310,280,130]}
+{"kind":"shape","id":"sh/ylwral87","slide":5,"name":"strict","bbox":[64,528,1110,62]}
+{"kind":"textbox","id":"sh/9c7qp07u","slide":5,"name":"strict-t","text":"当前严格保留 12 个正式锚点，而不是用质量较弱材料凑成 18 个“CCF-A”。","textPreview":"当前严格保留 12 个正式锚点，而不是用质量较弱材料凑成 18 个“CCF-A”。","textChars":41,"textLines":1,"bbox":[88,546,1050,26]}
+{"kind":"notes","id":"nt/pxdnqr","slide":5,"text":"[Sources]\nhttps://www.ccf.org.cn/Academic_Evaluation/By_category/\n本地：paper-workspace/选题形成/保留证据集.json\n\n[讲解提示]\n点明：正式版本与 CCF 目录仍在继续逐篇核验，预印本只承担前沿信号角色。"}
+{"kind":"slide","id":"sl/3w9r4y","slide":6,"title":"缺口清单","textShapes":16}
+{"kind":"textbox","id":"sh/gbqdsnup","slide":6,"name":"kicker","text":"缺口清单","textPreview":"缺口清单","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/fahwz2tk","slide":6,"name":"title","text":"三项缺口：每一项都要能被反驳","textPreview":"三项缺口：每一项都要能被反驳","textChars":14,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/e98vqxcz","slide":6,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/t8fexsve","slide":6,"name":"page","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"textbox","id":"sh/s76donut","slide":6,"name":"gap-num-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[70,184,52,30]}
+{"kind":"textbox","id":"sh/r6xwvid8","slide":6,"name":"gap-title-0","text":"动态工具环境的步骤级信用分配","textPreview":"动态工具环境的步骤级信用分配","textChars":14,"textLines":1,"bbox":[142,184,760,33]}
+{"kind":"shape","id":"sh/65ovmdcn","slide":6,"name":"gap-status-0","bbox":[990,184,174,30]}
+{"kind":"textbox","id":"sh/54fet8v2","slide":6,"name":"gap-status-t-0","text":"局部解决","textPreview":"局部解决","textChars":4,"textLines":1,"bbox":[1002,190,150,18]}
+{"kind":"textbox","id":"sh/436dk3ux","slide":6,"name":"gap-body-0","text":"不同方法多在各自环境报告提升，缺少工具变化、用户澄清与成本约束同时存在时的可比证据。","textPreview":"不同方法多在各自环境报告提升，缺少工具变化、用户澄清与成本约束同时存在时的可比证据。","textChars":42,"textLines":1,"bbox":[142,232,980,52]}
+{"kind":"shape","id":"sh/ytsj61wb","slide":6,"name":"gap-rule-0","bbox":[142,296,1022,0]}
+{"kind":"textbox","id":"sh/zu1kz6dw","slide":6,"name":"gap-num-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[70,326,52,30]}
+{"kind":"textbox","id":"sh/kful8beh","slide":6,"name":"gap-title-1","text":"记忆正确性与真实执行成功的落差","textPreview":"记忆正确性与真实执行成功的落差","textChars":15,"textLines":1,"bbox":[142,326,760,33]}
+{"kind":"shape","id":"sh/lg321gv2","slide":6,"name":"gap-status-1","bbox":[990,326,174,30]}
+{"kind":"textbox","id":"sh/apsj21wf","slide":6,"name":"gap-status-t-1","text":"局部解决","textPreview":"局部解决","textChars":4,"textLines":1,"bbox":[1002,332,150,18]}
+{"kind":"textbox","id":"sh/bq1kv6d0","slide":6,"name":"gap-body-1","text":"正确知识不必然转成正确界面操作；需要分开测记忆质量、命中、计划与执行。","textPreview":"正确知识不必然转成正确界面操作；需要分开测记忆质量、命中、计划与执行。","textChars":35,"textLines":1,"bbox":[142,374,980,52]}
+{"kind":"shape","id":"sh/cra14re5","slide":6,"name":"gap-rule-1","bbox":[142,438,1022,0]}
+{"kind":"textbox","id":"sh/xsj2xwvq","slide":6,"name":"gap-num-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[70,468,52,30]}
+{"kind":"textbox","id":"sh/2l8jyhw3","slide":6,"name":"gap-title-2","text":"用户转递内容、权限与任务完成的联合权衡","textPreview":"用户转递内容、权限与任务完成的联合权衡","textChars":19,"textLines":1,"bbox":[142,468,760,33]}
+{"kind":"shape","id":"sh/nmhkrmdo","slide":6,"name":"gap-status-2","bbox":[990,468,174,30]}
+{"kind":"textbox","id":"sh/red8jyp4","slide":6,"name":"gap-status-t-2","text":"证据不足","textPreview":"证据不足","textChars":4,"textLines":1,"bbox":[1002,474,150,18]}
+{"kind":"textbox","id":"sh/6t47at8z","slide":6,"name":"gap-body-2","text":"现有记录不足以证明同一方案能同时降低攻击并保持正常多步工具任务完成。","textPreview":"现有记录不足以证明同一方案能同时降低攻击并保持正常多步工具任务完成。","textChars":34,"textLines":1,"bbox":[142,516,980,52]}
+{"kind":"shape","id":"sh/tgvqlo7a","slide":6,"name":"gap-rule-2","bbox":[142,580,1022,0]}
+{"kind":"textbox","id":"sh/sfmpc3qp","slide":6,"name":"gap-foot","text":"这些都是“当前证据集合中的推测”，不是论文已证明的结论。","textPreview":"这些都是“当前证据集合中的推测”，不是论文已证明的结论。","textChars":28,"textLines":1,"bbox":[70,635,800,24]}
+{"kind":"notes","id":"nt/3w9r4y","slide":6,"text":"[Sources]\n本地：paper-workspace/选题形成/缺口清单.md\n本地：paper-workspace/选题形成/论文证据卡.json\n\n[讲解提示]\n逐项强调支持证据、反证或限制、适用边界与最低成本验证均已保留。"}
+{"kind":"slide","id":"sl/2gy9b6","slide":7,"title":"方向比较","textShapes":20}
+{"kind":"textbox","id":"sh/l87uxwn6","slide":7,"name":"kicker","text":"方向比较","textPreview":"方向比较","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/y5wb2h4v","slide":7,"name":"title","text":"候选方向要同时看价值、证据、可证伪性与资源","textPreview":"候选方向要同时看价值、证据、可证伪性与资源","textChars":21,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/j65cvm5g","slide":7,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/w3et07mp","slide":7,"name":"page","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/x4nutcna","slide":7,"name":"cell-56-200","bbox":[56,200,75,48]}
+{"kind":"textbox","id":"sh/ahwbyh4j","slide":7,"name":"cell-t-56-200","text":"排序","textPreview":"排序","textChars":2,"textLines":1,"bbox":[66,208,55,34]}
+{"kind":"shape","id":"sh/b25sr254","slide":7,"name":"cell-131-200","bbox":[131,200,442,48]}
+{"kind":"textbox","id":"sh/ofetw7mt","slide":7,"name":"cell-t-131-200","text":"候选问题","textPreview":"候选问题","textChars":4,"textLines":1,"bbox":[141,208,422,34]}
+{"kind":"shape","id":"sh/9gnapcne","slide":7,"name":"cell-573-200","bbox":[573,200,210,48]}
+{"kind":"textbox","id":"sh/hcbq90n6","slide":7,"name":"cell-t-573-200","text":"重要性 / 证据 / 创新 / 可证伪","textPreview":"重要性 / 证据 / 创新 / 可证伪","textChars":19,"textLines":1,"bbox":[583,208,190,34]}
+{"kind":"shape","id":"sh/gb29gvml","slide":7,"name":"cell-783-200","bbox":[783,200,441,48]}
+{"kind":"textbox","id":"sh/vat87q5g","slide":7,"name":"cell-t-783-200","text":"主要风险","textPreview":"主要风险","textChars":4,"textLines":1,"bbox":[793,208,421,34]}
+{"kind":"shape","id":"sh/u9krel4v","slide":7,"name":"cell-56-248","bbox":[56,248,75,100]}
+{"kind":"textbox","id":"sh/t8bq5gna","slide":7,"name":"cell-t-56-248","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[66,256,55,86]}
+{"kind":"shape","id":"sh/8729cvmp","slide":7,"name":"cell-131-248","bbox":[131,248,442,100]}
+{"kind":"textbox","id":"sh/76983q54","slide":7,"name":"cell-t-131-248","text":"状态条件化步骤级信用分配","textPreview":"状态条件化步骤级信用分配","textChars":12,"textLines":1,"bbox":[141,256,422,86]}
+{"kind":"shape","id":"sh/650ral4j","slide":7,"name":"cell-573-248","bbox":[573,248,210,100]}
+{"kind":"textbox","id":"sh/l4rq1gny","slide":7,"name":"cell-t-573-248","text":"5 / 4 / 4 / 5","textPreview":"5 / 4 / 4 / 5","textChars":13,"textLines":1,"bbox":[583,256,190,86]}
+{"kind":"shape","id":"sh/k3ip8bmt","slide":7,"name":"cell-783-248","bbox":[783,248,441,100]}
+{"kind":"textbox","id":"sh/wz6h4fyl","slide":7,"name":"cell-t-783-248","text":"奖励构造泄漏答案；状态等价关系难定义","textPreview":"奖励构造泄漏答案；状态等价关系难定义","textChars":18,"textLines":1,"bbox":[793,256,421,86]}
+{"kind":"shape","id":"sh/x0fidkz6","slide":7,"name":"cell-56-348","bbox":[56,348,75,100]}
+{"kind":"textbox","id":"sh/ax4z25gf","slide":7,"name":"cell-t-56-348","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[66,356,55,86]}
+{"kind":"shape","id":"sh/byx0bah0","slide":7,"name":"cell-131-348","bbox":[131,348,442,100]}
+{"kind":"textbox","id":"sh/ovmh0vyp","slide":7,"name":"cell-t-131-348","text":"经执行验证的程序记忆","textPreview":"经执行验证的程序记忆","textChars":10,"textLines":1,"bbox":[141,356,422,86]}
+{"kind":"shape","id":"sh/9wvi90za","slide":7,"name":"cell-573-348","bbox":[573,348,210,100]}
+{"kind":"textbox","id":"sh/mt4zy5gj","slide":7,"name":"cell-t-573-348","text":"4 / 3 / 4 / 4","textPreview":"4 / 3 / 4 / 4","textChars":13,"textLines":1,"bbox":[583,356,190,86]}
+{"kind":"shape","id":"sh/nud07qh4","slide":7,"name":"cell-783-348","bbox":[783,348,441,100]}
+{"kind":"textbox","id":"sh/8rq1czyt","slide":7,"name":"cell-t-783-348","text":"GUI 环境重，可能被简单长上下文基线击败","textPreview":"GUI 环境重，可能被简单长上下文基线击败","textChars":21,"textLines":1,"bbox":[793,356,421,86]}
+{"kind":"shape","id":"sh/tszil4ze","slide":7,"name":"cell-56-448","bbox":[56,448,75,100]}
+{"kind":"textbox","id":"sh/3m1kby1g","slide":7,"name":"cell-t-56-448","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[66,456,55,86]}
+{"kind":"shape","id":"sh/ils32t0v","slide":7,"name":"cell-131-448","bbox":[131,448,442,100]}
+{"kind":"textbox","id":"sh/5o32d8jm","slide":7,"name":"cell-t-131-448","text":"用户转递内容的最小权限工具控制","textPreview":"用户转递内容的最小权限工具控制","textChars":15,"textLines":1,"bbox":[141,456,422,86]}
+{"kind":"shape","id":"sh/4nal43i1","slide":7,"name":"cell-573-448","bbox":[573,448,210,100]}
+{"kind":"textbox","id":"sh/rqlkfy1s","slide":7,"name":"cell-t-573-448","text":"5 / 2 / 4 / 5","textPreview":"5 / 2 / 4 / 5","textChars":13,"textLines":1,"bbox":[583,456,190,86]}
+{"kind":"shape","id":"sh/qpc36t07","slide":7,"name":"cell-783-448","bbox":[783,448,441,100]}
+{"kind":"textbox","id":"sh/ds3mh8ji","slide":7,"name":"cell-t-783-448","text":"安全数据与边界要求高，攻击集合会过时","textPreview":"安全数据与边界要求高，攻击集合会过时","textChars":18,"textLines":1,"bbox":[793,456,421,86]}
+{"kind":"textbox","id":"sh/srul83id","slide":7,"name":"cand-note","text":"排序是 Codex 的暂定建议，不替代本人和导师判断。","textPreview":"排序是 Codex 的暂定建议，不替代本人和导师判断。","textChars":27,"textLines":1,"bbox":[56,600,700,24]}
+{"kind":"notes","id":"nt/2gy9b6","slide":7,"text":"[Sources]\n本地：paper-workspace/选题形成/候选方向.json\n本地：paper-workspace/交付包/研究决策记录.md\n\n[讲解提示]\n说明评分别用于比较优先级；不能把评分等同于论文质量或可投稿性。"}
+{"kind":"slide","id":"sl/hcyp8s","slide":8,"title":"首选方向提案","textShapes":12}
+{"kind":"textbox","id":"sh/90na5kbq","slide":8,"name":"kicker","text":"首选方向提案","textPreview":"首选方向提案","textChars":6,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/mxcrupcz","slide":8,"name":"title","text":"首选：在动态工具任务中定位真正关键的失败步骤","textPreview":"首选：在动态工具任务中定位真正关键的失败步骤","textChars":22,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/ny5s3utk","slide":8,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/0vu9sfut","slide":8,"name":"page","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/lw3a1kbe","slide":8,"name":"proposal","bbox":[56,180,1168,98]}
+{"kind":"textbox","id":"sh/ytcrq5c3","slide":8,"name":"proposal-t","text":"面向动态工具任务的状态条件化步骤级信用分配","textPreview":"面向动态工具任务的状态条件化步骤级信用分配","textChars":21,"textLines":1,"bbox":[82,205,1080,38]}
+{"kind":"textbox","id":"sh/zulszato","slide":8,"name":"p-l-0","text":"研究问题","textPreview":"研究问题","textChars":4,"textLines":1,"bbox":[76,320,155,28]}
+{"kind":"textbox","id":"sh/cru9ofux","slide":8,"name":"p-r-0","text":"长程工具强化学习难以区分有效中间步骤与真正造成失败的步骤。","textPreview":"长程工具强化学习难以区分有效中间步骤与真正造成失败的步骤。","textChars":29,"textLines":1,"bbox":[250,320,910,42]}
+{"kind":"textbox","id":"sh/ds3qx0bi","slide":8,"name":"p-l-1","text":"可证伪假设","textPreview":"可证伪假设","textChars":5,"textLines":1,"bbox":[76,390,155,28]}
+{"kind":"textbox","id":"sh/1crmxkbq","slide":8,"name":"p-r-1","text":"在相同可观察状态比较候选工具动作，并结合关键状态变化与最终验证信号，可提高成功率且减少无效调用。","textPreview":"在相同可观察状态比较候选工具动作，并结合关键状态变化与最终验证信号，可提高成功率且减少无效调用。","textChars":48,"textLines":1,"bbox":[250,390,910,42]}
+{"kind":"textbox","id":"sh/0byloful","slide":8,"name":"p-l-2","text":"替代解释","textPreview":"替代解释","textChars":4,"textLines":1,"bbox":[76,460,155,28]}
+{"kind":"textbox","id":"sh/fap4vat0","slide":8,"name":"p-r-2","text":"收益也可能来自更强模型、更多采样或任务特定奖励工程，而不是信用分配本身。","textPreview":"收益也可能来自更强模型、更多采样或任务特定奖励工程，而不是信用分配本身。","textChars":36,"textLines":1,"bbox":[250,460,910,42]}
+{"kind":"textbox","id":"sh/e9g3m5cf","slide":8,"name":"p-l-3","text":"为何暂排第一","textPreview":"为何暂排第一","textChars":6,"textLines":1,"bbox":[76,530,155,28]}
+{"kind":"textbox","id":"sh/d87mt0bu","slide":8,"name":"p-r-3","text":"干预变量较清晰、终局验证信号相对易获得，适合先做小规模可审计基线。","textPreview":"干预变量较清晰、终局验证信号相对易获得，适合先做小规模可审计基线。","textChars":33,"textLines":1,"bbox":[250,530,910,42]}
+{"kind":"notes","id":"nt/hcyp8s","slide":8,"text":"[Sources]\nhttps://arxiv.org/abs/2602.12268\nhttps://arxiv.org/abs/2604.02869\nhttps://arxiv.org/abs/2605.26684\nhttps://arxiv.org/abs/2603.08754\nhttps://arxiv.org/abs/2602.16165\nhttps://arxiv.org/abs/2605.21768\n\n[讲解提示]\n这是候选与论证。明确告知导师替代解释，避免把先验偏好包装成结论。"}
+{"kind":"slide","id":"sl/ju5toh","slide":9,"title":"实验设计","textShapes":15}
+{"kind":"textbox","id":"sh/rq1c7i5g","slide":9,"name":"kicker","text":"实验设计","textPreview":"实验设计","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/sratgn61","slide":9,"name":"title","text":"最小实验：同模型、同预算、同环境，只改变信用分配","textPreview":"最小实验：同模型、同预算、同环境，只改变信用分配","textChars":24,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/ds3u9snm","slide":9,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/etcbidor","slide":9,"name":"page","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/fulcbi5c","slide":9,"name":"cell-56-180","bbox":[56,180,182,42]}
+{"kind":"textbox","id":"sh/0vutkn6x","slide":9,"name":"cell-t-56-180","text":"要素","textPreview":"要素","textChars":2,"textLines":1,"bbox":[66,188,162,28]}
+{"kind":"shape","id":"sh/1w3udsni","slide":9,"name":"cell-238-180","bbox":[238,180,986,42]}
+{"kind":"textbox","id":"sh/ux8b6ton","slide":9,"name":"cell-t-238-180","text":"最小设计","textPreview":"最小设计","textChars":4,"textLines":1,"bbox":[248,188,966,28]}
+{"kind":"shape","id":"sh/vyhszyp8","slide":9,"name":"cell-56-222","bbox":[56,222,182,74]}
+{"kind":"textbox","id":"sh/naxkb25g","slide":9,"name":"cell-t-56-222","text":"环境","textPreview":"环境","textChars":2,"textLines":1,"bbox":[66,230,162,60]}
+{"kind":"shape","id":"sh/29o3ix4v","slide":9,"name":"cell-238-222","bbox":[238,222,986,74]}
+{"kind":"textbox","id":"sh/pcfmdsnm","slide":9,"name":"cell-t-238-222","text":"优先 ALFWorld 或公开且可记录逐步状态的工具环境；30-100 个分层样例，至少三类任务。","textPreview":"优先 ALFWorld 或公开且可记录逐步状态的工具环境；30-100 个分层样例，至少三类任务。","textChars":49,"textLines":1,"bbox":[248,230,966,60]}
+{"kind":"shape","id":"sh/ob6lk7m1","slide":9,"name":"cell-56-296","bbox":[56,296,182,74]}
+{"kind":"textbox","id":"sh/fmdk7i5k","slide":9,"name":"cell-t-56-296","text":"比较组","textPreview":"比较组","textChars":3,"textLines":1,"bbox":[66,304,162,60]}
+{"kind":"shape","id":"sh/el43ed4z","slide":9,"name":"cell-238-296","bbox":[238,296,986,74]}
+{"kind":"textbox","id":"sh/18v29sna","slide":9,"name":"cell-t-238-296","text":"轨迹级奖励、清单式步骤奖励、状态条件化奖励。","textPreview":"轨迹级奖励、清单式步骤奖励、状态条件化奖励。","textChars":22,"textLines":1,"bbox":[248,304,966,60]}
+{"kind":"shape","id":"sh/gnmlgnm5","slide":9,"name":"cell-56-370","bbox":[56,370,182,74]}
+{"kind":"textbox","id":"sh/ridk3i58","slide":9,"name":"cell-t-56-370","text":"中文指标","textPreview":"中文指标","textChars":4,"textLines":1,"bbox":[66,378,162,60]}
+{"kind":"shape","id":"sh/6hk3ad4n","slide":9,"name":"cell-238-370","bbox":[238,370,986,74]}
+{"kind":"textbox","id":"sh/udk3md8v","slide":9,"name":"cell-t-238-370","text":"任务成功率、步骤级正确率、工具调用次数、平均轮次、调用成本、训练稳定性。","textPreview":"任务成功率、步骤级正确率、工具调用次数、平均轮次、调用成本、训练稳定性。","textChars":36,"textLines":1,"bbox":[248,378,966,60]}
+{"kind":"shape","id":"sh/vet4fipg","slide":9,"name":"cell-56-444","bbox":[56,444,182,74]}
+{"kind":"textbox","id":"sh/wf2lo3ql","slide":9,"name":"cell-t-56-444","text":"记录","textPreview":"记录","textChars":2,"textLines":1,"bbox":[66,452,162,60]}
+{"kind":"shape","id":"sh/hgbmh876","slide":9,"name":"cell-238-444","bbox":[238,444,986,74]}
+{"kind":"textbox","id":"sh/ihk3qdor","slide":9,"name":"cell-t-238-444","text":"总体指标、逐样例结果、5 个代表性失败案例、固定代码提交/环境/随机种子。","textPreview":"总体指标、逐样例结果、5 个代表性失败案例、固定代码提交/环境/随机种子。","textChars":37,"textLines":1,"bbox":[248,452,966,60]}
+{"kind":"shape","id":"sh/jid4jipc","slide":9,"name":"cell-56-518","bbox":[56,518,182,74]}
+{"kind":"textbox","id":"sh/4jm5sn6x","slide":9,"name":"cell-t-56-518","text":"证伪边界","textPreview":"证伪边界","textChars":4,"textLines":1,"bbox":[66,526,162,60]}
+{"kind":"shape","id":"sh/5kvmls7i","slide":9,"name":"cell-238-518","bbox":[238,518,986,74]}
+{"kind":"textbox","id":"sh/6l4nuxo3","slide":9,"name":"cell-t-238-518","text":"若无成功率提升且不能减少无效调用，或收益完全由更大采样量解释，则假设不成立。","textPreview":"若无成功率提升且不能减少无效调用，或收益完全由更大采样量解释，则假设不成立。","textChars":38,"textLines":1,"bbox":[248,526,966,60]}
+{"kind":"notes","id":"nt/ju5toh","slide":9,"text":"[Sources]\nhttps://github.com/alfworld/alfworld\n本地：paper-workspace/datasets/数据集总览.md\n本地：paper-workspace/选题形成/候选方向.json\n\n[讲解提示]\n强调单次小规模实验只用于可行性与失败分析，不宣称统计充分。"}
+{"kind":"slide","id":"sl/6rvok4","slide":10,"title":"资源与边界","textShapes":18}
+{"kind":"textbox","id":"sh/u10765sz","slide":10,"name":"kicker","text":"资源与边界","textPreview":"资源与边界","textChars":5,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/h4rq1krq","slide":10,"name":"title","text":"服务器可用，但计费 GPU 作业仍处于“未提交”状态","textPreview":"服务器可用，但计费 GPU 作业仍处于“未提交”状态","textChars":26,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/g3ip8fa5","slide":10,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/36t83u9w","slide":10,"name":"page","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"shape","id":"sh/i507ap8b","slide":10,"name":"left","bbox":[56,186,530,340]}
+{"kind":"shape","id":"sh/5sbq5krm","slide":10,"name":"right","bbox":[640,186,584,340]}
+{"kind":"textbox","id":"sh/4r2pczq1","slide":10,"name":"left-t","text":"已确认","textPreview":"已确认","textChars":3,"textLines":1,"bbox":[80,214,200,32]}
+{"kind":"textbox","id":"sh/japorq9c","slide":10,"name":"right-t","text":"必须暂停","textPreview":"必须暂停","textChars":4,"textLines":1,"bbox":[666,214,220,32]}
+{"kind":"textbox","id":"sh/y9g7ylsr","slide":10,"name":"bullet-278","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[82,278,22,28]}
+{"kind":"textbox","id":"sh/sfedovqt","slide":10,"name":"bullet-text-278","text":"实验目录统一使用 $HOME/run，对应 /data/run01/scxk701；禁止使用系统 /run。","textPreview":"实验目录统一使用 $HOME/run，对应 /data/run01/scxk701；禁止使用系统 /run。","textChars":54,"textLines":1,"bbox":[112,278,470,44]}
+{"kind":"textbox","id":"sh/dgneh07e","slide":10,"name":"bullet-350","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[82,350,22,28]}
+{"kind":"textbox","id":"sh/qdwvm58n","slide":10,"name":"bullet-text-350","text":"个人主目录仅 1 GiB；$HOME/run 已验证可写，配额为 300 GiB。","textPreview":"个人主目录仅 1 GiB；$HOME/run 已验证可写，配额为 300 GiB。","textChars":41,"textLines":1,"bbox":[112,350,470,44]}
+{"kind":"textbox","id":"sh/re5wfqp8","slide":10,"name":"bullet-422","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[82,422,22,28]}
+{"kind":"textbox","id":"sh/0jydsfq5","slide":10,"name":"bullet-text-422","text":"可见队列：gpu_4090、gpu_5090、hp_4090。","textPreview":"可见队列：gpu_4090、gpu_5090、hp_4090。","textChars":31,"textLines":1,"bbox":[112,422,470,44]}
+{"kind":"textbox","id":"sh/1k7elk7a","slide":10,"name":"bullet-278","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[668,278,22,28]}
+{"kind":"textbox","id":"sh/ehgvq58z","slide":10,"name":"bullet-text-278","text":"普通队列单价、最长时限及赠送额度抵扣规则尚未收到书面确认。","textPreview":"普通队列单价、最长时限及赠送额度抵扣规则尚未收到书面确认。","textChars":29,"textLines":1,"bbox":[698,278,500,44]}
+{"kind":"textbox","id":"sh/zipwjapk","slide":10,"name":"bullet-350","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[668,350,22,28]}
+{"kind":"textbox","id":"sh/gnudgbql","slide":10,"name":"bullet-text-350","text":"尚未提交 sbatch、交互 GPU 或任何可能产生费用的作业。","textPreview":"尚未提交 sbatch、交互 GPU 或任何可能产生费用的作业。","textChars":32,"textLines":1,"bbox":[698,350,500,44]}
+{"kind":"textbox","id":"sh/ho3u9g76","slide":10,"name":"bullet-422","text":"•","textPreview":"•","textChars":1,"textLines":1,"bbox":[668,422,22,28]}
+{"kind":"textbox","id":"sh/xsv2x8fy","slide":10,"name":"bullet-text-422","text":"下一步先列队列、卡数、时限、预计费用与命令，等待本人确认。","textPreview":"下一步先列队列、卡数、时限、预计费用与命令，等待本人确认。","textChars":29,"textLines":1,"bbox":[698,422,500,44]}
+{"kind":"shape","id":"sh/w721o3ed","slide":10,"name":"pause","bbox":[56,570,1168,64]}
+{"kind":"textbox","id":"sh/b6tkvixs","slide":10,"name":"pause-t","text":"提交前的强制检查：队列 | 卡数 | 时限 | 预计最大费用 | 实验命令 → 等待明确确认","textPreview":"提交前的强制检查：队列 | 卡数 | 时限 | 预计最大费用 | 实验命令 → 等待明确确认","textChars":46,"textLines":1,"bbox":[80,590,1100,28]}
+{"kind":"notes","id":"nt/6rvok4","slide":10,"text":"[Sources]\n本地：HANDOFF.md\n北京超级云计算中心 N32-H 分区用户手册（用户提供）\n\n[讲解提示]\n说明本地资料处理与服务器实验隔离；不要把登录状态或空闲会话与卡时混为一谈，最终以平台计费规则为准。"}
+{"kind":"slide","id":"sl/ft884q","slide":11,"title":"导师讨论","textShapes":16}
+{"kind":"textbox","id":"sh/xo3u94bm","slide":11,"name":"kicker","text":"导师讨论","textPreview":"导师讨论","textChars":4,"textLines":1,"bbox":[56,28,300,22]}
+{"kind":"textbox","id":"sh/alcbypsv","slide":11,"name":"title","text":"下一步需要导师共同收敛的四个判断","textPreview":"下一步需要导师共同收敛的四个判断","textChars":16,"textLines":1,"bbox":[56,60,1168,62]}
+{"kind":"shape","id":"sh/bmlc7utg","slide":11,"name":"top-rule","bbox":[56,138,1168,0]}
+{"kind":"textbox","id":"sh/ozatwfa5","slide":11,"name":"page","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1190,675,34,18]}
+{"kind":"textbox","id":"sh/p0ju5kba","slide":11,"name":"qnum-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[68,176,38,28]}
+{"kind":"textbox","id":"sh/2xsbu5sz","slide":11,"name":"ql-0","text":"研究价值","textPreview":"研究价值","textChars":4,"textLines":1,"bbox":[122,176,160,28]}
+{"kind":"textbox","id":"sh/ny1c3atk","slide":11,"name":"qr-0","text":"“状态条件化步骤级信用分配”是否足够重要，还是应收窄到某类特定工具/用户交互任务？","textPreview":"“状态条件化步骤级信用分配”是否足够重要，还是应收窄到某类特定工具/用户交互任务？","textChars":41,"textLines":1,"bbox":[312,176,830,44]}
+{"kind":"shape","id":"sh/8ved8ja9","slide":11,"name":"qline-0","bbox":[122,244,1040,0]}
+{"kind":"textbox","id":"sh/9gnuhobu","slide":11,"name":"qnum-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[68,279,38,28]}
+{"kind":"textbox","id":"sh/tkvylc3m","slide":11,"name":"ql-1","text":"实验定位","textPreview":"实验定位","textChars":4,"textLines":1,"bbox":[122,279,160,28]}
+{"kind":"textbox","id":"sh/sjmxcrm1","slide":11,"name":"qr-1","text":"先用 ALFWorld/工具环境验证机制，还是直接投入更真实但更重的 WebArena、OSWorld？","textPreview":"先用 ALFWorld/工具环境验证机制，还是直接投入更真实但更重的 WebArena、OSWorld？","textChars":52,"textLines":1,"bbox":[312,279,830,44]}
+{"kind":"shape","id":"sh/7idgjmlg","slide":11,"name":"qline-1","bbox":[122,347,1040,0]}
+{"kind":"textbox","id":"sh/6x4fah4v","slide":11,"name":"qnum-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[68,382,38,28]}
+{"kind":"textbox","id":"sh/5wvyhc3a","slide":11,"name":"ql-2","text":"基线选择","textPreview":"基线选择","textChars":4,"textLines":1,"bbox":[122,382,160,28]}
+{"kind":"textbox","id":"sh/kv2x87mp","slide":11,"name":"qr-2","text":"哪些公开强基线、模型规模与计算预算符合课题组资源和公平比较要求？","textPreview":"哪些公开强基线、模型规模与计算预算符合课题组资源和公平比较要求？","textChars":32,"textLines":1,"bbox":[312,382,830,44]}
+{"kind":"shape","id":"sh/jutgf2lk","slide":11,"name":"qline-2","bbox":[122,450,1040,0]}
+{"kind":"textbox","id":"sh/itkf6x4z","slide":11,"name":"qnum-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[68,485,38,28]}
+{"kind":"textbox","id":"sh/psfytw3u","slide":11,"name":"ql-3","text":"安全边界","textPreview":"安全边界","textChars":4,"textLines":1,"bbox":[122,485,160,28]}
+{"kind":"textbox","id":"sh/4r6hkbm9","slide":11,"name":"qr-3","text":"安全候选应并行探索，还是在主线机制验证后作为扩展？","textPreview":"安全候选应并行探索，还是在主线机制验证后作为扩展？","textChars":25,"textLines":1,"bbox":[312,485,830,44]}
+{"kind":"shape","id":"sh/ovehgfa5","slide":11,"name":"qline-3","bbox":[122,553,1040,0]}
+{"kind":"shape","id":"sh/pwnipkbq","slide":11,"name":"end","bbox":[56,605,1106,50]}
+{"kind":"textbox","id":"sh/2twze5sf","slide":11,"name":"end-t","text":"建议动作：先跑通一个可审计的小基线，确认失败模式，再决定是否正式立项。","textPreview":"建议动作：先跑通一个可审计的小基线，确认失败模式，再决定是否正式立项。","textChars":35,"textLines":1,"bbox":[74,619,1070,24]}
+{"kind":"notes","id":"nt/ft884q","slide":11,"text":"[Sources]\n本地：paper-workspace/交付包/研究决策记录.md\n本地：paper-workspace/交付包/Agent研究选题包.pdf\n\n[讲解提示]\n最后不要求导师立刻拍板，而是请导师帮助把候选收敛为可执行的第一个实验。\n\n[可能追问]\n为什么不是直接训练大模型？答：先用小规模机制验证识别失败边界，避免在不确定问题上消耗卡时。\n为什么不做安全方向？答：重要，但当前证据和实验边界不如首选方向清晰，先保留为备选。"}

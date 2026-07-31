@@ -1,0 +1,200 @@
+{
+  "query": "WebArena A Realistic Web Environment for Building Autonomous Agents",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:17:50",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=WebArena+A+Realistic+Web+Environment+for+Building+Autonomous+Agents",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "EconWebArena: Benchmarking Autonomous Agents on Economic Tasks in Realistic Web Environments",
+      "authors": [
+        "Zefang Liu",
+        "Yinzhu Quan"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the Fifth Workshop on Generation, Evaluation and Metrics (GEM)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2026.gem-main.67",
+      "url": "https://doi.org/10.18653/v1/2026.gem-main.67",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2026.gem-main.67",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 54.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A survey on large language model based autonomous agents",
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng",
+        "Zeyu Zhang",
+        "Hao Yang",
+        "Jingsen Zhang",
+        "Zhiyuan Chen",
+        "Jiakai Tang",
+        "Xu Chen",
+        "Yankai Lin",
+        "Wayne Xin Zhao",
+        "Zhewei Wei",
+        "Ji-Rong Wen"
+      ],
+      "year": 2024,
+      "venue": "Frontiers of Computer Science",
+      "abstract": null,
+      "citation_count": 1292,
+      "doi": "10.1007/s11704-024-40231-1",
+      "url": "https://openalex.org/W4393065402",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11704-024-40231-1.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s11704-024-40231-1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 37,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Survey on Large Language Model based Autonomous Agents",
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng",
+        "Zeyu Zhang",
+        "Hao Yang",
+        "Jingsen Zhang",
+        "Zhiyuan Chen",
+        "Jiakai Tang",
+        "Xu Chen",
+        "Yankai Lin",
+        "Wayne Xin Zhao",
+        "Zhewei Wei",
+        "Ji-Rong Wen"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 114,
+      "doi": "10.48550/arxiv.2308.11432",
+      "url": "https://openalex.org/W4386184788",
+      "pdf_url": "https://arxiv.org/pdf/2308.11432",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2308.11432",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 36,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The Rise and Potential of Large Language Model Based Agents: A Survey",
+      "authors": [
+        "Zhiheng Xi",
+        "Wen-Xiang Chen",
+        "Xin Guo",
+        "Wei He",
+        "Yiwen Ding",
+        "Boyang Hong",
+        "Ming Zhang",
+        "Junzhe Wang",
+        "Senjie Jin",
+        "Enyu Zhou",
+        "Rui Zheng",
+        "Xiaoran Fan",
+        "Xiao Wang",
+        "Limao Xiong",
+        "Yuhao Zhou",
+        "Weiran Wang",
+        "Changhao Jiang",
+        "Yicheng Zou",
+        "Xiangyang Liu",
+        "Zhangyue Yin",
+        "Shihan Dou",
+        "Rongxiang Weng",
+        "Wensen Cheng",
+        "Qi Zhang",
+        "Wenjuan Qin",
+        "Yongyan Zheng",
+        "Xipeng Qiu",
+        "Huang, Xuanjing",
+        "Tao Gui"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 254,
+      "doi": "10.48550/arxiv.2309.07864",
+      "url": "https://openalex.org/W4386794445",
+      "pdf_url": "https://arxiv.org/pdf/2309.07864",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2309.07864",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 28,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Building a Multi-Agent System for Automatic Negotiation in Web Service Applications",
+      "authors": [
+        "Ambroise Ncho",
+        "Esma Aimeur"
+      ],
+      "year": 2004,
+      "venue": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+      "abstract": "Within the last decade, much effort has been put into the development of standards and technologies that enable the integration of Internet applications and the interoperability of Web services. The ultimate goal of these initiatives is to increase the automation of business processes. However many challenges remain to be addressed in order to reach a high-level of automation in Internet-based applications. Automatic negotiation is one of these challenges. In this paper we propose the Collaborative Agreement for Automatic Trading (CAAT), a Multi-Agent System framework that enables automatic negotiation in the context of a trading-based Web service.",
+      "citation_count": 0,
+      "doi": "10.65109/cugl6054",
+      "url": "https://doi.org/10.65109/cugl6054",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/cugl6054",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 28.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

@@ -1,0 +1,1234 @@
+{
+  "query": "LLM agents autonomous tool use multi-agent evaluation memory planning safety 2024 2026",
+  "requested_limit": 40,
+  "created_at": "2026-07-23T11:29:03",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=LLM+agents+autonomous+tool+use+multi-agent+evaluation+memory+planning+safety+2024+2026",
+    "note": "Google Scholar is a human-assisted source; open this URL in a browser and provide selected links if CAPTCHA/login appears."
+  },
+  "errors": [
+    {
+      "source": "arxiv",
+      "error": "The read operation timed out"
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Layered Convergence in Autonomous Agent Memory: A Multi-Model Cognitive Architecture for Persistent Recall in Long-Running LLM Agents",
+      "authors": [
+        "Lance Harris"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "&lt;p&gt;Autonomous agents built on large language models (LLMs) operate under a structural limitation that constrains their utility in sustained, multi-domain environments: each session begins with no episodic, procedural, or declarative memory of prior sessions. Existing memory augmentation systems address this limitation through single-model approaches, including vector-based extraction (Mem0), temporal knowledge graphs (Zep/Graphiti), multi-strategy retrieval (Hindsight), OS-inspired tiered management (Letta/MemGPT), and framework-coupled recall (LangMem), each optimizing for one category of recall while leaving others unaddressed. This paper presents a multi-model cognitive architecture in which five complementary memory systems operate concurrently: (1) identity-prompt memory providing behavioral continuity via session-loaded configuration files; (2) structured constraint memory enabling programmatic policy enforcement with audit trails; (3) vector-enhanced semantic memory combining BM25 keyword matching with cosine-similarity search, temporal decay, and maximal marginal relevance re-ranking; (4) relational learning memory closing feedback loops between expert recommendations and their real-world outcomes; and (5) a hierarchical temporal knowledge graph organized into domain-scoped partitions with cross-domain tunnels and dynamic context assembly. Each model was introduced to address a specific failure mode observed during eight weeks of production deployment, and each operates additively without replacing its predecessors.&lt;/p&gt;\n&lt;p&gt;A combinatorial ablation study across all 32 possible subsets of the five models, totaling 3,520 evaluation runs across eight capability dimensions, validates the architecture using Shapley value decomposition. Three findings stand out. First, only two of the five models carry measurable weight under structural evaluation: Model II accounts for 104% of constraint enforcement capability, and Model V accounts for 100% of all retrieval capability, while Models I, III, and IV show near-zero contribution, an expected result given the evaluation's routing through constraint-check and palace-search pathways. Second, upgrading the constraint checker from keyword matching to semantic rule detection raised constraint enforcement from 59.8% to 73.3%, with Model II's Shapley value increasing from 0.286 to 0.430. Third, two new evaluation dimensions reveal previously unmeasured contributions: semantic recall scenarios show Model III (vector search) providing independent recall value (Shapley 0.025, 25% of total), and cross-model flow scenarios confirm that Models II and V contribute additively with zero interaction. The full architecture achieves 80.0% on factual recall with zero policy violations observed across nine weekly advisory council cycles in production. Constraint enforcement, feedback-loop learning, and dynamic context assembly are not present in any evaluated commercial or open-source memory system. The architecture was deployed without modifying the host platform's source code, suggesting portability across agent frameworks.&lt;/p&gt;",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6616122",
+      "url": "https://doi.org/10.2139/ssrn.6616122",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6616122",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 66.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Secure-by-Default Guardrails for MCP-Based Tool Use in Multi-Modal LLM Agents",
+      "authors": [
+        "Yoshihiro Ando"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "As Large Language Models (LLMs) proliferate, fragmented interfaces across multiple providers create friction for developers. More critically, the rise of autonomous agents and protocols such as the Model Context Protocol (MCP) expands the attack surface by enabling tool execution and access to local or remote resources. This paper presents llm-cli, a unified command-line interface that harmonizes interactions with multiple LLM providers while providing secure-by-default guardrails for agentic tool use. llm-cli combines (i) a plugin-based tool registry with an explicit human-readable explanation field for each tool call, (ii) role-based restrictions for unauthenticated clients (e.g., guest read-only access), and (iii) runtime validation for command execution and file-path access. We discuss practical threat scenarios such as prompt injection and privilege misuse, and show how layered controls-policy checks, input validation, and human-in-the-loop approval-reduce the risk of unsafe tool execution in real-world workflows.",
+      "citation_count": 0,
+      "doi": "10.36227/techrxiv.177006109.97957916/v1",
+      "url": "https://doi.org/10.36227/techrxiv.177006109.97957916/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.36227/techrxiv.177006109.97957916/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 62.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "&amp;nbsp;Agent Brain: A Biologically Inspired Memory System for Autonomous AI Agents, with Head-to-Head Evaluation on LongMemEval",
+      "authors": [
+        "Theshoth Sritharan"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "This technical report describes Agent Brain, a biologically inspired memory system for autonomous AI agents. In contrast to stateless Large Language Model interactions, Agent Brain provides persistent, weighted, and self-organizing memory that emulates human cognitive processes: perception, storage, retrieval, consolidation, and forgetting. The system integrates eleven successive layers: (1) a Perception Gate for multi-dimensional evaluation of incoming information, (2) a Deduplication Guard based on Cosine Similarity, (3) typed memory storage 21.04.26, 02:17 Agent Brain v2 file:///Users/thesh/claude code/figment-aura-agent/ImmoPilot-Brain/docs/AGENT-BRAIN-PREPRINT-V2-EN.html 1/35 (episodic, semantic, procedural), (4) Named Entity Recognition using flair/ner-german-large (F1 92.31%), (5) a Knowledge Graph for associative retrieval, (6) LLM-based Query Expansion, (7) Hybrid Search via Reciprocal Rank Fusion, (8) Cross-Encoder Re-Ranking for precise relevance assessment, (9) an implicit Feedback Loop based on the Free Spaced Repetition Scheduler (FSRS), (10) a nightly Dream Cycle with five consolidation phases, and (11) complete Workspace Isolation with Row-Level Security. The central innovation lies in the combination of implicit feedback (without manual user feedback) with Spaced Repetition for agent memory, as well as a multi-stage Dream Cycle that unifies consolidation, creative association formation, and predictive pattern recognition. The system has been in production use since early 2026 for Swiss property management (Immobilienbewirtschaftung) with over 5,000 memories, 10,000 entities, and eight specialized agents. Head-to-head evaluation on LongMemEval. On the public weaviate/longmemeval-m-cleaned benchmark (500 QA pairs across 510 multi-turn workspaces, GPT-4o judge), Agent Brain achieves 71.7% accuracy, outperforming the next-best publicly reported memory system (Zep, 63.8%) by 7.9 percentage points, Mem0 (49.0%) by 22.7 pp, LangMem (47.1%) by 24.6 pp, and OpenAI Memory (40.2%) by 31.5 pp. We also reporttransparently-a 1.9 pp regression when enabling the Dream Cycle consolidation pipeline, and a 2.2 pp gap versus our own pgvector-only control, and discuss both findings in §15.4.",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6617061",
+      "url": "https://doi.org/10.2139/ssrn.6617061",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6617061",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 62.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Potential Games on Cubic Splines for Multi-Agent Motion Planning of Autonomous Agents",
+      "authors": [
+        "Sam Williams",
+        "Jyotirmoy Deshmukh"
+      ],
+      "year": 2024,
+      "venue": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+      "abstract": "We present an algorithm to solve for local Nash Equilibrium trajectories in the multi-agent motion planning problem for self-interested agents. Our method models the problem as a concurrent game where each agent's action consists of choosing a cubic spline defined by a set of waypoints. We observe that with certain kinds of cost functions, the resulting game has the structure of a potential game which is guaranteed to reach an equilibrium even when each agent myopically improves their own cost without considering the costs of other agents. Our algorithm uses simultaneous gradient descent with independent per-agent step sizes to converge to local Nash Equilibrium trajectories. We demonstrate the algorithm can scale to very long horizons through simulated experiments in the electric vertical take-off and landing vehicles (eVTOL) domain.",
+      "citation_count": 0,
+      "doi": "10.65109/nhww5360",
+      "url": "https://doi.org/10.65109/nhww5360",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/nhww5360",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 55.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Context Adaptive Memory-Efficient LLM Inference for Edge Multi-Agent Systems",
+      "authors": [
+        "Hamza Mohammed",
+        "Hang Yin",
+        "Sai Chand Boyapati"
+      ],
+      "year": 2025,
+      "venue": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+      "abstract": "Large Language Models (LLMs) excel at multi-document QA, summarization, code generation, and other language-intensive tasks, yet they demand substantial memory resources for storing key-value (KV) caches and processing attention in long-context scenarios. These requirements often prohibit on-device or edge deployments in multi-agent systems (MAS), where multiple agents share or update contextual information and need efficient inference pipelines. We present CASK (Context-Adaptive Sparse Key-value), an inference-time strategy that reduces memory usage while preserving strong performance on extended contexts. CASK addresses this challenge with two complementary mechanisms: a dynamic sparse attention module-a lightweight, meta-learned component-that identifies the most relevant context tokens, and an adaptive KV-cache compression technique that dynamically quantizes and prunes less critical key-value pairs based on usage frequency and recency. These innovations enable near-lossless performance on long-context tasks while cutting memory usage by up to 40% and boosting inference speed by as much as 20%. Evaluations on LongBench [2] and multi-agent benchmarks show that CASK maintains over 95% of baseline accuracy while allowing more agents or extended histories under tight GPU budgets. Integration into a vision-language agent for collaborative, multimodal contexts underscores its practicality for resource-constrained LLM deployments in MAS.",
+      "citation_count": 0,
+      "doi": "10.65109/knjy6871",
+      "url": "https://doi.org/10.65109/knjy6871",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/knjy6871",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agentic AI in Healthcare and Medicine: A Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-Based Agents",
+      "authors": [
+        "Shubham Vatsal",
+        "Harsh Dubey",
+        "Aditi Singh"
+      ],
+      "year": 2026,
+      "venue": "IEEE Access",
+      "abstract": null,
+      "citation_count": 6,
+      "doi": "10.1109/access.2026.3651218",
+      "url": "https://openalex.org/W7118158543",
+      "pdf_url": "https://doi.org/10.1109/access.2026.3651218",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1109/access.2026.3651218",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 46.45,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Tool-augmented LLM planning and decoupled scheduling for heterogeneous multi-agent lunar missions: A three-layer architecture",
+      "authors": [
+        "Jiaxiang E",
+        "Enze Cui",
+        "Zhenglin Dai",
+        "Dong Guo",
+        "Nan Li",
+        "Ke Wang"
+      ],
+      "year": 2026,
+      "venue": "Robotics and Autonomous Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1016/j.robot.2026.105581",
+      "url": "https://doi.org/10.1016/j.robot.2026.105581",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1016/j.robot.2026.105581",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Collaborative LLM-Based Agents for Autonomous Multi-UAV Mission Execution",
+      "authors": [
+        "Jeremy Ludwig",
+        "Daniel Tuohy",
+        "Forest Finnigan"
+      ],
+      "year": 2026,
+      "venue": "2026 IEEE Aerospace Conference",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1109/aero66936.2026.11520119",
+      "url": "https://doi.org/10.1109/aero66936.2026.11520119",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/aero66936.2026.11520119",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Deploying Efficient LLM Agents on Maritime Autonomous Surface Ships: Fine-Tuning, RAG, and Function Calling in a Mid-Size Model",
+      "authors": [
+        "Yiling Ren",
+        "Mozi Chen",
+        "Junjie Weng",
+        "Shengkai Zhang",
+        "Xuedou Xiao",
+        "Kezhong Liu"
+      ],
+      "year": 2026,
+      "venue": "Information",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.3390/info17030284",
+      "url": "https://openalex.org/W7135056321",
+      "pdf_url": "https://www.mdpi.com/2078-2489/17/3/284/pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.3390/info17030284",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 45.41,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Evaluation-Driven Development and Operations of LLM Agents: A Process Model and Reference Architecture",
+      "authors": [
+        "Boming Xia",
+        "Qinghua Lu",
+        "Liming Zhu",
+        "Zhenchang Xing",
+        "Dehai Zhao",
+        "Hao Zhang"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.48550/arxiv.2411.13768",
+      "url": "https://openalex.org/W4404650144",
+      "pdf_url": "https://arxiv.org/pdf/2411.13768",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2411.13768",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.41,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agent Safety Alignment and Policy Enforcement for Azure Based Autonomous Agents",
+      "authors": [
+        "Rahul Modi"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Increasingly, autonomous actors in the cloud can carry out important decision-making, infrastructure administration, and enterprise automation functions, generating an immediate demand on the safety correspondence and policy. Cloud equipped with Microsoft Azure cloud has scalable orchestration, identity governance, and AI infrastructure are features that support autonomous agents but also pose complex governance and security threats (Bellamkonda et al.; Lakkarasu). This paper designs and analyzes a policy spec ,fiction of an autonomous agent safety architecture on Azure that enables identity control, behavioral tracing, automatic policy, and secure orchestration pipelines (Carcagni; Turetken). The study adopts a joint experimental and architectural assessment approach through simulated agent workflows, enforcement rules and anomaly detector mechanisms deployed in the Azure Kubernetes service, Azure Policy and Azure API management (Carcagni; Sailakshmi). The findings demonstrate that there are quantifiable increases in policy adherence, decreases in unauthorized agent behaviours and greater transparency in autonomous decision-making (Tutuncuoglu; Ardebili and Bartolini). Surprising results provide insights into the risks of misalignment, which is due to the latency of orchestration, vulnerability to identity reuse and the failure of policies to propagate across distributed subsystems (Interrante Bonadia; Nyamboga). These results reveal the vulnerabilities in the structure of the current models of cloud governance. The paper concludes that governance based on the integration of safety, constant monitoring, and policy pipelines as practical guidelines that can be enforced in the context of Azure architecture is a key to successful safety alignment and the possibility of deploying autonomous agents safely in both enterprise, healthcare, and industrial contexts (Asante; Badoi et al.).",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6520840",
+      "url": "https://doi.org/10.2139/ssrn.6520840",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6520840",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 42.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Persistent memory for AI coding agents: a pre-registered SWE-bench Verified benchmark",
+      "authors": [
+        "Jimenez, Carlos E.",
+        "John Yang",
+        "Alexander Wettig",
+        "Shunyu Yao",
+        "Kexin Pei",
+        "Ofir Press",
+        "Karthik Narasimhan"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 48,
+      "doi": "10.48550/arxiv.2310.06770",
+      "url": "https://openalex.org/W4387561453",
+      "pdf_url": "https://arxiv.org/pdf/2310.06770",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2310.06770",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 40.93,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "TRIZ Agents: A Multi-Agent LLM Approach for TRIZ-Based Innovation",
+      "authors": [
+        "Kamil Szczepanik",
+        "Jarosław Chudziak"
+      ],
+      "year": 2025,
+      "venue": "Proceedings of the 17th International Conference on Agents and Artificial Intelligence",
+      "abstract": null,
+      "citation_count": 8,
+      "doi": "10.5220/0013321900003890",
+      "url": "https://doi.org/10.5220/0013321900003890",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5220/0013321900003890",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 40.83,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A Taxonomy for Autonomous LLM-Powered Multi-Agent Architectures",
+      "authors": [
+        "Thorsten Händler"
+      ],
+      "year": 2023,
+      "venue": "Proceedings of the 15th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management",
+      "abstract": null,
+      "citation_count": 20,
+      "doi": "10.5220/0012239100003598",
+      "url": "https://doi.org/10.5220/0012239100003598",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5220/0012239100003598",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 40.47,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Polaris: A Safety-focused LLM Constellation Architecture for Healthcare",
+      "authors": [
+        "Subhabrata Mukherjee",
+        "Paul Gamble",
+        "Markel Sanz Ausin",
+        "Neel Kant",
+        "Kriti Aggarwal",
+        "Neha Manjunath",
+        "Debajyoti Datta",
+        "Zhengliang Liu",
+        "Jiayuan Ding",
+        "Sophia Busacca",
+        "C. Bianco",
+        "Swapnil Sharma",
+        "Rae Lasko",
+        "Michelle Voisard",
+        "Sanchay Harneja",
+        "Darya Filippova",
+        "Gerry Meixiong",
+        "Kevin Cha",
+        "Amir Youssefi",
+        "Meyhaa Buvanesh",
+        "Howard Weingram",
+        "Sebastian Bierman-Lytle",
+        "Harpreet Singh Mangat",
+        "Kim Parikh",
+        "Saad Godil",
+        "Alex Miller"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 19,
+      "doi": "10.48550/arxiv.2403.13313",
+      "url": "https://openalex.org/W4393063231",
+      "pdf_url": "https://arxiv.org/pdf/2403.13313",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2403.13313",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 39.36,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agent-as-a-Graph: Knowledge Graph-Based Tool and Agent Retrieval for LLM Multi-Agent Systems",
+      "authors": [
+        "Faheem Nizar",
+        "Elias Lumer",
+        "Anmol Gulati",
+        "Pradeep Basavaraju",
+        "Vamse Subbiah"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 18th International Conference on Agents and Artificial Intelligence",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.5220/0014473600004052",
+      "url": "https://doi.org/10.5220/0014473600004052",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5220/0014473600004052",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 39.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Review of Autonomous and Collaborative Agentic AI and Multi-Agent Systems for Enterprise Applications",
+      "authors": [
+        "Satyadhar Joshi"
+      ],
+      "year": 2025,
+      "venue": "International Journal of Innovative Research in Engineering & Management",
+      "abstract": null,
+      "citation_count": 7,
+      "doi": "10.55524/ijirem.2025.12.3.9",
+      "url": "https://openalex.org/W4412047812",
+      "pdf_url": "https://ijirem.org/DOC/9-Review-of-Autonomous-and-Collaborative-Agentic AI-and-Multi-Agent-Systems-for-Enterprise-Applications.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.55524/ijirem.2025.12.3.9",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 38.65,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions",
+      "authors": [
+        "Pascal Sager",
+        "Benjamin Meyer",
+        "Peng Yan",
+        "Rebekka von Wartburg-Kottler",
+        "Layan Etaiwi",
+        "Aref Enayati",
+        "Gabriel Nobel",
+        "Ahmed Abdulkadir",
+        "Benjamin F. Grewe",
+        "Thilo Stadelmann"
+      ],
+      "year": 2026,
+      "venue": "Journal of Artificial Intelligence Research",
+      "abstract": null,
+      "citation_count": 4,
+      "doi": "10.1613/jair.1.19490",
+      "url": "https://openalex.org/W4406890265",
+      "pdf_url": "https://doi.org/10.1613/jair.1.19490",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1613/jair.1.19490",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Sura.ai: Multi-Agent Infrastructure Recovery with LLM-Powered Autonomous Remediation",
+      "authors": [
+        "Ananya Arvind",
+        "Shruthi Narayanan",
+        "Saishriya Narayanan"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 18th International Conference on Agents and Artificial Intelligence",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.5220/0014456800004052",
+      "url": "https://doi.org/10.5220/0014456800004052",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5220/0014456800004052",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+      "authors": [
+        "Shaina Raza",
+        "Ranjan Sapkota",
+        "Manoj Karkee",
+        "Christos Emmanouilidis"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 3,
+      "doi": "10.48550/arxiv.2506.04133",
+      "url": "https://openalex.org/W4416075184",
+      "pdf_url": "https://arxiv.org/pdf/2506.04133",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2506.04133",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 37.73,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AutoLFM: A multi-agent LLM framework for automated building load forecasting",
+      "authors": [
+        "Shuhao Li",
+        "Wanfu Zheng",
+        "Mingcheng Li",
+        "Shanshuo Xing",
+        "Zhe Wang"
+      ],
+      "year": 2026,
+      "venue": "Building Simulation",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.1007/s12273-025-1385-7",
+      "url": "https://openalex.org/W7125772492",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12273-025-1385-7.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s12273-025-1385-7",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.41,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting AI Agents",
+      "authors": [
+        "Christian Schroeder de Witt",
+        "Krawiecka, Klaudia",
+        "Krawczuk, Igor",
+        "Hagag, Ben",
+        "Anderson, William L.",
+        "Belcak, Peter",
+        "Bucknall, Ben",
+        "Cai, Xiaohong",
+        "Chopra, Ayush",
+        "Cohen, Doron",
+        "Del Rosario, Ron F.",
+        "Draguns, Andis",
+        "Gray, Annie",
+        "Katz, Keren",
+        "Mavroudis, Vasilios",
+        "Mink, Jaron",
+        "Motwani, Sumeet Ramesh",
+        "Petit, Jonathan",
+        "Rembeck, Leif-Sebastian",
+        "Smith, Chandler",
+        "Sotiropoulos, John",
+        "Young, Steven",
+        "Scheffler, Sarah",
+        "Llewellyn, Mary"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.48550/arxiv.2505.02077",
+      "url": "https://openalex.org/W4415030290",
+      "pdf_url": "https://arxiv.org/pdf/2505.02077",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2505.02077",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.41,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agentic AI Modernization: Transforming Institutional Infrastructure Through Orchestrated Multi-Agent LLM Framework",
+      "authors": [
+        "Mahesh Kumar Damarched"
+      ],
+      "year": 2026,
+      "venue": "Journal of Computer Science and Technology Studies",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.32996/jcsts.2026.8.4.1",
+      "url": "https://openalex.org/W7128483987",
+      "pdf_url": "https://al-kindipublisher.com/index.php/jcsts/article/download/12077/10792",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.32996/jcsts.2026.8.4.1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AgentLeak: A Benchmark for Internal-Channel Privacy Leakage in Multi-Agent LLM Systems",
+      "authors": [
+        "Faouzi El Yagoubi",
+        "Godwin Badu-Marfo",
+        "Ranwa Al Mallah"
+      ],
+      "year": 2026,
+      "venue": "IEEE Access",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1109/access.2026.3704541",
+      "url": "https://openalex.org/W7164992788",
+      "pdf_url": "https://doi.org/10.1109/access.2026.3704541",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1109/access.2026.3704541",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A self-correcting multi-agent LLM framework for language-based physics simulation and explanation",
+      "authors": [
+        "Donggeun Park",
+        "Hyeonbin Moon",
+        "S.E. Ryu"
+      ],
+      "year": 2026,
+      "venue": "npj Artificial Intelligence",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1038/s44387-025-00057-z",
+      "url": "https://openalex.org/W7124960098",
+      "pdf_url": "https://www.nature.com/articles/s44387-025-00057-z.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1038/s44387-025-00057-z",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A Four-Layer Security Governance Framework for LLM-Based AI Agents",
+      "authors": [
+        "Yiang Gao",
+        "Shanshan Wu"
+      ],
+      "year": 2025,
+      "venue": "Journal of Artificial Intelligence Practice",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.23977/jaip.2025.080406",
+      "url": "https://openalex.org/W7118990336",
+      "pdf_url": "http://www.clausiuspress.com/assets/default/article/2026/01/07/article_1767842801.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.23977/jaip.2025.080406",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AutoLabs: cognitive multi-agent systems with self-correction for autonomous chemical experimentation",
+      "authors": [
+        "Gihan Panapitiya",
+        "Emily Saldanha",
+        "Heather Job",
+        "Olivia Hess"
+      ],
+      "year": 2026,
+      "venue": "Scientific Reports",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1038/s41598-026-45593-z",
+      "url": "https://openalex.org/W7165956966",
+      "pdf_url": "https://www.nature.com/articles/s41598-026-45593-z.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1038/s41598-026-45593-z",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Securing LLM-based agents against cyberattacks: a comprehensive survey on attack techniques and defense strategies",
+      "authors": [
+        "Nyashadzashe Tamuka",
+        "Topside E. Mathonsi",
+        "Olwal Thomas Otieno",
+        "Solly Maswikaneng",
+        "Tonderai Muchenje",
+        "Tshimangadzo M. Tshilongamulenzhe"
+      ],
+      "year": 2026,
+      "venue": "Journal of Computer Virology and Hacking Techniques",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1007/s11416-026-00622-3",
+      "url": "https://openalex.org/W7160522594",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11416-026-00622-3.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s11416-026-00622-3",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Evaluating Open-Source LLM Agents for SQL Generation and Structured Analytics on Relational Databases",
+      "authors": [
+        "Karlo Borovčak",
+        "Marina Bagić Babac",
+        "Vedran Mornar"
+      ],
+      "year": 2026,
+      "venue": "Computers, materials & continua/Computers, materials & continua (Print)",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.32604/cmc.2026.078330",
+      "url": "https://openalex.org/W7162803225",
+      "pdf_url": "https://www.techscience.com/cmc/online/detail/27018/pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.32604/cmc.2026.078330",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Exploring Applicability of LLM-Powered Autonomous Agents to Solve Real-life Problems: Microsoft Entra ID Administration Agent (MEAN)",
+      "authors": [
+        "Roberto Rodriguez",
+        "Nestori Syynimaa"
+      ],
+      "year": 2024,
+      "venue": "Proceedings of the 26th International Conference on Enterprise Information Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.5220/0012735700003690",
+      "url": "https://doi.org/10.5220/0012735700003690",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5220/0012735700003690",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Multiagent learning in the presence of memory-bounded agents",
+      "authors": [
+        "Doran Chakraborty",
+        "Peter Stone"
+      ],
+      "year": 2014,
+      "venue": "Autonomous Agents and Multi-Agent Systems",
+      "abstract": null,
+      "citation_count": 24,
+      "doi": "10.1007/s10458-013-9222-4",
+      "url": "https://doi.org/10.1007/s10458-013-9222-4",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1007/s10458-013-9222-4",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 36.9,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AI-Powered Educational Agents: Opportunities, Innovations, and Ethical Challenges",
+      "authors": [
+        "Diana‐Margarita Córdova‐Esparza"
+      ],
+      "year": 2025,
+      "venue": "Information",
+      "abstract": null,
+      "citation_count": 57,
+      "doi": "10.3390/info16060469",
+      "url": "https://openalex.org/W4410956361",
+      "pdf_url": "https://www.mdpi.com/2078-2489/16/6/469/pdf?version=1748682443",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.3390/info16060469",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35.55,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Real-Time Search for Autonomous Agents and Multiagent Systems",
+      "authors": [
+        "Toru Ishida"
+      ],
+      "year": 1998,
+      "venue": "Autonomous Agents and Multi-Agent Systems",
+      "abstract": null,
+      "citation_count": 10,
+      "doi": "10.1023/a:1026449201026",
+      "url": "https://doi.org/10.1023/a:1026449201026",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1023/a:1026449201026",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35.16,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "The Multi-agent System based on LLM for Online Discussions",
+      "authors": [
+        "Yihan Dong"
+      ],
+      "year": 2024,
+      "venue": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+      "abstract": "The considerable improvement on the Internet and the corresponding applications leads to the result of online discussions becoming far more popular and significant than any other method for people to communicate with each other and reach a consensus. Meanwhile, the incredible improvement in Large Language Models (LLM) has promoted the performance of LLM-based agents in text understanding and content generation capabilities. The research objective of the PhD thesis is to build democratic discussion environments, with three main issues existing right now: 1) Large-scale discussions tend to be complicated, 2) Rumours and misinformation bring negative effects to the discussions, and 3) Direct democratic discussions are complex and time-consuming. This extended abstract introduces the efforts that have been made to address those issues, with the introduction of the potential directions in the future.",
+      "citation_count": 0,
+      "doi": "10.65109/joqg4094",
+      "url": "https://doi.org/10.65109/joqg4094",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/joqg4094",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "LEGOMem: Modular Procedural Memory for Multi-agent LLM Systems for Workflow Automation",
+      "authors": [
+        "Dongge Han",
+        "Camille Couturier",
+        "Daniel Madrigal Diaz",
+        "Xuchao Zhang",
+        "Victor Rühle",
+        "Saravan Rajmohan"
+      ],
+      "year": null,
+      "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.65109/vlua1303",
+      "url": "https://doi.org/10.65109/vlua1303",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/vlua1303",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Planning in stochastic domains for multiple agents with individual continuous resource state-spaces",
+      "authors": [
+        "Emmanuel Benazera"
+      ],
+      "year": 2011,
+      "venue": "Autonomous Agents and Multi-Agent Systems",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1007/s10458-010-9131-8",
+      "url": "https://doi.org/10.1007/s10458-010-9131-8",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1007/s10458-010-9131-8",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Parallelized Planning-Acting for Multi-Agent LLM Systems in Minecraft",
+      "authors": [
+        "Yaoru Li",
+        "Shunyu Liu",
+        "Tongya Zheng",
+        "Li Sun",
+        "Mingli Song"
+      ],
+      "year": null,
+      "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.65109/exaj9853",
+      "url": "https://doi.org/10.65109/exaj9853",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/exaj9853",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "LLM-Guided Multi-Agent Evacuation Coordination via Episodic Memory and Cognitive Task Analysis",
+      "authors": [
+        "Roman Sultimov",
+        "Aleksandr Volkov",
+        "Mile Mitrovic",
+        "Yury Maximov"
+      ],
+      "year": null,
+      "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.65109/seyr5220",
+      "url": "https://doi.org/10.65109/seyr5220",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/seyr5220",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AutoMETA: A Multi-Agent LLM System for Autonomous Meta-Analysis",
+      "authors": [
+        "Keeheon Lee",
+        "Kunhee Ryu"
+      ],
+      "year": null,
+      "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.65109/hxka2256",
+      "url": "https://doi.org/10.65109/hxka2256",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/hxka2256",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "LLMs as Hackers: Autonomous Linux Privilege Escalation Attacks",
+      "authors": [
+        "Andreas Happe",
+        "Aaron V. Kaplan",
+        "Jürgen Cito"
+      ],
+      "year": 2026,
+      "venue": "Empirical Software Engineering",
+      "abstract": null,
+      "citation_count": 9,
+      "doi": "10.1007/s10664-025-10758-3",
+      "url": "https://openalex.org/W4387800058",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10664-025-10758-3.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s10664-025-10758-3",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 31.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-23",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    }
+  ]
+}

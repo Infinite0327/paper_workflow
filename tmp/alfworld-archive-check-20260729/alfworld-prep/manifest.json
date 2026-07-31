@@ -1,0 +1,26 @@
+{
+  "package": "alfworld-minimal-feasibility-prep",
+  "version": "0.4.2",
+  "repository": {
+    "url": "https://github.com/alfworld/alfworld.git",
+    "tag": "0.4.2",
+    "commit": "1558ba46d078279ecb4c5d33a6cdffc96714a2d2",
+    "license": "MIT"
+  },
+  "wheel": {
+    "path": "assets/alfworld-0.4.2-py3-none-any.whl",
+    "source_url": "https://pypi.org/project/alfworld/0.4.2/#files",
+    "sha256": "29affbea28f6041d1e8516ed3efd6b55becd52cfca4fb9dd5c75b9d6b8a56c2f",
+    "license": "MIT"
+  },
+  "execution_scope": {
+    "environment": "AlfredTWEnv text-only",
+    "purpose": "可行性与失败分析，不构成完整复现或研究结论",
+    "gpu_submission_authorized": false
+  },
+  "known_blockers": [
+    "本包不含 ALFWorld 运行数据、预训练模型或 Mask R-CNN 检测器。",
+    "远端已知无法访问 GitHub 与 Hugging Face；不得在服务器上默认执行 alfworld-download。",
+    "完整依赖、运行数据和其许可须在实际取得时分别核验。"
+  ]
+}

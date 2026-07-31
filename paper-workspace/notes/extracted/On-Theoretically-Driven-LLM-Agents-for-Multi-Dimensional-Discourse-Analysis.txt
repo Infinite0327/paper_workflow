@@ -1,0 +1,703 @@
+
+
+--- Page 1 ---
+On Theoretically-Driven LLM Agents for
+Multi-Dimensional Discourse Analysis
+Maciej Uberna1
+ a, Michał Wawer1
+ b Jarosław A. Chudziak2
+ c and Marcin Koszowy1
+ d
+1Laboratory of The New Ethos, Warsaw University of Technology, Poland
+2Faculty of Electronics and Information Technology, Warsaw University of Technology, Poland
+{maciej.uberna.dokt, michal.wawer.stud, jaroslaw.chudziak, marcin.koszowy}@pw.edu.pl,
+Keywords: Multi-Agent Systems (MAS), Large Language Models (LLM), Rephrase, Argumentative Discourse
+Abstract: Identifying the strategic uses of reformulation in discourse remains a key challenge for computational argu-
+mentation. While LLMs can detect surface-level similarity, they often fail to capture the pragmatic functions of
+rephrasing, such as its role within rhetorical discourse. This paper presents a comparative multi-agent frame-
+work designed to quantify the benefits of incorporating explicit theoretical knowledge for this task. We utilise
+an dataset of annotated political debates to establish a new standard encompassing four distinct rephrase func-
+tions: Deintensification, Intensification, Specification, Generalisation, and Other, which covers all remaining
+types (D-I-S-G-O). We then evaluate two parallel LLM-based agent systems: one enhanced by argumentation
+theory via Retrieval-Augmented Generation (RAG), and an identical zero-shot baseline. The results reveal
+a clear performance gap: the RAG-enhanced agents substantially outperform the baseline across the board,
+with particularly strong advantages in detecting Intensification and Generalisation context, yielding an overall
+Macro F1-score improvement of nearly 30%. Our findings provide evidence that theoretical grounding is not
+only beneficial but essential for advancing beyond mere paraphrase detection towards function-aware analysis
+of argumentative discourse. This comparative multi-agent architecture represents a step towards scalable, the-
+oretically informed computational tools capable of identifying rhetorical strategies in contemporary discourse.
+1 INTRODUCTION
+Argumentative discourse is characterised not only by
+the presentation of arguments (van Eemeren et al.,
+2014) but also by the strategic use of rephrasing, i.e.
+the technique of altering a message for a rhetorical
+gain (Younis et al., 2023). Rephrasing constitutes a
+prevalent rhetorical and linguistic device employed to
+reinforce a message, tailor it to diverse audiences, or
+enhance its persuasive force. It may also serve to cre-
+ate an impression of argumentative richness by reit-
+erating the same point in varied forms, thereby giv-
+ing the appearance of multiplicity where there is, in
+fact, repetition. The capacity to reformulate utter-
+ances, while subtly altering their meaning plays a piv-
+otal role in shaping discursive dynamics, influencing
+public perception, and structuring the flow of debate.
+While theoretical frameworks for analyzing argu-
+mentation (e.g. based on Inference Aanchoring The-
+ory (Visser et al., 2018; Lewi´nski and Oswald, 2013),
+argumentation schemes (Walton and Krabbe, 1995))
+a
+ https://orcid.org/0009-0006-8953-8270
+b
+ https://orcid.org/0009-0004-2717-1616
+c
+ https://orcid.org/0000-0003-4534-8652
+d
+ https://orcid.org/0000-0001-5553-7428
+and studies on rephrasing (Kiljan and Koszowy, 2024;
+Budzynska et al., 2024) provide valuable insights,
+their application often remains manual or compu-
+tationally limited. Existing argument mining tech-
+niques often struggle with the nuances of reformula-
+tion, potentially misclassifying strategic rephrases or
+failing to distinguish genuine support from manipula-
+tive restatements (Konat et al., 2016). This represents
+a significant gap in developing scalable computational
+tools for analysis of how rephrasing really functions
+in discourse.
+To address this gap, we investigate whether
+grounding intelligent agents (Marreed et al., 2025) in
+explicit argumentation and rhetorical theory signifi-
+cantly improves their ability to analyse how rephras-
+ing is used, particularly in classification. Our key
+research question (RQ) is: Does the explicit knowl-
+edge of argumentation and rephrase theory lead to a
+demonstrable difference in an AI agent’s analysis of
+reformulations, compared to agents relying solely on
+the implicit knowledge within pre-trained LLMs?
+To answer this, we propose and implement a
+”Rephrasing Agents” platform. We simulate two ar-
+chitectures performing speech act analysis:
+• Theoretically-Informed Agents: Equipped via
+arXiv:2602.13713v2  [cs.CL]  16 Mar 2026
+
+--- Page 2 ---
+RAG with knowledge from argumentation theory
+and rephrase studies (including taxonomies and
+criteria for identifying misuses of rephrase (Visser
+et al., 2018; Budzynska et al., 2024)).
+• Zero-Shot Agents: Identical LLM-based agents
+operating without access to the explicit theoreti-
+cal knowledge base.
+We test this system using transcribed US2016
+Reddit and televised presidential debates based on
+(Visser et al., 2020) with 401 rephrase selected, a
+genre rich in persuasive and communicative manoeu-
+vres where rephrasing plays a key role. This research
+direction, combined with creating annotated corpora
+of natural language discourse, e.g. (Visser et al.,
+2020) is a part of the ‘Argument Web’ project for
+building an online ecosystem of devices and services
+for argumentation in the digital communication (Reed
+et al., 2017). Among some recent findings in this area
+there are e.g. dialogical interfaces for exploring com-
+plex debates (Lawrence et al., 2022) or systems for
+detecting argumentative fallacies along with specify-
+ing challenges for the LLM-supported fallacy identi-
+fication in the wild (Ruiz-Dolz and Lawrence, 2023).
+This paper provides an empirically grounded under-
+standing of how LLM-driven agents (Liu et al., 2025),
+when enhanced with explicit theoretical knowledge,
+can simulate and analyse the complex dynamics of re-
+formulation in argumentative discourse.
+Integrating advanced NLP techniques within
+this theoretically-motivated MAS allows us to de-
+velop mechanisms for identifying how strategically
+rephrased statements potentially reinforce or mitigate
+polarising trends. Understanding and computation-
+ally exploring methods to identify indicators of mis-
+use of reformulation represents an important step to-
+wards developing frameworks for next-generation AI
+tools capable of more effectively detecting forms of
+online harms (Guo et al., 2024), such as subtle hate
+speech, disinformation campaigns, and the spread of
+fake news, which often rely on manipulative refram-
+ing rather than outright falsehoods.
+2 RELATED WORK
+Our approach integrates insights of rephrasing with a
+multi-agent system (MAS). This section provides the
+context for this integration by reviewing relevant prior
+work.
+2.1 Rephrasing in Discourse
+”Rephrase in Argument Structure” (Konat et al.,
+2016) is among the earliest studies to examine the
+role of rephrasing in argumentative discourse. The
+study highlights key challenges in argument mining,
+particularly in assessing the degree of support for a
+speaker’s position in dialogue. In this work, rephras-
+ing is defined as two non-overlapping text spans that
+occupy the same position within the argument struc-
+ture, thereby preserving its overall coherence (in other
+words, preserve the argument structure). Further ex-
+amination of rephrasing (Koszowy et al., 2022) iden-
+tifies linguistic patterns such as generalisation and
+specification across communicative genres. Their
+methodology combined annotation-based analysis to
+classify rephrase types and their locutionary and illo-
+cutionary aspects, with a participatory study explor-
+ing perlocutionary effects.
+”Rephrasing is not arguing, but it is still persua-
+sive” (Younis et al., 2023) examines the rhetorical
+characteristics and persuasive impact of rephrasing
+in argumentative discourse through three experimen-
+tal studies. The findings highlight the complexity of
+rephrasing, its rhetorical advantages in communica-
+tion, and its potential to enhance both the persuasive-
+ness of statements and the perceived trustworthiness
+of the speaker.
+(Kiljan and Koszowy, 2024) introduces an annota-
+tion scheme for categorising rephrase types, shifting
+focus from static linguistic cues to the dynamic pro-
+cess within a single act of rephrasing. The authors
+propose five distinct categories based on two tex-
+tual components: rephrasandum (the initial-input seg-
+ment) and rephrasans (the reformulated-output seg-
+ment), presented in Fig. 1.
+(Budzynska et al., 2024) propose a model
+analysing rephrased arguments with emphasis on
+ethos-sentiment interaction across discourse contexts.
+They introduceDynRephAn, a tool for capturing
+linguistic variations in ethos and sentiment during
+rephrasing, enabling automatic visualisation of these
+changes.
+2.2 Multi-Agent LLM-based Systems
+Applying intelligent agents to complex NLP tasks of-
+fers several advantages over monolithic approaches
+(Wang et al., 2025; Harbar and Chudziak, 2025), par-
+ticularly when tackling pragmatic function identifica-
+tion. MAS involves designing systems composed of
+multiple autonomous agents that interact with each
+other and their environment to achieve individual or
+collective goals.
+In the context of NLP (Sadowski and Chudziak,
+2025), this paradigm allows for a modular decompo-
+sition of intricate problems (Zhang et al., 2025a; Chen
+et al., 2025). Complex tasks, such as understanding
+
+--- Page 3 ---
+Figure 1: Classification of rephrase based on (Kiljan and Koszowy, 2024).
+argumentation or subtle speech act functions, can be
+broken down into sub-tasks, each handled by a ded-
+icated agent (Kostka and Chudziak, 2025). For in-
+stance, one agent might focus solely on discourse seg-
+mentation, while others specialize in relation extrac-
+tion, intent recognition, or accessing external knowl-
+edge.
+Furthermore, MAS facilitates the integration of
+diverse knowledge sources and reasoning mecha-
+nisms (Jimenez-Romero et al., 2025). As demon-
+strated in our architecture, some agents can be
+equipped with specific knowledge (via RAG), while
+others operate based on general pre-trained knowl-
+edge, enabling comparisons and critiques within the
+system itself. This approach allows for building sys-
+tems where agent interactions (Li et al., 2024), po-
+tentially involving negotiation or critical evaluation
+(like our Critic), lead to more robust and explainable
+outcomes than a single, large model might produce
+(Chung et al., 2025). The use of MAS-frameworks
+like CrewAI or AutoGen simplifies the orchestration
+of these interacting agents and the management of
+shared state, making the MAS approach practical for
+implementing theoretically-grounded NLP models.
+3 HYPOTHESIS AND APPROACH
+The central computational problem addressed in this
+paper lies at the intersection of natural language
+understanding, argumentation, and rhetoric. While
+LLMs demonstrate capabilities (Chen et al., 2024;
+Wagner and Ultes, 2024), their ability to discern
+the subtle pragmatic functions and potential misuses
+of reformulation solely from statistical patterns of-
+ten falls short. Distinguishing legitimate clarification
+from manipulative distortion frequently requires an
+understanding of argumentative context in dialogue
+sequence and rhetorical principles potentially absent
+in standard zero-shot models (Wu et al., 2025; Zhang
+et al., 2025b). This creates a gap: the lack of reliable
+computational methods for analysing how reformula-
+tion is used and identifying where it deviates from fair
+and reasoned discourse.
+Based on this problem, we formulate the central
+hypothesis of this research, focusing on the contribu-
+tion of our complete multi-agent architecture:A MAS
+whose specialist agents are explicitly grounded in ar-
+gumentation theory via RAG will achieve a demon-
+strably higher classification accuracy—particularly
+rephrase categories—than an identical system oper-
+ating in a zero-shot capacity.We hypothesise that the
+informed system’s advantage will stem from its abil-
+ity to apply theoretical principles, whereas the zero-
+shot system will be limited to surface-level linguistic
+patterns.
+4 METHODOLOGY
+This section introduces the Rephrasing Agents plat-
+form, showcasing the multi-agent architecture devel-
+oped for this research. We will outline the workflow,
+agent interactions, and state management that enable
+the comparative reformulation analysis.
+4.1 Rephrase Classification
+We propose a two-step method to classify and eval-
+uate types of rephrasing. Firstly, rephrases are cate-
+gorised by the MAS system into one of five D-I-S-G-
+O types or identified as not a rephrase. Each category
+is defined by specific rules guiding the LLM. MAS
+examines the input and output phrases row-by-row,
+alongside their ilocutions (i.e. reconstructed mean-
+ings by an annotator), to assign the appropriate cate-
+gory.
+Secondly, when a reformulation is detected and
+classified, the rephrase is compared to a gold standard
+annotated from the US 2016 presidential debates cor-
+pus. A total of 460 rephrase instances were manually
+classified using this scheme, with each instance as-
+signed a single rephrase category. This corpus serves
+as input for the experiments detailed in Section 5.
+
+--- Page 4 ---
+Table 1: Rephrase categories with definitions and examples from political discourse.
+Category Definition Example
+De-intensification Weakens a point“Anderson Cooper is really doing a great job”→“Anderson
+Cooper is not bad at all”
+Intensification Strengthens a point by reinforc-
+ing qualities
+“Anderson Cooper is really doing a great job”→“Anderson
+Cooper is killing it”
+Specification Adds detail or narrows scope“there is nothing to be impressed with about Hillary”→“nothing
+impressive [...] other than her ambition, and her pandering”
+Generalisation Broadens or abstracts the origi-
+nal point
+“TRUMP is not answering the question”→“TRUMP never did
+answer the question”
+Other Rephrase types not covered“cutting mics should totally be a thing”→“I wish the organisers
+would make cutting microphones part of the debate”
+Not a Rephrase Pairs that do not constitute re-
+formulation (e.g., inferences)
+“Tariffs will cause companies to reopen plants”→“we have to
+stop them from leaving”
+4.2 Multi-Agent Architecture
+The core of our methodology is a parallel evaluation
+of two distinct MAS: anInformed Systemand aZero-
+Shot System. As illustrated in Figure 2, both systems
+share an identical architecture but differ in their ac-
+cess to theoretical knowledge. Each system is com-
+posed of four specialised agents (Yao et al., 2023)
+designed to collaborate on the analysis of a given
+rephrase pair (a rephrasandum and a rephrasans).
+All prompts used in our paper are available in
+github repository 1. The agent team within each sys-
+tem includes:
+•Asserting Agent:Responsible for making fac-
+tual, evidence-based assertions about the linguis-
+tic and semantic relationship between the two
+statements.
+•Arguing Agent:Tasked with constructing a logi-
+cal argument for a specific classification, drawing
+inferences and building a coherent case.
+•Disagreeing Agent:Designed to critically eval-
+uate the ongoing analysis, challenge assumptions,
+and identify potential misuses or hidden complex-
+ities that other agents might overlook.
+•Broker Critic Agent:Serves as the orchestrator
+and final arbiter of the group. It manages the con-
+versational flow, synthesizes the perspectives of
+the other agents, and produces the definitive clas-
+sification and a summary justification.
+The analytical process is structured as a moder-
+ated conversation. The Broker Critic Agent initiates
+and guides the discussion, calling upon the specialist
+agents to contribute their analysis in sequence. Af-
+ter a predetermined number of conversational turns,
+1Code available at github.com/michal-
+wawer/RephraseAnalysisAgents ICAART2026
+the Broker synthesizes the discussion and provides a
+final classification.
+4.3 System Implementation
+We implemented our experimental setup using Python
+based CrewAI framework, which provides capabili-
+ties for orchestrating conversations between multiple
+LLM-based agents. The Broker Critic Agent was con-
+figured as manager agent, which is responsible for
+directing the conversational flow and terminating the
+interaction upon reaching a conclusion. The underly-
+ing LLM for all agents was OpenAI’s “GPT-5 Mini“.
+This model was selected for its favorable balance of
+performance and efficiency. It offers reasoning capa-
+bilities comparable to top-tier LLMs but at a signifi-
+cantly higher speed and lower cost.
+4.3.1 Retrieval-Augmented Generation
+Configuration
+The key distinction between our two systems is im-
+plementation of the RAG component, which was ex-
+clusively provided to the agents of the Informed Sys-
+tem. The RAG knowledge base was constructed from
+a curated set of academic texts on argumentation the-
+ory and rephrase analysis. The contents included:
+•Theoretical Frameworks:Core principles from
+Inference Anchoring Theory (IAT), including the
+structural characterization of rephrase relations
+(Visser et al., 2018; Koszowy et al., 2022).
+•Rephrase Taxonomies:Classifications of differ-
+ent rephrase types (e.g., intensification, specifica-
+tion) and their linguistic markers (Younis et al.,
+2023; Kiljan and Koszowy, 2024; Konat et al.,
+2016), based on the annotation scheme under-
+pinned in section 4.1.
+
+--- Page 5 ---
+Figure 2: MAS architecture. The Informed System (top) equips agents with RAG access to argumentation theory, while the
+Zero-Shot System (bottom) relies solely on pre-trained LLM knowledge. Both share identical agent roles and orchestration.
+4.4 Comparative Analysis Approach
+Our experimental design is centered on a direct com-
+parison between the outputs of two parallel MAS.
+The systems operate in complete isolation for each
+rephrase pair, neither system has access to the pro-
+cess or results of the other. This strict separation en-
+sures that we can isolate and measure the impact of
+the single variable under investigation: access to ex-
+plicit theoretical knowledge.
+•The Informed System:In this configuration,
+the Asserting, Arguing, and Disagreeing agents
+were equipped with the RAG tool. Their sys-
+tem prompts explicitly instructed them to ground
+their analysis in the provided theoretical knowl-
+edge base, referencing it to support their claims.
+•The Zero-Shot System:This system served as
+our baseline. Its agents were identical to their In-
+formed counterparts in every respect—including
+their prompts and the underlying LLM—but they
+were not given access to the RAG tool. Their anal-
+ysis, therefore, relied solely on the implicit knowl-
+edge contained within the pre-trained model’s pa-
+rameters.
+5 EXPERIMENTAL SETUP
+To validate our central hypothesis, we conducted a
+set of experiments designed to quantitatively mea-
+sure and qualitatively analyze the impact of theoret-
+ical grounding on a MAS ability to classify rephrase
+functions. This section details our experimental setup,
+the dataset used, and the evaluation metrics.
+5.1 Dataset
+The evaluation is based on a gold-standard dataset de-
+rived from the US2016 corpus (Visser et al., 2020),
+which comprises professionally annotated rephrase
+relations from the 2016 U.S. presidential debates. A
+team of two annotators extracted 464 rephrase pairs
+from this corpus (input and output) and independently
+classified each rephrase into one of six categories.
+Following this, Cohen’s kappa coefficient was calcu-
+lated to assess inter-annotator agreement, as presented
+in Table 2. For our automated classification experi-
+ments, we selected 401 of these annotated pairs.
+Table 2: Inter-annotator agreement for rephrase classifica-
+tion.
+Category IAA Cohen’sκ
+Deintensifying 44%
+Intensifying 37%
+Specification 48%
+Generalising 39%
+Other 17%
+No rephrase 31%
+Overall 36%
+5.2 Baselines and Comparative Systems
+Our experimental design is centred on a direct com-
+parison between two MAS to isolate the impact of
+theoretical grounding. To disentangle the individual
+contributions of RAG enhancement and multi-agent
+
+--- Page 6 ---
+collaboration, we conduct a 2×2 study. The four con-
+figurations vary along two dimensions: agent count
+(single vs. multi-agent) and knowledge access (zero-
+shot vs. RAG-enhanced). Single-agent configura-
+tions use the Broker Critic Agent in isolation, while
+multi-agent configurations employ the full four-agent
+architecture. RAG-enhanced variants have access to
+the curated theoretical knowledge base, whereas zero-
+shot variants rely solely on the pre-trained LLM. This
+design isolates whether performance gains stem pri-
+marily from theoretical knowledge, multi-agent delib-
+eration, or their combination.
+5.3 Evaluation Metrics
+For the seven-category classification task, we report
+the Macro Average F1-Score, which calculates the
+metric independently for each class and then takes
+the unweighted average. This treats all classes as
+equally important, regardless of their frequency (sup-
+port). Additionally, to provide a single measure that
+is particularly well-suited for potentially imbalanced
+multi-class problems, we also calculate the Matthews
+Correlation Coefficient (MCC). It takes into account
+true and false positives and negatives for all classes
+simultaneously, producing a balanced measure even
+when class sizes differ substantially (as seen in our
+dataset, where ’Specification’ has 137 instances while
+’Other’ has only 35). An MCC score of +1 indicates
+perfect agreement, 0 indicates performance no better
+than random, and -1 indicates total disagreement.
+6 RESULTS
+The experimental results demonstrate clear perfor-
+mance differences across all four configurations, sup-
+porting our hypothesis that theoretical grounding is
+critical for rephrase analysis.
+Table 3 presents the comparative F1-scores for the
+six-category rephrase classification task. The RAG-
+enhanced MAS achieved the highest performance,
+with a macro-averaged F1-score of 0.67 and MCC
+of 0.64, indicating strong correlation with ground
+truth. In contrast, the Single Zero-Shot baseline
+achieved only 0.27 F1 and 0.16 MCC, performing
+only marginally better than random classification.
+The 2×2 design isolates the contributions of each
+component. Adding RAG to a single agent yields a
+improvement of +0.27 F1, demonstrating that theo-
+retical grounding alone provides significant benefit.
+Adding multi-agent collaboration without RAG con-
+tributes a more modest +0.11 F1. Notably, the full
+MAS+RAG configuration achieves +0.40 F1 over the
+baseline, exceeding the sum of individual contribu-
+Table 3: Comparative results across four configurations.
+Single Agent MAS
+Category0-Shot RAG 0-Shot RAG
+Deintensifying 0.26 0.55 0.33 0.68
+Intensifying 0.24 0.61 0.31 0.77
+Specification 0.40 0.63 0.48 0.74
+Generalising 0.33 0.68 0.42 0.81
+Other 0.11 0.21 0.18 0.30
+No rephrase 0.28 0.59 0.35 0.73
+Macro F10.27 0.54 0.38 0.67
+MCC0.16 0.48 0.24 0.64
+tions (+0.38), suggesting that RAG and multi-agent
+deliberation interact synergistically—the MAS archi-
+tecture amplifies the benefits of theoretical knowledge
+by enabling specialist agents to apply it from multiple
+analytical perspectives.
+Performance gains were most pronounced for cat-
+egories requiring deeper pragmatic understanding. In
+the ‘Generalising’ category, MAS+RAG scored 0.81
+compared to 0.33 for Single Zero-Shot—an improve-
+ment of nearly 150%. The corresponding confusion
+matrices in Figure 3 and 4 illustrate this disparity.
+RAG-enhanced predictions concentrate along the di-
+agonal, while Zero-Shot predictions show widespread
+confusion between functionally distinct categories.
+Figure 3: Confusion matrix of zero-shot MAS.
+7 DISCUSSION AND FUTURE
+WORK
+Our RQ asked to what extent grounding a MAS
+in argumentation theory via RAG improves its
+performance compared to a zero-shot baseline. The
+RAG-Enhanced system achieved a macro-averaged
+
+--- Page 7 ---
+Figure 4: Confusion matrix of RAG enhanced MAS.
+F1-score of 0.670, nearly doubling the baseline’s
+score of 0.375. As stated in introduction, a key
+challenge in computational argumentation is mov-
+ing beyond surface-level similarity to capture the
+pragmatic function of a rephrase. Our findings
+demonstrate that the Zero-Shot system, while capable
+of some classification, struggled precisely with this
+task. As evidenced by its low F1-scores in categories
+such as ‘Intensifying‘ and ‘No rephrase‘. A closer
+examination of misclassified rephrases reveals that
+the LLM confuses Deintensification with Intensifica-
+tion, as illustrated in the following example:
+input:Hillary Clinton is kicking Bernie Sanders’ ass
+output:in this debate though Clinton is winning
+despite Bernie Sanders
+This rephrasing was annotated as Deintensifica-
+tion by human annotators but classified as Intensifica-
+tion by the MAS system. This discrepancy suggests
+that LLMs require additional fine-tuning, particularly
+with respect to specific idioms and phrases.
+This directly supports our central hypothesis: the
+Informed system’s advantage stems from its ability
+to apply theoretical principles, whereas the Zero-Shot
+system is limited to surface-level linguistic patterns.
+The confusion matrices (Figure 3 and 4) visually cor-
+roborate this. The RAG-Enhanced system’s predic-
+tions are tightly clustered along the diagonal, indicat-
+ing correct classifications grounded in the provided
+rephrase taxonomies. In contrast, the Zero-Shot pre-
+dictions are diffuse, showing widespread confusion
+between functionally distinct categories such as ‘In-
+tensifying‘ and ‘Specification‘. While both systems
+found the ‘Other‘ category challenging, the overall
+results confirm that theoretical grounding is not just
+beneficial but necessary for building function-aware
+analytical tools, thus addressing the gap identified in
+the introduction.
+While this study successfully demonstrates the
+value of a theoretically-grounded approach, it also
+opens several avenues for future research. Our main
+focus it to expand the theoretical scope, refine the
+agentic architecture, and extend the evaluation to
+more complex fallacies. A key direction for our fu-
+ture work is to address the detection of manipulative
+rephrase, such as the straw man fallacy. Our cur-
+rent research efforts are focused on the manual cre-
+ation of a high-quality, annotated gold-standard cor-
+pus specifically for this task. Once this dataset is
+complete, we will adapt the multi-agent framework
+presented here to automate the identification of these
+complex fallacies at scale. Ultimately, our goal is to
+apply rephrase-aware LLM agents to misinformation
+detection, where strategic reformulation serves as a
+primary vector for spreading false narratives online.
+8 CONCLUSION
+This paper was motivated by the gap between the the-
+oretical understanding of reformulation and its com-
+putational analysis. As outlined in the introduc-
+tion, existing methods often fail to distinguish legiti-
+mate clarification from manipulative distortion (Wag-
+ner and Ultes, 2024). Our research sought to re-
+solve this by investigating whether explicit theoretical
+knowledge could enhance the analytical capabilities
+of LLM-based agents. The experimental results con-
+firm this unequivocally; the RAG-Enhanced system
+significantly outperformed the baseline across nearly
+all rephrase categories, demonstrating a clear advan-
+tage derived from its access to argumentation theory.
+This study’s central contribution is the empir-
+ical demonstration that theoretical grounding en-
+ables a qualitative shift in analytical capability—from
+surface-level pattern matching to deeper, function-
+aware reasoning. By presenting a comparative multi-
+agent framework and validating it on a human anno-
+tated dataset, we offer both a methodology and con-
+crete evidence for the necessity of integrating domain-
+specific knowledge into LLM-based systems for dis-
+course analysis. This work create grounding for more
+reliable and interpretable AI tools that can accurately
+identify the strategic and rhetorical uses of rephrasing
+in contemporary communication.
+ACKNOWLEDGEMENTS
+The work reported in this paper was supported
+by the Polish National Science Centre under grant
+2020/39/I/HS1/02861.
+
+--- Page 8 ---
+REFERENCES
+Budzynska, K., Koszowy, M., Saint-Dizier, P., and Uberna,
+M. (2024). Analysing language of the dynamics of
+ethos and emotions in rephrased arguments. InProc.
+of the 24th Int. Workshop on Computational Models
+of Natural Argument (CMNA’24), pages 7–17.
+Chen, G., Cheng, L., Luu, A. T., and Bing, L. (2024). Ex-
+ploring the potential of large language models in com-
+putational argumentation. InProc. of the 62nd Annual
+Meeting of the ACL, pages 2309–2330.
+Chen, R., Jiang, W., Qin, C., and Tan, C. (2025). Theory
+of mind in large language models: Assessment and
+enhancement.arXiv:2505.00026.
+Chung, Y ., Kakkar, G. T., Gan, Y ., Milne, B., and ¨Ozcan,
+F. (2025). Is long context all you need? leveraging
+llm’s extended context for nl2sql.Proc. of the VLDB
+Endowment, 18(8):2735–2747.
+Guo, K., Hu, A., Mu, J., Shi, Z., Zhao, Z., et al. (2024). An
+investigation of large language models for real-world
+hate speech detection.arXiv:2401.03346.
+Harbar, Y . and Chudziak, J. A. (2025). Simulating oxford-
+style debates with llm-based multi-agent systems. In
+Proc. ACIIDS 2025.
+Jimenez-Romero, C., Yegenoglu, A., and Blum, C.
+(2025). Multi-agent systems powered by large lan-
+guage models: Applications in swarm intelligence.
+arXiv:2503.03800.
+Kiljan, K. and Koszowy, M. (2024). Qualitative and quan-
+titative evidence for linguistic and discursive features
+of rephrase. InProc. of the 4th European Conf. on
+Argumentation, number 110 in Studies in Logic and
+Argumentation, pages 229–241. College Publications.
+Konat, B., Budzynska, K., and Saint-Dizier, P. (2016).
+Rephrase in argument structure. InFoundations of the
+Language of Argumentation: COMMA 2016 Work-
+shop, pages 32–39.
+Kostka, A. and Chudziak, J. A. (2025). Towards cognitive
+synergy in llm-based multi-agent systems: Integrating
+theory of mind and critical evaluation. InProc. of the
+Annual Meeting of the Cognitive Science Society.
+Koszowy, M., Oswald, S., Budzynska, K., Konat, B., and
+Gygax, P. (2022). A pragmatic account of rephrase
+in argumentation: Linguistic and cognitive evidence.
+Informal Logic, 42(1).
+Lawrence, J., Visser, J., and Reed, C. (2022). Polemicist: A
+dialogical interface for exploring complex debates. In
+Int. Conf. on Computational Models of Argumentation
+(COMMA), pages 223–234.
+Lewi´nski, M. and Oswald, S. (2013). When and how do
+we deal with straw men? a normative and cognitive
+pragmatic account.Journal of Pragmatics, 59:164–
+177.
+Li, J., Zhang, Q., Yu, Y ., Fu, Q., and Ye, D. (2024). More
+agents is all you need.arXiv:2402.05120.
+Liu, Z., Amjad, R. A., Adkathimar, R., Wei, T.,
+and Tong, H. (2025). Selfelicit: Your language
+model secretly knows where is the relevant evidence.
+arXiv:2502.08767.
+Marreed, S., Oved, A., Yaeli, A., Shlomov, S., Levy, I.,
+et al. (2025). Towards enterprise-ready computer us-
+ing generalist agent.arXiv:2503.01861.
+Reed, C., Budzynska, K., Duthie, R., Janier, M., Konat, B.,
+et al. (2017). The argument web: An online ecosys-
+tem of tools, systems and services for argumentation.
+Philosophy and Technology, 30(2):137–160.
+Ruiz-Dolz, R. and Lawrence, J. (2023). Detecting argumen-
+tative fallacies in the wild: Problems and limitations
+of large language models. InProc. of the 10th Work-
+shop on Argument Mining. ACL.
+Sadowski, A. and Chudziak, J. A. (2025). Explainable
+rule application via structured prompting: A neural-
+symbolic approach.Procedia Computer Science,
+270:2166–2175.
+van Eemeren, F., Garssen, B., Krabbe, E., Snoeck Henke-
+mans, A., Verheij, B., and Wagemans, J. (2014).
+Handbook of argumentation theory. Springer.
+Visser, J., Konat, B., Duthie, R., Koszowy, M., Budzynska,
+K., and Reed, C. (2020). Argumentation in the 2016
+US presidential elections: Annotated corpora of tele-
+vision debates and social media reaction.Language
+Resources and Evaluation, 54(1):123–154.
+Visser, J., Koszowy, M., Konat, B., Budzynska, K., et al.
+(2018). Straw Man as Misuse of Rephrase. InArgu-
+mentation and Inference: Proc. of the 2nd European
+Conference on Argumentation, vol. II, pages 941–962.
+College Publications.
+Wagner, N. and Ultes, S. (2024). On the controllability
+of large language models for dialogue interaction. In
+Proc. 25th Annual Meeting of SIGDIAL.
+Walton, D. and Krabbe, E. (1995).Commitment in Dia-
+logue: Basic Concepts of Interpersonal Reasoning.
+SUNY Press. Press.
+Wang, J., W ANG, J., Athiwaratkun, B., Zhang, C., and Zou,
+J. (2025). Mixture-of-agents enhances large language
+model capabilities. InICLR.
+Wu, A. J., Liu, R., Oktar, K., Sumers, T. R., and
+Griffiths, T. L. (2025). Are large language mod-
+els sensitive to the motives behind communication?
+arXiv:2510.19687.
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., et al. (2023).
+React: Synergizing reasoning and acting in language
+models.arXiv:2210.03629.
+Younis, R., de Oliveira Fernandes, D., Gygax, P., Koszowy,
+M., and Oswald, S. (2023). Rephrasing is not arguing,
+but it is still persuasive: An experimental approach to
+perlocutionary effects of rephrase.Journal of Prag-
+matics, 210:12–23.
+Zhang, Q., Hu, C., Upasani, S., Ma, B., Hong, F.,
+et al. (2025a). Agentic context engineering: Evolv-
+ing contexts for self-improving language models.
+arXiv:2510.04618.
+Zhang, Y ., Li, Y ., Zhao, T., Zhu, K., Wang, H., and Vascon-
+celos, N. (2025b). Achilles heel of distributed multi-
+agent systems.arXiv:2504.07461.

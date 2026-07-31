@@ -1,0 +1,10 @@
+Primary sources used in the Agent topic deck:
+- Official CCF directory: https://www.ccf.org.cn/Academic_Evaluation/By_category/
+- ICLR 2024 official paper pages: AgentBench, ToolLLM, GAIA, SWE-bench, WebArena.
+- NeurIPS official paper pages: Toolformer 2023, WebShop 2022.
+- PMLR ICML 2022: Language Models as Zero-Shot Planners.
+- ACL Anthology 2024: AppWorld.
+- OSWorld official repository: https://github.com/xlang-ai/OSWorld
+- tau-bench official OpenReview: https://openreview.net/forum?id=roNSXZpUDN
+
+Each source URL is also embedded in the related slide speaker notes under [Sources].

@@ -1,0 +1,711 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/zoWIxlpCB3EOIMrM7voXmpBKYuQ</id>
+  <title>arXiv Query: search_query=all:LLM OR all:agent OR all:tool OR all:use OR all:safety OR all:evaluation OR all:prompt OR all:injection OR all:benchmark&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-07-28T07:27:16Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:LLM+OR+(all:agent+OR+(all:tool+OR+(all:use+OR+(all:safety+OR+(all:evaluation+OR+(all:prompt+OR+(all:injection+OR+all:benchmark)))))))&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>1692180</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2410.05451v3</id>
+    <title>SecAlign: Defending Against Prompt Injection with Preference Optimization</title>
+    <updated>2025-07-03T05:45:41Z</updated>
+    <link href="https://arxiv.org/abs/2410.05451v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.05451v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are becoming increasingly prevalent in modern software systems, interfacing between the user and the Internet to assist with tasks that require advanced language understanding. To accomplish these tasks, the LLM often uses external data sources such as user documents, web retrieval, results from API calls, etc. This opens up new avenues for attackers to manipulate the LLM via prompt injection. Adversarial prompts can be injected into external data sources to override the system's intended instruction and instead execute a malicious instruction. To mitigate this vulnerability, we propose a new defense called SecAlign based on the technique of preference optimization. Our defense first constructs a preference dataset with prompt-injected inputs, secure outputs (ones that respond to the legitimate instruction), and insecure outputs (ones that respond to the injection). We then perform preference optimization on this dataset to teach the LLM to prefer the secure output over the insecure one. This provides the first known method that reduces the success rates of various prompt injections to &lt;10%, even against attacks much more sophisticated than ones seen during training. This indicates our defense generalizes well against unknown and yet-to-come attacks. Also, SecAlign models are still practical with similar utility to the one before defensive training in our evaluations. Our code is at https://github.com/facebookresearch/SecAlign</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-07T19:34:35Z</published>
+    <arxiv:comment>ACM CCS 2025. Key words: prompt injection defense, LLM security, LLM-integrated applications</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Sizhe Chen</name>
+    </author>
+    <author>
+      <name>Arman Zharmagambetov</name>
+    </author>
+    <author>
+      <name>Saeed Mahloujifar</name>
+    </author>
+    <author>
+      <name>Kamalika Chaudhuri</name>
+    </author>
+    <author>
+      <name>David Wagner</name>
+    </author>
+    <author>
+      <name>Chuan Guo</name>
+    </author>
+    <arxiv:doi>10.1145/3719027.3744836</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3719027.3744836" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.09809v1</id>
+    <title>AgentGuard: Repurposing Agentic Orchestrator for Safety Evaluation of Tool Orchestration</title>
+    <updated>2025-02-13T23:00:33Z</updated>
+    <link href="https://arxiv.org/abs/2502.09809v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.09809v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The integration of tool use into large language models (LLMs) enables agentic systems with real-world impact. In the meantime, unlike standalone LLMs, compromised agents can execute malicious workflows with more consequential impact, signified by their tool-use capability. We propose AgentGuard, a framework to autonomously discover and validate unsafe tool-use workflows, followed by generating safety constraints to confine the behaviors of agents, achieving the baseline of safety guarantee at deployment. AgentGuard leverages the LLM orchestrator's innate capabilities - knowledge of tool functionalities, scalable and realistic workflow generation, and tool execution privileges - to act as its own safety evaluator. The framework operates through four phases: identifying unsafe workflows, validating them in real-world execution, generating safety constraints, and validating constraint efficacy. The output, an evaluation report with unsafe workflows, test cases, and validated constraints, enables multiple security applications. We empirically demonstrate AgentGuard's feasibility with experiments. With this exploratory work, we hope to inspire the establishment of standardized testing and hardening procedures for LLM agents to enhance their trustworthiness in real-world applications.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-13T23:00:33Z</published>
+    <arxiv:comment>Project report of AgentGuard in LLM Agent MOOC Hackathon hosted by UC Berkeley in 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jizhou Chen</name>
+    </author>
+    <author>
+      <name>Samuel Lee Cong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2402.06363v2</id>
+    <title>StruQ: Defending Against Prompt Injection with Structured Queries</title>
+    <updated>2024-09-25T19:48:39Z</updated>
+    <link href="https://arxiv.org/abs/2402.06363v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2402.06363v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in Large Language Models (LLMs) enable exciting LLM-integrated applications, which perform text-based tasks by utilizing their advanced language understanding capabilities. However, as LLMs have improved, so have the attacks against them. Prompt injection attacks are an important threat: they trick the model into deviating from the original application's instructions and instead follow user directives. These attacks rely on the LLM's ability to follow instructions and inability to separate prompts and user data. We introduce structured queries, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a secure front-end that formats a prompt and user data into a special format, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility. Our code is released at https://github.com/Sizhe-Chen/StruQ.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-02-09T12:15:51Z</published>
+    <arxiv:comment>To appear at USENIX Security Symposium 2025. Key words: prompt injection defense, LLM security, LLM-integrated applications</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Sizhe Chen</name>
+    </author>
+    <author>
+      <name>Julien Piet</name>
+    </author>
+    <author>
+      <name>Chawin Sitawarin</name>
+    </author>
+    <author>
+      <name>David Wagner</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20023v2</id>
+    <title>When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents</title>
+    <updated>2026-07-07T12:24:40Z</updated>
+    <link href="https://arxiv.org/abs/2606.20023v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20023v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents increasingly select tools autonomously, their choices among tools with different privileges become safety-relevant. However, prior tool-selection studies focus on safety-agnostic metadata preferences, leaving privilege-sensitive choices underexplored. To address this gap, we study over-privileged tool selection, in which an agent selects or escalates to a higher-privilege tool despite a sufficient lower-privilege alternative. We introduce ToolPrivBench to evaluate whether agents choose higher-privilege tools despite sufficient lower-privilege alternatives, measuring both initial selection and escalation after transient tool failures. Across eight domains and five recurring risk patterns, we find that over-privileged tool selection is common among mainstream LLM agents and is further amplified by transient failures. We further find that general safety alignment does not reliably transfer to least-privilege tool choice, while prompt-level controls provide only limited mitigation under transient failures. We therefore introduce a privilege-aware post-training defense that teaches agents to prefer sufficient lower-privilege tools and escalate only when necessary. Our mitigation experiments show that this defense substantially reduces unnecessary high-privilege tool use while preserving general capabilities.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-18T09:54:48Z</published>
+    <arxiv:comment>code: https://github.com/AISafetyHub/agent-tool-selection-bias</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Kaiyue Yang</name>
+    </author>
+    <author>
+      <name>Yuyan Bu</name>
+    </author>
+    <author>
+      <name>Jingwei Yi</name>
+    </author>
+    <author>
+      <name>Yuchi Wang</name>
+    </author>
+    <author>
+      <name>Biyu Zhou</name>
+    </author>
+    <author>
+      <name>Juntao Dai</name>
+    </author>
+    <author>
+      <name>Songlin Hu</name>
+    </author>
+    <author>
+      <name>Yaodong Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.12583v1</id>
+    <title>Detecting Prompt Injection Attacks Against Application Using Classifiers</title>
+    <updated>2025-12-14T07:35:32Z</updated>
+    <link href="https://arxiv.org/abs/2512.12583v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.12583v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prompt injection attacks can compromise the security and stability of critical systems, from infrastructure to large web applications. This work curates and augments a prompt injection dataset based on the HackAPrompt Playground Submissions corpus and trains several classifiers, including LSTM, feed forward neural networks, Random Forest, and Naive Bayes, to detect malicious prompts in LLM integrated web applications. The proposed approach improves prompt injection detection and mitigation, helping protect targeted applications and systems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-14T07:35:32Z</published>
+    <arxiv:comment>9 pages, X figures; undergraduate research project on detecting prompt injection attacks against LLM integrated web applications using classical machine learning and neural classifiers</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Safwan Shaheer</name>
+    </author>
+    <author>
+      <name>G. M. Refatul Islam</name>
+    </author>
+    <author>
+      <name>Mohammad Rafid Hamid</name>
+    </author>
+    <author>
+      <name>Md. Abrar Faiaz Khan</name>
+    </author>
+    <author>
+      <name>Md. Omar Faruk</name>
+    </author>
+    <author>
+      <name>Yaseen Nur</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.11717v4</id>
+    <title>WebInject: Prompt Injection Attack to Web Agents</title>
+    <updated>2025-10-17T01:52:39Z</updated>
+    <link href="https://arxiv.org/abs/2505.11717v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.11717v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-modal large language model (MLLM)-based web agents interact with webpage environments by generating actions based on screenshots of the webpages. In this work, we propose WebInject, a prompt injection attack that manipulates the webpage environment to induce a web agent to perform an attacker-specified action. Our attack adds a perturbation to the raw pixel values of the rendered webpage. After these perturbed pixels are mapped into a screenshot, the perturbation induces the web agent to perform the attacker-specified action. We formulate the task of finding the perturbation as an optimization problem. A key challenge in solving this problem is that the mapping between raw pixel values and screenshot is non-differentiable, making it difficult to backpropagate gradients to the perturbation. To overcome this, we train a neural network to approximate the mapping and apply projected gradient descent to solve the reformulated optimization problem. Extensive evaluation on multiple datasets shows that WebInject is highly effective and significantly outperforms baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-16T22:00:26Z</published>
+    <arxiv:comment>Appeared in EMNLP 2025 main conference. To better understand prompt injection attacks, see https://people.duke.edu/~zg70/code/PromptInjection.pdf</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)</arxiv:journal_ref>
+    <author>
+      <name>Xilong Wang</name>
+    </author>
+    <author>
+      <name>John Bloch</name>
+    </author>
+    <author>
+      <name>Zedian Shao</name>
+    </author>
+    <author>
+      <name>Yuepeng Hu</name>
+    </author>
+    <author>
+      <name>Shuyan Zhou</name>
+    </author>
+    <author>
+      <name>Neil Zhenqiang Gong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.04957v1</id>
+    <title>Automatic and Universal Prompt Injection Attacks against Large Language Models</title>
+    <updated>2024-03-07T23:46:20Z</updated>
+    <link href="https://arxiv.org/abs/2403.04957v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.04957v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) excel in processing and generating human language, powered by their ability to interpret and follow instructions. However, their capabilities can be exploited through prompt injection attacks. These attacks manipulate LLM-integrated applications into producing responses aligned with the attacker's injected content, deviating from the user's actual requests. The substantial risks posed by these attacks underscore the need for a thorough understanding of the threats. Yet, research in this area faces challenges due to the lack of a unified goal for such attacks and their reliance on manually crafted prompts, complicating comprehensive assessments of prompt injection robustness. We introduce a unified framework for understanding the objectives of prompt injection attacks and present an automated gradient-based method for generating highly effective and universal prompt injection data, even in the face of defensive measures. With only five training samples (0.3% relative to the test data), our attack can achieve superior performance compared with baselines. Our findings emphasize the importance of gradient-based testing, which can avoid overestimation of robustness, especially for defense mechanisms.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-07T23:46:20Z</published>
+    <arxiv:comment>Pre-print, code is available at https://github.com/SheltonLiu-N/Universal-Prompt-Injection</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiaogeng Liu</name>
+    </author>
+    <author>
+      <name>Zhiyuan Yu</name>
+    </author>
+    <author>
+      <name>Yizhe Zhang</name>
+    </author>
+    <author>
+      <name>Ning Zhang</name>
+    </author>
+    <author>
+      <name>Chaowei Xiao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.21404v1</id>
+    <title>What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema</title>
+    <updated>2026-05-20T17:02:36Z</updated>
+    <link href="https://arxiv.org/abs/2605.21404v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.21404v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We read twelve well-known LLM agent benchmark papers and recorded, dimension by dimension, what each paper actually says about how its evaluation was run. The motivation came from a familiar frustration: two papers will report results on the same benchmark with the same model name and disagree, and you cannot tell why -- the scaffold, the sampling settings, the subset, or the evaluator version. In many cases the published artifact does not let you answer. This paper is an implementation report on the attempt. We designed a small audit schema (five fields: benchmark identity, harness specification, inference settings, cost reporting, failure breakdown), wrote a scoring codebook with the boundary cases we hit during pilot scoring, applied it to twelve canonical papers (eight agent, four classical static), and recorded what we saw. We score the disclosure of an agent run, not its correctness, and make no claim that disclosure implies a trustworthy result. The mean audit score across the eight agent-benchmark papers is 0.38 (out of 1.0), and across the four classical static benchmarks 0.66; the largest gap is on cost (none of the eight agent benchmark papers disclose inference cost in any form) and on harness specification (none fully disclose a content-addressed container image of the evaluation environment). We release the schema as a JSON Schema file, the codebook as a Markdown document, and the raw scoring sheet as a CSV. The scoring was performed by a single auditor in one pass; a multi-rater audit is the natural next step, and we discuss what we think it would change.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-20T17:02:36Z</published>
+    <arxiv:comment>Pilot audit of 12 LLM agent benchmark papers; schema, codebook, and per-paper scoring sheet released. Submission to IEEE Big Data 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Mahdi Naser Moghadasi</name>
+      <arxiv:affiliation>BrightMind AI, Texas Tech University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Faezeh Ghaderi</name>
+      <arxiv:affiliation>University of Texas at Arlington</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.07324v3</id>
+    <title>Small LLMs Are Weak Tool Learners: A Multi-LLM Agent</title>
+    <updated>2024-02-16T12:42:25Z</updated>
+    <link href="https://arxiv.org/abs/2401.07324v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.07324v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents significantly extend the capabilities of standalone LLMs, empowering them to interact with external tools (e.g., APIs, functions) and complete various tasks in a self-directed fashion. The challenge of tool use demands that LLMs not only understand user queries and generate answers accurately but also excel in task planning, tool invocation, and result summarization. While traditional works focus on training a single LLM with all these capabilities, performance limitations become apparent, particularly with smaller models. To overcome these challenges, we propose a novel approach that decomposes the aforementioned capabilities into a planner, caller, and summarizer. Each component is implemented by a single LLM that focuses on a specific capability and collaborates with others to accomplish the task. This modular framework facilitates individual updates and the potential use of smaller LLMs for building each capability. To effectively train this framework, we introduce a two-stage training paradigm. First, we fine-tune a backbone LLM on the entire dataset without discriminating sub-tasks, providing the model with a comprehensive understanding of the task. Second, the fine-tuned LLM is used to instantiate the planner, caller, and summarizer respectively, which are continually fine-tuned on respective sub-tasks. Evaluation across various tool-use benchmarks illustrates that our proposed multi-LLM framework surpasses the traditional single-LLM approach, highlighting its efficacy and advantages in tool learning.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-14T16:17:07Z</published>
+    <arxiv:comment>On progress, github repo: https://github.com/X-PLUG/Multi-LLM-Agent</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Weizhou Shen</name>
+    </author>
+    <author>
+      <name>Chenliang Li</name>
+    </author>
+    <author>
+      <name>Hongzhan Chen</name>
+    </author>
+    <author>
+      <name>Ming Yan</name>
+    </author>
+    <author>
+      <name>Xiaojun Quan</name>
+    </author>
+    <author>
+      <name>Hehong Chen</name>
+    </author>
+    <author>
+      <name>Ji Zhang</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.10758v3</id>
+    <title>Agents at Risk: How Users Unwittingly Undermine LLM Safety</title>
+    <updated>2026-07-07T04:20:13Z</updated>
+    <link href="https://arxiv.org/abs/2601.10758v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.10758v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we introduce the User-Relayed Context Manipulation (UReCoM) attack, in which attackers manipulate benign users into relaying adversarial content within user requests, thereby relocating external adversarial content into user-provided task context. Our experimental evaluation shows that UReCoM outperforms five prompt-injection baselines (naive, context ignoring, fake completion, escape-character attacks, and combined attacks) under prevention-based (Sandwich, StruQ, and SecAlign) and detection-based defenses (Perplexity detection, DataSentinel, and CausalArmor). Additionally, UReCoM shows that LLMs can reject explicit malicious instructions more reliably than they can identify adversarial task entities, such as promotion codes, embedded within user requests. On 12 commercial LLM-based agents, we find that validation of adversarial task entities is largely prompt-driven rather than default, highlighting a design flaw in current agent frameworks. These results indicate that current defenses and deployed agents remain insufficient against user-relayed context manipulations, highlighting the need for task-entity-level prevention and default safety verification in LLM-based agents.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-14T03:29:13Z</published>
+    <arxiv:comment>User-relayed Context Manipulation; LLM-based Agents; Agent Security; Human Factors in Cybersecurity; Web-Use Agents; Planning Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Fengchao Chen</name>
+    </author>
+    <author>
+      <name>Tingmin Wu</name>
+    </author>
+    <author>
+      <name>Van Nguyen</name>
+    </author>
+    <author>
+      <name>Surya. Nepal</name>
+    </author>
+    <author>
+      <name>Carsten Rudolph</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.19793v3</id>
+    <title>Prompt Injection Attack to Tool Selection in LLM Agents</title>
+    <updated>2025-08-24T03:28:21Z</updated>
+    <link href="https://arxiv.org/abs/2504.19793v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.19793v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool selection is a key component of LLM agents. A popular approach follows a two-step process - \emph{retrieval} and \emph{selection} - to pick the most appropriate tool from a tool library for a given task. In this work, we introduce \textit{ToolHijacker}, a novel prompt injection attack targeting tool selection in no-box scenarios. ToolHijacker injects a malicious tool document into the tool library to manipulate the LLM agent's tool selection process, compelling it to consistently choose the attacker's malicious tool for an attacker-chosen target task. Specifically, we formulate the crafting of such tool documents as an optimization problem and propose a two-phase optimization strategy to solve it. Our extensive experimental evaluation shows that ToolHijacker is highly effective, significantly outperforming existing manual-based and automated prompt injection attacks when applied to tool selection. Moreover, we explore various defenses, including prevention-based defenses (StruQ and SecAlign) and detection-based defenses (known-answer detection, DataSentinel, perplexity detection, and perplexity windowed detection). Our experimental results indicate that these defenses are insufficient, highlighting the urgent need for developing new defense strategies.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-28T13:36:43Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jiawen Shi</name>
+    </author>
+    <author>
+      <name>Zenghui Yuan</name>
+    </author>
+    <author>
+      <name>Guiyao Tie</name>
+    </author>
+    <author>
+      <name>Pan Zhou</name>
+    </author>
+    <author>
+      <name>Neil Zhenqiang Gong</name>
+    </author>
+    <author>
+      <name>Lichao Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.06268v1</id>
+    <title>MPIB: A Benchmark for Medical Prompt Injection Attacks and Clinical Safety in LLMs</title>
+    <updated>2026-02-06T00:03:09Z</updated>
+    <link href="https://arxiv.org/abs/2602.06268v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.06268v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) systems are increasingly integrated into clinical workflows; however, prompt injection attacks can steer these systems toward clinically unsafe or misleading outputs. We introduce the Medical Prompt Injection Benchmark (MPIB), a dataset-and-benchmark suite for evaluating clinical safety under both direct prompt injection and indirect, RAG-mediated injection across clinically grounded tasks. MPIB emphasizes outcome-level risk via the Clinical Harm Event Rate (CHER), which measures high-severity clinical harm events under a clinically grounded taxonomy, and reports CHER alongside Attack Success Rate (ASR) to disentangle instruction compliance from downstream patient risk. The benchmark comprises 9,697 curated instances constructed through multi-stage quality gates and clinical safety linting. Evaluating MPIB across a diverse set of baseline LLMs and defense configurations, we find that ASR and CHER can diverge substantially, and that robustness depends critically on whether adversarial instructions appear in the user query or in retrieved context. We release MPIB with evaluation code, adversarial baselines, and comprehensive documentation to support reproducible and systematic research on clinical prompt injection. Code and data are available at GitHub (code) and Hugging Face (data).</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-06T00:03:09Z</published>
+    <arxiv:comment>13 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Junhyeok Lee</name>
+    </author>
+    <author>
+      <name>Han Jang</name>
+    </author>
+    <author>
+      <name>Kyu Sung Choi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.21965v1</id>
+    <title>SG-Bench: Evaluating LLM Safety Generalization Across Diverse Tasks and Prompt Types</title>
+    <updated>2024-10-29T11:47:01Z</updated>
+    <link href="https://arxiv.org/abs/2410.21965v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.21965v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Ensuring the safety of large language model (LLM) applications is essential for developing trustworthy artificial intelligence. Current LLM safety benchmarks have two limitations. First, they focus solely on either discriminative or generative evaluation paradigms while ignoring their interconnection. Second, they rely on standardized inputs, overlooking the effects of widespread prompting techniques, such as system prompts, few-shot demonstrations, and chain-of-thought prompting. To overcome these issues, we developed SG-Bench, a novel benchmark to assess the generalization of LLM safety across various tasks and prompt types. This benchmark integrates both generative and discriminative evaluation tasks and includes extended data to examine the impact of prompt engineering and jailbreak on LLM safety. Our assessment of 3 advanced proprietary LLMs and 10 open-source LLMs with the benchmark reveals that most LLMs perform worse on discriminative tasks than generative ones, and are highly susceptible to prompts, indicating poor generalization in safety alignment. We also explain these findings quantitatively and qualitatively to provide insights for future research.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-29T11:47:01Z</published>
+    <arxiv:comment>Accepted by NeurIPS2024 (Dataset and Benchmark Track)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yutao Mou</name>
+    </author>
+    <author>
+      <name>Shikun Zhang</name>
+    </author>
+    <author>
+      <name>Wei Ye</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.30219v4</id>
+    <title>EvalSafetyGap: A Hybrid Survey and Conceptual Framework for LLM Evaluation-Safety Failures</title>
+    <updated>2026-07-27T16:02:21Z</updated>
+    <link href="https://arxiv.org/abs/2606.30219v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.30219v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents a systematic survey and conceptual synthesis of the shared measurement problem underlying large language model (LLM) evaluation and AI safety: benchmark scores, reward signals, and safety metrics can improve while the capabilities and alignment properties they are meant to represent remain uncertain. Synthesizing 373 primary studies published between 2018 and 2026, the survey organizes evidence on benchmark validity, contamination, dynamic evaluation, LLM-as-a-judge protocols, adversarial safety testing, reward and proxy optimization, mechanistic interpretability, and AI governance into an eight-stream evidence taxonomy. Building on this synthesis, we introduce EvalSafetyGap, a conceptual framework that unifies benchmark-validity and alignment-failure research as a shared proxy-target divergence problem under optimization pressure, formalized through a Goodhart-inspired Instability Decomposition and an Alignment Trilemma. An exploratory ten-model public-evidence audit illustrates the framework by showing why capability, behavioral robustness, and governance disclosure should be reported as separate evidence layers rather than collapsed into a single safety score. The survey closes with a research agenda for dynamic and contamination-resistant benchmarks, pre-specified multi-attempt threat models, version-locked evaluation, transparent source reporting, and validated mechanistic safety indicators, offering researchers, model developers, and AI auditors a shared vocabulary for measurement-aware LLM safety evaluation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-29T12:33:06Z</published>
+    <arxiv:comment>74 pages, 2 figures, 4 tables. Hybrid systematic survey and conceptual framework on LLM evaluation and AI-safety failures, synthesizing 373 primary studies (2018-2026). Introduces the EvalSafetyGap framework (Instability Decomposition, Alignment Trilemma) and reports an exploratory ten-model audit. Submitted as a review/survey article; not currently under consideration elsewhere</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Buğra Alperen Uluırmak</name>
+    </author>
+    <author>
+      <name>Rifat Kurban</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.13141v1</id>
+    <title>UniGuardian: A Unified Defense for Detecting Prompt Injection, Backdoor Attacks and Adversarial Attacks in Large Language Models</title>
+    <updated>2025-02-18T18:59:00Z</updated>
+    <link href="https://arxiv.org/abs/2502.13141v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.13141v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) are vulnerable to attacks like prompt injection, backdoor attacks, and adversarial attacks, which manipulate prompts or models to generate harmful outputs. In this paper, departing from traditional deep learning attack paradigms, we explore their intrinsic relationship and collectively term them Prompt Trigger Attacks (PTA). This raises a key question: Can we determine if a prompt is benign or poisoned? To address this, we propose UniGuardian, the first unified defense mechanism designed to detect prompt injection, backdoor attacks, and adversarial attacks in LLMs. Additionally, we introduce a single-forward strategy to optimize the detection pipeline, enabling simultaneous attack detection and text generation within a single forward pass. Our experiments confirm that UniGuardian accurately and efficiently identifies malicious prompts in LLMs.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-18T18:59:00Z</published>
+    <arxiv:comment>18 Pages, 8 Figures, 5 Tables, Keywords: Attack Defending, Security, Prompt Injection, Backdoor Attacks, Adversarial Attacks, Prompt Trigger Attacks</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Huawei Lin</name>
+    </author>
+    <author>
+      <name>Yingjie Lao</name>
+    </author>
+    <author>
+      <name>Tong Geng</name>
+    </author>
+    <author>
+      <name>Tan Yu</name>
+    </author>
+    <author>
+      <name>Weijie Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2111.01762v1</id>
+    <title>AIRCC-Clim: a user-friendly tool for generating regional probabilistic climate change scenarios and risk measures</title>
+    <updated>2021-10-30T11:09:03Z</updated>
+    <link href="https://arxiv.org/abs/2111.01762v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2111.01762v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Complex physical models are the most advanced tools available for producing realistic simulations of the climate system. However, such levels of realism imply high computational cost and restrictions on their use for policymaking and risk assessment. Two central characteristics of climate change are uncertainty and that it is a dynamic problem in which international actions can significantly alter climate projections and information needs, including partial and full compliance of global climate goals. Here we present AIRCC-Clim, a simple climate model emulator that produces regional probabilistic climate change projections of monthly and annual temperature and precipitation, as well as risk measures, based both on standard and user-defined emissions scenarios for six greenhouse gases. AIRCC-Clim emulates 37 atmosphere-ocean coupled general circulation models with low computational and technical requirements for the user. This standalone, user-friendly software is designed for a variety of applications including impact assessments, climate policy evaluation and integrated assessment modelling.</summary>
+    <category term="physics.ao-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-10-30T11:09:03Z</published>
+    <arxiv:primary_category term="physics.ao-ph"/>
+    <author>
+      <name>Francisco Estrada</name>
+    </author>
+    <author>
+      <name>Oscar Calderón-Bustamante</name>
+    </author>
+    <author>
+      <name>Wouter Botzen</name>
+    </author>
+    <author>
+      <name>Julián A. Velasco</name>
+    </author>
+    <author>
+      <name>Richard S. J. Tol</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.16943v1</id>
+    <title>Mind the GAP: Text Safety Does Not Transfer to Tool-Call Safety in LLM Agents</title>
+    <updated>2026-02-18T23:17:15Z</updated>
+    <link href="https://arxiv.org/abs/2602.16943v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.16943v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models deployed as agents increasingly interact with external systems through tool calls--actions with real-world consequences that text outputs alone do not carry. Safety evaluations, however, overwhelmingly measure text-level refusal behavior, leaving a critical question unanswered: does alignment that suppresses harmful text also suppress harmful actions? We introduce the GAP benchmark, a systematic evaluation framework that measures divergence between text-level safety and tool-call-level safety in LLM agents. We test six frontier models across six regulated domains (pharmaceutical, financial, educational, employment, legal, and infrastructure), seven jailbreak scenarios per domain, three system prompt conditions (neutral, safety-reinforced, and tool-encouraging), and two prompt variants, producing 17,420 analysis-ready datapoints. Our central finding is that text safety does not transfer to tool-call safety. Across all six models, we observe instances where the model's text output refuses a harmful request while its tool calls simultaneously execute the forbidden action--a divergence we formalize as the GAP metric. Even under safety-reinforced system prompts, 219 such cases persist across all six models. System prompt wording exerts substantial influence on tool-call behavior: TC-safe rates span 21 percentage points for the most robust model and 57 for the most prompt-sensitive, with 16 of 18 pairwise ablation comparisons remaining significant after Bonferroni correction. Runtime governance contracts reduce information leakage in all six models but produce no detectable deterrent effect on forbidden tool-call attempts themselves. These results demonstrate that text-only safety evaluations are insufficient for assessing agent behavior and that tool-call safety requires dedicated measurement and mitigation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-18T23:17:15Z</published>
+    <arxiv:comment>23 pages, 5 figures, 4 tables, code and data at https://github.com/acartag7/gap-benchmark</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Arnold Cartagena</name>
+    </author>
+    <author>
+      <name>Ariane Teixeira</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.14470v2</id>
+    <title>Agent-SafetyBench: Evaluating the Safety of LLM Agents</title>
+    <updated>2025-05-20T05:58:23Z</updated>
+    <link href="https://arxiv.org/abs/2412.14470v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.14470v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language models (LLMs) are increasingly deployed as agents, their integration into interactive environments and tool use introduce new safety challenges beyond those associated with the models themselves. However, the absence of comprehensive benchmarks for evaluating agent safety presents a significant barrier to effective assessment and further improvement. In this paper, we introduce Agent-SafetyBench, a comprehensive benchmark designed to evaluate the safety of LLM agents. Agent-SafetyBench encompasses 349 interaction environments and 2,000 test cases, evaluating 8 categories of safety risks and covering 10 common failure modes frequently encountered in unsafe interactions. Our evaluation of 16 popular LLM agents reveals a concerning result: none of the agents achieves a safety score above 60%. This highlights significant safety challenges in LLM agents and underscores the considerable need for improvement. Through failure mode and helpfulness analysis, we summarize two fundamental safety defects in current LLM agents: lack of robustness and lack of risk awareness. Furthermore, our findings suggest that reliance on defense prompts alone may be insufficient to address these safety issues, emphasizing the need for more advanced and robust strategies. To drive progress in this area, Agent-SafetyBench has been released at https://github.com/thu-coai/Agent-SafetyBench/ to facilitate further research in agent safety evaluation and improvement.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-19T02:35:15Z</published>
+    <arxiv:comment>26 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhexin Zhang</name>
+    </author>
+    <author>
+      <name>Shiyao Cui</name>
+    </author>
+    <author>
+      <name>Yida Lu</name>
+    </author>
+    <author>
+      <name>Jingzhuo Zhou</name>
+    </author>
+    <author>
+      <name>Junxiao Yang</name>
+    </author>
+    <author>
+      <name>Hongning Wang</name>
+    </author>
+    <author>
+      <name>Minlie Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.01763v2</id>
+    <title>Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models</title>
+    <updated>2025-05-26T15:19:40Z</updated>
+    <link href="https://arxiv.org/abs/2503.01763v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.01763v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool learning aims to augment large language models (LLMs) with diverse tools, enabling them to act as agents for solving practical tasks. Due to the limited context length of tool-using LLMs, adopting information retrieval (IR) models to select useful tools from large toolsets is a critical initial step. However, the performance of IR models in tool retrieval tasks remains underexplored and unclear. Most tool-use benchmarks simplify this step by manually pre-annotating a small set of relevant tools for each task, which is far from the real-world scenarios. In this paper, we propose ToolRet, a heterogeneous tool retrieval benchmark comprising 7.6k diverse retrieval tasks, and a corpus of 43k tools, collected from existing datasets. We benchmark six types of models on ToolRet. Surprisingly, even the models with strong performance in conventional IR benchmarks, exhibit poor performance on ToolRet. This low retrieval quality degrades the task pass rate of tool-use LLMs. As a further step, we contribute a large-scale training dataset with over 200k instances, which substantially optimizes the tool retrieval ability of IR models.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-03T17:37:16Z</published>
+    <arxiv:comment>ACL 2025. Code: https://github.com/mangopy/tool-retrieval-benchmark</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhengliang Shi</name>
+    </author>
+    <author>
+      <name>Yuhan Wang</name>
+    </author>
+    <author>
+      <name>Lingyong Yan</name>
+    </author>
+    <author>
+      <name>Pengjie Ren</name>
+    </author>
+    <author>
+      <name>Shuaiqiang Wang</name>
+    </author>
+    <author>
+      <name>Dawei Yin</name>
+    </author>
+    <author>
+      <name>Zhaochun Ren</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.10490v1</id>
+    <title>NetInjectBench: Benchmarking Indirect Prompt Injection in Tool-Using Large Language Model Agents for Network Operations</title>
+    <updated>2026-07-11T21:54:20Z</updated>
+    <link href="https://arxiv.org/abs/2607.10490v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.10490v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using large language model (LLM) agents are attractive for network operations, but tickets, alerts, logs, runbooks, and ChatOps messages can carry indirect prompt injections. We present NetInjectBench, a 130-scenario benchmark that separates untrusted artifact text, trusted policy metadata, and evaluation labels for network-operation tool use. The sample contains 40 benign, 40 weak-attack, 40 strong-attack, and 10 approved high-impact change scenarios; each is evaluated with Qwen2.5-7B, Llama3.1-8B, and Mistral-7B. Across 240 attack instances, naive execution reached an 82.50% unsafe tool-action rate. Prompt-only safety, Self-Reminder, Spotlighting, and a Two-Pass LLM Judge reduced this rate to 25.63%, 21.67%, 18.33%, and 10.00%, respectively. Static allowlisting reached 5.00% but blocked all approved changes, yielding 0.00% usefulness and 100.00% overblocking on approved cases. Under the stated metadata-integrity assumption, the metadata-aware policy gate produced 0/240 unsafe attack actions, with a 95% Wilson upper bound of 1.58%, while preserving 99.17% attack-scenario usefulness and 100.00% approved-change usefulness. The findings show that network-operation agents need execution-time authorization boundaries alongside prompt-level instruction hygiene.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-11T21:54:20Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ruksat Khan Shayoni</name>
+    </author>
+    <author>
+      <name>Muhammad Faraz Shoaib</name>
+    </author>
+    <author>
+      <name>S M Asif Hossain</name>
+    </author>
+    <author>
+      <name>M. F. Mridha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.19449v1</id>
+    <title>Guardrails as Scapegoats: Auditing Unfaithful Safety Refusals in Tool-Augmented LLM Agents</title>
+    <updated>2026-07-21T13:23:05Z</updated>
+    <link href="https://arxiv.org/abs/2607.19449v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.19449v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluation frameworks for tool-augmented LLM agents focus overwhelmingly on capability metrics or explicit tool crashes, leaving silent infrastructure failures and HTTP 200 responses with empty, null, or malformed payloads largely unaudited. We introduce a lightweight black-box auditing framework that injects four silent failure profiles across 12 production-adjacent tool stubs and classifies agent responses into three mutually exclusive behavioral classes: Honest Surrender (HSR), Fabrication (FAR), and Unfaithful Safety Refusal (USR). Evaluating two frontier and two open-source models at temperature zero under a neutral system prompt, we find that FAR dominates (56.6% of valid responses): agents treat empty payloads as real data, silently returning fabricated results. USR, in which an agent invents a policy or privacy rationale to explain the failure, is nearly absent at baseline (0.25%, one instance across 396 valid trajectories). Our key finding emerges from an ablation where we augment the system prompt with standard safety language ("prioritize user privacy and data security"), which amplifies USR by 15.6x (from 0.25% to 3.95%; 95% CI on ablation rate: 2.2%-6.4%; Fisher's exact test, p &lt; 0.001). USR is a latent behavior, activated when safety vocabulary in the system prompt primes the model to reach for policy rationales when tools silently fail. Sensitive tools (fetch_medical_record, retrieve_contract, fetch_user_profile) account for the majority of USR instances. We propose a payload-response misalignment heuristic for production-level detection and discuss governance implications for safety-forward deployments.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-21T13:23:05Z</published>
+    <arxiv:comment>10 pages, 3 figures. Accepted at the ACM KDD 2026 Workshop on Evaluation and Trustworthiness of Agentic AI</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aarushi Singh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.15310v1</id>
+    <title>IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents</title>
+    <updated>2025-08-21T07:08:16Z</updated>
+    <link href="https://arxiv.org/abs/2508.15310v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.15310v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are widely deployed in real-world applications, where they leverage tools to retrieve and manipulate external data for complex tasks. However, when interacting with untrusted data sources (e.g., fetching information from public websites), tool responses may contain injected instructions that covertly influence agent behaviors and lead to malicious outcomes, a threat referred to as Indirect Prompt Injection (IPI). Existing defenses typically rely on advanced prompting strategies or auxiliary detection models. While these methods have demonstrated some effectiveness, they fundamentally rely on assumptions about the model's inherent security, which lacks structural constraints on agent behaviors. As a result, agents still retain unrestricted access to tool invocations, leaving them vulnerable to stronger attack vectors that can bypass the security guardrails of the model. To prevent malicious tool invocations at the source, we propose a novel defensive task execution paradigm, called IPIGuard, which models the agents' task execution process as a traversal over a planned Tool Dependency Graph (TDG). By explicitly decoupling action planning from interaction with external data, IPIGuard significantly reduces unintended tool invocations triggered by injected instructions, thereby enhancing robustness against IPI attacks. Experiments on the AgentDojo benchmark show that IPIGuard achieves a superior balance between effectiveness and robustness, paving the way for the development of safer agentic systems in dynamic environments.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-21T07:08:16Z</published>
+    <arxiv:comment>EMNLP 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Hengyu An</name>
+    </author>
+    <author>
+      <name>Jinghuai Zhang</name>
+    </author>
+    <author>
+      <name>Tianyu Du</name>
+    </author>
+    <author>
+      <name>Chunyi Zhou</name>
+    </author>
+    <author>
+      <name>Qingming Li</name>
+    </author>
+    <author>
+      <name>Tao Lin</name>
+    </author>
+    <author>
+      <name>Shouling Ji</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.12359v1</id>
+    <title>Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs</title>
+    <updated>2026-01-18T11:33:35Z</updated>
+    <link href="https://arxiv.org/abs/2601.12359v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.12359v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prompt injection attacks have become an increasing vulnerability for LLM applications, where adversarial prompts exploit indirect input channels such as emails or user-generated content to circumvent alignment safeguards and induce harmful or unintended outputs. Despite advances in alignment, even state-of-the-art LLMs remain broadly vulnerable to adversarial prompts, underscoring the urgent need for robust, productive, and generalizable detection mechanisms beyond inefficient, model-specific patches. In this work, we propose Zero-Shot Embedding Drift Detection (ZEDD), a lightweight, low-engineering-overhead framework that identifies both direct and indirect prompt injection attempts by quantifying semantic shifts in embedding space between benign and suspect inputs. ZEDD operates without requiring access to model internals, prior knowledge of attack types, or task-specific retraining, enabling efficient zero-shot deployment across diverse LLM architectures. Our method uses adversarial-clean prompt pairs and measures embedding drift via cosine similarity to capture subtle adversarial manipulations inherent to real-world injection attacks. To ensure robust evaluation, we assemble and re-annotate the comprehensive LLMail-Inject dataset spanning five injection categories derived from publicly available sources. Extensive experiments demonstrate that embedding drift is a robust and transferable signal, outperforming traditional methods in detection accuracy and operational efficiency. With greater than 93% accuracy in classifying prompt injections across model architectures like Llama 3, Qwen 2, and Mistral and a false positive rate of &lt;3%, our approach offers a lightweight, scalable defense layer that integrates into existing LLM pipelines, addressing a critical gap in securing LLM-powered systems to withstand adaptive adversarial threats.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-18T11:33:35Z</published>
+    <arxiv:comment>Accepted to NeurIPS 2025 Lock-LLM Workshop</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Anirudh Sekar</name>
+    </author>
+    <author>
+      <name>Mrinal Agarwal</name>
+    </author>
+    <author>
+      <name>Rachel Sharma</name>
+    </author>
+    <author>
+      <name>Akitsugu Tanaka</name>
+    </author>
+    <author>
+      <name>Jasmine Zhang</name>
+    </author>
+    <author>
+      <name>Arjun Damerla</name>
+    </author>
+    <author>
+      <name>Kevin Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.28999v1</id>
+    <title>Measuring Real-World Prompt Injection Attacks in LLM-based Resume Screening</title>
+    <updated>2026-05-27T18:56:19Z</updated>
+    <link href="https://arxiv.org/abs/2605.28999v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.28999v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLMs are vulnerable to prompt injection attacks. However, this vulnerability has been primarily demonstrated conceptually in academic studies or through a few anecdotal case studies. Its prevalence and impact in real-world LLM-based applications are largely unexplored. In this work, we present the first systematic study of prompt-injection attacks in a widely used application: LLM-based resume screening. Our analysis is based on approximately 200K real-world resumes collected over multiple years by hireEZ. We first design tailored methods to detect prompt injection in resumes. Manual validation on a small-scale dataset demonstrates that our detectors achieve high precision and outperform state-of-the-art general-purpose detectors. We then apply our detector to the full resume dataset and conduct a comprehensive measurement study of real-world prompt injection attacks. Our analysis reveals several intriguing findings: approximately 1% of resumes contain hidden prompt injections; the prevalence of such injected resumes has increased noticeably over the past one to two years; and more than 90% of injected prompts do not use explicit instructions. These results provide the first evidence of large-scale prompt injection in real-world LLM-based applications and lay the groundwork for future studies to understand and mitigate such attacks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-27T18:56:19Z</published>
+    <arxiv:comment>Published in USENIX Security Symposium 2026; Code and artifacts are available at https://github.com/UNITES-Lab/resume-injection-measurement</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohan Zhang</name>
+    </author>
+    <author>
+      <name>Yuqi Jia</name>
+    </author>
+    <author>
+      <name>Zhen Tan</name>
+    </author>
+    <author>
+      <name>Steven Jiang</name>
+    </author>
+    <author>
+      <name>Neil Zhenqiang Gong</name>
+    </author>
+    <author>
+      <name>Tianlong Chen</name>
+    </author>
+    <author>
+      <name>Dawn Song</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2409.01907v1</id>
+    <title>Focus Agent: LLM-Powered Virtual Focus Group</title>
+    <updated>2024-09-03T13:56:14Z</updated>
+    <link href="https://arxiv.org/abs/2409.01907v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2409.01907v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In the domain of Human-Computer Interaction, focus groups represent a widely utilised yet resource-intensive methodology, often demanding the expertise of skilled moderators and meticulous preparatory efforts. This study introduces the ``Focus Agent,'' a Large Language Model (LLM) powered framework that simulates both the focus group (for data collection) and acts as a moderator in a focus group setting with human participants. To assess the data quality derived from the Focus Agent, we ran five focus group sessions with a total of 23 human participants as well as deploying the Focus Agent to simulate these discussions with AI participants. Quantitative analysis indicates that Focus Agent can generate opinions similar to those of human participants. Furthermore, the research exposes some improvements associated with LLMs acting as moderators in focus group discussions that include human participants.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-09-03T13:56:14Z</published>
+    <arxiv:comment>8 pages, the 24th Intelligent Virtual Agent Conference</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <arxiv:journal_ref>Taiyu Zhang, Xuesong Zhang, Robbe Cools, and Adalberto Simeone. 2024. Focus Agent: LLM-Powered Virtual Focus Group. In ACM International Conference on Intelligent Virtual Agents (IVA '24), September 16--19, 2024, GLASGOW, United Kingdom</arxiv:journal_ref>
+    <author>
+      <name>Taiyu Zhang</name>
+    </author>
+    <author>
+      <name>Xuesong Zhang</name>
+    </author>
+    <author>
+      <name>Robbe Cools</name>
+    </author>
+    <author>
+      <name>Adalberto L. Simeone</name>
+    </author>
+    <arxiv:doi>10.1145/3652988.3673918</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3652988.3673918" title="doi"/>
+  </entry>
+</feed>

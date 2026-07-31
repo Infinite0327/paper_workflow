@@ -1,0 +1,1411 @@
+{
+  "query": "LLM agents recent research directions memory planning tool use multi-agent computer use evaluation safety efficiency",
+  "requested_limit": 40,
+  "created_at": "2026-07-28T15:37:03",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=LLM+agents+recent+research+directions+memory+planning+tool+use+multi-agent+computer+use+evaluation+safety+efficiency",
+    "note": "Google Scholar is a human-assisted source; open this URL in a browser and provide selected links if CAPTCHA/login appears."
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration",
+      "authors": [
+        "Haoyuan Xu",
+        "Chang Li",
+        "Xinyan Ma",
+        "Xianhao Ou",
+        "Zihan Zhang",
+        "Tao He",
+        "Xiangyu Liu",
+        "Zixiang Wang",
+        "Jiafeng Liang",
+        "Zheng Chu",
+        "Runxuan Liu",
+        "Rongchuan Mu",
+        "Dandan Tu",
+        "Ming Liu",
+        "Bing Qin"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Tool use enables large language models (LLMs) to access external information, invoke software systems, and act in digital environments beyond what can be solved from model parameters alone. Early research mainly studied whether a model could select and execute a correct single tool call. As agent systems evolve, however, the central problem has shifted from isolated invocation to multi-tool orchestration over long trajectories with intermediate state, execution feedback, changing environments, and practical constraints such as safety, cost, and verifiability. We comprehensively review recent progress in multi-tool LLM agents and analyzes the state of the art in this rapidly developing area. First, we unify task formulations and distinguish single-call tool use from long-horizon orchestration. Then, we organize the literature around six core dimensions: inference-time planning and execution, training and trajectory construction, safety and control, efficiency under resource constraints, capability completeness in open environments, and benchmark design and evaluation. We further summarize representative applications in software engineering, enterprise workflows, graphical user interfaces, and mobile systems. Finally, we discuss major challenges and outline future directions for building reliable, scalable, and verifiable multi-tool agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.22862v2",
+      "url": "http://arxiv.org/abs/2603.22862v2",
+      "pdf_url": "https://arxiv.org/pdf/2603.22862v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.22862v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 86.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Graph-Structured Persistent Memory for Efficient LLM-Based Computer Use Agents",
+      "authors": [
+        "Danylo Vorvul",
+        "Andrii Musienko",
+        "Iryna Galchenko",
+        "Mykola Myroniuk",
+        "Andrii Sobchuk"
+      ],
+      "year": 2026,
+      "venue": "Axioms",
+      "abstract": "Large language model (LLM)-driven computer use agents (CUAs) automate graphical user interface (GUI) tasks but often re-solve previously encountered subtasks, increasing token use and latency. We address this limitation with a directed graph-based persistent memory in which nodes represent observable GUI states and edges encode executable action sequences. We formalize the memory-augmented agent as S=⟨A,Σ,G,δ,π,Φ⟩, define task reachability and memory-coverage conditions inspired by functional stability theory, and derive token-cost efficiency bounds. In control-theoretic terms, the Manager–Worker architecture can be interpreted as a closed-loop system where memory provides experience-based feedback; this interpretation is used as an analogy rather than a full model-reference adaptive control proof. Experiments on OSWorld show that the proposed agent cuts both the LLM token consumption and execution time by about 50% versus a memoryless baseline while preserving comparable success rates (≈36.9% on 15-step and ≈46.9% on 50-step tasks). The demonstrated contribution is therefore operational efficiency through reusable graph memory, not a claim of improved task success or classical Lyapunov stability.",
+      "citation_count": 0,
+      "doi": "10.3390/axioms15060415",
+      "url": "https://doi.org/10.3390/axioms15060415",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3390/axioms15060415",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 72.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/xlang-ai/OSWorld: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:xlang-ai/OSWorld"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "Agents at Risk: How Users Unwittingly Undermine LLM Safety",
+      "authors": [
+        "Fengchao Chen",
+        "Tingmin Wu",
+        "Van Nguyen",
+        "Surya. Nepal",
+        "Carsten Rudolph"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we introduce the User-Relayed Context Manipulation (UReCoM) attack, in which attackers manipulate benign users into relaying adversarial content within user requests, thereby relocating external adversarial content into user-provided task context. Our experimental evaluation shows that UReCoM outperforms five prompt-injection baselines (naive, context ignoring, fake completion, escape-character attacks, and combined attacks) under prevention-based (Sandwich, StruQ, and SecAlign) and detection-based defenses (Perplexity detection, DataSentinel, and CausalArmor). Additionally, UReCoM shows that LLMs can reject explicit malicious instructions more reliably than they can identify adversarial task entities, such as promotion codes, embedded within user requests. On 12 commercial LLM-based agents, we find that validation of adversarial task entities is largely prompt-driven rather than default, highlighting a design flaw in current agent frameworks. These results indicate that current defenses and deployed agents remain insufficient against user-relayed context manipulations, highlighting the need for task-entity-level prevention and default safety verification in LLM-based agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.10758v3",
+      "url": "http://arxiv.org/abs/2601.10758v3",
+      "pdf_url": "https://arxiv.org/pdf/2601.10758v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.10758v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 70.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Functional Stability and Adaptive Control in LLM-Based Computer Use Agents via Graph-Structured Persistent Memory",
+      "authors": [
+        "Danylo Vorvul",
+        "Andrii Musienko",
+        "Iryna Galchenko",
+        "Mykola Myroniuk",
+        "Andrii Sobchuk"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Large language model (LLM)-driven computer use agents (CUAs) automate graphical user interface (GUI) tasks but often re-solve previously encountered subtasks, increasing token use, latency, and instability. We address this limitation with a directed graph-based persistent memory in which nodes represent observable GUI states and edges encode executable action sequences. We formalize the memory-augmented agent as S=〈A,Σ,G,δ,π,Φ〉, define stability conditions by analogy with functional stability theory, and derive token-cost efficiency bounds. In control-theoretic terms, the Manager–Worker architecture becomes a closed-loop system where memory provides experience-based feedback, and selecting between memory retrieval and fresh LLM planning is treated as adaptive control. Experiments on OSWorld show that the proposed agent cuts both LLM token consumption and execution time by about 50% versus a memoryless baseline while preserving comparable success rates (≈36.9% on 15-step and ≈46.9% on 50-step tasks). Structured graph memory therefore improves robustness under perturbation and supports convergent efficiency gains over time.",
+      "citation_count": 0,
+      "doi": "10.20944/preprints202604.1148.v1",
+      "url": "https://doi.org/10.20944/preprints202604.1148.v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20944/preprints202604.1148.v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 68.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/xlang-ai/OSWorld: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:xlang-ai/OSWorld"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "Efficient LLM Safety Evaluation through Multi-Agent Debate",
+      "authors": [
+        "Dachuan Lin",
+        "Guobin Shen",
+        "Zihao Yang",
+        "Tianrong Liu",
+        "Dongcheng Zhao",
+        "Yi Zeng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Safety evaluation of large language models (LLMs) increasingly relies on LLM-as-a-judge pipelines, but strong judges can still be expensive to use at scale. We study whether structured multi-agent debate can improve judge reliability while keeping backbone size and cost modest. To do so, we introduce HAJailBench, a human-annotated jailbreak benchmark with 11,100 labeled interactions spanning diverse attack methods and target models, and we pair it with a Multi-Agent Judge framework in which critic, defender, and judge agents debate under a shared safety rubric. On HAJailBench, the framework improves over matched small-model prompt baselines and prior multi-agent judges, while remaining more economical than GPT-4o under the evaluated pricing snapshot. Ablation results further show that a small number of debate rounds is sufficient to capture most of the gain. Together, these results support structured, value-aligned debate as a practical design for scalable LLM safety evaluation.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2511.06396v3",
+      "url": "http://arxiv.org/abs/2511.06396v3",
+      "pdf_url": "https://arxiv.org/pdf/2511.06396v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2511.06396v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 66.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "paper_dataset:HAJailBench"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents",
+      "authors": [
+        "Jiayu Liu",
+        "Cheng Qian",
+        "Zhaochen Su",
+        "Qing Zong",
+        "Shijue Huang",
+        "Bingxiang He",
+        "Yi R. Fung"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2026.acl-long.584",
+      "url": "https://doi.org/10.18653/v1/2026.acl-long.584",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2026.acl-long.584",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 62.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "BIMgent: Towards Autonomous Building Modeling via Computer-use Agents",
+      "authors": [
+        "Zihan Deng",
+        "Changyu Du",
+        "Stavros Nousias",
+        "André Borrmann"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Existing computer-use agents primarily focus on general-purpose desktop automation tasks, with limited exploration of their application in highly specialized domains. In particular, the 3D building modeling process in the Architecture, Engineering, and Construction (AEC) sector involves open-ended design tasks and complex interaction patterns within Building Information Modeling (BIM) authoring software, which has yet to be thoroughly addressed by current studies. In this paper, we propose BIMgent, an agentic framework powered by multimodal large language models (LLMs), designed to enable autonomous building model authoring via graphical user interface (GUI) operations. BIMgent automates the architectural building modeling process, including multimodal input for conceptual design, planning of software-specific workflows, and efficient execution of the authoring GUI actions. We evaluate BIMgent on real-world building modeling tasks, including both text-based conceptual design generation and reconstruction from existing building design. The design quality achieved by BIMgent was found to be reasonable. Its operations achieved a 32% success rate, whereas all baseline models failed to complete the tasks (0% success rate). Results demonstrate that BIMgent effectively reduces manual workload while preserving design intent, highlighting its potential for practical deployment in real-world architectural modeling scenarios. Project page: https://tumcms.github.io/BIMgent.github.io/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2506.07217v2",
+      "url": "http://arxiv.org/abs/2506.07217v2",
+      "pdf_url": "https://arxiv.org/pdf/2506.07217v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2506.07217v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 62.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Secure-by-Default Guardrails for MCP-Based Tool Use in Multi-Modal LLM Agents",
+      "authors": [
+        "Yoshihiro Ando"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "As Large Language Models (LLMs) proliferate, fragmented interfaces across multiple providers create friction for developers. More critically, the rise of autonomous agents and protocols such as the Model Context Protocol (MCP) expands the attack surface by enabling tool execution and access to local or remote resources. This paper presents llm-cli, a unified command-line interface that harmonizes interactions with multiple LLM providers while providing secure-by-default guardrails for agentic tool use. llm-cli combines (i) a plugin-based tool registry with an explicit human-readable explanation field for each tool call, (ii) role-based restrictions for unauthenticated clients (e.g., guest read-only access), and (iii) runtime validation for command execution and file-path access. We discuss practical threat scenarios such as prompt injection and privilege misuse, and show how layered controls-policy checks, input validation, and human-in-the-loop approval-reduce the risk of unsafe tool execution in real-world workflows.",
+      "citation_count": 0,
+      "doi": "10.36227/techrxiv.177006109.97957916/v1",
+      "url": "https://doi.org/10.36227/techrxiv.177006109.97957916/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.36227/techrxiv.177006109.97957916/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 60.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Empowering LLM-based Agents: Methods and Challenges in Tool Use",
+      "authors": [
+        "Xinyue Du"
+      ],
+      "year": 2025,
+      "venue": "Applied and Computational Engineering",
+      "abstract": "The emergence of Large Language Model (LLM)-based agents marks a significant step towards more capable Artificial Intelligence. However, the effectiveness of these agents is fundamentally constrained by the static nature of their internal knowledge. Tool use has become a critical paradigm to overcome these limitations, enabling agents to interact with dynamic data, execute complex computations, and act upon the world. This paper provides a comprehensive survey of the methods, challenges, and future directions in empowering LLM-based agents with tool-use capabilities. Through a systematic literature review, we synthesized the current state of the art, charting the evolution from foundational agent architectures and core invocation mechanisms like function calling to advanced strategies such as dynamic tool retrieval and autonomous tool creation. Our analysis revealed several critical challenges that impede the deployment of robust agents, including knowledge conflicts between internal priors and external evidence, significant performance degradation in long-context scenarios, non-monotonic scaling behaviors in compound systems, and novel security vulnerabilities. By mapping the current research landscape and identifying these key obstacles, this survey proposes a research agenda to guide future efforts in building more capable, secure, and reliable AI agents.",
+      "citation_count": 0,
+      "doi": "10.54254/2755-2721/2026.tj28954",
+      "url": "https://doi.org/10.54254/2755-2721/2026.tj28954",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.54254/2755-2721/2026.tj28954",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "latest-sota",
+        "method"
+      ],
+      "score": 60.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agentic and Multi-agent Systems: A Systematic Review of Tool Use, Benchmarks, and Governance",
+      "authors": [
+        "Audrey Rah"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                Agentic artificial intelligence (AI) has emerged as an important direction in the development of goal-oriented, tool-mediated, and partially autonomous intelligent systems. Recent advances in large language models have enabled AI agents to perform multi-step tasks involving planning, memory, tool use, environmental feedback, and human–agent or multi-agent interaction. However, the literature remains fragmented across architectures, benchmarks, application domains, and governance discussions. This review provides a systematic synthesis of recent evidence on agentic AI systems, with emphasis on architectural components, evaluation methods, domain applications, safety risks, and governance requirements. The review analyzes literature from scholarly databases, major conference proceedings, technical reports, benchmark studies, and governance sources published mainly between 2022 and 2026. Current evidence suggests that agentic AI systems appear most mature in software engineering, web automation, and computer-use environments, where executable feedback and sandboxed testing are available. In contrast, high-impact domains such as healthcare and finance require stronger validation, oversight, privacy protection, and regulatory control before broader deployment. This review also introduces a Five-Level Agentic Autonomy and Governance Model to classify systems according to action authority, operational risk, and required oversight. Overall, the evidence suggests that agentic AI may be better understood as a spectrum of bounded, monitored, and auditable systems rather than fully independent intelligence. Future research should prioritize reproducible benchmarks, safety evaluation, real-world validation, and governance-aware system design.",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-9839978/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-9839978/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-9839978/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 60.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Small LLMs Are Weak Tool Learners: A Multi-LLM Agent",
+      "authors": [
+        "Weizhou Shen",
+        "Chenliang Li",
+        "Hongzhan Chen",
+        "Ming Yan",
+        "Xiaojun Quan",
+        "Hehong Chen",
+        "Ji Zhang",
+        "Fei Huang"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Large Language Model (LLM) agents significantly extend the capabilities of standalone LLMs, empowering them to interact with external tools (e.g., APIs, functions) and complete various tasks in a self-directed fashion. The challenge of tool use demands that LLMs not only understand user queries and generate answers accurately but also excel in task planning, tool invocation, and result summarization. While traditional works focus on training a single LLM with all these capabilities, performance limitations become apparent, particularly with smaller models. To overcome these challenges, we propose a novel approach that decomposes the aforementioned capabilities into a planner, caller, and summarizer. Each component is implemented by a single LLM that focuses on a specific capability and collaborates with others to accomplish the task. This modular framework facilitates individual updates and the potential use of smaller LLMs for building each capability. To effectively train this framework, we introduce a two-stage training paradigm. First, we fine-tune a backbone LLM on the entire dataset without discriminating sub-tasks, providing the model with a comprehensive understanding of the task. Second, the fine-tuned LLM is used to instantiate the planner, caller, and summarizer respectively, which are continually fine-tuned on respective sub-tasks. Evaluation across various tool-use benchmarks illustrates that our proposed multi-LLM framework surpasses the traditional single-LLM approach, highlighting its efficacy and advantages in tool learning.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2401.07324v3",
+      "url": "http://arxiv.org/abs/2401.07324v3",
+      "pdf_url": "https://arxiv.org/pdf/2401.07324v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2401.07324v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 59.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "authors": [
+        "Yijia Xiao",
+        "Edward Sun",
+        "Di Luo",
+        "Wei Wang"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Significant progress has been made in automated problem-solving using societies of agents powered by large language models (LLMs). In finance, efforts have largely focused on single-agent systems handling specific tasks or multi-agent frameworks independently gathering data. However, the multi-agent systems' potential to replicate real-world trading firms' collaborative dynamics remains underexplored. TradingAgents proposes a novel stock trading framework inspired by trading firms, featuring LLM-powered agents in specialized roles such as fundamental analysts, sentiment analysts, technical analysts, and traders with varied risk profiles. The framework includes Bull and Bear researcher agents assessing market conditions, a risk management team monitoring exposure, and traders synthesizing insights from debates and historical data to make informed decisions. By simulating a dynamic, collaborative trading environment, this framework aims to improve trading performance. Detailed architecture and extensive experiments reveal its superiority over baseline models, with notable improvements in cumulative returns, Sharpe ratio, and maximum drawdown, highlighting the potential of multi-agent LLM frameworks in financial trading. TradingAgents is available at https://github.com/TauricResearch/TradingAgents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2412.20138v7",
+      "url": "http://arxiv.org/abs/2412.20138v7",
+      "pdf_url": "https://arxiv.org/pdf/2412.20138v7",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2412.20138v7",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 59.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agent Memory Below the Prompt: Persistent Q4 KV Cache for Multi-Agent LLM Inference on Edge Devices",
+      "authors": [
+        "Yakov Pyotr Shkolnikov"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Multi-agent LLM systems on edge devices face a memory management problem: device RAM is too small to hold every agent's KV cache simultaneously. On Apple M4 Pro with 10.2 GB of cache budget, only 3 agents fit at 8K context in FP16. A 10-agent workflow must constantly evict and reload caches. Without persistence, every eviction forces a full re-prefill through the model -- 15.7 seconds per agent at 4K context. We address this by persisting each agent's KV cache to disk in 4-bit quantized format and reloading it directly into the attention layer, eliminating redundant O(n) prefill computation via direct cache restoration. The system comprises three components: a block pool providing per-agent isolated Q4 KV caches in safetensors format, a BatchQuantizedKVCache for concurrent inference over multiple agents' quantized caches, and cross-phase context injection that accumulates attention state across conversation phases without re-computation. Evaluated on three architectures (Gemma 3 12B, dense GQA, 48 layers; DeepSeek-Coder-V2-Lite 16B, MoE MLA, 27 layers; Llama 3.1 8B, dense GQA, 32 layers), cache restoration reduces time-to-first-token by up to 136x (Gemma: 22--136x at 4K--32K; DeepSeek: 11--76x at 4K--32K; Llama: 24--111x at 4K--16K; 3--10x at 1K). Q4 quantization fits 4x more agent contexts into fixed device memory than FP16. Perplexity measured with actual Q4 KV caches shows -0.7% for Gemma, +2.8% for Llama, and +3.0% for DeepSeek. Open-source at https://github.com/yshk-mxim/agent-memory",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.04428v1",
+      "url": "http://arxiv.org/abs/2603.04428v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.04428v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.04428v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 58.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "huggingface:Salesforce/wikitext"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "HealthAdminBench: Evaluating Computer-Use Agents on Healthcare Administration Tasks",
+      "authors": [
+        "Suhana Bedi",
+        "Ryan Welch",
+        "Ethan Steinberg",
+        "Michael Wornow",
+        "Taeil Matthew Kim",
+        "Haroun Ahmed",
+        "Peter Sterling",
+        "Bravim Purohit",
+        "Qurat Akram",
+        "Angelic Acosta",
+        "Esther Nubla",
+        "Pritika Sharma",
+        "Michael A. Pfeffer",
+        "Sanmi Koyejo",
+        "Nigam H. Shah"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Healthcare administration accounts for over $1 trillion in annual spending, making it a promising target for LLM-based computer-use agents (CUAs). While clinical applications of LLMs have received significant attention, no benchmark exists for evaluating CUAs on end-to-end administrative workflows. To address this gap, we introduce HealthAdminBench, a benchmark comprising four realistic GUI environments: an EHR, two payer portals, and a fax system, and 135 expert-defined tasks spanning three administrative task types: Prior Authorization, Appeals and Denials Management, and Durable Medical Equipment (DME) Order Processing. Each task is decomposed into fine-grained, verifiable subtasks, yielding 1,698 evaluation points. We evaluate seven agent configurations under multiple prompting and observation settings and find that, despite strong subtask performance, end-to-end reliability remains low: the best-performing agent (Claude Opus 4.6 CUA) achieves only 36.3 percent task success, while GPT-5.4 CUA attains the highest subtask success rate (82.8 percent). These results reveal a substantial gap between current agent capabilities and the demands of real-world administrative workflows. HealthAdminBench provides a rigorous foundation for evaluating progress toward safe and reliable automation of healthcare administrative workflows.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.09937v1",
+      "url": "http://arxiv.org/abs/2604.09937v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.09937v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.09937v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 58.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/som-shahlab/health-admin-bench: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:som-shahlab/health-admin-bench"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "Report from the NSF Future Directions Workshop, Toward User-Oriented Agents: Research Directions and Challenges",
+      "authors": [
+        "Maxine Eskenazi",
+        "Tiancheng Zhao"
+      ],
+      "year": 2020,
+      "venue": "arXiv",
+      "abstract": "This USER Workshop was convened with the goal of defining future research directions for the burgeoning intelligent agent research community and to communicate them to the National Science Foundation. It took place in Pittsburgh Pennsylvania on October 24 and 25, 2019 and was sponsored by National Science Foundation Grant Number IIS-1934222. Any opinions, findings and conclusions or future directions expressed in this document are those of the authors and do not necessarily reflect the views of the National Science Foundation. The 27 participants presented their individual research interests and their personal research goals. In the breakout sessions that followed, the participants defined the main research areas within the domain of intelligent agents and they discussed the major future directions that the research in each area of this domain should take",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2006.06026v1",
+      "url": "http://arxiv.org/abs/2006.06026v1",
+      "pdf_url": "https://arxiv.org/pdf/2006.06026v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2006.06026v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 57.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Layered Convergence in Autonomous Agent Memory: A Multi-Model Cognitive Architecture for Persistent Recall in Long-Running LLM Agents",
+      "authors": [
+        "Lance Harris"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "&lt;p&gt;Autonomous agents built on large language models (LLMs) operate under a structural limitation that constrains their utility in sustained, multi-domain environments: each session begins with no episodic, procedural, or declarative memory of prior sessions. Existing memory augmentation systems address this limitation through single-model approaches, including vector-based extraction (Mem0), temporal knowledge graphs (Zep/Graphiti), multi-strategy retrieval (Hindsight), OS-inspired tiered management (Letta/MemGPT), and framework-coupled recall (LangMem), each optimizing for one category of recall while leaving others unaddressed. This paper presents a multi-model cognitive architecture in which five complementary memory systems operate concurrently: (1) identity-prompt memory providing behavioral continuity via session-loaded configuration files; (2) structured constraint memory enabling programmatic policy enforcement with audit trails; (3) vector-enhanced semantic memory combining BM25 keyword matching with cosine-similarity search, temporal decay, and maximal marginal relevance re-ranking; (4) relational learning memory closing feedback loops between expert recommendations and their real-world outcomes; and (5) a hierarchical temporal knowledge graph organized into domain-scoped partitions with cross-domain tunnels and dynamic context assembly. Each model was introduced to address a specific failure mode observed during eight weeks of production deployment, and each operates additively without replacing its predecessors.&lt;/p&gt;\n&lt;p&gt;A combinatorial ablation study across all 32 possible subsets of the five models, totaling 3,520 evaluation runs across eight capability dimensions, validates the architecture using Shapley value decomposition. Three findings stand out. First, only two of the five models carry measurable weight under structural evaluation: Model II accounts for 104% of constraint enforcement capability, and Model V accounts for 100% of all retrieval capability, while Models I, III, and IV show near-zero contribution, an expected result given the evaluation's routing through constraint-check and palace-search pathways. Second, upgrading the constraint checker from keyword matching to semantic rule detection raised constraint enforcement from 59.8% to 73.3%, with Model II's Shapley value increasing from 0.286 to 0.430. Third, two new evaluation dimensions reveal previously unmeasured contributions: semantic recall scenarios show Model III (vector search) providing independent recall value (Shapley 0.025, 25% of total), and cross-model flow scenarios confirm that Models II and V contribute additively with zero interaction. The full architecture achieves 80.0% on factual recall with zero policy violations observed across nine weekly advisory council cycles in production. Constraint enforcement, feedback-loop learning, and dynamic context assembly are not present in any evaluated commercial or open-source memory system. The architecture was deployed without modifying the host platform's source code, suggesting portability across agent frameworks.&lt;/p&gt;",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6616122",
+      "url": "https://doi.org/10.2139/ssrn.6616122",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6616122",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Responsible LLM Systems: Governance, Safety, and Evaluation Frameworks for Enterprise AI Agents",
+      "authors": [
+        "Koushik Anitha Raja"
+      ],
+      "year": 2026,
+      "venue": "Computer Fraud and Security",
+      "abstract": "Enterprise adoption of Large Language Models presents governance challenges due to their probabilistic nature and potential for generating harmful, biased, or non-compliant outputs. This article proposes a three-layer governance architecture for mission-critical enterprise environments across finance, healthcare, and legal sectors. The framework integrates pre-mitigation policy binding mechanisms, runtime safety enforcement systems, and post-mitigation audit capabilities. Novel contributions include enterprise-specific threat modeling, measurable evaluation protocols with defined thresholds, and compliance-aligned governance artifacts. The proposed architecture addresses gaps in existing governance approaches through systematic threat-to-control mapping, quantitative safety assessment protocols, and comprehensive audit trail specifications. Industry-specific implementation guidance demonstrates framework applicability while maintaining operational efficiency. Technical limitations including safety-utility trade-offs and adversarial adaptation challenges receive detailed treatment alongside mitigation strategies.",
+      "citation_count": 0,
+      "doi": "10.52710/cfs.951",
+      "url": "https://doi.org/10.52710/cfs.951",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.52710/cfs.951",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code",
+      "authors": [
+        "Muhammad Haseeb"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Language Models (LLMs) have shown promise in automating code generation and software engineering tasks, yet they often struggle with complex, multi-file projects due to context limitations and knowledge gaps. We propose a novel context engineering workflow that combines multiple AI components: an Intent Translator (GPT-5) for clarifying user requirements, an Elicit-powered semantic literature retrieval for injecting domain knowledge, NotebookLM-based document synthesis for contextual understanding, and a Claude Code multi-agent system for code generation and validation. Our integrated approach leverages intent clarification, retrieval-augmented generation, and specialized sub-agents orchestrated via Claude's agent framework. We demonstrate that this method significantly improves the accuracy and reliability of code assistants in real-world repositories, yielding higher single-shot success rates and better adherence to project context than baseline single-agent approaches. Qualitative results on a large Next.js codebase show the multi-agent system effectively plans, edits, and tests complex features with minimal human intervention. We compare our system with recent frameworks like CodePlan, MASAI, and HyperAgent, highlighting how targeted context injection and agent role decomposition lead to state-of-the-art performance. Finally, we discuss the implications for deploying LLM-based coding assistants in production, along with lessons learned on context management and future research directions.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.08322v1",
+      "url": "http://arxiv.org/abs/2508.08322v1",
+      "pdf_url": "https://arxiv.org/pdf/2508.08322v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2508.08322v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Understanding Multi-Agent LLM Frameworks: A Unified Benchmark and Experimental Analysis",
+      "authors": [
+        "Abdelghny Orogat",
+        "Ana Rostam",
+        "Essam Mansour"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Multi-agent LLM frameworks are widely used to accelerate the development of agent systems powered by large language models (LLMs). These frameworks impose distinct architectural structures that govern how agents interact, store information, and coordinate tasks. However, their impact on system performance remains poorly understood. This gap is critical, as architectural choices alone can induce order-of-magnitude differences in latency and throughput, as well as substantial variation in accuracy and scalability. Addressing this challenge requires (i) jointly evaluating multiple capabilities, such as orchestration overhead, memory behavior, planning, specialization, and coordination, and (ii) conducting these evaluations under controlled, framework-level conditions to isolate architectural effects. Existing benchmarks focus on individual capabilities and lack standardized framework-level evaluation. We address these limitations by (i) introducing an architectural taxonomy for systematically comparing multi-agent LLM frameworks along fundamental dimensions, and (ii) developing MAFBench, a unified evaluation suite that integrates existing benchmarks under a standardized execution pipeline. Using MAFBench, we conduct a controlled empirical study across several widely used frameworks. Our results show that framework-level design choices alone can increase latency by over 100x, reduce planning accuracy by up to 30%, and lower coordination success from above 90% to below 30%. Finally, we translate our findings into concrete architectural design principles and framework selection guidance, and outline promising future research directions.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.03128v1",
+      "url": "http://arxiv.org/abs/2602.03128v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.03128v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.03128v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "huggingface:ai-hyz/MemoryAgentBench",
+        "huggingface:disco-eth/AgentsNet",
+        "huggingface:openai/gsm8k",
+        "github_repository:CoDS-GCS/MAFBench"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "TRIZ Agents: A Multi-Agent LLM Approach for TRIZ-Based Innovation",
+      "authors": [
+        "Kamil Szczepanik",
+        "Jarosław A. Chudziak"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "TRIZ, the Theory of Inventive Problem Solving, is a structured, knowledge-based framework for innovation and abstracting problems to find inventive solutions. However, its application is often limited by the complexity and deep interdisciplinary knowledge required. Advancements in Large Language Models (LLMs) have revealed new possibilities for automating parts of this process. While previous studies have explored single LLMs in TRIZ applications, this paper introduces a multi-agent approach. We propose an LLM-based multi-agent system, called TRIZ agents, each with specialized capabilities and tool access, collaboratively solving inventive problems based on the TRIZ methodology. This multi-agent system leverages agents with various domain expertise to efficiently navigate TRIZ steps. The aim is to model and simulate an inventive process with language agents. We assess the effectiveness of this team of agents in addressing complex innovation challenges based on a selected case study in engineering. We demonstrate the potential of agent collaboration to produce diverse, inventive solutions. This research contributes to the future of AI-driven innovation, showcasing the advantages of decentralized problem-solving in complex ideation tasks.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2506.18783v1",
+      "url": "http://arxiv.org/abs/2506.18783v1",
+      "pdf_url": "https://arxiv.org/pdf/2506.18783v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2506.18783v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis",
+      "authors": [
+        "Maciej Uberna",
+        "Michał Wawer",
+        "Jarosław A. Chudziak",
+        "Marcin Koszowy"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Identifying the strategic uses of reformulation in discourse remains a key challenge for computational argumentation. While LLMs can detect surface-level similarity, they often fail to capture the pragmatic functions of rephrasing, such as its role within rhetorical discourse. This paper presents a comparative multi-agent framework designed to quantify the benefits of incorporating explicit theoretical knowledge for this task. We utilise an dataset of annotated political debates to establish a new standard encompassing four distinct rephrase functions: Deintensification, Intensification, Specification, Generalisation, and Other, which covers all remaining types (D-I-S-G-O). We then evaluate two parallel LLM-based agent systems: one enhanced by argumentation theory via Retrieval-Augmented Generation (RAG), and an identical zero-shot baseline. The results reveal a clear performance gap: the RAG-enhanced agents substantially outperform the baseline across the board, with particularly strong advantages in detecting Intensification and Generalisation context, yielding an overall Macro F1-score improvement of nearly 30\\%. Our findings provide evidence that theoretical grounding is not only beneficial but essential for advancing beyond mere paraphrase detection towards function-aware analysis of argumentative discourse. This comparative multi-agent architecture represents a step towards scalable, theoretically informed computational tools capable of identifying rhetorical strategies in contemporary discourse.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.13713v2",
+      "url": "http://arxiv.org/abs/2602.13713v2",
+      "pdf_url": "https://arxiv.org/pdf/2602.13713v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.13713v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Learning Hierarchical Procedural Memory for LLM Agents through Bayesian Selection and Contrastive Refinement",
+      "authors": [
+        "Saman Forouzandeh",
+        "Wei Peng",
+        "Parham Moradi",
+        "Xinghuo Yu",
+        "Mahdi Jalili"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "We present MACLA, a framework that decouples reasoning from learning by maintaining a frozen large language model while performing all adaptation in an external hierarchical procedural memory. MACLA extracts reusable procedures from trajectories, tracks reliability via Bayesian posteriors, selects actions through expected-utility scoring, and refines procedures by contrasting successes and failures. Across four benchmarks (ALFWorld, WebShop, TravelPlanner, InterCodeSQL), MACLA achieves 78.1 percent average performance, outperforming all baselines. On ALFWorld unseen tasks, MACLA reaches 90.3 percent with 3.1 percent positive generalization. The system constructs memory in 56 seconds, 2800 times faster than the state-of-the-art LLM parameter-training baseline, compressing 2851 trajectories into 187 procedures. Experimental results demonstrate that structured external memory with Bayesian selection and contrastive refinement enables sample-efficient, interpretable, and continually improving agents without LLM parameter updates.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2512.18950v1",
+      "url": "http://arxiv.org/abs/2512.18950v1",
+      "pdf_url": "https://arxiv.org/pdf/2512.18950v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2512.18950v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/OSU-NLP-Group/TravelPlanner: HTTP Error 403: rate limit exceeded",
+        "https://github.com/alfworld/alfworld: HTTP Error 403: rate limit exceeded",
+        "https://github.com/princeton-nlp/WebShop: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:alfworld/alfworld",
+        "github_repository:princeton-nlp/WebShop",
+        "github_repository:OSU-NLP-Group/TravelPlanner",
+        "project_site:InterCode-SQL"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "From single-agent to multi-agent: a comprehensive review of LLM-based legal agents",
+      "authors": [
+        "Se Yang",
+        "Zhe Yang",
+        "Yutong Liu",
+        "Hongtao Wang"
+      ],
+      "year": 2025,
+      "venue": "AI Agent",
+      "abstract": "With the growing application of artificial intelligence (AI) in the legal domain, large language model (LLM)-based legal agents have achieved remarkable progress. This survey provides a comprehensive review of the applications and developments of LLM-driven agents in law. Firstly, we outline the core legal tasks, including legal information retrieval, question answering, judgment prediction, and legal text generation, along with the corresponding evaluation benchmarks. Then, we analyze the technical challenges faced by both single-agent and multi-agent systems in legal scenarios and summarize the prevailing research methods. Finally, we discuss future directions for legal agents, including enhancing single-agent trustworthiness through explainability, boosting multi-agent efficiency with collaborative AI techniques, enabling cross-jurisdictional interoperability via legal knowledge graphs, and establishing ethical governance with quantifiable metrics. By synthesizing existing research, this survey aims to offer theoretical insights and practical guidance for the sustainable advancement of legal agents.",
+      "citation_count": 2,
+      "doi": "10.20517/aiagent.2025.06",
+      "url": "https://doi.org/10.20517/aiagent.2025.06",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20517/aiagent.2025.06",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "method"
+      ],
+      "score": 55.41,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "UI-Evol: Automatic Knowledge Evolving for Computer Use Agents",
+      "authors": [
+        "Ziyun Zhang",
+        "Xinyi Liu",
+        "Xiaoyi Zhang",
+        "Jun Wang",
+        "Gang Chen",
+        "Yan Lu"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "External knowledge has played a crucial role in the recent development of computer use agents. We identify a critical knowledge-execution gap: retrieved knowledge often fails to translate into effective real-world task execution. Our analysis shows even 90% correct knowledge yields only 41% execution success rate. To bridge this gap, we propose UI-Evol, a plug-and-play module for autonomous GUI knowledge evolution. UI-Evol consists of two stages: a Retrace Stage that extracts faithful objective action sequences from actual agent-environment interactions, and a Critique Stage that refines existing knowledge by comparing these sequences against external references. We conduct comprehensive experiments on the OSWorld benchmark with the state-of-the-art Agent S2. Our results demonstrate that UI-Evol not only significantly boosts task performance but also addresses a previously overlooked issue of high behavioral standard deviation in computer use agents, leading to superior performance on computer use tasks and substantially improved agent reliability.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2505.21964v2",
+      "url": "http://arxiv.org/abs/2505.21964v2",
+      "pdf_url": "https://arxiv.org/pdf/2505.21964v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2505.21964v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota"
+      ],
+      "score": 54.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/xlang-ai/OSWorld: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:xlang-ai/OSWorld"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "LLM-Driven Voice Agents That Collaboratively Talk to Each Other: Towards Vocal Multi- Agent Systems",
+      "authors": [
+        "Navneet Dalipkumar Magotra"
+      ],
+      "year": 2025,
+      "venue": "Frontiers in Emerging Artificial Intelligence and Machine Learning",
+      "abstract": "Voice assistants such as Alexa, Google Assistant, and Siri have become increasingly sophisticated, integrating Large Language Models (LLMs) to deliver personalized responses. However, these platforms are constrained by single-agent paradigms that limit collaboration, transparency, and complex problem solving [1,2]. This paper proposes a novel LLM-driven multi-agent voice architecture in which multiple specialized voice-powered agents converse with one another— vocally and intelligibly—to collaboratively resolve user requests. Drawing inspiration from cooperative multi-agent systems [3,4] and human-like conversational transparency [5,6], we demonstrate a prototype in a smart kitchen environment involving culinary, nutrition, and inventory agents. Evaluation suggests improvements in explainability, task success, and user trust, though challenges remain in orchestration, privacy, and cognitive load. This research introduces vocal multi-agent systems as a new frontier in interactive AI, advancing beyond single-agent frameworks towards explainable, collaborative, and socially intelligent voice ecosystems.",
+      "citation_count": 1,
+      "doi": "10.64917/feaiml/volume02issue12-05",
+      "url": "https://doi.org/10.64917/feaiml/volume02issue12-05",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.64917/feaiml/volume02issue12-05",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 53.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Memory in LLM-based Multi-agent Systems: Mechanisms, Challenges, and Collective Intelligence",
+      "authors": [
+        "Shanglin Wu",
+        "Kai Shu"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Memory plays a central role in transforming Large Language Model (LLM)-based agents from reactive predictors into consistent, context-aware collaborators. While LLM-based single-agent memory has been extensively studied, memory in LLM-based Multi-Agent Systems (LLM-MAS) lacks a systematic taxonomy and review. In multi-agent contexts, memory becomes a shared cognitive infrastructure enabling collective intelligence, long-term coordination, and team evolvement. This survey provides the first comprehensive review of memory in LLM-MAS, synthesizing research across memory architectures, management and operations, evaluation, and application, while formalizing key definitions and introducing the design space. Our survey reveals that memory in LLM-MAS is not a trivial extension of single-agent memory but a distinct research frontier-with new challenges in synchronization, access control, scalability, alignment, and safety. By consolidating diverse literature, we aim to provide a foundation for future research in building intelligent, memory-augmented multi-agent systems. In order to follow the latest works in this field, we create and maintain a repository at https://github.com/ShanglinWu/LLM-MAS_Memory_Survey.git.",
+      "citation_count": 0,
+      "doi": "10.36227/techrxiv.176539617.79044553/v1",
+      "url": "https://doi.org/10.36227/techrxiv.176539617.79044553/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.36227/techrxiv.176539617.79044553/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/ShanglinWu/LLM-MAS_Memory_Survey.git: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [],
+      "dataset_status": "error"
+    },
+    {
+      "title": "An Interactive Multi-Agent System for Evaluation of New Product Concepts",
+      "authors": [
+        "Bin Xuan",
+        "Ruo Ai",
+        "Hakyeon Lee"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Product concept evaluation is a critical stage that determines strategic resource allocation and project success in enterprises. However, traditional expert-led approaches face limitations such as subjective bias and high time and cost requirements. To support this process, this study proposes an automated approach utilizing a large language model (LLM)-based multi-agent system (MAS). Through a systematic analysis of previous research on product development and team collaboration, this study established two primary evaluation dimensions, namely technical feasibility and market feasibility. The proposed system consists of a team of eight virtual agents representing specialized domains such as R&D and marketing. These agents use retrieval-augmented generation (RAG) and real-time search tools to gather objective evidence and validate concepts through structured deliberations based on the established criteria. The agents were further fine-tuned using professional product review data to enhance their judgment accuracy. A case study involving professional display monitor concepts demonstrated that the system's evaluation rankings were consistent with those of senior industry experts. These results confirm the usability of the proposed multi-agent-based evaluation approach for supporting product development decisions.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.05980v1",
+      "url": "http://arxiv.org/abs/2603.05980v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.05980v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.05980v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "website_dataset:rtings-monitor-data"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "LLM Agents for Smart City Management: Enhancing Decision Support Through Multi-Agent AI Systems",
+      "authors": [
+        "Anna V. Kalyuzhnaya",
+        "Sergey Mityagin",
+        "Elizaveta Lutsenko",
+        "Andrey Getmanov",
+        "Yaroslav Aksenkin",
+        "Kamil Fatkhiev",
+        "Kirill Fedorin",
+        "Nikolay O. Nikitin",
+        "Natalia Chichkova",
+        "Vladimir Vorona",
+        "Alexander V. Boukhanovsky"
+      ],
+      "year": 2025,
+      "venue": "Smart Cities",
+      "abstract": null,
+      "citation_count": 46,
+      "doi": "10.3390/smartcities8010019",
+      "url": "https://openalex.org/W4406842332",
+      "pdf_url": "https://www.mdpi.com/2624-6511/8/1/19/pdf?version=1737737853",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.3390/smartcities8010019",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 50.78,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "LLM-Based Agents for Tool Learning: A Survey",
+      "authors": [
+        "Weikai Xu",
+        "Chengrui Huang",
+        "Shen Gao",
+        "Shuo Shang"
+      ],
+      "year": 2025,
+      "venue": "Data Science and Engineering",
+      "abstract": null,
+      "citation_count": 28,
+      "doi": "10.1007/s41019-025-00296-9",
+      "url": "https://openalex.org/W4411700982",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s41019-025-00296-9.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s41019-025-00296-9",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 49.29,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "SecureGov-Agent: A Governance-Centric Multi-Agent Framework for Privacy-Preserving and Attack-Resilient LLM Agents",
+      "authors": [
+        "Jinyu Chen",
+        "Jixiao Yang",
+        "Ziyang Zeng",
+        "Zixiao Huang",
+        "Jinming Li",
+        "Yutong Wang"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Large Language Model (LLM)-based multi-agent systems have demonstrated remarkable capabilities across di- verse applications, yet they face critical security challenges in- cluding backdoor attacks, prompt injection, and privacy leakage. Existing defense mechanisms typically address single threat vec- tors, lacking a unified governance architecture for comprehensive security. We propose SecureGov-Agent, a governance-centric multi-agent framework that introduces a dedicated Governance Agent responsible for monitoring inter-agent communications, auditing tool invocations, and enforcing security policies. Our framework incorporates a multi-perspective risk scoring mech- anism that evaluates content risk, privacy risk, and behavioral anomalies to dynamically assess each agent’s trustworthiness. We further enhance robustness through adversarial training on syn- thesized attack scenarios. Extensive experiments across medical consultation, financial advisory, and document processing scenar- ios demonstrate that SecureGov-Agent achieves a balanced trade- off between security, privacy, and efficiency: reducing attack success rates by 73.2% compared to unprotected systems and privacy leakage rates by 81.4%, while maintaining 89.7% task completion rate with only 15.3% latency overhead. Notably, our framework excels in privacy protection (6.8% leakage rate) and maintains practical efficiency, offering a comprehensive solution for privacy-sensitive multi-agent deployments. Our framework provides a reproducible benchmark for multi-agent security research and offers practical deployment guidelines for privacy- sensitive applications.",
+      "citation_count": 1,
+      "doi": "10.20944/preprints202512.2497.v1",
+      "url": "https://doi.org/10.20944/preprints202512.2497.v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20944/preprints202512.2497.v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 49.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Towards Effective GenAI Multi-Agent Collaboration: Design and Evaluation for Enterprise Applications",
+      "authors": [
+        "Raphael Shu",
+        "Nilaksh Das",
+        "Michelle Yuan",
+        "Monica Sunkara",
+        "Yi Zhang"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "AI agents powered by large language models (LLMs) have shown strong capabilities in problem solving. Through combining many intelligent agents, multi-agent collaboration has emerged as a promising approach to tackle complex, multi-faceted problems that exceed the capabilities of single AI agents. However, designing the collaboration protocols and evaluating the effectiveness of these systems remains a significant challenge, especially for enterprise applications. This report addresses these challenges by presenting a comprehensive evaluation of coordination and routing capabilities in a novel multi-agent collaboration framework. We evaluate two key operational modes: (1) a coordination mode enabling complex task completion through parallel communication and payload referencing, and (2) a routing mode for efficient message forwarding between agents. We benchmark on a set of handcrafted scenarios from three enterprise domains, which are publicly released with the report. For coordination capabilities, we demonstrate the effectiveness of inter-agent communication and payload referencing mechanisms, achieving end-to-end goal success rates of 90%. Our analysis yields several key findings: multi-agent collaboration enhances goal success rates by up to 70% compared to single-agent approaches in our benchmarks; payload referencing improves performance on code-intensive tasks by 23%; latency can be substantially reduced with a routing mechanism that selectively bypasses agent orchestration. These findings offer valuable guidance for enterprise deployments of multi-agent systems and advance the development of scalable, efficient multi-agent collaboration frameworks.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2412.05449v1",
+      "url": "http://arxiv.org/abs/2412.05449v1",
+      "pdf_url": "https://arxiv.org/pdf/2412.05449v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2412.05449v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 49.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "github_repository:aws-samples/multiagent-collab-scenario-benchmark"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "Personal LLM Agents: Insights and Survey about the Capability, Efficiency and Security",
+      "authors": [
+        "Yuanchun Li",
+        "Hao Wen",
+        "Weijun Wang",
+        "Xiangyu Li",
+        "Yi-Zhen Yuan",
+        "Guohong Liu",
+        "Jiacheng Liu",
+        "Wenxing Xu",
+        "Xiang Wang",
+        "Yi Sun",
+        "Rui Kong",
+        "Yile Wang",
+        "Hanfei Geng",
+        "Jian Luan",
+        "Xuefeng Jin",
+        "Zilong Ye",
+        "Guanjing Xiong",
+        "Fan Zhang",
+        "Xiang Li",
+        "Mengwei Xu",
+        "Zhijun Li",
+        "Peng Li",
+        "Yang Liu",
+        "Ya-Qin Zhang",
+        "Yunxin Liu"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 31,
+      "doi": "10.48550/arxiv.2401.05459",
+      "url": "https://openalex.org/W4390832893",
+      "pdf_url": "https://arxiv.org/pdf/2401.05459",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2401.05459",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 48.57,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "IntentCUA: Learning Intent-level Representations for Skill Abstraction and Multi-Agent Planning in Computer-Use Agents",
+      "authors": [
+        "Seoyoung Lee",
+        "Seobin Yoon",
+        "Seongbeen Lee",
+        "Yoojung Chun",
+        "Dayoung Park",
+        "Doyeon Kim",
+        "Joo Yong Sim"
+      ],
+      "year": null,
+      "venue": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.65109/brag3288",
+      "url": "https://doi.org/10.65109/brag3288",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/brag3288",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures (XAMT)",
+      "authors": [
+        "Akhil Sharma",
+        "Shaikh Yaser Arafat",
+        "Jai Kumar Sharma",
+        "Ken Huang"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "The increasing operational reliance on complex Multi-Agent Systems (MAS) across safety-critical domains necessitates rigorous adversarial robustness assessment. Modern MAS are inherently heterogeneous, integrating conventional Multi-Agent Reinforcement Learning (MARL) with emerging Large Language Model (LLM) agent architectures utilizing Retrieval-Augmented Generation (RAG). A critical shared vulnerability is reliance on centralized memory components: the shared Experience Replay (ER) buffer in MARL and the external Knowledge Base (K) in RAG agents. This paper proposes XAMT (Bilevel Optimization for Covert Memory Tampering in Heterogeneous Multi-Agent Architectures), a novel framework that formalizes attack generation as a bilevel optimization problem. The Upper Level minimizes perturbation magnitude (delta) to enforce covertness while maximizing system behavior divergence toward an adversary-defined target (Lower Level). We provide rigorous mathematical instantiations for CTDE MARL algorithms and RAG-based LLM agents, demonstrating that bilevel optimization uniquely crafts stealthy, minimal-perturbation poisons evading detection heuristics. Comprehensive experimental protocols utilize SMAC and SafeRAG benchmarks to quantify effectiveness at sub-percent poison rates (less than or equal to 1 percent in MARL, less than or equal to 0.1 percent in RAG). XAMT defines a new unified class of training-time threats essential for developing intrinsically secure MAS, with implications for trust, formal verification, and defensive strategies prioritizing intrinsic safety over perimeter-based detection.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2512.15790v1",
+      "url": "http://arxiv.org/abs/2512.15790v1",
+      "pdf_url": "https://arxiv.org/pdf/2512.15790v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2512.15790v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/IAAR-Shanghai/SafeRAG: HTTP Error 403: rate limit exceeded",
+        "https://github.com/oxwhirl/smac: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:oxwhirl/smac",
+        "github_repository:IAAR-Shanghai/SafeRAG"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "AEMA: Verifiable Evaluation Framework for Trustworthy and Controlled Agentic LLM Systems",
+      "authors": [
+        "YenTing Lee",
+        "Keerthi Koneru",
+        "Zahra Moslemi",
+        "Sheethal Kumar",
+        "Ramesh Radhakrishnan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Evaluating large language model (LLM)-based multi-agent systems remains a critical challenge, as these systems must exhibit reliable coordination, transparent decision-making, and verifiable performance across evolving tasks. Existing evaluation approaches often limit themselves to single-response scoring or narrow benchmarks, which lack stability, extensibility, and automation when deployed in enterprise settings at multi-agent scale. We present AEMA (Adaptive Evaluation Multi-Agent), a process-aware and auditable framework that plans, executes, and aggregates multi-step evaluations across heterogeneous agentic workflows under human oversight. Compared to a single LLM-as-a-Judge, AEMA achieves greater stability, human alignment, and traceable records that support accountable automation. Our results on enterprise-style agent workflows simulated using realistic business scenarios demonstrate that AEMA provides a transparent and reproducible pathway toward responsible evaluation of LLM-based multi-agent systems. Keywords Agentic AI, Multi-Agent Systems, Trustworthy AI, Verifiable Evaluation, Human Oversight",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.11903v1",
+      "url": "http://arxiv.org/abs/2601.11903v1",
+      "pdf_url": "https://arxiv.org/pdf/2601.11903v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.11903v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "paper_dataset:aema-invoice-images"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "Efficient Multi-Agent Collaboration with Tool Use for Online Planning in Complex Table Question Answering",
+      "authors": [
+        "Wei Zhou",
+        "Mohsen Mesgar",
+        "Annemarie Friedrich",
+        "Heike Adel"
+      ],
+      "year": 2025,
+      "venue": "Findings of the Association for Computational Linguistics: NAACL 2025",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.18653/v1/2025.findings-naacl.54",
+      "url": "https://doi.org/10.18653/v1/2025.findings-naacl.54",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2025.findings-naacl.54",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 47.41,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "An organizational theory for multi-agent interactions integrating human agents, LLMs, and specialized AI",
+      "authors": [
+        "Uwe M. Borghoff",
+        "Paolo Bottoni",
+        "Remo Pareschi"
+      ],
+      "year": 2025,
+      "venue": "Discover Computing",
+      "abstract": null,
+      "citation_count": 9,
+      "doi": "10.1007/s10791-025-09667-2",
+      "url": "https://openalex.org/W4412004157",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10791-025-09667-2.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s10791-025-09667-2",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 47.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/Aribertus/tb-cspn-poc: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [],
+      "dataset_status": "error"
+    },
+    {
+      "title": "Self Knowledge-Tracing for Tool Use (SKT-Tool): Helping LLM Agents Understand Their Capabilities in Tool Use",
+      "authors": [
+        "Joshua Vigel",
+        "Renpei Cai",
+        "Eleanor Chen",
+        "Anish Neema",
+        "Austen Liao",
+        "Kevin Zhu",
+        "Sean O’brien"
+      ],
+      "year": 2025,
+      "venue": "The Sixth Workshop on Insights from Negative Results in NLP",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2025.insights-1.14",
+      "url": "https://doi.org/10.18653/v1/2025.insights-1.14",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2025.insights-1.14",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AOAD-MAT: Transformer-based multi-agent deep reinforcement learning model considering agents' order of action decisions",
+      "authors": [
+        "Shota Takayama",
+        "Katsuhide Fujita"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Multi-agent reinforcement learning focuses on training the behaviors of multiple learning agents that coexist in a shared environment. Recently, MARL models, such as the Multi-Agent Transformer (MAT) and ACtion dEpendent deep Q-learning (ACE), have significantly improved performance by leveraging sequential decision-making processes. Although these models can enhance performance, they do not explicitly consider the importance of the order in which agents make decisions. In this paper, we propose an Agent Order of Action Decisions-MAT (AOAD-MAT), a novel MAT model that considers the order in which agents make decisions. The proposed model explicitly incorporates the sequence of action decisions into the learning process, allowing the model to learn and predict the optimal order of agent actions. The AOAD-MAT model leverages a Transformer-based actor-critic architecture that dynamically adjusts the sequence of agent actions. To achieve this, we introduce a novel MARL architecture that cooperates with a subtask focused on predicting the next agent to act, integrated into a Proximal Policy Optimization based loss function to synergistically maximize the advantage of the sequential decision-making. The proposed method was validated through extensive experiments on the StarCraft Multi-Agent Challenge and Multi-Agent MuJoCo benchmarks. The experimental results show that the proposed AOAD-MAT model outperforms existing MAT and other baseline models, demonstrating the effectiveness of adjusting the AOAD order in MARL.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2510.13343v1",
+      "url": "http://arxiv.org/abs/2510.13343v1",
+      "pdf_url": "https://arxiv.org/pdf/2510.13343v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2510.13343v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [
+        "https://github.com/oxwhirl/smac: HTTP Error 403: rate limit exceeded",
+        "https://github.com/schroederdewitt/multiagent_mujoco: HTTP Error 403: rate limit exceeded"
+      ],
+      "dataset_ids": [
+        "github_repository:oxwhirl/smac",
+        "github_repository:schroederdewitt/multiagent_mujoco"
+      ],
+      "dataset_status": "metadata_only"
+    },
+    {
+      "title": "Multi-Agent LLM Framework for Autonomous Network Fault Remediation",
+      "authors": [
+        "Baddipadiga Praneeth Reddy"
+      ],
+      "year": 2026,
+      "venue": "International Journal Of Recent Trends In Multidisciplinary Research",
+      "abstract": "The growing complexity of today’s enterprise networks is challenging traditional approaches to fault management. The proposed solution utilizes a multi-agent large language model (LLM) framework that autonomously detects, diagnoses, and resolves network faults. The framework includes four agents: an Ingestion Agent, a Diagnostic Agent, a Remediation Agent, and an Oversight Agent. Each agent uses an LLM with retrieval-augmented generation (RAG) capabilities to gain contextual knowledge about the network and vendor-specific knowledge to aid in performing each stage of the fault resolution process. The framework was evaluated using a dataset of network faults from three different vendors. The results of the evaluation demonstrate that the framework can autonomously resolve 91.4% of common faults, reducing the mean time to remediate faults by 68%. Additionally, the false-positive rate for the remediation of faults was less than 2.3%. Thus, these results show that the framework is able to autonomously resolve network faults with high reliability and safety.",
+      "citation_count": 0,
+      "doi": "10.59256/ijrtmr.20260602033",
+      "url": "https://doi.org/10.59256/ijrtmr.20260602033",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.59256/ijrtmr.20260602033",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 44.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_errors": [],
+      "dataset_ids": [
+        "paper_dataset:three-vendor-network-fault-data"
+      ],
+      "dataset_status": "metadata_only"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/1O4mhdtJVUlTHOBxDBgk+Cfffoo</id>
+  <title>arXiv Query: search_query=all:GAIA OR all:benchmark OR all:general OR all:AI OR all:assistants&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-07-29T04:18:11Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:GAIA+OR+(all:benchmark+OR+(all:general+OR+(all:AI+OR+all:assistants)))&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>1163750</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1609.04153v1</id>
+    <title>The Gaia mission</title>
+    <updated>2016-09-14T07:23:20Z</updated>
+    <link href="https://arxiv.org/abs/1609.04153v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1609.04153v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gaia is a cornerstone mission in the science programme of the European Space Agency (ESA). The spacecraft construction was approved in 2006, following a study in which the original interferometric concept was changed to a direct-imaging approach. Both the spacecraft and the payload were built by European industry. The involvement of the scientific community focusses on data processing for which the international Gaia Data Processing and Analysis Consortium (DPAC) was selected in 2007. Gaia was launched on 19 December 2013 and arrived at its operating point, the second Lagrange point of the Sun-Earth-Moon system, a few weeks later. The commissioning of the spacecraft and payload was completed on 19 July 2014. The nominal five-year mission started with four weeks of special, ecliptic-pole scanning and subsequently transferred into full-sky scanning mode. We recall the scientific goals of Gaia and give a description of the as-built spacecraft that is currently (mid-2016) being operated to achieve these goals. We pay special attention to the payload module, the performance of which is closely related to the scientific performance of the mission. We provide a summary of the commissioning activities and findings, followed by a description of the routine operational mode. We summarise scientific performance estimates on the basis of in-orbit operations. Several intermediate Gaia data releases are planned and the data can be retrieved from the Gaia Archive, which is available through the Gaia home page at http://www.cosmos.esa.int/gaia.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-09-14T07:23:20Z</published>
+    <arxiv:comment>The Gaia Collaboration consists of 625 authors. Accepted by A&amp;A in the Gaia Special Feature</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name> Gaia Collaboration</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/201629272</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/201629272" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2206.06215v2</id>
+    <title>Gaia Data Release 3: The Galaxy in your preferred colours. Synthetic photometry from Gaia low-resolution spectra</title>
+    <updated>2023-01-10T15:13:48Z</updated>
+    <link href="https://arxiv.org/abs/2206.06215v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2206.06215v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gaia Data Release 3 provides novel flux-calibrated low-resolution spectrophotometry for about 220 million sources in the wavelength range 330nm - 1050nm (XP spectra). Synthetic photometry directly tied to a flux in physical units can be obtained from these spectra for any passband fully enclosed in this wavelength range. We describe how synthetic photometry can be obtained from XP spectra, illustrating the performance that can be achieved under a range of different conditions - for example passband width and wavelength range - as well as the limits and the problems affecting it. Existing top-quality photometry can be reproduced within a few per cent over a wide range of magnitudes and colour, for wide and medium bands, and with up to millimag accuracy when synthetic photometry is standardised with respect to these external sources. Some examples of potential scientific application are presented, including the detection of multiple populations in globular clusters, the estimation of metallicity extended to the very metal-poor regime, and the classification of white dwarfs. A catalogue providing standardised photometry for ~220 million sources in several wide bands of widely used photometric systems is provided (Gaia Synthetic Photometry Catalogue; GSPC) as well as a catalogue of $\simeq 10^5$ white dwarfs with DA/non-DA classification obtained with a Random Forest algorithm (Gaia Synthetic Photometry Catalogue for White Dwarfs; GSPC-WD).</summary>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-06-13T14:46:25Z</published>
+    <arxiv:comment>Accepted for publication by A&amp;A. Gaia DR3 performance verification paper. Latex, 59 pages, 62 figures, 9 appendices. New version with a Note added in proof concerning an error in the standardised y_PS1 fluxes and magnitudes provided in the GSPC</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.SR"/>
+    <author>
+      <name> Gaia Collaboration</name>
+    </author>
+    <author>
+      <name>P. Montegriffo</name>
+    </author>
+    <author>
+      <name>M. Bellazzini</name>
+    </author>
+    <author>
+      <name>F. De Angeli</name>
+    </author>
+    <author>
+      <name>R. Andrae</name>
+    </author>
+    <author>
+      <name>M. A. Barstow</name>
+    </author>
+    <author>
+      <name>D. Bossini</name>
+    </author>
+    <author>
+      <name>A. Bragaglia</name>
+    </author>
+    <author>
+      <name>P. W. Burgess</name>
+    </author>
+    <author>
+      <name>C. Cacciari</name>
+    </author>
+    <author>
+      <name>J. M. Carrasco</name>
+    </author>
+    <author>
+      <name>N. Chornay</name>
+    </author>
+    <author>
+      <name>L. Delchambre</name>
+    </author>
+    <author>
+      <name>D. W. Evans</name>
+    </author>
+    <author>
+      <name>M. Fouesneau</name>
+    </author>
+    <author>
+      <name>Y. Fremat</name>
+    </author>
+    <author>
+      <name>D. Garabato</name>
+    </author>
+    <author>
+      <name>C. Jordi</name>
+    </author>
+    <author>
+      <name>M. Manteiga</name>
+    </author>
+    <author>
+      <name>D. Massari</name>
+    </author>
+    <author>
+      <name>L. Palaversa</name>
+    </author>
+    <author>
+      <name>E. Pancino</name>
+    </author>
+    <author>
+      <name>M. Riello</name>
+    </author>
+    <author>
+      <name>D. Ruz Mieres</name>
+    </author>
+    <author>
+      <name>N. Sanna</name>
+    </author>
+    <author>
+      <name>R. Santovena</name>
+    </author>
+    <author>
+      <name>R. Sordo</name>
+    </author>
+    <author>
+      <name>A. Vallenari</name>
+    </author>
+    <author>
+      <name>N. Walton</name>
+    </author>
+    <author>
+      <name>Gaia DPAC</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202243709</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202243709" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1609.04172v1</id>
+    <title>Gaia Data Release 1. Summary of the astrometric, photometric, and survey properties</title>
+    <updated>2016-09-14T08:41:08Z</updated>
+    <link href="https://arxiv.org/abs/1609.04172v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1609.04172v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>At about 1000 days after the launch of Gaia we present the first Gaia data release, Gaia DR1, consisting of astrometry and photometry for over 1 billion sources brighter than magnitude 20.7. We summarize Gaia DR1 and provide illustrations of the scientific quality of the data, followed by a discussion of the limitations due to the preliminary nature of this release. Gaia DR1 consists of: a primary astrometric data set which contains the positions, parallaxes, and mean proper motions for about 2 million of the brightest stars in common with the Hipparcos and Tycho-2 catalogues and a secondary astrometric data set containing the positions for an additional 1.1 billion sources. The second component is the photometric data set,consisting of mean G-band magnitudes for all sources. The G-band light curves and the characteristics of ~3000 Cepheid and RR Lyrae stars, observed at high cadence around the south ecliptic pole, form the third component. For the primary astrometric data set the typical uncertainty is about 0.3 mas for the positions and parallaxes, and about 1 mas/yr for the proper motions. A systematic component of ~0.3 mas should be added to the parallax uncertainties. For the subset of ~94000 Hipparcos stars in the primary data set, the proper motions are much more precise at about 0.06 mas/yr. For the secondary astrometric data set, the typical uncertainty of the positions is ~10 mas. The median uncertainties on the mean G-band magnitudes range from the mmag level to ~0.03 mag over the magnitude range 5 to 20.7. Gaia DR1 represents a major advance in the mapping of the heavens and the availability of basic stellar data that underpin observational astrophysics. Nevertheless, the very preliminary nature of this first Gaia data release does lead to a number of important limitations to the data quality which should be carefully considered before drawing conclusions from the data.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-09-14T08:41:08Z</published>
+    <arxiv:comment>23 pages, 13 figures. This paper has 591 co-authors. Accepted by A&amp;A in the Gaia Special Feature. The Gaia data, documentation and access facilities can be found at http://archives.esac.esa.int/gaia/</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name> Gaia Collaboration</name>
+    </author>
+    <author>
+      <name>A. G. A. Brown</name>
+      <arxiv:affiliation>Leiden Observatory, Leiden University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Vallenari</name>
+      <arxiv:affiliation>INAF - Osservatorio astronomico di Padova</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Prusti</name>
+      <arxiv:affiliation>ESA/ESTEC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. de Bruijne</name>
+      <arxiv:affiliation>ESA/ESTEC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>F. Mignard</name>
+      <arxiv:affiliation>Observatoire de la Cote d'Azur</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Drimmel</name>
+      <arxiv:affiliation>INAF - Osservatorio Astrofisico di Torino</arxiv:affiliation>
+    </author>
+    <author>
+      <name>585 co-authors</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/201629512</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/201629512" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1804.09365v2</id>
+    <title>Gaia Data Release 2. Summary of the contents and survey properties</title>
+    <updated>2018-05-26T11:56:02Z</updated>
+    <link href="https://arxiv.org/abs/1804.09365v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1804.09365v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present the second Gaia data release, Gaia DR2, consisting of astrometry, photometry, radial velocities, and information on astrophysical parameters and variability, for sources brighter than magnitude 21. In addition epoch astrometry and photometry are provided for a modest sample of minor planets in the solar system.
+  A summary of the contents of Gaia DR2 is presented, accompanied by a discussion on the differences with respect to Gaia DR1 and an overview of the main limitations which are still present in the survey. Recommendations are made on the responsible use of Gaia DR2 results.
+  Gaia DR2 contains celestial positions and the apparent brightness in G for approximately 1.7 billion sources. For 1.3 billion of those sources, parallaxes and proper motions are in addition available. The sample of sources for which variability information is provided is expanded to 0.5 million stars. This data release contains four new elements: broad-band colour information in the form of the apparent brightness in the $G_\mathrm{BP}$ (330--680 nm) and $G_\mathrm{RP}$ (630--1050 nm) bands is available for 1.4 billion sources; median radial velocities for some 7 million sources are presented; for between 77 and 161 million sources estimates are provided of the stellar effective temperature, extinction, reddening, and radius and luminosity; and for a pre-selected list of 14000 minor planets in the solar system epoch astrometry and photometry are presented. Finally, Gaia DR2 also represents a new materialisation of the celestial reference frame in the optical, the Gaia-CRF2, which is the first optical reference frame based solely on extragalactic sources. There are notable changes in the photometric system and the catalogue source list with respect to Gaia DR1, and we stress the need to consider the two data releases as independent.</summary>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-04-25T06:25:15Z</published>
+    <arxiv:comment>Accepted for A&amp;A Special Issue on Gaia DR2, 21 pages, 9 figures, high resolution Milky Way sky maps available from ESA Gaia web pages, 447 co-authors</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.GA"/>
+    <author>
+      <name> Gaia Collaboration</name>
+    </author>
+    <author>
+      <name>A. G. A. Brown</name>
+      <arxiv:affiliation>Leiden Observatory, Leiden University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Vallenari</name>
+      <arxiv:affiliation>INAF - Osservatorio astronomico di Padova</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Prusti</name>
+      <arxiv:affiliation>ESA/ESTEC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. H. J. de Bruijne</name>
+      <arxiv:affiliation>ESA/ESTEC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Babusiaux</name>
+      <arxiv:affiliation>GEPI, Observatoire de Paris</arxiv:affiliation>
+      <arxiv:affiliation>Univ. Grenoble Alpes</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. A. L. Bailer-Jones</name>
+      <arxiv:affiliation>Max Planck Institute for Astronomy</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/201833051</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/201833051" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2206.05536v1</id>
+    <title>Gaia Data Release 3: Exploring and mapping the diffuse interstellar band at 862 nm</title>
+    <updated>2022-06-11T14:00:39Z</updated>
+    <link href="https://arxiv.org/abs/2206.05536v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2206.05536v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Diffuse interstellar bands (DIBs) are common interstellar absorption features in spectroscopic observations but their origins remain unclear. DIBs play an important role in the life cycle of the interstellar medium (ISM) and can also be used to trace Galactic structure. Here, we demonstrate the capacity of the Gaia-Radial Velocity Spectrometer (RVS) in Gaia DR3 to reveal the spatial distribution of the unknown molecular species responsible for the most prominent DIB at 862 nm in the RVS passband, exploring the Galactic ISM within a few kiloparsecs from the Sun. The DIBs are measured within the GSP-Spec module using a Gaussian profile fit for cool stars and a Gaussian process for hot stars. In addition to the equivalent widths and their uncertainties, Gaia DR3 provides their characteristic central wavelength, width, and quality flags. We present an extensive sample of 476.117 individual DIB measurements obtained in a homogeneous way covering the entire sky. We compare spatial distributions of the DIB carrier with interstellar reddening and find evidence that DIB carriers are present in a local bubble around the Sun which contains nearly no dust. We characterised the DIB equivalent width with a local density of $0.19 \pm 0.04$ Angström/kpc and a scale height of $\rm 98.60_{-8.46}^{+11.10}$ pc. The latter is smaller than the dust scale height, indicating that DIBs are more concentrated towards the Galactic plane. We determine the rest-frame wavelength with unprecedented precision ($\rm λ_{0} = 8620.86\, \pm 0.019$ Angström in air) and reveal a remarkable correspondence between the DIB velocities and the CO gas velocities, suggesting that the 862 nm DIB carrier is related to macro-molecules.</summary>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-06-11T14:00:39Z</published>
+    <arxiv:comment>This is a Gaia Performance Verification Paper accepted for publication in A&amp;A. The full author list is in the paper</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.GA"/>
+    <arxiv:journal_ref>A&amp;A 674, A40 (2023)</arxiv:journal_ref>
+    <author>
+      <name> Gaia collaboration</name>
+    </author>
+    <author>
+      <name>M. Schultheis</name>
+    </author>
+    <author>
+      <name>H. Zhao</name>
+    </author>
+    <author>
+      <name>T. Zwitter</name>
+    </author>
+    <author>
+      <name>D. J. Marshall</name>
+    </author>
+    <author>
+      <name>R. Drimmel</name>
+    </author>
+    <author>
+      <name>Y. Frémat</name>
+    </author>
+    <author>
+      <name>C. A. L. Bailer-Jones</name>
+    </author>
+    <author>
+      <name>A. Recio-Blanco</name>
+    </author>
+    <author>
+      <name>G. Kordopatis</name>
+    </author>
+    <author>
+      <name>P. de Laverny</name>
+    </author>
+    <author>
+      <name>R. Andrae</name>
+    </author>
+    <author>
+      <name>T. E. Dharmawardena</name>
+    </author>
+    <author>
+      <name>M. Fouesneau</name>
+    </author>
+    <author>
+      <name>R. Sordo</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202243283</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202243283" title="doi"/>
+  </entry>
+</feed>

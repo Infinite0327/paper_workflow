@@ -1,0 +1,693 @@
+{
+  "schema_version": 1,
+  "selection_policy": "优先正式会议官方来源；近期预印本单列为前沿信号。未达质量层时不以弱论文凑数。",
+  "scan_pool": "index/agent_field_scan_pool.json",
+  "scan_unique_records": 170,
+  "formal_anchor_count": 12,
+  "frontier_signal_count": 12,
+  "missing_frontier_titles": [],
+  "cards": [
+    {
+      "paper_id": "link:https://proceedings.mlr.press/v162/huang22a.html",
+      "title": "Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents",
+      "year": 2022,
+      "venue": "ICML 2022",
+      "problem_lines": [
+        "tool_computer_embodied"
+      ],
+      "specific_pain": "预训练语言模型虽含常识，但如何把文本知识转成可执行动作序列并处理环境反馈仍不清楚。",
+      "central_claim": "以语言模型生成候选动作，再由价值函数选择可执行动作，可在具身任务中利用零样本知识。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "ALFRED 等具身任务与环境交互。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：任务成功率；具体数值需在原文表格核验。",
+      "limitations_and_failures": "价值函数与语言模型的组合对环境假设、动作空间和可见状态敏感。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICML 2022 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.mlr.press/v162/huang22a.html",
+        "https://proceedings.mlr.press/v162/huang22a/huang22a.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://react-lm.github.io/",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "year": 2023,
+      "venue": "ICLR 2023",
+      "problem_lines": [
+        "tool_computer_embodied",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "只推理会脱离外部事实，只行动又难以维持计划和解释。",
+      "central_claim": "交错生成推理轨迹与动作，可把外部观察反馈写回后续决策。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "HotpotQA、FEVER、ALFWorld、WebShop 与 Wikipedia API。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：任务成功率；官方论文报告其在 ALFWorld、WebShop 相比模仿或强化学习基线的绝对成功率提升分别为 34 和 10 个百分点。",
+      "limitations_and_failures": "提示格式、示例选择和工具反馈质量会显著影响结果；该方法本身不解决训练信用分配。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2023 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://react-lm.github.io/",
+        "https://arxiv.org/pdf/2210.03629",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-abstract-conference.html",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "problem_lines": [
+        "capability_posttraining",
+        "tool_computer_embodied"
+      ],
+      "specific_pain": "工具调用训练常依赖大量人工标注，且很难让模型学会何时调用和如何整合返回结果。",
+      "central_claim": "用少量演示自监督生成 API 调用训练信号，使模型学习选择、参数化并使用工具结果。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "计算器、问答、搜索、翻译、日历等 API。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：下游零样本表现；官方页称其可在多项任务上获得改进且不牺牲基础语言能力，具体数值需按任务表格引用。",
+      "limitations_and_failures": "工具集合固定且调用语法受控，不能直接代表动态、多轮、带权限约束的真实工具环境。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 NeurIPS 2023 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/2023/file/d842425e4bf79ba039352da0f658a906-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.neurips.cc/paper/2022/hash/82ad13ec01f9d4c21a7e16fd0e1d2a18-abstract-conference.html",
+      "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+      "year": 2022,
+      "venue": "NeurIPS 2022",
+      "problem_lines": [
+        "tool_computer_embodied",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "开放网页交互的目标条件复杂、搜索空间大，纯文本问答无法测到真实操作链。",
+      "central_claim": "构建具有真实商品属性与交互步骤的网页购物环境，用可验证奖励评测智能体。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "网页购物环境、商品检索与多步骤交互。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：任务奖励与成功率；具体数值需按官方论文表格核验。",
+      "limitations_and_failures": "模拟网站与真实网站仍有差距，且奖励设计会影响策略行为。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 NeurIPS 2022 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.neurips.cc/paper/2022/hash/82ad13ec01f9d4c21a7e16fd0e1d2a18-Abstract-Conference.html",
+        "https://proceedings.neurips.cc/paper_files/paper/2022/file/82ad13ec01f9d4c21a7e16fd0e1d2a18-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/e9df36b21ff4ee211a8b71ee8b7e9f57-abstract-conference.html",
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "problem_lines": [
+        "evaluation_generalization",
+        "tool_computer_embodied"
+      ],
+      "specific_pain": "单一任务或单一框架难以衡量智能体跨环境能力。",
+      "central_claim": "以八类异构环境系统比较语言模型作为智能体时的能力与局限。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "八类环境；官方页提供代码与数据。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：各环境的任务得分；无单一统一指标。",
+      "limitations_and_failures": "跨环境封装与提示协议仍可能影响排名，不能把综合分数视为机制解释。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/e9df36b21ff4ee211a8b71ee8b7e9f57-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/e9df36b21ff4ee211a8b71ee8b7e9f57-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/28e50ee5b72e90b50e7196fde8ea260e-abstract-conference.html",
+      "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-World APIs",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "problem_lines": [
+        "capability_posttraining",
+        "tool_computer_embodied",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "真实 API 数量大、文档异构且调用链长，少量手工工具集不足以代表现实工具学习。",
+      "central_claim": "从 49 个类别的 16,464 个真实 API 构建训练与评测框架 ToolBench/ToolEval。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "ToolBench、ToolEval、16,464 个 API、49 类。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：工具调用完成质量与评测器判断；具体数值需以官方表格为准。",
+      "limitations_and_failures": "API 可用性与文档版本会改变实验条件，自动评测器本身也需校准。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/28e50ee5b72e90b50e7196fde8ea260e-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/28e50ee5b72e90b50e7196fde8ea260e-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/25ae35b5b1738d80f1f03a8713e405ec-abstract-conference.html",
+      "title": "GAIA: a benchmark for General AI Assistants",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "problem_lines": [
+        "evaluation_generalization",
+        "tool_computer_embodied"
+      ],
+      "specific_pain": "对人类概念简单的多模态、检索与工具问题，现有通用助手仍常失败。",
+      "central_claim": "提出 466 个需要推理、多模态、网页浏览与工具使用的真实问题，并保留部分答案用于排行榜。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "GAIA 466 个问题与公开排行榜。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：正确率；官方页报告人类 92%，带插件的 GPT-4 为 15%。",
+      "limitations_and_failures": "任务规模有限，排行榜与题目暴露会带来污染风险；成功率不能解释具体失败步骤。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/25ae35b5b1738d80f1f03a8713e405ec-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/25ae35b5b1738d80f1f03a8713e405ec-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-abstract-conference.html",
+      "title": "SWE-bench: Can Language Models Resolve Real-world GitHub Issues?",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "problem_lines": [
+        "evaluation_generalization",
+        "tool_computer_embodied"
+      ],
+      "specific_pain": "现实软件问题常跨文件、长上下文并要求在执行环境中验证，传统代码生成评测覆盖不足。",
+      "central_claim": "把真实 GitHub issue 与对应修复提交连接为可执行评测，要求智能体生成能通过测试的补丁。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "2,294 个问题、12 个 Python 仓库、真实测试。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：解决率；官方页报告当时最佳 Claude 2 为 1.96%。",
+      "limitations_and_failures": "数据污染、测试覆盖不全与基础设施差异会影响分数；单一解决率不呈现失败机制。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/edac78c3e300629acfe6cbe9ca88fb84-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-abstract-conference.html",
+      "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "problem_lines": [
+        "tool_computer_embodied",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "现实网页任务需要跨站点、多步、状态相关的浏览与操作，静态网页基准不足。",
+      "central_claim": "搭建电商、社交论坛、协作软件和内容管理系统组成的可控网页环境。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "四类网站环境与跨站任务。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：任务成功率；官方页报告其当时 GPT-4 智能体为 14.41%，人类为 78.24%。",
+      "limitations_and_failures": "环境仍是模拟实现，版本、登录状态和动作接口会影响结论。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-Abstract-Conference.html",
+        "https://proceedings.iclr.cc/paper_files/paper/2024/file/4410c0711e9154a7a2d26f9b3816d1ef-Paper-Conference.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://aclanthology.org/2024.acl-long.850/",
+      "title": "AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents",
+      "year": 2024,
+      "venue": "ACL 2024 Long Paper",
+      "problem_lines": [
+        "tool_computer_embodied",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "真实应用交互不可控、难复现，导致交互式代码智能体的评测与错误分析困难。",
+      "central_claim": "构建包含应用、人物与 API 的可控世界，以端到端任务验证交互式编码智能体。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "AppWorld 环境与官方仓库。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：任务成功率；具体结果需按 ACL 正文表格核验。",
+      "limitations_and_failures": "受控世界不等于生产应用；接口设计与任务分布可能限制外推。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ACL 2024 Long Paper Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://aclanthology.org/2024.acl-long.850/",
+        "https://aclanthology.org/2024.acl-long.850.pdf",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://github.com/xlang-ai/osworld",
+      "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "year": 2024,
+      "venue": "NeurIPS 2024",
+      "problem_lines": [
+        "tool_computer_embodied",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "真实桌面操作存在视觉、应用状态与长程依赖，网页或 API 基准难以覆盖。",
+      "central_claim": "以真实计算机系统中的开放式多模态任务评测计算机操作智能体。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "OSWorld 真实计算机环境和官方代码。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：端到端任务成功率；具体数值需以 NeurIPS 论文正文和版本说明为准。",
+      "limitations_and_failures": "环境部署重、版本敏感；评测结果受模型视觉能力和动作延迟共同影响。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 NeurIPS 2024 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://github.com/xlang-ai/OSWorld",
+        "https://arxiv.org/pdf/2404.07972",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "link:https://openreview.net/forum?id=ronsxzpudn",
+      "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "year": 2025,
+      "venue": "ICLR 2025",
+      "problem_lines": [
+        "evaluation_generalization",
+        "tool_computer_embodied",
+        "safety_reliability"
+      ],
+      "specific_pain": "工具智能体必须同时处理用户对话、领域政策和多轮状态，单次函数调用无法反映真实服务任务。",
+      "central_claim": "构建面向用户、工具与政策交互的多轮评测，并加入严格的多次运行成功要求。",
+      "method_subconcepts": [],
+      "support_type": "正式会议论文的实验或基准证据；具体结果来自所列官方论文页。",
+      "task_resources": "零售与航空领域环境及官方排行榜。",
+      "baselines": "详见官方论文；本卡不在未逐表核验前补写完整基线名单。",
+      "metrics_and_results": "指标：任务成功率与连续多次成功率；官方论文报告当时多数智能体成功率不足 50%，连续八次成功率不足 25%。",
+      "limitations_and_failures": "官方排行榜已标注部分旧 few-shot 结果因数据泄漏而弃用，说明协议和污染必须纳入复现实验。",
+      "follow_up_question": "在统一模型、预算和环境版本下，该结论是否仍成立？",
+      "role": "关键基线",
+      "evidence_tier": "正式会议官方论文页",
+      "publication_status": "正式 ICLR 2025 Conference；按 CCF 最新目录的会议类别核验，Full/Regular 口径见 https://www.ccf.org.cn/Academic_Evaluation/By_category/",
+      "ccf_a_status": "会议层级待导师或最终目录逐篇复核；不以预印本替代正式版本。",
+      "confidence": "高",
+      "source_links": [
+        "https://openreview.net/forum?id=roNSXZpUDN",
+        "https://openreview.net/pdf?id=roNSXZpUDN",
+        "https://www.ccf.org.cn/Academic_Evaluation/By_category/"
+      ],
+      "fact_basis": "官方会议或官方项目页；跨论文推理另行标为推测。"
+    },
+    {
+      "paper_id": "arxiv_id:2602.12268v2",
+      "title": "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "AI agents are increasingly used to solve real-world tasks by reasoning over multi-turn user interactions and invoking external tools. However, applying reinforcement learning to such settings remains difficult: realistic objectives often lack verifiable rewards and instead emphasize open-ended behaviors; moreover, RL for multi-turn, multi-step agentic tool use is still underexplored; and building and maintaining executable tool environments is costly, limiting scale and coverage. We propose CM2,…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2602.12268v2",
+        "https://arxiv.org/pdf/2602.12268v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2604.02869v1",
+      "title": "Multi-Turn Reinforcement Learning for Tool-Calling Agents with Iterative Reward Calibration",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Training tool-calling agents with reinforcement learning on multi-turn tasks remains challenging due to sparse outcome rewards and difficult credit assignment across conversation turns. We present the first application of MT-GRPO (Multi-Turn Group Relative Policy Optimization) combined with GTPO (Generalized Token-level Policy Optimization) for training a tool-calling agent on realistic customer service tasks with an LLM-based user simulator. Through systematic analysis of training rollouts, we …",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2604.02869v1",
+        "https://arxiv.org/pdf/2604.02869v1"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2605.26684v2",
+      "title": "Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Group-based reinforcement learning (RL) methods have achieved remarkable success in improving the performance of large language models (LLMs) and have been rapidly extended to agentic tasks. However, their credit assignment relies heavily on coarse-grained trajectory-level attribution according to final outcomes, making it difficult to capture the contribution of individual steps, such as valuable steps obscured within failed trajectories. To uncover latent information and enable more faithful s…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2605.26684v2",
+        "https://arxiv.org/pdf/2605.26684v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2603.08754v1",
+      "title": "Hindsight Credit Assignment for Long-Horizon LLM Agents",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Large Language Model (LLM) agents often face significant credit assignment challenges in long-horizon, multi-step tasks due to sparse rewards. Existing value-free methods, such as Group Relative Policy Optimization (GRPO), encounter two fundamental bottlenecks: inaccurate step-level Q-value estimation and misaligned value baselines for intermediate states. To address these limitations, we introduce HCAPO, the first framework to integrate hindsight credit assignment into LLM agents. HCAPO leverag…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2603.08754v1",
+        "https://arxiv.org/pdf/2603.08754v1"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2602.16165v2",
+      "title": "HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Training LLMs as interactive agents for multi-turn decision-making remains challenging, particularly in long-horizon tasks with sparse and delayed rewards, where agents must execute extended sequences of actions before receiving meaningful feedback. Most existing reinforcement learning (RL) approaches model LLM agents as flat policies operating at a single time scale, selecting one action at each turn. In sparse-reward settings, such flat policies must propagate credit across the entire trajecto…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2602.16165v2",
+        "https://arxiv.org/pdf/2602.16165v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2605.21768v1",
+      "title": "Memory-R2: Fair Credit Assignment for Long-Horizon Memory-Augmented LLM Agents",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Memory-augmented LLM agents enable interactions that extend beyond finite context windows by storing, updating, and reusing information across sessions. However, training such agents with reinforcement learning in multi-session environments is challenging because memory turns the agent's past actions into part of its future environment. Once different rollouts write, update, or delete different memories, they no longer share the same intermediate memory state, making trajectory-level comparisons…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2605.21768v1",
+        "https://arxiv.org/pdf/2605.21768v1"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2403.02502v2",
+      "title": "Trial and Error: Exploration-Based Trajectory Optimization for LLM Agents",
+      "problem_lines": [
+        "capability_posttraining",
+        "long_horizon_credit"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Large Language Models (LLMs) have become integral components in various autonomous agent systems. In this study, we present an exploration-based trajectory optimization approach, referred to as ETO. This learning method is designed to enhance the performance of open LLM agents. Contrary to previous studies that exclusively train on successful expert trajectories, our method allows agents to learn from their exploration failures. This leads to improved performance through an iterative optimizatio…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2403.02502v2",
+        "https://arxiv.org/pdf/2403.02502v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2511.20857v2",
+      "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+      "problem_lines": [
+        "memory_lifelong"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Statefulness is essential for large language model (LLM) agents to perform long-term planning and problem-solving. This makes memory a critical component, yet its management and evolution remain largely underexplored. Existing evaluations mostly focus on static conversational settings, where memory is passively retrieved from dialogue to answer queries, overlooking the dynamic ability to accumulate and reuse experience across evolving task streams. In real-world environments such as interactive …",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2511.20857v2",
+        "https://arxiv.org/pdf/2511.20857v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2508.19005",
+      "title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+      "problem_lines": [
+        "memory_lifelong"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "The paper proposes Experience-driven Lifelong Learning with four components: experience exploration, long-term memory, skill learning, and knowledge internalization. It also introduces StuLife, a benchmark simulating a student's college journey across three phases and ten sub-scenarios to evaluate memory retention, skill transfer, and self-motivated behavior.",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "https://arxiv.org/abs/2508.19005",
+        "https://arxiv.org/pdf/2508.19005"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2505.21964v2",
+      "title": "UI-Evol: Automatic Knowledge Evolving for Computer Use Agents",
+      "problem_lines": [
+        "tool_computer_embodied"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "External knowledge has played a crucial role in the recent development of computer use agents. We identify a critical knowledge-execution gap: retrieved knowledge often fails to translate into effective real-world task execution. Our analysis shows even 90% correct knowledge yields only 41% execution success rate. To bridge this gap, we propose UI-Evol, a plug-and-play module for autonomous GUI knowledge evolution. UI-Evol consists of two stages: a Retrace Stage that extracts faithful objective …",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2505.21964v2",
+        "https://arxiv.org/pdf/2505.21964v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2506.14866v2",
+      "title": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents",
+      "problem_lines": [
+        "safety_reliability",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Computer use agents are LLM-based agents that can directly interact with a graphical user interface, by processing screenshots or accessibility trees. While these systems are gaining popularity, their safety has been largely overlooked, despite the fact that evaluating and understanding their potential for harmful behavior is essential for widespread adoption. To address this gap, we introduce OS-Harm, a new benchmark for measuring safety of computer use agents. OS-Harm is built on top of the OS…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2506.14866v2",
+        "https://arxiv.org/pdf/2506.14866v2"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    },
+    {
+      "paper_id": "arxiv_id:2601.10758v3",
+      "title": "Agents at Risk: How Users Unwittingly Undermine LLM Safety",
+      "problem_lines": [
+        "safety_reliability",
+        "evaluation_generalization"
+      ],
+      "specific_pain": "从摘要级元数据保留的近期前沿信号；具体痛点需在原文全文核验。",
+      "central_claim": "Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we…",
+      "method_subconcepts": [],
+      "support_type": "预印本摘要；尚未按原文逐项核验实验、数据或理论支持。",
+      "task_resources": "待原文核验。",
+      "baselines": "待原文核验。",
+      "metrics_and_results": "无",
+      "limitations_and_failures": "预印本或发表状态未核验，不能与正式会议锚点等权；未发现原文时不推断其结果。",
+      "follow_up_question": "该主张在开放环境、相同预算和独立复现下是否成立？",
+      "role": "前沿尝试",
+      "evidence_tier": "预印本摘要或元数据",
+      "publication_status": "预印本或正式发表状态未核验",
+      "ccf_a_status": "不适用或待核验",
+      "confidence": "低",
+      "source_links": [
+        "http://arxiv.org/abs/2601.10758v3",
+        "https://arxiv.org/pdf/2601.10758v3"
+      ],
+      "fact_basis": "检索接口返回的元数据；未核验内容不作为确定事实。"
+    }
+  ]
+}

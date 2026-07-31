@@ -1,0 +1,214 @@
+{
+  "query": "AgentBench Evaluating LLMs as Agents",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:17:41",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=AgentBench+Evaluating+LLMs+as+Agents",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "authors": [
+        "Xiao Liu",
+        "Hao Yu",
+        "Hanchen Zhang",
+        "Yifan Xu",
+        "Xuanyu Lei",
+        "Hanyu Lai",
+        "Yu Gu",
+        "Hangliang Ding",
+        "Kaiwen Men",
+        "Kejuan Yang",
+        "Shudan Zhang",
+        "Xiang Deng",
+        "Aohan Zeng",
+        "Zhengxiao Du",
+        "Chenhui Zhang",
+        "Sheng Shen",
+        "Tianjun Zhang",
+        "Yu Su",
+        "Huan Sun",
+        "Minlie Huang",
+        "Yuxiao Dong",
+        "Jie Tang"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "The potential of Large Language Model (LLM) as agents has been widely acknowledged recently. Thus, there is an urgent need to quantitatively \\textit{evaluate LLMs as agents} on challenging tasks in interactive environments. We present AgentBench, a multi-dimensional benchmark that consists of 8 distinct environments to assess LLM-as-Agent's reasoning and decision-making abilities. Our extensive test over \\num API-based and open-sourced (OSS) LLMs shows that, while top commercial LLMs present a strong ability of acting as agents in complex environments, there is a significant disparity in performance between them and many OSS competitors that are no larger than 70B. We identify the typical reasons of failures in environments and LLMs, showing that poor long-term reasoning, decision-making, and instruction following abilities are the main obstacles for developing usable LLM agents. Improving instruction following and training on high quality multi-round alignment data could improve agent performance. And different from existing assumptions, training on code present ambivalent impacts on different agent tasks. Datasets, environments, and an integrated evaluation package for AgentBench are released at https://github.com/THUDM/AgentBench.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2308.03688v3",
+      "url": "http://arxiv.org/abs/2308.03688v3",
+      "pdf_url": "https://arxiv.org/pdf/2308.03688v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2308.03688v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "authors": [
+        "Xiao Liu",
+        "Hao Yu",
+        "Hanchen Zhang",
+        "Yifan Xu",
+        "Xuanyu Lei",
+        "Hanyu Lai",
+        "Yu‐Cheng Gu",
+        "Hangliang Ding",
+        "Kaiwen Men",
+        "Kejuan Yang",
+        "Shudan Zhang",
+        "Xiang Deng",
+        "Aohan Zeng",
+        "Zhengxiao Du",
+        "Chenhui Zhang",
+        "Sheng Shen",
+        "Tianjun Zhang",
+        "Yu Su",
+        "Huan Sun",
+        "Minlie Huang",
+        "Yuxiao Dong",
+        "Jie Tang"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 53,
+      "doi": "10.48550/arxiv.2308.03688",
+      "url": "https://openalex.org/W4385682136",
+      "pdf_url": "https://arxiv.org/pdf/2308.03688",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2308.03688",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 49.28,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "FHIR-AgentBench: Benchmarking LLM Agents for Realistic Interoperable EHR Question Answering",
+      "authors": [
+        "Gyubok Lee",
+        "Elea Bach",
+        "Eric Yang",
+        "Tom Pollard",
+        "Alistair Johnson",
+        "Edward Choi",
+        "Yugang jia",
+        "Jong Ha Lee"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "The recent shift toward the Health Level Seven Fast Healthcare Interoperability Resources (HL7 FHIR) standard opens a new frontier for clinical AI, demanding LLM agents to navigate complex, resource-based data models instead of conventional structured health data. However, existing benchmarks have lagged behind this transition, lacking the realism needed to evaluate recent LLMs on interoperable clinical data. To bridge this gap, we introduce FHIR-AgentBench, a benchmark that grounds 2,931 real-world clinical questions in the HL7 FHIR standard. Using this benchmark, we systematically evaluate agentic frameworks, comparing different data retrieval strategies (direct FHIR API calls vs. specialized tools), interaction patterns (single-turn vs. multi-turn), and reasoning strategies (natural language vs. code generation). Our experiments highlight the practical challenges of retrieving data from intricate FHIR resources and the difficulty of reasoning over them, both of which critically affect question answering performance. We publicly release the FHIR-AgentBench dataset and evaluation suite (https://github.com/glee4810/FHIR-AgentBench) to promote reproducible research and the development of robust, reliable LLM agents for clinical applications.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2509.19319v2",
+      "url": "http://arxiv.org/abs/2509.19319v2",
+      "pdf_url": "https://arxiv.org/pdf/2509.19319v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2509.19319v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MedAgentBench: A Virtual EHR Environment to Benchmark Medical LLM Agents",
+      "authors": [
+        "Yixing Jiang",
+        "Kameron Collin Black",
+        "Gloria Geng",
+        "Dae-Gyun Park",
+        "James Zou",
+        "Andrew Y. Ng",
+        "Jonathan H. Chen"
+      ],
+      "year": 2025,
+      "venue": "NEJM AI",
+      "abstract": null,
+      "citation_count": 41,
+      "doi": "10.1056/aidbp2500144",
+      "url": "https://openalex.org/W4413801638",
+      "pdf_url": "https://ai.nejm.org/doi/pdf/10.1056/AIdbp2500144",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1056/aidbp2500144",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 34.4,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "PersonaGym: Evaluating Persona Agents and LLMs",
+      "authors": [
+        "Vinay Samuel",
+        "Henry Peng Zou",
+        "Yue Zhou",
+        "Shreyas Chaudhari",
+        "Ashwin Kalyan",
+        "Tanmay Rajpurohit",
+        "Ameet Deshpande",
+        "Karthik R Narasimhan",
+        "Vishvak Murahari"
+      ],
+      "year": 2025,
+      "venue": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+      "abstract": null,
+      "citation_count": 13,
+      "doi": "10.18653/v1/2025.findings-emnlp.368",
+      "url": "https://doi.org/10.18653/v1/2025.findings-emnlp.368",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2025.findings-emnlp.368",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.61,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

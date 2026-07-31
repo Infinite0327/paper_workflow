@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ovmppoj3bJx4tubTEKLsSesmDps</id>
+  <title>arXiv Query: search_query=all:AgentBench OR all:Evaluating OR all:LLMs OR all:as OR all:Agents&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-07-29T04:17:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:AgentBench+OR+(all:Evaluating+OR+(all:LLMs+OR+(all:as+OR+all:Agents)))&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>388336</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2308.03688v3</id>
+    <title>AgentBench: Evaluating LLMs as Agents</title>
+    <updated>2025-10-04T03:54:18Z</updated>
+    <link href="https://arxiv.org/abs/2308.03688v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2308.03688v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The potential of Large Language Model (LLM) as agents has been widely acknowledged recently. Thus, there is an urgent need to quantitatively \textit{evaluate LLMs as agents} on challenging tasks in interactive environments. We present AgentBench, a multi-dimensional benchmark that consists of 8 distinct environments to assess LLM-as-Agent's reasoning and decision-making abilities. Our extensive test over \num API-based and open-sourced (OSS) LLMs shows that, while top commercial LLMs present a strong ability of acting as agents in complex environments, there is a significant disparity in performance between them and many OSS competitors that are no larger than 70B. We identify the typical reasons of failures in environments and LLMs, showing that poor long-term reasoning, decision-making, and instruction following abilities are the main obstacles for developing usable LLM agents. Improving instruction following and training on high quality multi-round alignment data could improve agent performance. And different from existing assumptions, training on code present ambivalent impacts on different agent tasks. Datasets, environments, and an integrated evaluation package for AgentBench are released at https://github.com/THUDM/AgentBench.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-08-07T16:08:11Z</published>
+    <arxiv:comment>Published in ICLR 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiao Liu</name>
+    </author>
+    <author>
+      <name>Hao Yu</name>
+    </author>
+    <author>
+      <name>Hanchen Zhang</name>
+    </author>
+    <author>
+      <name>Yifan Xu</name>
+    </author>
+    <author>
+      <name>Xuanyu Lei</name>
+    </author>
+    <author>
+      <name>Hanyu Lai</name>
+    </author>
+    <author>
+      <name>Yu Gu</name>
+    </author>
+    <author>
+      <name>Hangliang Ding</name>
+    </author>
+    <author>
+      <name>Kaiwen Men</name>
+    </author>
+    <author>
+      <name>Kejuan Yang</name>
+    </author>
+    <author>
+      <name>Shudan Zhang</name>
+    </author>
+    <author>
+      <name>Xiang Deng</name>
+    </author>
+    <author>
+      <name>Aohan Zeng</name>
+    </author>
+    <author>
+      <name>Zhengxiao Du</name>
+    </author>
+    <author>
+      <name>Chenhui Zhang</name>
+    </author>
+    <author>
+      <name>Sheng Shen</name>
+    </author>
+    <author>
+      <name>Tianjun Zhang</name>
+    </author>
+    <author>
+      <name>Yu Su</name>
+    </author>
+    <author>
+      <name>Huan Sun</name>
+    </author>
+    <author>
+      <name>Minlie Huang</name>
+    </author>
+    <author>
+      <name>Yuxiao Dong</name>
+    </author>
+    <author>
+      <name>Jie Tang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2411.13760v1</id>
+    <title>A Framework for Evaluating LLMs Under Task Indeterminacy</title>
+    <updated>2024-11-21T00:15:44Z</updated>
+    <link href="https://arxiv.org/abs/2411.13760v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.13760v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) evaluations often assume there is a single correct response -- a gold label -- for each item in the evaluation corpus. However, some tasks can be ambiguous -- i.e., they provide insufficient information to identify a unique interpretation -- or vague -- i.e., they do not clearly indicate where to draw the line when making a determination. Both ambiguity and vagueness can cause task indeterminacy -- the condition where some items in the evaluation corpus have more than one correct response. In this paper, we develop a framework for evaluating LLMs under task indeterminacy. Our framework disentangles the relationships between task specification, human ratings, and LLM responses in the LLM evaluation pipeline. Using our framework, we conduct a synthetic experiment showing that evaluations that use the "gold label" assumption underestimate the true performance. We also provide a method for estimating an error-adjusted performance interval given partial knowledge about indeterminate items in the evaluation corpus. We conclude by outlining implications of our work for the research community.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-21T00:15:44Z</published>
+    <arxiv:comment>To Appear in NeurIPS 2024 Workshops on Evaluating Evaluations (EvalEval) and Statistical Foundations of LLMs and Foundation Models (SFLLM)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Luke Guerdan</name>
+    </author>
+    <author>
+      <name>Hanna Wallach</name>
+    </author>
+    <author>
+      <name>Solon Barocas</name>
+    </author>
+    <author>
+      <name>Alexandra Chouldechova</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.13713v2</id>
+    <title>On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis</title>
+    <updated>2026-03-16T18:03:22Z</updated>
+    <link href="https://arxiv.org/abs/2602.13713v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.13713v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Identifying the strategic uses of reformulation in discourse remains a key challenge for computational argumentation. While LLMs can detect surface-level similarity, they often fail to capture the pragmatic functions of rephrasing, such as its role within rhetorical discourse. This paper presents a comparative multi-agent framework designed to quantify the benefits of incorporating explicit theoretical knowledge for this task. We utilise an dataset of annotated political debates to establish a new standard encompassing four distinct rephrase functions: Deintensification, Intensification, Specification, Generalisation, and Other, which covers all remaining types (D-I-S-G-O). We then evaluate two parallel LLM-based agent systems: one enhanced by argumentation theory via Retrieval-Augmented Generation (RAG), and an identical zero-shot baseline. The results reveal a clear performance gap: the RAG-enhanced agents substantially outperform the baseline across the board, with particularly strong advantages in detecting Intensification and Generalisation context, yielding an overall Macro F1-score improvement of nearly 30\%. Our findings provide evidence that theoretical grounding is not only beneficial but essential for advancing beyond mere paraphrase detection towards function-aware analysis of argumentative discourse. This comparative multi-agent architecture represents a step towards scalable, theoretically informed computational tools capable of identifying rhetorical strategies in contemporary discourse.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-14T10:30:39Z</published>
+    <arxiv:comment>8 pages, 4 figures, 3 tables. This is the accepted version of the paper presented at the 18th International Conference on Agents and Artificial Intelligence (ICAART 2026), Marbella, Spain</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <arxiv:journal_ref>Proceedings of the 18th International Conference on Agents and Artificial Intelligence (ICAART 2026)</arxiv:journal_ref>
+    <author>
+      <name>Maciej Uberna</name>
+    </author>
+    <author>
+      <name>Michał Wawer</name>
+    </author>
+    <author>
+      <name>Jarosław A. Chudziak</name>
+    </author>
+    <author>
+      <name>Marcin Koszowy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.18783v1</id>
+    <title>TRIZ Agents: A Multi-Agent LLM Approach for TRIZ-Based Innovation</title>
+    <updated>2025-06-23T15:53:14Z</updated>
+    <link href="https://arxiv.org/abs/2506.18783v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.18783v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>TRIZ, the Theory of Inventive Problem Solving, is a structured, knowledge-based framework for innovation and abstracting problems to find inventive solutions. However, its application is often limited by the complexity and deep interdisciplinary knowledge required. Advancements in Large Language Models (LLMs) have revealed new possibilities for automating parts of this process. While previous studies have explored single LLMs in TRIZ applications, this paper introduces a multi-agent approach. We propose an LLM-based multi-agent system, called TRIZ agents, each with specialized capabilities and tool access, collaboratively solving inventive problems based on the TRIZ methodology. This multi-agent system leverages agents with various domain expertise to efficiently navigate TRIZ steps. The aim is to model and simulate an inventive process with language agents. We assess the effectiveness of this team of agents in addressing complex innovation challenges based on a selected case study in engineering. We demonstrate the potential of agent collaboration to produce diverse, inventive solutions. This research contributes to the future of AI-driven innovation, showcasing the advantages of decentralized problem-solving in complex ideation tasks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-23T15:53:14Z</published>
+    <arxiv:comment>12 pages, 10 figures, 2 tables, Accepted at the 17th International Conference on Agents and Artificial Intelligence (ICAART 2025). Final version published in Proceedings of ICAART 2025 (Vol. 1), pages 196-207</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>In Proceedings of the 17th International Conference on Agents and Artificial Intelligence - Volume 1: ICAART 2025; pages 196-207. SciTePress 2025</arxiv:journal_ref>
+    <author>
+      <name>Kamil Szczepanik</name>
+    </author>
+    <author>
+      <name>Jarosław A. Chudziak</name>
+    </author>
+    <arxiv:doi>10.5220/0013321900003890</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5220/0013321900003890" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.19319v2</id>
+    <title>FHIR-AgentBench: Benchmarking LLM Agents for Realistic Interoperable EHR Question Answering</title>
+    <updated>2025-11-13T06:35:10Z</updated>
+    <link href="https://arxiv.org/abs/2509.19319v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.19319v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The recent shift toward the Health Level Seven Fast Healthcare Interoperability Resources (HL7 FHIR) standard opens a new frontier for clinical AI, demanding LLM agents to navigate complex, resource-based data models instead of conventional structured health data. However, existing benchmarks have lagged behind this transition, lacking the realism needed to evaluate recent LLMs on interoperable clinical data. To bridge this gap, we introduce FHIR-AgentBench, a benchmark that grounds 2,931 real-world clinical questions in the HL7 FHIR standard. Using this benchmark, we systematically evaluate agentic frameworks, comparing different data retrieval strategies (direct FHIR API calls vs. specialized tools), interaction patterns (single-turn vs. multi-turn), and reasoning strategies (natural language vs. code generation). Our experiments highlight the practical challenges of retrieving data from intricate FHIR resources and the difficulty of reasoning over them, both of which critically affect question answering performance. We publicly release the FHIR-AgentBench dataset and evaluation suite (https://github.com/glee4810/FHIR-AgentBench) to promote reproducible research and the development of robust, reliable LLM agents for clinical applications.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-12T06:52:55Z</published>
+    <arxiv:comment>ML4H 2025 Proceedings</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Gyubok Lee</name>
+    </author>
+    <author>
+      <name>Elea Bach</name>
+    </author>
+    <author>
+      <name>Eric Yang</name>
+    </author>
+    <author>
+      <name>Tom Pollard</name>
+    </author>
+    <author>
+      <name>Alistair Johnson</name>
+    </author>
+    <author>
+      <name>Edward Choi</name>
+    </author>
+    <author>
+      <name>Yugang jia</name>
+    </author>
+    <author>
+      <name>Jong Ha Lee</name>
+    </author>
+  </entry>
+</feed>

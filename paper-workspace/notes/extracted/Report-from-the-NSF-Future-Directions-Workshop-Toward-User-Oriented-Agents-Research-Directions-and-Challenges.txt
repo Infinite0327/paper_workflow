@@ -1,0 +1,2074 @@
+
+
+--- Page 1 ---
+Report from the NSF Future Directions Workshop, Toward
+User-Oriented Agents: Research Directions and Challenges
+Maxine Eskenazi MAX @CS.CMU .EDU
+Carnegie Mellon University
+Tiancheng Zhao TIANCHEZ @SOCO .AI
+SOCO.AI
+Abstract
+This USER Workshop was convened with the goal of deﬁning future research directions for the
+burgeoning intelligent agent research community and to communicate them to the National Sci-
+ence Foundation. It took place in Pittsburgh Pennsylvania on October 24 and 25, 2019 and was
+sponsored by National Science Foundation Grant Number IIS-1934222. Any opinions, ﬁndings
+and conclusions or future directions expressed in this document are those of the authors and do
+not necessarily reﬂect the views of the National Science Foundation. The 27 participants presented
+their individual research interests and their personal research goals. In the breakout sessions that
+followed, the participants deﬁned the main research areas within the domain of intelligent agents
+and they discussed the major future directions that the research in each area of this domain should
+take.
+2019 Toward User-Oriented Agents Workshop participants/report contributors:
+• Prabhakaran Balakrishnan, National Sci-
+ence Foundation
+• Jeffrey Bigham, Carnegie Mellon Univer-
+sity
+• Carlos Busso, University of Texas Dallas
+• Jamie Callan, Carnegie Mellon University
+• Vivian Chen, National Taiwan University
+• Barbara DiEugenio, University of Illinois
+at Chicago
+• Maxine Eskenazi, Carnegie Mellon Uni-
+versity
+• Milica Gasic, Heinrich Heine University
+• Joakim Gustafsson, KTH Royal Institute
+of Technology
+• Julia Hirschberg, Columbia University
+• Rebecca Hwa, National Science Founda-
+tion
+• Andruid Kerne, National Science Founda-
+tion
+• Tanya Korelsky, National Science Foun-
+dation
+• Diane Litman, University of Pittsburgh
+• Shikib Mehri, Carnegie Mellon University
+• Roger Moore, University of Shefﬁeld
+• LP Morency, Carnegie Mellon University
+• Mari Ostendorf, University of Washington
+• Antoine Raux, Apple
+• Verena Reiser, Heriot Watt University
+1
+arXiv:2006.06026v1  [cs.CL]  10 Jun 2020
+
+--- Page 2 ---
+• Wade Shen, Actuate Innovation
+• Amanda Stent, Bloomberg
+• David Suendermann-Oeft, Modality.AI
+• David Traum, University of Southern Cal-
+ifornia
+• Stefan Ultes, Daimler
+• Clare V oss, Army Research Laboratories
+• Marilyn Walker, University of Santa Cruz
+• Tiancheng Zhao, SOCO.AI
+1. Introduction
+Intelligent agents have entered the realm of popular use. Over 50,000,000 agents are present in
+homes in the US alone. As they become part of the household, the developing dependencies and
+immense opportunities challenge the AI community to expand its research horizons. While much
+past research has centered on the intelligent agent itself, future research must center on the user.
+When research only develops the qualities of the agent and ignores the needs and individual char-
+acteristics of users, agents perform poorly. Poor performance leads to the users loss of faith. Not
+only will the user no longer use an agent, but loss of conﬁdence and public interest in using agents
+can have serious consequences for research. This can be as harmful to research as the drastically
+reduced funding that automatic speech recognition (ASR) experienced in the 1990s. The agent must
+serve the needs of the user (Eskenazi et al., 2019). Intelligent agent research should center around
+the vision of an interlocutor that converses easily with one or more users on a large variety of topics
+in many diverse settings. It is a ﬂexible, robust partner in many everyday endeavors.
+In the early days of dialog research, the user was an equal partner with the agent. Assessment
+was often based on the PARADISE approach (Walker et al., 1997). Researchers measured the length
+of dialogs and their success rate. At the time, this approach aimed at measuring whether the user
+obtained what they had requested. Speed and correct information were considered to be the charac-
+teristics that would satisfy the user. This was conﬁrmed with user feedback surveys. Since that time,
+researchers have examined new aspects of the agent, for example, emotion (Gratch and Marsella,
+2001), concentrating on whether the system chose to express the right emotion given some context
+where right is a match with something that occurred in the past context. Then rapport and other
+affective characteristics were added to the agent (Gratch et al., 2007). Again, the focus was on
+whether the agent was expressing this correctly, given past context. The academic community has
+experienced difﬁculty in obtaining data from real users. Consequently, researchers have turned to
+simulated users and paid users. Simulated users can generate a signiﬁcant amount of data, but the ut-
+terances generated can never deal with elements that were not in the dataset they were trained on. It
+is also known that paid users respond very differently from real ones. (Ai et al., 2007), for example,
+showed that paid users accept undesirable information from a system simply because getting what
+they wanted would take more time. Personae have been created. The ConvAI2 assessment (Dinan
+et al., 2020) determined whether the correct persona was chosen based on past context but not on the
+agents usefulness. Present measures used to determine an agent’s success often have nothing to do
+with the user. For example, the BLEU (Papineni et al., 2002) lexical similarity score has little to do
+with dialog success (Liu et al., 2016). In sum, much state-of-the-art intelligent agent research only
+centers on and assesses what an agent produces, not what the user has obtained from their conver-
+sation. A few exceptions do exist, for example, the agents, such as the twin museum guides and the
+2
+
+--- Page 3 ---
+agent to diagnose mental illness produced by researchers at the University of Southern California
+(USC) (Traum, 2008).
+1.1 The role of the agent
+One of the overarching goals of the intelligent agent community has been to test whether the agent
+can be designed to be indistinguishable from a human. This is often referred to as the Turing
+test (Turing, 1950). The Turing test presented the very seductive idea of having a machine deceive
+a human. Much research every year goes into creating an agent capable of making the user be-
+lieve that it is human. And some research has gone as far as to produce agents that reside in the
+Uncanny Valley (Moore, 2012). Deception has created fear in the general public. Consequently
+much explaining has taken place (robots are not out to take over the world, they will not replace
+humans (Lee, 2019)).
+This USER Workshop report relays the intelligent agent research communitys vision of the
+future directions it should follow which government funding agencies should encourage. The vision
+builds on the relationship between the agent and the user rather than on the appearance and functions
+of the agent alone. It has a well-deﬁned set of goals that lead to clear directions for research and for
+assessing progress. User satisfaction and self-assessment of agent usefulness are pillars in deﬁning
+and assessing the role of the user as well as in determining how well agents serve their users. At the
+same time, areas related to user wellbeing such as health, behavior and education have their own
+objectives, expert measurements such as blood pressure or post-test improvement.
+The USER Workshop participants agreed that the intelligent agents main role is to be the users
+partner. The agent should work hand in hand with the user toward some mutual goal. This implies
+that every type of agent should have a goal, for example, to serve information or just provide com-
+panionship. With this role in mind, we measure success from our own expert observation, from
+third party observation and, especially, from the users point of view. Examples of seamless partners
+are: a pen is the partner of the hand when writing; a car is the partner of a rider when traveling.
+The iPhone has taken the place of a watch as a partner in telling time. Apple store employees ask
+customers to come back after an hour to pick up a phone left for a simple repair. They observe that
+most customers come back in 15 minutes and are surprised to ﬁnd that it has not been an hour. They
+appear to have lost the ability to estimate time without their iPhone.
+If the agent traditionally begins a dialog with, How may I help you?, it should end it with Have
+I helped you?.
+1.2 Present research in user-oriented intelligent agents
+Some research has taken the user into account. PARADISE (Walker et al., 1997), which used task
+completion while optimizing for the number of utterances, is a measure that is still employed in
+many publications.
+Tan et al. (2018) used LSTMs to predict the empathetic response of the user over time, con-
+centrating on the emotions of the user rather than those of the agent. Muralidharan et al. (2018)
+sped up data annotation of user engagement by using speciﬁc signals from the user that reﬂect their
+engagement. They then used multitask learning and validation to increase labelling accuracy. They
+chose to create coarse grain labels, which are easier to obtain and more reliable and then used them
+to generate ﬁner grain labels. Braden Hancock (2019) used a conﬁguration that enabled the user
+to give the agent immediate feedback when it made an error. The agent ﬁrst detected that the user
+3
+
+--- Page 4 ---
+was not satisﬁed and then generated an appropriate question so that the user could explain what
+should have been said. They then modeled the users answer to generate future utterances. Eskenazi
+et al. (2019) used previous context and the user response immediately following the agent utterance
+being assessed to determine the quality of that utterance. This shows better results than past work
+that only used the past context, ignoring the users reaction to the agent utterance.
+One way to carry out intelligent agent assessment is to employ third party human judgment.
+Lowe et al. (2017) determined the validity of the agents response based on criteria such as topicality,
+informativeness and whether the context required that the background information be understand-
+able. Shah et al. (2016) demonstrated the possibility of interactively adapting to the users response
+using reinforcement learning so that the system developer could indicate the desired end states. This
+made the agents speech more varied than the speech in the training database. By actively modifying
+the agent using the simulated user turn that follows a given system turn, the new system response
+became increasingly more appropriate and useful to the user.
+1.3 Impacts of user-oriented intelligent agent research
+1.3.1 Applications that inﬂuence many
+The impact of intelligent agent research has gone beyond the scientiﬁc community, where novel
+techniques and massive use of neural networks abound. Intelligent agents are now a part of ev-
+eryday life. They serve general needs for information and chat, as we see in the most popular
+applications: SIRI (Apple.com), Amazon Echo (Amazon.com), etc. Agents are also used in more
+targeted domains. Some examples are list below. See Section 3 for more details.
+1. Seniors: An intelligent agent for seniors that is more understandable and gives out information
+in a more memorable manner (Mehri et al., 2019a)
+2. Healthcare: An agent that interviews patients to determine mental health issues (Rizzo et al.,
+2016). An agent that helps with home care for patients with dementia (Cailleteau, 2019)
+3. Education: agents that are used to assess non-natives levels of ﬂuency (Litman et al., 2016).
+Tutoring in the domain of Machine Learning using dialog (Takumi et al., 2019). Education
+on sexual assault and harassment (Artstein et al., 2019)
+1.4 Transformative infrastructure for industry in the next 10 years
+In industry research centers on agents that serve the companys purpose. For example, Alexa (Ram
+et al., 2018) often helps Amazon sell merchandise. Advances in industrial agents beneﬁt from a
+signiﬁcant amount of data from real users and superior computing power. Since the advances in
+industry are usually driven by commercial goals, they do not address much of the fundamental
+research needed to make transformational advances. Neural networks are the state of the art in
+intelligent agent architecture research. Despite claims that they are used in commercial systems,
+most companies continue to employ droves of workers who create handwritten rules rather than
+rely on the nascent and very rigid neural networks. In the coming years, industry is poised to
+implement the more reliable neural systems that will come from academic research.
+4
+
+--- Page 5 ---
+1.5 A healthy research community
+A healthy research community is a community that has diverse research directions and method-
+ologies. Encouraging research on user-centric intelligent agents can create a balance with present
+agent-centric research. Multidisciplinarity is another feature of a thriving community. It provides
+opportunities for future researchers to continuously innovate by adapting ideas from different dis-
+ciplines. Additionally, user-centric intelligent agents may provide answers to one of the hardest
+challenges for current state-of-the-art systems: system evaluation and learning with the human-in-
+the-loop.
+2. Research Topics & Future Directions
+The USER Workshop participants deﬁned seven broad areas of future intelligent agent research:
+applications; dynamic views of user-agent interactions; infrastructure; intelligent agents as good
+actors; multimodal, grounded and situated interaction; robust and ﬂexible dialog management; data
+reduction. Six crosscutting themes have surfaced that reﬂect issues common to several areas. These
+themes are: user-centric focus, multidisciplinary research teams, dialog conditions and situations,
+focused shared tasks, ethics and privacy, architecture. Table 1 shows the intersections of the themes
+and the broad areas.
+Broad
+area/Theme
+User centric Architecture Multi disci-
+plinary
+Conditions
+& situations
+Shared tasks Ethics & pri-
+vacy
+Applications x x x
+Dynamic
+user-agent
+interactions
+x x x x
+Infrastructure x x x
+Intelligent
+agents / good
+actors
+x x
+Multimodal,
+grounded
+& situated
+interaction
+x x x x x x
+Robust
+& ﬂexi-
+ble dialog
+management
+x x x x
+Data reduc-
+tion
+x x x
+Table 1: Broad areas (rows) and themes (columns)
+2.1 Crosscutting Themes
+As described in detail below, each area discussion revealed a set of future directions that USER
+participants believed should be encouraged in the coming years.
+Before describing the areas of research, this section discusses the crosscutting themes.
+5
+
+--- Page 6 ---
+2.1.1 User-centric inspiration
+Researchers need to understand the users goals and beliefs in order to orient their research toward
+the user. One way to achieve this is to study human dialog. Another is to assess using measures
+such as user satisfaction that clearly reﬂect the success from the user’s point of view.
+2.1.2 Multidisciplinary research teams
+In order to create truly useful intelligent agent applications and to understand intrinsic aspects of
+dialog, research teams should include experts from multiple domains. Some domains that are most
+relevant are linguistics, pragmatics, reasoning and psychology. Groups should also include area ex-
+perts relevant to the type of agent they are creating. for example, individuals specialized in health-
+care or education if the application is on that topic.
+2.1.3 Conditions and situations
+Intelligent agents have the potential to be present in a large variety of situations. They will take
+part in multiparty dialogs where the parties are a combination of humans and agents. They will be
+endowed with a broad range of modalities, including prosody and haptics. Situated dialog will ﬁnd
+them pointing to and handing over physical objects and detecting/acting on objects in real situations.
+They will modify their style of delivery to support a variety of user preferences, such as verbosity.
+Thus they will become more personalized and dynamic. They will interact with users for longer
+conversations that will take place more and more frequently.
+2.1.4 Focused shared tasks
+The intelligent agent community increasingly assesses its progress through shared tasks. Some of
+the types of tasks that the USER Workshop participants envisaged are: situated dialogs, multiple
+thread dialogs involving complex planning, learning with less data and multimodal dialog.
+2.1.5 Ethics and privacy
+Although this theme is a broad area in itself, several other areas also mentioned it. Going forward,
+the design of research projects should include dealing with misuse and adversarial attacks. There
+should be concerted efforts in the area of privacy-preserving speech/visual/language processing
+and machine learning. The tension that exists between preserving privacy and having access to
+user models and audio-visual signals that can improve agent performance must be addressed. And
+ﬁnally, funders should favor proposals that include the creation of education and outreach programs
+on ethical issues.
+2.1.6 Architecture
+Although intelligent agent architecture has rapidly changed over the past few years, if agents are
+to realize their full potential, it is important that newcomers be able to easily join the research
+community. For this, plug-and-play systems that afford easier entry to the ﬁeld must be developed.
+These systems can be treated as end-to-end black boxes. This will enable new researchers to come
+up to speed without prior knowledge of the workings of each module.
+Incremental speech processing must be generalized toward incremental multimodality. Re-
+searchers must combine structured representations that support inference with neural models (un-
+6
+
+--- Page 7 ---
+structured text). Explicit representations of dialog that can be shared across domains, tasks and
+applications should be favored. The community also needs a repository of pre-trained models ac-
+companied by a usage guideline.
+The following sections provide a detailed description of the seven areas of future research that
+were strongly advocated by the USER Workshop attendees.
+3. Applications
+3.1 Introduction
+Taking the user into account is essential in intelligent agent research across a multitude of appli-
+cations. While all agents have their own merits, publicly funded research on user-oriented agents
+should follow a number of guiding principles:
+1. Applications should have three purposes: (a) advance fundamental research, (b) provide op-
+portunities for commercialization, (c) do good for society
+2. Applications should be different from those that have already been broadly addressed in the
+past decades of intelligent agent research (ﬂight booking, restaurant reservation, bus schedul-
+ing)
+3. Application teams should foster interdisciplinary relationships with scientiﬁc ﬁelds outside
+of computer science
+Although there are many relevant ﬁelds that satisfy these principles, two broad ﬁelds are:
+• Healthcare applications, e.g. diagnostics agents, caretaking agents, wellness agents, scribe
+agents, rehabilitation agents, and so on
+• Educational applications, e.g. language learning agents, teacher training agents, interviewer
+agents, sourcing agents, assessment agents, tutoring agents
+This section contains a detailed discussion of these two application areas and poses several key
+research questions related to them It also discusses the importance of interdisciplinarity in user-
+oriented agent research, and formulates major directions for intelligent agent applications.
+3.2 Healthcare
+Intelligent agents give healthcare providers new means of conducting intake interviews and train-
+ing. This technology is particularly relevant for people who ﬁnd it difﬁcult to consult a healthcare
+provider. For example, military veterans returning from deployment may feel a stigma around
+mental health, and especially around post-traumatic stress disorder (PTSD) (Rizzo et al., 2016). In-
+telligent agents acting as virtual interviewers can offer an alternative to a ﬁrst meeting with a human
+for people feeling uncertain about mental health. In a study by Lucas et al. (2014), people who were
+told they were interacting with a fully-automatic computer agent (as opposed to a human operating
+the agent) felt lower fear of self-disclosure, lower impression management, displayed their sadness
+more intensely, and were rated by observers as more willing to disclose. These virtual interviewers
+can be extended to become decision support tools for clinicians and healthcare providers by adding
+the capability of automatically detecting behavior markers of mental health (DeVault et al., 2014).
+7
+
+--- Page 8 ---
+Behavior markers can be detected from multiple modalities: language (what is said), acoustics (how
+it is said) and visuals (expressions and gestures). Examples of behavior markers discovered using
+multimodal AI technologies include smile dynamics as a marker of depression (Scherer et al., 2014),
+speech disﬂuencies as marker of psychosis (Vail et al., 2018) and voice quality as marker of suicidal
+ideation (Venek et al., 2017). Multimodal behavior markers offer clinicians objective measures of
+the patients behavior that are relevant to their assessment of mental health symptoms and disorders.
+Intelligent agents can also be used as training tools for junior clinicians or for healthcare workers.
+An example is the Virtual Patient system which can create a safe environment for clinicians-in-
+training to interact with different types of patients to improve their assessment skills (Kenny et al.,
+2007).
+3.3 Education
+Intelligent agents have been used to support a variety of interactive educational applications in
+a cost-effective and scalable manner. In one-on-one settings where the goal is to increase students
+knowledge about a particular domain (often STEM) via conversational interaction, agents have been
+developed that can take the role of tutor, peer, or tutee (Graesser et al., 2005; Kersey et al., 2009;
+Lubold et al., 2018), reﬂecting different theories from the learning sciences about how to foster
+student learning via dialog. It has also been hypothesized that agents that are more user-oriented
+and that can detect and adapt to student affective states (e.g., (Litman and Forbes-Riley, 2014))
+or that can increase rapport (Zhao et al., 2018) will be even more effective at increasing student
+learning.
+In the area of language learning and assessment, having students converse with intelligent agents
+has been proposed as a method for supporting both formative and summrative tasks (e.g., (Litman
+et al., 2016; Evanini et al., 2018; Ramanarayanan et al., 2018)). Finally, there have been efforts to
+move beyond one-on-one computer-student conversational interactions, for example, by enabling
+trialogues between a student and two agents, by facilitating a students dialog with other human
+students as in computer-supported collaborative learning, and by enabling students to observe the
+training dialogs of other students and/or intelligent agents (e.g.; 2019 (Takumi et al., 2019; Ku-
+mar and Ros ´e, 2014; Piwek et al., 2007)). With respect to supporting teachers and others in the
+workplace rather than students, intelligent agents can support job training by simulating participa-
+tion in target scenarios (e.g., sexual assault education by interacting with victim agents (Artstein
+et al., 2019). Thanks to the challenges that off the shelf agents often face when applied to educa-
+tional problems and data, due to differences in evaluation criteria, user modeling needs, dialogue
+structures, etc., this socially important application area typically produces innovative research.
+3.4 Other Application Areas
+Other applications that spring from the agent-user partnership are, for example, factory assistants
+and aides for seniors.
+Factory workers use agents for a variety of narrowlydeﬁned applications. Workers inspecting
+equipment use agents to record their observations. These agents must adapt to the users background
+and preferences. For example, some employees have had the same job for decades and need very
+little help. The agent in this case just provides hands-free data entry, and the worker may only need
+one dialog turn to get something done. A newer employee, on the other hand, needs more help,
+implicit training from a chattier agent, until they are familiar with the task. Some workers who have
+8
+
+--- Page 9 ---
+been on the job for a while may still need some help. An agent should be able to detect that. It
+should also know when the user needs some extra time between turns. Here, assessment determines
+whether the worker was able to correctly ﬁnish their task, if they did it with less error, if they felt
+free to ask for extra information when needed and if they would use the agent again.
+For seniors getting transportation information, agents should take into account the fact that
+human capabilities change as we age. An agent partnering with a senior must be sensitive to slower
+information processing and less multitasking (Black et al., 2002).The agent must adapt its speaking
+rate to that of the senior user. It should also provide them with only the amount of information
+that they can process at a given time. An agent communicating with seniors should be assessed
+according to its capability to demonstrate these qualities. It should also be assessed according to
+what the user got out of the interaction. Was the senior able to use the information to get where they
+intended to go? Did they enjoy their chat with the agent? Would they use it again? Older people
+own fewer smartphones and have less access to the internet. By using an agent that is connected to
+a phone number, seniors can call the agent to get information about, for example, how to get to a
+doctors ofﬁce (Mehri et al., 2019a).
+3.5 Research Questions
+Future intelligent agent research should be driven by the exploration of a broad range of applications.
+This will see the user communities expose gaps between current technology and the new research
+questions to be addressed.
+Research in education and healthcare applications will generally involve the need to preserve
+user privacy, particularly because of longitudinal data storage. These concerns will extend to other
+applications as more agents become personalized. Some research should address the tension be-
+tween preserving privacy and having access to user models and audio-visual signals that can improve
+agent performance. The need to preserve privacy also poses infrastructure challenges concerning
+data sharing, which is desirable for reproducible research. Longitudinal data use also poses chal-
+lenges to current machine learning algorithms. Many of the present algorithms rely on access to
+static datasets based on a large number of users. This is not practical when long-term data is needed
+from individual users.
+Many of the above applications can potentially involve multiple interacting parties, i.e. multiple
+users and/or multiple agents. For example, in assistive care, an agent might communicate with the
+patient and the caretaker together as well as separately. In education, an agent that supports student
+collaboration would deal with multiple users at the same time. New research challenges will spring
+form these situations related to knowing who is interacting and what their roles are, tracking the
+user state for each user and learning dialog policies for users with different objectives. Evaluation
+methodologies will need to account for multiple objectives as well.
+Applications that explore a variety of domains and new user communities will likely reveal
+new challenges associated with particular types of language use, such as domain jargon, student
+idioms and slang, and linguistic code-switching amongst multiple languages. In such cases, the
+standard language processing approach of relying on pre-trained word embeddings is less useful.
+Some user populations may pose challenges associated with speech technology. Speech recognition
+is known to work poorly for children and for users with strong accents. Intelligent agents built to
+serve speakers of low resource languages or dialects will also require special speech and language
+recognition and generation technology development.
+9
+
+--- Page 10 ---
+Finally, application platforms that involve a variety of user populations will drive research that
+enables agents to serve more users. Working with narrow populations to serve specialized needs
+may involve people who are more or less comfortable with an agent and require different interaction
+strategies. Depending on the application, a user may assume different relationships with the agent,
+i.e. treating the agent as servant or tool that extends their own capabilities vs. a teacher or a
+facilitator. These roles will necessarily require different interaction strategies, both in actions and
+language use. For applications where an agent interacts with a very broad user population, there is
+the potential for interacting with people who have different styles and agendas, including adversarial
+users. Agents will need a ﬂexible and robust dialog policy to handle a wide range of user types. In
+addition, systems will need strategies for learning about and adapting to user preferences/style both
+for understanding user intent and dealing with miscommunication.
+3.6 Interdisciplinarity
+User-centered agents will exist in many forms: as a virtual assistant in wearables (e.g. smart
+watches, augmented reality glasses and hearables), in smart homes (e.g. smart speakers, TV sets)
+and as social robots (e.g. companions for the elderly, tutors for children and support for doc-
+tors). Development of multimodal systems, such as social robots, requires interdisciplinary research
+teams, since research projects may involve speech processing, natural language processing, com-
+puter vision, robotics, interaction design, cognitive science, and more. If intelligent agents are to
+be used for real end users, the actual content of the interaction is of paramount importance. True
+societal impact of the research requires long-term collaboration between the research community
+and the society they live in. Application-inspired research where intelligent agents are evaluated in
+healthcare and educational settings will add knowledge both in fundamental research and in spe-
+ciﬁc domain areas. In order to achieve this, project teams need to be even more interdisciplinary
+by including both researchers in other ﬁelds (psychology, education science, medical science) and
+practitioners in schools and hospitals.
+The evaluation of traditional task-oriented dialog systems has focused on objective measures of
+the quality of system components, task success, and user satisfaction as measured in post-use ques-
+tionnaires (Walker et al., 1997). In slot ﬁlling tasks, user satisfaction is often negatively correlated
+with a long time and a lot of effort to fulﬁll the task. In other domains, such as companions for se-
+niors, this may not be the case. In the case of a health companion reminding a user to take medicine
+or contact friends and family, the user may also judge the quality of the interaction on other aspects
+(voice and speaking style, interesting content, level of engagement or adaptation). When developing
+companions for seniors, teams should include social and cognitive psychologists and practitioners
+from eldercare.
+In other domains, such as education, user satisfaction during the interaction may be less appro-
+priate as an evaluation criterion than the learning outcome. This calls for educators to be part of
+the team during the development and evaluation of educational intelligent agents. Similarly, intelli-
+gent agents that are support tools in healthcare require the involvement of medical researchers and
+hospital practitioners. Linguists would be needed for teams that develop applications with particu-
+lar types of language use, such as kids jargon, air trafﬁc control talk, or linguistic code-switching
+between multiple languages. Agents that target low resource languages will require special speech
+and language recognition and generation technology to be developed. This requires team members
+with additional language expertise and familiarity with the speciﬁc culture.
+10
+
+--- Page 11 ---
+3.7 Recommendations
+Going forward, there should be a stronger focus on novel applications of intelligent agents, espe-
+cially those that have not been well-covered in user-oriented agent research.
+Research in user-oriented agents should uncover and address issues unique to these application
+areas. These applications should be:
+• generalizable
+• dependant on the user pool
+• sensitive to aspects of the individual user (e.g. their satisfaction, their cognitive or behavioral
+change, their speaking proﬁciency)
+User-oriented intelligent agent research teams need to be interdisciplinary to tackle technologi-
+cal, scientiﬁc, and ethical/societal challenges.
+4. Infrastructure
+4.1 Introduction
+With the advent of deep neural networks, a signiﬁcant majority of research in AI concentrates on
+incrementally improving the performance of evaluation metrics on speciﬁc tasks and corpora. Thus
+the creation of tasks, corpora and evaluation metrics has a central role in deﬁning the community’s
+research direction. Solid infrastructure will facilitate effective intelligent agent research, as deﬁned
+throughout this report. The sections below outline speciﬁc recommendations for (1) corpora, (2)
+tasks, (3) evaluation metrics and (4) tools. Creating solid infrastructure will ensure that research,
+even incremental advances, addresses the long-term challenges of intelligent agents.
+4.2 Corpora
+For the past 30 years the central role that data plays in Natural Language Processing (NLP) has been
+recognized. The creation and availability of dialog corpora has exponentially increased during that
+time. In fact, the number of available dialog corpora (speech-to-speech, text-to-text, etc) is so large
+that no one list of existing corpora can be exhaustive. A fairly comprehensive overview of many
+(spoken) dialogue corpora can be found in Serban et al. (2018). There are several types of dialog
+corpora:
+• open-domain chit-chat conversations: SWITCHBOARD (Godfrey et al., 1992), CALLHOME
+(Canavan et al., 1997), OpenSubtitles (Tiedemann, 2012), DailyDialog (Li et al., 2017b), Per-
+sonaChat (Zhang et al., 2018), Topical-Chat (Gopalakrishnan et al., 2019);
+• information seeking dialogs: Let’s Go (bus scheduling)(Raux et al., 2005), VERBMOBIL
+(meetings) (Wahlster, 2013), ATIS (travel reservations) (Dahl et al., 1994), COMMUNICA-
+TOR (Bennett and Rudnicky, 2002), Cambridge restaurant (Henderson et al., 2014a,b), Mul-
+tiWOZ (complex travel planning tasks) (Budzianowski et al., 2018);
+• question-answering: QuAC (Choi et al., 2018), CoQA (Reddy et al., 2019);
+11
+
+--- Page 12 ---
+• social media e.g. Yahoo news comments (Napoles et al., 2017), Internet argument corpus
+(Abbott et al., 2016), Reddit comments (Henderson et al., 2019);
+Despite the ever-increasing number of dialog corpora, there are several key issues for future
+datasets that are identiﬁed and enumerated below.
+4.2.1 Situated Corpora: There is a dearth of ecologically valid, situated language interaction cor-
+pora: most of the available corpora focus on tasks that, even when ultimately involving entities in
+the real world (e.g. reserving a table at a restaurant), do not require the user to refer to entities that
+are physically, or at least virtually, present in the conversation. This is not to say that none of the
+earlier corpora referred to physically or virtually present entities: for example, in expert-apprentice
+dialogues for assembling a toy pump from Oviatt and Cohen (1992), the participants refer to a
+physical object; in both MapTask (Carletta et al., 1997) and TRAINS (Heeman and Allen, 1995),
+the participants refer to an external map (in MapTask, the two maps are inconsistent).
+4.2.2 Multimodal Corpora: Most available corpora do not include modalities beyond language,
+whether spoken or typed. This is beginning to change with datasets like VisDial (Das et al., 2017)
+and CLEVR-Dialog (Kottur et al., 2019). Nonetheless, to the best of our knowledge, there is no
+corpus with a variety of modalities that pertain to interactive agents (e.g., language, vision, speech,
+haptics, facial expressions, motion, prosody, proxemics, etc.).
+4.2.3 Real vs Paid Users: Many corpora are created with paid users and are therefore not reﬂective
+of legitimate conversations with real users (Ai et al., 2007). Past research has shown that paid users
+will complete only enough work to ﬁnish the task, while real users have an extrinsic motivation for
+interacting with an intelligent agent and will take more time to get what they want. While it may be
+difﬁcult to collect certain corpora with real users, real users could be used in some capacity – for ex-
+ample to understand common interaction patterns and motivate the instructions for paid users (e.g.,
+if real users tend to switch a slot in the middle of a conversation, paid users should be instructed to
+do the same).
+4.2.4 Research-Driven Corpora: Many corpora are application-driven rather than research-
+driven. New datasets should not necessarily be created just to build systems for a new applica-
+tion (e.g., booking a taxi). Rather they should facilitate research in a speciﬁc direction (e.g., task
+transfer, controllable systems). With the availability of corpora driving the majority of research, the
+collection of corpora can be thought of as the deﬁnition of a research challenge. For example, the
+structured intermediate labels of belief states and dialog acts in the multi-domain MultiWOZ corpus
+(Budzianowski et al., 2018) resulted in research into domain generalizability (Mehri et al., 2019b)
+and controlled generation (Chen et al., 2019). Similarly, the Empathetic-Dialogues corpus allowed
+for research into controllable dialog generation (Lin et al., 2019). Dialog corpora should collected
+with the underlying goal of understanding of what is needed for a particular research direction. This
+may initially necessitate the collection of diagnostic datasets that are limited in scope all the while
+allowing for targeted research in a speciﬁc direction.
+12
+
+--- Page 13 ---
+4.3 Shared Tasks
+Shared tasks or challenges are a proven mechanism for creating and encouraging speciﬁc research
+directions. While the creation of research-driven corpora may motivate research in a speciﬁc di-
+rection, shared tasks are necessary to facilitate the research beyond datasets. They provide both
+the motivation (competition, comparison of results with colleagues) and the means to achieve the
+research (tools and leaderboards, chat communication between participants, etc).
+The infrastructure needed to conduct these shared tasks is important to the community. It facil-
+itates participation and enables effective and comparable research in speciﬁc research directions.
+DARPA Communicator (Walker et al., 2001) was the ﬁrst instance of a shared task within this
+research community. It relied on full interactive evaluation, had a growth trajectory from a single
+task to multiple tasks, and was multimodal. There have been many similar shared tasks since then,
+including the annual DSTC competitions (Henderson et al., 2014a,b), the ConvAI competitions
+(Dinan et al., 2020) and the Alexa Prize challenge (Ram et al., 2018). These shared tasks attract
+many participants, and can serve to highlight the shortcomings of intelligent agents. For example,
+the ConvAI2 challenge (Dinan et al., 2020) revealed the weakness of automatic metrics at predicting
+the user impression of an agent.
+One important future direction for shared tasks is to conduct end-to-end, interactive assessment
+of the intelligent agent. This gains relevance since, increasingly, the majority of current research
+focuses on tasks such as response generation. Interactive assessment requires research that moves
+beyond a dataset and favors the shared task approach. The DialPort Portal (Lee et al., 2017) is an
+example of a tool endowed with the ability to facilitate shared tasks by providing an interactive,
+user-centric environment. Many of the research directions highlighted throughout this report are
+potential long-term themes for shared tasks, including situated interaction, complex planning, mul-
+timodal dialog, and learning with limited data. Shared tasks will provide a common infrastructure
+and evaluation platform for these research directions, ensuring consistency during comparison and
+reproducibility.
+4.4 Evaluation
+Intelligent agent evaluation serves two purposes: a comparison between systems (or system vari-
+ants) and an internal optimisation, (e.g., to be used as an objective during training). Just as the
+creation of corpora drives intelligent agent research, evaluation metrics deﬁneimprovement criteria
+and therefore strongly inﬂuence research. For example, an evaluation framework that emphasizes
+user satisfaction will result in research that promotes user-centric agents. As such, it is important
+to develop and promote evaluation metrics and frameworks that facilitate important directions of
+research (e.g., user-centric metrics to promote research into user-centric agents).
+Standard automatic metrics for language generation include BLEU (Papineni et al., 2002),
+ROUGE (Lin, 2004), and METEOR (Denkowski and Lavie, 2014). Recently, embedding-based
+metrics have been proposed include Greedy Matching (Rus and Lintean, 2012) and Skip-Thought
+cosine similarity (Kiros et al., 2015). These metrics have been shown to be ineffective for dialog
+evaluation (Deriu et al., 2019; Liu et al., 2016). For example, dialog-agent interaction is a very com-
+plex task with an inﬁnite number of possible branches, (i.e., what to say, in which way, at which
+point in the dialog). Each dialog context has several valid responses, known as the one-to-many
+problem of dialog (Zhao et al., 2017). Also, many current evaluation metrics rely on comparison
+with a ground truth, reference response which becomes ineffective when there are many potentially
+13
+
+--- Page 14 ---
+valid responses. This issue has started to be addressed through the use of multiple reference re-
+sponses, through automatic retrieval (Galley et al., 2015; Sordoni et al., 2015) and through data
+collection (Gupta et al., 2019).
+Lowe et al. (2017) trained a model on quality annotations and attained strong correlations with
+human judgement. Li et al. (2017a) trained a model to predict whether a response was written
+by a human or a machine, and found that using this as a training objective resulted in improved
+performance. There is room for improvement, particularly in producing a general metric that: (1)
+does not suffer from the one-to-many problem of standard metrics that compare to a reference, (2)
+can generalize to many datasets and does not require explicit annotations speciﬁc to a particular
+dataset, (3) can correlate well with human judgement on a wide variety of tasks.
+Since intelligent agents are interactive, metrics must function effectively in interactive environ-
+ments. Research in evaluation has largely focused on the task of response generation (i.e., given a
+ﬁxed context, evaluate a generated response). While this task has proven challenging, it is unclear
+whether intelligent agents that perform well on the task of response generation will generalize to an
+interactive environment with a real user. In this interactive setting, it is necessary to assess agents
+with better automatic metrics and improved human evaluation.
+DialPort (Lee et al., 2017) is a platform for interactive assessment of intelligent agents. Prior ex-
+periments on DialPort relied on feedback from the user (e.g., ratings). Eskenazi et al. (2019) found
+that leveraging the next user utterance following the system response being assessed improves cor-
+relation with human judgement. This suggests that that interactive evaluation metrics can leverage
+additional context to improve quality assessment. Designing and incorporating an automatic metric
+for quality assessment into an interactive platform is a ﬁrst step toward user-centric intelligent agent
+evaluation.
+4.5 Tools and Platforms
+The availability of platforms, tools and baseline systems has a signiﬁcant effect on the research that
+the intelligent agent community carries out. Once LSTMs (Hochreiter and Schmidhuber, 1997)
+became readily available in deep learning toolkits, they were widely used for research. Similarly, a
+thorough, well-documented repository of modern tools for building dialog systems would reduce the
+barrier for newcomers and ensure that they can compare their ﬁndings to strong baseline systems.
+Likewise, the creation of solid platforms for conducting research can reduce the entry barrier,
+and maintain the consistency and reproducibility of research. The OpenAI gym (Brockman et al.,
+2016) was created as a toolkit and platform for developing and assessing reinforcement learning
+algorithms. It has exhibited signiﬁcant value both as an educational tool and as a common platform
+for research.
+There are several tool repositories that exist for dialog, including the DialPort Tool Repository1,
+Facebook’s ParlAI (Miller et al., 2017), Uber’s Plato Research Dialog System2, and RASA (Bock-
+lisch et al., 2017). These repositories contain a collection of tools for building and deploying dialog
+systems. These tool repositories are a valuable resource to the community. Going forward, they
+need to gain in breadth (need to go beyond focused goals: e.g., industry applications) and include
+much more documentation (due to massive breadth). It is important to continue the development of
+a thorough repository of tools with strong documentation. Furthermore, it is important to have open
+1. http://dialport.ict.usc.edu/
+2. https://github.com/uber-research/plato-research-dialogue-system
+14
+
+--- Page 15 ---
+source baseline intelligent agents that are thoroughly documented and evaluated. Such systems can
+serve as baselines for research, especially for newcomers to the ﬁeld.
+There is a shortage of shared platforms, similar to the OpenAI gym (Brockman et al., 2016),
+for intelligent agent research. DialPort (Lee et al., 2017) is a platform with a focus on interactive
+assessment. In addition to their tools, ParlAI (Miller et al., 2017) allows for deployment and shar-
+ing of dialog systems. A thorough platform should be developed (and/or the present platforms be
+extended) that can support a breadth of research in intelligent agents, from baseline systems, to
+creation, assessment and deployment. Platforms should support multimodal and situated agents,
+knowledge graph integration and longitudinal user tracking. Additionally, this infrastructure would
+facilitate shared tasks in the domain of intelligent agents.
+Tools and platforms should eventually be integrated through the concept of ”plug and play”,
+wherein focused search could be carried out on a speciﬁc component of a system without mod-
+iﬁcation or re-implementation of the entire system. There are several variants of plug and play,
+allowing for ﬂexibility of usage and therefore generality of the infrastructure. Researchers should
+be able to use infrastructure as a black box; for example, building an improved text-to-speech com-
+ponent for intelligent agents and assessing it with an intelligent agent. The infrastructure should
+also function in a translucent mode (i.e., some parameters of existing systems being easily modi-
+ﬁed) and transparent (i.e., signiﬁcant changes can be made to existing components without complete
+re-implementation).
+4.6 Recommendations
+Infrastructure choices deﬁne and drive intelligent agent research directions. Corpora and shared
+tasks deﬁne research challenges for the community. Evaluation metrics determine what is judged to
+be an improvement, and therefore what gets published. Tools can provide baseline systems, ensuring
+that research compares against strong models. There should be documentation for newcomers.
+Recommendations for each of these areas are provided below:
+• Corpora: The collection of situated and multimodal corpora is an important future direction.
+Also, dialog corpora should incorporate real users in some capacity. Finally, corpora should
+be research-driven rather than application-driven: a corpus should be collected to facilitate
+a speciﬁc direction of research (e.g., transfer learning, controllable systems, ﬂexible dialog)
+rather than for a speciﬁc application.
+• Shared Tasks: Shared tasks will require the development of a common infrastructure to
+promote effective and comparable research. Examples of potential areas for shared tasks are
+interactive assessment (for which the DialPort Portal, for example, can be used as a platform),
+situated interaction, complex planning, multimodal dialog and learning with limited data.
+• Evaluation: Existing metrics (e.g., BLEU, METEOR) compute word-overlap and are in-
+sufﬁcient for evaluating intelligent agents due to the one-to-many nature of their utterances.
+Therefore metrics need to be designed that account for these properties. Furthermore, since
+intelligent agents are inherently interactive, evaluation should occur in an interactive envi-
+ronment rather than on static tasks like response generation. Automatic metrics should be
+designed to effectively quantify the performance of systems for both response generation and
+in interactive assessment.
+15
+
+--- Page 16 ---
+• Tools and Platforms: A common research platform should be developed or extended for
+intelligent agent research. This platform should be plug and play, support multimodal and
+situated interaction, and support research from baseline systems to creation, assessment and
+deployment. The platform should consist of a thorough, well-documented repository of tools
+for the development of intelligent agents. Such a platform would be long-lasting infrastructure
+that is a valuable resource for research, education and shared tasks.
+5. Dynamic Views of User-Agent Interaction
+One of the greatest challenges for intelligent agents is variability within and across users. Users
+have different needs, preferred interaction styles, and comfort levels with agents. For social and
+companion systems, it can be important to consider the users opinions, age, and cultural back-
+ground. Other factors may be important in other applications (e.g. student skill or knowledge level
+in educational systems). In addition, automatic speech recognition (ASR) performs poorly for some
+groups of users (e.g. children, the elderly, non-native speakers), which impacts the agents’ efﬁcacy.
+In order for agents to server a broad spectrum of users in a range of applications, systems will need
+the capability of learning about users. Agents also need to be sensitive to the state of the user within
+a dialog, because of miscommunications, changing user interests and skills, etc. Finally, as dia-
+log technology evolves to provide new and improved capabilities, users will co-evolve with them,
+as evidenced by the dramatically different way people interact with virtual assistants now than in
+the demonstration dialog systems of the 90s, i.e. users are more conversational (including more
+disﬂuent), and less uncertain.
+Current intelligent agents have limited capabilities for adapting to users. Virtual assistants that
+associate a user with a device can track user behaviors, such as website clicks, purchasing records,
+music choices, and may have access to the users calendar, which is useful for providing personalized
+services. Regular users of smart speakers can be identiﬁed by voice to provide similar personaliza-
+tion. However, these agents make little use of language or other modalities to assess the dynamic
+needs of a known user or respond adaptively to a new user. As described in this section, there have
+been initial research efforts in this direction aimed at recognizing user affective and cognitive states,
+as well as dynamic user modeling. More work will be needed, but in addition, user-centric dialog
+systems will need to handle the dynamics of the user-system, which will evolve as capabilities and
+roles change.
+5.1 Recognizing engagement, emotion and affect
+User-agent interaction can be signiﬁcantly improved by recognizing the cognitive and affective state
+of the users. During human interaction, our emotions play an important role in our decision-making
+process. Our affective state is externalized through multiple communicative channels including fa-
+cial expression, speech, language and body posture. This information is perceived by interlocutors,
+who make perceptual judgements that inﬂuence their reactions toward us. Likewise, we can eas-
+ily infer the cognitive state of others, realizing when they are paying attention, mind wandering or
+immersed in thoughts. For a user-oriented agent to be able to mimic these human-like responses,
+it is imperative to design algorithms that can recognize cues toward modeling the cognitive and
+emotional state of the user.
+Emotion recognition is one of the main challenges in affective computing (Picard, 2000). While
+there are several modalities that have been used to recognize emotions, the most common methods
+16
+
+--- Page 17 ---
+consider facial expression, speech or lexicon content. These modalities can be used in user-oriented
+agents depending on the context of the interaction. For example, for telephone and voiced-based
+virtual assistant systems, speech is the only modality available. Therefore, it is important to de-
+sign speech-based algorithms that are robust against different channel, speaker, and environment
+variabilities. As labeled data with emotional descriptors are expensive to collect, it is important
+to leverage unsupervised approaches that can mitigate the mismatch between train and test condi-
+tions by using unlabeled data (Abdelwahab and Busso, 2018; Parthasarathy and Busso, 2019). As
+ASR technology improves, automatic transcriptions can also be used for sentiment analysis. New
+advances in deep learning have created powerful word embeddings that have led to signiﬁcant im-
+provements in text-based sentiment analysis (Dos Santos and Gatti, 2014; Severyn and Moschitti,
+2015). The advances have been triggered, in many cases, by the interest in understanding emotion
+in social media. This technology can also be incorporated in emotion-aware, user-oriented agents.
+Emotions can be recognized as well from facial expressions in scenarios where placing cameras is
+feasible (e.g., human robot interaction, and virtual kiosk). Important advances have been made on
+still images displaying clear facial expressions. However, there are still important challenges in face
+analysis from videos, especially when the subject is speaking (Mariooryad and Busso, 2015; Kim
+and Mower Provost, 2014). The articulatory movements associated with speech cause changes in
+the facial appearance, introducing nuances that mask and regulate emotional cues. Furthermore,
+static representations from isolated frames may not provide an adequate representation of the emo-
+tion expressed in a video, as contextual information is not considered (Ambadar et al., 2005). Future
+advances in this area will require better models to infer emotional state of the user from videos, cap-
+turing the temporal evolution of the interplay between articulatory and emotional facial displays.
+Another important aspect of user-oriented agents is to estimate the engagement level of the
+user (Castellano et al., 2009; Peters et al., 2009). This capability is particularly important for sus-
+tained interactions where the user can easily become distracted or disengaged. Any strategy to reen-
+gage the user should start by detecting signs of disengagement. Other important social signals that
+are relevant for a user-oriented agent to detect are cognitive load, turn taking, frustrations, politeness
+and disagreement. Advances in behavioral signal processing offer opportunity to infer these cues
+from multimodal sensors, improving the characterization of the user in the interaction (Narayanan
+and Georgiou, 2013; Vinciarelli et al., 2009). New developments in this area will facilitate the im-
+plementation of more intentional human-like strategies that aim to increase the engagement of the
+users, leading to better systems.
+5.2 User Modeling
+Accounting for author/speaker variations has been shown to be useful in many NLP tasks, including
+sentiment analysis (V olkova et al., 2013), comment recommendation (Agarwal et al., 2011), and
+machine translation (Mirkin et al., 2015). In conversational systems, user modeling has a long his-
+tory (Zukerman and Litman, 2001). Systems have focused on different aspects of users, e.g., the
+expertise level of the user in a speciﬁc domain (Hovy, 1987), the user’s intent and plan (Moore and
+Paris, 1992) and the user’s personality (DeVault et al., 2014; Fung et al., 2016). The Alexa Prize
+challenge inspired several efforts to leverage user information in the dialog policy, e.g. (Bowden
+et al., 2019). User modeling has also been employed for personalized topic suggestion in Alexa
+Prize socialbots, using a pre-deﬁned mapping between personality types and topics (Fang et al.,
+2017), a conditional random ﬁeld sequence model with hand-crafted user and context features ((Ah-
+17
+
+--- Page 18 ---
+madvand et al., 2018)), or a weighted combination of latent modes with weights computed based
+on a neural representation of the utterance (Cheng et al., 2019). Modeling speakers with continuous
+embeddings for neural conversation models is also studied in (Li et al., 2016). Directly or indi-
+rectly, recognizing emotion, engagement and other social signals can contribute to understanding a
+user more globally.
+5.3 Recognizing user knowledge, mental states, theory-of-mind
+The complexity and sophistication of (spoken) language tends to be masked by the apparent ease
+with which we, as human beings, use it. As a consequence, engineered solutions are often dominated
+by a somewhat naive perspective involving the coding and decoding of messages passing from one
+brain (the sender) to another brain (the receiver). In reality, language is better viewed as an emergent
+property of the dynamic coupling between cognitive units that serves to facilitate distributed sense-
+making through cooperative behaviors. Furthermore, the contemporary view is that language is
+based on the co-evolution of two key traits - ostensive-inferential communication and recursive
+mind-reading - including Theory-of-Mind (Scott-Phillips, 2014).
+These perspectives on language not only place strong emphasis on the importance of prag-
+matics (Bar-On, 2017), but they are also founded on an implicit assumption that interlocutors are
+conspeciﬁcs, and hence share signiﬁcant priors. Indeed, evidence suggests that people draw on rep-
+resentations of their own abilities expressed as predictive models in order to interpret the behaviours
+of others, and this is thought to be a key enabler for efﬁcient recursive mind-reading and hence for
+language-based interaction.
+So, if (spoken) language interaction between human beings is grounded through shared expe-
+riences, representations and priors, to what extent is it possible to construct a technology that is
+intended to replace one of the participants? There will be an inevitable mismatch between the ca-
+pabilities of the two partners, and coupled ostensive recursive mind-reading (i.e. full language)
+cannot emerge. Hence there may be a fundamental limit to the language-based interaction that can
+take place between humans and artiﬁcial agents (Moore, 2017). These are issues that need to be
+investigated.
+5.4 Agent Presentation
+The user may be highly inﬂuenced by the way the agent presents itself, in terms of willingness to
+interact, style of interaction, and evaluation of the interaction. The agents self-presentation includes
+aspects of identity, such as name, backstory and job/role, language usage, including word choice,
+utterance structure, and linguistic register, and, in multi-modal settings, the voice and physical ap-
+pearance. Some common goals for agent-presentation include:
+• One that is familiar to the user, to set expectations for the interaction based on the familiar
+associations
+• One that will engage the user and make interaction more attractive
+• One that will inspire trust in the information conveyed by the agent
+• One that will set up appropriate affordances to make clear what the agent can or cannot do
+(well).
+18
+
+--- Page 19 ---
+Some of these goals may be in conﬂict with each other. E.g., a highly familiar and/or engaging
+personality might attract the user initially but might inﬂuence the user to assume that the system is
+more capable and able to handle more complex interaction than it actually can. Another conﬂict is
+whether the agent should follow a very simple protocol (always using the same language construc-
+tion for the same function) or have more varied interaction. The former may be easier for users to
+learn and adapt to, but will be more boring and perhaps off putting in its redundancy. The latter will
+be more engaging and human-like, but may lead to more problems if users assume that they can say
+anything to an agent with only limited understanding abilities. It may be desirable to adapt the agent
+presentation to the desires of the user as to their ideal interlocutor (e.g. selection of voice, register,
+gender, age, human-ness, appearance, clothing,...)
+One important issue concerns the role of language in human-agent interaction. For example,
+studies into the usage of smart assistants suggest that, far from engaging in a promised natural
+‘conversational’ interaction, users tend to resort to formulaic language and focus on a handful of
+niche applications which work for them (Moore, 2017). Given the pace of technological develop-
+ment, it might be expected that the capabilities of such devices will improve steadily, but according
+to Phillips (2006) there is a habitability gap in which usability drops as ﬂexibility increases.
+It has been hypothesized that the habitability gap is a manifestation of the uncanny valley ef-
+fect whereby a near human-looking artefact (such as a humanoid robot) can trigger feelings of
+eeriness and repulsion (Mori et al., 2012). In particular, a Bayesian model of the uncanny valley
+effect (Moore, 2012) reveals that it can be caused by misaligned perceptual cues. Hence, a device
+with an inappropriate voice can create unnecessary confusion in a user. For example, the use of
+human-like voices for artiﬁcial devices encourages users to overestimate their linguistic and cogni-
+tive capabilities.
+The Bayesian model of the uncanny valley effect suggests that the habitability gap can only
+be avoided if the visual, vocal, behavioral and cognitive affordances of an artefact are aligned.
+Given that the state-of-the-art in these areas varies signiﬁcantly, this means that the capabilities of
+an artiﬁcial agent should be determined by the affordance with the lowest capability (Moore, 2017;
+Wilson and Moore, 2017. In other words, emulating a human is a recipe for failure, rather it is better
+to be a good machine than a bad person (Balentine, 2007).
+5.5 Agent-User Relationship
+It is useful for the system to adapt to different types of users. At the same time, users will be adapting
+to their understanding of how the system works and what seems to work well (even sometimes
+inappropriately, e.g. hyperarticulation of words, which is not well covered in a speech recognizers
+acoustic model), or they may be changing their needs and use of the system as they learn more
+about its capabilities. In particular, a user who is interacting with the system for the ﬁrst time may
+need a lot of guidance in terms of explanations, examples, enumerated choices at various stages.
+More expert users will not need as much of this kind of help and may ﬁnd it annoying and wasting
+time. A user-focused system should adapt to the level of expertise of the user, which includes being
+able to use and understand language that the user is comfortable with, providing explanations to
+novices and short-cuts to experts. Entraining to the user (using the same words, prosodic patterns
+or gestures, in an agent) may be part of the strategy to achieve this. For example, in the context of
+educational spoken dialog, a robot that both entrained to and spoke socially with students resulted
+in signiﬁcantly more student learning (Lubold et al., 2018). Converseley, dialog systems have also
+19
+
+--- Page 20 ---
+taken advantage of user entrainment to the system by making lexical, syntactic, and prosodic system
+utterance choices believed to be more conducive to system success (Stoyanchev and Stent, 2009;
+Fandrianto and Eskenazi, 2012; Lopes et al., 2013). It may also be useful for the agent to use
+strategies to encourage other types of change in user behavior, though ethical issues will arise here.
+Intentional actions such as these must be carefully assessed for their utility. The agent should
+also be adaptive to the level of communication problems; e.g. in a noisy environment, it may
+be helpful to have shorter utterances and more explicit feedback of what was understood, and/or
+giving only summary information rather than more elaborated context. Incremental understanding
+and generation are likely to important for the more advanced turn-taking necessary for effective
+communication.
+The agent-user relationship becomes much more challenging for scenarios that involve multiple
+agents and/or users. When in a group setting, should the agent address the group or an individual,
+and which user model(s) should be active? In contexts with changing group membership, the same
+person can play different roles or have different expertise as the groups change, which impacts the
+user model for that person. Just as behavior of an individual user can be affected by emotion and
+background knowledge, the interactions of people in a group are affected by group social dynamics
+and their knowledge of the expertise of each other. How do the agents contribute to group dy-
+namics, and to what extent can/should agents aim to change group dynamics? For example, when
+pairs of students working together were dynamically supported by a dialog agent, student learn-
+ing improved (Kumar et al., 2007). When there are multiple agents, how do they coordinate their
+communication and efforts to build user models?
+5.6 Recommendations
+The challenges with user variability that current systems face and the potential for future multi-party
+applications suggest the following areas will be important for future research:
+• Move research from generic, static views of the user, the agent and their relationship to per-
+sonalized and dynamic models; and
+• Move from human-computer to multi-party, where the agent learns about different humans
+and understands it specialized expertise relative to other agents In order to ensure that research
+is addressing problems relevant to these issues, it is important that research emphasize sce-
+narios that involve longer conversations (beyond 1-2 turns) and/or more frequent interactions
+from the same user or groups of users.
+6. Building Dialogue Systems in Low-Resource Conditions
+6.1 Introduction
+Current commercial technologies for natural language processing have come to rely predominantly
+on supervised learning. This requires impressive quantities of gold standard, annotated data for
+training, tuning, and evaluation. However, there are many scenarios and applications where there
+simply is not enough annotated data for system construction when using supervised learning. Con-
+sider, for example, multimodal input data streams that can be collected by an agent that communi-
+cates with human users. It is equipped for both real-time capture and generation of audio, video,
+and motion data. Datasets recorded during interactive sessions may vary in quantity and quality by
+20
+
+--- Page 21 ---
+channel, and they may not be synchronized or sampled at similar rates across the channels. This
+variation complicates the conversion of data into shared representations for downstream cross-modal
+alignment, annotation, and analysis (see a detailed discussion in Section 7). Furthermore, even if
+the multimodal data that has been collected is abundant, the annotated portion may not be sufﬁcient
+for supervised learning in system construction. Annotated data may be limited due to the time and
+cost of ground-truthing multimodal data for new domains, new tasks, or new languages. And the
+limited availability of multimodal data, that contains identiﬁable information (face, voice, language
+spoken) may be due to privacy issues (see detailed discussions in Section 9). To arrive at a def-
+inition of future research directions, this section ﬁrst examines current state-of-the-art approaches
+under different scenarios.
+6.2 Current Approaches
+The conditions of resources can be categorized along along two dimensions: 1) the amount of in-
+domain data and 2) the amount of annotated data. Table 6.2 shows the possible combinations.
+No Data Limited Data Abundant Data
+No annotations Case 1 Case 2 Case 4
+Limited annotations X Case 3 Case 5
+Abundant annotations X X Case 6 (”Solved”)
+Table 2: Current approaches for in-domain and annotated data
+6.2.1 Learning when there is no data (column 1)
+Wizard-of-Oz: Many intelligent agent projects, whether in academia or industry, begin with an
+idea, but no available relevant data (Column 1). To bootstrap these projects, researchers typically
+resort to proxy methods for data collection such as Wizard-of-Oz (WoZ) systems (Dahlb ¨ack et al.,
+1993; Okamoto et al., 2001; Budzianowski et al., 2018), where a human operator plays the role of
+the as-yet-non-existent system, interacting with a human user. These interfaces are challenging to
+build, involving critical decisions that are likely to impact the rest of the project. The key trade-offs
+faced by WoZ system designers concern the information available to the wizard and the amount of
+freedom given to a wizard to formulate their responses to the user. For instance, the wizard may
+have full access to direct audio and video of the user, ensuring accurate perception of the users
+actions. Alternately, the wizard may only see written transcripts of the users speech since output
+by the systems ASR includes errors. This more accurately represents the type of input stream that
+an intelligent agent would need to handle. Other arrangements also exist: they could be allowed to
+speak or type freely without constraint on the content or form of their response, or they might be
+restricted to select actions or phrases from a limited predeﬁned set presented to them, for example,
+as buttons on a screen. In general, the need to get a correct response to the user in as close to real
+time as possible will inﬂuence interface design choices.
+Typically, the wizard or wizards knowledge is relied upon to manage the content and pacing of
+the dialog. The users interacting with the WoZ are asked to perform a given task communicating
+with WoZ interface, but are not informed that a human is behind the curtain performing the work of
+one or more of the systems components (for example, dialogue management, speech recognition,
+speech generation, natural language understanding, natural language generation, reasoner). Thus the
+21
+
+--- Page 22 ---
+user together with the wizard generates the data that is needed to train the models for automating
+those components.
+Unfortunately, WoZ data collection is typically complex, time-consuming, and expensive (Rieser
+and Lemon, 2008). If users in academic or government studies provide personally identifying in-
+formation, there are additional requirements that apply to the experimental design protocols, as reg-
+ulated by an institutional review board (IRB). Thus WoZ systems are generally limited in scale and
+often used only in very early stages of agent development (Munteanu and Boldea, 2000). Crowd-
+sourcing has recently been used to address these limitations (Lasecki et al., 2013; Huang, 2018).
+This increases the scale of the WoZ paradigm toward large numbers of wizards (i.e. crowd workers)
+and thus users.
+Rule-based Frameworks Another approach to bootstrapping a research system when no train-
+ing data is available is to construct a fully-automated system by relying on hand-crafted rules and
+manually-selected datasets to test those rules in the process of evaluating the full system (Larsson
+and Traum, 2000; Bohus and Rudnicky, 2009; Zhao, 2016). This approach offers the near-term ben-
+eﬁts of being both more immediately scalable (though ﬁnding enough users may not be easy) and
+more amenable to data collection for machine learning since it relies on some amount of explainable
+machine representation of knowledge to perform its task. The main issues for such hand-crafted sys-
+tems are that they are very costly to build. Developers must combine a large number of complex
+technologies. Yet they also permit a very wide range of user experiences. This makes the data too
+highly variable for the eventual training of machine learning models for system components. Often
+research teams do not collectively have the range of skills, resources, or time to develop and apply
+the methods needed for such iterative design to create operational, high quality systems.
+6.2.2 Learning from limited data (column 2)
+Machine learning methods, especially supervised deep learning models require a tremendous amount
+of training data to reach good performance. As a result, when only limited in-domain (either an-
+notated or unannotated) data is available, the direct application of supervised learning falls short.
+Therefore, a rule-based framework is still one of the top choices when creating intelligent agents
+with only limited data. Existing research has explored the following approaches to empower an
+agent when faced with limited data.
+Integrate rules into learning systems : rules can be combined with statistics to improve the
+robustness of a dialog manager or natural language understanding module. Lison and Kennington
+(2016) combines probabilistic rules with Bayesian learning in a dialog manager so that the prob-
+ability that an if statement is triggered is learned from data rather than set by manual heuristics.
+Rules can also be applied to dialog state tracking (Wang and Lemon, 2013; Sun et al., 2014). This
+signiﬁcantly improves performance in low resource settings. Recently rules have shown promise
+when integrated with end-to-end dialog models (Williams et al., 2017; Razumovskaia and Eske-
+nazi, 2019), thus reducing the amount of training samples that are needed needed.
+Transfer Learning: another well-studied approach is to leverage data from other domains and
+enable knowledge transfer from models trained in a source domain to a target domain. Related
+research areas include transfer learning and zero (few)-shot learning. Chen et al. (2016) developed
+an intent classiﬁer that can predict new intent labels that are not included in the training data. Bapna
+et al. (2017) extended the idea to the slot-ﬁlling module in order to track novel slot types. Both
+papers leverage a natural language description of the label (intent or slot-type) in order to learn
+22
+
+--- Page 23 ---
+a semantic embedding of the label space. Then, given any new labels, the model can still make
+predictions. Moreover, there has been extensive work on learning domain-adaptable dialog policy
+by ﬁrst training a dialog policy on K previous domains, and then testing the policy on the K+1st new
+domain. Gasic and Young (2014) used the Gaussian Process with cross-domain kernel functions.
+The resulting policy can leverage the experience from other domains to make educated decisions in
+a new one. Finally, zero-shot learning has also been applied to natural language generation. Wen
+et al. (2016) used delexicalized data to synthetically generate NLG training data for a new domain.
+Zhao and Eskenazi (2018) proposed an action matching algorithm to transfer knowledge of an end-
+to-end generation-based dialog system. This allows an end-to-end system to operate in a completely
+new domain.
+6.2.3 Learning from limited annotated data (column 3)
+The third case (column 3) refers to when there is a vast amount of data in the same language or
+even the same domain, but there is not enough annotation of that data to train supervised models for
+natural language understanding or state tracking. For example, there is a large amount of human-
+human call center data, however, much of it is not annotated. In this setting, current state-of-the-art
+approach includes:
+Unsupervised end-to-end dialog system uses end-to-end (E2E) dialog models that directly
+train a generative model on top of conversational data. Different from modular systems (Zhao and
+Eskenazi, 2016), E2E dialog agents do not require annotation or system dialog acts for natural
+language understanding (NLU). E2E dialog systems can be divided into generative models (Vinyals
+and Le, 2015) and retrieval-based systems (Lowe et al., 2015). However, despite promisng results,
+E2E systems as them today suffer from the following limitations. Signiﬁcant amount effort has been
+invested to improve E2E dialog models. For example, generative models are known to generate dull
+rather than relevant responses. A number of solutions have been proposed such as maximum mutual-
+information training (Li et al., 2015), latent variable models (Zhao et al., 2017), etc. A second
+limitation for E2E dialog systems is that they cannot easily interface with an external structured
+data source. This prohibits them from serving information from a database (Zhao and Eskenazi,
+2016; Dhingra et al., 2016; Williams et al., 2017). A third open-ended research question for E2E
+system is evaluation. Since there is no human annotation available, systems cannot be compared by
+using standard metrics, like accuracy. Most current methods compare the system response against
+human reference responses. Therefore, current mainstream metrics, e.g. BLEU (Papineni et al.,
+2002), correlate poorly with actual system performance (Liu et al., 2016).
+Representation learning & Semi-supervised learning In case 5, the state-of-the-art methods
+used to create intelligent agents are unsupervised representation learning and semi-supervised learn-
+ing. Examples of pre-trained language models include BERT (Devlin et al., 2018) and RoBERTa (Liu
+et al., 2019). First a language model is trained with self-supervised objectives, for example mask-
+ing language models on massive amounts of unannotated data. Then the resulting representation is
+ﬁne-tuned on a small set of labelled data.
+6.3 Recommendations
+Currently, machine learning approaches for dialog agents still struggle in the low resource setting,
+yet there are many promising research venue that worth of exploring. We recommend investing in
+the following directions in order to enable practical framework for building future dialog agents.
+23
+
+--- Page 24 ---
+• A systematic way to introduce prior knowledge as an input to ML models.
+• Community effort to make pretraining models well-documented, thoroughly tested and widely
+available.
+• Open-source, robust and reusable tools for solved tasks, e.g. wizard-of-oz interface, data
+collection tools, human evaluation platform etc.
+• A principled approach for system design, data collection, resources management, and evalu-
+ation for new AI projects with limited/no data
+• New machine learning methods that can better utilize knowledge from other domains or unan-
+notated data.
+• Shared tasks that standardize the evaluation of dialog agents under low resources setting, and
+regular benchmark comparison across various methods.
+7. Multimodal, grounded and situated interaction
+7.1 Introduction
+Human communication is, by nature, multimodal, where interlocutors make use of a combination of
+communicative systems (modalities), each serving as physical carriers of messages (Bunt, 1995). In
+situated human dialogues, several human senses contribute to the overall experience (sight, hearing,
+touch, and smell). In human-human interaction, the various available modalities may be commu-
+nicated sequentially or in parallel, carrying information that may be redundant or complementary,
+and the content may be transmitted deliberately or unconsciously (Turk, 2014). The voice carries
+both verbal and non-verbal information, where the latter may be transmitted by a combination of
+voice quality and utterance melody that convey the speakers personality traits, affective state, and
+willingness to talk. The face also carries signiﬁcant information in situated interaction: an active
+listener may use facial gestures, as well as vocal cues, while the speaker is talking, to indicate their
+engagement along with nods of their head, for example, so as to provide listening feedback with fa-
+cial expressions that convey emotional state (such as level of certainty or understanding). Eye gaze
+is yet another source of communication during dialogue that is fundamental in social and situated
+interaction; listeners may rely on it to assess the speakers focus of attention or to regulate speaker
+shifts. In situated interactions, joint visual attention is the process by which speakers coordinate
+what they are attending to, ensuring that they focus on the same object of interest. Mutual gaze, in
+particular, occurs when interlocutors look at each other during face-to-face interactions. This type
+of eye gaze has been shown to differentiate roles in dialogue: it has been reported that people look
+at the other party in an interaction nearly twice as much (75%) when listening, as when they are
+speaking (41%) (Vertegaal et al., 2001).
+Computers have been historically uni-modal, with the earliest computer input and output dis-
+plays provided by teletype machines that were limited to the visual modality of text. With the
+advent of GUI-based computer interfaces, the range of modalities available to users was extended
+to accept their input by mouse and to generate output for them by graphical interfaces and audio
+channels. The commercial success of smartphones in the last decade has led to rapid development of
+multimodal-multisensory interfaces that now combine both active input (speech, touch, typing) that
+users are aware of, with the less obvious, or possibly covert, input signals that built-in sensors detect
+24
+
+--- Page 25 ---
+and that users may not be aware of, such as gaze, location, acceleration, proximity, and tilt (Oviatt
+and Cohen, 2015). Today, smartphones also include biometric sensors that can identify the user
+(facial recognition or ﬁngerprint readers) and new sensors that can track human movements (RGBD
+cameras for face tracking, radar for gesture recognition). In the future, user-oriented intelligent
+agents will, similarly, be constructed to be coupled to an individual (via smartphones or wearables,
+placed directly on an owners body) or to other locations (via smart speakers or social robots). For
+such intelligent agents to engage more extensively in situated interactions with dialogue partners,
+they will need to be equipped with a wide range of sensors that feed built-in analytic components
+that may seek to predict or infer the emotional states and physical actions of humans with which
+they are communicating.
+Truly user-centered agents will have to be built with communicative abilities that enable them
+to interact with people, and possibly also with other robots, in an intuitive and socially acceptable
+manner. Social signal processing is a growing research area that aims to endow machines with the
+ability to sense and interpret human social behaviors, such as turn regulation, emotion, personality,
+dominance and rapport (Vinciarelli et al., 2009). The multimodal behavioral cues that these systems
+will need to interpret, in conjunction with the users utterances, include: vocal behavior (e.g. prosody
+and voice quality), face and eye behavior (e.g. facial expressions and gaze patterns), gesture and
+posture (e.g. hand gestures and posture), proxemics (e.g. distance and F-formation).
+If domestic social robots are to share physical space with humans, they will need to be able to
+navigate among people, understand people’s physical actions, and understand the signiﬁcance (to
+humans) of objects that occupy their shared, common environment. In collaborative interactions,
+human participants engage in constructing and maintaining a shared conception of a problem at
+hand (Dillenbourg et al., 1996). They do this by constantly establishing, maintaining, and repairing
+common ground (Clark and Schaefer, 1989). In this process of grounding, the listener relates to
+what has been said and conveys that they are following with questions, clariﬁcations, and feedback.
+Sub-tasks within this (common) grounding process involve joint attention, engagement and turn-
+taking. Together, their verbal and non-verbal feedback communicate their willingness and ability
+to (a) continue the interaction, (b) perceive the message, (c) understand the message, and (d) accept
+the message, including signaling attitudinal reactions.
+In situated interaction and robotics in particular, there is a distinct, relevant concept referred
+to as symbol grounding (Coradeschi et al., 2013). A special case of this is perceptual anchoring,
+which is the process of connecting higher level symbolic information, such as words, to physical
+objects or their sensor data (Harnad, 1990). Collaborative robots will need to be able to engage
+concurrently in both types of grounding, that is, maintaining conversational common ground with
+interlocutors and performing perceptual anchoring in their environment. Robots that simulate joint
+attention mechanisms have been widely shown to help disambiguate spatial references by making
+object referral appear more natural, pleasant and efﬁcient (Mehlmann et al., 2014). Robots involved
+in tasks where they engage with objects or their environment, will need to, at appropriate times,
+switch their gaze to their conversational partners. This coordination is essential for an appropriate
+perception of mutual gaze, but it is also an essential step for guiding the conversational partner’s
+attention and establishing the common focus of joint attention. The simple establishment of mean-
+ingful and timely mutual gaze can lead to extended interactions and an increase in human attention
+when interacting with robots (Ito et al., 2004).
+25
+
+--- Page 26 ---
+7.2 Research Themes
+7.2.1 Levels of representation / abstraction / granularity / alignment / incrementality
+An important research endeavor is to develop foundational methods to analyze, model, and repre-
+sent multimodal information, whether it is the input to, or the output of, user-oriented agents. These
+methods are characterized as foundational since they underlie the technical framework for informa-
+tion encoding and decoding that is essential to many applications and research topics. The unique
+and challenging aspect of multimodal research is the heterogeneity of multimodal sources of data
+and the challenges in integrating and interpreting such heterogeneous data coming from multiple
+modalities. Each modality has its own characteristics that have to be considered (Maragos et al.,
+2008). For example, images are 2-dimensional (or sometimes even 3-dimensional), while speech
+signals are 1-dimensional. The way we describe the visual appearance of a bird or another animal
+will be quite different from the way we describe the sounds they produce. Creating computer sys-
+tems that are able to make sense of such multimodal data entails many fundamental problems that
+we group into ﬁve main classes, following the taxonomy of (Baltru ˇsaitis et al., 2018): representa-
+tion, alignment, fusion, translation, and co-learning in Figure 7.2.1.
+Representation: Learning how a computer can internally represent the heterogeneous data in
+multiple modalities. These computational representations should be designed for both efﬁcient
+modeling and better visualization. For example, a joint representation that captures how a person
+both looks and sounds when they are happy will allow computer systems to better recognize human
+emotions than systems that treat such visual and acoustic modalities of data independently. These
+joint representations will be most efﬁcient when they can take advantage of the naturally-occurring
+dependencies between modalities. Another design objective is to improve the interpretability of
+multimodal data. By identifying commonalities and differences across multimodal data, we seek
+multimodal representations that best bridge the gap between continuous versus discrete data, and
+between statistical versus symbolic data.
+Alignment: Establishing spatial and temporal connections between events across modalities.
+For example, when reading the caption of an image, alignment is the process where words are
+grounded to speciﬁc objects or groups of objects in the image. Other examples of alignment in-
+clude automatic video capturing, and identifying the acoustic source in a video. One challenge
+in alignment is dealing with data streams that have been recorded at different sampling rates (e.g.,
+continuous signals versus discrete events). Alignments may thus require deﬁning a similarity metric
+between modalities to identify the connection points across the streams. The alignments may need
+to be anchored temporally, as when we align the audio track and the images in a video, or they may
+need to be anchored spatial, as when we try to morph between two face images.
+Fusion: Combining information from two or more distinct sources to uncover or predict a pat-
+tern or trait of interest. Examples of multimodal fusion include multimodal emotion recognition,
+audio-visual speech recognition, and audio-visual speaker veriﬁcation. The sources of information
+found across modalities may be redundant which helps increase robustness, or they may be comple-
+mentary which often helps increase accuracy. The challenges are multiple since, a priori, it may not
+be known in advance which sources will need to be synchronized, or even whether they have the
+same sampling rate. For any source, some modalities may be incomplete with missing data, while
+some modalities may provide continuous streams of data, but other modalities may be intrinsically
+discrete in providing data for interpretation about given events.
+26
+
+--- Page 27 ---
+Translation: Transformation, mapping from one modality into another. Examples include
+speech-driven animation and text-based image retrieval. The foundational methods learn the re-
+lationship between streams of data, capturing their dependencies. The goal of translation can be
+generative in nature, creating a new instance previously not observed in one modality, based on
+given information from another modality. The goal can also be for building descriptive models,
+where having learned inter-modality dependencies, one modality can be used to increase the char-
+acterization of another modality (e.g., describing the information conveyed in an image).
+Co-learning: Transferring knowledge from one modality to help with the predicting or model-
+ing task in another modality. Co-learning examples are more technically complex in nature, building
+on established within-modality processing expertise. Co-learning aims to leverage the rich informa-
+tion available in one modality, for the learning of another modality, which may have only limited
+resources (e.g., small number of examples with limited annotations or noisy input). Examples of co-
+learning algorithms include co-training, zero-shot learning and concept learning. Recent examples
+include: the use of information extraction in text processing to guide entity detection in computer
+vision algorithms, such as for visual object recognition, when an implicit instrument argument can
+be inferred for an event mentioned in a caption accompanying an image (Subburathinam et al.,
+2019) and multitask learning that exploits a text-guided semantic space to select the most relevant
+visual objects for novel visual activity recognition (Eum et al., 2019).
+Figure 1: Taxonomy for multimodal learning.
+The challenges that arise in multimodal processing may involve various combinations of these
+ﬁve categories. Importantly, cross-cutting research in these areas will open opportunities to better
+understand and interpret multimodal data across domains, providing resources and tools for wider
+sharing across the interdisciplinary community of researchers. These tools may be generic, for
+working across a range of problems, or they may be speciﬁc to given problems or modalities.
+7.2.2 Agent Input: Information Fusion
+Multimodal fusion is a core requirement in advanced user-oriented agents that are able to under-
+stand explicit and implicit information conveyed by users. Users display important information
+through various communication channels including their speech, facial expressions, hand gestures,
+and body posture. The information is not uniformly conveyed across time and modality. Studies
+have revealed a complex temporal interplay between communicative messages including lexical,
+27
+
+--- Page 28 ---
+semantic, emotional, and idiosyncratic traits (Busso and Narayanan, 2007a). This interplay has also
+been observed across communicative channels, where less constrained modalities are used to convey
+communicative messages (Busso and Narayanan, 2007b). This temporal and spatial interplay be-
+tween communicative messages and channels has direct implications on how a user-oriented agent
+should interact with users, sensing, fusing and interpreting information obtained across multiple
+modalities.
+From a machine learning perspective, multimodal fusion can be viewed as the process where
+features from different modalities are mapped into a common representation that is trained to max-
+imize the performance of a classiﬁcation or regression task (Baltru ˇsaitis et al., 2018). Recent ad-
+vances in deep learning has resulted in powerful embeddings that encode numeric (e.g., speech,
+images) and symbolic (e.g., text) modalities. These embeddings can be systematically combined,
+leveraging the redundant and complementary information provided across modalities. We can ob-
+tain more robust models in this way, especially when the reliability of some modalities is affected,
+when some information is missing, or when a disagreement exists across a subset of the modalities.
+For example, the users face may be a more communicative channel to convey positive or negative
+emotional traits than their speech. On occasion however, occlusions or non-frontal views of the user
+may lead to unreliable or missing data. During those segments, using speech or lexical informa-
+tion alone may yield more robust predictions. This example shows that, when the data is available,
+leveraging redundant information conveyed across modalities can increase the performance of a
+system.
+The challenge for a user-oriented agent is to interpret sensing information from the user coming
+from multiple modalities, taking into consideration the underlying complexity in the way humans
+interact and communicate with each other. The architecture of the models should be robust to
+partial information. For example, when a user is listening to the agent and extracting lexical infor-
+mation from the agents spoken message, the user will be most likely to limit their vocal responses to
+backchannel information. During those segments, their facial expressions may be more informative
+about their cognitive and emotional states than their vocal signals. By contrast, when the user is
+speaking, the information in their facial expressions will be less discriminative for tasks such as
+the recognition of emotion, mood or personality traits due to the speech articulatory movements
+that affect the facial appearance. Likewise, as multimodal databases with rich labels for relevant
+tasks are often limited, we should be able to train models with unimodal datasets that have partial
+information. Ideally, we should also build unsupervised formulations to leverage found rich mul-
+timodal data without labels. The architecture of the intelligent agent should also be able to assess
+the expertise of each modality, by learning from the data the appropriate weights to combine multi-
+modal information. Advances in multimodal processing that address these challenges will facilitate
+improved user-oriented agents that are more aware of the user and can respond accordingly.
+7.3 Agent Output: Coordination of Multimodal Agent Behaviors
+Multimodal agents not only need to perceive multiple modalities, they should also be able to ac-
+tively transmit information across various modalities so as to express their own intentions and in-
+ternal states to their human users. Such multimodal output generation presents both challenges and
+opportunities that fall into two broad areas: human-like multimodal rendering and context-aware
+modality combination.
+28
+
+--- Page 29 ---
+The ﬁrst area generally focuses on animating embodied conversational agents, whether virtual
+or robotic. Originating with early research on talking heads (Cosatto and Graf, 2000; Massaro,
+2003), this research also includes gestures and full-body animation of virtual agents (Cassell et al.,
+2001). A large amount of this work focuses on realism and synchronization of several modalities.
+For example, Ng-Thow-Hing et al. (2010) present a model for generating and synchronizing hand
+gestures from arbitrary text to accompany a spoken rendering of the same text. More recently,
+Takeuchi et al. (2017) have investigated the use of deep learning techniques to predict hand gestures
+directly from the speech signal (MFCC), albeit with limited success. Finally, recent work (and
+media hype) focused on deep fakes showcases the application of modern deep learning technologies
+to multimodal rendering of humans (Suwajanakorn et al., 2017; Chan et al., 2019). While such
+technology can now achieve near perfect photo-realism and multimodal synchronization, much less
+is known about the relationships between various modalities and concurrent conversational features,
+such as the speakers intent or inner state. Earlier work from Cassell et al. (2001) and Traum (2008)
+has explored models of embodied conversations and their implications on multimodal rendering of
+virtual humans. More research on these topics would be greatly beneﬁcial to our understanding of
+both human-human and human-machine communication.
+The second area of multimodal output generation concerns the use of different modalities and
+affordances to accommodate different environments, situations, or user tasks and needs. For exam-
+ple, Costa and Duarte (2011) describe a multimodal ﬁssion module that adapts the presentation of
+content through video, audio and haptic outputs for impaired users. Teixeira et al. (2011) introduce
+a general architecture for adaptive multimodal ﬁssion and its application to a tele-rehabilitation ser-
+vice for the elderly. Both works highlight the potential of adaptive multimodal output generation to
+better accommodate a wider range of user populations, by incorporating design ﬂexibility for more
+inclusive technology.
+In addition, research is needed to better understand the effect of combining the generation of
+natural language and visual information on communication. One possible direction is to combine
+deep learning approaches to Natural Language Generation with image or multimodal representa-
+tions (e.g. those used by image captioning work such as (Xu et al., 2015) to build general models
+that can generate multimodal output, based on the agents internal semantic representations.
+7.3.1 Incrementality
+When humans engage in face-to-face spoken interaction, listeners usually provide brief audio-visual
+feedback cues while their conversational partner is talking. Such listener feedback may occur con-
+currently in multiple forms, such as head nods, eyebrow movements, or facial expressions (visually)
+or conventionalized, vocal tokens of agreements (verbally). By continuously providing feedback on
+what is being said, the active listener participates in the collaborative communicative process, help-
+ing establish and maintain common ground. Todays state-of-the-art dialogue systems are neither
+receptive, nor able to change their output, while in the process of speaking, should the listener
+convey confusion, irritation, or other emotions as signals that should be addressed. If we want to
+be able to build spoken dialogue systems that can achieve the responsiveness and ﬂexibility found
+in human-human interaction, then it is essential that they process information incrementally rather
+than in utterance-sized chunks (Dohsaka and Shimazu, 1997; Gervits and Scheutz, 2018). A con-
+versational dialogue agent has to be able to decide: when to take a turn (controlling the ﬂoor as
+the next speaker), when to provide verbal feedback (without taking the ﬂoor), and when to remain
+29
+
+--- Page 30 ---
+silent. To do so, the agent must predict the end of the human speakers utterances, tracking the tim-
+ing and pacing of turns in the conversation. The agent must also decide if its feedback should be
+verbal or non-verbal (head nod, eyebrow raise or smile). If it decides to produce verbal feedback,
+then it has to be able to decide if it should use a feedback token (such as okay, mhm) or if it should
+reprise fragments of what it has heard from the user to show positive evidence that it is, in effect,
+paying attention , echoing conversational content by way of a word or phrase that has been picked
+up. Finally, it has to select the prosodic realization of the feedback token to convey the appropriate
+affective state (Neiberg et al., 2013).
+Multimodal systems for agents need to be developed according to principles such as Inclusive
+Design or Design for All to be accommodating in situations where users present with varying levels
+of physical or cognitive abilities. According to (Obrenovic et al., 2007), there are two sources
+of constraints in human-computer interaction: user- related constraints (such as user features, user
+preferences, and user state) and external constraints (such as device, environment, or social context).
+Furthermore these constraints may interact and change during an interaction. For example, the level
+of environmental noise may increase and trigger (reﬂexively) changes in the speakers output from
+normal to lombard speech, or cause the speaker to add in or switch to gestures as visual output.
+Another change in external constraints may occur in the social context, such as when the number
+of people could increase from one to several, requiring the system to switch from spoken to written
+interaction in order to preserve privacy.
+7.4 Recommendations
+The range of modalities used in todays dialog systems should be broadened, for example by includ-
+ing prosody, haptics, or motion capture as input modalities, or virtual or physical avatars or varying
+visual stimuli as output modalities. These additional modalities enrich our understanding of the
+users, improve user modeling by having a more holistic view of their behaviors, and augment their
+capability by creating new ways for users to interact with the machine.
+By creating a broader range of modalities, there is a need to produce data sets covering these
+modalities and sharing them with the community to foster interdisciplinary and cross-institutional
+collaboration which is paramount as the complexity of the involved technologies grows. Through
+the organization of open shared tasks as well as challenges and competitions held at conferences
+and workshops, multimodal dialog research will be further promoted, advanced, and accelerated.
+Situated dialog should play a central role in future dialog systems research, especially consid-
+ering the contributions of multimodality. For example, an exchange of physical objects between
+humans and an avatar as a coupled transaction requires not only spoken interaction, but also com-
+puter vision, recognition of objects and activities, ﬁne-motor control, and situated reasoning.
+The advances of incremental speech processing, for example incremental speech recognition,
+spoken language understanding, or speech synthesis, should be generalized to incremental multi-
+modality. This is especially effective since several additional modalities, such as visual input, are
+continuous in nature, compared to spoken dialog which is often regarded as discrete, i.e. speaker-
+turn-based.
+30
+
+--- Page 31 ---
+8. Robust and Flexible Dialog Management
+8.1 Current state of the art
+In general, current intelligent agents target speciﬁc tasks and relevant user groups. They are quite
+brittle and inﬂexible, refusing to understand the user who is not aware of the commands the agent
+expects or of the type of language that the agent supports.
+Both industry and the research community have an interest in moving intelligent agents to multi-
+domain, multi-task, multi-topic conversational agents. But, perhaps surprisingly, even relatively
+simple tasks that require linking capabilities from two existing agents are hard to support. For
+example, consider a task as simple as set a timer for cooking an egg.
+• User: Alexa, set a timer.
+• Alexa: For how long?
+• User: How long does it take to hard-boil an egg? ← To get this information, Alexa has to talk
+to Google search, ﬁnd the amount of time, return the string from that search, reformulate it to
+a time, and ﬁll the slot in the timer task)
+The challenge here is to interleave any structured task for which an explicit task structure exists
+with the results from search. There are many similar tasks, where constraints or information from
+multiple existing systems need to be integrated, such as wanting to check what the weather is going
+to be while booking a restaurant and deciding whether it will be possible to sit outside for dinner.
+Thus the steps in the process are:
+• combine an agent based on discrete information, with one based on search, which could
+retrieve any kind of answer.
+• try to get two components to talk together
+• integrate different data sources for the same task
+Users often have slightly different goals or preferences than the ones that the agent is designed
+to support because they may not know what the underlying assumption is. This results in many
+limitations for the agent. For example, most natural language understanding components in dialog
+architectures assume that each utterance contains a single intent, so they may ignore additional
+information if the user mentions multiple intents in a single utterance. To summarize:
+• current systems are very rigid
+• it is hard to truly achieve mixed initiative
+• at present the impression of mixed initiative is given by doing slot ﬁlling in different orders
+8.2 Desired ﬂexibility
+Ideal systems should have more of the ﬂexibility that people bring to a task-oriented dialogue. When
+people (e.g. a domain expert and a novice with a problem to solve) work together to ﬁnd a solution,
+there is a natural sharing of initiative. Each presents contributions (e.g. candidate solutions or
+nuances or context of the problem) and the other provides feedback signals of attention, perception,
+31
+
+--- Page 32 ---
+understanding, and attitudinal reaction (Allwood, 1992). Either participant can send signals of
+desire to speak, and can take initiative when they have something relevant to add. Many kinds of
+context are used including
+• What has been said recently
+• The (mutually) perceivable or imaginable environment
+• Mutual knowledge about the situation, including beliefs, desires, and plans
+• Common-sense knowledge about likely eventualities and motivations.
+These aspects of context allow for many convenient facets of dialogue that are largely missing from
+human-computer dialogue:
+• Allowing abbreviated or elliptical expressions to talk about salient entities and actions
+• Allowing plan recognition to address the goals rather than speciﬁc mentioned actions, and
+provide helpful responses that even ignore a direct request, where it can be inferred that the
+requested action or information is not relevant to the goals.
+Additionally, people often provide incremental and different sized contributions, where the full
+contribution is often shaped by feedback from the addressee while the contribution is being ex-
+pressed. E.g. signals of lack of understanding may lead to elaboration, while acting on the contribu-
+tion early may signal that a description is already good enough. Signals of interest may encourage
+elaboration of a topic, while signals of lack of strong interest may lead to either a change in topic or
+motivation for why the topic is relevant to the addressee.
+Current work is just beginning to explore dialogs that cross domains. There is great potential
+to leverage assets from multiple kinds of agent activities or skills, knowledge resources, and social
+dialog to create a fuller experience, however more work is needed to realize this potential. For
+complex tasks, subdialogs should engage in simpler domains, but context and high-level goals must
+be maintained across these sub-dialogs for a coherent whole. Novel tasks should be achievable as
+a combination of simpler tasks. Social dialog should be supported in that it contributes to building
+a relationship and common ground between system and user. This can appear both between and
+within tasks, often combining with other tasks within the same utterance.
+8.3 Recommendations
+• Research should be highly interdisciplinary, including linguistics, pragmatics and reasoning
+• Inference should be based on the user’s goals and beliefs
+• Structured representations that support inference should be combined with neural models
+dealing with unstructured text
+• Research should be inspired by human dialog techniques in order to efﬁciently address others
+goals. Context should be preferred to making explicit representations
+• Explicit representations of context should be designed in a way that enables them to be shared
+with other domains, tasks and applications
+• Agents should support different user style of interaction preferences
+32
+
+--- Page 33 ---
+9. Intelligent Agents as Good Actors
+9.1 Introduction
+Just as for artiﬁcial intelligence (AI) more generally, a host of ethical issues arise in research on
+intelligent agents. Research in this area will beneﬁt from general advances in AI, but there are
+also special considerations for intelligent agents and potential new research directions that are high-
+lighted in this section.
+9.2 Ethics issues in intelligent agent research
+Since much of the current research on intelligent agents involves data-driven machine learning,
+the resulting systems are susceptible to: issues of bias in the collection of data (which leads to
+unintended bias in decisions); privacy issues associated with user data; and interpretability of system
+decisions. The issue of privacy is a concern for deep neural networks because of their ability to
+effectively memorize the data (Carlini et al., 2019). It is particularly challenging for spoken dialog
+systems because a users voice is their identity. Since users can now be identiﬁed from their voices,
+it is possible for their voices to be used for identity theft. This poses challenges for using cloud-
+based ASR services, as well as the storing and sharing of data. Cloud-based ASR gives better
+performance than on-device modules but requires transmitting the speech. Agent designers using
+cloud-based services should be aware of any potential commercial use of this data and inform users.
+A user-centric intelligent agent may also store information about its users to improve personalization
+(meta-data, usage patterns, and so on), which raises additional issues of data security. Privacy is of
+great concern for sharing both speech and text data associated with dialog, since there are currently
+no strong methods for de-identiﬁcation.
+Particular to intelligent agents is their interaction with human users, and so it is important for
+researchers to carefully consider how the system can inﬂuence individual behavior and mental state.
+In many applications, it is important for users to develop a level of trust in the system, and research
+on interaction strategies to that end is important. However, since the system may make errors, it
+is important that it be able to communicate uncertainty in an effective way. Passing the Turing
+Test may not be an appropriate objective the user should know when they are talking to a bot.
+Technology designed to deceive humans is much more susceptible to use in phishing scenarios
+or other types of user manipulation. Another issue that arises during interaction with users is the
+possibility of unintentionally providing incorrect information or poor advice; potential problems
+need to be considered and the cost of such mistakes accounted for in system design.
+Government support of intelligent agent research should focus on societal needs and challenges.
+Like any technology, intelligent agents can be used for good or bad purposes. System designers
+should consider the potential for a system to be used for destructive purposes, such as hate speech,
+bullying or stalking. When talking to a bot, some users are uninhibited and interactions can be
+highly toxic or offensive, which systems must learn to handle appropriately. Lastly, dialog research
+needs to develop mechanisms for robustness to adversarial attack, which may be in the form of
+biasing the data used for learning or injecting false information into a knowledge base or backend
+database.
+Some ethical issues are dependent on the user population and/or application scenario, but all
+dialog system research will involve some subset of these issues. As such, it is important for ed-
+ucational activities associated with research to include training in ethical thinking. Furthermore,
+33
+
+--- Page 34 ---
+projects with outreach activities should incorporate discussion of ethical issues into their programs
+to raise public awareness.
+9.3 Balancing Tensions Between User Concerns and Research Advances
+It is important to recognize that fully addressing these concerns limits opportunities for research.
+For example, the scientiﬁc objective of research reproducibility can be inhibited by failure to share
+data; however, it is very difﬁcult to share data and also to preserve privacy, as noted above. Using
+paid crowd-workers rather than users with real needs may avoid privacy concerns, but questions are
+then often raised about the validity of the data, given that workers may accept undesirable results
+to complete their tasks more quickly. Using simulated users avoids exposing real users to system
+errors in reinforcement learning, but it limits the potential to understand user variability. When
+privacy concerns exclude the possibility of looking at data or listening to speech signals, it can be
+much harder to diagnose and improve systems, resulting in preserving or even reinforcing biases in
+system performance. If only text transcripts of speech are available and audio access is restricted,
+then systems cannot explore the use of prosodic cues to engagement, sentiment, intent, and so on.
+There is also a conﬂict between user modeling and the potential for bias and restriction of access
+to information; personalization can be a double-edged sword. Discarding data for privacy reasons
+eliminates the potential for longitudinal studies. The problem of toxic language on the web (and in
+user interactions) creates a need for detecting toxicity to avoid introducing it into system behavior,
+but this creates the problem of exposing unpleasant material to researchers who are annotating or
+analyzing data.
+These tensions underscore the importance of ethical training for dialog researchers and the need
+to inform users about both risks and beneﬁts. They also create a need for creative thinking and
+innovation in data collection and system evaluation to support some level of reproducibility in dialog
+research.
+9.4 Recommendations
+Fundamental research is needed to preserve the integrity of future dialog agents and the security of
+human users. It is important to recognize that future research should study not only designing better
+systems, but also creating methods to protect the data. Therefore, we divide the research directions
+into two folds: ethic-related research for well-behaved agents, and privacy preserving methods on
+data.
+For the data side, an important research venue is developing privacy-preserving algorithms that
+can remove sensitive information from raw data, including speech, visual, language process and
+machine learning. This is a recently emerging research direction due to its signiﬁcant social im-
+plications since machine learning systems are sometimes adopted into commercial systems. A
+challenge for this research direction include the tension between the degree of anonymization vs the
+degree of information loss.
+On the other hand, for the system/agent side, the ﬁrst important research direction is to develop
+robust detection methods to automatically recognize inappropriate behavior, including offensive lan-
+guage, misleading information, discrimination against certain populations etc. This requires a joint
+effort in the creation of related datasets and shared tasks and the development of machine learning
+methods that can solve this challenge. A second direction on the system side is to develop dialog
+agents that are resilient to adversarial users. Take the Microsoft Tay as an example. Its self-learning
+34
+
+--- Page 35 ---
+mechanism from user feedback from real users turned out to be a disaster, i.e. there is a signiﬁ-
+cant amount of adversarial input from human users that made Microsoft’s Tay post inﬂammatory
+and offensive tweets through its Twitter account, causing Microsoft to shut down the dialog service
+only 16 hours after its launch. That said, continuous learning from real interaction data is crucial
+for agent behavior, e.g. personalization, reinforcement learning etc, the best solution is to take the
+potential adversarial into account when designing future algorithms.
+Along with the progress in detecting inappropriate behavior and intelligent agent evaluation
+that this report recommends for the next 5-10 years, there will be a need for standardization, i.e. the
+development of a ”drivers license” to comprehensively evaluate the quality of an intelligent agent
+before it can be deployed in production.
+9.5 Research-adjacent recommendations
+• Research plans within scientiﬁc proposals should raise and address at least one ethical issue.
+• Education of students on ethical issues should be an important topic.
+• Develop outreach efforts for increasing public awareness in collaboration with target user
+demographics.
+• For every NSF/government proposal or grant that includes the release of data, the data should
+have a data sheet (Gebru et al., 2018) or similar.
+10. Conclusions
+Intelligent agents of the future will adapt to the wishes of the user. They will be able to converse
+with the user in a large variety of situations, through a wide variety of modalities and in a secure
+environment.
+The USER Workshop participants recommend that the intelligent agent community attend to
+the user in all of its research; that its agents adapt to the individual users style, verbosity, goals and
+beliefs.
+Research teams should be multidisciplinary, including specialists from domains concerning the
+agent itself as well as its potential application.
+Intelligent agents must deal with ever-increasingly complex situations including more modali-
+ties of interaction, multiparty dialogs, action on physical objects, longer dialogs and more frequent
+use by the same users.
+The research infrastructure should include open source robust and reusable tools, well-documented
+pre-training models and novel machine learning methods that can deal with non-annotated data. All
+data collected should be shared freely with the whole community.
+The research community must create shared tasks that deﬁne scientiﬁc goals and measure re-
+sulting progress. The assessment of intelligent agents should take place within an interactive envi-
+ronment. Common research platforms that satisfy these needs should be encouraged.
+The intelligent agent and its creators must be good actors, protecting user privacy through the
+development of dedicated algorithms and through the automatic detection of inappropriate behavior.
+For this, research plans within scientiﬁc proposals should raise and address at least one ethical
+issue. Researchers should be encouraged to educate students on ethical issues and to develop public
+awareness outreach efforts.
+35
+
+--- Page 36 ---
+References
+Rob Abbott, Brian Ecker, Pranav Anand, and Marilyn Walker. 2016. Internet argument corpus 2.0:
+An SQL schema for dialogic social media and the corpora to go with it. In Proceedings of
+the Tenth International Conference on Language Resources and Evaluation (LREC’16) , pages
+4445–4452.
+Mohammed Abdelwahab and Carlos Busso. 2018. Domain adversarial for acoustic emotion recog-
+nition. IEEE/ACM Transactions on Audio, Speech, and Language Processing , 26(12):2423–
+2435.
+Deepak Agarwal, Bee-Chung Chen, and Bo Pang. 2011. Personalized recommendation of user
+comments via factor models. In Proceedings of the Conference on Empirical Methods in Natu-
+ral Language Processing, pages 571–582. Association for Computational Linguistics.
+Ali Ahmadvand, Ingyu Jason Choi, Harshita Sahijwani, Justus Schmidt, Mingyang Sun, Sergey
+V olokhin, Zihao Wang, and Eugene Agichtein. 2018. Emory irisbot: An open-domain conver-
+sational bot for personalized information access. Alexa Prize Proceedings.
+Hua Ai, Antoine Raux, Dan Bohus, Maxine Eskenazi, and Diane Litman. 2007. Comparing spoken
+dialog corpora collected with recruited subjects versus real users. In Proceedings of the 8th
+SIGdial Workshop on Discourse and Dialogue, pages 124–131.
+Jens Allwood. 1992. Feedback in second language acquisition. rapport nr.: Gothenburg Papers in
+Theoretical Linguistics 68.
+Zara Ambadar, Jonathan W Schooler, and Jeffrey F Cohn. 2005. Deciphering the enigmatic face:
+The importance of facial dynamics in interpreting subtle facial expressions. Psychological sci-
+ence, 16(5):403–410.
+Ron Artstein, Carla Gordon, Usman Sohail, Chirag Merchant, Andrew Jones, Julia Campbell,
+Matthew Trimmer, Jeffrey Bevington, COL Christopher Engen, and David Traum. 2019. Digital
+Survivor of Sexual Assault. In Proceedings of the 24th International Conference on Intelligent
+User Interfaces, pages 417–425, Marina del Rey, California. ACM.
+Bruce Balentine. 2007. It’s Better to Be a Good Machine Than a Bad Person: Speech Recognition
+and Other Exotic User Interfaces in the Twilight of the Jetsonian Age. ICMI Press.
+Tadas Baltruˇsaitis, Chaitanya Ahuja, and Louis-Philippe Morency. 2018. Multimodal machine
+learning: A survey and taxonomy. IEEE Transactions on Pattern Analysis and Machine In-
+telligence, 41(2):423–443.
+Ankur Bapna, Gokhan Tur, Dilek Hakkani-Tur, and Larry Heck. 2017. Towards zero-shot frame
+semantic parsing for domain scaling. arXiv preprint arXiv:1707.02363.
+Dorit Bar-On. 2017. Communicative intentions, expressive communication, and origins of mean-
+ing. In The Routledge Handbook of Philosophy of Animal Minds, pages 301–312. Routledge.
+Christina Bennett and Alexander I. Rudnicky. 2002. The Carnegie Mellon COMMUNICATOR
+corpus. In Seventh International Conference on Spoken Language Processing.
+36
+
+--- Page 37 ---
+Alan Black, Maxine Eskenazi, and Reid Simmons. 2002. Elderly perception of speech from a
+computer. The Journal of the Acoustical Society of America, 111(5):2433–2433.
+Tom Bocklisch, Joey Faulkner, Nick Pawlowski, and Alan Nichol. 2017. Rasa: Open source lan-
+guage understanding and dialogue management. arXiv preprint arXiv:1712.05181.
+Dan Bohus and Alexander I Rudnicky. 2009. The ravenclaw dialog management framework: Ar-
+chitecture and systems. Computer Speech & Language, 23(3):332–361.
+Kevin K Bowden, Jiaqi Wu, Wen Cui, Juraj Juraska, Vrindavan Harrison, Brian Schwarzmann, Nick
+Santer, and Marilyn Walker. 2019. Slugbot: Developing a computational model andframework
+of a novel dialogue genre. arXiv preprint arXiv:1907.10658.
+Pierre-Emmanuel Mazare Jason Weston Braden Hancock, Antoine Bordes. 2019. Learning from
+dialogue after deployment: Feed yourself, chatbot! arxiv.org/abs/1901.05415.
+Greg Brockman, Vicki Cheung, Ludwig Pettersson, Jonas Schneider, John Schulman, Jie Tang, and
+Wojciech Zaremba. 2016. Openai gym. arXiv preprint arXiv:1606.01540.
+Paweł Budzianowski, Tsung-Hsien Wen, Bo-Hsiang Tseng, I˜nigo Casanueva, Stefan Ultes, Osman
+Ramadan, and Milica Ga ˇsi´c. 2018. Multiwoz-a large-scale multi-domain wizard-of-oz dataset
+for task-oriented dialogue modelling. arXiv preprint arXiv:1810.00278.
+Carlos Busso and Shrikanth S Narayanan. 2007a. Interrelation between speech and facial gestures
+in emotional utterances: a single subject study. IEEE Transactions on Audio, Speech, and
+Language Processing, 15(8):2331–2347.
+Carlos Busso and Shrikanth S Narayanan. 2007b. Joint analysis of the emotional ﬁngerprint in the
+face and speech: A single subject study. In 2007 IEEE 9th Workshop on Multimedia Signal
+Processing, pages 43–47. IEEE.
+L Cailleteau. 2019. Homecare: Supporting independent living with dementia. In Proceedings of the
+DiGo, Dialog for good at the Special Interest Group on Discourse and Dialogue (SIGDIAL).
+Alexandra Canavan, David Graff, and George Zipperlen. 1997. Callhome american english speech.
+Linguistic Data Consortium.
+Jean Carletta, Amy Isard, Stephen Isard, Jacqueline C. Kowtko, Gwyneth Doherty-Sneddon, and
+Anne H. Anderson. 1997. The reliability of a dialogue structure coding scheme. Computational
+Linguistics, 23(1):13–31.
+Nicholas Carlini, Chang Liu, ´Ulfar Erlingsson, Jernej Kos, and Dawn Song. 2019. The secret
+sharer: Evaluating and testing unintended memorization in neural networks. In 28th {USENIX}
+Security Symposium ({USENIX} Security 19), pages 267–284.
+Justine Cassell, Tim Bickmore, Lee Campbell, Hannes Vilhjalmsson, and Hao Yan. 2001.
+More than just a pretty face: Conversational protocols and the affordances of embodiment.
+Knowledge-based systems, 14(1-2):55–64.
+37
+
+--- Page 38 ---
+Ginevra Castellano, Andr´e Pereira, Iolanda Leite, Ana Paiva, and Peter W McOwan. 2009. Detect-
+ing user engagement with a robot companion using task and social interaction-based features.
+In Proceedings of the 2009 international conference on Multimodal interfaces, pages 119–126.
+ACM.
+Caroline Chan, Shiry Ginosar, Tinghui Zhou, and Alexei A Efros. 2019. Everybody dance now. In
+Proceedings of the IEEE International Conference on Computer Vision, pages 5933–5942.
+Wenhu Chen, Jianshu Chen, Pengda Qin, Xifeng Yan, and William Yang Wang. 2019. Seman-
+tically conditioned dialog response generation via hierarchical disentangled self-attention. In
+Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages
+3696–3709, Florence, Italy. Association for Computational Linguistics.
+Yun-Nung Chen, Dilek Hakkani-T¨ur, and Xiaodong He. 2016. Zero-shot learning of intent embed-
+dings for expansion by convolutional deep structured semantic models. In Acoustics, Speech
+and Signal Processing (ICASSP), 2016 IEEE International Conference on , pages 6045–6049.
+IEEE.
+Hao Cheng, Hao Fang, and Mari Ostendorf. 2019. A dynamic speaker model for conversational
+interactions. In Proceedings of the 2019 Conference of the North American Chapter of the
+Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long
+and Short Papers), pages 2772–2785.
+Eunsol Choi, He He, Mohit Iyyer, Mark Yatskar, Wen-tau Yih, Yejin Choi, Percy Liang, and Luke
+Zettlemoyer. 2018. Quac: Question answering in context. arXiv preprint arXiv:1808.07036.
+Herbert H Clark and Edward F Schaefer. 1989. Contributing to discourse. Cognitive science ,
+13(2):259–294.
+Silvia Coradeschi, Amy Loutﬁ, and Britta Wrede. 2013. A short review of symbol grounding in
+robotic and intelligent systems. KI-K¨unstliche Intelligenz, 27(2):129–136.
+Eric Cosatto and Hans Peter Graf. 2000. Photo-realistic talking-heads from image samples. IEEE
+Transactions on multimedia, 2(3):152–163.
+David Costa and Carlos Duarte. 2011. Adapting multimodal ﬁssion to users abilities. In Inter-
+national Conference on Universal Access in Human-Computer Interaction , pages 347–356.
+Springer.
+Deborah A. Dahl, Madeleine Bates, Michael Brown, William Fisher, Kate Hunicke-Smith, David
+Pallett, Christine Pao, Alexander Rudnicky, and Elizabeth Shriberg. 1994. Expanding the scope
+of the ATIS task: The ATIS-3 corpus. In Proceedings of the Workshop on Human Language
+Technology, pages 43–48. Association for Computational Linguistics.
+Nils Dahlb ¨ack, Arne J ¨onsson, and Lars Ahrenberg. 1993. Wizard of oz studieswhy and how.
+Knowledge-based systems, 6(4):258–266.
+Abhishek Das, Satwik Kottur, Khushi Gupta, Avi Singh, Deshraj Yadav, Jos ´e MF Moura, Devi
+Parikh, and Dhruv Batra. 2017. Visual dialog. In Proceedings of the IEEE Conference on
+Computer Vision and Pattern Recognition, pages 326–335.
+38
+
+--- Page 39 ---
+Michael Denkowski and Alon Lavie. 2014. Meteor universal: Language speciﬁc translation eval-
+uation for any target language. In Proceedings of the Ninth Workshop on Statistical Machine
+Translation, pages 376–380.
+Jan Deriu, Alvaro Rodrigo, Arantxa Otegi, Guillermo Echegoyen, Sophie Rosset, Eneko Agirre,
+and Mark Cieliebak. 2019. Survey on evaluation methods for dialogue systems. arXiv preprint
+arXiv:1905.04071.
+David DeVault, Ron Artstein, Grace Benn, Teresa Dey, Edward Fast, Alesia Gainer, Kallirroi
+Georgila, Jonathan Gratch, Arno Hartholt, Margaux Lhommet, Gale Lucas, Stacy C. Marsella,
+Morbini Fabrizio, Angela Nazarian, Stefan Scherer, Giota Stratou, Apar Suri, David Traum,
+Rachel Wood, Yuyu Xu, Albert Rizzo, and Louis-Philippe Morency. 2014. SimSensei Kiosk: A
+Virtual Human Interviewer for Healthcare Decision Support. In Proceedings of the 13th Inter-
+national Conference on Autonomous Agents and Multiagent Systems (AAMAS 2014) , pages
+1061–1068, Paris, France. International Foundation for Autonomous Agents and Multiagent
+Systems.
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2018. Bert: Pre-training of
+deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805.
+Bhuwan Dhingra, Lihong Li, Xiujun Li, Jianfeng Gao, Yun-Nung Chen, Faisal Ahmed, and
+Li Deng. 2016. Towards end-to-end reinforcement learning of dialogue agents for information
+access. arXiv preprint arXiv:1609.00777.
+Pierre Dillenbourg, David Traum, and Daniel Schneider. 1996. Grounding in multi-modal task-
+oriented collaboration. In Proceedings of the European Conference on AI in Education , pages
+401–407.
+Emily Dinan, Varvara Logacheva, Valentin Malykh, Alexander Miller, Kurt Shuster, Jack Urbanek,
+Douwe Kiela, Arthur Szlam, Iulian Serban, Ryan Lowe, Shrimai Prabhumoye, Alan W. Black,
+Alexander Rudnicky, Jason Williams, Joelle Pineau, Mikhail Burtsev, and Jason Weston. 2020.
+The second conversational intelligence challenge (convai2). In The NeurIPS ’18 Competition,
+pages 187–208, Cham. Springer International Publishing.
+Kohji Dohsaka and Akira Shimazu. 1997. System architecture for spoken utterance production in
+collaborative dialogue. In Working Notes of IJCAI 1997 Workshop on Collaboration, Coopera-
+tion and Conﬂict in Dialogue Systems.
+Cicero Dos Santos and Maira Gatti. 2014. Deep convolutional neural networks for sentiment anal-
+ysis of short texts. In Proceedings of COLING 2014, the 25th International Conference on
+Computational Linguistics: Technical Papers, pages 69–78.
+Maxine Eskenazi, Shikib Mehri, Evgeniia Razumovskaia, and Tiancheng Zhao. 2019. Beyond
+turing: Intelligent agents centered on the user. arXiv preprint arXiv:1901.06613.
+Sungmin Eum, Christopher Reale, Heesung Kwon, Claire Bonial, and Clare V oss. 2019. Object and
+text-guided semantics for cnn-based activity recognition. In ICASSP 2019-2019 IEEE Interna-
+tional Conference on Acoustics, Speech and Signal Processing (ICASSP) , pages 1458–1462.
+IEEE.
+39
+
+--- Page 40 ---
+Keelan Evanini, Veronika Timpe-Laughlin, Eugene Tsuprun, Ian Blood, Jeremy Lee, James V
+Bruno, Vikram Ramanarayanan, Patrick L Lange, and David Suendermann-Oeft. 2018. Game-
+based spoken dialog language learning applications for young students. In Interspeech, pages
+548–549.
+Andrew Fandrianto and Maxine Eskenazi. 2012. Prosodic entrainment in an information-driven
+dialog system. In Thirteenth Annual Conference of the International Speech Communication
+Association.
+Hao Fang, Hao Cheng, Elizabeth Clark, Ariel Holtzman, Maarten Sap, Mari Ostendorf, Yejin Choi,
+and Noah A Smith. 2017. Sounding board–university of washingtons alexa prize submission.
+Alexa prize proceedings.
+Pascale Fung, Anik Dey, Farhad Bin Siddique, Ruixi Lin, Yang Yang, Yan Wan, and Ho Yin Ricky
+Chan. 2016. Zara the supergirl: An empathetic personality recognition system. In Proceedings
+of the 2016 Conference of the North American Chapter of the Association for Computational
+Linguistics: Demonstrations, pages 87–91.
+Michel Galley, Chris Brockett, Alessandro Sordoni, Yangfeng Ji, Michael Auli, Chris Quirk, Mar-
+garet Mitchell, Jianfeng Gao, and Bill Dolan. 2015. deltableu: A discriminative metric for
+generation tasks with intrinsically diverse targets. arXiv preprint arXiv:1506.06863.
+Milica Gasic and Steve Young. 2014. Gaussian processes for pomdp-based dialogue manager opti-
+mization. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 22(1):28–40.
+Timnit Gebru, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wal-
+lach, Hal Daume ´e III, and Kate Crawford. 2018. Datasheets for datasets. arXiv preprint
+arXiv:1803.09010.
+Felix Gervits and Matthias Scheutz. 2018. Pardon the interruption: Managing turn-taking through
+overlap resolution in embodied artiﬁcial agents. In Proceedings of the 19th Annual SIGdial
+Meeting on Discourse and Dialogue, pages 99–109.
+John J. Godfrey, Edward C. Holliman, and Jane McDaniel. 1992. Switchboard: Telephone speech
+corpus for research and development. In ICASSP-92: 1992 IEEE International Conference on
+Acoustics, Speech, and Signal Processing, volume 1, pages 517–520. IEEE.
+Karthik Gopalakrishnan, Behnam Hedayatnia, Qinlang Chen, Anna Gottardi, Sanjeev Kwatra, Anu
+Venkatesh, Raefer Gabriel, Dilek Hakkani-T¨ur, and Amazon Alexa AI. 2019. Topical-chat: To-
+wards knowledge-grounded open-domain conversations. Proc. Interspeech 2019, pages 1891–
+1895.
+Arthur C Graesser, Patrick Chipman, Brian C Haynes, and Andrew Olney. 2005. Autotutor: An
+intelligent tutoring system with mixed-initiative dialogue. IEEE Transactions on Education ,
+48(4):612–618.
+Jonathan Gratch and Stacy Marsella. 2001. Tears and fears: Modeling emotions and emotional be-
+haviors in synthetic agents. In Proceedings of the ﬁfth international conference on Autonomous
+agents, pages 278–285. ACM.
+40
+
+--- Page 41 ---
+Jonathan Gratch, Ning Wang, Jillian Gerten, Edward Fast, and Robin Duffy. 2007. Creating rapport
+with virtual agents. In International Workshop on Intelligent Virtual Agents , pages 125–138.
+Springer.
+Prakhar Gupta, Shikib Mehri, Tiancheng Zhao, Amy Pavel, Maxine Eskenazi, and Jeffrey P
+Bigham. 2019. Investigating evaluation of open-domain dialogue systems with human gen-
+erated multiple references. In Proceedings of the 20th Annual SIGdial Meeting on Discourse
+and Dialogue, pages 379–391.
+Stevan Harnad. 1990. The symbol grounding problem. Physica D: Nonlinear Phenomena , 42(1-
+3):335–346.
+Peter Heeman and James Allen. 1995. The TRAINS 93 dialogues. Technical Report TRAINS 94-2,
+University of Rochester.
+Matthew Henderson, Pawe Budzianowski, Iigo Casanueva, Sam Coope, Daniela Gerz, Girish Ku-
+mar, Nikola Mrki, Georgios Spithourakis, Pei-Hao Su, Ivan Vuli, and Tsung-Hsien Wen. 2019.
+A repository of conversational datasets.
+Matthew Henderson, Blaise Thomson, and Jason D Williams. 2014a. The second dialog state track-
+ing challenge. In Proceedings of the 15th Annual Meeting of the Special Interest Group on
+Discourse and Dialogue (SIGDIAL), pages 263–272.
+Matthew Henderson, Blaise Thomson, and Jason D Williams. 2014b. The third dialog state tracking
+challenge. In 2014 IEEE Spoken Language Technology Workshop (SLT), pages 324–329. IEEE.
+Sepp Hochreiter and J ¨urgen Schmidhuber. 1997. Long short-term memory. Neural computation,
+9(8):1735–1780.
+Eduard Hovy. 1987. Generating natural language under pragmatic constraints. Journal of Pragmat-
+ics, 11(6):689–719.
+THK Huang. 2018. A Crowd-Powered Conversational Assistant That Automates Itself Over Time.
+Ph.D. thesis, Ph. D. Dissertation, Carnegie Mellon University.
+Akira Ito, Shunsuke Hayakawa, and Tazunori Terada. 2004. Why robots need body for mind
+communication-an attempt of eye-contact between human and robot. In RO-MAN 2004. 13th
+IEEE International Workshop on Robot and Human Interactive Communication (IEEE Catalog
+No. 04TH8759), pages 473–478. IEEE.
+Patrick Kenny, Thomas D Parsons, Jonathan Gratch, Anton Leuski, and Albert A Rizzo. 2007.
+Virtual patients for clinical therapist skills training. In International Workshop on Intelligent
+Virtual Agents, pages 197–210. Springer.
+Cynthia Kersey, Barbara Di Eugenio, Pamela Jordan, and Sandra Katz. 2009. Ksc-pal: A peer
+learning agent that encourages students to take the initiative. In Proceedings of the Fourth
+Workshop on Innovative Use of NLP for Building Educational Applications, pages 55–63.
+Yelin Kim and Emily Mower Provost. 2014. Say cheese vs. smile: Reducing speech-related vari-
+ability for facial emotion recognition. InProceedings of the 22nd ACM international conference
+on Multimedia, pages 27–36. ACM.
+41
+
+--- Page 42 ---
+Ryan Kiros, Yukun Zhu, Ruslan R Salakhutdinov, Richard Zemel, Raquel Urtasun, Antonio Tor-
+ralba, and Sanja Fidler. 2015. Skip-thought vectors. In Advances in neural information pro-
+cessing systems, pages 3294–3302.
+Satwik Kottur, Jos ´e MF Moura, Devi Parikh, Dhruv Batra, and Marcus Rohrbach. 2019. Clevr-
+dialog: A diagnostic dataset for multi-round reasoning in visual dialog. arXiv preprint
+arXiv:1903.03166.
+Rohit Kumar and Carolyn P Ros´e. 2014. Triggering effective social support for online groups.ACM
+Transactions on Interactive Intelligent Systems (TiiS), 3(4):24.
+Rohit Kumar, Carolyn Penstein Ros ´e, Yi-Chia Wang, Mahesh Joshi, and Allen Robinson. 2007.
+Tutorial dialogue as adaptive collaborative learning support. Frontiers in artiﬁcial intelligence
+and applications, 158:383.
+Staffan Larsson and David R Traum. 2000. Information state and dialogue management in the trindi
+dialogue move engine toolkit. Natural language engineering, 6(3-4):323–340.
+Walter S Lasecki, Young Chol Song, Henry Kautz, and Jeffrey P Bigham. 2013. Real-time crowd
+labeling for deployable activity recognition. In Proceedings of the 2013 conference on Com-
+puter supported cooperative work, pages 1203–1212. ACM.
+Kai Fu Lee. 2019. interview on 60 minutes on january 13, 2019.
+Kyusong Lee, Tiancheng Zhao, Yulun Du, Edward Cai, Allen Lu, Eli Pincus, David Traum, Stefan
+Ultes, Lina M. Rojas-Barahona, Milica Gasic, Steve Young, and Maxine Eskenazi. 2017. Di-
+alPort, gone live: An update after a year of development. In Proceedings of the 18th Annual
+SIGdial Meeting on Discourse and Dialogue, pages 170–173, Saarbr¨ucken, Germany. Associa-
+tion for Computational Linguistics.
+Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. 2015. A diversity-promoting
+objective function for neural conversation models. arXiv preprint arXiv:1510.03055.
+Jiwei Li, Michel Galley, Chris Brockett, Georgios P Spithourakis, Jianfeng Gao, and Bill Dolan.
+2016. A persona-based neural conversation model. arXiv preprint arXiv:1603.06155.
+Jiwei Li, Will Monroe, Tianlin Shi, S ´ebastien Jean, Alan Ritter, and Dan Jurafsky. 2017a. Adver-
+sarial learning for neural dialogue generation. arXiv preprint arXiv:1701.06547.
+Yanran Li, Hui Su, Xiaoyu Shen, Wenjie Li, Ziqiang Cao, and Shuzi Niu. 2017b. Dailydialog: A
+manually labelled multi-turn dialogue dataset. arXiv preprint arXiv:1710.03957.
+Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. Text Summariza-
+tion Branches Out.
+Zhaojiang Lin, Andrea Madotto, Jamin Shin, Peng Xu, and Pascale Fung. 2019. Moel: Mixture of
+empathetic listeners. arXiv preprint arXiv:1908.07687.
+Pierre Lison and Casey Kennington. 2016. Opendial: A toolkit for developing spoken dialogue
+systems with probabilistic rules. In Proceedings of ACL-2016 System Demonstrations , pages
+67–72.
+42
+
+--- Page 43 ---
+Diane Litman and Katherine Forbes-Riley. 2014. Evaluating a spoken dialogue system that detects
+and adapts to user affective states. In Proceedings of the 15th Annual Meeting of the Special
+Interest Group on Discourse and Dialogue (SIGDIAL), pages 181–185.
+Diane Litman, Steve Young, Mark Gales, Kate Knill, Karen Ottewell, Rogier van Dalen, and David
+Vandyke. 2016. Towards using conversations with spoken dialogue systems in the automated
+assessment of non-native speakers of english. In Proceedings of the 17th Annual Meeting of the
+Special Interest Group on Discourse and Dialogue, pages 270–275.
+Chia-Wei Liu, Ryan Lowe, Iulian V Serban, Michael Noseworthy, Laurent Charlin, and Joelle
+Pineau. 2016. How not to evaluate your dialogue system: An empirical study of unsupervised
+evaluation metrics for dialogue response generation. arXiv preprint arXiv:1603.08023.
+Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike
+Lewis, Luke Zettlemoyer, and Veselin Stoyanov. 2019. Roberta: A robustly optimized bert
+pretraining approach. arXiv preprint arXiv:1907.11692.
+Jos´e Lopes, Maxine Eskenazi, and Isabel Trancoso. 2013. Automated two-way entrainment to im-
+prove spoken dialog system performance. In 2013 IEEE International Conference on Acoustics,
+Speech and Signal Processing, pages 8372–8376. IEEE.
+Ryan Lowe, Michael Noseworthy, Iulian Vlad Serban, Nicolas Angelard-Gontier, Yoshua Bengio,
+and Joelle Pineau. 2017. Towards an automatic turing test: Learning to evaluate dialogue re-
+sponses. In Proceedings of the 55th Annual Meeting of the Association for Computational
+Linguistics (Volume 1: Long Papers), volume 1, pages 1116–1126.
+Ryan Lowe, Nissan Pow, Iulian Serban, and Joelle Pineau. 2015. The ubuntu dialogue cor-
+pus: A large dataset for research in unstructured multi-turn dialogue systems. arXiv preprint
+arXiv:1506.08909.
+Nichola Lubold, Erin Walker, Heather Pon-Barry, and Amy Ogan. 2018. Automated pitch con-
+vergence improves learning in a social, teachable robot for middle school mathematics. In
+International Conference on Artiﬁcial Intelligence in Education, pages 282–296. Springer.
+Gale M Lucas, Jonathan Gratch, Aisha King, and Louis-Philippe Morency. 2014. Its only a com-
+puter: Virtual humans increase willingness to disclose. Computers in Human Behavior, 37:94–
+100.
+Petros Maragos, Alexandros Potamianos, and Patrick Gros. 2008. Multimodal processing and in-
+teraction: audio, video, text, volume 33. Springer Science & Business Media.
+Soroosh Mariooryad and Carlos Busso. 2015. Facial expression recognition in the presence of
+speech using blind lexical compensation. IEEE Transactions on Affective Computing, 7(4):346–
+359.
+Dominic W Massaro. 2003. A computer-animated tutor for spoken and written language learning.
+In Proceedings of the 5th international conference on Multimodal interfaces , pages 172–175.
+ACM.
+43
+
+--- Page 44 ---
+Gregor Mehlmann, Markus H¨aring, Kathrin Janowski, Tobias Baur, Patrick Gebhard, and Elisabeth
+Andr´e. 2014. Exploring a model of gaze for grounding in multimodal hri. In Proceedings of
+the 16th International Conference on Multimodal Interaction, pages 247–254. ACM.
+Shikib Mehri, Alan W Black, and Maxine Eskenazi. 2019a. Cmu getgoing: An understandable and
+memorable dialog system for seniors. In Proceedings of the 20th Annual SIGdial Meeting on
+Discourse and Dialogue.
+Shikib Mehri, Tejas Srinivasan, and Maxine Eskenazi. 2019b. Structured fusion networks for di-
+alog. In Proceedings of the 20th Annual SIGdial Meeting on Discourse and Dialogue , pages
+165–177.
+Alexander H Miller, Will Feng, Adam Fisch, Jiasen Lu, Dhruv Batra, Antoine Bordes, Devi
+Parikh, and Jason Weston. 2017. Parlai: A dialog research software platform. arXiv preprint
+arXiv:1705.06476.
+Shachar Mirkin, Scott Nowson, Caroline Brun, and Julien Perez. 2015. Motivating personality-
+aware machine translation. In Proceedings of the 2015 Conference on Empirical Methods in
+Natural Language Processing, pages 1102–1108.
+Johanna D Moore and C´ecile L Paris. 1992. Exploiting user feedback to compensate for the unreli-
+ability of user models. User Modeling and User-Adapted Interaction, 2(4):287–330.
+Roger K Moore. 2012. A bayesian explanation of the uncanny valleyeffect and related psychologi-
+cal phenomena. Scientiﬁc reports, 2:864.
+Roger K Moore. 2017. Is spoken language all-or-nothing? is spoken language all-or-nothing?
+implications for future speech-based human-machine interaction.Dialogues with Social Robots.
+Masahiro Mori, Karl F MacDorman, and Norri Kageki. 2012. The uncanny valley [from the ﬁeld].
+IEEE Robotics & Automation Magazine, 19(2):98–100.
+Cosmin Munteanu and Marian Boldea. 2000. Mdwoz: A wizard of oz environment for dialog
+systems development. In LREC. Citeseer.
+Deepak Muralidharan, Justine Kao, Xiao Yang, Lin Li, Lavanya Viswanathan, Mubarak Seyed
+Ibrahim, Kevin Luikens, Stephen Pulman, Ashish Garg, Atish Kothari, et al. 2018. Leveraging
+user engagement signals for entity labeling in a virtual assistant.
+Courtney Napoles, Joel Tetreault, Aasish Pappu, Enrica Rosato, and Brian Provenzale. 2017. Find-
+ing good conversations online: The yahoo news annotated comments corpus. In Proceedings of
+the 11th Linguistic Annotation Workshop (LAW XI), EACL, pages 13–23.
+Shrikanth Narayanan and Panayiotis G Georgiou. 2013. Behavioral signal processing: Deriving hu-
+man behavioral informatics from speech and language. Proceedings of the IEEE, 101(5):1203–
+1233.
+Daniel Neiberg, Giampiero Salvi, and Joakim Gustafson. 2013. Semi-supervised methods for ex-
+ploring the acoustics of simple productive feedback. Speech Communication, 55(3):451–469.
+44
+
+--- Page 45 ---
+Victor Ng-Thow-Hing, Pengcheng Luo, and Sandra Okita. 2010. Synchronized gesture and speech
+production for humanoid robots. In 2010 IEEE/RSJ International Conference on Intelligent
+Robots and Systems, pages 4617–4624. IEEE.
+Zeljko Obrenovic, Julio Abascal, and Dusan Starcevic. 2007. Universal accessibility as a multi-
+modal design issue. Communications of the ACM, 50(5):83–88.
+Masayuki Okamoto, Yeonsoo Yang, and Toru Ishida. 2001. Wizard of oz method for learning dialog
+agents. In International Workshop on Cooperative Information Agents, pages 20–25. Springer.
+Sharon Oviatt and Philip R Cohen. 2015. The paradigm shift to multimodality in contemporary
+computer interfaces. Synthesis Lectures On Human-Centered Informatics, 8(3):1–243.
+Sharon L Oviatt and Philip R Cohen. 1992. Spoken language in interpreted telephone dialogues.
+Computer Speech & Language, 6(3):277–302.
+Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. Bleu: a method for auto-
+matic evaluation of machine translation. In Proceedings of 40th Annual Meeting of the Associa-
+tion for Computational Linguistics, pages 311–318. Association for Computational Linguistics.
+Srinivas Parthasarathy and Carlos Busso. 2019. Semi-supervised speech emotion recognition with
+ladder networks. arXiv preprint arXiv:1905.02921.
+Christopher Peters, Ginevra Castellano, and Sara de Freitas. 2009. An exploration of user engage-
+ment in hci. In Proceedings of the International Workshop on Affective-Aware Virtual Agents
+and Social Robots, page 9. ACM.
+Mike Phillips. 2006. Applications of spoken language technology and systems. In 2006 IEEE
+Spoken Language Technology Workshop, pages 7–7. IEEE.
+Rosalind W Picard. 2000. Affective computing. MIT press.
+Paul Piwek, Hugo Hernault, Helmut Prendinger, and Mitsuru Ishizuka. 2007. T2d: Generating dia-
+logues between virtual agents automatically from text. In International Workshop on Intelligent
+Virtual Agents, pages 161–174. Springer.
+Ashwin Ram, Rohit Prasad, Chandra Khatri, Anu Venkatesh, Raefer Gabriel, Qing Liu, Jeff Nunn,
+Behnam Hedayatnia, Ming Cheng, Ashish Nagar, Eric King, Kate Bland, Amanda Wartick,
+Yi Pan, Han Song, Sk Jayadevan, Gene Hwang, and Art Pettigrue. 2018. Conversational ai:
+The science behind the alexa prize.
+Vikram Ramanarayanan, David Pautler, Patrick L Lange, Eugene Tsuprun, Rutuja Ubale, Keelan
+Evanini, and David Suendermann-Oeft. 2018. Toward scalable dialog technology for conversa-
+tional language learning: Case study of the toeﬂ R⃝ mooc. In Interspeech, pages 1960–1961.
+Antoine Raux, Brian Langner, Dan Bohus, Alan W. Black, and Maxine Eskenazi. 2005. Let’s go
+public! taking a spoken dialog system to the real world. In Ninth European Conference on
+Speech Communication and Technology.
+Evgeniia Razumovskaia and Maxine Eskenazi. 2019. Incorporating rules into end-to-end dialog
+systems. In 3rd Conversational AI Workshop.
+45
+
+--- Page 46 ---
+Siva Reddy, Danqi Chen, and Christopher D Manning. 2019. Coqa: A conversational question
+answering challenge. Transactions of the Association for Computational Linguistics , 7:249–
+266.
+Verena Rieser and Oliver Lemon. 2008. Learning effective multimodal dialogue strategies from
+wizard-of-oz data: Bootstrapping and evaluation. In Proceedings of ACL-08: HLT, pages 638–
+646.
+Albert Rizzo, Russell Shilling, Eric Forbell, Stefan Scherer, Jonathan Gratch, and Louis-Philippe
+Morency. 2016. Autonomous virtual human agents for healthcare information support and clin-
+ical interviewing. In Artiﬁcial intelligence in behavioral and mental health care, pages 53–79.
+Elsevier.
+Vasile Rus and Mihai Lintean. 2012. A comparison of greedy and optimal assessment of natural
+language student input using word-to-word similarity metrics. In Proceedings of the Seventh
+Workshop on Building Educational Applications Using NLP , pages 157–162. Association for
+Computational Linguistics.
+Stefan Scherer, Giota Stratou, Gale Lucas, Marwa Mahmoud, Jill Boberg, Jonathan Gratch, Al-
+bert (Skip) Rizzo, and Louis-Philippe Morency. 2014. Automatic audiovisual behavior descrip-
+tors for psychological disorder analysis. Image and Vision Computing, 32(10):648 – 658. Best
+of Automatic Face and Gesture Recognition 2013.
+Thom Scott-Phillips. 2014. Speaking Our Minds: Why human communication is different, and how
+language evolved to make it special. Macmillan International Higher Education.
+Iulian Vlad Serban, Ryan Lowe, Peter Henderson, Laurent Charlin, and Joelle Pineau. 2018. A
+survey of available corpora for building data-driven dialogue systems: The journal version.
+Dialogue & Discourse, 9(1):1–49.
+Aliaksei Severyn and Alessandro Moschitti. 2015. Twitter sentiment analysis with deep convolu-
+tional neural networks. In Proceedings of the 38th International ACM SIGIR Conference on
+Research and Development in Information Retrieval, pages 959–962. ACM.
+Pararth Shah, Dilek Hakkani-Tur, and Larry Heck. 2016. Interactive reinforcement learning for
+task-oriented dialogue management.
+Alessandro Sordoni, Michel Galley, Michael Auli, Chris Brockett, Yangfeng Ji, Margaret Mitchell,
+Jian-Yun Nie, Jianfeng Gao, and William B. Dolan. 2015. A neural network approach to
+context-sensitive generation of conversational responses. In HLT-NAACL.
+Svetlana Stoyanchev and Amanda Stent. 2009. Lexical and syntactic priming and their impact
+in deployed spoken dialog systems. In Proceedings of Human Language Technologies: The
+2009 Annual Conference of the North American Chapter of the Association for Computational
+Linguistics, Companion Volume: Short Papers, pages 189–192. Association for Computational
+Linguistics.
+Ananya Subburathinam, Di Lu, Heng Ji, Jonathan May, Shih-Fu Chang, Avirup Sil, and Clare V oss.
+2019. Cross-lingual structure transfer for relation and event extraction. In Proceedings of the
+46
+
+--- Page 47 ---
+2019 Conference on Empirical Methods in Natural Language Processing and the 9th Interna-
+tional Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 313–325.
+Kai Sun, Lu Chen, Su Zhu, and Kai Yu. 2014. A generalized rule based tracker for dialogue state
+tracking. In 2014 IEEE Spoken Language Technology Workshop (SLT), pages 330–335. IEEE.
+Supasorn Suwajanakorn, Steven M Seitz, and Ira Kemelmacher-Shlizerman. 2017. Synthesizing
+obama: learning lip sync from audio. ACM Transactions on Graphics (TOG), 36(4):95.
+Kenta Takeuchi, Dai Hasegawa, Shinichi Shirakawa, Naoshi Kaneko, Hiroshi Sakuta, and Kazuhiko
+Sumi. 2017. Speech-to-gesture generation: A challenge in deep learning approach with bi-
+directional lstm. In Proceedings of the 5th International Conference on Human Agent Interac-
+tion, pages 365–369. ACM.
+Kojima Takumi, Iida Takuya, Teranishi Daina, and Masahiro Araki. 2019. Three-party interactive
+tutoring system for mastering machine learning. In Proceedings of the DiGo, Dialog for good
+at the Special Interest Group on Discourse and Dialogue (SIGDIAL).
+Zong Xuan Tan, Arushi Goel, Thanh-Son Nguyen, and Desmond C Ong. 2018. A multimodal lstm
+for predicting listener empathic responses over time. arXiv preprint arXiv:1812.04891.
+Ant´onio JS Teixeira, Carlos Pereira, Miguel Oliveira e Silva, Joaquim Alvarelh ˜ao, Ant ´onio JR
+Neves, and Osvaldo Pacheco. 2011. Output matters! adaptable multimodal output for new
+telerehabilitation services for the elderly. In AAL, pages 23–35.
+J¨org Tiedemann. 2012. Parallel data, tools and interfaces in opus. In Lrec, volume 2012, pages
+2214–2218.
+David Traum. 2008. Talking to virtual humans: Dialogue models and methodologies for embodied
+conversational agents. In Modeling Communication with Robots and Virtual Humans , pages
+296–309. Springer.
+AM Turing. 1950. Computing machinery and intelligence. Mind, LIX:433–460.
+Matthew Turk. 2014. Multimodal interaction: A review. Pattern Recognition Letters, 36:189–195.
+Alexandria K Vail, Elizabeth Liebson, Justin T Baker, and Louis-Philippe Morency. 2018. Toward
+objective, multifaceted characterization of psychotic disorders: lexical, structural, and disﬂu-
+ency markers of spoken language. In Proceedings of the 2018 on International Conference on
+Multimodal Interaction, pages 170–178. ACM.
+V . Venek, S. Scherer, L. Morency, A. . Rizzo, and J. Pestian. 2017. Adolescent suicidal risk assess-
+ment in clinician-patient interaction. IEEE Transactions on Affective Computing, 8(2):204–215.
+Roel Vertegaal, Robert Slagter, Gerrit Van der Veer, and Anton Nijholt. 2001. Eye gaze patterns in
+conversations: there is more to conversational agents than meets the eyes. InProceedings of the
+SIGCHI conference on Human factors in computing systems, pages 301–308. ACM.
+Alessandro Vinciarelli, Maja Pantic, and Herv ´e Bourlard. 2009. Social signal processing: Survey
+of an emerging domain. Image and vision computing, 27(12):1743–1759.
+47
+
+--- Page 48 ---
+Oriol Vinyals and Quoc Le. 2015. A neural conversational model. arXiv preprint
+arXiv:1506.05869.
+Svitlana V olkova, Theresa Wilson, and David Yarowsky. 2013. Exploring demographic language
+variations to improve multilingual sentiment analysis in social media. In Proceedings of the
+2013 Conference on Empirical Methods in Natural Language Processing, pages 1815–1827.
+Wolfgang Wahlster. 2013. Verbmobil: foundations of speech-to-speech translation . Springer Sci-
+ence & Business Media.
+Marilyn Walker, John Aberdeen, Julie Boland, Elizabeth Bratt, John Garofolo, Lynette Hirschman,
+Audrey Le, Sungbok Lee, Shrikanth Narayanan, K. Papineni, Bryan Pellom, Joseph Polifroni,
+Alexandros Potamianos, P. Prabhu, Alexander Rudnicky, Gregory Sanders, Stephanie Seneff,
+David Stallard, and Steve Whittaker. 2001. Darpa communicator dialog travel planning systems:
+the june 2000 data collection. pages 1371–1374.
+Marilyn A Walker, Diane J Litman, Candace A Kamm, and Alicia Abella. 1997. Paradise: A
+framework for evaluating spoken dialogue agents. arXiv preprint cmp-lg/9704004.
+Zhuoran Wang and Oliver Lemon. 2013. A simple and generic belief tracking mechanism for the
+dialog state tracking challenge: On the believability of observed information. In Proceedings of
+the SIGDIAL 2013 Conference, pages 423–432.
+Tsung-Hsien Wen, Milica Gasic, Nikola Mrksic, Lina M Rojas-Barahona, Pei-Hao Su, David
+Vandyke, and Steve Young. 2016. Multi-domain neural network language generation for spoken
+dialogue systems. arXiv preprint arXiv:1603.01232.
+Jason D Williams, Kavosh Asadi, and Geoffrey Zweig. 2017. Hybrid code networks: practical and
+efﬁcient end-to-end dialog control with supervised and reinforcement learning. arXiv preprint
+arXiv:1702.03274.
+Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhudinov, Rich
+Zemel, and Yoshua Bengio. 2015. Show, attend and tell: Neural image caption generation with
+visual attention. In International conference on machine learning, pages 2048–2057.
+Saizheng Zhang, Emily Dinan, Jack Urbanek, Arthur Szlam, Douwe Kiela, and Jason Weston.
+2018. Personalizing dialogue agents: I have a dog, do you have pets too? arXiv preprint
+arXiv:1801.07243.
+Tiancheng Zhao. 2016. Reinforest: Multi-domain dialogue management using hierarchical policies
+and knowledge ontology. Technical report, Technical Report. 4. 2.1, 5.1. 3.
+Tiancheng Zhao and Maxine Eskenazi. 2016. Towards end-to-end learning for dialog state tracking
+and management using deep reinforcement learning. InProceedings of the 17th Annual Meeting
+of the Special Interest Group on Discourse and Dialogue, pages 1–10.
+Tiancheng Zhao and Maxine Eskenazi. 2018. Zero-shot dialog generation with cross-domain latent
+actions. In Proceedings of the 19th Annual SIGdial Meeting on Discourse and Dialogue, pages
+1–10.
+48
+
+--- Page 49 ---
+Tiancheng Zhao, Ran Zhao, and Maxine Eskenazi. 2017. Learning discourse-level diversity for
+neural dialog models using conditional variational autoencoders. In Proceedings of the 55th
+Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) ,
+pages 654–664.
+Zian Zhao, Michael Madaio, Florian Pecune, Yoichi Matsuyama, and Justine Cassell. 2018.
+Socially-conditioned task reasoning for a virtual tutoring agent. In Proceedings of the 17th
+International Conference on Autonomous Agents and MultiAgent Systems , pages 2265–2267.
+International Foundation for Autonomous Agents and Multiagent Systems.
+Ingrid Zukerman and Diane Litman. 2001. Natural language processing and user modeling: Syner-
+gies and limitations. User modeling and user-adapted interaction, 11(1-2):129–158.
+49

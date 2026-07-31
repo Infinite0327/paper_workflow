@@ -1,0 +1,611 @@
+
+
+--- Page 1 ---
+Training Task Reasoning LLM Agents for Multi-turn Task
+Planning via Single-turn Reinforcement Learning
+Hanjiang Hu 1,3 Changliu Liu 1 Na Li 2,3 Yebin Wang3
+1Carnegie Mellon University 2Harvard University
+3Mitsubishi Electric Research Laboratories (MERL) ∗†
+Abstract
+Large Language Models (LLMs) have demonstrated remarkable capabilities in knowledge ac-
+quisition, reasoning, and tool use, making them promising candidates for autonomous agent ap-
+plications. However, training LLM agents for complex multi-turn task planning faces significant
+challenges, including sparse episode-wise rewards, credit assignment across long horizons, and the
+computational overhead of reinforcement learning in multi-turn interaction settings. To this end,
+this paper introduces a novel approach that transforms multi-turn task planning into single-turn
+task reasoning problems, enabling efficient policy optimization through Group Relative Policy Op-
+timization (GRPO) with dense and verifiable reward from expert trajectories. Our theoretical
+analysis shows that GRPO improvement on single-turn task reasoning results in a lower bound of
+the multi-turn success probability under the minimal turns, as well as the generalization to sub-
+tasks with shorter horizons. Experimental evaluation on the complex task planning benchmark
+demonstrates that our 1.5B parameter model trained with single-turn GRPO achieves superior
+performance compared to larger baseline models up to 14B parameters, with success rates of 70%
+for long-horizon planning tasks.
+1 Introduction
+Large Language Models (LLMs) as autonomous agents are important in modern AI-based systems,
+which can perceive environments, reason about plans, and execute actions to interact with the environ-
+ments [1]. Modern LLM agents demonstrate strong capabilities in knowledge integration, multi-step
+reasoning, and adaptive planning, as evidenced by their success in applications ranging from web
+search to robotic control [2,3]. On top of these capabilities, prompt-based agentic frameworks [4–6]
+are proposed by integrating observation for environment state, reasoning based on augmented LLM
+with tools and memory, and action execution that interacts with the environment through structured
+interfaces as a series ofsingle-turninteractions with the environments. However, effort-costly prompt
+engineering is inevitable to build the LLM-based agent, and it is also computationally expensive for
+test-time scaling in themulti-turninteraction with the environment [7,8].
+Therefore, training LLM agents through reinforcement learning (RL) for complex multi-turn task
+planning becomes a promising way to build effective agentic systems with low test-time cost [9–11].
+However, current RL approaches face critical challenges when applied to multi-turn interactions with
+theenvironmentforLLMs[12–15]. Therewardoftaskcompletionistoosparseforeffectiveexploitation
+of LLM policy in the multi-turn settings. Besides, the credit assignment becomes particularly difficult
+in long-horizon planning problems, where determining which specific actions contribute to the eventual
+reward of success or failure is non-trivial [10]. The computational complexity of multi-turn RL scales
+poorly with sequence length, making it impractical for training on complex tasks that may require
+dozens of sequential decision turns [16].
+In contrast, recent RL post-training successfully boosts LLM reasoning capability, particularly
+in math and coding domains based on on-policy methods, e.g., Group Relative Policy Optimization
+∗This work was done while Hanjiang Hu was a research intern and Na Li was a visiting scholar at Mitsubishi Electric
+Research Laboratories (MERL), Cambridge, MA 02139, USA. (email:hanjianghu@cmu.edu). Yebin Wang is with the
+MERL. (email:yebinwang@ieee.org).
+†Accepted by IEEE Control Systems Letters (L-CSS)
+1
+arXiv:2509.20616v2  [cs.LG]  8 Dec 2025
+
+--- Page 2 ---
+(GRPO) [17,18]. However, these successes have primarily focused on single-turn reasoning tasks with
+verifiable reward, where the model generates a complete solution in one step and receives the reward
+directly based on the correctness of the final answer [19]. The fundamental challenge lies in bridging the
+gap between single-turn reasoning capabilities and multi-turn task planning requirements, where LLM
+agents must be coherent along the interaction sequences while adapting to changing environmental
+states.
+To this end, we aim to bridge the gap based on the insight that complex multi-turn task planning
+can be decomposed into a sequence of single-turn task reasoning problems, each requiring the agent
+to select the optimal next action given the current state. This decomposition enables us to leverage
+the provably effective and efficient RL post-training with dense and verifiable reward based on expert
+trajectory, with theoretical guarantees of the multi-turn decision-making capabilities for long-horizon
+planning. We compare and validate the effectiveness and generalizability of the proposed method on
+the challenging long-horizon task planning benchmark. The contributions are summarized below.
+•We provide a theoretical analysis bridging single-turn task reasoning and multi-turn task com-
+pletion, proving that the success probability after GRPO can be lower-bounded in multi-turn
+planning scenarios.
+•We show empirical results on multiple tasks from the challengingRobotouillebenchmark,
+where our 1.5B model trained with single-turn GRPO consistently outperforms 14B baselines
+with fewer completion steps.
+•We both theoretically and empirically show the strong cross-task generalization capabilities of
+the GRPO-optimized LLM agents, where models trained on complex tasks successfully transfer
+to simpler subtasks.
+2 Problem Formulation
+We formulate the multi-turn task planning problem as two interconnected Markov Decision Processes
+(MDPs): a multi-turn MDP representing the complete long-horizon task planning and a single-turn
+MDP based on expert trajectories for training purposes.
+2.1 Multi-Turn Task Planning MDP
+LetM= (S,A, f, R,T, s 0)beafinite-horizonMDPrepresentingthemulti-turntaskplanningproblem,
+whereSis the token state space representing the current task context and environment observation;
+Ais the token action space of discrete possible single-step actions;f:S × A → Sis the deterministic
+but unknown token state transition function;R:S × A → {0,1}is the binary sparse reward function
+indicating whether the task is completed;T ⊂Nis the finite time horizon;s 0 ∈ Sis the initial state.
+Letπ:S → Abe a stochastic policy mapping token states to token action distributions.π(a|s)
+denotes the probability ofa=π(s). A trajectoryτ= [(s 0, a0),(s 1, a1), . . . ,(sT , aT )]is generated by
+following policyπforTsteps, wheres i+1 =f(s i, ai). Then we define the successful trajectory induced
+by a stochastic policy as follows.
+Definition 2.1(Successful trajectory by stochastic policy).Given the MDPM= (S,A, f, R,T, s 0),
+a successful trajectory starting withss
+0 =s 0 is defined as:
+τ s(T) = [(s s
+0, as
+0), . . . ,(ss
+T , as
+T )], R(s s
+T , as
+T ) = 1,(1)
+wheres s
+i+1 =f(s s
+i , as
+i )fori= 0,1, . . . , T−1;a s
+i ∼π(·|s s
+i )fori= 0,1,2, . . . , Tgiven the stochastic
+policyπ.
+2.2 Expert Trajectory with Unique Optimality
+On top of Definition 2.1, we further define the expert trajectory generated by the expert policy with
+the unique optimality of minimal trajectory length. We adopt superscriptGTto denote “Ground
+Truth” for expert policy or trajectory.
+2
+
+--- Page 3 ---
+Definition 2.2(Expert trajectory by stochastic policy).Given the MDPM= (S,A, f, R,T, s 0),
+a trajectoryτ GT (T GT )from the stochastic policyπis defined as an expert trajectory if the following
+conditions hold:
+1.τ GT (T GT )is a successful trajectory generated from stochastic policy theπin Definition 2.1.
+2. For any successful trajectoryτ(T)generated by stochastic policyπwithR(s T , aT ) = 1, we have
+T≥T GT and the equality holds if and only ifτ=τGT.
+Based on the expert trajectoryτGT in Definition 2.2, we can further define the expert policyπGT
+as follows.
+Definition 2.3(Expert policy from expert trajectory).Given the MDPM= (S,A, f, R,T, s 0)and
+an expert trajectoryτGT (T GT ), a policyπGT :S → Ais defined as the expert policy if it holds that
+aGT
+i =π GT (sGT
+i ),∀(s GT
+i , aGT
+i )∈τ GT (T GT ).(2)
+Remark 2.1.Even though expert trajectoryτ GT (T GT )is uniquely optimal with minimal length of
+turnsT GT, the induced expert policyπGT is not necessarily unique or deterministic, as there is no
+state-action constraint beyond expert trajectoriesτ GT (T GT ). The unique optimal expert trajectory
+assumption ensures a well-defined single-step reward and serves as the foundation for the following
+results. We ensure this assumption in the experiment and further conduct an ablation comparison of
+robustness under non-expert noisy training trajectories.
+2.3 Single-Turn Task Reasoning MDP
+Even though multi-turn task planning MDPMis the conventional one in the control and RL com-
+munity, it is challenging and non-trivial to directly train an LLM policy forMdue to intractable
+computational overhead with exponentially increasing token length of trajectory rollouts in the multi-
+turn setting [10,16]. Therefore, to enable efficient LLM policy learning , we construct an additional
+single-turnMDPM S = (S,A,∅, r πGT ,1, s 0)basedontheexperttrajectoryτ GT (T GT )inDefinition2.2
+and expert policyπ GT in Definition 2.3. This single-turn MDP can be viewed as a bandit problem
+as follows.Sis the same token state space as inM,Ais the same token action space as inM,
+rπGT :S × A → {0,1}is the binary reward function. There is no state transition function, which is
+denoted as∅. The horizon1is one-step in the single-turn setting. Initial state is the same as inM.
+Definition 2.4(Reward function from expert trajectory).The binary reward functionrπGT for single-
+turn MDPM S = (S,A,∅, r πGT ,1, s GT )is defined as:
+rπGT (s, a) =1{a=π GT (s)} ∈ {0,1},(3)
+whereπ GT is the expert policy defined in Definition 2.3.
+The single-turn MDPM S is based on expert trajectoriesτ GT, which enables efficient policy op-
+timization with dense reward in Definition 2.4. From the methodology section below, we will show
+that good performance on single-turn task reasoning (high rewardrinM S) will lead to successful
+long-horizon task planning (high rewardRinM).
+3 Methodology
+We first give the theoretical analysis of policy learning for single-turn MDPMS based on expert
+trajectories.Then we define the success probability with the minimal turns for task planning MDPM
+and show that policy improvement fromMS can give a lower bound of success probability inM, for
+even unseen task planning.
+3.1 GRPO for Single-Turn Task Reasoning
+GRPO is an on-policy model-free RL method that optimizes policies using verifiable rewards and
+replaces critic model with a group of multiple responses for a prompt to calculate a group-based
+advantage [17,18]. Based on the theoretical foundation of GRPO [19], we give the policy iteration and
+the success amplification in the single-turn MDPMS defined with Definition 2.4.
+3
+
+--- Page 4 ---
+3.1.1 GRPO Policy Iteration Dynamics
+Letρ Q be a distribution over state query promptss∈ S ∼ρ Q. For the single-turn MDPM S, we
+consider the GRPO optimization problem which adopts the relative advantage within a group of policy
+outputs as the critic while maintaining proximity to a reference policy through KL regularization. The
+GRPO objective without clipping is formulated as:
+max
+π
+Es∼ρQ Ea∼πold(·|s)
+π(a|s)
+πold(a|s) A(s, a)−βKL(π||π ref),(4)
+where the advantage functionAbased on the binary reward in Definition 2.4 is given by:
+AπGT (s, a) = rπGT (s, a)−E a′∼πold(·|s)rπGT (s, a′)p
+Vara′∼πold(·|s)rπGT (s, a′) .(5)
+At iterationn≥1, the policy iteration of GRPO forMS is,
+πn = arg max
+π
+Es∼ρQ
+
+Ea∼πn−1(·|s)
+ πn(a|s)
+πn−1(a|s)
+rπGT (s, a)−E a′∼πn−1(·|s)rπGT (s, a′)q
+Vara′∼πn−1(·|s)rπGT (s, a′)
+
+−βKL(π n||πref)
+
+,
+(6)
+where initial policy is the reference policyπ0 =π ref.
+3.1.2 GRPO Single-Turn Optimality and Success Amplification
+Following the Theorem 3.1 from [19] below, we can have the optimality guarantee for GRPO iteration
+in Equation (6) in our single-turn task reasoning setting.
+Theorem 3.1(Theorem 3 from [19]).Letπ ∗ be the fixed point of GRPO-optimized policy obtained
+from the policy iteration dynamics of Equation(6)andπ ref be the initial reference policy. Denote
+the success probability of the reference policy aspref =E a∼πref(·|sGT )[1{a=π GT (sGT )}]and optimized
+policy asp ∗ =E a∼π∗(·|sGT )[1{a=π GT (sGT )}]. It holds thatp∗ > p ref.
+Proof.The optimal policy at iterationnof the GRPO dynamics in Equation (6) satisfiesπ n(a|s)∝
+πref(a|s) exp
+
+1
+β AπGT (s, a)
+
+,wheretheadvantagefunctionA πGT upweightssuccessfulactions(r πGT (s, a) =
+1) and downweights failures (rπGT (s, a) = 0). The variance normalization inA πGT ensures positive
+advantages for successes and negative advantages for failures. At the fixed pointπ ∗, this means
+exp( 1
+β AπGT )>1for correct actions andexp( 1
+β AπGT )<1for incorrect ones, systematically shifting
+probability mass toward successful outputs and yieldingp∗ > p ref. Check Appendix C.1 of [19] for full
+proof.
+Corollary 3.1(GRPO single-Turn optimality).For the fixed point of GRPO-optimized policyπ∗ and
+the reference policyπref, the following holds for any statesfrom the expert trajectoryτGT,
+Ea∗∼π∗(·|s)[rπGT (s, a∗)]≥E aref∼πref(·|s)[rπGT (s, aref)].(7)
+Proof.It holds based on the single-turn reward formulation in Definition 2.4 based on Theorem 3.1.
+Corollary 3.1 establishes that GRPO training on the single-turn MDPMS with expert trajectories
+leads to policies that achieve higher success rates than the reference policy before GRPO training,
+providing the foundation for analyzing multi-turn performance improvements.
+4
+
+--- Page 5 ---
+3.2 Success Probability for Multi-Turn Task Planning
+To analyze how GRPO improvements on the single-turn MDPMS can result in performance gains in
+the multi-turn MDPM, we introduce the success probability with the minimal turns that captures the
+probability of achieving the optimal expert trajectory, by assuming the existence of minimal completion
+steps given any state below.
+Definition 3.1(Minimal turns for task completion).For any states∈ Sin the multi-turn MDPM,
+denote the unique minimal length of turns asT∗(s)≥0among all successful trajectories defined in
+Definition 2.1 froms, i.e.,T ∗(s) := min{T≥0 :∃τ(T)s.t.R(s T , aT ) = 1, s 0 =s}.
+T ∗(s)existsuniquelybasedontheexistenceanduniquenessoftheexperttrajectoryinDefinition2.2
+by taking any states as initial states. We then define the probability of the successful trajectory with
+minimal steps.
+Definition 3.2(Success probability with minimal steps).WithT∗(s)in Definition 3.1, the probability
+of achieving the task planning goal in the minimal number of steps starting from statest at timetunder
+policyπin the multi-turn MDPMis defined as,
+P π
+t (st) =P π
+ 
+R(st+T ∗(st), at+T ∗(st)) = 1|s t
+
+.(8)
+We then present the recursion condition for the success probability in Definition 3.2 based on the
+reward function from the expert trajectory in Definition 2.4.
+Theorem 3.2(Recursion equation of success probability).The success probability defined in Defini-
+tion 3.2 satisfies the following recursion condition,
+P π
+t (st) =E a∼π(·|st)[rπGT (st, a)·P π
+t+1(st+1)],(9)
+whereπ GT is the expert policy in Definition 2.3 by expert trajectory withPπ
+t+T ∗(st)(st+T ∗(st)) = 1for
+any states t.
+Proof.For any states t as the initial state, based on Definition 2.3,π GT is induced by the expert
+trajectoryτ GT = [(s t, at), . . . ,(sT GT , aT GT )], sk+1 =f(s k, πGT (sk)), k=t, t+ 1, . . . , T GT −1with
+minimal turns of task completion. ByP π
+t+T ∗(st)(st+T ∗(st)) = 1, we haveR(s t+T ∗(st), at+T ∗(st)) = 1.
+Combining the uniqueness of expert trajectory in Definition 2.2 and minimal completion stepsT∗(s)
+in Definition 3.1, it holds that
+T ∗(sT GT ) = 0, T GT =T ∗(sk) +k, k=t, . . . , T GT .(10)
+For any state that deviates from the expert trajectorys′
+k+1 ̸=f(s k, πGT (sk)), by the minimal comple-
+tion turns,
+T ∗(s′
+k+1)> T ∗(sk)−1,∀k=t, t+ 1, . . . , T GT −1.(11)
+By the law of total expectation over the next actiont+ 1:
+P π
+t (st) =P π(R(st+T ∗(st), at+T ∗(st)) = 1|s t)(12)
+=E a∼π(·|st)[Pπ(R(st+T ∗(st), at+T ∗(st)) = 1|s t, a)].
+Fora∼π(·|s t), ifa̸=π GT (st), i.e., rπGT (st, a) = 0, we haves ′
+t+1 ̸=f(s t, π(st)). Then based on
+Equation (11), it takes strictly more thanT∗(st)−1steps for completion, i.e.,
+Pπ(R(st+1+T ∗(st)−1, at+1+T ∗(st)−1) = 1|s ′
+t+1) = 0.(13)
+Ifa=π GT (st), i.e., rπGT (st, a) = 1, s t+1 =f(s t, a), then based on Equation (10), we have
+Pπ(R(st+T ∗(st), at+T ∗(st)) = 1|s t, a)(14)
+=Pπ(R(st+1+T ∗(st+1), at+1+T ∗(st+1)) = 1|s t+1)
+=P π
+t+1(st+1).
+With the values ofrπGT (st, a)∈ {0,1}and combining Equations (12) to (14), it holds that
+P π
+t (st) =E a∼π(·|st)[rπGT (st, a)·P π
+t+1(st+1)],(15)
+which concludes the proof.
+5
+
+--- Page 6 ---
+Please note that the recursion equation in Theorem 3.2 is not the same as Bellman recursion in
+value function iteration, and the key difference lies in that the multiplication of the binary single-turn
+rewardr πGT (st, a)is involved in the recursion of expectation, instead of addition. This recursion
+bridges the final multi-turn success in Equation (8) with single-turn reward improvements at each step
+in Equation (7), which is crucial to the following analysis on how single-turn GRPO gives a lower
+bound of success probability of the multi-turn task planning.
+3.3 Lower Bound of Multi-Turn Success Probability
+We now analyze how GRPO improvements on single-turn task reasoning inMS will give a lower bound
+of success probability in the multi-turn task planning MDPM. First, we assume the bounded Total
+Variation (TV) distance of actions between the proximal states in the training and test data. Then
+we show the lower bound of single-turn GRPO performance as Lemma 3.1.
+Assumption 3.1(Bounded Policy with State Proximity).For any execution states∈ Sexec encoun-
+tered during policy deployment, there exists a training states′ ∈ S train with the same expert action
+πGT (s′) =π GT (s)such that for any policyπ,∥π(·|s)−π(·|s ′)∥TV ≤δ, whereδ >0is a bounded
+constant and∥ · ∥ TV denotes the TV distance.
+Lemma 3.1(Lower bound of GRPO policy deployment).Under Assumption 3.1, for any execution
+states∈ S exec,E a∼π∗(·|s)[rπGT (s, a)]≥E a∼πref(·|s)[rπGT (s, a)]−4δ,whereπ ∗ is the GRPO-optimized
+policy andπ ref is the reference policy.
+Proof.Lets∈ S exec. By Assumption 3.1, there existss′ ∈ S train such that∥π ∗(·|s)−π ∗(·|s′)∥TV ≤δ,
+s∥πref(·|s)−π ref(·|s′)∥TV ≤δ, andπ GT (s′) =π GT (s). Withr πGT (s, a) =r πGT (s′, a)∈ {0,1}, for any
+policyπand statess, s ′ with∥π(·|s)−π(·|s ′)∥TV ≤δ, we have:
+Ea∼π(·|s)[rπGT (s, a)]−E a∼π(·|s′)[rπGT (s′, a)]
+ (16)
+≤
+X
+a∈A
+|π(a|s)−π(a|s ′)| · |rπGT (s, a)|
+≤
+X
+a∈A
+|π(a|s)−π(a|s ′)|= 2∥π(·|s)−π(·|s ′)∥TV ≤2δ.
+By Corollary 3.1, sinces′ ∈ S train:
+Ea∼π∗(·|s′)[rπGT (s′, a)]≥E a∼πref(·|s′)[rπGT (s′, a)].(17)
+Applying (16) toπref, π∗ and combining (17) will complete the proof.
+Finally, the step-dependent lower bound of success probability is shown below, which becomes
+tighter as the time step is closer to the minimal length of turnsTGT of expert trajectories. It is
+consistent with the intuition that the task is more likely to complete from the middle step compared
+to initial step.
+Theorem 3.3(Lower bound of GRPO success probability).Letπ ∗ be the fixed point of the GRPO-
+optimized policy from the policy iteration dynamics of Equation(6)andπ ref be the initial reference
+policy. Under Assumption 3.1 and Equation(7), it holds for any given statest at steptthat,
+P π∗
+t (st)≥P πref
+t (st)−(T GT −t)·4δ,(18)
+Proof.By the existence and uniqueness of the expert trajectory in Definition 2.2, denote the expert
+trajectory starting fromst asτ GT = [(s t, at), . . . ,(sT GT , aT GT )]with minimal turns of task completion
+T ∗(st) =T GT −tin Definition 3.1. We prove by backward induction on the length of remaining
+turns to task completion. In the final case whent=T GT, we haveP π∗
+t (st) =P πref
+t (st) = 1since
+the task is already completed. Now for the inductive case at stept+ 1, t+ 1≤T GT, we assume
+6
+
+--- Page 7 ---
+P π∗
+t+1(s′)≥P πref
+t+1 (s′)−(T GT −t−1)·4δfor alls ′ ∈ S. Then for any statesat stept, by Theorem 3.2:
+P π∗
+t (s) =E a∼π∗(·|s)[rπGT (s, a)·P π∗
+t+1(f(s, a))](19)
+≥E a∼π∗ [rπGT (s, a){P πref
+t+1 (f(s, a))−(T GT −t−1)4δ}](20)
+=E a∼π∗(·|s)[rπGT (s, a)·P πref
+t+1 (f(s, a))]−(T GT −t−1)·4δ·E a∼π∗(·|s)[rπGT (s, a)](21)
+≥E a∼π∗(·|s)[rπGT (s, a)·P πref
+t+1 (f(s, a))]−(T GT −t−1)·4δ(22)
+≥E a∼πref(·|s)[rπGT (s, a)·P πref
+t+1 (f(s, a))]−4δ−(T GT −t−1)·4δ(23)
+=P πref
+t (s)−(T GT −t)·4δ,(24)
+where(20)appliestheinductivehypothesis, (22)usesE a∼π∗(·|s)[rπGT (s, a)]≤1, (23)appliesLemma3.1
+(noting that since0≤P πref
+t+1 (s′)≤1, the weighted expectation difference is bounded by the marginal
+difference), and (24) uses Theorem 3.2 forπref.
+Furthermore, we show that the policy trained with expert trajectories with single-turn GRPO can
+also generalize to subtask defined below.
+Definition 3.3(Subtask and its success probability).Given the expert trajectoryτ GT (T GT ) =
+[(s0, a0), . . . ,(sT GT , aT GT )]in Definition 2.2 for the full task, a subtask is defined by a completion
+stepk ∗ < T GT where the subtask is completed upon reaching(sk∗ , ak∗ ), i.e.,R sub(sk∗ , ak∗ ) = 1. The
+success probability with the fewest turns for subtask atst, t≤k ∗ is defined as,
+P sub,π
+t (st) =P π (Rsub(sk∗ , ak∗ ) = 1|s t),(25)
+which is the probability of achieving subtask goal in the minimal number of steps starting from statest
+at timetunder policyπ.
+Based on the success probability of subtask, we present the following corollary of Theorem 3.3.
+Corollary 3.2(GRPO generalization to subtasks).For any subtask defined by completion stepk∗ <
+T GT in Definition 3.3, the GRPO-optimized policyπ∗ achieves better performance on the subtask than
+the reference policyπref for any given statest at stept≤k ∗, i.e.,P sub,π∗
+t (st)≥P sub,πref
+t (st)−(k∗−t)·4δ.
+Proof.Since the subtask uses the same expert trajectory prefix as the full task, Assumption 3.1 also
+holds for subtask goal with the same single-turn reward functionrπGT (s, a). Besides, the recursion
+conditionofP sub,π
+t (st)alsoapplies. Therefore, followingtheproofofTheorem3.3, bylettingT GT =k ∗,
+π∗ achieves better success probability thanπref overP sub
+t (st)for any given statest at stept≤k ∗.
+4 Experiments
+In the experiments, we aim to answer the following two questions empirically:1) How is the perfor-
+mance of multi-turn task planning after GRPO over single-turn task reasoning? 2) Are GRPO-trained
+agents generalizable to unseen planning tasks and robust to noisy non-expert training trajectories?We
+answer the first question in Section 4.2 and the second one in Section 4.3. Prior to the answers, we
+first introduce the experimental setup of environment, model training and evaluation metrics.
+4.1 Experimental Setup
+Environment and TasksWe evaluate our approach on theRobotouillebenchmark [20], a chal-
+lenging multi-turn task planning environment designed for testing LLM agents’ reasoning capabilities
+in cooking scenarios.Robotouilleprovides a deterministic long-horizon complex environment where
+agents must coordinate multiple actions across different kitchen stations to complete recipes. We focus
+on three progressively challenging cooking tasks with different maximum steps: (1)Burger- at most
+10 steps; (2)Cheese Burger- at most 15 steps; and (3)Double Cheese Burger- at most 23 steps.
+These tasks were selected to provide increasing complexity in both planning horizon and reasoning
+requirements while sharing the in-distribution states and actions, allowing us to evaluate our method’s
+scalability and generalization across different task difficulties.
+7
+
+--- Page 8 ---
+Table 1: Performance Comparison on Different Tasks. Best results are inbold. “—” indicates no
+successful trajectories.
+Results of Burger SR (↑) ASAT (↓) ASST (↓)
+Llama3-70b (expert) 0.53±0.15 12.13±0.57 9.53±0.50
+Qwen2.5-7b 0.07±0.06 14.97±0.06 14.0±0.0
+Qwen2.5-14b 0.10±0.10 14.87±0.15 13.67±0.29
+Qwen1.5b (w/ SFT) 0.30±0.10 12.37±1.17 8.64±0.13
+Qwen1.5b (w/ SFT & GRPO)0.73±0.06 10.07±0.25 8.18±0.16
+Results of Cheeseburger SR (↑) ASAT (↓) ASST (↓)
+Llama3-70b (expert) 0.73±0.06 17.23±0.38 15.12±0.13
+Qwen2.5-7b 0.0±0.0 23.0±0.0 —
+Qwen2.5-14b 0.10±0.10 22.63±0.32 19.33±1.15
+Qwen1.5b (w/ SFT) 0.57±0.06 16.97±1.36 14.73±0.49
+Qwen1.5b (w/ SFT & GRPO)0.70±0.00 15.53±0.23 12.30±0.35
+Results of Double Cheeseburger SR (↑) ASAT (↓) ASST (↓)
+Llama3-70b (expert) 0.20±0.10 32.50±0.89 21.77±2.25
+Qwen2.5-7b 0.0±0.0 35.0±0.0 —
+Qwen2.5-14b 0.0±0.0 35.0±0.0 —
+Qwen1.5b (w/ SFT) 0.13±0.06 22.87±0.85 27.17±2.75
+Qwen1.5b (w/ SFT & GRPO)0.3±0.0 30.5±0.0 20.0±0.0
+Table 2: Performance comparison on Burger task with different RL post-training methods. Best results
+are inbold.
+RL post-training methods SR (↑) ASAT (↓) ASST (↓)
+SFT & PPO 0.60±0.10 11.40±0.61 8.53±0.29
+SFT & RLOO 0.70±0.00 10.37±0.06 8.38±0.08
+SFT & REINFORCE++ 0.67±0.12 10.80±1.11 8.30±0.05
+SFT & GRPO0.73±0.06 10.07±0.25 8.18±0.16
+Table 3: Cross-task generalization of SR and ASAT.
+Evaluation Tasks (→)
+Model Training Tasks (↓)
+Burger SR /
+ASAT
+Cheese Burger
+SR / ASAT
+Double Cheese
+Burger SR / ASAT
+Burger 0.73±0.06 /
+10.07±0.25
+0.0±0.0 /
+23.0±0.0
+0.0±0.0 /
+35.0±0.0
+Cheese Burger 0.60±0.10 /
+10.90±0.17
+0.7±0.0 /
+15.50±0.23
+0.0±0.0 /
+35.0±0.0
+Double Cheese Burger 0.5±0.0 /
+11.60±0.10
+0.37±0.06 /
+19.13±0.55
+0.3±0.0 /
+30.5±0.0
+Table 4: Performance comparison on Burger task with different ratio of noisy trajectories. Best results
+are inbold.
+Ratio of noisy trajectories SR (↑) ASAT (↓) ASST (↓)
+Noisy, 50% 0.50±0.10 11.90±0.26 8.23±0.21
+Noisy, 30% 0.56±0.06 11.43±0.55 8.23±0.21
+Noisy, 10% 0.67±0.06 10.47±0.29 8.19±0.17
+Clean, 0%0.73±0.06 10.07±0.25 8.18±0.16
+8
+
+--- Page 9 ---
+Data Collection and Model TrainingExpert trajectories are collected using rejection sampling
+and minimum-step trajectory filtering from Llama3.3-70B-Instruct [21], which serves as our expert
+policyπ GT. To ensure diversity and robustness, we generate expert trajectories across varied kitchen
+layouts and ingredient placements, creating approximately 100 successful trajectories per task type.
+For the ablation of training on noisy non-expert trajectories, we randomly choose 10%, 30%, 50%
+of the states along all trajectories that are perturbed to have sub-optimal actions but keep the task
+completion successful. The state-action tokens follow the ReAct agentic framework [4], where each
+actiona GT
+i consists of structured reasoning followed by a specific action selection from the valid action
+list indicated from state tokens. ReAct format and single-turn correctness reward of Definition 2.4 are
+weighted by 0.1 and 0.9, respectively. Our training pipeline consists of two sequential post-training
+stages using the VeRL implementation [22] of RL post-training. First, we perform supervised fine-
+tuning (SFT) on Qwen2.5-1.5B-Instruct [23] using the collected expert trajectories to establish a strong
+initialization. The SFT takes 8 epochs with batch size of 8 and the RL post-training uses a batch size
+of 256, learning rate of1×10 −6, and KL regularization coefficientβ= 0.001for 50 epochs.
+Evaluation Metrics and BaselinesWe evaluate all models on 10 unseen kitchen layouts per task
+type, ensuring that the test environments differ from training data in terms of object positions, kitchen
+topology, and ingredient availability. The timeout lengths of attempt turns are 15, 23, 35 for tasks
+ofBurger, Cheese Burger, Double Cheese Burger, respectively. We assess the model performance of
+effectiveness and efficiency using three key metrics: (1)Success Rate (SR)- the proportion of episodes
+where the agent successfully completes the task within the step timeout limit; (2)Average Steps of All
+Trajectories (ASAT)- the mean number of steps taken across all episodes, including timeout failures;
+and (3)Average Steps of Successful Trajectories (ASST)- the mean number of steps for successfully
+completed episodes only. The temperature is set to be 0.7 and all values are inMean±Standard
+Deviationfrom 3 random trials. We compare our approach against prompt-based larger agents (7B,
+14B models of Qwen2.5), 1.5B models only with SFT, and 1.5B models with SFT and other RL
+post-training methods (PPO [24], RLOO [25], REINFORCE++ [26]).
+4.2 Results of Task Planning with Single-turn GRPO
+In Table 1, the models with SFT and GRPO consistently outperform much larger-size baseline models
+and perform better or keep on par with expert policy. The SFT-alone model provides limited success
+comparedtotheonefollowedbyGRPO,validatingtheeffectivenessofsingle-turnRLfortaskreasoning
+in Theorem 3.3. Beyond success rates, the model with GRPO post-training consistently achieves lower
+average step counts for successful episodes, demonstrating that GRPO learns more optimal policies
+with minimal steps of task completion in Definition 3.2.
+From Table 2, the proposed GRPO-based approach achieves the best performance in all metrics
+compared to other RL post-training methods. The PPO-based agent performs the worst due to its
+reliance on a separate critic network for advantage estimation, which introduces additional approxi-
+mation errors. Compared to critic-free RL methods like RLOO and REINFORCE++, group-relative
+advantage computation of GRPO provides more stable gradient estimates by normalizing within sam-
+pled responses.
+4.3 Ablation Study and Generalization Analysis
+Cross-task Generalization AnalysisTo evaluate generalizability, we train agents on individual
+tasks and assess zero-shot performance across all tasks. The results in Table 3 empirically validate
+Corollary 3.2: agents trained on complex tasks generalize effectively to simpler ones, while the reverse
+fails. The Double Cheese Burger-trained agent achieves non-zero success rates on all tasks, whereas
+Burger-trained and Cheese Burger-trained agents completely fail on more complex task of Double
+Cheese Burger. These findings demonstrate that our single-turn GRPO approach enables meaningful
+cross-task generalization from complex to simpler tasks, aligning with our theoretical predictions,
+though highlighting that complex reasoning capabilities cannot be readily acquired from simpler task
+training alone.
+9
+
+--- Page 10 ---
+Robustness to Noisy Non-expert TrajectoriesTo assess robustness to imperfect demonstra-
+tions, we evaluate the Burger task with varying ratios of noisy trajectories. Table 4 shows that our
+method exhibits strong robustness: even with 50% noisy data, success rate only drops to 0.50 from
+0.73, while efficiency metrics (ASAT and ASST) remain stable. Performance degrades gradually as
+noise increases. This robustness stems from GRPO’s group-relative advantage computation, which
+effectively filters suboptimal demonstrations during optimization. These results indicate that our
+single-turn GRPO approach can successfully learn from imperfect expert trajectories, valuable for
+practical deployment where obtaining perfectly optimal demonstrations is challenging.
+5 Conclusion
+In this paper, we present a theoretical framework demonstrating that GRPO improvements on single-
+turn task reasoning provide a lower bound on multi-turn success probability under minimal steps
+for challenging multi-turn interaction scenarios. Empirical results validate our approach, with our
+small-parameter model consistently outperforming larger baselines while requiring fewer steps for task
+completion. We also show cross-task generalization capabilities both theoretically and empirically.
+While limitations remain regarding the reliance on expert trajectories, our work shows how to leverage
+single-turn RL successes for complex multi-turn task planning, opening promising directions for more
+capable and efficient LLM-based agents.
+References
+[1] J. Luo, W. Zhang, Y. Yuan, Y. Zhao,et al., “Large language model agent: A survey on method-
+ology, applications and challenges,”arXiv preprint arXiv:2503.21460, 2025.
+[2] Z. Xi, W. Chen, X. Guo, W. He, Y. Ding, B. Hong, M. Zhang, J. Wang, S. Jin, E. Zhou,et al., “The
+rise and potential of large language model based agents: A survey,”Science China Information
+Sciences, vol. 68, no. 2, p. 121101, 2025.
+[3] L. E. Erdogan, H. Furuta, S. Kim, N. Lee, S. Moon, G. Anumanchipalli, K. Keutzer, and A. Gho-
+lami, “Plan-and-act: Improving planning of agents for long-horizon tasks,” inForty-second Inter-
+national Conference on Machine Learning, 2025.
+[4] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. Narasimhan, and Y. Cao, “React: Synergizing rea-
+soning and acting in language models,” inInternational Conference on Learning Representations
+(ICLR), 2023.
+[5] N. Shinn, F. Cassano, A. Gopinath, K. Narasimhan, and S. Yao, “Reflexion: Language agents
+with verbal reinforcement learning,”Advances in Neural Information Processing Systems, vol. 36,
+pp. 8634–8652, 2023.
+[6] A. Zhou, K. Yan, M. Shlapentokh-Rothman, H. Wang, and Y.-X. Wang, “Language agent tree
+search unifies reasoning, acting, and planning in language models,” inProceedings of the 41st
+International Conference on Machine Learning, pp. 62138–62160, 2024.
+[7] S. Guan, H. Xiong, J. Wang, J. Bian, B. Zhu, and J.-g. Lou, “Evaluating llm-based agents for
+multi-turn conversations: A survey,”arXiv preprint arXiv:2503.22458, 2025.
+[8] Y. Zhou, S. Jiang, Y. Tian, J. Weston, S. Levine, S. Sukhbaatar, and X. Li, “Sweet-rl: Training
+multi-turn llm agents on collaborative reasoning tasks,”arXiv preprint arXiv:2503.15478, 2025.
+[9] Z. Wang, K. Wang, Q. Wang, P. Zhang, L. Li, Z. Yang, X. Jin, K. Yu, M. N. Nguyen, L. Liu,
+et al., “Ragen: Understanding self-evolution in llm agents via multi-turn reinforcement learning,”
+arXiv preprint arXiv:2504.20073, 2025.
+[10] L. Feng, Z. Xue, T. Liu, and B. An, “Group-in-group policy optimization for llm agent training,”
+arXiv preprint arXiv:2505.10978, 2025.
+10
+
+--- Page 11 ---
+[11] G. Dong, H. Mao, K. Ma, L. Bao, Y. Chen, Z. Wang, Z. Chen, J. Du, H. Wang, F. Zhang,et al.,
+“Agentic reinforced policy optimization,”arXiv preprint arXiv:2507.19849, 2025.
+[12] S. Cao, S. Hegde, D. Li, T. Griggs, S. Liu, E. Tang, J. Pan, X. Wang, A. Malik, G. Neubig,
+K. Hakhamaneshi, R. Liaw, P. Moritz, M. Zaharia, J. E. Gonzalez, and I. Stoica, “Skyrl-v0: Train
+real-world long-horizon agents via reinforcement learning,” 2025.
+[13] B. Jin, H. Zeng, Z. Yue, J. Yoon, S. Arik, D. Wang, H. Zamani, and J. Han, “Search-r1:
+Training llms to reason and leverage search engines with reinforcement learning,”arXiv preprint
+arXiv:2503.09516, 2025.
+[14] Z. Qi, X. Liu, I. L. Iong, H. Lai, X. Sun, W. Zhao, Y. Yang, X. Yang, J. Sun, S. Yao,et al., “Webrl:
+Training llm web agents via self-evolving online curriculum reinforcement learning,”arXiv preprint
+arXiv:2411.02337, 2024.
+[15] Z. Xi, J. Huang, C. Liao, B. Huang, H. Guo, J. Liu, R. Zheng, J. Ye, J. Zhang, W. Chen,
+et al., “Agentgym-rl: Training llm agents for long-horizon decision making through multi-turn
+reinforcement learning,”arXiv preprint arXiv:2509.08755, 2025.
+[16] F.Peiyuan, Y.He, G.Huang, Y.Lin, H.Zhang, Y.Zhang, andH.Li, “Agile: Anovelreinforcement
+learning framework of llm agents,”Advances in Neural Information Processing Systems, vol. 37,
+pp. 5244–5284, 2024.
+[17] Z. Shao, P. Wang, Q. Zhu, R. Xu, J. Song, X. Bi, H. Zhang, M. Zhang, Y. Li, Y. Wu,et al.,
+“Deepseekmath: Pushing the limits of mathematical reasoning in open language models,”arXiv
+preprint arXiv:2402.03300, 2024.
+[18] D. Guo, D. Yang, H. Zhang, J. Song, R. Zhang, R. Xu, Q. Zhu, S. Ma, P. Wang, X. Bi,et al.,
+“Deepseek-r1: Incentivizingreasoningcapabilityinllmsviareinforcementlearning,”arXiv preprint
+arXiv:2501.12948, 2025.
+[19] Y. Mroueh, “Reinforcement learning with verifiable rewards: Grpo’s effective loss, dynamics, and
+success amplification,”arXiv preprint arXiv:2503.06639, 2025.
+[20] G. Gonzalez-Pumariega, L. S. Yean, N. Sunkara, and S. Choudhury, “Robotouille: An asyn-
+chronous planning benchmark for llm agents,” inThe Thirteenth International Conference on
+Learning Representations.
+[21] A. Dubey, A. Jauhri, A. Pandey, A. Kadian,et al., “The llama 3 herd of models,”arXiv e-prints,
+pp. arXiv–2407, 2024.
+[22] G. Sheng, C. Zhang, Z. Ye, X. Wu, W. Zhang, R. Zhang, Y. Peng, H. Lin, and C. Wu, “Hybridflow:
+A flexible and efficient rlhf framework,” inProceedings of the Twentieth European Conference on
+Computer Systems, pp. 1279–1297, 2025.
+[23] A. Yang, B. Yang, B. Zhang, B. Hui, B. Zheng, B. Yu, and et al, “Qwen2.5 technical report,”
+arXiv preprint arXiv:2412.15115, 2024.
+[24] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal policy optimization
+algorithms,”arXiv preprint arXiv:1707.06347, 2017.
+[25] A. Ahmadian, C. Cremer, M. Gallé, M. Fadaee, J. Kreutzer, O. Pietquin, A. Üstün, and S. Hooker,
+“Back to basics: Revisiting reinforce style optimization for learning from human feedback in llms,”
+arXiv preprint arXiv:2402.14740, 2024.
+[26] J. Hu, J. K. Liu, H. Xu, and W. Shen, “Reinforce++: An efficient rlhf algorithm with robustness
+to both prompt and reward models,”arXiv preprint arXiv:2501.03262, 2025.
+11

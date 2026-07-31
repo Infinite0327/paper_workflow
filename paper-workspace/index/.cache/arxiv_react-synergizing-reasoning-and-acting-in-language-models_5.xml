@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/dU44cLXzF+vrVqx9a+iiO0rFepo</id>
+  <title>arXiv Query: search_query=all:ReAct OR all:Synergizing OR all:Reasoning OR all:and OR all:Acting OR all:in OR all:Language OR all:Models&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-07-29T04:17:44Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:ReAct+OR+(all:Synergizing+OR+(all:Reasoning+OR+(all:and+OR+(all:Acting+OR+(all:in+OR+(all:Language+OR+all:Models))))))&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>1314465</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2210.03629v3</id>
+    <title>ReAct: Synergizing Reasoning and Acting in Language Models</title>
+    <updated>2023-03-10T01:00:17Z</updated>
+    <link href="https://arxiv.org/abs/2210.03629v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2210.03629v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-10-06T01:00:32Z</published>
+    <arxiv:comment>v3 is the ICLR camera ready version with some typos fixed. Project site with code: https://react-lm.github.io</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Shunyu Yao</name>
+    </author>
+    <author>
+      <name>Jeffrey Zhao</name>
+    </author>
+    <author>
+      <name>Dian Yu</name>
+    </author>
+    <author>
+      <name>Nan Du</name>
+    </author>
+    <author>
+      <name>Izhak Shafran</name>
+    </author>
+    <author>
+      <name>Karthik Narasimhan</name>
+    </author>
+    <author>
+      <name>Yuan Cao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.00071v2</id>
+    <title>ARS: Adaptive Reasoning Suppression for Efficient Large Reasoning Language Models</title>
+    <updated>2025-10-10T15:04:19Z</updated>
+    <link href="https://arxiv.org/abs/2510.00071v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.00071v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Reasoning Language Models (LRLMs or LRMs) demonstrate remarkable capabilities in complex reasoning tasks, but suffer from significant computational inefficiencies due to overthinking phenomena. Existing efficient reasoning methods face the challenge of balancing reasoning quality with inference cost reduction. We propose \textbf{Adaptive Reasoning Suppression (ARS)}, a novel training-free approach that dynamically suppresses redundant reasoning steps while preserving accuracy through adaptive certainty monitoring. ARS introduces a multi-checkpoint certainty estimation mechanism with progressive suppression thresholds, achieving superior efficiency compared to static suppression methods. Our extensive evaluation across mathematical reasoning benchmarks using multiple model architectures demonstrates that ARS achieves up to 53%, 46.1%, and 57.9% in token, latency and energy reduction, while maintaining or improving accuracy.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-29T20:19:41Z</published>
+    <arxiv:comment>Accepted by 39th NeurIPS - Foundations of Reasoning in Language Models</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Dongqi Zheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2309.02144v1</id>
+    <title>Making Large Language Models Better Reasoners with Alignment</title>
+    <updated>2023-09-05T11:32:48Z</updated>
+    <link href="https://arxiv.org/abs/2309.02144v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2309.02144v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reasoning is a cognitive process of using evidence to reach a sound conclusion. The reasoning capability is essential for large language models (LLMs) to serve as the brain of the artificial general intelligence agent. Recent studies reveal that fine-tuning LLMs on data with the chain of thought (COT) reasoning process can significantly enhance their reasoning capabilities. However, we find that the fine-tuned LLMs suffer from an \textit{Assessment Misalignment} problem, i.e., they frequently assign higher scores to subpar COTs, leading to potential limitations in their reasoning abilities. To address this problem, we introduce an \textit{Alignment Fine-Tuning (AFT)} paradigm, which involves three steps: 1) fine-tuning LLMs with COT training data; 2) generating multiple COT responses for each question, and categorizing them into positive and negative ones based on whether they achieve the correct answer; 3) calibrating the scores of positive and negative responses given by LLMs with a novel constraint alignment loss. Specifically, the constraint alignment loss has two objectives: a) Alignment, which guarantees that positive scores surpass negative scores to encourage answers with high-quality COTs; b) Constraint, which keeps the negative scores confined to a reasonable range to prevent the model degradation. Beyond just the binary positive and negative feedback, the constraint alignment loss can be seamlessly adapted to the ranking situations when ranking feedback is accessible. Furthermore, we also delve deeply into recent ranking-based alignment methods, such as DPO, RRHF, and PRO, and discover that the constraint, which has been overlooked by these approaches, is also crucial for their performance. Extensive experiments on four reasoning benchmarks with both binary and ranking feedback demonstrate the effectiveness of AFT.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-09-05T11:32:48Z</published>
+    <arxiv:comment>Large Language Models; Reasoning; Alignment</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Peiyi Wang</name>
+    </author>
+    <author>
+      <name>Lei Li</name>
+    </author>
+    <author>
+      <name>Liang Chen</name>
+    </author>
+    <author>
+      <name>Feifan Song</name>
+    </author>
+    <author>
+      <name>Binghuai Lin</name>
+    </author>
+    <author>
+      <name>Yunbo Cao</name>
+    </author>
+    <author>
+      <name>Tianyu Liu</name>
+    </author>
+    <author>
+      <name>Zhifang Sui</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.16021v1</id>
+    <title>Navigating the State of Cognitive Flow: Context-Aware AI Interventions for Effective Reasoning Support</title>
+    <updated>2025-04-22T16:35:39Z</updated>
+    <link href="https://arxiv.org/abs/2504.16021v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.16021v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Flow theory describes an optimal cognitive state where individuals experience deep focus and intrinsic motivation when a task's difficulty aligns with their skill level. In AI-augmented reasoning, interventions that disrupt the state of cognitive flow can hinder rather than enhance decision-making. This paper proposes a context-aware cognitive augmentation framework that adapts interventions based on three key contextual factors: type, timing, and scale. By leveraging multimodal behavioral cues (e.g., gaze behavior, typing hesitation, interaction speed), AI can dynamically adjust cognitive support to maintain or restore flow. We introduce the concept of cognitive flow, an extension of flow theory in AI-augmented reasoning, where interventions are personalized, adaptive, and minimally intrusive. By shifting from static interventions to context-aware augmentation, our approach ensures that AI systems support deep engagement in complex decision-making and reasoning without disrupting cognitive immersion.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-22T16:35:39Z</published>
+    <arxiv:comment>Presented at the 2025 ACM Workshop on Human-AI Interaction for Augmented Reasoning, Report Number: CHI25-WS-AUGMENTED-REASONING</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <arxiv:journal_ref>Proceedings of the 2025 ACM CHI Workshop on Human-AI Interaction for Augmented Reasoning</arxiv:journal_ref>
+    <author>
+      <name>Dinithi Dissanayake</name>
+    </author>
+    <author>
+      <name>Suranga Nanayakkara</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.01982v1</id>
+    <title>ChaosBench-Logic: A Benchmark for Logical and Symbolic Reasoning on Chaotic Dynamical Systems</title>
+    <updated>2026-01-05T10:36:40Z</updated>
+    <link href="https://arxiv.org/abs/2601.01982v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.01982v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) excel at natural language tasks but remain brittle in domains requiring precise logical and symbolic reasoning. Chaotic dynamical systems provide an especially demanding test because chaos is deterministic yet often misinterpreted as randomness or complexity. We introduce ChaosBench-Logic, a benchmark that evaluates LLM reasoning across 30 diverse dynamical systems using a unified first-order logic (FOL) ontology. Each system is annotated with truth assignments for 11 semantic predicates, and 621 questions are generated across seven reasoning categories, including multi-hop implications, cross-system analogies, counterfactual reasoning, bias probes, and multi-turn dialogues. We define metrics for logical accuracy, implication consistency, dialogue coherence, and contradiction, and we release an open-source evaluation pipeline. Initial experiments show that frontier LLMs such as GPT-4, Claude 3.5 Sonnet, Gemini 2.5 Flash, and the open-source LLaMA-3 70B achieve 91-94% per-item accuracy, yet still score 0% on compositional items and exhibit fragile global coherence. Dialogue-level accuracy ranges from 53.1% (GPT-4 CoT) to 75.5% (LLaMA-3 zero-shot). ChaosBench-Logic provides a rigorous testbed for diagnosing such failures and a foundation for developing neuro-symbolic approaches that improve scientific reasoning in LLMs.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-05T10:36:40Z</published>
+    <arxiv:comment>7 pages, 0 figures , Accepted to AAAI-26 Bridge Program: Logical and Symbolic Reasoning in Language Models (camera-ready)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>AAAI 2026 Bridge Program on Logical and Symbolic Reasoning in Language Models, Singapore, Jan 2026</arxiv:journal_ref>
+    <author>
+      <name>Noel Thomas</name>
+    </author>
+  </entry>
+</feed>

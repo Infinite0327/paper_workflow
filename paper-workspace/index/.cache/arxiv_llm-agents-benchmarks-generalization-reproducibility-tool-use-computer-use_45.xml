@@ -1,0 +1,1518 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QrEtK6BEA446JYZTjswZHr6SaYg</id>
+  <title>arXiv Query: search_query=all:LLM OR all:agents OR all:benchmarks OR all:generalization OR all:reproducibility OR all:tool OR all:use OR all:computer OR all:use&amp;id_list=&amp;start=0&amp;max_results=45</title>
+  <updated>2026-07-29T04:13:30Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:LLM+OR+(all:agents+OR+(all:benchmarks+OR+(all:generalization+OR+(all:reproducibility+OR+(all:tool+OR+(all:use+OR+(all:computer+OR+all:use)))))))&amp;start=0&amp;max_results=45&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>45</opensearch:itemsPerPage>
+  <opensearch:totalResults>2277252</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2505.21964v2</id>
+    <title>UI-Evol: Automatic Knowledge Evolving for Computer Use Agents</title>
+    <updated>2025-11-03T08:44:04Z</updated>
+    <link href="https://arxiv.org/abs/2505.21964v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.21964v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>External knowledge has played a crucial role in the recent development of computer use agents. We identify a critical knowledge-execution gap: retrieved knowledge often fails to translate into effective real-world task execution. Our analysis shows even 90% correct knowledge yields only 41% execution success rate. To bridge this gap, we propose UI-Evol, a plug-and-play module for autonomous GUI knowledge evolution. UI-Evol consists of two stages: a Retrace Stage that extracts faithful objective action sequences from actual agent-environment interactions, and a Critique Stage that refines existing knowledge by comparing these sequences against external references. We conduct comprehensive experiments on the OSWorld benchmark with the state-of-the-art Agent S2. Our results demonstrate that UI-Evol not only significantly boosts task performance but also addresses a previously overlooked issue of high behavioral standard deviation in computer use agents, leading to superior performance on computer use tasks and substantially improved agent reliability.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-28T04:32:05Z</published>
+    <arxiv:comment>Accepted to ICML 2025 Workshop on Computer Use Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Ziyun Zhang</name>
+    </author>
+    <author>
+      <name>Xinyi Liu</name>
+    </author>
+    <author>
+      <name>Xiaoyi Zhang</name>
+    </author>
+    <author>
+      <name>Jun Wang</name>
+    </author>
+    <author>
+      <name>Gang Chen</name>
+    </author>
+    <author>
+      <name>Yan Lu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.07217v2</id>
+    <title>BIMgent: Towards Autonomous Building Modeling via Computer-use Agents</title>
+    <updated>2025-06-30T08:31:07Z</updated>
+    <link href="https://arxiv.org/abs/2506.07217v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.07217v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing computer-use agents primarily focus on general-purpose desktop automation tasks, with limited exploration of their application in highly specialized domains. In particular, the 3D building modeling process in the Architecture, Engineering, and Construction (AEC) sector involves open-ended design tasks and complex interaction patterns within Building Information Modeling (BIM) authoring software, which has yet to be thoroughly addressed by current studies. In this paper, we propose BIMgent, an agentic framework powered by multimodal large language models (LLMs), designed to enable autonomous building model authoring via graphical user interface (GUI) operations. BIMgent automates the architectural building modeling process, including multimodal input for conceptual design, planning of software-specific workflows, and efficient execution of the authoring GUI actions. We evaluate BIMgent on real-world building modeling tasks, including both text-based conceptual design generation and reconstruction from existing building design. The design quality achieved by BIMgent was found to be reasonable. Its operations achieved a 32% success rate, whereas all baseline models failed to complete the tasks (0% success rate). Results demonstrate that BIMgent effectively reduces manual workload while preserving design intent, highlighting its potential for practical deployment in real-world architectural modeling scenarios. Project page: https://tumcms.github.io/BIMgent.github.io/</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-08T16:45:31Z</published>
+    <arxiv:comment>ICML 2025 Workshop on Computer Use Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zihan Deng</name>
+    </author>
+    <author>
+      <name>Changyu Du</name>
+    </author>
+    <author>
+      <name>Stavros Nousias</name>
+    </author>
+    <author>
+      <name>André Borrmann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2111.01762v1</id>
+    <title>AIRCC-Clim: a user-friendly tool for generating regional probabilistic climate change scenarios and risk measures</title>
+    <updated>2021-10-30T11:09:03Z</updated>
+    <link href="https://arxiv.org/abs/2111.01762v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2111.01762v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Complex physical models are the most advanced tools available for producing realistic simulations of the climate system. However, such levels of realism imply high computational cost and restrictions on their use for policymaking and risk assessment. Two central characteristics of climate change are uncertainty and that it is a dynamic problem in which international actions can significantly alter climate projections and information needs, including partial and full compliance of global climate goals. Here we present AIRCC-Clim, a simple climate model emulator that produces regional probabilistic climate change projections of monthly and annual temperature and precipitation, as well as risk measures, based both on standard and user-defined emissions scenarios for six greenhouse gases. AIRCC-Clim emulates 37 atmosphere-ocean coupled general circulation models with low computational and technical requirements for the user. This standalone, user-friendly software is designed for a variety of applications including impact assessments, climate policy evaluation and integrated assessment modelling.</summary>
+    <category term="physics.ao-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-10-30T11:09:03Z</published>
+    <arxiv:primary_category term="physics.ao-ph"/>
+    <author>
+      <name>Francisco Estrada</name>
+    </author>
+    <author>
+      <name>Oscar Calderón-Bustamante</name>
+    </author>
+    <author>
+      <name>Wouter Botzen</name>
+    </author>
+    <author>
+      <name>Julián A. Velasco</name>
+    </author>
+    <author>
+      <name>Richard S. J. Tol</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18805v1</id>
+    <title>RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents</title>
+    <updated>2026-05-11T18:55:32Z</updated>
+    <link href="https://arxiv.org/abs/2605.18805v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18805v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM recommendation agents increasingly produce structured recommendation reports: sets of items accompanied by natural-language justifications. Yet existing evaluations often reduce this setting to reranking small shortlisted candidate sets or judge reports mainly by semantic plausibility. We introduce Recommendation Atlas (Agentic Tool-Level Assessment for Shopping), or RecoAtlas, a benchmark and toolkit for evaluating shopping agents with behavior-grounded metrics. RecoAtlas complements held-out interaction metrics with learned utility proxies for relevance, complementarity, and diversity derived from interaction data, while separately measuring semantic coherence and explanation quality. Its controlled tool environment exposes agents to either semantic, behavior-aligned, or faulty tools, enabling diagnosis of whether performance gains arise from stronger reasoning, better signals, or more effective tool-use policies. Across controlled experiments, we show that RecoAtlas exhibits key properties of a meaningful benchmark for agentic systems: performance scales with model capacity and test-time compute, improves with stronger and better-aligned tools, degrades under noisy or misaligned signals, and reveals that semantic plausibility does not necessarily capture behavior-grounded utility. RecoAtlas provides a foundation for developing and evaluating shopping assistants that optimize not only for plausible recommendations, but also for coherent, behaviorally grounded recommendation sets.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-11T18:55:32Z</published>
+    <arxiv:comment>Benchmark on LLM Recommendation Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Imad Aouali</name>
+    </author>
+    <author>
+      <name>Flavian Vasile</name>
+    </author>
+    <author>
+      <name>Otmane Sakhi</name>
+    </author>
+    <author>
+      <name>Alexandre Gilotte</name>
+    </author>
+    <author>
+      <name>Benjamin Heymann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.10758v3</id>
+    <title>Agents at Risk: How Users Unwittingly Undermine LLM Safety</title>
+    <updated>2026-07-07T04:20:13Z</updated>
+    <link href="https://arxiv.org/abs/2601.10758v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.10758v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we introduce the User-Relayed Context Manipulation (UReCoM) attack, in which attackers manipulate benign users into relaying adversarial content within user requests, thereby relocating external adversarial content into user-provided task context. Our experimental evaluation shows that UReCoM outperforms five prompt-injection baselines (naive, context ignoring, fake completion, escape-character attacks, and combined attacks) under prevention-based (Sandwich, StruQ, and SecAlign) and detection-based defenses (Perplexity detection, DataSentinel, and CausalArmor). Additionally, UReCoM shows that LLMs can reject explicit malicious instructions more reliably than they can identify adversarial task entities, such as promotion codes, embedded within user requests. On 12 commercial LLM-based agents, we find that validation of adversarial task entities is largely prompt-driven rather than default, highlighting a design flaw in current agent frameworks. These results indicate that current defenses and deployed agents remain insufficient against user-relayed context manipulations, highlighting the need for task-entity-level prevention and default safety verification in LLM-based agents.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-14T03:29:13Z</published>
+    <arxiv:comment>User-relayed Context Manipulation; LLM-based Agents; Agent Security; Human Factors in Cybersecurity; Web-Use Agents; Planning Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Fengchao Chen</name>
+    </author>
+    <author>
+      <name>Tingmin Wu</name>
+    </author>
+    <author>
+      <name>Van Nguyen</name>
+    </author>
+    <author>
+      <name>Surya. Nepal</name>
+    </author>
+    <author>
+      <name>Carsten Rudolph</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.14866v2</id>
+    <title>OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents</title>
+    <updated>2025-10-29T10:34:04Z</updated>
+    <link href="https://arxiv.org/abs/2506.14866v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.14866v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Computer use agents are LLM-based agents that can directly interact with a graphical user interface, by processing screenshots or accessibility trees. While these systems are gaining popularity, their safety has been largely overlooked, despite the fact that evaluating and understanding their potential for harmful behavior is essential for widespread adoption. To address this gap, we introduce OS-Harm, a new benchmark for measuring safety of computer use agents. OS-Harm is built on top of the OSWorld environment and aims to test models across three categories of harm: deliberate user misuse, prompt injection attacks, and model misbehavior. To cover these cases, we create 150 tasks that span several types of safety violations (harassment, copyright infringement, disinformation, data exfiltration, etc.) and require the agent to interact with a variety of OS applications (email client, code editor, browser, etc.). Moreover, we propose an automated judge to evaluate both accuracy and safety of agents that achieves high agreement with human annotations (0.76 and 0.79 F1 score). We evaluate computer use agents based on a range of frontier models - such as o4-mini, Claude 3.7 Sonnet, Gemini 2.5 Pro - and provide insights into their safety. In particular, all models tend to directly comply with many deliberate misuse queries, are relatively vulnerable to static prompt injections, and occasionally perform unsafe actions. The OS-Harm benchmark is available at https://github.com/tml-epfl/os-harm.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-17T17:59:31Z</published>
+    <arxiv:comment>NeurIPS 2025 Datasets &amp; Benchmarks Track (Spotlight)</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Thomas Kuntz</name>
+    </author>
+    <author>
+      <name>Agatha Duzan</name>
+    </author>
+    <author>
+      <name>Hao Zhao</name>
+    </author>
+    <author>
+      <name>Francesco Croce</name>
+    </author>
+    <author>
+      <name>Zico Kolter</name>
+    </author>
+    <author>
+      <name>Nicolas Flammarion</name>
+    </author>
+    <author>
+      <name>Maksym Andriushchenko</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.07575v1</id>
+    <title>MCPToolBench++: A Large Scale AI Agent Model Context Protocol MCP Tool Use Benchmark</title>
+    <updated>2025-08-11T03:16:02Z</updated>
+    <link href="https://arxiv.org/abs/2508.07575v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.07575v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLMs' capabilities are enhanced by using function calls to integrate various data sources or API results into the context window. Typical tools include search, web crawlers, maps, financial data, file systems, and browser usage, etc. Integrating these data sources or functions requires a standardized method. The Model Context Protocol (MCP) provides a standardized way to supply context to LLMs. However, the evaluation of LLMs and AI Agents' MCP tool use abilities suffer from several issues. First, there's a lack of comprehensive datasets or benchmarks to evaluate various MCP tools. Second, the diverse formats of response from MCP tool call execution further increase the difficulty of evaluation. Additionally, unlike existing tool-use benchmarks with high success rates in functions like programming and math functions, the success rate of real-world MCP tool is not guaranteed and varies across different MCP servers. Furthermore, the LLMs' context window also limits the number of available tools that can be called in a single run, because the textual descriptions of tool and the parameters have long token length for an LLM to process all at once. To help address the challenges of evaluating LLMs' performance on calling MCP tools, we propose MCPToolBench++, a large-scale, multi-domain AI Agent tool use benchmark. As of July 2025, this benchmark is build upon marketplace of over 4k MCP servers from more than 40 categories, collected from the MCP marketplaces and GitHub communities. The datasets consist of both single-step and multi-step tool calls across different categories. We evaluated SOTA LLMs with agentic abilities on this benchmark and reported the results.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-11T03:16:02Z</published>
+    <arxiv:comment>Benchmarks and Source Code Released</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shiqing Fan</name>
+    </author>
+    <author>
+      <name>Xichen Ding</name>
+    </author>
+    <author>
+      <name>Liang Zhang</name>
+    </author>
+    <author>
+      <name>Linjian Mo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.09937v1</id>
+    <title>HealthAdminBench: Evaluating Computer-Use Agents on Healthcare Administration Tasks</title>
+    <updated>2026-04-10T22:33:39Z</updated>
+    <link href="https://arxiv.org/abs/2604.09937v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.09937v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Healthcare administration accounts for over $1 trillion in annual spending, making it a promising target for LLM-based computer-use agents (CUAs). While clinical applications of LLMs have received significant attention, no benchmark exists for evaluating CUAs on end-to-end administrative workflows. To address this gap, we introduce HealthAdminBench, a benchmark comprising four realistic GUI environments: an EHR, two payer portals, and a fax system, and 135 expert-defined tasks spanning three administrative task types: Prior Authorization, Appeals and Denials Management, and Durable Medical Equipment (DME) Order Processing. Each task is decomposed into fine-grained, verifiable subtasks, yielding 1,698 evaluation points. We evaluate seven agent configurations under multiple prompting and observation settings and find that, despite strong subtask performance, end-to-end reliability remains low: the best-performing agent (Claude Opus 4.6 CUA) achieves only 36.3 percent task success, while GPT-5.4 CUA attains the highest subtask success rate (82.8 percent). These results reveal a substantial gap between current agent capabilities and the demands of real-world administrative workflows. HealthAdminBench provides a rigorous foundation for evaluating progress toward safe and reliable automation of healthcare administrative workflows.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-10T22:33:39Z</published>
+    <arxiv:comment>24 pages, 5 figures, 5 tables. Benchmark paper introducing 4 simulated environments, 135 tasks, and 1,698 evaluation points for healthcare administrative computer-use agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Suhana Bedi</name>
+    </author>
+    <author>
+      <name>Ryan Welch</name>
+    </author>
+    <author>
+      <name>Ethan Steinberg</name>
+    </author>
+    <author>
+      <name>Michael Wornow</name>
+    </author>
+    <author>
+      <name>Taeil Matthew Kim</name>
+    </author>
+    <author>
+      <name>Haroun Ahmed</name>
+    </author>
+    <author>
+      <name>Peter Sterling</name>
+    </author>
+    <author>
+      <name>Bravim Purohit</name>
+    </author>
+    <author>
+      <name>Qurat Akram</name>
+    </author>
+    <author>
+      <name>Angelic Acosta</name>
+    </author>
+    <author>
+      <name>Esther Nubla</name>
+    </author>
+    <author>
+      <name>Pritika Sharma</name>
+    </author>
+    <author>
+      <name>Michael A. Pfeffer</name>
+    </author>
+    <author>
+      <name>Sanmi Koyejo</name>
+    </author>
+    <author>
+      <name>Nigam H. Shah</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.04686v1</id>
+    <title>ToolFailBench: Diagnosing Tool-Use Failures in LLM Agents</title>
+    <updated>2026-07-06T05:25:21Z</updated>
+    <link href="https://arxiv.org/abs/2607.04686v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.04686v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool calling is central to modern language model agents, but aggregate benchmark scores often hide where tool use fails. A model that never calls a needed tool and a model that calls the tool but ignores the result can look similar under final task accuracy. We introduce ToolFailBench, a diagnostic benchmark for measuring tool-use failures across 1,000 tasks in finance, medicine, law, cybersecurity, and real estate. Tool-required tasks return values the model wouldn't guess, forcing it to trust the tool while control tasks attach the same tools but should be answered directly. We label each trace with Tool-Skip, Result-Ignore, Output-Fabrication, and Unnecessary-Tool-Use, using a rule classifier and two LLM judges aggregated by majority vote. Across 19 headline models, the best reaches 86.33% Clean Tool-Use Rate, showing that faithful tool use is not saturated. More importantly, models with similar aggregate scores fail in different ways: most stay disciplined on no-tool controls, while Llama-3.1 models show an Always-Call pattern, and at the same parameter scale Llama-3.1-70B and Qwen2.5-72B differ by 89 percentage points on control-task accuracy. Tool-use evaluation should measure not only whether agents call tools, but whether they use tool outputs correctly and avoid tools when none is needed.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-06T05:25:21Z</published>
+    <arxiv:comment>18 pages, 3 figures. Published at the Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD) and the Workshop on Failure Modes of Agentic AI (FAGEN) at ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Harsh Soni</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2308.13062v1</id>
+    <title>ZeroLeak: Using LLMs for Scalable and Cost Effective Side-Channel Patching</title>
+    <updated>2023-08-24T20:04:36Z</updated>
+    <link href="https://arxiv.org/abs/2308.13062v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2308.13062v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Security critical software, e.g., OpenSSL, comes with numerous side-channel leakages left unpatched due to a lack of resources or experts. The situation will only worsen as the pace of code development accelerates, with developers relying on Large Language Models (LLMs) to automatically generate code. In this work, we explore the use of LLMs in generating patches for vulnerable code with microarchitectural side-channel leakages. For this, we investigate the generative abilities of powerful LLMs by carefully crafting prompts following a zero-shot learning approach. All generated code is dynamically analyzed by leakage detection tools, which are capable of pinpointing information leakage at the instruction level leaked either from secret dependent accesses or branches or vulnerable Spectre gadgets, respectively. Carefully crafted prompts are used to generate candidate replacements for vulnerable code, which are then analyzed for correctness and for leakage resilience. From a cost/performance perspective, the GPT4-based configuration costs in API calls a mere few cents per vulnerability fixed. Our results show that LLM-based patching is far more cost-effective and thus provides a scalable solution. Finally, the framework we propose will improve in time, especially as vulnerability detection tools and LLMs mature.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-08-24T20:04:36Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>M. Caner Tol</name>
+    </author>
+    <author>
+      <name>Berk Sunar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.06560v1</id>
+    <title>MacArena: Benchmarking Computer Use Agents on an Online macOS Environment</title>
+    <updated>2026-06-04T14:01:32Z</updated>
+    <link href="https://arxiv.org/abs/2606.06560v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.06560v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly, driven in part by standardized online evaluation benchmarks such as OSWorld, which serve both as evaluation tools and as training environments for reinforcement learning. However, macOS remains underserved in this landscape: the only existing benchmark, macOSWorld, covers a narrow slice of first-party applications with simpler tasks, and runs on x86 virtual machines incompatible with Apple Silicon. We introduce MacArena, a benchmark of 421 manually verified tasks spanning 50 applications that combines a curated port of OSWorld tasks, content sourced from macOSWorld, and 49 new macOS-native tasks, all running on Apple's native Virtualization framework on Apple Silicon. We argue that macOS presents distinct GUI challenges beyond what Linux-based benchmarks capture, and our evaluation supports this claim: strong model performance on existing benchmarks can reflect familiarity with task distributions rather than genuine cross-platform GUI competence. Notably, model rankings invert between ported and macOS-native tasks, with a leading model trailing by over 26% on the MacArena subset, suggesting that macOS poses a genuinely harder environment for current GUI agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T14:01:32Z</published>
+    <arxiv:comment>Accepted to the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD) at ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Victor Muryn</name>
+    </author>
+    <author>
+      <name>Maksym Shamrai</name>
+    </author>
+    <author>
+      <name>Sofiia Mazepa</name>
+    </author>
+    <author>
+      <name>Yehor Khodysko</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2405.07551v1</id>
+    <title>MuMath-Code: Combining Tool-Use Large Language Models with Multi-perspective Data Augmentation for Mathematical Reasoning</title>
+    <updated>2024-05-13T08:32:19Z</updated>
+    <link href="https://arxiv.org/abs/2405.07551v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.07551v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The tool-use Large Language Models (LLMs) that integrate with external Python interpreters have significantly enhanced mathematical reasoning capabilities for open-source LLMs, while tool-free methods chose another track: augmenting math reasoning data. However, a great method to integrate the above two research paths and combine their advantages remains to be explored. In this work, we firstly include new math questions via multi-perspective data augmenting methods and then synthesize code-nested solutions to them. The open LLMs (i.e., Llama-2) are finetuned on the augmented dataset to get the resulting models, MuMath-Code ($μ$-Math-Code). During the inference phase, our MuMath-Code generates code and interacts with the external python interpreter to get the execution results. Therefore, MuMath-Code leverages the advantages of both the external tool and data augmentation. To fully leverage the advantages of our augmented data, we propose a two-stage training strategy: In Stage-1, we finetune Llama-2 on pure CoT data to get an intermediate model, which then is trained on the code-nested data in Stage-2 to get the resulting MuMath-Code. Our MuMath-Code-7B achieves 83.8 on GSM8K and 52.4 on MATH, while MuMath-Code-70B model achieves new state-of-the-art performance among open methods -- achieving 90.7% on GSM8K and 55.1% on MATH. Extensive experiments validate the combination of tool use and data augmentation, as well as our two-stage training strategy. We release the proposed dataset along with the associated code for public use.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-13T08:32:19Z</published>
+    <arxiv:comment>The state-of-the-art open-source tool-use LLMs for mathematical reasoning</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Shuo Yin</name>
+    </author>
+    <author>
+      <name>Weihao You</name>
+    </author>
+    <author>
+      <name>Zhilong Ji</name>
+    </author>
+    <author>
+      <name>Guoqiang Zhong</name>
+    </author>
+    <author>
+      <name>Jinfeng Bai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2401.07324v3</id>
+    <title>Small LLMs Are Weak Tool Learners: A Multi-LLM Agent</title>
+    <updated>2024-02-16T12:42:25Z</updated>
+    <link href="https://arxiv.org/abs/2401.07324v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.07324v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents significantly extend the capabilities of standalone LLMs, empowering them to interact with external tools (e.g., APIs, functions) and complete various tasks in a self-directed fashion. The challenge of tool use demands that LLMs not only understand user queries and generate answers accurately but also excel in task planning, tool invocation, and result summarization. While traditional works focus on training a single LLM with all these capabilities, performance limitations become apparent, particularly with smaller models. To overcome these challenges, we propose a novel approach that decomposes the aforementioned capabilities into a planner, caller, and summarizer. Each component is implemented by a single LLM that focuses on a specific capability and collaborates with others to accomplish the task. This modular framework facilitates individual updates and the potential use of smaller LLMs for building each capability. To effectively train this framework, we introduce a two-stage training paradigm. First, we fine-tune a backbone LLM on the entire dataset without discriminating sub-tasks, providing the model with a comprehensive understanding of the task. Second, the fine-tuned LLM is used to instantiate the planner, caller, and summarizer respectively, which are continually fine-tuned on respective sub-tasks. Evaluation across various tool-use benchmarks illustrates that our proposed multi-LLM framework surpasses the traditional single-LLM approach, highlighting its efficacy and advantages in tool learning.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-14T16:17:07Z</published>
+    <arxiv:comment>On progress, github repo: https://github.com/X-PLUG/Multi-LLM-Agent</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Weizhou Shen</name>
+    </author>
+    <author>
+      <name>Chenliang Li</name>
+    </author>
+    <author>
+      <name>Hongzhan Chen</name>
+    </author>
+    <author>
+      <name>Ming Yan</name>
+    </author>
+    <author>
+      <name>Xiaojun Quan</name>
+    </author>
+    <author>
+      <name>Hehong Chen</name>
+    </author>
+    <author>
+      <name>Ji Zhang</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.19559v1</id>
+    <title>Uncertainty Decomposition for Clarification Seeking in LLM Agents</title>
+    <updated>2026-06-17T19:59:32Z</updated>
+    <link href="https://arxiv.org/abs/2606.19559v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.19559v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent position papers argue that the classical aleatoric/epistemic uncertainty framework is insufficient for interactive large language model (LLM) agents and call for underspecification-aware, decomposed, and communicable uncertainty representations that can unlock new agent capabilities such as proactive clarification seeking and shared mental-model building. Practical deployment constraints -- black-box APIs, interactive latency budgets, and the absence of labeled trajectories -- rule out logprob-based, multi-sampling, and training-based methods, leaving prompt-based estimation as the most viable family for surfacing such signals at deployment time. We answer this call with a simple prompt-based decomposition that separates action confidence from request uncertainty (u), enabling the agent to ask for clarification when the task specification is ambiguous. To evaluate it, we introduce two clarification-augmented benchmarks (WebShop-Clarification and ALFWorld-Clarification) in which 50% of tasks are deliberately underspecified, and systematically compare the proposed decomposition against ReAct+UE and Uncertainty-Aware Memory (UAM) across five LLM backbones (GPT-5.1, DeepSeek-v3.2-exp, GLM-4.7, Qwen3.5-35B, GPT-OSS-120B) on these variants together with the standard WebShop, ALFWorld, and REAL benchmarks for fault detection. Averaged across the five backbones, the proposed decomposition improves clarification F1 on ALFWorld-Clarification by 73% over ReAct+UE and by 36% over UAM, and leads clarification F1 on every backbone on WebShop-Clarification and on four of five backbones on ALFWorld-Clarification, indicating that the gains generalize beyond a single LLM.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-17T19:59:32Z</published>
+    <arxiv:comment>26 pages, 8 figures. Source code: https://github.com/PE51K/udcs-in-llm-agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Gregory Matsnev</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.20023v2</id>
+    <title>When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents</title>
+    <updated>2026-07-07T12:24:40Z</updated>
+    <link href="https://arxiv.org/abs/2606.20023v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.20023v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents increasingly select tools autonomously, their choices among tools with different privileges become safety-relevant. However, prior tool-selection studies focus on safety-agnostic metadata preferences, leaving privilege-sensitive choices underexplored. To address this gap, we study over-privileged tool selection, in which an agent selects or escalates to a higher-privilege tool despite a sufficient lower-privilege alternative. We introduce ToolPrivBench to evaluate whether agents choose higher-privilege tools despite sufficient lower-privilege alternatives, measuring both initial selection and escalation after transient tool failures. Across eight domains and five recurring risk patterns, we find that over-privileged tool selection is common among mainstream LLM agents and is further amplified by transient failures. We further find that general safety alignment does not reliably transfer to least-privilege tool choice, while prompt-level controls provide only limited mitigation under transient failures. We therefore introduce a privilege-aware post-training defense that teaches agents to prefer sufficient lower-privilege tools and escalate only when necessary. Our mitigation experiments show that this defense substantially reduces unnecessary high-privilege tool use while preserving general capabilities.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-18T09:54:48Z</published>
+    <arxiv:comment>code: https://github.com/AISafetyHub/agent-tool-selection-bias</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Kaiyue Yang</name>
+    </author>
+    <author>
+      <name>Yuyan Bu</name>
+    </author>
+    <author>
+      <name>Jingwei Yi</name>
+    </author>
+    <author>
+      <name>Yuchi Wang</name>
+    </author>
+    <author>
+      <name>Biyu Zhou</name>
+    </author>
+    <author>
+      <name>Juntao Dai</name>
+    </author>
+    <author>
+      <name>Songlin Hu</name>
+    </author>
+    <author>
+      <name>Yaodong Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.06334v1</id>
+    <title>MANTRA: Synthesizing SMT-Validated Compliance Benchmarks for Tool-Using LLM Agents</title>
+    <updated>2026-05-07T14:26:19Z</updated>
+    <link href="https://arxiv.org/abs/2605.06334v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.06334v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using large language model (LLM) agents are increasingly deployed in settings where their reliable behavior is governed by strict procedural manuals. Ensuring that such agents comply with the rules from these manuals is challenging, as they are typically written for humans in natural language while agent behavior manifests as an execution trace of tool calls. Existing evaluations of LLM agents rely on manually constructed benchmarks or LLM-based judges, which either do not scale or lack reliability for complex, long-horizon manuals. To overcome these limitations, we present MANTRA, a framework for automatically synthesizing machine-checkable compliance benchmarks from natural-language manuals and tool schemas. MANTRA independently generates (i) a symbolic world model capturing procedural dependencies, and (ii) a set of trace-level compliance checks for a given task, and validates their consistency using SMT solving. A structured repair loop resolves inconsistencies, requiring human intervention only as a fallback. %This yields benchmarks that are formally validated. Importantly, MANTRA supports arbitrary domains and long procedural manuals, and provides a tunable notion of task complexity which is utilized to automatically derive challenging tasks accompanying compliance checks. Using MANTRA, we build a new benchmark suite with 285 tasks across 6 domains scaling to 50+ page manuals with minimal human effort. Empirically, we show that the compliance checks are richer with stronger constraint enforcement compared to existing benchmarks. Additionally, the granularity of the checks can be used for debugging the agents' failure modes. These results demonstrate that combining automated benchmark generation with formally grounded validation methods enables scalable and reliable benchmarking of tool-using agents.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-07T14:26:19Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Ashwani Anand</name>
+    </author>
+    <author>
+      <name>Ivi Chatzi</name>
+    </author>
+    <author>
+      <name>Ritam Raha</name>
+    </author>
+    <author>
+      <name>Anne-Kathrin Schmuck</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.28061v1</id>
+    <title>ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents</title>
+    <updated>2026-06-26T13:08:46Z</updated>
+    <link href="https://arxiv.org/abs/2606.28061v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.28061v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) have increasingly moved from standalone text generation systems to agents that invoke external tools, access environments, and execute multi-step tasks. However, conventional function-calling benchmarks mainly evaluate task completion and API correctness, while privacy evaluation benchmarks typically focus on final responses or privacy judgments. Neither perspective captures purpose-bound information flow across an executed multi-tool trajectory. Motivated by this limitation in current agent evaluation, ToolPrivacyBench audits whether task-private atoms are routed only to authorized tools and downstream sinks, thereby evaluating both task completion and privacy over-disclosure during tool use. The benchmark contains 2,150 cases, including 1,150 fully synthetic privacy-sensitive business workflows and 1,000 cases adapted from existing multi-tool and function-calling benchmarks. Each case is represented by a policy knowledge base. After an agent executes against mock business backends, the evaluator compares recorded tool arguments and backend audit logs with this policy knowledge base. The evaluation covers nine widely used agents to characterize purpose-bound privacy over-disclosure. The results show that successful tool execution does not imply appropriate privacy disclosure: an agent may complete a task while transmitting unnecessary private information through intermediate tool calls. ToolPrivacyBench therefore formalizes a need-to-know disclosure boundary, under which each tool should receive only the information necessary for its stated purpose, and uses trajectory-level auditing to identify privacy over-disclosure in multi-tool workflows.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-26T13:08:46Z</published>
+    <arxiv:comment>24 pages, 7 figures, 15 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Shijing Hu</name>
+    </author>
+    <author>
+      <name>Liang Liu</name>
+    </author>
+    <author>
+      <name>Zhu Meng</name>
+    </author>
+    <author>
+      <name>Zhicheng Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.19840v3</id>
+    <title>Intrinsic back-switching phenomenon in SOT-MRAM devices</title>
+    <updated>2025-11-19T22:06:06Z</updated>
+    <link href="https://arxiv.org/abs/2503.19840v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.19840v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The writing process of SOT-MRAMs is considered deterministic when additional symmetry-breaking factors, such as the application of an external magnetic field aligned with the current, are present. Notably, the write probability exhibits a unique behavior as a function of the current: it drops to zero at high currents or even oscillates with the current. This phenomenon is attributed to back-switching, an intrinsic effect of magnetization reversal driven by spin-orbit torques. A systematic investigation of this back-switching phenomenon is conducted on sub-100 nm CoFeB magnetic pillars positioned at the center of $β$-W Hall crosses. Using a statistical approach, the study examines the impact of various parameters, including the amplitude of current pulses and the application of magnetic fields in different directions. The findings reveal that the back-switching phenomenon is not statistically random. Macrospin simulations, employing realistic magnetic parameter values, accurately replicate the experimental observations and provide insights into the underlying mechanisms of back-switching. These simulations also explore strategies to mitigate the phenomenon, such as optimizing the shape of the writing pulses. Applying this approach to complete SOT-MRAM single cells achieves a write error rate below $2 \times 10^{-6}$, demonstrating the effectiveness of this strategy in expanding the operational current range for write operations in SOT-MRAMs.</summary>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.app-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-25T16:59:51Z</published>
+    <arxiv:comment>Marie Skłodowska-Curie Actions, H2020-MSCA-ITN-2020; Project acronym SPEAR; Grant Agreement No. 955671</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.mes-hall"/>
+    <arxiv:journal_ref>Phys. Rev. Applied 24, 064038 (2025)</arxiv:journal_ref>
+    <author>
+      <name>Kuldeep Ray</name>
+    </author>
+    <author>
+      <name>Jérémie Vigier</name>
+    </author>
+    <author>
+      <name>Perrine Usé</name>
+    </author>
+    <author>
+      <name>Sylvain Martin</name>
+    </author>
+    <author>
+      <name>Nicolas Lefoulon</name>
+    </author>
+    <author>
+      <name>Chloé Bouard</name>
+    </author>
+    <author>
+      <name>Marc Drouard</name>
+    </author>
+    <author>
+      <name>Gilles Gaudin</name>
+    </author>
+    <arxiv:doi>10.1103/vlhq-tf18</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/vlhq-tf18" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.13713v2</id>
+    <title>On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis</title>
+    <updated>2026-03-16T18:03:22Z</updated>
+    <link href="https://arxiv.org/abs/2602.13713v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.13713v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Identifying the strategic uses of reformulation in discourse remains a key challenge for computational argumentation. While LLMs can detect surface-level similarity, they often fail to capture the pragmatic functions of rephrasing, such as its role within rhetorical discourse. This paper presents a comparative multi-agent framework designed to quantify the benefits of incorporating explicit theoretical knowledge for this task. We utilise an dataset of annotated political debates to establish a new standard encompassing four distinct rephrase functions: Deintensification, Intensification, Specification, Generalisation, and Other, which covers all remaining types (D-I-S-G-O). We then evaluate two parallel LLM-based agent systems: one enhanced by argumentation theory via Retrieval-Augmented Generation (RAG), and an identical zero-shot baseline. The results reveal a clear performance gap: the RAG-enhanced agents substantially outperform the baseline across the board, with particularly strong advantages in detecting Intensification and Generalisation context, yielding an overall Macro F1-score improvement of nearly 30\%. Our findings provide evidence that theoretical grounding is not only beneficial but essential for advancing beyond mere paraphrase detection towards function-aware analysis of argumentative discourse. This comparative multi-agent architecture represents a step towards scalable, theoretically informed computational tools capable of identifying rhetorical strategies in contemporary discourse.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-14T10:30:39Z</published>
+    <arxiv:comment>8 pages, 4 figures, 3 tables. This is the accepted version of the paper presented at the 18th International Conference on Agents and Artificial Intelligence (ICAART 2026), Marbella, Spain</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <arxiv:journal_ref>Proceedings of the 18th International Conference on Agents and Artificial Intelligence (ICAART 2026)</arxiv:journal_ref>
+    <author>
+      <name>Maciej Uberna</name>
+    </author>
+    <author>
+      <name>Michał Wawer</name>
+    </author>
+    <author>
+      <name>Jarosław A. Chudziak</name>
+    </author>
+    <author>
+      <name>Marcin Koszowy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.05868v1</id>
+    <title>YouZhi: Towards High-Concurrency Financial LLMs via Adaptive GQA-to-MLA Transition</title>
+    <updated>2026-06-04T08:44:37Z</updated>
+    <link href="https://arxiv.org/abs/2606.05868v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.05868v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) drive significant financial innovations, yet their high-concurrency deployment is severely bottlenecked by KV cache memory overhead, which inflates infrastructure costs and throttles scalability. To address this, we propose YouZhi-LLM, a highly efficient financial LLM empowered by a comprehensive structural transition and training pipeline natively built on the Huawei Ascend ecosystem. At its algorithmic core, YouZhi-LLM features a layer-adaptive GQA-to-MLA transition framework that dynamically assigns per-layer FreqFold sizes, maximizing KV-cache compression while minimizing perplexity degradation. To recover representation capacity and inject domain expertise, the Ascend-based training pipeline seamlessly integrates generalized knowledge distillation with financial-specific supervised fine-tuning. Evaluations demonstrate the superiority of this systematic approach, with the adaptive transition reducing perplexity degradation by up to 35% over uniform baselines. Crucially, when evaluated on Ascend NPUs via vLLM-Ascend, the massive KV-cache reduction translates directly into deployment efficiency. Compared to their respective base models, YouZhi-7B yields a 12.3% improvement in average financial benchmark score alongside a 2.69$\times$ increase in maximum concurrency; similarly, YouZhi-14B achieves a 7.0% accuracy gain and a 2.43$\times$ concurrency boost, establishing a new paradigm for cost-effective, high-throughput financial inference.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T08:44:37Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name> PSBC LLM Team</name>
+    </author>
+    <author>
+      <name> Huawei LLM Team</name>
+    </author>
+    <author>
+      <name>Ruihan Long</name>
+    </author>
+    <author>
+      <name>Junjie Wu</name>
+    </author>
+    <author>
+      <name>Tianan Zhang</name>
+    </author>
+    <author>
+      <name>Duo Zhang</name>
+    </author>
+    <author>
+      <name>Yaozong Wu</name>
+    </author>
+    <author>
+      <name>Jinbin Fu</name>
+    </author>
+    <author>
+      <name>Chang Liu</name>
+    </author>
+    <author>
+      <name>Zhentao Tang</name>
+    </author>
+    <author>
+      <name>Wenshuang Yang</name>
+    </author>
+    <author>
+      <name>Xin Wang</name>
+    </author>
+    <author>
+      <name>Zhihao Song</name>
+    </author>
+    <author>
+      <name>Ning Huang</name>
+    </author>
+    <author>
+      <name>Wenjing Xu</name>
+    </author>
+    <author>
+      <name>Shuai Zong</name>
+    </author>
+    <author>
+      <name>Shupei Sun</name>
+    </author>
+    <author>
+      <name>Sen Wang</name>
+    </author>
+    <author>
+      <name>Jing Hu</name>
+    </author>
+    <author>
+      <name>Bin Wang</name>
+    </author>
+    <author>
+      <name>Xinyu Wang</name>
+    </author>
+    <author>
+      <name>Junkui Ju</name>
+    </author>
+    <author>
+      <name>Zequn Ding</name>
+    </author>
+    <author>
+      <name>Jie Ran</name>
+    </author>
+    <author>
+      <name>Man Luo</name>
+    </author>
+    <author>
+      <name>Shixiong Kai</name>
+    </author>
+    <author>
+      <name>Linkai Hou</name>
+    </author>
+    <author>
+      <name>Kaichao Liang</name>
+    </author>
+    <author>
+      <name>Hu Zhao</name>
+    </author>
+    <author>
+      <name>Yang Zhao</name>
+    </author>
+    <author>
+      <name>Shucheng Lin</name>
+    </author>
+    <author>
+      <name>Wei Yu</name>
+    </author>
+    <author>
+      <name>Chenghan Jiang</name>
+    </author>
+    <author>
+      <name>Jingjing Ding</name>
+    </author>
+    <author>
+      <name>Jiahui Zhang</name>
+    </author>
+    <author>
+      <name>Tian Jin</name>
+    </author>
+    <author>
+      <name>Yuhang Zhang</name>
+    </author>
+    <author>
+      <name>Dong Guo</name>
+    </author>
+    <author>
+      <name>Wei Sun</name>
+    </author>
+    <author>
+      <name>Jun Xie</name>
+    </author>
+    <author>
+      <name>Jianwei Li</name>
+    </author>
+    <author>
+      <name>Lei Cao</name>
+    </author>
+    <author>
+      <name>Pei Li</name>
+    </author>
+    <author>
+      <name>Jiabin Li</name>
+    </author>
+    <author>
+      <name>Jia Yuan</name>
+    </author>
+    <author>
+      <name>Rui Yuan</name>
+    </author>
+    <author>
+      <name>Jing Zhu</name>
+    </author>
+    <author>
+      <name>Mingxuan Yuan</name>
+    </author>
+    <author>
+      <name>Zhangcheng Lv</name>
+    </author>
+    <author>
+      <name>Xin Jiang</name>
+    </author>
+    <author>
+      <name>Xiuhong Fei</name>
+    </author>
+    <author>
+      <name>Xiaozhe Ren</name>
+    </author>
+    <author>
+      <name>Yulong Li</name>
+    </author>
+    <author>
+      <name>Zhipeng Zhang</name>
+    </author>
+    <author>
+      <name>Hang Wang</name>
+    </author>
+    <author>
+      <name>Zhaohui Xu</name>
+    </author>
+    <author>
+      <name>Rui Zhao</name>
+    </author>
+    <author>
+      <name>Yibo He</name>
+    </author>
+    <author>
+      <name>Xinzhuang Niu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.16206v3</id>
+    <title>Computer Environments Elicit General Agentic Intelligence in LLMs</title>
+    <updated>2026-04-08T06:37:40Z</updated>
+    <link href="https://arxiv.org/abs/2601.16206v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.16206v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic intelligence in large language models (LLMs) requires not only model intrinsic capabilities but also interactions with external environments. Equipping LLMs with computers now represents a prevailing trend. However, the computer environment's intrinsic value has not been systematically investigated, particularly its potential to elicit general capabilities. Here we introduce LLM-in-Sandbox, which virtualizes the computer as a code sandbox with only basic functionalities, and demonstrate that this minimal setting elicits computer-based meta-capabilities for general task solving: external resource access, file management, and code execution. Without additional training, strong models achieve substantial gains (up to 15.5%) across mathematics, physics, chemistry, biomedicine, long-context understanding, and instruction following, while reducing token consumption by up to 8 times. Furthermore, we develop LLM-in-Sandbox-RL to train models exclusively on non-agentic data within the sandbox, empowering weaker models to harness the environment and internalize these interactions. Our results demonstrate that computer environments elicit general intelligence, yield efficiency gains, and can be harnessed through training, serving as a promising foundation for generalist agents.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-22T18:57:09Z</published>
+    <arxiv:comment>Project Page: https://llm-in-sandbox.github.io</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Daixuan Cheng</name>
+    </author>
+    <author>
+      <name>Shaohan Huang</name>
+    </author>
+    <author>
+      <name>Yuxian Gu</name>
+    </author>
+    <author>
+      <name>Huatong Song</name>
+    </author>
+    <author>
+      <name>Guoxin Chen</name>
+    </author>
+    <author>
+      <name>Li Dong</name>
+    </author>
+    <author>
+      <name>Wayne Xin Zhao</name>
+    </author>
+    <author>
+      <name>Ji-Rong Wen</name>
+    </author>
+    <author>
+      <name>Furu Wei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1002.2191v1</id>
+    <title>Vision Based Game Development Using Human Computer Interaction</title>
+    <updated>2010-02-10T19:46:07Z</updated>
+    <link href="https://arxiv.org/abs/1002.2191v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1002.2191v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  A Human Computer Interface (HCI) System for playing games is designed here for more natural communication with the machines. The system presented here is a vision-based system for detection of long voluntary eye blinks and interpretation of blink patterns for communication between man and machine. This system replaces the mouse with the human face as a new way to interact with the computer. Facial features (nose tip and eyes) are detected and tracked in realtime to use their actions as mouse events. The coordinates and movement of the nose tip in the live video feed are translated to become the coordinates and movement of the mouse pointer on the application. The left or right eye blinks fire left or right mouse click events. The system works with inexpensive USB cameras and runs at a frame rate of 30 frames per second.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2010-02-10T19:46:07Z</published>
+    <arxiv:comment>IEEE format, International Journal of Computer Science and Information Security, IJCSIS January 2010, ISSN 1947 5500, http://sites.google.com/site/ijcsis/</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <arxiv:journal_ref>International Journal of Computer Science and Information Security, IJCSIS, Vol. 7, No. 1, pp. 147-153, January 2010, USA</arxiv:journal_ref>
+    <author>
+      <name>S. Sumathi</name>
+    </author>
+    <author>
+      <name>S. K. Srivatsa</name>
+    </author>
+    <author>
+      <name>M. Uma Maheswari</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.25297v1</id>
+    <title>Hybrid Analysis for Secure MCP Tool Use in LLM Agents</title>
+    <updated>2026-07-28T05:17:34Z</updated>
+    <link href="https://arxiv.org/abs/2607.25297v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.25297v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid development of large language model (LLM) agents has enabled their broad adoption across diverse real-world tasks. To standardize interactions between LLM agents and external environments, Model Context Protocol (MCP) tools have emerged as a de facto standard and have been widely integrated into these systems. However, the use of MCP tools also introduces new safety risks, as LLM agents can be induced to perform malicious or unauthorized actions. Although prior work has proposed defenses for securing tool use in LLM agents, most methods rely on static analysis, i.e., inspecting prompts and generated outputs, which limits the defense effectiveness and robustness. To address these limitations, we propose MTGuard, a hybrid analysis-based defense framework designed to safeguard the use of MCP tools in LLM agents by leveraging lifecycle-aware static-dynamic co-analysis. Extensive evaluation demonstrates that MTGuard effectively mitigates multiple categories of harmful tool use across different LLM agents while maintaining performance on benign user tasks.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-28T05:17:34Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ping He</name>
+    </author>
+    <author>
+      <name>Yuexiang Xie</name>
+    </author>
+    <author>
+      <name>Yaliang Li</name>
+    </author>
+    <author>
+      <name>Shouling Ji</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.11633v1</id>
+    <title>Can LLM Agents Respond to Disasters? Benchmarking Heterogeneous Geospatial Reasoning in Emergency Operations</title>
+    <updated>2026-05-12T06:57:41Z</updated>
+    <link href="https://arxiv.org/abs/2605.11633v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.11633v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Operational disaster response goes beyond damage assessment, requiring responders to integrate multi-sensor signals, reason over road networks, populations and key facilities, plan evacuations, and produce actionable reports. However, prior work largely isolates remote-sensing perception or evaluates generic tool use, leaving the end-to-end workflows of emergency operations underexplored. In this paper, we introduce Disaster Operational Response Agent benchmark (DORA), the first agentic benchmark for end-to-end disaster response: 515 expert-authored tasks across 45 real-world disaster events spanning 10 types, paired with expert-verified, replayable gold trajectories totaling 3,500 tool-call steps. Tasks span five dimensions that cover the operational disaster-response pipeline: disaster perception, spatial relational analysis, rescue and evacuation planning, temporal evolution reasoning, and multi-modal report synthesis. Agents compose calls from a 108-tool MCP library over heterogeneous geospatial data: optical, SAR, and multi-spectral imagery across single-, bi-, and multi-temporal sequences (0.015-10m GSD), complemented by elevation and social vector layers. We comprehensively evaluate 13 frontier LLMs on our benchmark, revealing three persistent challenges: 1) disaster-domain grounding exposes unique failure modes (damage-semantic grounding, sensor-modality mismatch, and disaster-pipeline composition); 2) agents are doubly bottlenecked by tool selection and argument grounding, where gold tool-order hints improve accuracy by only 1.08-4.40%, and alternative scaffolds yield at most a 3.24% gain; 3) compositional fragility scales with trajectory length, the agent-to-gold gap widening from 7% to 56% on long pipelines. DORA establishes a rigorous testbed for operationally reliable disaster-response agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-12T06:57:41Z</published>
+    <arxiv:comment>DORA stress-tests LLM agents on real-world disaster operations that demand comprehensive orchestration of 108 specialized tools over heterogeneous geospatial data</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Junjue Wang</name>
+    </author>
+    <author>
+      <name>Weihao Xuan</name>
+    </author>
+    <author>
+      <name>Heli Qi</name>
+    </author>
+    <author>
+      <name>Pengyu Dai</name>
+    </author>
+    <author>
+      <name>Kunyi Liu</name>
+    </author>
+    <author>
+      <name>Hongruixuan Chen</name>
+    </author>
+    <author>
+      <name>Zhuo Zheng</name>
+    </author>
+    <author>
+      <name>Junshi Xia</name>
+    </author>
+    <author>
+      <name>Stefano Ermon</name>
+    </author>
+    <author>
+      <name>Naoto Yokoya</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.10820v1</id>
+    <title>Semantic Context for Tool Orchestration</title>
+    <updated>2025-07-14T21:38:27Z</updated>
+    <link href="https://arxiv.org/abs/2507.10820v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.10820v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper demonstrates that Semantic Context (SC), leveraging descriptive tool information, is a foundational component for robust tool orchestration. Our contributions are threefold. First, we provide a theoretical foundation using contextual bandits, introducing SC-LinUCB and proving it achieves lower regret and adapts favourably in dynamic action spaces. Second, we provide parallel empirical validation with Large Language Models, showing that SC is critical for successful in-context learning in both static (efficient learning) and non-stationary (robust adaptation) settings. Third, we propose the FiReAct pipeline, and demonstrate on a benchmark with over 10,000 tools that SC-based retrieval enables an LLM to effectively orchestrate over a large action space. These findings provide a comprehensive guide to building more sample-efficient, adaptive, and scalable orchestration agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-14T21:38:27Z</published>
+    <arxiv:comment>Workshop on Computer Use Agents @ ICML2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Robert Müller</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.13320v1</id>
+    <title>Information Fidelity in Tool-Using LLM Agents: A Martingale Analysis of the Model Context Protocol</title>
+    <updated>2026-02-10T21:08:53Z</updated>
+    <link href="https://arxiv.org/abs/2602.13320v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.13320v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As AI agents powered by large language models (LLMs) increasingly use external tools for high-stakes decisions, a critical reliability question arises: how do errors propagate across sequential tool calls? We introduce the first theoretical framework for analyzing error accumulation in Model Context Protocol (MCP) agents, proving that cumulative distortion exhibits linear growth and high-probability deviations bounded by $O(\sqrt{T})$. This concentration property ensures predictable system behavior and rules out exponential failure modes. We develop a hybrid distortion metric combining discrete fact matching with continuous semantic similarity, then establish martingale concentration bounds on error propagation through sequential tool interactions. Experiments across Qwen2-7B, Llama-3-8B, and Mistral-7B validate our theoretical predictions, showing empirical distortion tracks the linear trend with deviations consistently within $O(\sqrt{T})$ envelopes. Key findings include: semantic weighting reduces distortion by 80\%, and periodic re-grounding approximately every 9 steps suffices for error control. We translate these concentration guarantees into actionable deployment principles for trustworthy agent systems.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-10T21:08:53Z</published>
+    <arxiv:comment>Full working version of an extended abstract accepted at the 25th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Flint Xiaofeng Fan</name>
+    </author>
+    <author>
+      <name>Cheston Tan</name>
+    </author>
+    <author>
+      <name>Roger Wattenhofer</name>
+    </author>
+    <author>
+      <name>Yew-Soon Ong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.11903v1</id>
+    <title>AEMA: Verifiable Evaluation Framework for Trustworthy and Controlled Agentic LLM Systems</title>
+    <updated>2026-01-17T04:09:02Z</updated>
+    <link href="https://arxiv.org/abs/2601.11903v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.11903v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluating large language model (LLM)-based multi-agent systems remains a critical challenge, as these systems must exhibit reliable coordination, transparent decision-making, and verifiable performance across evolving tasks. Existing evaluation approaches often limit themselves to single-response scoring or narrow benchmarks, which lack stability, extensibility, and automation when deployed in enterprise settings at multi-agent scale. We present AEMA (Adaptive Evaluation Multi-Agent), a process-aware and auditable framework that plans, executes, and aggregates multi-step evaluations across heterogeneous agentic workflows under human oversight. Compared to a single LLM-as-a-Judge, AEMA achieves greater stability, human alignment, and traceable records that support accountable automation. Our results on enterprise-style agent workflows simulated using realistic business scenarios demonstrate that AEMA provides a transparent and reproducible pathway toward responsible evaluation of LLM-based multi-agent systems.
+  Keywords Agentic AI, Multi-Agent Systems, Trustworthy AI, Verifiable Evaluation, Human Oversight</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-17T04:09:02Z</published>
+    <arxiv:comment>Workshop on W51: How Can We Trust and Control Agentic AI? Toward Alignment, Robustness, and Verifiability in Autonomous LLM Agents at AAAI 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>YenTing Lee</name>
+    </author>
+    <author>
+      <name>Keerthi Koneru</name>
+    </author>
+    <author>
+      <name>Zahra Moslemi</name>
+    </author>
+    <author>
+      <name>Sheethal Kumar</name>
+    </author>
+    <author>
+      <name>Ramesh Radhakrishnan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.18783v1</id>
+    <title>TRIZ Agents: A Multi-Agent LLM Approach for TRIZ-Based Innovation</title>
+    <updated>2025-06-23T15:53:14Z</updated>
+    <link href="https://arxiv.org/abs/2506.18783v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.18783v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>TRIZ, the Theory of Inventive Problem Solving, is a structured, knowledge-based framework for innovation and abstracting problems to find inventive solutions. However, its application is often limited by the complexity and deep interdisciplinary knowledge required. Advancements in Large Language Models (LLMs) have revealed new possibilities for automating parts of this process. While previous studies have explored single LLMs in TRIZ applications, this paper introduces a multi-agent approach. We propose an LLM-based multi-agent system, called TRIZ agents, each with specialized capabilities and tool access, collaboratively solving inventive problems based on the TRIZ methodology. This multi-agent system leverages agents with various domain expertise to efficiently navigate TRIZ steps. The aim is to model and simulate an inventive process with language agents. We assess the effectiveness of this team of agents in addressing complex innovation challenges based on a selected case study in engineering. We demonstrate the potential of agent collaboration to produce diverse, inventive solutions. This research contributes to the future of AI-driven innovation, showcasing the advantages of decentralized problem-solving in complex ideation tasks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-23T15:53:14Z</published>
+    <arxiv:comment>12 pages, 10 figures, 2 tables, Accepted at the 17th International Conference on Agents and Artificial Intelligence (ICAART 2025). Final version published in Proceedings of ICAART 2025 (Vol. 1), pages 196-207</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>In Proceedings of the 17th International Conference on Agents and Artificial Intelligence - Volume 1: ICAART 2025; pages 196-207. SciTePress 2025</arxiv:journal_ref>
+    <author>
+      <name>Kamil Szczepanik</name>
+    </author>
+    <author>
+      <name>Jarosław A. Chudziak</name>
+    </author>
+    <arxiv:doi>10.5220/0013321900003890</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5220/0013321900003890" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.15723v3</id>
+    <title>Modern approaches to building interpretable models of the property market using machine learning on the base of mass cadastral valuation</title>
+    <updated>2026-02-07T05:51:08Z</updated>
+    <link href="https://arxiv.org/abs/2506.15723v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.15723v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we review modern approaches to building interpretable models of property markets using machine learning on the base of mass valuation of property in the Primorye region, Russia. There are numerous potential difficulties one could encounter in the effort to build a good model. Their main source is the huge difference between noisy real market data and ideal data usually used in tutorials on machine learning. This paper covers all stages of modeling: collection of initial data, identification of outliers, search and analysis of patterns in the data, formation and final choice of price factors, building of the model, and evaluation of its efficiency. For each stage, we highlight potential issues and describe sound methods for overcoming emerging difficulties on actual examples. We show that the combination of classical linear regression with kriging (interpolation method of geostatistics) allows to build an effective model for land parcels. For flats, when many objects are attributed to one spatial point, the application of geostatistical methods becomes problematic. Instead, we suggest linear regression with automatic generation and selection of additional rules on the base of decision trees, so called the RuleFit method. We compare the performance of our inherently interpretable models with well-proven "black-box" Random Forest method and demonstrate similar results. Thus we show, that despite such a strong restriction as the requirement of interpretability which is important in practical aspects, for example, legal matters, it is still possible to build effective models of real property markets.</summary>
+    <category term="q-fin.ST" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-05T13:17:18Z</published>
+    <arxiv:comment>62 pages, 21 figures, 11 tables; after the major revision, accepted in journal Land Use Policy; changes: literature review is added to introduction section, new conclusion, comparison of the models with the random forest is added, the feature selection section is reconsidered, many minor corrections, language sufficiently improved</arxiv:comment>
+    <arxiv:primary_category term="q-fin.ST"/>
+    <arxiv:journal_ref>Land Use Policy, Volume 165, 2026, 107970</arxiv:journal_ref>
+    <author>
+      <name>Alexey S. Tanashkin</name>
+    </author>
+    <author>
+      <name>Irina G. Tanashkina</name>
+    </author>
+    <author>
+      <name>Alexander S. Maksimchuik</name>
+    </author>
+    <arxiv:doi>10.1016/j.landusepol.2026.107970</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.landusepol.2026.107970" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.08224v1</id>
+    <title>Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering</title>
+    <updated>2026-04-09T13:19:41Z</updated>
+    <link href="https://arxiv.org/abs/2604.08224v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.08224v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model (LLM) agents are increasingly built less by changing model weights than by reorganizing the runtime around them. Capabilities that earlier systems expected the model to recover internally are now externalized into memory stores, reusable skills, interaction protocols, and the surrounding harness that makes these modules reliable in practice. This paper reviews that shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we argue that agent infrastructure matters not merely because it adds auxiliary components, but because it transforms hard cognitive burdens into forms that the model can solve more reliably. Under this view, memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and harness engineering serves as the unification layer that coordinates them into governed execution. We trace a historical progression from weights to context to harness, analyze memory, skills, and protocols as three distinct but coupled forms of externalization, and examine how they interact inside a larger agent system. We further discuss the trade-off between parametric and externalized capability, identify emerging directions such as self-evolving harnesses and shared agent infrastructure, and discuss open challenges in evaluation, governance, and the long-term co-evolution of models and external infrastructure. The result is a systems-level framework for explaining why practical agent progress increasingly depends not only on stronger models, but on better external cognitive infrastructure.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-09T13:19:41Z</published>
+    <arxiv:comment>54 pages, tech report on Externalization in LLM Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Chenyu Zhou</name>
+    </author>
+    <author>
+      <name>Huacan Chai</name>
+    </author>
+    <author>
+      <name>Wenteng Chen</name>
+    </author>
+    <author>
+      <name>Zihan Guo</name>
+    </author>
+    <author>
+      <name>Rong Shan</name>
+    </author>
+    <author>
+      <name>Yuanyi Song</name>
+    </author>
+    <author>
+      <name>Tianyi Xu</name>
+    </author>
+    <author>
+      <name>Yingxuan Yang</name>
+    </author>
+    <author>
+      <name>Aofan Yu</name>
+    </author>
+    <author>
+      <name>Weiming Zhang</name>
+    </author>
+    <author>
+      <name>Congming Zheng</name>
+    </author>
+    <author>
+      <name>Jiachen Zhu</name>
+    </author>
+    <author>
+      <name>Zeyu Zheng</name>
+    </author>
+    <author>
+      <name>Zhuosheng Zhang</name>
+    </author>
+    <author>
+      <name>Xingyu Lou</name>
+    </author>
+    <author>
+      <name>Changwang Zhang</name>
+    </author>
+    <author>
+      <name>Zhihui Fu</name>
+    </author>
+    <author>
+      <name>Jun Wang</name>
+    </author>
+    <author>
+      <name>Weiwen Liu</name>
+    </author>
+    <author>
+      <name>Jianghao Lin</name>
+    </author>
+    <author>
+      <name>Weinan Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.12276v1</id>
+    <title>CodeNav: Beyond tool-use to using real-world codebases with LLM agents</title>
+    <updated>2024-06-18T05:10:38Z</updated>
+    <link href="https://arxiv.org/abs/2406.12276v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.12276v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present CodeNav, an LLM agent that navigates and leverages previously unseen code repositories to solve user queries. In contrast to tool-use LLM agents that require ``registration'' of all relevant tools via manual descriptions within the LLM context, CodeNav automatically indexes and searches over code blocks in the target codebase, finds relevant code snippets, imports them, and uses them to iteratively generate a solution with execution feedback. To highlight the core-capabilities of CodeNav, we first showcase three case studies where we use CodeNav for solving complex user queries using three diverse codebases. Next, on three benchmarks, we quantitatively compare the effectiveness of code-use (which only has access to the target codebase) to tool-use (which has privileged access to all tool names and descriptions). Finally, we study the effect of varying kinds of tool and library descriptions on code-use performance, as well as investigate the advantage of the agent seeing source code as opposed to natural descriptions of code. All code will be made open source under a permissive license.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-18T05:10:38Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tanmay Gupta</name>
+    </author>
+    <author>
+      <name>Luca Weihs</name>
+    </author>
+    <author>
+      <name>Aniruddha Kembhavi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.06567v3</id>
+    <title>FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making</title>
+    <updated>2024-11-07T00:54:30Z</updated>
+    <link href="https://arxiv.org/abs/2407.06567v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.06567v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) have demonstrated notable potential in conducting complex tasks and are increasingly utilized in various financial applications. However, high-quality sequential financial investment decision-making remains challenging. These tasks require multiple interactions with a volatile environment for every decision, demanding sufficient intelligence to maximize returns and manage risks. Although LLMs have been used to develop agent systems that surpass human teams and yield impressive investment returns, opportunities to enhance multi-sourced information synthesis and optimize decision-making outcomes through timely experience refinement remain unexplored. Here, we introduce the FinCon, an LLM-based multi-agent framework with CONceptual verbal reinforcement tailored for diverse FINancial tasks. Inspired by effective real-world investment firm organizational structures, FinCon utilizes a manager-analyst communication hierarchy. This structure allows for synchronized cross-functional agent collaboration towards unified goals through natural language interactions and equips each agent with greater memory capacity than humans. Additionally, a risk-control component in FinCon enhances decision quality by episodically initiating a self-critiquing mechanism to update systematic investment beliefs. The conceptualized beliefs serve as verbal reinforcement for the future agent's behavior and can be selectively propagated to the appropriate node that requires knowledge updates. This feature significantly improves performance while reducing unnecessary peer-to-peer communication costs. Moreover, FinCon demonstrates strong generalization capabilities in various financial tasks, including single stock trading and portfolio management.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-09T05:52:26Z</published>
+    <arxiv:comment>LLM Applications, LLM Agents, Financial Technology, Quantitative Finance, Algorithmic Trading, Cognitive Science</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yangyang Yu</name>
+    </author>
+    <author>
+      <name>Zhiyuan Yao</name>
+    </author>
+    <author>
+      <name>Haohang Li</name>
+    </author>
+    <author>
+      <name>Zhiyang Deng</name>
+    </author>
+    <author>
+      <name>Yupeng Cao</name>
+    </author>
+    <author>
+      <name>Zhi Chen</name>
+    </author>
+    <author>
+      <name>Jordan W. Suchow</name>
+    </author>
+    <author>
+      <name>Rong Liu</name>
+    </author>
+    <author>
+      <name>Zhenyu Cui</name>
+    </author>
+    <author>
+      <name>Zhaozhuo Xu</name>
+    </author>
+    <author>
+      <name>Denghui Zhang</name>
+    </author>
+    <author>
+      <name>Koduvayur Subbalakshmi</name>
+    </author>
+    <author>
+      <name>Guojun Xiong</name>
+    </author>
+    <author>
+      <name>Yueru He</name>
+    </author>
+    <author>
+      <name>Jimin Huang</name>
+    </author>
+    <author>
+      <name>Dong Li</name>
+    </author>
+    <author>
+      <name>Qianqian Xie</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1708.03731v3</id>
+    <title>OpenML Benchmarking Suites</title>
+    <updated>2021-11-22T13:58:04Z</updated>
+    <link href="https://arxiv.org/abs/1708.03731v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1708.03731v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine learning research depends on objectively interpretable, comparable, and reproducible algorithm benchmarks. We advocate the use of curated, comprehensive suites of machine learning tasks to standardize the setup, execution, and reporting of benchmarks. We enable this through software tools that help to create and leverage these benchmarking suites. These are seamlessly integrated into the OpenML platform, and accessible through interfaces in Python, Java, and R. OpenML benchmarking suites (a) are easy to use through standardized data formats, APIs, and client libraries; (b) come with extensive meta-information on the included datasets; and (c) allow benchmarks to be shared and reused in future studies. We then present a first, carefully curated and practical benchmarking suite for classification: the OpenML Curated Classification benchmarking suite 2018 (OpenML-CC18). Finally, we discuss use cases and applications which demonstrate the usefulness of OpenML benchmarking suites and the OpenML-CC18 in particular.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-08-11T23:28:48Z</published>
+    <arxiv:comment>Accepted for publication in the Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks (NeurIPS 2021)</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <arxiv:journal_ref>Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (2021)</arxiv:journal_ref>
+    <author>
+      <name>Bernd Bischl</name>
+    </author>
+    <author>
+      <name>Giuseppe Casalicchio</name>
+    </author>
+    <author>
+      <name>Matthias Feurer</name>
+    </author>
+    <author>
+      <name>Pieter Gijsbers</name>
+    </author>
+    <author>
+      <name>Frank Hutter</name>
+    </author>
+    <author>
+      <name>Michel Lang</name>
+    </author>
+    <author>
+      <name>Rafael G. Mantovani</name>
+    </author>
+    <author>
+      <name>Jan N. van Rijn</name>
+    </author>
+    <author>
+      <name>Joaquin Vanschoren</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.11209v1</id>
+    <title>Measuring Five-Nines Reliability: Sample-Efficient LLM Evaluation in Saturated Benchmarks</title>
+    <updated>2026-05-11T20:23:44Z</updated>
+    <link href="https://arxiv.org/abs/2605.11209v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.11209v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While existing benchmarks demonstrate the near-perfect performance of large language models (LLMs) on various tasks, this apparent saturation often obscures the need for rigorous evaluation of their reliability. In real-world deployment, however, achieving extremely high reliability (e.g., "five-nines" (99.999%) vs. "three-nines" (99.9%)) is fundamentally critical, as this gap results in an order-of-magnitude increase in failures, which is catastrophic in reliability-critical applications. Still, estimating such a rare failure probability with tight confidence bounds requires prohibitively large LLM inference sizes, making standard Monte Carlo evaluation infeasible under limited compute budgets. In this paper, we observe that LLM failures exhibit strong systematic patterns: across broad parameterized input spaces, a small subset of inputs disproportionately accounts for the majority of failures. Leveraging this observation, we propose to learn a sampling distribution concentrated on failure-prone inputs via the cross-entropy method (CEM). We evaluate our framework on three LLMs, Qwen2.5-Math-7B-Instruct, gpt-oss-20b-low, and Gemini 2.5 Flash Lite, across parameterized GSM8K templates and achieve up to 156.22x reduction in required inferences compared to naive uniform sampling. Our estimates reveal that models with indistinguishable accuracy on standard benchmarks can differ substantially in estimated failure rates, underscoring that reliability is a distinct and measurable axis of model quality. Our simple yet practical framework enables the evaluation of extreme reliability in LLMs, a distinct and underexplored dimension of evaluation beyond existing benchmarks, for their growing use in reliability-sensitive applications.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-11T20:23:44Z</published>
+    <arxiv:comment>Project page: https://five-nines-reliability.notion.site/Measuring-Five-Nines-Reliability-Sample-Efficient-LLM-Evaluation-in-Saturated-Benchmarks-312b998d4f39802d88c0e9886db1b9cd</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Eungyeup Kim</name>
+    </author>
+    <author>
+      <name>Chenchen Gu</name>
+    </author>
+    <author>
+      <name>Vashisth Tiwari</name>
+    </author>
+    <author>
+      <name>J. Zico Kolter</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.20426v2</id>
+    <title>Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use</title>
+    <updated>2026-04-29T00:08:36Z</updated>
+    <link href="https://arxiv.org/abs/2602.20426v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.20426v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While most efforts to improve LLM-based tool-using agents focus on the agent itself - through larger models, better prompting, or fine-tuning - agent performance increasingly plateaus due to the quality of the tool interfaces these agents consume. Tool descriptions are often written for human developers and tolerate ambiguity that agents cannot resolve, particularly as the number of candidate tools grows. Existing approaches to improving tool interfaces (1) require re-running a multi-stage per-tool pipeline - synthesizing queries, executing an agent to collect trajectories, annotating trajectories, and prompting a strong LLM multiple times - for every API that enters the catalog, and (2) typically optimize each tool independently, limiting scalability and generalization to unseen tools. We propose Trace-Free+, a curriculum learning framework that progressively transfers supervision from trace-rich settings to trace-free deployment, encouraging the model to internalize reusable patterns of what makes a tool description effective. To support this approach, we construct a large-scale dataset of high-quality tool interfaces derived from real-world APIs through a principled data synthesis workflow. Experiments on widely adopted benchmarks show that Trace-Free+ improves robustness as tool catalogs scale to 150+ candidates - in scaling experiments, reducing accuracy degradation by 29.23% and improving average query-level success by 60.89% on StableToolBench - generalizes across domains without retraining, and provides complementary gains on top of agent fine-tuning.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-23T23:50:24Z</published>
+    <arxiv:comment>Preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Ruocheng Guo</name>
+    </author>
+    <author>
+      <name>Kaiwen Dong</name>
+    </author>
+    <author>
+      <name>Xiang Gao</name>
+    </author>
+    <author>
+      <name>Kamalika Das</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.01295v1</id>
+    <title>The Social Laboratory: A Psychometric Framework for Multi-Agent LLM Evaluation</title>
+    <updated>2025-10-01T07:10:28Z</updated>
+    <link href="https://arxiv.org/abs/2510.01295v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.01295v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As Large Language Models (LLMs) transition from static tools to autonomous agents, traditional evaluation benchmarks that measure performance on downstream tasks are becoming insufficient. These methods fail to capture the emergent social and cognitive dynamics that arise when agents communicate, persuade, and collaborate in interactive environments. To address this gap, we introduce a novel evaluation framework that uses multi-agent debate as a controlled "social laboratory" to discover and quantify these behaviors. In our framework, LLM-based agents, instantiated with distinct personas and incentives, deliberate on a wide range of challenging topics under the supervision of an LLM moderator. Our analysis, enabled by a new suite of psychometric and semantic metrics, reveals several key findings. Across hundreds of debates, we uncover a powerful and robust emergent tendency for agents to seek consensus, consistently reaching high semantic agreement (μ &gt; 0.88) even without explicit instruction and across sensitive topics. We show that assigned personas induce stable, measurable psychometric profiles, particularly in cognitive effort, and that the moderators persona can significantly alter debate outcomes by structuring the environment, a key finding for external AI alignment. This work provides a blueprint for a new class of dynamic, psychometrically grounded evaluation protocols designed for the agentic setting, offering a crucial methodology for understanding and shaping the social behaviors of the next generation of AI agents. We have released the code and results at https://github.com/znreza/multi-agent-LLM-eval-for-debate.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-01T07:10:28Z</published>
+    <arxiv:comment>39th Conference on Neural Information Processing Systems (NeurIPS 2025) Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zarreen Reza</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2006.14147v2</id>
+    <title>FastSpec: Scalable Generation and Detection of Spectre Gadgets Using Neural Embeddings</title>
+    <updated>2021-03-26T15:56:58Z</updated>
+    <link href="https://arxiv.org/abs/2006.14147v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2006.14147v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Several techniques have been proposed to detect vulnerable Spectre gadgets in widely deployed commercial software. Unfortunately, detection techniques proposed so far rely on hand-written rules which fall short in covering subtle variations of known Spectre gadgets as well as demand a huge amount of time to analyze each conditional branch in software. Moreover, detection tool evaluations are based only on a handful of these gadgets, as it requires arduous effort to craft new gadgets manually.
+  In this work, we employ both fuzzing and deep learning techniques to automate the generation and detection of Spectre gadgets. We first create a diverse set of Spectre-V1 gadgets by introducing perturbations to the known gadgets. Using mutational fuzzing, we produce a data set with more than 1 million Spectre-V1 gadgets which is the largest Spectre gadget data set built to date. Next, we conduct the first empirical usability study of Generative Adversarial Networks (GANs) in the context of assembly code generation without any human interaction. We introduce SpectreGAN which leverages masking implementation of GANs for both learning the gadget structures and generating new gadgets. This provides the first scalable solution to extend the variety of Spectre gadgets.
+  Finally, we propose FastSpec which builds a classifier with the generated Spectre gadgets based on a novel high dimensional Neural Embeddings technique (BERT). For the case studies, we demonstrate that FastSpec discovers potential gadgets with a high success rate in OpenSSL libraries and Phoronix benchmarks. Further, FastSpec offers much greater flexibility and time-related performance gain compared to the existing tools and therefore can be used for gadget detection in large-scale software.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-06-25T03:08:20Z</published>
+    <arxiv:comment>IEEE European Symposium on Security and Privacy 2021</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>M. Caner Tol</name>
+    </author>
+    <author>
+      <name>Berk Gulmezoglu</name>
+    </author>
+    <author>
+      <name>Koray Yurtseven</name>
+    </author>
+    <author>
+      <name>Berk Sunar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.16260v2</id>
+    <title>MCPVerse: An Expansive, Real-World Benchmark for Agentic Tool Use</title>
+    <updated>2025-10-11T07:48:07Z</updated>
+    <link href="https://arxiv.org/abs/2508.16260v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.16260v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) are evolving from text generators into reasoning agents. This transition makes their ability to use external tools a critical capability. However, evaluating this skill presents a significant challenge. Existing benchmarks are often limited by their reliance on synthetic tools and severely constrained action spaces. To address these limitations, we introduce MCPVerse, an expansive, real-world benchmark for evaluating agentic tool use. MCPVerse integrates more than 550 real-world, executable tools to create an unprecedented action space exceeding 140k tokens, and employs outcome-based evaluation with real-time ground truth for time-sensitive tasks. We benchmarked the state-of-the-art LLMs across three modes (Oracle, Standard, and Max-Scale), revealing that while most models suffer performance degradation when confronted with larger tool sets, the agentic models, such as Claude-4-Sonnet, can effectively leverage expanded exploration spaces to improve accuracy. This finding not only exposes the limitations of state-of-the-art models in complex, real-world scenarios but also establishes MCPVerse as a critical benchmark for measuring and advancing agentic tool use capabilities.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-22T09:47:53Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Fei Lei</name>
+    </author>
+    <author>
+      <name>Yibo Yang</name>
+    </author>
+    <author>
+      <name>Wenxiu Sun</name>
+    </author>
+    <author>
+      <name>Dahua Lin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.23645v1</id>
+    <title>Similarity-Based Assessment of Computational Reproducibility in Jupyter Notebooks</title>
+    <updated>2025-09-28T05:01:51Z</updated>
+    <link href="https://arxiv.org/abs/2509.23645v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.23645v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Computational reproducibility refers to obtaining consistent results when rerunning an experiment. Jupyter Notebook, a web-based computational notebook application, facilitates running, publishing, and sharing computational experiments along with their results. However, rerunning a Jupyter Notebook may not always generate identical results due to various factors, such as randomness, changes in library versions, or variations in the computational environment. This paper introduces the Similarity-based Reproducibility Index (SRI) -- a metric for assessing the reproducibility of results in Jupyter Notebooks. SRI employs novel methods developed based on similarity metrics specific to different types of Python objects to compare rerun outputs against original outputs. For every cell generating an output in a rerun notebook, SRI reports a quantitative score in the range [0, 1] as well as some qualitative insights to assess reproducibility. The paper also includes a case study in which the proposed metric is applied to a set of Jupyter Notebooks, demonstrating how various similarity metrics can be leveraged to quantify computational reproducibility.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-28T05:01:51Z</published>
+    <arxiv:comment>10 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <arxiv:journal_ref>ACM Conference on Reproducibility and Replicability, 2025</arxiv:journal_ref>
+    <author>
+      <name>A S M Shahadat Hossain</name>
+    </author>
+    <author>
+      <name>Colin Brown</name>
+    </author>
+    <author>
+      <name>David Koop</name>
+    </author>
+    <author>
+      <name>Tanu Malik</name>
+    </author>
+    <arxiv:doi>10.1145/3736731.3746159</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3736731.3746159" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.24563v2</id>
+    <title>OSWorld-MCP: Benchmarking MCP Tool Invocation In Computer-Use Agents</title>
+    <updated>2025-11-11T04:10:32Z</updated>
+    <link href="https://arxiv.org/abs/2510.24563v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.24563v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>With advances in decision-making and reasoning capabilities, multimodal agents show strong potential in computer application scenarios. Past evaluations have mainly assessed GUI interaction skills, while tool invocation abilities, such as those enabled by the Model Context Protocol (MCP), have been largely overlooked. Comparing agents with integrated tool invocation to those evaluated only on GUI interaction is inherently unfair. We present OSWorld-MCP, the first comprehensive and fair benchmark for assessing computer-use agents' tool invocation, GUI operation, and decision-making abilities in a real-world environment. We design a novel automated code-generation pipeline to create tools and combine them with a curated selection from existing tools. Rigorous manual validation yields 158 high-quality tools (covering 7 common applications), each verified for correct functionality, practical applicability, and versatility. Extensive evaluations of state-of-the-art multimodal agents on OSWorld-MCP show that MCP tools generally improve task success rates (e.g., from 8.3% to 20.4% for OpenAI o3 at 15 steps, from 40.1% to 43.3% for Claude 4 Sonnet at 50 steps), underscoring the importance of assessing tool invocation capabilities. However, even the strongest models have relatively low tool invocation rates, Only 36.3%, indicating room for improvement and highlighting the benchmark's challenge. By explicitly measuring MCP tool usage skills, OSWorld-MCP deepens understanding of multimodal agents and sets a new standard for evaluating performance in complex, tool-assisted environments. Our code, environment, and data are publicly available at https://osworld-mcp.github.io.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-28T15:56:36Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hongrui Jia</name>
+    </author>
+    <author>
+      <name>Jitong Liao</name>
+    </author>
+    <author>
+      <name>Xi Zhang</name>
+    </author>
+    <author>
+      <name>Haiyang Xu</name>
+    </author>
+    <author>
+      <name>Tianbao Xie</name>
+    </author>
+    <author>
+      <name>Chaoya Jiang</name>
+    </author>
+    <author>
+      <name>Ming Yan</name>
+    </author>
+    <author>
+      <name>Si Liu</name>
+    </author>
+    <author>
+      <name>Wei Ye</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.01763v2</id>
+    <title>Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models</title>
+    <updated>2025-05-26T15:19:40Z</updated>
+    <link href="https://arxiv.org/abs/2503.01763v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.01763v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool learning aims to augment large language models (LLMs) with diverse tools, enabling them to act as agents for solving practical tasks. Due to the limited context length of tool-using LLMs, adopting information retrieval (IR) models to select useful tools from large toolsets is a critical initial step. However, the performance of IR models in tool retrieval tasks remains underexplored and unclear. Most tool-use benchmarks simplify this step by manually pre-annotating a small set of relevant tools for each task, which is far from the real-world scenarios. In this paper, we propose ToolRet, a heterogeneous tool retrieval benchmark comprising 7.6k diverse retrieval tasks, and a corpus of 43k tools, collected from existing datasets. We benchmark six types of models on ToolRet. Surprisingly, even the models with strong performance in conventional IR benchmarks, exhibit poor performance on ToolRet. This low retrieval quality degrades the task pass rate of tool-use LLMs. As a further step, we contribute a large-scale training dataset with over 200k instances, which substantially optimizes the tool retrieval ability of IR models.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-03T17:37:16Z</published>
+    <arxiv:comment>ACL 2025. Code: https://github.com/mangopy/tool-retrieval-benchmark</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zhengliang Shi</name>
+    </author>
+    <author>
+      <name>Yuhan Wang</name>
+    </author>
+    <author>
+      <name>Lingyong Yan</name>
+    </author>
+    <author>
+      <name>Pengjie Ren</name>
+    </author>
+    <author>
+      <name>Shuaiqiang Wang</name>
+    </author>
+    <author>
+      <name>Dawei Yin</name>
+    </author>
+    <author>
+      <name>Zhaochun Ren</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.11011v1</id>
+    <title>Task-Aware Delegation Cues for LLM Agents</title>
+    <updated>2026-03-11T17:35:44Z</updated>
+    <link href="https://arxiv.org/abs/2603.11011v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.11011v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly present as conversational collaborators, yet human--agent teamwork remains brittle due to information asymmetry: users lack task-specific reliability cues, and agents rarely surface calibrated uncertainty or rationale. We propose a task-aware collaboration signaling layer that turns offline preference evaluations into online, user-facing primitives for delegation. Using Chatbot Arena pairwise comparisons, we induce an interpretable task taxonomy via semantic clustering, then derive (i) Capability Profiles as task-conditioned win-rate maps and (ii) Coordination-Risk Cues as task-conditioned disagreement (tie-rate) priors. These signals drive a closed-loop delegation protocol that supports common-ground verification, adaptive routing (primary vs.\ primary+auditor), explicit rationale disclosure, and privacy-preserving accountability logs. Two predictive probes validate that task typing carries actionable structure: cluster features improve winner prediction accuracy and reduce difficulty prediction error under stratified 5-fold cross-validation. Overall, our framework reframes delegation from an opaque system default into a visible, negotiable, and auditable collaborative decision, providing a principled design space for adaptive human--agent collaboration grounded in mutual awareness and shared accountability.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-11T17:35:44Z</published>
+    <arxiv:comment>Accepeted by CHI'26 Workshop on Developing Standards and Documentation For LLM Use as Simulated Research Participants</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <arxiv:journal_ref>CHI 2026</arxiv:journal_ref>
+    <author>
+      <name>Xingrui Gu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.11504v2</id>
+    <title>CTFusion: A CTF-based Benchmark for LLM Agent Evaluation</title>
+    <updated>2026-07-11T11:49:33Z</updated>
+    <link href="https://arxiv.org/abs/2605.11504v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.11504v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in Large Language Models (LLMs) have enabled agentic systems for complex, multi-step tasks; cybersecurity is emerging as a prominent application. To evaluate such agents, researchers widely adopt Capture The Flag (CTF) benchmarks. However, current CTF benchmarks reuse existing challenges, which exposes them to data contamination and potential cheating. Notably, we confirmed these issues in practice by integrating web search tools into an existing agent. To address these limitations, we present CTFusion, a streaming evaluation framework built on Live CTFs. To achieve this, CTFusion preserves per-agent independence under a single team account and reduces competition impact by forwarding only the first correct flag per challenge. Moreover, we implement CTFusion as a Model Context Protocol (MCP) server on the widely used CTFd platform, which offers broad applicability to diverse CTF events and agent types. Through experiments with three LLMs, two agents, and five Live CTFs, we demonstrate that existing CTF benchmarks can be unreliable in assessing LLM-based agents, while CTFusion can serve as a robust solution for evaluating cybersecurity agents. We release CTFusion as open source to foster future research in this area.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-12T04:23:42Z</published>
+    <arxiv:comment>Accepted at the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD), ICML 2026. Revised to match the camera-ready version. OpenReview: https://openreview.net/forum?id=aUSUvS4dPL</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Dongjun Lee</name>
+    </author>
+    <author>
+      <name>Ga-eun Bae</name>
+    </author>
+    <author>
+      <name>Insu Yun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2409.11363v2</id>
+    <title>CORE-Bench: Fostering the Credibility of Published Research Through a Computational Reproducibility Agent Benchmark</title>
+    <updated>2026-06-22T22:36:12Z</updated>
+    <link href="https://arxiv.org/abs/2409.11363v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2409.11363v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI agents have the potential to aid users on a variety of consequential tasks, including conducting scientific research. To spur the development of useful agents, we need benchmarks that are challenging, but more crucially, directly correspond to real-world tasks of interest. This paper introduces such a benchmark, designed to measure the accuracy of AI agents in tackling a crucial yet surprisingly challenging aspect of scientific research: computational reproducibility. This task, fundamental to the scientific process, involves reproducing the results of a study using the provided code and data. We introduce CORE-Bench (Computational Reproducibility Agent Benchmark), a benchmark consisting of 270 tasks based on 90 scientific papers across three disciplines (computer science, social science, and medicine). Tasks in CORE-Bench consist of three difficulty levels and include both language-only and vision-language tasks. We provide an evaluation system to measure the accuracy of agents in a fast and parallelizable way, saving days of evaluation time for each run compared to a sequential implementation. We evaluated two baseline agents: the general-purpose AutoGPT and a task-specific agent called CORE-Agent. We tested both variants using two underlying language models: GPT-4o and GPT-4o-mini. The best agent achieved an accuracy of 21% on the hardest task, showing the vast scope for improvement in automating routine scientific tasks. Having agents that can reproduce existing work is a necessary step towards building agents that can conduct novel research and could verify and improve the performance of other research agents. We hope that CORE-Bench can improve the state of reproducibility and spur the development of future research agents.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-09-17T17:13:19Z</published>
+    <arxiv:comment>Benchmark harness and code available at http://github.com/siegelz/core-bench</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Zachary S. Siegel</name>
+    </author>
+    <author>
+      <name>Sayash Kapoor</name>
+    </author>
+    <author>
+      <name>Nitya Nadgir</name>
+    </author>
+    <author>
+      <name>Benedikt Stroebl</name>
+    </author>
+    <author>
+      <name>Arvind Narayanan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.25111v2</id>
+    <title>SEVerA: Verified Synthesis of Self-Evolving Agents</title>
+    <updated>2026-04-24T19:01:59Z</updated>
+    <link href="https://arxiv.org/abs/2603.25111v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.25111v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances have shown the effectiveness of self-evolving LLM agents on tasks such as program repair and scientific discovery. In this paradigm, a planner LLM synthesizes an agent program that invokes parametric models, including LLMs, which are then tuned per task to improve performance. However, existing self-evolving agent frameworks provide no formal guarantees of safety or correctness. Because such programs are often executed autonomously on unseen inputs, this lack of guarantees raises reliability and security concerns. We formulate agentic code generation as a constrained learning problem, combining hard formal specifications with soft objectives capturing task utility. We introduce Formally Guarded Generative Models (FGGM), which allow the planner LLM to specify a formal output contract for each generative model call using first-order logic. Each FGGM call wraps the underlying model in a rejection sampler with a verified fallback, ensuring every returned output satisfies the contract for any input and parameter setting. Building on FGGM, we present SEVerA (Self-Evolving Verified Agents), a three-stage framework: Search synthesizes candidate parametric programs containing FGGM calls; Verification proves correctness with respect to hard constraints for all parameter values, reducing the problem to unconstrained learning; and Learning applies scalable gradient-based optimization, including GRPO-style fine-tuning, to improve the soft objective while preserving correctness. We evaluate SEVerA on Dafny program verification, symbolic math synthesis, and policy-compliant agentic tool use ($τ^2$-bench). Across tasks, SEVerA achieves zero constraint violations while improving performance over unconstrained and SOTA baselines, showing that formal behavioral constraints not only guarantee correctness but also steer synthesis toward higher-quality agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-26T07:32:20Z</published>
+    <arxiv:comment>First Formally Verified Self-Evolving LLM Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Debangshu Banerjee</name>
+    </author>
+    <author>
+      <name>Changming Xu</name>
+    </author>
+    <author>
+      <name>Eugene Ie</name>
+    </author>
+    <author>
+      <name>Ming Zhang</name>
+    </author>
+    <author>
+      <name>Daiyi Peng</name>
+    </author>
+    <author>
+      <name>Chu-Cheng Lin</name>
+    </author>
+    <author>
+      <name>Gagandeep Singh</name>
+    </author>
+  </entry>
+</feed>

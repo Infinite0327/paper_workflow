@@ -1,0 +1,942 @@
+
+
+--- Page 1 ---
+Agent-Memory Protocol: A Privacy-Focused Protocol for LLM Agents and User
+Memory Interaction
+Junde Wu, Minhao Hu, Jiayuan Zhu, Jiaye Wang, Yueming Jin
+University of Oxford, University of California San Diego, National University of Singapore
+Abstract
+Large-Language Model (LLM) based agents are rapidly mi-
+grating from stateless chat systems to persistent, longitudinal
+assistants. Nowhere is this transition more sensitive than in
+fields like medicine and finance, where context accumulates
+across months of interactions containing personally identi-
+fiable or confidential information. Existing memory and re-
+trieval architectures of agents focus on efficiency or reasoning
+quality but remain indifferent to privacy: prompts, retrieval
+results, and cached traces leak explicit identifiers to third-
+party infrastructure. We introduce theAgent-Memory Pro-
+tocol (AMP), a privacy-first protocol for LLM Agents and
+User Memory Interaction. AMP enforces confidentiality at
+the boundary where language meets computation. It defines
+three deterministic operations—redact at rest,pack for pur-
+pose, andhydrate on return, that together guarantee that no
+personal identifier ever leaves the user boundary while main-
+taining the reasoning utility of long-term memory. We for-
+malize its protocol and illustrate its operation in multi-turn
+use-cases spanning medicine and finance, including radiol-
+ogy follow-up, discharge planning, and portfolio manage-
+ment.
+Introduction
+The recent rise of LLM-driven agents has transformed static
+chatbots into dynamic collaborators that can plan tasks,
+write code, analyze data, and manage workflows (Wu et al.
+2025a, 2024, 2025b). Coding agents, research assistants,
+and personal copilots now execute multi-step reasoning and
+act across tools, APIs, and files—often outperforming iso-
+lated human operators in efficiency and consistency. As
+these agents mature, the next step ispersonalization: con-
+necting them to a user’s long-term memory so that ev-
+ery interaction is contextualized by prior actions, prefer-
+ences, and history (Wu et al. 2025b; Sun et al. 2025). The
+recent rise of LLM-driven agents has transformed static
+chatbots into dynamic collaborators that can plan tasks,
+write code, analyze data, and manage workflow (Wu et al.
+2025a, 2024, 2025b)s [cite agentic(Wu et al. 2025a, 2024,
+2025b)reasoning, medical graph rag, git context c(Wu et al.
+2025a, 2024, 2025b)ontroller]. Coding agents, research as-
+sistants, and personal copilots now execute multi-step rea-
+soning and act across tools, APIs, and files—often outper-
+forming isolated human operators in efficiency and consis-
+tency. As these agents mature, the next step ispersonaliza-
+tion: connecting them to a user’s long-term memory so that
+every interaction is contextualized by prior actions, prefer-
+ences, and history [cite git context controller, and context
+fold].
+Such agent–memory coupling unlocks powerful continu-
+ity—an assistant that recalls prior code refactorings, a fi-
+nancial planner that tracks investment patterns, or a clini-
+cal aide that remembers medication adjustments(Wu et al.
+2025a, 2024, 2025b). Yet this evolution introduces an urgent
+challenge: there is currently no unified, privacy-preserving
+protocol governing how agents read, write, and reason over
+user memory. Ad-hoc implementations risk leaking person-
+ally identifiable or confidential data during prompt construc-
+tion, retrieval, or logging. In many cases, the agent must
+connectto the user’s memory to provide continuity and per-
+sonalization, while ensuring that sensitive information never
+leaves the user boundary. This tension—between reasoning
+utility and privacy preservation—motivates the need for a
+principled communication framework.
+To address this challenge, we introduce theAgent-to-
+Memory Protocol (AMP), a language-level interface that
+governs how agents read from, write to, and reason over user
+memory without exposing identifiers. AMP formalizes the
+boundary where symbolic reasoning meets private context,
+ensuring that no personally identifiable information (PII) tra-
+verses the model boundary.
+AMP defines three deterministic operations—APPEND,
+PACK, and HYDRATEthat together decouple reasoning from
+sensitive data. APPENDredacts confidential spans at rest,
+storing only placeholder-linked semantic cards. PACKas-
+sembles redacted narratives relevant to the current task for
+model inference, while HYDRATElocally re-personalizes
+the model’s symbolic output. By enforcing this redac-
+tion–hydration boundary, AMP allows agents to maintain
+long-term coherence and personalization while provably
+minimizing information leakage at the language level.
+On the other hand, in practice, modern agents must
+reason over long-lived personal histories—email threads,
+transaction logs, or clinical notes—whose content often
+includes sensitive identifiers. Conventional systems con-
+catenate such plaintext snippets into prompts transmitted
+to external models, exposing confidential details during
+every inference cycle. AMP additionally abstracts these
+identifiers into typed placeholders (e.g.,$ENT:PERSON,
+
+--- Page 2 ---
+$ENT:ACCOUNT), transmitting only the redacted seman-
+tic narrative. The model then reasons entirely on symbolic
+context—learning structure, intent, and causality—while re-
+personalization occurs locally at the memory boundary. This
+abstraction preserves reasoning fidelity while guaranteeing
+that no personal data ever leaves the user’s device or trust
+boundary.
+AMP establishes a new privacy substrate for memory-
+augmented agents. It elevates data protection from
+infrastructure-level encryption to the linguistic level, ensur-
+ing that privacy holds even when the model or transport layer
+is compromised. The protocol enables scalable personaliza-
+tion—agents that adapt across sessions, domains, and iden-
+tities—without accumulating exposure risk. By standardiz-
+ing how agents communicate with memory, AMP offers a
+foundation for interoperable, privacy-preserving ecosystems
+spanning healthcare, finance, education, and enterprise set-
+tings, where continuity and confidentiality are both essential.
+Background and Related Work
+Memory Architectures for LLM Agents
+Memory in modern agents ranges from short-term recurrent
+buffers to long-term vector databases. Frameworks such as
+MemGPT (Xu et al. 2024), ReAct (Yao et al. 2023), and
+LangGraph (LangChain AI 2024) model memory as key-
+value stores or task-specific nodes. They enhance context
+recall but remain linguistically transparent: retrieved snip-
+pets appear verbatim in prompts. Recent compression and
+summarization methods such as Memorizing Transformers
+(Liu et al. 2023), Reflection Memory (Shinn et al. 2024),
+and Self-RAG (Asai et al. 2024) encode histories into dense
+representations, improving token efficiency but not privacy.
+Our work builds on this lineage by introducing an explicit
+redaction–hydration boundary between memory and model,
+achieving reasoning continuity without exposing identifiers.
+Confidential and Cryptographic Inference
+Cloud providers now offerconfidential GPUsandtrusted ex-
+ecution environments(TEEs) (Apple Inc. 2024; Intel Corpo-
+ration 2023). These prevent operators from reading plaintext
+inside enclaves, yet the model itself still processes identifiers
+in cleartext. Fully Homomorphic Encryption (FHE) (Cheon
+et al. 2020) and Secure Multi-party Computation (MPC)
+(Yao 1982) theoretically conceal even from the model but
+remain orders of magnitude slower. Recent works such as
+Privacy-preserving RAG (Li et al. 2024) and ShieldLLM
+(Choi et al. 2024) explore selective encryption at retrieval-
+time, yet inference-time tokens still leak user data. AMP
+complements these approaches by reducing the plaintext
+surface: even if the enclave or model were compromised,
+no identifiers are ever present in transmitted text.
+Anonymization and Redaction
+Traditional anonymization replaces identifiers in static cor-
+pora (Neves et al. 2022; Dernoncourt et al. 2017; Uzuner,
+Luo, and Szolovits 2008). However, in dialogue mem-
+ory, entities recur and must remain referentially stable. A
+naive random mask would break longitudinal reasoning
+(“the same doctor as last visit”). To address this, crypto-
+graphic pseudonymization techniques such as SHA-based
+or HMAC-based entity hashing (Rathee, Goyal, and Ahuja
+2023; Kim, Park, and Cho 2024) preserve entity consis-
+tency while concealing raw values. AMP adopts determin-
+istic cryptographic placeholders that preserve identity rela-
+tions across time without exposing sensitive values.
+Current Protocols for Agents
+Recent standardization efforts have begun to define agent
+communication protocols such as the Model Context Proto-
+col (MCP) (Anthropic 2024) and the Agent-to-Agent (A2A)
+transport layer (OpenAI 2024). MCP specifies structured
+JSON-based message schemas for external tool and mem-
+ory access, but it assumes plaintext transport of content.
+A2A enables multi-agent collaboration through authenti-
+cated channels, but does not regulate how identifiers are
+represented or redacted. Our AMP can thus be viewed
+as a complementary privacy layer that sits atop MCP or
+A2A—introducing language-level confidentiality while pre-
+serving interoperability.
+Problem Setting
+Formally, letM t denote the memory state aftertinterac-
+tions, and letΦ t be the textual context transmitted to an ex-
+ternal model for reasoning. We desire thatΦ t maximizes
+task utilityU(Φ t)while minimizing mutual information
+with personally identifiable stringsS:
+max
+Φt
+U(Φ t)s.t.I(Φ t;S)≈0.
+Existing architectures maximize utility but treatI(Φ t;S)as
+negligible or unavoidable; AMP insteadminimizesthis term
+by construction through explicit redaction and controlled hy-
+dration.
+In personalized agent settings, the assistant’s memory
+behaves like ashadow profile: it accumulates notes, sum-
+maries, preferences, and instructions over time. Each inter-
+actionu i contains two separable components:
+ui = (ci, si),
+wherec i denotes task-relevant content (e.g., “update the
+spreadsheet,” “reschedule the meeting”), ands i denotes
+identifying attributes (e.g., names, account numbers, email
+addresses).
+A safe memory system must (1) preserve longitudinal co-
+herence across the content streamc i, and (2) ensure that no
+identifying elements i ever leaves the user’s device.
+Formally, letLdenote the remote model’s language dis-
+tribution conditioned on promptΦ. We require that for any
+adversary observingΦorL(Φ), the posterior overSsatis-
+fies:
+P(S|Φ,L(Φ)) =P(S),
+meaning the model’s input and output leak no information
+about identifiers. AMP enforces this by ensuring thatΦcon-
+tains only deterministic, symbolic placeholders that are in-
+dependent ofS.
+
+--- Page 3 ---
+Design Goals
+We distill four non-negotiable requirements:
+Privacy completeness.Every identifier must be sanitized
+before storage; inference should never touch plaintext.
+Referential stability.A placeholder must consistently re-
+fer to the same entity across time, so reasoning chains re-
+main coherent.
+Semantic sufficiency.Redaction must preserve enough
+linguistic structure for the model to reason correctly.
+Modular deployability.The protocol should operate on
+commodity hardware and compose with confidential infer-
+ence or cryptographic schemes without modification.
+Agent–Memory Natural-Language Protocol
+(AMP)
+AMP defines an interface between anAgent(A) and a pri-
+vateMemory(M). M stores redacted NL cards derived from
+all prior chat turns. A communicates with M through three
+message types:APPEND,PACK, andHYDRATE. All mes-
+sages are JSON over mTLS or a local socket. Each message
+carries a timestamp, nonce, and Ed25519 signature to ensure
+integrity.
+Placeholder Semantics
+Given a confidential spanv(e.g., “Alice Smith”), the mem-
+ory computes:
+token(v) =HMAC(K user,canonical(v))[: 10],
+yielding a deterministic ten-byte identifier. The placeholder
+inserted into the text is:
+$EN T:TYPE:token(v).
+A local sidecar map maintains the binding between to-
+ken and real value. Type categories follow PHI taxonomy:
+PERSON,EMAIL,PHONE,DATE,ORG,DOC, etc. This de-
+sign achieves referential stability and constant-time hydra-
+tion.
+(1) APPEND: Redact at Rest
+Whenever a new utterance arrives, A sends:
+1{
+2"type": "APPEND",
+3"body": {
+4"turns": [
+5{
+6"role": "user",
+7"text": "Transfer 94,250 from my
+savings to the joint account
+I share with Emma Li, and
+update the notes about my
+chronic back issue for the
+insurance claim."
+8}
+9],
+10"distill": true
+11}
+12}
+M performs entity detection using a local NER tuned for
+PII and applies placeholders:
+“User requested to transfer $ENT:AMOUNT:3f81
+from $ENT:ACCOUNT:a17c shared with
+$ENT:PERSON:7f3a, and to update notes re-
+garding $ENT:CONDITION:c82e for an insurance
+claim.”
+This “NL card” is stored directly. No plaintext identifiers
+ever persist in storage; even backups remain redacted. De-
+terministic placeholders allow later correlation: if the same
+account, person, or condition appears again, the same token
+is reused.
+Most privacy leaks occur not from live queries but from
+historical logs and cached plaintext. By redacting at write-
+time, AMP eliminates such residual risk.
+(2) PACK: Pack for Purpose
+For any new taskT, the agent requests from memory a
+token-budgeted narrative relevant toT:
+1{
+2"type": "PACK",
+3"body": {
+4"task": "draft_reschedule_email",
+5"question": "Help me reschedule MRI
+with my doctor next week.",
+6"time_window_days": 60,
+7"token_budget": 800,
+8"style": "bulleted"
+9}
+10}
+M selects cards using vector similarity between the query
+and stored embeddings of redacted text, then compresses
+and formats the result. An example response:
+- Profile: prefers concise tone.
+- Last interaction ($ENT:DATE:91c2):
+requested imaging reschedule.
+- Physician: $ENT:PERSON:7f3a
+(role=cardiologist, specialty=imaging).
+- Constraint: mornings Tue/Thu
+preferred.
+- Document: attach prior report
+$ENT:DOC:rep mri 2023.
+The response includes a pointersidecar reffor hy-
+dration. This pack is inserted directly into the LLM prompt,
+e.g.:
+“Using the memory pack below, draft a professional email.
+Preserve placeholders. Return JSON with{subject, body,
+actions}. ”
+Retrieving raw cards would exceed token limits and risk
+oversharing; compression into a single narrative both im-
+proves reasoning quality and constrains exposure. Because
+the pack is already redacted, it can safely traverse any exter-
+nal model or cloud boundary.
+(3) HYDRATE: Hydrate on Return
+After inference, A obtains a symbolic result such as:
+1{
+2"subject": "Request to Reschedule
+Imaging Appointment",
+3"body": "Dear ${ENT:PERSON:7f3a}, could
+we move to ${ENT:DATE:91c2}?
+Regards.",
+
+--- Page 4 ---
+4"actions": [
+5{"type": "send_email", "to": "${ENT:
+EMAIL:12ab}"}
+6]
+7}
+A then calls:
+1{
+2"type": "HYDRATE",
+3"body": {
+4"sidecar_ref": "sc_5e1c",
+5"payload": { ... }
+6}
+7}
+M substitutes real values:
+“Dear Dr. Alice Smith, could we move to 2025-11-
+03?”
+and populates action parameters (recipient email, attach-
+ment path). Execution (e.g., sending mail) occurs locally.
+The LLM never observes these values.
+Hydration finalizes personalization while maintaining a
+clean separation of reasoning (symbolic) and identity (lo-
+cal). If future legal audits demand proof of non-exposure,
+logs of packs and placeholders provide verifiable evidence..
+Protocol Transport and Secure Handshake
+Thus far, we have described AMP’s logical semantics—the
+redaction, packing, and hydration of natural-language mem-
+ory. We now specify itstransport layer: how an agent and
+its private memory establish a secure communication chan-
+nel, authenticate each other, and exchange symbolic data in
+a way that guarantees privacy, integrity, and non-repudiation
+even in multi-agent settings.
+Design Principles
+AMP transport design follows four guiding principles:
+1.Language-first, cryptography-backed.Every transmit-
+ted payload remains pure natural language or JSON con-
+taining placeholders; cryptography secures only trans-
+port metadata, never the reasoning content.
+2.Mutual authentication.Both agent and memory end-
+points must verify each other before sharing packs. Un-
+like typical client–server models, each endpoint can act
+as initiator or responder, reflecting the peer nature of
+memory–agent communication.
+3.Stateless verifiability.Each message carries a detached
+signature and nonce so that the session can be verified
+independently without persistent sockets—important for
+intermittent on-device agents.
+4.Composable security.The handshake aligns with exist-
+ing protocols such as A2A (Agent-to-Agent) and MCP
+(Model Context Protocol) so that AMP sessions can tun-
+nel through them without modification.
+Connection Setup: the AMP Handshake
+The handshake is a short authenticated exchange establish-
+ing a shared symmetric session keyK s used to protect mes-
+sage envelopes. The process resembles an mTLS handshake
+but adds explicit semantic negotiation.
+Step 0: Key material.Each side holds a long-term
+Ed25519 key pair:
+(sk A,pk A),(sk M ,pk M)
+for Agent A and Memory M respectively. Public keys are
+stored in the user’s local identity store.
+Step 1: Agent Hello.The agent initiates:
+1POST /amnp/hello
+2{
+3"msg_type":"HELLO",
+4"agent_pub": pk_A,
+5"supported_versions":["amnp-0.1","amnp
+-0.2"],
+6"capabilities":["pack","hydrate","
+stream"],
+7"nonce_A": random_128bit()
+8}
+The message is signed bysk A and optionally tunneled over
+HTTPS.
+Step 2: Memory Hello–Ack.Upon receipt, M verifies the
+signature, generates its own nonce, and replies:
+1{
+2"msg_type":"HELLO_ACK",
+3"memory_pub": pk_M,
+4"accepted_version":"amnp-0.1",
+5"memory_policy_hash": SHA256(policy.
+yaml),
+6"nonce_M": random_128bit(),
+7"nonce_Ack": nonce_A
+8}
+This step confirms policy compatibility and echoes the
+agent’s nonce to prove freshness.
+Step 3: Ephemeral key exchange.Both sides compute an
+ephemeral Diffie–Hellman key:
+Ks = X25519(skephemeral
+A , pkephemeral
+M )
+The derived symmetric keyK s encrypts subsequent mes-
+sages using AES-GCM. All AMP envelopes henceforth in-
+clude:
+1{
+2"ciphertext": AESGCM_Encrypt(K_s,
+payload, nonce),
+3"auth": HMAC(K_s, headers)
+4}
+Step 4: Policy negotiation and attestation.Memory ad-
+vertises its local redaction policy (hash and optional attesta-
+tion blob). Agent validates that policy hash matches a trusted
+profile—e.g., “phi-policy-v2” certified by the vendor. If ver-
+ified, the channel is consideredsemantically trustworthy: the
+agent can assume all redaction is performed locally and that
+no plaintext identifiers exist on M’s side.
+Step 5: Session establishment.The handshake concludes
+with both parties storing:
+session= (id, K s, texpiry,policy hash)
+The session expires after a fixed lifetime or message-count
+threshold, as specified by the negotiated policy. Subsequent
+APPEND,PACK, andHYDRATEmessages reuse this key un-
+til renewal.
+
+--- Page 5 ---
+Message Envelope Format
+Every AMP payload is transported as a self-verifying enve-
+lope:
+1{
+2"header":{
+3"version":"amnp-0.1",
+4"session_id":"uuid",
+5"seq": 42,
+6"timestamp": "2025-10-31T03:12:00Z"
+7},
+8"body_enc": "<ciphertext>",
+9"sig_agent": "Ed25519(pk_A, header ||
+body_enc)",
+10"sig_memory": "Ed25519(pk_M, header ||
+body_enc)"
+11}
+Dual signatures allow offline audit: the user can later
+prove both sides agreed on every message without storing
+plaintext.
+Handshake over Multi-Agent Networks
+When the agent participates in a broader A2A network, each
+downstream agent reuses the existing AMP session through
+delegation tokens. Suppose Agent A (scheduler) and Agent
+B (billing) communicate via A2A; A never sharesK s di-
+rectly. Instead, it issues a limited-scope token signed byskA:
+1{
+2"delegation":{
+3"scope":"read-pack",
+4"expires":"2025-11-01T00:00Z",
+5"pack_ref":"pk_09af"
+6},
+7"sig_agent": "..."
+8}
+Agent B can request a redacted view of the same pack
+from memory but cannot hydrate placeholders.
+This separation ensures cross-agent collaboration remains
+privacy-preserving. If connectivity fails mid-transaction,
+messages remain replay-safe because every request carries
+a monotonically increasing sequence number and a nonce,
+allowing memory to ignore duplicates without ambiguity.
+Should the agent crash during hydration, the partially con-
+structed symbolic result remains encrypted on disk and is
+inaccessible until the user re-authenticates, ensuring that in-
+terruptions never expose plaintext or alter semantic consis-
+tency. After session establishment, all agent–memory com-
+munication—including appending new cards, constructing
+packs, and hydrating outputs—flows exclusively through au-
+thenticated, encrypted envelopes. Even if a network adver-
+sary intercepts packets, each message consists solely of ci-
+phertext derived from already-redacted placeholders, pre-
+venting leakage of identifiers at the linguistic layer. The
+combination of semantic privacy (no identifiers ever cross
+the boundary) and transport privacy (no readable text is
+transmitted) yields a two-layer protection model that pro-
+vides defense-in-depth comparable to end-to-end encrypted
+messengers, but tailored specifically for language-based
+agents where symbolic context and redacted semantics must
+remain stable across turns.
+Implementation Details
+AMP is designed for real deployments on commodity hard-
+ware, where both the agent and memory must operate re-
+liably across heterogeneous devices and connectivity condi-
+tions. Our reference implementation demonstrates that AMP
+can run on desktops, mobile devices, and hybrid cloud-
+assisted setups without specialized hardware.
+Local-first transport.On desktop and laptop systems,
+the agent and memory typically coexist on the same host.
+All preprocessing—including NER, placeholder generation,
+signature verification, and hydration—runs locally. Named-
+entity recognition uses a spacy model fine-tuned on de-
+identified corpora (0.97 F1 on PHI tags). Placeholder gen-
+eration employs HMAC-SHA256 with per-user secret keys
+derived from the OS keychain, and the sidecar map is main-
+tained in encrypted SQLite with field-level AES-256-GCM
+encryption. Communication between the agent and mem-
+ory occurs over a lightweight local HTTP or Unix-socket
+service providing three endpoints:/append,/pack, and
+/hydrate. Each request carries a signed nonce to prevent
+replay attacks. Streaming hydration supports token-wise re-
+personalization for interactive chat UIs.
+Cloud-assisted mode.On mobile devices with con-
+strained compute or storage, AMP supports a hybrid mode
+where redaction and hydration remain on-device while en-
+crypted memory persistence resides in a user-controlled
+cloud container. The AMP handshake doubles as explicit
+consent for each session: the user cryptographically ap-
+proves the initiation of a new symbolic context stream.
+All transmitted payloads remain ciphertext containing only
+redacted placeholders, ensuring that cloud storage never ob-
+serves identifiers.
+Embedding and retrieval.PACK generation uses
+Sentence-BERT embeddings over redacted text, ensuring
+semantic clustering is unaffected by removed identifiers.
+Compression uses a lightweight local summarizer (1.3B
+parameters), keeping the process fully on-device. In typical
+workflows, pack construction completes in<50ms and
+hydration in<10ms on an Apple M2 CPU. Placeholder
+length increases storage by only7.3%, and retrieval
+overhead remains negligible.
+Integration with multi-agent orchestration.AMP ex-
+poses MCP-compliant schema descriptors:
+1memory.pack -> schema: MemoryPack,
+content_type: text/redacted
+2memory.hydrate -> schema:
+HydrationResult
+These descriptors allow external tools or LLM-based ser-
+vices to request task-specific context packs without ac-
+cessing raw identifiers. When used within Agent-to-Agent
+(A2A) networks, AMP’sPACKandHYDRATEverbs can
+be advertised as capabilities, enabling multi-agent collab-
+oration under privacy constraints. Downstream agents re-
+ceive only symbolic placeholders and can operate entirely
+on redacted semantics; hydration occurs solely on the user’s
+trusted endpoint.
+
+--- Page 6 ---
+Failure safety and robustness.If connectivity fails mid-
+transaction, all messages remain replay-safe via monotonic
+sequence numbers and nonces. If an agent crashes during
+hydration, the partially reconstructed symbolic output stays
+encrypted on disk until the user re-authenticates. Because
+every transmitted message is an authenticated, encrypted en-
+velope containing only redacted text, even full packet cap-
+ture cannot reveal identifiers.
+End-to-end privacy in deployment.Together, these
+mechanisms provide two layers of protection:semantic
+privacy(identifiers never cross the model boundary) and
+transport privacy(no readable text is ever transmitted).
+The result is defense-in-depth comparable to end-to-end
+encrypted messengers, but specialized for language-based
+agents where symbolic context and redacted semantics must
+remain stable across turns.
+AMP’s deployment model therefore scales from local
+applications to multi-agent ecosystems while preserving
+linguistic confidentiality throughout the entire reasoning
+pipeline.
+Case Study 1: Radiology Rescheduling
+To concretize AMP’s dynamics, we now trace an end-to-end
+scenario from a realistic radiology workflow. Unlike prior
+examples with a single prompt, this walkthrough captures
+the full lifecycle of memory–agent interaction, including
+multi-turn updates, error correction, and multi-agent coor-
+dination under privacy constraints.
+Clinical context.A patient has previously undergone an
+MRI under the care of Dr. Alice Smith (a cardiologist) at Ox-
+ford Clinic. The AI assistant manages scheduling and medi-
+cal correspondence. The same assistant has also coordinated
+prior ECG uploads and lab reminders, all stored as redacted
+natural-language cards within memory.
+Step 1: Append – contextual ingestion and redaction.
+When the user speaks:“Email Dr. Alice Smith at al-
+ice.smith@oxfordclinic.org to move my MRI to November
+3, since I’ll be travelling that week. ”
+The agent sends the following to memory:
+1{
+2"type": "APPEND",
+3"body": {
+4"turns": [
+5{"role": "user",
+6"text": "Email Dr. Alice Smith at
+alice.smith@oxfordclinic.org to
+move my MRI to Nov 3."}
+7],
+8"distill": true
+9}
+10}
+The memory’s NER module detects and classifies
+confidential spans:PERSON=Dr. Alice Smith,
+EMAIL=alice.smith@oxfordclinic.org,
+DATE=Nov 3, andORG=Oxford Clinic. Each is
+replaced by a deterministic placeholder:
+“Email $ENT:PERSON:7f3a at $ENT:EMAIL:12ab
+to move MRI at $ENT:ORG:66ba to
+$ENT:DATE:91c2.”
+The card is appended to the longitudinal memory store,
+and the sidecar records:
+7f3a→Dr. Alice Smith; 12ab→
+alice.smith@oxfordclinic.org;
+91c2→2025-11-03; 66ba→
+Oxford Clinic.
+The encrypted SQLite database stores both redacted cards
+and keyed sidecars separately. If the same doctor reappears,
+the identical token 7f3a ensures referential stability across
+months.
+Step 2: Pack – constructing task-specific context.Later,
+the user types:“Draft a polite but urgent email to reschedule
+my MRI, and check if my cardiologist has approved it. ”
+The agent issues a PACK query:
+1{
+2"type": "PACK",
+3"body": {
+4"task": "draft_reschedule_email",
+5"question": "Reschedule MRI, confirm
+cardiologist approval.",
+6"hints": ["radiology","schedule","
+doctor communication"],
+7"time_window_days": 90,
+8"token_budget": 800
+9}
+10}
+The memory searches its corpus of redacted NL cards,
+computes semantic similarity, and compiles the following
+pack:
+- Summary: Patient requested to
+reschedule MRI originally booked with
+$ENT:PERSON:7f3a at $ENT:ORG:66ba.
+- Date change: from previous slot to
+$ENT:DATE:91c2.
+- Contact: $ENT:EMAIL:12ab
+(role=physician, specialty=cardiology).
+- Prior context: physician approval
+pending since last interaction
+($ENT:DATE:71a0).
+- Tone preference: concise, formal,
+polite.
+- Reminder: set 2-day advance
+notification once confirmed.
+This pack integrates relevant but privacy-safe informa-
+tion, merging multiple prior episodes (e.g., pending approval
+and tone preference). It never exposes the physician’s name
+or email, yet remains semantically rich enough for the model
+to reason about scheduling constraints.
+Step 3: Prompt external model – reasoning on symbolic
+context.The agent prepares the external prompt:
+“Using the memory pack below, draft a formal and
+polite reschedule email. Preserve all placeholders ex-
+actly. Return structured JSON:{subject, body, signa-
+ture}. ”
+[memory pack]
+The cloud-hosted LLM receives only this symbolic
+prompt. It produces:
+
+--- Page 7 ---
+1{
+2"subject": "Request to Reschedule MRI
+Appointment",
+3"body": "Dear ${ENT:PERSON:7f3a}, I
+hope you are well. \
+4Could we move the MRI previously booked
+at ${ENT:ORG:66ba} to ${ENT:DATE:91c2
+}? \
+5Please confirm availability or suggest
+another convenient time.",
+6"signature": "Best regards, Patient"
+7}
+No token in this message can be linked to any real-world
+identity; the model manipulates pure placeholders.
+Step 4: Hydrate locally – re-personalization and down-
+stream actions.Upon receiving the model’s response, the
+agent calls:
+1{
+2"type": "HYDRATE",
+3"body": {
+4"sidecar_ref": "sc_5e1c",
+5"payload": {...}
+6}
+7}
+The memory system substitutes the tokens via the sidecar:
+“Dear Dr. Alice Smith, I hope you are well. Could we
+move the MRI previously booked at Oxford Clinic to
+November 3? Please confirm availability or suggest
+another convenient time.”
+The assistant displays the email locally and uses a secure
+API to send it through the hospital’s mail system. All per-
+sonal details exist only within the local boundary; the cloud
+never observes them.
+Step 5: Multi-agent extension (MCP/A2A interopera-
+tion).If a billing agent must be informed, the scheduling
+agent delegates via an A2A message:
+Agent-A→Agent-B:
+"Context summary: MRI rescheduled
+(symbolic identifiers preserved).
+Please update billing estimate for
+$ENT:PROC:221b at $ENT:ORG:66ba."
+Agent B, running independently, understands and operates
+purely on placeholders, ensuring privacy propagation across
+agents. Hydration occurs only on the user’s trusted endpoint.
+This walkthrough demonstrates AMP’s robustness in
+long-horizon, multi-agent workflows while maintaining
+end-to-end linguistic privacy.
+Case Study 2: Portfolio Transfer and Tax
+Planning
+To illustrate AMP’s behavior in a financial domain—where
+leakage of account numbers, balances, or tax-sensitive in-
+tentions, can cause catastrophic loss—we trace an end-to-
+end portfolio-management workflow involving multi-step
+updates, advice drafting, and cross-agent coordination under
+strong privacy constraints.
+Financial context.The user manages investments across
+multiple brokerage and savings accounts. The AI assistant
+tracks prior transfers, risk profile adjustments, and tax-loss-
+harvesting notes, all stored as redacted natural-language
+cards within memory. In previous turns, the user has config-
+ured joint account access with a partner and logged positions
+in several equities.
+Step 1: Append – contextual ingestion and redaction.
+The user states:
+“Please move $42,500 from my joint account with
+Emma Li (ending in 4429) into my Fidelity taxable
+account, and note that I plan to liquidate my Acme
+Corp shares before March for tax reasons.”
+The agent issues:
+1{
+2"type": "APPEND",
+3"body": {
+4"turns": [
+5{
+6"role": "user",
+7"text": "Move $42,500 from joint
+account ending 4429 shared
+with Emma Li into my Fidelity
+taxable account, and log
+that I plan to liquidate my
+Acme Corp shares before March
+."
+8}
+9],
+10"distill": true
+11}
+12}
+Memory detects AMOUNT, PERSON, ACCOUNT, AS-
+SET, and DATE spans, producing:
+“User requested to transfer $ENT:AMOUNT:3f81
+from $ENT:ACCOUNT:a17c shared with
+$ENT:PERSON:7f3a into $ENT:ACCOUNT:b52d,
+and plans to liquidate $ENT:ASSET:9c2f before
+$ENT:DATE:210d for tax purposes.”
+Only this redacted card is stored; placeholders are deter-
+ministic to preserve longitudinal coherence: future mentions
+of the same account or asset reuse the same token.
+Step 2: Pack – constructing task-specific context.Later,
+the user asks:
+“Draft a message to my financial advisor summariz-
+ing the planned transfer and asking whether it affects
+my tax liability.”
+The agent sends:
+1{
+2"type": "PACK",
+3"body": {
+4"task": "advisor_summary",
+5"question": "Summarize planned
+transfer and expected tax impact
+.",
+6"time_window_days": 120,
+7"token_budget": 700
+8}
+9}
+
+--- Page 8 ---
+Memory selects relevant redacted cards and compiles:
+• Transfer: $ENT:AMOUNT:3f81 from
+$ENT:ACCOUNT:a17c to $ENT:ACCOUNT:b52d.
+• Related party: $ENT:PERSON:7f3a (joint holder).
+• Planned liquidation: $ENT:ASSET:9c2f before
+$ENT:DATE:210d.
+• Prior notes: tax-loss-optimization discussed in earlier
+sessions.
+• User profile: moderate risk, prefers concise/formal com-
+munication.
+This pack, fully redacted, is inserted into the model
+prompt.
+Step 3: Prompt external model – reasoning on symbolic
+context.The agent queries the external LLM:
+“Using the memory pack below, draft a concise mes-
+sage to the user’s financial advisor. Preserve all place-
+holders exactly. Return JSON{subject, body, signa-
+ture}.”
+The LLM returns:
+1{
+2"subject": "Summary of Planned
+Transfer and Asset Adjustment",
+3"body": "I would like to confirm a
+transfer of ${ENT:AMOUNT:3f81} from
+${ENT:ACCOUNT:a17c}
+4to ${ENT:ACCOUNT:b52d},
+involving ${ENT:PERSON:7
+f3a}. I also plan to
+liquidate
+5${ENT:ASSET:9c2f} before ${
+ENT:DATE:210d} for tax
+purposes. Could you advise
+on
+6potential tax implications?",
+7"signature": "Best regards"
+8}
+The model sees no monetary amounts, no account num-
+bers, no partner names, and no equity positions—only sym-
+bolic placeholders.
+Step 4: Hydrate locally – re-personalization and down-
+stream actions.The agent calls:
+1{
+2"type": "HYDRATE",
+3"body": {
+4"sidecar_ref": "sc_93aa",
+5"payload": {...}
+6}
+7}
+Memory substitutes local values:
+“I would like to confirm a transfer of $42,500 from
+the joint account ending 4429 to the Fidelity taxable
+account, involving Emma Li. I also plan to liquidate
+my Acme Corp shares before March for tax purposes.
+Could you advise on potential tax implications?”
+Only after hydration does the assistant prepare the email;
+all identifiers remain strictly within the user’s device.
+Step 5: Multi-agent extension (MCP/A2A interopera-
+tion).If a downstream tax-planning agent must partici-
+pate, the scheduling agent sends:
+Agent-A→Agent-C:
+"Context summary: transfer and
+liquidation planned (all identifiers
+symbolic).
+Please estimate tax impact for
+$ENT:ASSET:9c2f and $ENT:AMOUNT:3f81."
+Agent ˜C operates entirely on placeholders and cannot hy-
+drate them, ensuring privacy propagation across agents. Hy-
+dration remains local to the user’s endpoint.
+Conclusion
+AMP provides a simple but principled foundation for pri-
+vate, long-horizon agent memory. By elevating redaction,
+placeholder semantics, and local-only hydration into a first-
+class protocol, AMP enforces that no identifiers ever cross
+the model boundary while preserving the full utility of
+contextual reasoning. Through end-to-end case studies in
+healthcare and finance, we demonstrated that agents can
+plan, coordinate, and collaborate over months of history
+without exposing sensitive information to external models
+or other agents. As language-based systems become deeply
+integrated into real workflows, AMP offers a scalable path
+toward trustworthy, privacy-preserving agent ecosystems.
+
+--- Page 9 ---
+References
+Anthropic. 2024. Model Context Protocol (MCP) Specifica-
+tion. https://modelcontextprotocol.io/.
+Apple Inc. 2024. Private Cloud Compute: Apple Secu-
+rity Research Whitepaper. https://www.apple.com/security/
+docs/Private Cloud Compute Overview.pdf.
+Asai, A.; Wu, X.; Chen, X. L.; et al. 2024. Self-RAG:
+Learning to Retrieve, Generate, and Critique through Self-
+Reflection.arXiv preprint arXiv:2401.10968.
+Cheon, J. H.; Kim, A.; Kim, M.; and Song, Y . 2020. Homo-
+morphic Encryption for Arithmetic of Approximate Num-
+bers. InASIACRYPT.
+Choi, S.; Lee, J.; Shin, D.; et al. 2024. ShieldLLM: Protect-
+ing Sensitive Information in Large Language Model Infer-
+ence.Advances in Neural Information Processing Systems
+(NeurIPS).
+Dernoncourt, F.; Lee, J. Y .; Uzuner, O.; and Szolovits, P.
+2017. De-identification of Patient Notes with Recurrent
+Neural Networks.Journal of the American Medical Infor-
+matics Association.
+Intel Corporation. 2023. Intel TDX: Confidential Comput-
+ing for Cloud Workloads. InIntel Technology Journal.
+Kim, D.; Park, H.; and Cho, K. 2024. TextDeID: Deter-
+ministic Pseudonymization for Privacy-Preserving Text Pro-
+cessing.Proceedings of the Association for Computational
+Linguistics (ACL).
+LangChain AI. 2024. LangGraph: Building Stateful
+Multi-Actor LLM Systems. https://github.com/langchain-
+ai/langgraph.
+Li, X.; Zhang, Z.; Xu, W.; et al. 2024. Privacy-Preserving
+Retrieval-Augmented Generation via Embedding Obfusca-
+tion.arXiv preprint arXiv:2405.05432.
+Liu, H.; Press, O.; Levy, O.; et al. 2023. Transformers
+Can Memorize: Universal Sequence Learning via Memoriz-
+ing Transformers. InInternational Conference on Learning
+Representations (ICLR).
+Neves, M.; Dima, A.; Niedermeier, J.; et al. 2022. PhI-
+Redact: Automatic De-identification of Protected Health In-
+formation in Clinical Text.Journal of Biomedical Informat-
+ics.
+OpenAI. 2024. OpenAI Agent-to-Agent (A2A) Communi-
+cation Protocol. https://platform.openai.com/docs/a2a.
+Rathee, S.; Goyal, D.; and Ahuja, M. 2023. Cryptographic
+Tokenization for Privacy-Preserving NLP Pipelines. InCon-
+ference on Empirical Methods in Natural Language Pro-
+cessing (EMNLP).
+Shinn, N.; Labash, B.; Gopinath, A.; et al. 2024. Reflex-
+ion: Language Agents with Verbal Reinforcement Learn-
+ing.International Conference on Learning Representations
+(ICLR).
+Sun, J.; et al. 2025. Scaling Long-Horizon LLM Agents via
+Context-Folding. https://arxiv.org/abs/2309.00004.
+Uzuner, O.; Luo, Y .; and Szolovits, P. 2008. Evaluating the
+State-of-the-Art in Automatic De-identification.Journal of
+the American Medical Informatics Association.
+Wu, J.; et al. 2024. MedGraphRAG: Graph-based Retrieval-
+Augmented Generation for Medical Question Answering.
+https://arxiv.org/abs/2309.00002.
+Wu, J.; et al. 2025a. Agentic Reasoning for Large Language
+Model Agents. https://arxiv.org/abs/2309.00001.
+Wu, J.; et al. 2025b. Git Context Controller: Managing the
+Context of LLM-based Agents like Git. https://arxiv.org/
+abs/2309.00003.
+Xu, T.; Zhang, Y .; Song, C.; et al. 2024. MemGPT:
+Towards LLMs as Operating Systems.arXiv preprint
+arXiv:2310.08560.
+Yao, A. C. 1982. Protocols for Secure Computations. In
+23rd IEEE Symposium on Foundations of Computer Science
+(FOCS).
+Yao, S.; Zhao, J.; Yu, D.; Shafran, I.; Griffiths, T. L.; Cao,
+Y .; and Narasimhan, K. 2023. ReAct: Synergizing Reason-
+ing and Acting in Language Models. InInternational Con-
+ference on Learning Representations (ICLR).

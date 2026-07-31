@@ -1,0 +1,922 @@
+{
+  "query": "LLM 智能体后训练、工具强化学习、轨迹信用分配与自进化经验学习：25 篇统一精读",
+  "batch_label": "LLM 智能体后训练与自进化：25 篇统一精读",
+  "summaries": [
+    {
+      "title": "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use",
+      "basic_info": {
+        "authors": [
+          "Zhen Zhang",
+          "Kaiqiang Song",
+          "Xun Wang",
+          "Yebowen Hu",
+          "Weixiang Yan",
+          "Chenyang Zhao",
+          "Henry Peng Zou",
+          "Haoyun Deng",
+          "Sathish Reddy Indurthi",
+          "Shujian Liu",
+          "Simin Ma",
+          "Xiaoyang Wang",
+          "Xin Eric Wang",
+          "Song Wang"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2602.12268v2",
+          "https://arxiv.org/pdf/2602.12268v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-CM2-Reinforcement-Learning-with-Checklist-Rewards-for-Multi-Turn-and-Multi-Step-Agentic-Tool-Use.pdf",
+        "tags": [
+          "benchmark",
+          "replication-friendly",
+          "method",
+          "dataset"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "开放式、多轮、多步工具任务很难获得可程序验证的最终奖励。CM2 的目标是把模糊行为要求改写为稳定、可归因的训练信号，使工具型智能体可以在低环境工程成本下做强化学习。\n\n核心概念\n- 清单奖励：把一轮中的预期行为拆成带证据依据的二元检查项。\n- 稀疏赋分与稠密标准：只在关键位置给奖励，但检查标准覆盖全过程。\n- 多轮状态：同时约束对话理解、工具选择、参数和后续响应。\n- 模拟工具环境：以语言模型模拟大规模工具，减少维护可执行沙箱的成本。",
+      "method": "CM2 先为每个训练样例生成结构化行为清单，再由判断模型逐项核验轨迹证据，最后把清单结果转成强化学习奖励。\n\n方法结构\n- 清单构造：记录检查项、适用轮次、证据位置和判断元数据。\n- 轨迹采样：智能体与模拟用户、模拟工具完成多轮交互。\n- 奖励判断：逐项分类，避免一个总分掩盖具体失败原因。\n- 策略更新：以清单奖励训练 8B 基座模型，并与监督微调比较。",
+      "innovation": "贡献在于不要求每个真实任务都编写可执行验证器，而是把开放式意图变成细粒度、可审计的判断任务；这种设计兼顾了奖励稳定性和工具覆盖规模。",
+      "experiments": "使用约 8000 条强化学习样例训练 8B 模型，在 tau-Bench、BFCL-V4 与 ToolSandbox 上与监督微调和同尺寸开放模型比较。",
+      "metrics": "相对监督微调，tau-Bench 提升 8 个百分点，BFCL-V4 提升 10 个百分点，ToolSandbox 提升 12 个百分点。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读清单奖励定义和证据格式，再看模拟环境与训练流程，最后核对三套工具基准的主结果和判断模型消融。"
+    },
+    {
+      "title": "RLFactory: A Plug-and-Play Reinforcement Learning Post-Training Framework for LLM Multi-Turn Tool-Use",
+      "basic_info": {
+        "authors": [
+          "Jiajun Chai",
+          "Guojun Yin",
+          "Zekun Xu",
+          "Chuhuai Yue",
+          "Yi Jia",
+          "Siyu Xia",
+          "Xiaohan Wang",
+          "Jiwen Jiang",
+          "Xiaoguang Li",
+          "Chengqi Dong",
+          "Hang He",
+          "Wei Lin"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2509.06980v1",
+          "https://arxiv.org/pdf/2509.06980v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-RLFactory-A-Plug-and-Play-Reinforcement-Learning-Post-Training-Framework-for-LLM-Multi-Turn-Tool-Use.pdf",
+        "tags": [
+          "benchmark",
+          "replication-friendly",
+          "method",
+          "dataset"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "多轮工具强化学习常被工具接口差异、同步调用瓶颈和奖励实现耦合拖慢。RLFactory 试图把工具执行、轨迹生成和策略更新拆开，形成可替换的通用后训练框架。\n\n核心概念\n- 异构工具接入：统一搜索、代码或其他接口的调用协议。\n- 异步执行：并行等待外部工具，减少训练空转。\n- 奖励层：兼容规则判断、模型判断和工具验证。\n- 闭环状态：用工具观察标记重构多轮决策过程。",
+      "method": "框架按照生成、解析、调用、观察、更新的循环运行，并用解耦架构让工具端和训练端可以独立扩展。\n\n方法结构\n- 异步调用器：以 asyncio 管理并发工具请求。\n- 轨迹解析器：识别工具名、参数和观察边界。\n- 奖励适配器：为不同任务组合多种奖励来源。\n- 策略训练：在重构的多轮决策状态上执行强化学习更新。",
+      "innovation": "它的价值主要是工程统一：同一训练主干可以更换工具和奖励，而无需为每个任务重写整套强化学习代码。",
+      "experiments": "以 Qwen3-4B 在 Search-R1 流程中训练，并在 Natural Questions 上与更大模型及相近强化学习方案比较，同时测量训练吞吐。",
+      "metrics": "Natural Questions 测试得分 0.486，高于 Qwen2.5-7B-Instruct-GRPO 的 0.473；训练吞吐提高 6.8 倍。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先看整体架构图与观察标记，再读异步工具调用和奖励接口，最后核对 Search-R1 配置、吞吐测量口径与结果表。"
+    },
+    {
+      "title": "MUA-RL: Multi-turn User-interacting Agent Reinforcement Learning for agentic tool use",
+      "basic_info": {
+        "authors": [
+          "Weikang Zhao",
+          "Xili Wang",
+          "Chengdi Ma",
+          "Lingbin Kong",
+          "Zhaohua Yang",
+          "Mingxiang Tuo",
+          "Xiaowei Shi",
+          "Yitao Zhai",
+          "Xunliang Cai"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2508.18669v1",
+          "https://arxiv.org/pdf/2508.18669v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-MUA-RL-Multi-turn-User-interacting-Agent-Reinforcement-Learning-for-agentic-tool-use.pdf",
+        "tags": [
+          "benchmark",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "真实用户会在交互中补充、纠正或改变需求，静态任务描述无法训练这种动态适应能力。MUA-RL 把模拟用户直接放进强化学习循环，让智能体同时学习沟通和工具执行。\n\n核心概念\n- 动态需求：用户意图在多轮中逐步显现。\n- 沟通策略：智能体需要判断何时追问而不是立即调用工具。\n- 工具执行：在澄清后选择工具、填参数并处理反馈。\n- 用户模拟：训练阶段产生不确定、带变化的交互轨迹。",
+      "method": "每个训练回合由智能体、语言模型用户和工具环境共同构成，奖励根据任务完成与交互质量驱动策略更新。\n\n方法结构\n- 用户角色采样：生成不同偏好、约束和需求变化。\n- 多轮对话：智能体追问、确认并跟踪状态。\n- 工具调用：执行可观察操作并将结果带回对话。\n- 端到端训练：对完整交互轨迹进行强化学习。",
+      "innovation": "主要创新是把动态用户从离线数据生成器提升为训练环境中的参与者，使沟通行为和工具行为可以联合优化。",
+      "experiments": "在 TAU2 的零售、航空、电信任务，以及 BFCL-V3 多轮任务和 ACEBench Agent 上评估 32B 模型，并与更大的开放模型比较。",
+      "metrics": "TAU2 零售 67.3，航空 45.4，电信 28.3；BFCL-V3 多轮 28.4；ACEBench Agent 82.5。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读用户模拟与状态变化定义，再看奖励如何同时覆盖沟通和工具结果，最后逐项核对五个基准的设置与失败案例。"
+    },
+    {
+      "title": "From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents",
+      "basic_info": {
+        "authors": [
+          "Jiaxuan Gao",
+          "Jiaao Chen",
+          "Chuyi He",
+          "Shusheng Xu",
+          "Di Jin",
+          "Yi Wu"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2601.22607v3",
+          "https://arxiv.org/pdf/2601.22607v3"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-From-Self-Evolving-Synthetic-Data-to-Verifiable-Reward-RL-Post-Training-Multi-turn-Interactive-Tool-Using-Agents.pdf",
+        "tags": [
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "复杂工具交互既缺高质量多轮数据，也容易受用户模拟噪声影响。该工作把自进化数据合成与可验证奖励强化学习串成一条后训练流水线。\n\n核心概念\n- 自进化数据：生成器根据失败反馈更新提示和工作流。\n- 层级多智能体：不同角色负责场景、对话、工具和质量检查。\n- 实例验证器：每条合成任务同时生成可执行检查器。\n- 分阶段后训练：先训练用户模型，再训练工具智能体。",
+      "method": "EigenData 先合成带工具依据的多轮对话和逐实例验证器，再用动态过滤后的组相对策略优化训练智能体。\n\n方法结构\n- 任务生成：构造可执行目标和工具环境。\n- 对话合成：产生用户变化与多步调用轨迹。\n- 闭环修正：根据验证失败更新生成提示和流程。\n- 强化学习：使用轨迹级相对优势与动态样本过滤。",
+      "innovation": "不同于只合成对话文本，它为每个任务同时产生验证机制，从而把数据规模化和奖励可靠性放进同一闭环。",
+      "experiments": "在 tau2-bench 的航空和电信环境评估，并比较监督微调、强化学习版本和前沿模型。",
+      "metrics": "航空任务单次通过率 73.0%，电信任务单次通过率 98.3%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先看 EigenData 的角色分工和闭环修正，再读实例验证器生成，最后核对用户模型训练、动态过滤和 tau2-bench 主表。"
+    },
+    {
+      "title": "Multi-Turn Reinforcement Learning for Tool-Calling Agents with Iterative Reward Calibration",
+      "basic_info": {
+        "authors": [
+          "Wachiravit Modecrua",
+          "Krittanon Kaewtawee",
+          "Krittin Pachtrachai",
+          "Touchapon Kraisingkorn"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2604.02869v1",
+          "https://arxiv.org/pdf/2604.02869v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Multi-Turn-Reinforcement-Learning-for-Tool-Calling-Agents-with-Iterative-Reward-Calibration.pdf",
+        "tags": [
+          "benchmark",
+          "replication-friendly",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "多轮工具任务奖励稀疏，但随意添加逐轮奖励会把优势方向带偏。论文的核心问题不是奖励越密越好，而是逐轮奖励能否区分真正有价值的动作。\n\n核心概念\n- 奖励判别力：检查一个信号是否区分成功与失败轨迹。\n- 优势方向：逐轮奖励不能与最终目标产生相反更新。\n- 多轮组相对优化：按完整交互比较样本。\n- 词元级更新：细化工具调用与回答片段的训练信号。",
+      "method": "方法把 MT-GRPO 与 GTPO 结合，并用训练轨迹的经验分析反复校准逐轮奖励。\n\n方法结构\n- 采样与诊断：统计各逐轮奖励在成功和失败轨迹上的分布。\n- 奖励校准：保留有判别力且方向一致的信号。\n- 混合优势：组合轨迹级和词元级更新。\n- 重复验证：每次调整后重新检查性能而非凭直觉加奖励。",
+      "innovation": "论文明确展示了错误的稠密奖励可让结果下降，并给出一套基于数据判别力的奖励设计程序，而非固定奖励公式。",
+      "experiments": "在 Tau-Bench 航空客服任务训练 Qwen3.5-4B 与 Qwen3-30B-A3B，并与原模型、GPT-4.1、GPT-4o 和 Claude Sonnet 4.5 比较。",
+      "metrics": "朴素逐轮奖励最多降低 14 个百分点；4B 模型由 63.8% 提升到 66.7%；30B 混合专家模型由 58.0% 提升到 69.5%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "优先读奖励误配案例和判别分析，再看混合优势公式，最后核对两个模型规模的训练曲线与主结果。"
+    },
+    {
+      "title": "Training Task Reasoning LLM Agents for Multi-turn Task Planning via Single-turn Reinforcement Learning",
+      "basic_info": {
+        "authors": [
+          "Hanjiang Hu",
+          "Changliu Liu",
+          "Na Li",
+          "Yebin Wang"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2509.20616v2",
+          "https://arxiv.org/pdf/2509.20616v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Training-Task-Reasoning-LLM-Agents-for-Multi-turn-Task-Planning-via-Single-turn-Reinforcement-Learning.pdf",
+        "tags": [
+          "benchmark",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "直接在长程环境中做强化学习成本高、奖励稀疏。论文把多轮规划转换成单轮任务推理，用专家轨迹提供稠密可验证监督。\n\n核心概念\n- 任务转换：把环境中的多步决策压缩为单轮推理问题。\n- 专家轨迹：提供子任务顺序和可验证中间目标。\n- 最短轮次：理论分析连接单轮改进与多轮成功概率。\n- 短子任务泛化：长程训练应迁移到较短规划片段。",
+      "method": "训练阶段只优化单轮任务推理，部署阶段再把推理结果作为多轮执行计划。\n\n方法结构\n- 轨迹抽取：从专家演示构建任务推理样例。\n- 稠密奖励：逐项验证计划与专家结构的一致性。\n- GRPO 更新：在单轮样例上进行组相对策略优化。\n- 多轮执行：将计划映射回环境中的连续动作。",
+      "innovation": "它用任务表示变换绕开昂贵的多轮在线强化学习，并给出单轮优化为何能改善多轮成功率的理论下界。",
+      "experiments": "在复杂任务规划基准上训练 1.5B 模型，并与最高 14B 的基线比较长程任务成功率。",
+      "metrics": "1.5B 模型在长程规划任务上达到 70% 成功率，并超过最高 14B 的比较模型。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读问题转换和理论命题，再核对专家轨迹如何产生奖励，最后看不同任务长度与模型规模的结果。"
+    },
+    {
+      "title": "Reinforcement Learning for Long-Horizon Multi-Turn Search Agents",
+      "basic_info": {
+        "authors": [
+          "Vivek Kalyan",
+          "Martin Andrews"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2510.24126v1",
+          "https://arxiv.org/pdf/2510.24126v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-Reinforcement-Learning-for-Long-Horizon-Multi-Turn-Search-Agents.pdf",
+        "tags": [
+          "benchmark",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "提示工程能让搜索智能体工作，但难以从大量历史尝试中持续改进。论文检验强化学习是否能提升法律文档搜索中的长程检索、证据整合和停止决策。\n\n核心概念\n- 长程检索：允许智能体多轮查询和阅读。\n- 工具反馈：每次搜索结果改变后续查询。\n- 经验学习：用成功与失败轨迹更新策略。\n- 轮次预算：分析训练和测试时允许的交互长度。",
+      "method": "研究在法律文档搜索环境中采样多轮搜索轨迹，以最终答案正确性训练 14B 智能体，并系统限制训练或测试轮次。\n\n方法结构\n- 问题分解：从法律问题生成检索子目标。\n- 多轮搜索：反复查询、筛选和综合证据。\n- 结果奖励：以最终准确性驱动强化学习。\n- 轮次消融：比较短轨迹与长轨迹的能力差异。",
+      "innovation": "贡献在于证明长程工具轨迹的强化学习收益不仅来自更强模型，也来自让策略学会如何使用额外交互预算。",
+      "experiments": "在法律文档搜索基准比较 14B 强化学习模型和前沿模型，并在不同轮次限制下评估准确率。",
+      "metrics": "14B 强化学习模型准确率 85%，高于前沿模型的 78%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读环境与奖励定义，再看轮次限制实验，最后核对搜索轨迹示例是否真的表现出更好的证据组合。"
+    },
+    {
+      "title": "Demystifying Reinforcement Learning for Long-Horizon Tool-Using Agents: A Comprehensive Recipe",
+      "basic_info": {
+        "authors": [
+          "Xixi Wu",
+          "Qianguo Sun",
+          "Ruiyang Zhang",
+          "Chao Song",
+          "Junlong Wu",
+          "Yiyan Qi",
+          "Hong Cheng"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2603.21972v1",
+          "https://arxiv.org/pdf/2603.21972v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Demystifying-Reinforcement-Learning-for-Long-Horizon-Tool-Using-Agents-A-Comprehensive-Recipe.pdf",
+        "tags": [
+          "latest-sota",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "长程智能体强化学习缺少可迁移的实践配方。论文用控制变量实验回答奖励、模型大小、训练数据、算法和环境稳定性如何共同影响结果。\n\n核心概念\n- 奖励塑形：小模型和大模型需要不同密度的奖励。\n- 模型规模：能力基础决定探索与收敛方式。\n- 数据组成：难度比例影响域内和域外泛化。\n- 算法选择：不同策略优化方法的收益依赖任务与规模。\n- 环境稳定：工具或状态波动会直接破坏策略学习。",
+      "method": "研究以 TravelPlanner 为统一试验台，沿五个轴做系统消融，再把结论组合成推荐训练配方。\n\n方法结构\n- 五轴实验矩阵：奖励、规模、数据、算法、环境。\n- 难度分层：比较简单、中等和困难任务的混合比例。\n- 域外评估：检查配方是否只记住训练分布。\n- 综合配方：按模型规模选择奖励与探索策略。",
+      "innovation": "创新不在单一算法，而在把常见经验拆成可重复的控制实验，并总结七条可操作结论。",
+      "experiments": "在 TravelPlanner 上进行大量消融，比较不同规模模型、约 1000 条及其他规模训练集、不同奖励和环境稳定设置。",
+      "metrics": "TravelPlanner 的 1.5B 模型中，监督微调成功率 6.9%，SUM 奖励训练后为 33.1%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先看五轴实验设计和七条结论，再核对约 1000 条样本的甜点区间，最后看环境不稳定导致策略退化的证据。"
+    },
+    {
+      "title": "Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning",
+      "basic_info": {
+        "authors": [
+          "Yulei Qin",
+          "Xiaoyu Tan",
+          "Zhengbao He",
+          "Gang Li",
+          "Haojia Lin",
+          "Zongyi Li",
+          "Zihan Xu",
+          "Yuchen Shi",
+          "Siqi Cai",
+          "Renting Rui",
+          "Shaofei Cai",
+          "Yuzheng Cai",
+          "Xuan Zhang",
+          "Sheng Ye",
+          "Ke Li",
+          "Xing Sun"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2509.22601v4",
+          "https://arxiv.org/pdf/2509.22601v4"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "长程稀疏奖励任务需要先探索再利用，但机械提高策略熵会造成多轮分布漂移。SPEAR 用智能体自己的成功经验逐阶段调整探索强度。\n\n核心概念\n- 自模仿：把高回报轨迹放入回放缓冲区。\n- 渐进探索：早期鼓励频繁工具交互，后期降低无效发散。\n- 内在奖励：奖励新颖或有信息的探索行为。\n- 课程调度：按训练阶段协调探索和成功经验复用。",
+      "method": "SPEAR 在基础自模仿学习上加入策略熵课程，并结合工业强化学习优化形成强基线 Dr.BoT。\n\n方法结构\n- 经验收集：保存成功或高价值轨迹。\n- 早期阶段：提高工具探索和内在奖励权重。\n- 收敛阶段：强化成功策略的离线复用。\n- 稳定训练：控制熵坍缩和过度发散。",
+      "innovation": "它把探索利用平衡从固定超参数改成由训练阶段和自身经验共同驱动的课程，并保持较低运行额外开销。",
+      "experiments": "在 ALFWorld、WebShop、AIME24 和 AIME25 上比较 GRPO、GiGPO、Dr.BoT 及其加入 SPEAR 后的表现。",
+      "metrics": "ALFWorld 对三类基线最高提升 16.1%、5.1%、8.6%；WebShop 最高提升 20.7%、11.8%、13.9%；AIME24 和 AIME25 分别最高提升 3.8% 和 6.1%。",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先看熵课程和回放缓冲区，再读三个基线的公平比较设置，最后核对四个基准的增益和额外计算成本。"
+    },
+    {
+      "title": "Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning",
+      "basic_info": {
+        "authors": [
+          "Xin Cheng",
+          "Shuo He",
+          "Lang Feng",
+          "HaiYang Xu",
+          "Ming Yan",
+          "Lei Feng",
+          "Bo An"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2605.26684v2",
+          "https://arxiv.org/pdf/2605.26684v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Beyond-Trajectory-Level-Attribution-Graph-Based-Credit-Assignment-for-Agentic-Reinforcement-Learning.pdf",
+        "tags": [
+          "benchmark",
+          "latest-sota",
+          "replication-friendly",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "只按最终成败给整条轨迹同一信用，会丢掉失败轨迹中的好步骤。GraphGPO 把多条轨迹合并成状态转移图，利用全局结构估计每一步是否接近目标。\n\n核心概念\n- 跨轨迹状态图：把共享或相似状态放进同一图。\n- 目标距离：估计每个状态到任务完成的距离。\n- 边级信用：根据一步转移缩短目标距离的程度赋值。\n- 失败轨迹复用：保留其中真正推进任务的动作。",
+      "method": "方法先聚合一组采样轨迹，再在图上计算状态距离和边优势，最后以边级优势替代粗粒度轨迹优势。\n\n方法结构\n- 状态归并：构建统一状态转移图。\n- 全局估值：从目标节点反推各状态距离。\n- 图优势：比较动作前后距离变化。\n- 策略更新：将图级信用传回对应动作词元。",
+      "innovation": "它把信用分配从单条轨迹内部提升到跨轨迹图结构，使同一局部决策可以由多次尝试共同校准。",
+      "experiments": "在多套高难度智能体基准上与组相对强化学习方法比较训练效率和最终性能，并进行图结构信用消融。",
+      "metrics": "Sokoban 上，GraphGPO 成功率 86.98%，高于 GiGPO 的 76.92% 和 GRPO 的 67.1%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读状态归并和目标距离定义，再看图优势如何映射回词元，最后核对训练效率、失败轨迹利用和消融。"
+    },
+    {
+      "title": "STeCa: Step-level Trajectory Calibration for LLM Agent Learning",
+      "basic_info": {
+        "authors": [
+          "Hanlin Wang",
+          "Jian Wang",
+          "Chak Tou Leong",
+          "Wenjie Li"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2502.14276v2",
+          "https://arxiv.org/pdf/2502.14276v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2025-STeCa-Step-level-Trajectory-Calibration-for-LLM-Agent-Learning.pdf",
+        "tags": [
+          "replication-friendly",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "长程轨迹会因早期小错误逐步偏离，单纯模仿成功轨迹无法告诉模型何时修正。STeCa 自动发现次优动作并构造校准后的替代轨迹。\n\n核心概念\n- 步级比较：在探索时比较当前动作与候选动作的奖励。\n- 及时校准：在错误发生位置修正，而不是只在终点解释失败。\n- 反思生成：由语言模型提出更合适的后续动作。\n- 对比训练：联合成功轨迹和校准轨迹。",
+      "method": "框架对探索轨迹逐步扫描，定位次优决策，调用反思模块重写局部行为，再用修正前后轨迹训练策略。\n\n方法结构\n- 探索采样：收集成功与失败轨迹。\n- 次优定位：用步级奖励比较找出偏航点。\n- 轨迹校准：从偏航点生成修正动作和后续路径。\n- 强化训练：把校准轨迹与成功轨迹共同用于更新。",
+      "innovation": "其核心不是对整条失败轨迹做泛化批评，而是自动形成可直接训练的局部纠错样本。",
+      "experiments": "在三类复杂交互任务上与行为克隆、偏好学习和其他轨迹优化方法比较，并分析校准时机对鲁棒性的影响。",
+      "metrics": "无",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读次优动作检测，再看反思如何保持后续轨迹可执行，最后核对代码仓库中的数据构造与鲁棒性实验。"
+    },
+    {
+      "title": "Hindsight Credit Assignment for Long-Horizon LLM Agents",
+      "basic_info": {
+        "authors": [
+          "Hui-Ze Tan",
+          "Xiao-Wen Yang",
+          "Hao Chen",
+          "Jie-Jing Shao",
+          "Yi Wen",
+          "Yuteng Shen",
+          "Weihong Luo",
+          "Xiku Du",
+          "Lan-Zhe Guo",
+          "Yu-Feng Li"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2603.08754v1",
+          "https://arxiv.org/pdf/2603.08754v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Hindsight-Credit-Assignment-for-Long-Horizon-LLM-Agents.pdf",
+        "tags": [
+          "benchmark",
+          "latest-sota",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "GRPO 在长程任务中难以估计中间步骤价值，也缺少与具体状态匹配的基线。HCAPO 用任务完成后的全局信息回看关键决策。\n\n核心概念\n- 事后评论：让语言模型根据完整结果重新评估早期动作。\n- 步级价值：把终局经验转成中间状态的价值修正。\n- 多尺度优势：同时考虑局部动作和较长片段。\n- 关键状态：在真正改变后续结果的位置加强信用。",
+      "method": "HCAPO 用语言模型作为事后评论器修正步级 Q 值，再以多尺度优势补足中间状态基线。\n\n方法结构\n- 轨迹完成：先获得环境终局和稀疏奖励。\n- 事后推理：逐步判断哪些动作推动或阻碍成功。\n- 优势融合：组合局部与轨迹级信用。\n- 策略优化：在 WebShop、ALFWorld 等环境更新模型。",
+      "innovation": "它首次把事后信用分配系统化引入语言模型智能体，并用多尺度优势同时处理价值误差与基线错配。",
+      "experiments": "使用 Qwen2.5-7B-Instruct 在三套长程基准比较 HCAPO、GRPO 和其他强化学习方法。",
+      "metrics": "相对 GRPO，WebShop 成功率提高 7.7%，ALFWorld 成功率提高 13.8%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先看事后评论提示和 Q 值修正，再读多尺度优势，最后核对探索效率、轨迹长度和两个主要增益。"
+    },
+    {
+      "title": "HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents",
+      "basic_info": {
+        "authors": [
+          "Jiangweizhi Peng",
+          "Yuanxin Liu",
+          "Ruida Zhou",
+          "Charles Fleming",
+          "Zhaoran Wang",
+          "Alfredo Garcia",
+          "Mingyi Hong"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2602.16165v2",
+          "https://arxiv.org/pdf/2602.16165v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-HiPER-Hierarchical-Reinforcement-Learning-with-Explicit-Credit-Assignment-for-Large-Language-Model-Agents.pdf",
+        "tags": [
+          "benchmark",
+          "latest-sota",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "扁平策略把每一轮都当成同一层级动作，难以在长程任务中把最终奖励分给规划和执行。HiPER 显式分离高层子目标与低层动作。\n\n核心概念\n- 高层规划器：生成可持续多个步骤的子目标。\n- 低层执行器：在环境中完成子目标。\n- 时间抽象：一条高层决策对应一段动作序列。\n- 层级优势：分别评价计划质量和执行质量。",
+      "method": "策略被因式分解为规划器和执行器，HAE 在子目标区间聚合回报，并协调两个层级的参数更新。\n\n方法结构\n- 子目标生成：高层策略选择阶段目标。\n- 连续执行：低层策略完成多步工具操作。\n- 区间回报：对每个子目标对应的动作段累计奖励。\n- 双层更新：以无偏、低方差优势训练两个层级。",
+      "innovation": "贡献是让信用结构与智能体的计划执行结构一致，并证明层级优势相对扁平估计保持无偏且降低方差。",
+      "experiments": "以 Qwen2.5-7B-Instruct 在 ALFWorld 和 WebShop 上与最佳既有方法比较，重点分析多依赖子任务。",
+      "metrics": "ALFWorld 成功率 97.4%，WebShop 成功率 83.3%；分别高于最佳既有方法 6.6% 和 8.3%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读策略因式分解和 HAE 证明，再看子目标边界如何标注，最后核对长程子任务上的分项增益。"
+    },
+    {
+      "title": "Memory-R2: Fair Credit Assignment for Long-Horizon Memory-Augmented LLM Agents",
+      "basic_info": {
+        "authors": [
+          "Sikuan Yan",
+          "Ahmed Bahloul",
+          "Ercong Nie",
+          "Susanna Schwarzmann",
+          "Riccardo Trivisonno",
+          "Volker Tresp",
+          "Yunpu Ma"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2605.21768v1",
+          "https://arxiv.org/pdf/2605.21768v1"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-Memory-R2-Fair-Credit-Assignment-for-Long-Horizon-Memory-Augmented-LLM-Agents.pdf",
+        "tags": [
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "记忆写入会改变后续环境，不同采样轨迹因此不再共享同一中间状态，直接做组相对比较并不公平。Memory-R2 为记忆操作建立同状态下的局部比较。\n\n核心概念\n- 记忆环境耦合：过去的写、改、删动作改变未来观察。\n- 局部重采样：从同一记忆状态尝试不同操作结果。\n- 全局目标：仍保留跨会话的端到端任务奖励。\n- 记忆共学习：事实抽取器与记忆管理器共享模型主干。\n- 渐进时长：训练跨度从 8 会话增至 16 和 32 会话。",
+      "method": "LoGo-GRPO 组合全局组相对目标和局部同状态重采样，让长期目标与公平的记忆操作信用同时存在。\n\n方法结构\n- 全局轨迹：学习跨会话最终表现。\n- 局部重放：固定中间记忆状态比较不同写入决策。\n- 双角色提示：同一模型承担事实抽取和记忆管理。\n- 课程训练：逐步增加会话长度以稳定优化。",
+      "innovation": "它指出记忆强化学习违反普通组相对优化的同环境假设，并提出局部与全局结合的专用信用方案。",
+      "experiments": "在长程多会话记忆任务中比较普通 GRPO、局部或全局单独训练及 LoGo-GRPO，并测试 8、16、32 会话课程。",
+      "metrics": "无",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读不公平比较的反例，再看局部重采样与全局目标如何合并，最后核对不同会话长度的训练稳定性。"
+    },
+    {
+      "title": "Trial and Error: Exploration-Based Trajectory Optimization for LLM Agents",
+      "basic_info": {
+        "authors": [
+          "Yifan Song",
+          "Da Yin",
+          "Xiang Yue",
+          "Jie Huang",
+          "Sujian Li",
+          "Bill Yuchen Lin"
+        ],
+        "year": 2024,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2403.02502v2",
+          "https://arxiv.org/pdf/2403.02502v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2024-Trial-and-Error-Exploration-Based-Trajectory-Optimization-for-LLM-Agents.pdf",
+        "tags": [
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "只模仿专家成功轨迹会浪费智能体自己的失败经验。ETO 把探索失败与后续成功组成对比轨迹，使模型学习哪些决策需要改变。\n\n核心概念\n- 主动探索：让当前策略在环境中产生真实失败。\n- 对比轨迹：把较差路径和改进路径配成偏好样本。\n- DPO 更新：直接提高较优轨迹的相对概率。\n- 迭代飞轮：新策略继续探索并产生下一轮训练数据。",
+      "method": "每一轮先用智能体采样任务轨迹，再从失败中构造偏好对，使用对比学习更新策略并重复。\n\n方法结构\n- 环境交互：收集任务完成和失败原因。\n- 偏好配对：组织失败轨迹与更优轨迹。\n- 策略优化：使用 DPO 等方法训练。\n- 循环迭代：以新策略继续生成更难、更有信息的经验。",
+      "innovation": "它把失败轨迹从应被丢弃的噪声变成训练数据，并展示在缺少专家演示时仍可形成持续改进。",
+      "experiments": "在三个复杂智能体任务上与只使用专家轨迹和其他基线比较，并评估任务效率及无专家设置。",
+      "metrics": "相对监督微调，论文报告挑战任务平均性能提高 22%。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先看对比轨迹如何配对，再读 DPO 训练和迭代停止条件，最后核对无专家演示实验。"
+    },
+    {
+      "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+      "basic_info": {
+        "authors": [
+          "Tianxin Wei",
+          "Noveen Sachdeva",
+          "Benjamin Coleman",
+          "Zhankui He",
+          "Yuanchen Bei",
+          "Xuying Ning",
+          "Mengting Ai",
+          "Yunzhe Li",
+          "Jingrui He",
+          "Ed H. Chi",
+          "Chi Wang",
+          "Shuo Chen",
+          "Fernando Pereira",
+          "Wang-Cheng Kang",
+          "Derek Zhiyuan Cheng"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2511.20857v2",
+          "https://arxiv.org/pdf/2511.20857v2"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "benchmark",
+          "method",
+          "dataset"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "传统记忆评测多是从静态对话中找答案，不能判断智能体是否会在任务流中积累并复用经验。Evo-Memory 把记忆放进连续任务流中评估。\n\n核心概念\n- 流式任务：数据按顺序到达，后续任务可受前序经验帮助。\n- 持续更新：每次交互后检索、整合和改写记忆。\n- 经验复用：区分保存事实与保存解决策略。\n- 模块对比：统一实现十余种代表性记忆方法。",
+      "method": "基准把十套多轮目标任务、单轮推理和问答数据重排为任务流，并提供 ExpRAG 与 ReMem 两个经验学习基线。\n\n方法结构\n- 顺序化数据：保持时间顺序和跨任务依赖。\n- ExpRAG：检索既往经验辅助当前任务。\n- ReMem：执行动作、思考、更新并精炼记忆。\n- 统一协议：比较十余种记忆模块的持续改进曲线。",
+      "innovation": "它把记忆评测目标从一次性检索正确率改成随部署推进的学习曲线，并同时提供统一实现和新的记忆更新基线。",
+      "experiments": "覆盖 10 套数据，比较十余种记忆模块、ExpRAG 和 ReMem，分析多轮目标任务与单轮推理问答的差异。",
+      "metrics": "无",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先读任务流构造和评测协议，再看 ExpRAG 与 ReMem，最后检查各记忆模块随任务序号变化的曲线。"
+    },
+    {
+      "title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+      "basic_info": {
+        "authors": [
+          "Jinyuan Fang",
+          "Yanwen Peng",
+          "Xi Zhang",
+          "Yingxu Wang",
+          "Xinhao Yi",
+          "Guibin Zhang",
+          "Yi Xu",
+          "Bin Wu",
+          "Siwei Liu",
+          "Zihao Li",
+          "Zhaochun Ren",
+          "Nikos Aletras",
+          "Xi Wang",
+          "Han Zhou",
+          "Zaiqiao Meng"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2508.07407v2",
+          "https://arxiv.org/pdf/2508.07407v2"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "survey",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "多数智能体部署后仍依赖人工修改配置，缺少从交互反馈持续适应的闭环。综述建立统一框架，解释智能体系统能进化什么、由谁优化以及如何评估风险。\n\n核心概念\n- 系统输入：任务、数据、环境反馈和用户信号。\n- 智能体系统：模型、记忆、工具、提示和工作流。\n- 环境：提供结果、约束与长期变化。\n- 优化器：负责选择、更新和验证进化动作。\n- 领域约束：编程、生物医学和金融的优化目标并不相同。",
+      "method": "综述以输入、智能体、环境、优化器四组件反馈环组织文献，再按被更新的系统部分、反馈形式和应用领域分类。\n\n方法结构\n- 概念边界：区分静态智能体、在线适应和真正持续进化。\n- 组件级进化：模型参数、记忆、工具和架构。\n- 反馈机制：标量奖励、文本批评、验证器和人类反馈。\n- 领域策略：分析不同专业场景的约束。\n- 治理问题：专门讨论评测、安全和伦理。",
+      "innovation": "价值在于把分散的自改进方法放进同一闭环，并明确进化对象和优化器角色，便于比较只改记忆、改策略或改整个工作流的方法。",
+      "experiments": "综述论文不提出单一新实验，主要系统整理已有方法、应用、评测与安全问题。",
+      "metrics": "无",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先读四组件反馈环和术语边界，再按模型、记忆、工具、架构四类进化方式阅读，最后看评测与安全章节。"
+    },
+    {
+      "title": "SEVerA: Verified Synthesis of Self-Evolving Agents",
+      "basic_info": {
+        "authors": [
+          "Debangshu Banerjee",
+          "Changming Xu",
+          "Eugene Ie",
+          "Ming Zhang",
+          "Daiyi Peng",
+          "Chu-Cheng Lin",
+          "Gagandeep Singh"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "http://arxiv.org/abs/2603.25111v2",
+          "https://arxiv.org/pdf/2603.25111v2"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-SEVerA-Verified-Synthesis-of-Self-Evolving-Agents.pdf",
+        "tags": [
+          "benchmark",
+          "latest-sota",
+          "replication-friendly",
+          "method"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "自进化智能体会自动生成和优化可执行程序，但性能提升不能以违反硬约束为代价。SEVerA 把形式化验证嵌入生成模型调用和后续学习。\n\n核心概念\n- 硬约束：必须对所有输入和参数都成立。\n- 软目标：在满足安全或正确性后继续提高任务效用。\n- 形式化输出契约：每次生成调用都声明一阶逻辑条件。\n- 验证后学习：先证明约束，再进行梯度优化。",
+      "method": "FGGM 用拒绝采样和已验证回退保证每次模型调用满足契约；SEVerA 再按搜索、验证、学习三阶段合成并优化智能体程序。\n\n方法结构\n- 搜索：生成包含受约束模型调用的候选程序。\n- 验证：对所有参数证明硬约束。\n- 回退：若采样不满足契约则返回已验证结果。\n- 学习：用 GRPO 等方法优化软目标而不破坏约束。",
+      "innovation": "它将形式化保证从最终程序扩展到程序内部的生成模型调用，并把验证问题与后续无约束性能学习分离。",
+      "experiments": "在 Dafny 程序验证、符号数学合成和策略合规工具使用基准上，与无约束方法及当时最佳基线比较。",
+      "metrics": "三类任务均实现 0 次约束违反，同时性能超过无约束和当时最佳比较方法。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先读 FGGM 契约语义和回退保证，再看三阶段流程，最后核对零违规口径与性能提升是否在同一测试集上比较。"
+    },
+    {
+      "title": "VerlTool: Towards Holistic Agentic Reinforcement Learning with Tool Use",
+      "basic_info": {
+        "authors": [
+          "Dongfu Jiang",
+          "Yi Lu",
+          "Zhuofeng Li",
+          "Zhiheng Lyu",
+          "Ping Nie",
+          "Haozhe Wang",
+          "Alex Su",
+          "Hui Chen",
+          "Kai Zou",
+          "Chao Du",
+          "Tianyu Pang",
+          "Wenhu Chen"
+        ],
+        "year": 2026,
+        "venue": "LLA 2026",
+        "links": [
+          "https://openreview.net/forum?id=z9MXthgwQf",
+          "https://openreview.net/pdf?id=z9MXthgwQf"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "method",
+          "benchmark",
+          "replication-friendly"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "智能体强化学习代码常围绕单一任务搭建，难以扩展工具、模态和算法。VerlTool 提供与 VeRL 对齐的统一基础设施，目标是让不同工具任务共享训练主干。\n\n核心概念\n- 统一工具接口：覆盖代码、搜索、SQL、视觉等工具。\n- 多模态观察：轨迹可包含文本、图像和视频标记。\n- 异步轨迹：消除同步工具调用造成的等待。\n- 插件化扩展：用轻量 Python 定义新增工具。\n- 上游对齐：保持与 VeRL 的维护和算法兼容性。",
+      "method": "框架把智能体强化学习形式化为多轮轨迹，工具管理器负责调用和观察，异步执行器并发产生轨迹，训练器复用 VeRL 更新策略。\n\n方法结构\n- 工具注册：标准化输入输出与错误处理。\n- 异步采样：并发执行不同延迟的工具。\n- 多模态轨迹：统一保存动作、观察和奖励。\n- 训练与评估：跨六个领域复用相同框架。",
+      "innovation": "其创新主要在系统层：把分散的任务专用实现统一为可维护、可扩展且支持多模态工具的训练基础设施。",
+      "experiments": "覆盖数学推理、知识问答、SQL、视觉推理、网页搜索和软件工程六个领域，与任务专用系统比较效果和采样速度。",
+      "metrics": "异步轨迹执行接近 2 倍加速；六个领域整体达到与任务专用系统相当的性能。",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先看系统总图和工具接口，再读异步执行调度，最后核对六领域任务配置和速度测量。"
+    },
+    {
+      "title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+      "basic_info": {
+        "authors": [
+          "Yuxuan Cai",
+          "Yipeng Hao",
+          "Jie Zhou",
+          "Hang Yan",
+          "Zhikai Lei",
+          "Rui Zhen",
+          "Zhenhua Han",
+          "Yutao Yang",
+          "Junsong Li",
+          "Qianjun Pan",
+          "Tianyu Huai",
+          "Qin Chen",
+          "Xin Li",
+          "Kai Chen",
+          "Bo Zhang",
+          "Xipeng Qiu",
+          "Liang He"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "https://arxiv.org/abs/2508.19005",
+          "https://arxiv.org/pdf/2508.19005"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "benchmark",
+          "method",
+          "dataset"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "持续成长的智能体不能只在固定数据上优化，它需要主动获得经验、长期保存、抽象成技能并最终内化。ELL 给出从环境交互到能力增长的完整框架，并用 StuLife 测试。\n\n核心概念\n- 经验探索：主动与动态环境交互并生成相互依赖的轨迹。\n- 长期记忆：保存个人经验、领域知识和常识。\n- 技能学习：从重复模式中抽象、验证并复用技能。\n- 知识内化：把显式经验转成更直接的行为能力。\n- 主动性：从被动响应转向自发寻找学习机会。",
+      "method": "框架围绕四阶段循环运行；StuLife 用大学生活的连续状态、任务和选择检验记忆、迁移和自主行为。\n\n方法结构\n- 环境交互：在不断变化的学生状态下完成任务。\n- 记忆维护：跨阶段保存课程、人际与个人目标。\n- 技能抽象：提炼可跨场景复用的解决程序。\n- 内化与迁移：在新任务中减少显式检索依赖。\n- 三阶段十场景：覆盖入学、学习与个人发展。",
+      "innovation": "论文把自进化从单次反思扩展为经验、记忆、技能、内化的长期循环，并提供具备时间状态变化的完整评测环境。",
+      "experiments": "在 StuLife 上评估多种前沿语言模型与上下文工程方案，考察记忆保持、技能迁移和自发行为。",
+      "metrics": "无",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先读四原则，再看 StuLife 的三阶段十场景和状态变量，最后核对记忆、迁移、主动性三个评测维度。"
+    },
+    {
+      "title": "BenchTrace: A Benchmark for Testing Reflection Ability and Controlled Evolution in LLM Agents",
+      "basic_info": {
+        "authors": [
+          "Jiahao Huang",
+          "Fei Cheng",
+          "Junfeng Jiang",
+          "Zefan Yu",
+          "Akiko Aizawa"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "https://arxiv.org/abs/2605.29225",
+          "https://arxiv.org/pdf/2605.29225"
+        ],
+        "pdf_status": "downloaded_and_extracted",
+        "pdf_path": "C:\\Users\\xyn\\Documents\\论文\\paper-workspace\\pdfs\\2026-BenchTrace-A-Benchmark-for-Testing-Reflection-Ability-and-Controlled-Evolution-in-LLM-Agents.pdf",
+        "tags": [
+          "benchmark",
+          "dataset",
+          "latest-sota"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "任务分数提高并不证明反思正确，也无法定位某种失败是否被真正避免。BenchTrace 把反思诊断和受控进化分开评测。\n\n核心概念\n- 快照反思：从具体失败片段提问，检查是否识别根因。\n- 反思评测：分别测失败定位、诊断和修正建议。\n- 受控进化：把指定失败经验注入后续模拟。\n- 失败避免率：计算智能体是否避开目标失败。\n- 遗忘与负迁移：观察噪声积累和跨场景泛化。",
+      "method": "数据集包含 1821 个标注回合和六类任务；评测先问反思问题，再在可控环境中测试经验是否改变后续行为。\n\n方法结构\n- 失败快照标注：定位轨迹中的目标失败。\n- 定向问答：测试识别、诊断和改进。\n- 经验注入：控制给智能体哪些历史失败。\n- 行为仿真：测量后续是否避免同类错误。\n- 相关分析：比较反思质量与失败避免率。",
+      "innovation": "它首次把反思文本质量和实际行为改进建立受控对应关系，能够区分看似合理但无行为价值的反思。",
+      "experiments": "使用 Qwen3-32B 和 GPT-4.1，在六类任务上评估端到端反思、失败避免、噪声累积、遗忘和跨情境迁移。",
+      "metrics": "两种模型端到端反思通过率均低于 30%；完整正确的反思与更高失败避免率有强相关。",
+      "reliability_limits": "已取得合法开放全文并纳入文本提取；本条按全文结构和正式摘要整理，表格、公式与附录细节仍应回到原文核对。",
+      "reading_guide": "先看 1821 回合如何标注，再读失败避免率定义，最后核对诊断瓶颈、遗忘和负迁移实验。"
+    },
+    {
+      "title": "EXG: Self-Evolving Agents with Experience Graphs",
+      "basic_info": {
+        "authors": [
+          "Yuxin Jin",
+          "Siyuan Zhang",
+          "Hanchen Wang",
+          "Lu Qin",
+          "Ying Zhang",
+          "Wenjie Zhang"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "https://arxiv.org/abs/2605.17721",
+          "https://arxiv.org/pdf/2605.17721"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "method",
+          "benchmark",
+          "replication-friendly"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "自由文本反思和线性记忆容易积累碎片，难以跨任务定位可复用经验。EXG 用图显式连接任务、状态、动作、成功和失败。\n\n核心概念\n- 关系化经验：把经验单元及其因果或相似关系连成图。\n- 在线增长：执行过程中实时加入新经验。\n- 离线复用：将整理后的图作为外部记忆加载。\n- 成功与失败统一：既保存有效策略，也保存应避免路径。\n- 插件模式：可接入既有自进化智能体。",
+      "method": "智能体在每次任务后抽取经验节点与关系，查询图中的相关子图辅助新任务，并持续合并或修正经验。\n\n方法结构\n- 经验抽取：从轨迹识别任务条件、动作和结果。\n- 图更新：建立相似、前置、促进或冲突关系。\n- 子图检索：为当前任务取回结构化经验。\n- 在线与离线模式：分别支持即时成长和预构建记忆。",
+      "innovation": "创新在于将经验从独立文本条目升级为可查询的关系图，并同时覆盖在线成长和离线插件两种使用方式。",
+      "experiments": "在代码生成和推理基准上比较反思方法、非结构化记忆和 EXG 的在线、离线模式，同时测量性能与资源消耗。",
+      "metrics": "无",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先看图模式和关系类型，再读在线更新与子图检索，最后核对性能、存储和调用成本曲线。"
+    },
+    {
+      "title": "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective",
+      "basic_info": {
+        "authors": [
+          "Yuyao Wang",
+          "Zhongjian Zhang",
+          "Mo Chi",
+          "Kaichi Yu",
+          "Yuhan Li",
+          "Miao Peng",
+          "Bing Tong",
+          "Chen Zhang",
+          "Yan Zhou",
+          "Jia Li"
+        ],
+        "year": 2026,
+        "venue": "arXiv",
+        "links": [
+          "https://arxiv.org/abs/2605.18421",
+          "https://arxiv.org/pdf/2605.18421"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "benchmark",
+          "dataset",
+          "replication-friendly"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "不同记忆方法常在不同任务和协议下报告，无法判断何种记忆真正适合持续进化。EvoMemBench 用统一二维框架比较知识记忆和执行记忆。\n\n核心概念\n- 记忆范围：区分单回合内部和跨回合记忆。\n- 记忆内容：区分知识导向和执行导向。\n- 长上下文基线：检验复杂记忆是否优于直接保留历史。\n- 任务匹配：记忆形式必须与任务结构相符。\n- 统一协议：在同一模型和预算下比较 15 种方法。",
+      "method": "基准按范围和内容组织任务，将 15 种记忆方法与强长上下文基线放在标准化协议中评估。\n\n方法结构\n- 四象限任务：组合回合范围与记忆内容。\n- 知识任务：测试事实保存、更新和检索。\n- 执行任务：测试程序、策略和历史动作复用。\n- 受控预算：统一上下文、存储和检索设置。\n- 方法对照：比较检索式、程序式和长期记忆。",
+      "innovation": "它不预设某种记忆架构优越，而是揭示记忆有效性取决于上下文是否不足、任务难度和经验与任务结构的匹配。",
+      "experiments": "统一比较 15 种代表性记忆方法与长上下文基线，覆盖单回合、跨回合、知识和执行四类设置。",
+      "metrics": "无",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先看二维分类和任务覆盖，再核对 15 种方法的预算是否公平，最后关注长上下文仍具竞争力的条件。"
+    },
+    {
+      "title": "From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory",
+      "basic_info": {
+        "authors": [
+          "Yishuo Cai",
+          "Xingyu Guo",
+          "Xuancheng Huang",
+          "Jinhua Du",
+          "Can Huang",
+          "Wenxuan Huang",
+          "Wenhan Ma",
+          "Yuyang Hu",
+          "Aohan Zeng",
+          "Jie Tang",
+          "Xu Sun"
+        ],
+        "year": 2026,
+        "venue": "ICML 2026",
+        "links": [
+          "https://openreview.net/forum?id=gNWNtstp3r",
+          "https://openreview.net/pdf?id=gNWNtstp3r"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "method",
+          "benchmark",
+          "replication-friendly"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "手写提示驱动的记忆更新不一定服务于长期任务结果。MemoPilot 冻结主智能体，只训练一个记忆副驾驶，使记忆内容直接为后续表现负责。\n\n核心概念\n- 冻结执行模型：不改变主语言模型参数。\n- 可训练记忆更新器：决定每轮保留、压缩和改写什么。\n- 多轮决策：记忆动作的价值由后续多轮表现体现。\n- 逐轮奖励：用下一轮结果提供更及时信号。\n- 同轮优势：跨采样比较同一轮的记忆更新。",
+      "method": "MemoPilot 把记忆写作视为多轮策略，用 multi-turn GRPO、逐轮代理回报和与上下文无关的轮级优势进行端到端训练。\n\n方法结构\n- 交互记录：收集当前游戏状态和历史记忆。\n- 记忆动作：生成下一轮可用的压缩策略。\n- 代理回报：用下一局表现评价当前记忆。\n- 组内比较：在相同轮次跨采样计算优势。\n- 迁移：将训练好的记忆器接到更强的冻结玩家。",
+      "innovation": "关键贡献是把记忆更新本身变成可强化学习的策略，而不是把记忆视为固定提示模板。",
+      "experiments": "在多轮石头剪刀布和有限德州扑克上，使用 Qwen2.5-14B 训练，并零样本迁移到 Qwen3-235B-A22B，与无记忆、完整历史和多种记忆方法比较。",
+      "metrics": "Elo 排名中有限德州扑克 1762，石头剪刀布 1590，均为第一；Qwen2.5-14B 玩家在第五轮的两个任务得分分别为 3.28 和 2.03。",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先看记忆策略的决策过程，再读轮级优势和代理回报，最后核对两个玩家规模的迁移与 Elo 计算。"
+    },
+    {
+      "title": "AgentEvolver: Towards Efficient Self-Evolving Agent System",
+      "basic_info": {
+        "authors": [
+          "Yunpeng Zhai",
+          "Shuchang Tao",
+          "Cheng Chen",
+          "Anni Zou",
+          "Ziqian Chen",
+          "Qingxu Fu",
+          "Shinji Mai",
+          "Li Yu",
+          "Jiaji Deng",
+          "Zouying Cao",
+          "Zhaoyang Liu",
+          "Bolin Ding",
+          "Jingren Zhou"
+        ],
+        "year": 2025,
+        "venue": "arXiv",
+        "links": [
+          "https://arxiv.org/abs/2511.10395",
+          "https://arxiv.org/pdf/2511.10395"
+        ],
+        "pdf_status": "abstract_or_metadata_only",
+        "pdf_path": null,
+        "tags": [
+          "method",
+          "benchmark",
+          "replication-friendly"
+        ],
+        "why_selected": "与智能体后训练、工具强化学习、轨迹信用分配或自进化经验学习直接相关。"
+      },
+      "what_why": "人工造任务、随机探索和整轨迹奖励让智能体强化学习昂贵低效。AgentEvolver 让模型自己提出任务、利用经验导航，并细分状态动作贡献。\n\n核心概念\n- 自提问：基于环境语义主动生成可学习任务。\n- 自导航：复用经验并结合混合策略引导探索。\n- 自归因：区分轨迹中不同状态和动作的贡献。\n- 样本复用：从已有成功和失败中提取更密集训练信号。\n- 持续循环：任务生成、探索和更新相互促进。",
+      "method": "系统把三种机制组合成统一飞轮，从当前能力边界生成任务，用经验导航收集轨迹，再做细粒度信用分配。\n\n方法结构\n- 能力探测：发现尚未掌握但可学习的任务。\n- 任务生成：减少人工构造数据依赖。\n- 混合导航：在模型策略与经验路径之间选择。\n- 状态动作归因：为关键转移分配差异化奖励。\n- 循环训练：更新后重新探测能力边界。",
+      "innovation": "它将课程生成、探索策略和信用分配统一为自进化系统，而不是单独优化强化学习算法的一环。",
+      "experiments": "初步实验与传统强化学习基线比较任务构造成本、探索效率、样本利用和适应速度。",
+      "metrics": "无",
+      "reliability_limits": "本轮未取得可合法下载或可成功提取的全文；本条依据正式论文页和摘要整理，方法细节与结果边界的置信度较低。",
+      "reading_guide": "先看三种自机制的接口，再读任务生成与经验导航如何避免循环偏差，最后核对自归因和样本效率实验。"
+    }
+  ]
+}

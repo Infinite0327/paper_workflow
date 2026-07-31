@@ -1,0 +1,158 @@
+{
+  "query": "ReAct Synergizing Reasoning and Acting in Language Models",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:17:45",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=ReAct+Synergizing+Reasoning+and+Acting+in+Language+Models",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "authors": [
+        "Shunyu Yao",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik Narasimhan",
+        "Yuan Cao"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples. Project site with code: https://react-lm.github.io",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2210.03629v3",
+      "url": "http://arxiv.org/abs/2210.03629v3",
+      "pdf_url": "https://arxiv.org/pdf/2210.03629v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2210.03629v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 81.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "ReACT_OCRS: An AI-Driven Anonymous Online Reporting System Using Synergized Reasoning and Acting in Language Models",
+      "authors": [
+        "Amir Aboubakr Shaker Mahmoud",
+        "Wesam Shishah",
+        "Nilay R. Mistry"
+      ],
+      "year": 2025,
+      "venue": "IEEE Access",
+      "abstract": null,
+      "citation_count": 3,
+      "doi": "10.1109/access.2025.3571526",
+      "url": "https://doi.org/10.1109/access.2025.3571526",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/access.2025.3571526",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 55.73,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Synergizing Large Language Models and Knowledge-Based Reasoning for Interpretable Feature Engineering",
+      "authors": [
+        "Mohamed Bouadi",
+        "Arta Alavi",
+        "Salima Benbernou",
+        "Mourad Ouziri"
+      ],
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Web Conference 2025",
+      "abstract": null,
+      "citation_count": 3,
+      "doi": "10.1145/3696410.3714720",
+      "url": "https://doi.org/10.1145/3696410.3714720",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1145/3696410.3714720",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 47.73,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "ARS: Adaptive Reasoning Suppression for Efficient Large Reasoning Language Models",
+      "authors": [
+        "Dongqi Zheng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Reasoning Language Models (LRLMs or LRMs) demonstrate remarkable capabilities in complex reasoning tasks, but suffer from significant computational inefficiencies due to overthinking phenomena. Existing efficient reasoning methods face the challenge of balancing reasoning quality with inference cost reduction. We propose \\textbf{Adaptive Reasoning Suppression (ARS)}, a novel training-free approach that dynamically suppresses redundant reasoning steps while preserving accuracy through adaptive certainty monitoring. ARS introduces a multi-checkpoint certainty estimation mechanism with progressive suppression thresholds, achieving superior efficiency compared to static suppression methods. Our extensive evaluation across mathematical reasoning benchmarks using multiple model architectures demonstrates that ARS achieves up to 53%, 46.1%, and 57.9% in token, latency and energy reduction, while maintaining or improving accuracy.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2510.00071v2",
+      "url": "http://arxiv.org/abs/2510.00071v2",
+      "pdf_url": "https://arxiv.org/pdf/2510.00071v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2510.00071v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Large Language Models for Acting and Planning",
+      "authors": [],
+      "year": 2025,
+      "venue": "Acting, Planning, and Learning",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1017/9781009579346.033",
+      "url": "https://doi.org/10.1017/9781009579346.033",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1017/9781009579346.033",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

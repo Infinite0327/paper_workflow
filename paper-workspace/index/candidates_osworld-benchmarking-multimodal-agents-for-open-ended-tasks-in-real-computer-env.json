@@ -1,0 +1,236 @@
+{
+  "query": "OSWorld Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:18:08",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=OSWorld+Benchmarking+Multimodal+Agents+for+Open-Ended+Tasks+in+Real+Computer+Environments",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "authors": [
+        "Tianbao Xie",
+        "Danyang Zhang",
+        "Jixuan Chen",
+        "Xiaochuan Li",
+        "Siheng Zhao",
+        "Ruisheng Cao",
+        "Toh Jing Hua",
+        "Zhoujun Cheng",
+        "Dongchan Shin",
+        "Fangyu Lei",
+        "Yitao Liu",
+        "Yiheng Xu",
+        "Shuyan Zhou",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Victor Zhong",
+        "Tao Yu"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Autonomous agents that accomplish complex computer tasks with minimal human interventions have the potential to transform human-computer interaction, significantly enhancing accessibility and productivity. However, existing benchmarks either lack an interactive environment or are limited to environments specific to certain applications or domains, failing to reflect the diverse and complex nature of real-world computer use, thereby limiting the scope of tasks and agent scalability. To address this issue, we introduce OSWorld, the first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across various operating systems such as Ubuntu, Windows, and macOS. OSWorld can serve as a unified, integrated computer environment for assessing open-ended computer tasks that involve arbitrary applications. Building upon OSWorld, we create a benchmark of 369 computer tasks involving real web and desktop apps in open domains, OS file I/O, and workflows spanning multiple applications. Each task example is derived from real-world computer use cases and includes a detailed initial state setup configuration and a custom execution-based evaluation script for reliable, reproducible evaluation. Extensive evaluation of state-of-the-art LLM/VLM-based agents on OSWorld reveals significant deficiencies in their ability to serve as computer assistants. While humans can accomplish over 72.36% of the tasks, the best model achieves only 12.24% success, primarily struggling with GUI grounding and operational knowledge. Comprehensive analysis using OSWorld provides valuable insights for developing multimodal generalist agents that were not possible with previous benchmarks. Our code, environment, baseline models, and data are publicly available at https://os-world.github.io.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2404.07972v2",
+      "url": "http://arxiv.org/abs/2404.07972v2",
+      "pdf_url": "https://arxiv.org/pdf/2404.07972v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2404.07972v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 123.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "authors": [
+        "Tianbao Xie",
+        "Danyang Zhang",
+        "Jixuan Chen",
+        "Xiaochuan Li",
+        "Siheng Zhao",
+        "Ruisheng Cao",
+        "Toh Jing Hua",
+        "Zhoujun Cheng",
+        "Dongchan Shin",
+        "Fangyu Lei",
+        "Yitao Liu",
+        "Yiheng Xu",
+        "Shuyan Zhou",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Victor W. Zhong",
+        "Tao Yu"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 7,
+      "doi": "10.48550/arxiv.2404.07972",
+      "url": "https://openalex.org/W4394782272",
+      "pdf_url": "https://arxiv.org/pdf/2404.07972",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2404.07972",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 101.65,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+      "authors": [
+        "Tianbao Xie",
+        "Danyang Zhang",
+        "Jixuan Chen",
+        "Xiaochuan Li",
+        "Siheng Zhao",
+        "Ruisheng Cao",
+        "Toh Hua",
+        "Zhoujun Cheng",
+        "Dongchan Shin",
+        "Fangyu Lei",
+        "Yitao Liu",
+        "Yiheng Xu",
+        "Shuyan Zhou",
+        "Silvio Savarese",
+        "Caiming Xiong",
+        "Victor Zhong",
+        "Tao Yu"
+      ],
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems 37",
+      "abstract": null,
+      "citation_count": 25,
+      "doi": "10.52202/079017-1650",
+      "url": "https://doi.org/10.52202/079017-1650",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.52202/079017-1650",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 98.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "OSWorld 2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks",
+      "authors": [
+        "Mengqi Yuan",
+        "Zilong Zhou",
+        "Xinzhuang Xiong",
+        "Weiming Wu",
+        "Jiayang Sun",
+        "Jiamin Song",
+        "Kaiqian Cui",
+        "Bowen Wang",
+        "Haoyuan Wu",
+        "Yitong Li",
+        "Dunjie Lu",
+        "Haikong Lu",
+        "Qi Zhen",
+        "Xinyuan Wang",
+        "Jiaqi Deng",
+        "Yuhao Yang",
+        "Cheng Chen",
+        "Boyuan Zheng",
+        "Alex Su",
+        "Xiao Yu",
+        "Hao Zou",
+        "Saaket Agashe",
+        "Xing Han Lu",
+        "Manpreet Kaur",
+        "Zhengyang Qi",
+        "Vincent Sunn Chen",
+        "Frederic Sala",
+        "Dayiheng Liu",
+        "Junyang Lin",
+        "Zhou Yu",
+        "Yu Su",
+        "Siva Reddy",
+        "Xin Eric Wang",
+        "Peng Qi",
+        "Tianbao Xie",
+        "Tao Yu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Existing computer-use benchmarks fail to capture the realism, complexity, and long-horizon demands of real-world computer use, limiting their ability to reveal the limitations of frontier agents. We introduce OSWorld 2.0, a benchmark of 108 long-horizon computer-use workflows across everyday and professional tasks, designed to capture complex and challenging real-world phenomena. Each task represents a realistic end-to-end workflow that takes human users a median of about 1.6 hours to complete and requires an average of 318 tool calls with Claude Opus 4.7 using maximum thinking, compared with about 30 in OSWorld 1.0. OSWorld 2.0 targets challenge phenomena that are common in real workflows yet underrepresented in prior benchmarks, spanning interaction-design challenges such as streaming interaction and dynamic environments, as well as agent-pattern challenges such as cross-source reasoning, implicit-state inference, and visual-spatial precision. Tasks are grounded in authentic input artifacts and cross-referenced against realistic stateful user profile data, and include separate safety reports auditing safety-sensitive execution. Under our primary binary-completion metric at 500 steps, Claude Opus 4.8 with maximum thinking and batched tool calls scores best but still completes only 20.6% of tasks at a 54.8% partial score; GPT-5.5 is far more token-efficient yet plateaus near 13%. These results show that current agents are still far from professional-level computer use: rather than stumbling on basic GUI control or coding, they lose track of constraints, miss information that arrives mid-task, guess rather than ask the user, and skip verification, struggling most when a task hinges on hidden state they must recover.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2606.29537v2",
+      "url": "http://arxiv.org/abs/2606.29537v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.29537v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2606.29537v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 78.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "S-Agents: Self-organizing Agents in Open-ended Environments",
+      "authors": [
+        "Jiaqi Chen",
+        "Yuxian Jiang",
+        "Jiachen Lu",
+        "Li Zhang"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Leveraging large language models (LLMs), autonomous agents have significantly improved, gaining the ability to handle a variety of tasks. In open-ended settings, optimizing collaboration for efficiency and effectiveness demands flexible adjustments. Despite this, current research mainly emphasizes fixed, task-oriented workflows and overlooks agent-centric organizational structures. Drawing inspiration from human organizational behavior, we introduce a self-organizing agent system (S-Agents) with a \"tree of agents\" structure for dynamic workflow, an \"hourglass agent architecture\" for balancing information priorities, and a \"non-obstructive collaboration\" method to allow asynchronous task execution among agents. This structure can autonomously coordinate a group of agents, efficiently addressing the challenges of open and dynamic environments without human intervention. Our experiments demonstrate that S-Agents proficiently execute collaborative building tasks and resource collection in the Minecraft environment, validating their effectiveness.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2402.04578v4",
+      "url": "http://arxiv.org/abs/2402.04578v4",
+      "pdf_url": "https://arxiv.org/pdf/2402.04578v4",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2402.04578v4",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 55.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

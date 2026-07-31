@@ -1,0 +1,199 @@
+{
+  "query": "ToolLLM Facilitating Large Language Models to Master Real-world APIs",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:17:45",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=ToolLLM+Facilitating+Large+Language+Models+to+Master+Real-world+APIs",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
+      "authors": [
+        "Yujia Qin",
+        "Shihao Liang",
+        "Yining Ye",
+        "Kunlun Zhu",
+        "Lan Yan",
+        "Yaxi Lu",
+        "Yankai Lin",
+        "Xin Cong",
+        "Xiangru Tang",
+        "Bill Qian",
+        "Sihan Zhao",
+        "Lauren Hong",
+        "Runchu Tian",
+        "Ruobing Xie",
+        "Jie Zhou",
+        "Mark Gerstein",
+        "Dahai Li",
+        "Zhiyuan Liu",
+        "Maosong Sun"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Despite the advancements of open-source large language models (LLMs), e.g., LLaMA, they remain significantly limited in tool-use capabilities, i.e., using external tools (APIs) to fulfill human instructions. The reason is that current instruction tuning largely focuses on basic language tasks but ignores the tool-use domain. This is in contrast to the excellent tool-use capabilities of state-of-the-art (SOTA) closed-source LLMs, e.g., ChatGPT. To bridge this gap, we introduce ToolLLM, a general tool-use framework encompassing data construction, model training, and evaluation. We first present ToolBench, an instruction-tuning dataset for tool use, which is constructed automatically using ChatGPT. Specifically, the construction can be divided into three stages: (i) API collection: we collect 16,464 real-world RESTful APIs spanning 49 categories from RapidAPI Hub; (ii) instruction generation: we prompt ChatGPT to generate diverse instructions involving these APIs, covering both single-tool and multi-tool scenarios; (iii) solution path annotation: we use ChatGPT to search for a valid solution path (chain of API calls) for each instruction. To enhance the reasoning capabilities of LLMs, we develop a novel depth-first search-based decision tree algorithm. It enables LLMs to evaluate multiple reasoning traces and expand the search space. Moreover, to evaluate the tool-use capabilities of LLMs, we develop an automatic evaluator: ToolEval. Based on ToolBench, we fine-tune LLaMA to obtain an LLM ToolLLaMA, and equip it with a neural API retriever to recommend appropriate APIs for each instruction. Experiments show that ToolLLaMA demonstrates a remarkable ability to execute complex instructions and generalize to unseen APIs, and exhibits comparable performance to ChatGPT. Our ToolLLaMA also demonstrates strong zero-shot generalization ability in an out-of-distribution tool-use dataset: APIBench.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2307.16789v2",
+      "url": "http://arxiv.org/abs/2307.16789v2",
+      "pdf_url": "https://arxiv.org/pdf/2307.16789v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2307.16789v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method",
+        "dataset"
+      ],
+      "score": 96.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Attacks on Third-Party APIs of Large Language Models",
+      "authors": [
+        "Wanru Zhao",
+        "Vidit Khazanchi",
+        "Haodi Xing",
+        "Xuanli He",
+        "Qiongkai Xu",
+        "Nicholas Donald Lane"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM) services have recently begun offering a plugin ecosystem to interact with third-party API services. This innovation enhances the capabilities of LLMs, but it also introduces risks, as these plugins developed by various third parties cannot be easily trusted. This paper proposes a new attacking framework to examine security and safety vulnerabilities within LLM platforms that incorporate third-party services. Applying our framework specifically to widely used LLMs, we identify real-world malicious attacks across various domains on third-party APIs that can imperceptibly modify LLM outputs. The paper discusses the unique challenges posed by third-party API integration and offers strategic possibilities to improve the security and safety of LLM ecosystems moving forward. Our code is released at https://github.com/vk0812/Third-Party-Attacks-on-LLMs.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2404.16891v1",
+      "url": "http://arxiv.org/abs/2404.16891v1",
+      "pdf_url": "https://arxiv.org/pdf/2404.16891v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2404.16891v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 57.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Real-World Implementations of Large Language Models",
+      "authors": [
+        "Meetu Malhotra",
+        "Rahul Awasthy"
+      ],
+      "year": 2025,
+      "venue": "Theory, Practice, and Future Direction of Large Language Models",
+      "abstract": "Large Language models (LLMs) have always shown exceptional abilities in understanding and generating human language, leading to considerable progress in various fields. This chapter will help to examine all the practical applications of LLMs, highlighting their growing impact on industries such as healthcare, automotive, finance, education, customer service, and social media. The chapter also addresses the challenges in implementing LLM models, data privacy, ethical concerns, and the necessity for different governance frameworks. Through the case studies of successful LLM applications, this chapter will also illustrate the major practical advantages and the potential of these technologies in addressing real-world challenges, thereby fostering innovation and efficiency across various variations industries. It also covers latest SOTA LLMs research in various domains.",
+      "citation_count": 0,
+      "doi": "10.4018/979-8-3693-8387-2.ch004",
+      "url": "https://doi.org/10.4018/979-8-3693-8387-2.ch004",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.4018/979-8-3693-8387-2.ch004",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Comprehensive Overview of Large Language Models",
+      "authors": [
+        "Humza Naveed",
+        "Asad Ullah Khan",
+        "Shi Qiu",
+        "Muhammad Saqib",
+        "Saeed Anwar",
+        "Muhammad Usman",
+        "Akhtar, Naveed",
+        "Nick Barnes",
+        "Ajmal Mian"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 367,
+      "doi": "10.48550/arxiv.2307.06435",
+      "url": "https://openalex.org/W4384389802",
+      "pdf_url": "https://arxiv.org/pdf/2307.06435",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2307.06435",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 44,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Survey on Evaluation of Large Language Models",
+      "authors": [
+        "Yupeng Chang",
+        "Xu Wang",
+        "Jindong Wang",
+        "Yuan-Hsuan Wu",
+        "Linyi Yang",
+        "Kaijie Zhu",
+        "Hao Chen",
+        "Xiaoyuan Yi",
+        "Cunxiang Wang",
+        "Yidong Wang",
+        "Wei Ye",
+        "Yue Zhang",
+        "Yi Chang",
+        "Philip S. Yu",
+        "Qiang Yang",
+        "Xing Xie"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 201,
+      "doi": "10.48550/arxiv.2307.03109",
+      "url": "https://openalex.org/W4383605161",
+      "pdf_url": "https://arxiv.org/pdf/2307.03109",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2307.03109",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 44,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

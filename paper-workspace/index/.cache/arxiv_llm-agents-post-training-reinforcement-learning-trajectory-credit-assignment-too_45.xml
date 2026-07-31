@@ -1,0 +1,1255 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api//DiQcowiS+Uvtn4wu0itCBAo7BE</id>
+  <title>arXiv Query: search_query=all:LLM OR all:agents OR all:post-training OR all:reinforcement OR all:learning OR all:trajectory OR all:credit OR all:assignment OR all:tool OR all:use&amp;id_list=&amp;start=0&amp;max_results=45</title>
+  <updated>2026-07-29T04:13:22Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:LLM+OR+(all:agents+OR+(all:post-training+OR+(all:reinforcement+OR+(all:learning+OR+(all:trajectory+OR+(all:credit+OR+(all:assignment+OR+(all:tool+OR+all:use))))))))&amp;start=0&amp;max_results=45&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>45</opensearch:itemsPerPage>
+  <opensearch:totalResults>1736025</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2103.06224v1</id>
+    <title>An Information-Theoretic Perspective on Credit Assignment in Reinforcement Learning</title>
+    <updated>2021-03-10T17:50:15Z</updated>
+    <link href="https://arxiv.org/abs/2103.06224v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2103.06224v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>How do we formalize the challenge of credit assignment in reinforcement learning? Common intuition would draw attention to reward sparsity as a key contributor to difficult credit assignment and traditional heuristics would look to temporal recency for the solution, calling upon the classic eligibility trace. We posit that it is not the sparsity of the reward itself that causes difficulty in credit assignment, but rather the \emph{information sparsity}. We propose to use information theory to define this notion, which we then use to characterize when credit assignment is an obstacle to efficient learning. With this perspective, we outline several information-theoretic mechanisms for measuring credit under a fixed behavior policy, highlighting the potential of information theory as a key tool towards provably-efficient credit assignment.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-03-10T17:50:15Z</published>
+    <arxiv:comment>Workshop on Biological and Artificial Reinforcement Learning (NeurIPS 2020)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Dilip Arumugam</name>
+    </author>
+    <author>
+      <name>Peter Henderson</name>
+    </author>
+    <author>
+      <name>Pierre-Luc Bacon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2106.14993v3</id>
+    <title>Modularity in Reinforcement Learning via Algorithmic Independence in Credit Assignment</title>
+    <updated>2021-07-21T17:07:10Z</updated>
+    <link href="https://arxiv.org/abs/2106.14993v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2106.14993v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Many transfer problems require re-using previously optimal decisions for solving new tasks, which suggests the need for learning algorithms that can modify the mechanisms for choosing certain actions independently of those for choosing others. However, there is currently no formalism nor theory for how to achieve this kind of modular credit assignment. To answer this question, we define modular credit assignment as a constraint on minimizing the algorithmic mutual information among feedback signals for different decisions. We introduce what we call the modularity criterion for testing whether a learning algorithm satisfies this constraint by performing causal analysis on the algorithm itself. We generalize the recently proposed societal decision-making framework as a more granular formalism than the Markov decision process to prove that for decision sequences that do not contain cycles, certain single-step temporal difference action-value methods meet this criterion while all policy-gradient methods do not. Empirical evidence suggests that such action-value methods are more sample efficient than policy-gradient methods on transfer problems that require only sparse changes to a sequence of previously optimal decisions.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-06-28T21:29:13Z</published>
+    <arxiv:comment>Long Presentation at the Thirty-eighth International Conference on Machine Learning (ICML) 2021. 21 pages, 11 figures. v2: updated acknowledgments. v3: clarified that the internal function nodes of the credit assignment mechanism are not considered O(1)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Michael Chang</name>
+    </author>
+    <author>
+      <name>Sidhant Kaushik</name>
+    </author>
+    <author>
+      <name>Sergey Levine</name>
+    </author>
+    <author>
+      <name>Thomas L. Griffiths</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2001.03354v2</id>
+    <title>Learning credit assignment</title>
+    <updated>2020-10-03T09:35:22Z</updated>
+    <link href="https://arxiv.org/abs/2001.03354v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2001.03354v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep learning has achieved impressive prediction accuracies in a variety of scientific and industrial domains. However, the nested non-linear feature of deep learning makes the learning highly non-transparent, i.e., it is still unknown how the learning coordinates a huge number of parameters to achieve a decision making. To explain this hierarchical credit assignment, we propose a mean-field learning model by assuming that an ensemble of sub-networks, rather than a single network, are trained for a classification task. Surprisingly, our model reveals that apart from some deterministic synaptic weights connecting two neurons at neighboring layers, there exist a large number of connections that can be absent, and other connections can allow for a broad distribution of their weight values. Therefore, synaptic connections can be classified into three categories: very important ones, unimportant ones, and those of variability that may partially encode nuisance factors. Therefore, our model learns the credit assignment leading to the decision, and predicts an ensemble of sub-networks that can accomplish the same task, thereby providing insights toward understanding the macroscopic behavior of deep learning through the lens of distinct roles of synaptic weights.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.dis-nn" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.stat-mech" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.NC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-01-10T09:06:46Z</published>
+    <arxiv:comment>5 pages, 4 figures, a generalized BackProp proposed to learn credit assignment from an network ensemble perspective, to appear in Phys Rev Lett (2020)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 125, 178301 (2020)</arxiv:journal_ref>
+    <author>
+      <name>Chan Li</name>
+    </author>
+    <author>
+      <name>Haiping Huang</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.125.178301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.125.178301" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.12375v1</id>
+    <title>Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning</title>
+    <updated>2026-02-12T20:12:17Z</updated>
+    <link href="https://arxiv.org/abs/2602.12375v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.12375v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We show that VBE outperforms Bootstrap DQN and two reward bonus approaches (RND and ACB) on several classic environments used to test exploration and provide demonstrative experiments that it can scale easily to more complex environments like Atari.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-12T20:12:17Z</published>
+    <arxiv:comment>Accepted at Reinforcement Learning Conference (RLC) 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Reinforcement Learning Journal, vol. 6, 2025, pp. 1894-1915</arxiv:journal_ref>
+    <author>
+      <name>Abdul Wahab</name>
+    </author>
+    <author>
+      <name>Raksha Kumaraswamy</name>
+    </author>
+    <author>
+      <name>Martha White</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.18488v1</id>
+    <title>The Open Ant: A Robot Platform for Reinforcement Learning Research</title>
+    <updated>2026-07-20T20:18:29Z</updated>
+    <link href="https://arxiv.org/abs/2607.18488v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.18488v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) research has demonstrated success in both physical and simulated domains; however, the predominant methodology remains rooted in simulations. The predominance of simulations makes translating research to physical reality uncertain for both algorithms and researchers. We propose a physical platform that is designed to simplify the transition. In this paper, we present the Open Ant: a physical variant of the commonly used Gymnasium Ant environment, along with a simulation. We demonstrate that competent walking policies can be learned from scratch in approximately one hour directly from the physical robot's experience for two substantially different RL algorithms: SARSA($λ$) and Soft Actor-Critic (SAC). Separately, we show policies that were learned in simulation transfer to reality. We also examine how well the platform supports a nimble experimental ecosystem. Specifically, we observe the speed with which new users from diverse backgrounds achieve their first success with the platform, and how easily the platform can be repaired and updated when hardware issues arise. Both the hardware design and software are available as open-source on GitHub for ease of customization. In summary, we advocate for the use of the Open Ant for RL researchers who frequently use simulated environments, so they can more easily include robot experiments in their evaluations.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-20T20:18:29Z</published>
+    <arxiv:comment>Published in the Reinforcement Learning Conference</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <arxiv:journal_ref>Reinforcement Learning Journal (RLJ), 2026</arxiv:journal_ref>
+    <author>
+      <name>Elena Sorina Lupu</name>
+    </author>
+    <author>
+      <name>Patrick Spieler</name>
+    </author>
+    <author>
+      <name>Khurram Javed</name>
+    </author>
+    <author>
+      <name>Kris De Asis</name>
+    </author>
+    <author>
+      <name>John D. Martin</name>
+    </author>
+    <author>
+      <name>Martha Steenstrup</name>
+    </author>
+    <author>
+      <name>Joseph Modayil</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.20643v1</id>
+    <title>TrajGPT-R: Generating Urban Mobility Trajectory with Reinforcement Learning-Enhanced Generative Pre-trained Transformer</title>
+    <updated>2026-02-24T07:44:19Z</updated>
+    <link href="https://arxiv.org/abs/2602.20643v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.20643v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Mobility trajectories are essential for understanding urban dynamics and enhancing urban planning, yet access to such data is frequently hindered by privacy concerns. This research introduces a transformative framework for generating large-scale urban mobility trajectories, employing a novel application of a transformer-based model pre-trained and fine-tuned through a two-phase process. Initially, trajectory generation is conceptualized as an offline reinforcement learning (RL) problem, with a significant reduction in vocabulary space achieved during tokenization. The integration of Inverse Reinforcement Learning (IRL) allows for the capture of trajectory-wise reward signals, leveraging historical data to infer individual mobility preferences. Subsequently, the pre-trained model is fine-tuned using the constructed reward model, effectively addressing the challenges inherent in traditional RL-based autoregressive methods, such as long-term credit assignment and handling of sparse reward environments. Comprehensive evaluations on multiple datasets illustrate that our framework markedly surpasses existing models in terms of reliability and diversity. Our findings not only advance the field of urban mobility modeling but also provide a robust methodology for simulating urban data, with significant implications for traffic management and urban development planning. The implementation is publicly available at https://github.com/Wangjw6/TrajGPT_R.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-24T07:44:19Z</published>
+    <arxiv:comment>TrajGPT-R is a Reinforcement Learning-Enhanced Generative Pre-trained Transformer for Mobility Trajectory Generation</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jiawei Wang</name>
+    </author>
+    <author>
+      <name>Chuang Yang</name>
+    </author>
+    <author>
+      <name>Jiawei Yong</name>
+    </author>
+    <author>
+      <name>Xiaohang Xu</name>
+    </author>
+    <author>
+      <name>Hongjun Wang</name>
+    </author>
+    <author>
+      <name>Noboru Koshizuka</name>
+    </author>
+    <author>
+      <name>Shintaro Fukushima</name>
+    </author>
+    <author>
+      <name>Ryosuke Shibasaki</name>
+    </author>
+    <author>
+      <name>Renhe Jiang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.04518v1</id>
+    <title>Learning the Value Systems of Agents with Preference-based and Inverse Reinforcement Learning</title>
+    <updated>2026-02-04T13:07:15Z</updated>
+    <link href="https://arxiv.org/abs/2602.04518v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.04518v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agreement Technologies refer to open computer systems in which autonomous software agents interact with one another, typically on behalf of humans, in order to come to mutually acceptable agreements. With the advance of AI systems in recent years, it has become apparent that such agreements, in order to be acceptable to the involved parties, must remain aligned with ethical principles and moral values. However, this is notoriously difficult to ensure, especially as different human users (and their software agents) may hold different value systems, i.e. they may differently weigh the importance of individual moral values. Furthermore, it is often hard to specify the precise meaning of a value in a particular context in a computational manner. Methods to estimate value systems based on human-engineered specifications, e.g. based on value surveys, are limited in scale due to the need for intense human moderation. In this article, we propose a novel method to automatically \emph{learn} value systems from observations and human demonstrations. In particular, we propose a formal model of the \emph{value system learning} problem, its instantiation to sequential decision-making domains based on multi-objective Markov decision processes, as well as tailored preference-based and inverse reinforcement learning algorithms to infer value grounding functions and value systems. The approach is illustrated and evaluated by two simulated use cases.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-04T13:07:15Z</published>
+    <arxiv:comment>42 pages, 5 figures. Published in Journal of Autonomous Agents and Multi-Agent Systems</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <arxiv:journal_ref>Holgado-Sánchez, A., Billhardt, H., Fernández, A., Ossowski, S. Learning the value systems of agents with preference-based and inverse reinforcement learning. Autonomous Agents Multi-Agent Systems 40, 4 (2026)</arxiv:journal_ref>
+    <author>
+      <name>Andrés Holgado-Sánchez</name>
+    </author>
+    <author>
+      <name>Holger Billhardt</name>
+    </author>
+    <author>
+      <name>Alberto Fernández</name>
+    </author>
+    <author>
+      <name>Sascha Ossowski</name>
+    </author>
+    <arxiv:doi>10.1007/s10458-026-09732-0</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10458-026-09732-0" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.24050v4</id>
+    <title>Bridging On-Device and Cloud LLMs for Collaborative Reasoning: A Unified Methodology for Local Routing and Post-Training</title>
+    <updated>2026-05-23T21:20:59Z</updated>
+    <link href="https://arxiv.org/abs/2509.24050v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.24050v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Device-cloud collaboration holds promise for deploying large language models (LLMs), leveraging lightweight on-device models for efficiency while relying on powerful cloud models for superior reasoning. A central challenge in this setting is determining, for each incoming query, whether it should be processed locally or offloaded to the cloud. Existing approaches typically rely on external routers, which often struggle to determine difficulty from the prompt itself, especially for tasks involving complex reasoning. Motivated by this limitation, we propose enabling on-device LLMs to decide internally whether to invoke cloud assistance at inference time, with this capability instilled through reinforcement learning based post-training. Casting on-device LLM post-training as a reward maximization problem, we design hierarchical rewards to encourage local problem solving and judicious cloud offloading. To solve the resulting problem, we develop an algorithm featuring a group-level policy gradient that stabilizes optimization, together with adaptive prompt filtering that provides complementary learning signals to mitigate policy collapse (i.e., exclusive local execution or exclusive cloud offloading). Extensive experiments on on-device-scale LLaMA and Qwen models across multiple reasoning benchmarks show that our method consistently outperforms baselines and significantly narrows the gap to full cloud LLMs.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-28T19:48:56Z</published>
+    <arxiv:comment>We propose a unified post-training framework that integrates routing optimization, enabling the on-device LLM to improve its problem-solving ability while learning routing strategies</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Wenzhi Fang</name>
+    </author>
+    <author>
+      <name>Dong-Jun Han</name>
+    </author>
+    <author>
+      <name>Liangqi Yuan</name>
+    </author>
+    <author>
+      <name>Evan Chen</name>
+    </author>
+    <author>
+      <name>Christopher Brinton</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.26684v2</id>
+    <title>Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning</title>
+    <updated>2026-06-01T06:20:12Z</updated>
+    <link href="https://arxiv.org/abs/2605.26684v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.26684v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Group-based reinforcement learning (RL) methods have achieved remarkable success in improving the performance of large language models (LLMs) and have been rapidly extended to agentic tasks. However, their credit assignment relies heavily on coarse-grained trajectory-level attribution according to final outcomes, making it difficult to capture the contribution of individual steps, such as valuable steps obscured within failed trajectories. To uncover latent information and enable more faithful step-level credit assignment, we propose Graph-based Group Policy Optimization (GraphGPO), which first aggregates all rollout trajectories into a unified state-transition graph and then estimates the distance from each state to the task goal using the global information encoded in the graph. Finally, GraphGPO assigns credit to each edge by estimating a graph-based advantage, based on how much the transition reduces the distance to the task goal. In this way, GraphGPO significantly improves training efficiency and achieves state-of-the-art performance across a range of challenging benchmarks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-26T08:23:34Z</published>
+    <arxiv:comment>Accepted by ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Xin Cheng</name>
+    </author>
+    <author>
+      <name>Shuo He</name>
+    </author>
+    <author>
+      <name>Lang Feng</name>
+    </author>
+    <author>
+      <name>HaiYang Xu</name>
+    </author>
+    <author>
+      <name>Ming Yan</name>
+    </author>
+    <author>
+      <name>Lei Feng</name>
+    </author>
+    <author>
+      <name>Bo An</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2408.04295v3</id>
+    <title>Assigning Credit with Partial Reward Decoupling in Multi-Agent Proximal Policy Optimization</title>
+    <updated>2025-02-07T10:48:22Z</updated>
+    <link href="https://arxiv.org/abs/2408.04295v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2408.04295v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent proximal policy optimization (MAPPO) has recently demonstrated state-of-the-art performance on challenging multi-agent reinforcement learning tasks. However, MAPPO still struggles with the credit assignment problem, wherein the sheer difficulty in ascribing credit to individual agents' actions scales poorly with team size. In this paper, we propose a multi-agent reinforcement learning algorithm that adapts recent developments in credit assignment to improve upon MAPPO. Our approach leverages partial reward decoupling (PRD), which uses a learned attention mechanism to estimate which of a particular agent's teammates are relevant to its learning updates. We use this estimate to dynamically decompose large groups of agents into smaller, more manageable subgroups. We empirically demonstrate that our approach, PRD-MAPPO, decouples agents from teammates that do not influence their expected future reward, thereby streamlining credit assignment. We additionally show that PRD-MAPPO yields significantly higher data efficiency and asymptotic performance compared to both MAPPO and other state-of-the-art methods across several multi-agent tasks, including StarCraft II. Finally, we propose a version of PRD-MAPPO that is applicable to \textit{shared} reward settings, where PRD was previously not applicable, and empirically show that this also leads to performance improvements over MAPPO.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-08-08T08:18:05Z</published>
+    <arxiv:comment>20 pages, 5 figures, 12 tables, Reinforcement Learning Journal and Reinforcement Learning Conference 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Aditya Kapoor</name>
+    </author>
+    <author>
+      <name>Benjamin Freed</name>
+    </author>
+    <author>
+      <name>Howie Choset</name>
+    </author>
+    <author>
+      <name>Jeff Schneider</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.21321v2</id>
+    <title>LLM Post-Training: A Deep Dive into Reasoning Large Language Models</title>
+    <updated>2025-03-24T09:34:38Z</updated>
+    <link href="https://arxiv.org/abs/2502.21321v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.21321v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) have transformed the natural language processing landscape and brought to life diverse applications. Pretraining on vast web-scale data has laid the foundation for these models, yet the research community is now increasingly shifting focus toward post-training techniques to achieve further breakthroughs. While pretraining provides a broad linguistic foundation, post-training methods enable LLMs to refine their knowledge, improve reasoning, enhance factual accuracy, and align more effectively with user intents and ethical considerations. Fine-tuning, reinforcement learning, and test-time scaling have emerged as critical strategies for optimizing LLMs performance, ensuring robustness, and improving adaptability across various real-world tasks. This survey provides a systematic exploration of post-training methodologies, analyzing their role in refining LLMs beyond pretraining, addressing key challenges such as catastrophic forgetting, reward hacking, and inference-time trade-offs. We highlight emerging directions in model alignment, scalable adaptation, and inference-time reasoning, and outline future research directions. We also provide a public repository to continually track developments in this fast-evolving field: https://github.com/mbzuai-oryx/Awesome-LLM-Post-training.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-28T18:59:54Z</published>
+    <arxiv:comment>32 pages, 7 figures, 3 tables, 377 references. Github Repo: https://github.com/mbzuai-oryx/Awesome-LLM-Post-training</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Komal Kumar</name>
+    </author>
+    <author>
+      <name>Tajamul Ashraf</name>
+    </author>
+    <author>
+      <name>Omkar Thawakar</name>
+    </author>
+    <author>
+      <name>Rao Muhammad Anwer</name>
+    </author>
+    <author>
+      <name>Hisham Cholakkal</name>
+    </author>
+    <author>
+      <name>Mubarak Shah</name>
+    </author>
+    <author>
+      <name>Ming-Hsuan Yang</name>
+    </author>
+    <author>
+      <name>Phillip H. S. Torr</name>
+    </author>
+    <author>
+      <name>Fahad Shahbaz Khan</name>
+    </author>
+    <author>
+      <name>Salman Khan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2106.03129v1</id>
+    <title>3D UAV Trajectory and Data Collection Optimisation via Deep Reinforcement Learning</title>
+    <updated>2021-06-06T14:08:41Z</updated>
+    <link href="https://arxiv.org/abs/2106.03129v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2106.03129v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Unmanned aerial vehicles (UAVs) are now beginning to be deployed for enhancing the network performance and coverage in wireless communication. However, due to the limitation of their on-board power and flight time, it is challenging to obtain an optimal resource allocation scheme for the UAV-assisted Internet of Things (IoT). In this paper, we design a new UAV-assisted IoT systems relying on the shortest flight path of the UAVs while maximising the amount of data collected from IoT devices. Then, a deep reinforcement learning-based technique is conceived for finding the optimal trajectory and throughput in a specific coverage area. After training, the UAV has the ability to autonomously collect all the data from user nodes at a significant total sum-rate improvement while minimising the associated resources used. Numerical results are provided to highlight how our techniques strike a balance between the throughput attained, trajectory, and the time spent. More explicitly, we characterise the attainable performance in terms of the UAV trajectory, the expected reward and the total sum-rate.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-06-06T14:08:41Z</published>
+    <arxiv:comment>30 pages, UAV-assisted wireless network, trajectory, data collection, and deep reinforcement learning</arxiv:comment>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Khoi Khac Nguyen</name>
+    </author>
+    <author>
+      <name>Trung Q. Duong</name>
+    </author>
+    <author>
+      <name>Tan Do-Duy</name>
+    </author>
+    <author>
+      <name>Holger Claussen</name>
+    </author>
+    <author>
+      <name>and Lajos Hanzo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.01782v1</id>
+    <title>Multi-agent assignment via state augmented reinforcement learning</title>
+    <updated>2024-06-03T20:56:12Z</updated>
+    <link href="https://arxiv.org/abs/2406.01782v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.01782v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We address the conflicting requirements of a multi-agent assignment problem through constrained reinforcement learning, emphasizing the inadequacy of standard regularization techniques for this purpose. Instead, we recur to a state augmentation approach in which the oscillation of dual variables is exploited by agents to alternate between tasks. In addition, we coordinate the actions of the multiple agents acting on their local states through these multipliers, which are gossiped through a communication network, eliminating the need to access other agent states. By these means, we propose a distributed multi-agent assignment protocol with theoretical feasibility guarantees that we corroborate in a monitoring numerical experiment.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-03T20:56:12Z</published>
+    <arxiv:comment>12 pages, 3 figures, 6th Annual Conference on Learning for Dynamics and Control</arxiv:comment>
+    <arxiv:primary_category term="eess.SY"/>
+    <arxiv:journal_ref>Proceedings of Machine Learning Research vol 242 1 12, 2024. 6th Annual Conference on Learning for Dynamics and Control</arxiv:journal_ref>
+    <author>
+      <name>Leopoldo Agorio</name>
+    </author>
+    <author>
+      <name>Sean Van Alen</name>
+    </author>
+    <author>
+      <name>Miguel Calvo-Fullana</name>
+    </author>
+    <author>
+      <name>Santiago Paternain</name>
+    </author>
+    <author>
+      <name>Juan Andres Bazerque</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2306.15585v2</id>
+    <title>Optimizing Credit Limit Adjustments Under Adversarial Goals Using Reinforcement Learning</title>
+    <updated>2024-02-16T16:12:21Z</updated>
+    <link href="https://arxiv.org/abs/2306.15585v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.15585v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning has been explored for many problems, from video games with deterministic environments to portfolio and operations management in which scenarios are stochastic; however, there have been few attempts to test these methods in banking problems. In this study, we sought to find and automatize an optimal credit card limit adjustment policy by employing reinforcement learning techniques. Because of the historical data available, we considered two possible actions per customer, namely increasing or maintaining an individual's current credit limit. To find this policy, we first formulated this decision-making question as an optimization problem in which the expected profit was maximized; therefore, we balanced two adversarial goals: maximizing the portfolio's revenue and minimizing the portfolio's provisions. Second, given the particularities of our problem, we used an offline learning strategy to simulate the impact of the action based on historical data from a super-app in Latin America to train our reinforcement learning agent. Our results, based on the proposed methodology involving synthetic experimentation, show that a Double Q-learning agent with optimized hyperparameters can outperform other strategies and generate a non-trivial optimal policy not only reflecting the complex nature of this decision but offering an incentive to explore reinforcement learning in real-world banking scenarios. Our research establishes a conceptual structure for applying reinforcement learning framework to credit limit adjustment, presenting an objective technique to make these decisions primarily based on data-driven methods rather than relying only on expert-driven systems. We also study the use of alternative data for the problem of balance prediction, as the latter is a requirement of our proposed model. We find the use of such data does not always bring prediction gains.</summary>
+    <category term="q-fin.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-27T16:10:36Z</published>
+    <arxiv:comment>29 pages, 16 figures</arxiv:comment>
+    <arxiv:primary_category term="q-fin.GN"/>
+    <arxiv:journal_ref>Alfonso-Sanchez, S., Solano, J., Correa-Bahnsen, A., Sendova, K. P., &amp; Bravo, C. (2024). Optimizing credit limit adjustments under adversarial goals using reinforcement learning. European Journal of Operational Research 315(2): 802-817</arxiv:journal_ref>
+    <author>
+      <name>Sherly Alfonso-Sánchez</name>
+    </author>
+    <author>
+      <name>Jesús Solano</name>
+    </author>
+    <author>
+      <name>Alejandro Correa-Bahnsen</name>
+    </author>
+    <author>
+      <name>Kristina P. Sendova</name>
+    </author>
+    <author>
+      <name>Cristián Bravo</name>
+    </author>
+    <arxiv:doi>10.1016/j.ejor.2023.12.025</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.ejor.2023.12.025" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.16999v1</id>
+    <title>Counterfactual Shapley Credit Assignment</title>
+    <updated>2026-07-18T23:28:20Z</updated>
+    <link href="https://arxiv.org/abs/2607.16999v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.16999v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Credit Assignment Problem (CAP) is fundamental to developing efficient and explainable Reinforcement Learning (RL) agents. Existing frameworks, whether relying on temporal contiguity or hindsight-conditioned reward reweighting, frequently fail to attribute properly between an agent's policy (skill) and environmental stochasticity (luck). A principled approach to CAP must isolate the true causal drivers of observed outcomes from spurious correlations and environmental randomness. We introduce Counterfactual Shapley Credit Assignment, a novel framework grounded in causal theory that attributes credit and blame via the Counterfactual Shapley Value ($φ$-value). By redistributing environmental rewards, $φ$-values enhance temporal credit assignment across three critical dimensions: sparse causality, high stochasticity, and delayed rewards, all while preserving the optimal policy. We derive a consistent estimator that computes $φ$-values efficiently, enabling a new class of policy gradient methods, $φ$-PPO, combined with Prioritized Trajectory Replay (PTR). Empirical results demonstrate that $φ$-values align precisely to the ground truth causes of task rewards with superior sample efficiency in challenging environments where prior state-of-the-art methods fail to converge.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-18T23:28:20Z</published>
+    <arxiv:comment>Reinforcement Learning Journal 2026 (Also RLC 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Mingxuan Li</name>
+    </author>
+    <author>
+      <name> Kaizhan-Lee</name>
+    </author>
+    <author>
+      <name>Elias Bareinboim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.08630v1</id>
+    <title>Credit Assignment and Efficient Exploration based on Influence Scope in Multi-agent Reinforcement Learning</title>
+    <updated>2025-05-13T14:49:26Z</updated>
+    <link href="https://arxiv.org/abs/2505.08630v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.08630v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Training cooperative agents in sparse-reward scenarios poses significant challenges for multi-agent reinforcement learning (MARL). Without clear feedback on actions at each step in sparse-reward setting, previous methods struggle with precise credit assignment among agents and effective exploration. In this paper, we introduce a novel method to deal with both credit assignment and exploration problems in reward-sparse domains. Accordingly, we propose an algorithm that calculates the Influence Scope of Agents (ISA) on states by taking specific value of the dimensions/attributes of states that can be influenced by individual agents. The mutual dependence between agents' actions and state attributes are then used to calculate the credit assignment and to delimit the exploration space for each individual agent. We then evaluate ISA in a variety of sparse-reward multi-agent scenarios. The results show that our method significantly outperforms the state-of-art baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-13T14:49:26Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shuai Han</name>
+    </author>
+    <author>
+      <name>Mehdi Dastani</name>
+    </author>
+    <author>
+      <name>Shihan Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.03723v2</id>
+    <title>Speaking the Language of Teamwork: LLM-Guided Credit Assignment in Multi-Agent Reinforcement Learning</title>
+    <updated>2025-03-01T01:43:31Z</updated>
+    <link href="https://arxiv.org/abs/2502.03723v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.03723v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Credit assignment, the process of attributing credit or blame to individual agents for their contributions to a team's success or failure, remains a fundamental challenge in multi-agent reinforcement learning (MARL), particularly in environments with sparse rewards. Commonly-used approaches such as value decomposition often lead to suboptimal policies in these settings, and designing dense reward functions that align with human intuition can be complex and labor-intensive. In this work, we propose a novel framework where a large language model (LLM) generates dense, agent-specific rewards based on a natural language description of the task and the overall team goal. By learning a potential-based reward function over multiple queries, our method reduces the impact of ranking errors while allowing the LLM to evaluate each agent's contribution to the overall task. Through extensive experiments, we demonstrate that our approach achieves faster convergence and higher policy returns compared to state-of-the-art MARL baselines.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-06T02:26:47Z</published>
+    <arxiv:comment>11 pages, 6 figures. Added the acknowledgement section</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Muhan Lin</name>
+    </author>
+    <author>
+      <name>Shuyang Shi</name>
+    </author>
+    <author>
+      <name>Yue Guo</name>
+    </author>
+    <author>
+      <name>Vaishnav Tadiparthi</name>
+    </author>
+    <author>
+      <name>Behdad Chalaki</name>
+    </author>
+    <author>
+      <name>Ehsan Moradi Pari</name>
+    </author>
+    <author>
+      <name>Simon Stepputtis</name>
+    </author>
+    <author>
+      <name>Woojun Kim</name>
+    </author>
+    <author>
+      <name>Joseph Campbell</name>
+    </author>
+    <author>
+      <name>Katia Sycara</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.20579v7</id>
+    <title>The challenge of hidden gifts in multi-agent reinforcement learning</title>
+    <updated>2026-07-18T20:07:20Z</updated>
+    <link href="https://arxiv.org/abs/2505.20579v7" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.20579v7" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Sometimes we benefit from actions that others have taken even when we are unaware that they took those actions. For example, if your neighbor chooses not to take a parking spot in front of your house when you are not there, you can benefit, even without being aware that they took this action. These ``hidden gifts'' represent an interesting challenge for multi-agent reinforcement learning (MARL), since assigning credit when the beneficial actions of others are hidden is non-trivial. Here, we study the impact of hidden gifts with a simple MARL task. In this task, agents in a grid-world environment have individual doors to unlock in order to obtain individual rewards. As well, if all the agents unlock their door the group receives a larger collective reward. However, there is only one key for all of the doors, such that the collective reward can only be obtained when the agents drop the key for others after they use it. Notably, there is nothing to indicate to an agent that the other agents have dropped the key, thus this act for others is a ``hidden gift''. We show that several different state-of-the-art MARL algorithms, including MARL specific architectures, fail to learn how to obtain the collective reward in this simple task. Interestingly, we find that decentralized actor-critic policy gradient agents can succeed when we provide them with information about their own action history, but MARL agents still cannot solve the task with action history. Finally, we derive a correction term for policy gradient agents, inspired by learning aware approaches, which reduces the variance in learning and helps them to converge to collective success more reliably. These results show that credit assignment in multi-agent settings can be particularly challenging in the presence of ``hidden gifts'', and demonstrate that self learning-awareness in decentralized agents can benefit these settings.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-26T23:28:52Z</published>
+    <arxiv:comment>Published at the third Reinforcement Learning Conference 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Dane Malenfant</name>
+    </author>
+    <author>
+      <name>Blake A. Richards</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.00372v1</id>
+    <title>Nucleolus Credit Assignment for Effective Coalitions in Multi-agent Reinforcement Learning</title>
+    <updated>2025-03-01T07:01:58Z</updated>
+    <link href="https://arxiv.org/abs/2503.00372v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.00372v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In cooperative multi-agent reinforcement learning (MARL), agents typically form a single grand coalition based on credit assignment to tackle a composite task, often resulting in suboptimal performance. This paper proposed a nucleolus-based credit assignment grounded in cooperative game theory, enabling the autonomous partitioning of agents into multiple small coalitions that can effectively identify and complete subtasks within a larger composite task. Specifically, our designed nucleolus Q-learning could assign fair credits to each agent, and the nucleolus Q-operator provides theoretical guarantees with interpretability for both learning convergence and the stability of the formed small coalitions. Through experiments on Predator-Prey and StarCraft scenarios across varying difficulty levels, our approach demonstrated the emergence of multiple effective coalitions during MARL training, leading to faster learning and superior performance in terms of win rate and cumulative rewards especially in hard and super-hard environments, compared to four baseline methods. Our nucleolus-based credit assignment showed the promise for complex composite tasks requiring effective subteams of agents.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-01T07:01:58Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Yugu Li</name>
+    </author>
+    <author>
+      <name>Zehong Cao</name>
+    </author>
+    <author>
+      <name>Jianglin Qiao</name>
+    </author>
+    <author>
+      <name>Siyi Hu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.11120v2</id>
+    <title>Latent Reward: LLM-Empowered Credit Assignment in Episodic Reinforcement Learning</title>
+    <updated>2025-01-09T11:39:32Z</updated>
+    <link href="https://arxiv.org/abs/2412.11120v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.11120v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) often encounters delayed and sparse feedback in real-world applications, even with only episodic rewards. Previous approaches have made some progress in reward redistribution for credit assignment but still face challenges, including training difficulties due to redundancy and ambiguous attributions stemming from overlooking the multifaceted nature of mission performance evaluation. Hopefully, Large Language Model (LLM) encompasses fruitful decision-making knowledge and provides a plausible tool for reward redistribution. Even so, deploying LLM in this case is non-trivial due to the misalignment between linguistic knowledge and the symbolic form requirement, together with inherent randomness and hallucinations in inference. To tackle these issues, we introduce LaRe, a novel LLM-empowered symbolic-based decision-making framework, to improve credit assignment. Key to LaRe is the concept of the Latent Reward, which works as a multi-dimensional performance evaluation, enabling more interpretable goal attainment from various perspectives and facilitating more effective reward redistribution. We examine that semantically generated code from LLM can bridge linguistic knowledge and symbolic latent rewards, as it is executable for symbolic objects. Meanwhile, we design latent reward self-verification to increase the stability and reliability of LLM inference. Theoretically, reward-irrelevant redundancy elimination in the latent reward benefits RL performance from more accurate reward estimation. Extensive experimental results witness that LaRe (i) achieves superior temporal credit assignment to SOTA methods, (ii) excels in allocating contributions among multiple agents, and (iii) outperforms policies trained with ground truth rewards for certain tasks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-15T08:51:14Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yun Qu</name>
+    </author>
+    <author>
+      <name>Yuhang Jiang</name>
+    </author>
+    <author>
+      <name>Boyuan Wang</name>
+    </author>
+    <author>
+      <name>Yixiu Mao</name>
+    </author>
+    <author>
+      <name>Cheems Wang</name>
+    </author>
+    <author>
+      <name>Chang Liu</name>
+    </author>
+    <author>
+      <name>Xiangyang Ji</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1912.02877v2</id>
+    <title>Training Agents using Upside-Down Reinforcement Learning</title>
+    <updated>2021-09-03T22:15:10Z</updated>
+    <link href="https://arxiv.org/abs/1912.02877v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1912.02877v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We develop Upside-Down Reinforcement Learning (UDRL), a method for learning to act using only supervised learning techniques. Unlike traditional algorithms, UDRL does not use reward prediction or search for an optimal policy. Instead, it trains agents to follow commands such as "obtain so much total reward in so much time." Many of its general principles are outlined in a companion report; the goal of this paper is to develop a practical learning algorithm and show that this conceptually simple perspective on agent training can produce a range of rewarding behaviors for multiple episodic environments. Experiments show that on some tasks UDRL's performance can be surprisingly competitive with, and even exceed that of some traditional baseline algorithms developed over decades of research. Based on these results, we suggest that alternative approaches to expected reward maximization have an important role to play in training useful autonomous agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-12-05T21:13:36Z</published>
+    <arxiv:comment>Extends NeurIPS 2019 Deep Reinforcement Learning workshop presentation</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Rupesh Kumar Srivastava</name>
+    </author>
+    <author>
+      <name>Pranav Shyam</name>
+    </author>
+    <author>
+      <name>Filipe Mutz</name>
+    </author>
+    <author>
+      <name>Wojciech Jaśkowski</name>
+    </author>
+    <author>
+      <name>Jürgen Schmidhuber</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.13930v4</id>
+    <title>ME-IGM: Individual-Global-Max in Maximum Entropy Multi-Agent Reinforcement Learning</title>
+    <updated>2026-02-03T18:35:29Z</updated>
+    <link href="https://arxiv.org/abs/2406.13930v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.13930v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent credit assignment is a fundamental challenge for cooperative multi-agent reinforcement learning (MARL), where a team of agents learn from shared reward signals. The Individual-Global-Max (IGM) condition is a widely used principle for multi-agent credit assignment, requiring that the joint action determined by individual Q-functions maximizes the global Q-value. Meanwhile, the principle of maximum entropy has been leveraged to enhance exploration in MARL. However, we identify a critical limitation in existing maximum entropy MARL methods: a misalignment arises between local policies and the joint policy that maximizes the global Q-value, leading to violations of the IGM condition. To address this misalignment, we propose an order-preserving transformation. Building on it, we introduce ME-IGM, a novel maximum entropy MARL algorithm compatible with any credit assignment mechanism that satisfies the IGM condition while enjoying the benefits of maximum entropy exploration. We empirically evaluate two variants of ME-IGM: ME-QMIX and ME-QPLEX, in non-monotonic matrix games, and demonstrate their state-of-the-art performance across 17 scenarios in SMAC-v2 and Overcooked.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-20T01:55:08Z</published>
+    <arxiv:comment>Published in the Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Proc. of the 25th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2026), Paphos, Cyprus, May 25 - 29, 2026, IFAAMAS, 19 pages</arxiv:journal_ref>
+    <author>
+      <name>Wen-Tse Chen</name>
+    </author>
+    <author>
+      <name>Yuxuan Li</name>
+    </author>
+    <author>
+      <name>Shiyu Huang</name>
+    </author>
+    <author>
+      <name>Jiayu Chen</name>
+    </author>
+    <author>
+      <name>Jeff Schneider</name>
+    </author>
+    <arxiv:doi>10.65109/GYYC3346</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.65109/GYYC3346" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2312.03644v3</id>
+    <title>MACCA: Offline Multi-agent Reinforcement Learning with Causal Credit Assignment</title>
+    <updated>2026-06-01T16:16:05Z</updated>
+    <link href="https://arxiv.org/abs/2312.03644v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.03644v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Offline Multi-agent Reinforcement Learning (MARL) is valuable in scenarios where online interaction is impractical or risky. While independent learning in MARL offers flexibility and scalability, accurately assigning credit to individual agents in offline settings poses challenges because interactions with an environment are prohibited. In this paper, we propose a new framework, namely Multi-Agent Causal Credit Assignment (MACCA), to address credit assignment in the offline MARL setting. Our approach, MACCA, characterizing the generative process as a Dynamic Bayesian Network, captures relationships between environmental variables, states, actions, and rewards. Estimating this model on offline data, MACCA can learn each agent's contribution by analyzing the causal relationship of their individual rewards, ensuring accurate and interpretable credit assignment. Additionally, the modularity of our approach allows it to integrate with various offline MARL methods seamlessly. Theoretically, we proved that under the setting of the offline dataset, the underlying causal structure and the function for generating the individual rewards of agents are identifiable, which laid the foundation for the correctness of our modeling. In our experiments, we demonstrate that MACCA not only outperforms state-of-the-art methods but also enhances performance when integrated with other backbones.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-06T17:59:34Z</published>
+    <arxiv:comment>21 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>TMLR 2025</arxiv:journal_ref>
+    <author>
+      <name>Ziyan Wang</name>
+    </author>
+    <author>
+      <name>Yali Du</name>
+    </author>
+    <author>
+      <name>Yudi Zhang</name>
+    </author>
+    <author>
+      <name>Meng Fang</name>
+    </author>
+    <author>
+      <name>Biwei Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.06836v1</id>
+    <title>Multi-level Advantage Credit Assignment for Cooperative Multi-Agent Reinforcement Learning</title>
+    <updated>2025-08-09T05:36:08Z</updated>
+    <link href="https://arxiv.org/abs/2508.06836v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.06836v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Cooperative multi-agent reinforcement learning (MARL) aims to coordinate multiple agents to achieve a common goal. A key challenge in MARL is credit assignment, which involves assessing each agent's contribution to the shared reward. Given the diversity of tasks, agents may perform different types of coordination, with rewards attributed to diverse and often overlapping agent subsets. In this work, we formalize the credit assignment level as the number of agents cooperating to obtain a reward, and address scenarios with multiple coexisting levels. We introduce a multi-level advantage formulation that performs explicit counterfactual reasoning to infer credits across distinct levels. Our method, Multi-level Advantage Credit Assignment (MACA), captures agent contributions at multiple levels by integrating advantage functions that reason about individual, joint, and correlated actions. Utilizing an attention-based framework, MACA identifies correlated agent relationships and constructs multi-level advantages to guide policy learning. Comprehensive experiments on challenging Starcraft v1\&amp;v2 tasks demonstrate MACA's superior performance, underscoring its efficacy in complex credit assignment scenarios.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-09T05:36:08Z</published>
+    <arxiv:comment>Accepted at AISTATS 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xutong Zhao</name>
+    </author>
+    <author>
+      <name>Yaqi Xie</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1812.00922v1</id>
+    <title>Multi-agent Deep Reinforcement Learning with Extremely Noisy Observations</title>
+    <updated>2018-12-03T17:27:41Z</updated>
+    <link href="https://arxiv.org/abs/1812.00922v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1812.00922v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent reinforcement learning systems aim to provide interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. In many real-world applications, the agents can only acquire a partial view of the world. Here we consider a setting whereby most agents' observations are also extremely noisy, hence only weakly correlated to the true state of the environment. Under these circumstances, learning an optimal policy becomes particularly challenging, even in the unrealistic case that an agent's policy can be made conditional upon all other agents' observations. To overcome these difficulties, we propose a multi-agent deep deterministic policy gradient algorithm enhanced by a communication medium (MADDPG-M), which implements a two-level, concurrent learning mechanism. An agent's policy depends on its own private observations as well as those explicitly shared by others through a communication medium. At any given point in time, an agent must decide whether its private observations are sufficiently informative to be shared with others. However, our environments provide no explicit feedback informing an agent whether a communication action is beneficial, rather the communication policies must also be learned through experience concurrently to the main policies. Our experimental results demonstrate that the algorithm performs well in six highly non-stationary environments of progressively higher complexity, and offers substantial performance gains compared to the baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-12-03T17:27:41Z</published>
+    <arxiv:comment>To appear in Deep Reinforcement Learning Workshop, NIPS 2018</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ozsel Kilinc</name>
+    </author>
+    <author>
+      <name>Giovanni Montana</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2408.03692v2</id>
+    <title>Asynchronous Credit Assignment for Multi-Agent Reinforcement Learning</title>
+    <updated>2025-05-19T10:54:02Z</updated>
+    <link href="https://arxiv.org/abs/2408.03692v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2408.03692v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Credit assignment is a critical problem in multi-agent reinforcement learning (MARL), aiming to identify agents' marginal contributions for optimizing cooperative policies. Current credit assignment methods typically assume synchronous decision-making among agents. However, many real-world scenarios require agents to act asynchronously without waiting for others. This asynchrony introduces conditional dependencies between actions, which pose great challenges to current methods. To address this issue, we propose an asynchronous credit assignment framework, incorporating a Virtual Synchrony Proxy (VSP) mechanism and a Multiplicative Value Decomposition (MVD) algorithm. VSP enables physically asynchronous actions to be virtually synchronized during credit assignment. We theoretically prove that VSP preserves both task equilibrium and algorithm convergence. Furthermore, MVD leverages multiplicative interactions to effectively model dependencies among asynchronous actions, offering theoretical advantages in handling asynchronous tasks. Extensive experiments show that our framework consistently outperforms state-of-the-art MARL methods on challenging tasks while providing improved interpretability for asynchronous cooperation.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-08-07T11:13:26Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Yongheng Liang</name>
+    </author>
+    <author>
+      <name>Hejun Wu</name>
+    </author>
+    <author>
+      <name>Haitao Wang</name>
+    </author>
+    <author>
+      <name>Hao Cai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2203.08975v2</id>
+    <title>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</title>
+    <updated>2024-10-18T10:14:58Z</updated>
+    <link href="https://arxiv.org/abs/2203.08975v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2203.08975v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Communication is an effective mechanism for coordinating the behaviors of multiple agents, broadening their views of the environment, and to support their collaborations. In the field of multi-agent deep reinforcement learning (MADRL), agents can improve the overall learning performance and achieve their objectives by communication. Agents can communicate various types of messages, either to all agents or to specific agent groups, or conditioned on specific constraints. With the growing body of research work in MADRL with communication (Comm-MADRL), there is a lack of a systematic and structural approach to distinguish and classify existing Comm-MADRL approaches. In this paper, we survey recent works in the Comm-MADRL field and consider various aspects of communication that can play a role in designing and developing multi-agent reinforcement learning systems. With these aspects in mind, we propose 9 dimensions along which Comm-MADRL approaches can be analyzed, developed, and compared. By projecting existing works into the multi-dimensional space, we discover interesting trends. We also propose some novel directions for designing future Comm-MADRL systems through exploring possible combinations of the dimensions.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-03-16T22:39:46Z</published>
+    <arxiv:comment>34 pages, 5 figures, 13 tables; published on Autonomous Agents and Multi-Agent Systems</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <arxiv:journal_ref>Auton. Agents Multi Agent Syst. 38(1): 4 (2024)</arxiv:journal_ref>
+    <author>
+      <name>Changxi Zhu</name>
+    </author>
+    <author>
+      <name>Mehdi Dastani</name>
+    </author>
+    <author>
+      <name>Shihan Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.02910v1</id>
+    <title>Causal-Paced Deep Reinforcement Learning</title>
+    <updated>2025-06-24T20:15:01Z</updated>
+    <link href="https://arxiv.org/abs/2507.02910v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.02910v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Designing effective task sequences is crucial for curriculum reinforcement learning (CRL), where agents must gradually acquire skills by training on intermediate tasks. A key challenge in CRL is to identify tasks that promote exploration, yet are similar enough to support effective transfer. While recent approach suggests comparing tasks via their Structural Causal Models (SCMs), the method requires access to ground-truth causal structures, an unrealistic assumption in most RL settings. In this work, we propose Causal-Paced Deep Reinforcement Learning (CP-DRL), a curriculum learning framework aware of SCM differences between tasks based on interaction data approximation. This signal captures task novelty, which we combine with the agent's learnability, measured by reward gain, to form a unified objective. Empirically, CP-DRL outperforms existing curriculum methods on the Point Mass benchmark, achieving faster convergence and higher returns. CP-DRL demonstrates reduced variance with comparable final returns in the Bipedal Walker-Trivial setting, and achieves the highest average performance in the Infeasible variant. These results indicate that leveraging causal relationships between tasks can improve the structure-awareness and sample efficiency of curriculum reinforcement learning. We provide the full implementation of CP-DRL to facilitate the reproduction of our main results at https://github.com/Cho-Geonwoo/CP-DRL.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-24T20:15:01Z</published>
+    <arxiv:comment>Workshop on Causal Reinforcement Learning, Reinforcement Learning Conference (RLC) 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Geonwoo Cho</name>
+    </author>
+    <author>
+      <name>Jaegyun Im</name>
+    </author>
+    <author>
+      <name>Doyoon Kim</name>
+    </author>
+    <author>
+      <name>Sundong Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.08989v1</id>
+    <title>SwS: Self-aware Weakness-driven Problem Synthesis in Reinforcement Learning for LLM Reasoning</title>
+    <updated>2025-06-10T17:02:00Z</updated>
+    <link href="https://arxiv.org/abs/2506.08989v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.08989v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement Learning with Verifiable Rewards (RLVR) has proven effective for training large language models (LLMs) on complex reasoning tasks, such as mathematical problem solving. A prerequisite for the scalability of RLVR is a high-quality problem set with precise and verifiable answers. However, the scarcity of well-crafted human-labeled math problems and limited-verification answers in existing distillation-oriented synthetic datasets limit their effectiveness in RL. Additionally, most problem synthesis strategies indiscriminately expand the problem set without considering the model's capabilities, leading to low efficiency in generating useful questions. To mitigate this issue, we introduce a Self-aware Weakness-driven problem Synthesis framework (SwS) that systematically identifies model deficiencies and leverages them for problem augmentation. Specifically, we define weaknesses as questions that the model consistently fails to learn through its iterative sampling during RL training. We then extract the core concepts from these failure cases and synthesize new problems to strengthen the model's weak areas in subsequent augmented training, enabling it to focus on and gradually overcome its weaknesses. Without relying on external knowledge distillation, our framework enables robust generalization byempowering the model to self-identify and address its weaknesses in RL, yielding average performance gains of 10.0% and 7.7% on 7B and 32B models across eight mainstream reasoning benchmarks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-10T17:02:00Z</published>
+    <arxiv:comment>Reinforcement Learning; Large Language Models; LLM Reasoning</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Xiao Liang</name>
+    </author>
+    <author>
+      <name>Zhong-Zhi Li</name>
+    </author>
+    <author>
+      <name>Yeyun Gong</name>
+    </author>
+    <author>
+      <name>Yang Wang</name>
+    </author>
+    <author>
+      <name>Hengyuan Zhang</name>
+    </author>
+    <author>
+      <name>Yelong Shen</name>
+    </author>
+    <author>
+      <name>Ying Nian Wu</name>
+    </author>
+    <author>
+      <name>Weizhu Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.27659v1</id>
+    <title>Challenges in Credit Assignment for Multi-Agent Reinforcement Learning in Open Agent Systems</title>
+    <updated>2025-10-31T17:30:32Z</updated>
+    <link href="https://arxiv.org/abs/2510.27659v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.27659v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In the rapidly evolving field of multi-agent reinforcement learning (MARL), understanding the dynamics of open systems is crucial. Openness in MARL refers to the dynam-ic nature of agent populations, tasks, and agent types with-in a system. Specifically, there are three types of openness as reported in (Eck et al. 2023) [2]: agent openness, where agents can enter or leave the system at any time; task openness, where new tasks emerge, and existing ones evolve or disappear; and type openness, where the capabil-ities and behaviors of agents change over time. This report provides a conceptual and empirical review, focusing on the interplay between openness and the credit assignment problem (CAP). CAP involves determining the contribution of individual agents to the overall system performance, a task that becomes increasingly complex in open environ-ments. Traditional credit assignment (CA) methods often assume static agent populations, fixed and pre-defined tasks, and stationary types, making them inadequate for open systems. We first conduct a conceptual analysis, in-troducing new sub-categories of openness to detail how events like agent turnover or task cancellation break the assumptions of environmental stationarity and fixed team composition that underpin existing CAP methods. We then present an empirical study using representative temporal and structural algorithms in an open environment. The results demonstrate that openness directly causes credit misattribution, evidenced by unstable loss functions and significant performance degradation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-31T17:30:32Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Alireza Saleh Abadi</name>
+    </author>
+    <author>
+      <name>Leen-Kiat Soh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.06859v2</id>
+    <title>Exact Is Easier: Credit Assignment for Cooperative LLM Agents</title>
+    <updated>2026-05-08T13:18:07Z</updated>
+    <link href="https://arxiv.org/abs/2603.06859v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.06859v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Removing an agent from a cooperative team to measure its contribution seems natural, yet in multi-agent LLM systems this evaluation distorts the result it claims to measure. This failure is not isolated: learned critics, trajectory-level baselines, and agent-removal counterfactuals all inherit from standard multi-agent reinforcement learning a premise that exact counterfactual evaluation requires privileged environment access, and therefore approximate. In cooperative LLM systems, this premise is false. Interaction histories are deterministic functions of observable text with no hidden state, so any decision point can be restored exactly, making direct causal measurement possible without parametric approximation. C3 exploits this property by fixing the complete history at each decision point, sampling alternative actions under a frozen behavior policy, and computing unbiased per-decision advantages through a parameter-free leave-one-out baseline. Across six benchmarks spanning math reasoning and code generation, two model families, and two multi-agent topologies, C3 consistently outperforms all baselines; a controlled decomposition confirms gains originate from credit quality, not architecture, while checkpoint restoration reduces training token consumption. The exact solution proves simpler, cheaper, and more effective than all approximate alternatives. The same structural property that enables exact credit also enables exact verification: three independently computable diagnostics, credit fidelity, within-group variance, and inter-agent influence, constitute the first method-agnostic auditing tool for multi-agent LLM credit assignment. Our code is available at https://github.com/EIT-EAST-Lab/C3</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-06T20:25:11Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yanjun Chen</name>
+    </author>
+    <author>
+      <name>Yirong Sun</name>
+    </author>
+    <author>
+      <name>Hanlin Wang</name>
+    </author>
+    <author>
+      <name>Jinghan Wang</name>
+    </author>
+    <author>
+      <name>Xinming Zhang</name>
+    </author>
+    <author>
+      <name>Xiaoyu Shen</name>
+    </author>
+    <author>
+      <name>Wenjie Li</name>
+    </author>
+    <author>
+      <name>Wei Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.16165v2</id>
+    <title>HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents</title>
+    <updated>2026-05-29T05:19:17Z</updated>
+    <link href="https://arxiv.org/abs/2602.16165v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.16165v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Training LLMs as interactive agents for multi-turn decision-making remains challenging, particularly in long-horizon tasks with sparse and delayed rewards, where agents must execute extended sequences of actions before receiving meaningful feedback. Most existing reinforcement learning (RL) approaches model LLM agents as flat policies operating at a single time scale, selecting one action at each turn. In sparse-reward settings, such flat policies must propagate credit across the entire trajectory without explicit temporal abstraction, which often leads to unstable optimization and inefficient credit assignment.
+  We propose HiPER, a novel Hierarchical Plan-Execute RL framework that explicitly separates high-level planning from low-level execution. HiPER factorizes the policy into a high-level planner that proposes subgoals and a low-level executor that carries them out over multiple action steps. To align optimization with this structure, we introduce a key technique called hierarchical advantage estimation (HAE), which carefully assigns credit at both the planning and execution levels. By aggregating returns over the execution of each subgoal and coordinating updates across the two levels, HAE provides an unbiased gradient estimator and provably reduces variance compared to flat generalized advantage estimation.
+  Empirically, HiPER achieves state-of-the-art performance on challenging interactive benchmarks, reaching 97.4\% success on ALFWorld and 83.3\% on WebShop with Qwen2.5-7B-Instruct (+6.6\% and +8.3\% over the best prior method), with especially large gains on long-horizon tasks requiring multiple dependent subtasks. These results highlight the importance of explicit hierarchical decomposition for scalable RL training of multi-turn LLM agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-18T03:31:34Z</published>
+    <arxiv:comment>ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jiangweizhi Peng</name>
+    </author>
+    <author>
+      <name>Yuanxin Liu</name>
+    </author>
+    <author>
+      <name>Ruida Zhou</name>
+    </author>
+    <author>
+      <name>Charles Fleming</name>
+    </author>
+    <author>
+      <name>Zhaoran Wang</name>
+    </author>
+    <author>
+      <name>Alfredo Garcia</name>
+    </author>
+    <author>
+      <name>Mingyi Hong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1807.05037v1</id>
+    <title>Exploring Hierarchy-Aware Inverse Reinforcement Learning</title>
+    <updated>2018-07-13T12:33:07Z</updated>
+    <link href="https://arxiv.org/abs/1807.05037v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1807.05037v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a new generative model for human planning under the Bayesian Inverse Reinforcement Learning (BIRL) framework which takes into account the fact that humans often plan using hierarchical strategies. We describe the Bayesian Inverse Hierarchical RL (BIHRL) algorithm for inferring the values of hierarchical planners, and use an illustrative toy model to show that BIHRL retains accuracy where standard BIRL fails. Furthermore, BIHRL is able to accurately predict the goals of `Wikispeedia' game players, with inclusion of hierarchical structure in the model resulting in a large boost in accuracy. We show that BIHRL is able to significantly outperform BIRL even when we only have a weak prior on the hierarchical structure of the plans available to the agent, and discuss the significant challenges that remain for scaling up this framework to more realistic settings.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-07-13T12:33:07Z</published>
+    <arxiv:comment>Presented at the first Workshop on Goal Specifications for Reinforcement Learning, ICML 2018, Stockholm, Sweden</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>1st Workshop on Goal Specifications for Reinforcement Learning, ICML 2018, Stockholm, Sweden, 2018</arxiv:journal_ref>
+    <author>
+      <name>Chris Cundy</name>
+    </author>
+    <author>
+      <name>Daniel Filan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1705.05172v1</id>
+    <title>Emotion in Reinforcement Learning Agents and Robots: A Survey</title>
+    <updated>2017-05-15T11:49:56Z</updated>
+    <link href="https://arxiv.org/abs/1705.05172v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.05172v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This article provides the first survey of computational models of emotion in reinforcement learning (RL) agents. The survey focuses on agent/robot emotions, and mostly ignores human user emotions. Emotions are recognized as functional in decision-making by influencing motivation and action selection. Therefore, computational emotion models are usually grounded in the agent's decision making architecture, of which RL is an important subclass. Studying emotions in RL-based agents is useful for three research fields. For machine learning (ML) researchers, emotion models may improve learning efficiency. For the interactive ML and human-robot interaction (HRI) community, emotions can communicate state and enhance user investment. Lastly, it allows affective modelling (AM) researchers to investigate their emotion theories in a successful AI agent class. This survey provides background on emotion theory and RL. It systematically addresses 1) from what underlying dimensions (e.g., homeostasis, appraisal) emotions can be derived and how these can be modelled in RL-agents, 2) what types of emotions have been derived from these dimensions, and 3) how these emotions may either influence the learning efficiency of the agent or be useful as social signals. We also systematically compare evaluation criteria, and draw connections to important RL sub-domains like (intrinsic) motivation and model-based RL. In short, this survey provides both a practical overview for engineers wanting to implement emotions in their RL agents, and identifies challenges and directions for future emotion-RL research.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-15T11:49:56Z</published>
+    <arxiv:comment>To be published in Machine Learning Journal</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Machine Learning 2017</arxiv:journal_ref>
+    <author>
+      <name>Thomas M. Moerland</name>
+    </author>
+    <author>
+      <name>Joost Broekens</name>
+    </author>
+    <author>
+      <name>Catholijn M. Jonker</name>
+    </author>
+    <arxiv:doi>10.1007/s10994-017-5666-0</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10994-017-5666-0" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.22008v1</id>
+    <title>TROFI: Trajectory-Ranked Offline Inverse Reinforcement Learning</title>
+    <updated>2025-06-27T08:22:41Z</updated>
+    <link href="https://arxiv.org/abs/2506.22008v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.22008v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In offline reinforcement learning, agents are trained using only a fixed set of stored transitions derived from a source policy. However, this requires that the dataset be labeled by a reward function. In applied settings such as video game development, the availability of the reward function is not always guaranteed. This paper proposes Trajectory-Ranked OFfline Inverse reinforcement learning (TROFI), a novel approach to effectively learn a policy offline without a pre-defined reward function. TROFI first learns a reward function from human preferences, which it then uses to label the original dataset making it usable for training the policy. In contrast to other approaches, our method does not require optimal trajectories. Through experiments on the D4RL benchmark we demonstrate that TROFI consistently outperforms baselines and performs comparably to using the ground truth reward to learn policies. Additionally, we validate the efficacy of our method in a 3D game environment. Our studies of the reward model highlight the importance of the reward function in this setting: we show that to ensure the alignment of a value function to the actual future discounted reward, it is fundamental to have a well-engineered and easy-to-learn reward function.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-27T08:22:41Z</published>
+    <arxiv:comment>Published at Reinforcement Learning and Video Games Workshop at RLC 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Alessandro Sestini</name>
+    </author>
+    <author>
+      <name>Joakim Bergdahl</name>
+    </author>
+    <author>
+      <name>Konrad Tollmar</name>
+    </author>
+    <author>
+      <name>Andrew D. Bagdanov</name>
+    </author>
+    <author>
+      <name>Linus Gisslén</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1902.03657v1</id>
+    <title>A Bandit Framework for Optimal Selection of Reinforcement Learning Agents</title>
+    <updated>2019-02-10T19:39:28Z</updated>
+    <link href="https://arxiv.org/abs/1902.03657v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1902.03657v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep Reinforcement Learning has been shown to be very successful in complex games, e.g. Atari or Go. These games have clearly defined rules, and hence allow simulation. In many practical applications, however, interactions with the environment are costly and a good simulator of the environment is not available. Further, as environments differ by application, the optimal inductive bias (architecture, hyperparameters, etc.) of a reinforcement agent depends on the application. In this work, we propose a multi-arm bandit framework that selects from a set of different reinforcement learning agents to choose the one with the best inductive bias. To alleviate the problem of sparse rewards, the reinforcement learning agents are augmented with surrogate rewards. This helps the bandit framework to select the best agents early, since these rewards are smoother and less sparse than the environment reward. The bandit has the double objective of maximizing the reward while the agents are learning and selecting the best agent after a finite number of learning steps. Our experimental results on standard environments show that the proposed framework is able to consistently select the optimal agent after a finite number of steps, while collecting more cumulative reward compared to selecting a sub-optimal architecture or uniformly alternating between different agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-02-10T19:39:28Z</published>
+    <arxiv:comment>Published at the 32nd Conference on Neural Information Processing Systems (NIPS 2018), Montreal, Canada. Deep Reinforcement Learning Workshop</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Andreas Merentitis</name>
+    </author>
+    <author>
+      <name>Kashif Rasul</name>
+    </author>
+    <author>
+      <name>Roland Vollgraf</name>
+    </author>
+    <author>
+      <name>Abdul-Saboor Sheikh</name>
+    </author>
+    <author>
+      <name>Urs Bergmann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1909.13839v1</id>
+    <title>RLCache: Automated Cache Management Using Reinforcement Learning</title>
+    <updated>2019-09-30T17:03:51Z</updated>
+    <link href="https://arxiv.org/abs/1909.13839v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1909.13839v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This study investigates the use of reinforcement learning to guide a general purpose cache manager decisions. Cache managers directly impact the overall performance of computer systems. They govern decisions about which objects should be cached, the duration they should be cached for, and decides on which objects to evict from the cache if it is full. These three decisions impact both the cache hit rate and size of the storage that is needed to achieve that cache hit rate. An optimal cache manager will avoid unnecessary operations, maximise the cache hit rate which results in fewer round trips to a slower backend storage system, and minimise the size of storage needed to achieve a high hit-rate.
+  This project investigates using reinforcement learning in cache management by designing three separate agents for each of the cache manager tasks. Furthermore, the project investigates two advanced reinforcement learning architectures for multi-decision problems: a single multi-task agent and a multi-agent. We also introduce a framework to simplify the modelling of computer systems problems as a reinforcement learning task. The framework abstracts delayed experiences observations and reward assignment in computer systems while providing a flexible way to scale to multiple agents.
+  Simulation results based on an established database benchmark system show that reinforcement learning agents can achieve a higher cache hit rate over heuristic driven algorithms while minimising the needed space. They are also able to adapt to a changing workload and dynamically adjust their caching strategy accordingly. The proposed cache manager model is generic and applicable to other types of caches, such as file system caches. This project is the first, to our knowledge, to model cache manager decisions as a multi-task control problem.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-09-30T17:03:51Z</published>
+    <arxiv:comment>MPhil Thesis, 76 pages, Reinforcement Learning, Multi-agent, multi-task</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Sami Alabed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.13733v2</id>
+    <title>Vision-Language-Action Jump-Starting for Reinforcement Learning Robotic Agents</title>
+    <updated>2026-06-09T22:41:14Z</updated>
+    <link href="https://arxiv.org/abs/2604.13733v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.13733v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) enables high-frequency, closed-loop control for robotic manipulation, but scaling to long-horizon tasks with sparse or imperfect rewards remains difficult due to inefficient exploration and poor credit assignment. Vision-Language-Action (VLA) models leverage large-scale multimodal pretraining to provide generalist, task-level reasoning, but current limitations hinder their direct use in fast and precise manipulation. In this paper, we propose Vision-Language-Action Jump-Starting (VLAJS), a method that bridges sparse VLA guidance with on-policy RL to improve exploration and learning efficiency. VLAJS treats VLAs as transient sources of high-level action suggestions that bias early exploration and improve credit assignment, while preserving the high-frequency, state-based control of RL. Our approach augments Proximal Policy Optimization (PPO) with a directional action-consistency regularization that softly aligns the RL agent's actions with VLA guidance during early training, without enforcing strict imitation, requiring demonstrations, or relying on continuous teacher queries. VLA guidance is applied sparsely and annealed over time, allowing the agent to adapt online and ultimately surpass the guiding policy. We evaluate VLAJS on six challenging manipulation tasks: lifting, pick-and-place, peg reorientation, peg insertion, poking, and pushing in simulation, and validate a subset on a real Franka Panda robot. VLAJS consistently outperforms PPO and distillation-style baselines in sample efficiency, reducing required environment interactions by over 50% in several tasks. Real-world experiments demonstrate zero-shot sim-to-real transfer and robust execution under clutter, object variation, and external perturbations.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-15T11:17:54Z</published>
+    <arxiv:comment>ICRA 2026 Workshop on Reinforcement Learning in the Era of Imitation Learning</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Angelo Moroncelli</name>
+    </author>
+    <author>
+      <name>Roberto Zanetti</name>
+    </author>
+    <author>
+      <name>Marco Maccarini</name>
+    </author>
+    <author>
+      <name>Loris Roveda</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2412.14779v1</id>
+    <title>Agent-Temporal Credit Assignment for Optimal Policy Preservation in Sparse Multi-Agent Reinforcement Learning</title>
+    <updated>2024-12-19T12:05:13Z</updated>
+    <link href="https://arxiv.org/abs/2412.14779v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.14779v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In multi-agent environments, agents often struggle to learn optimal policies due to sparse or delayed global rewards, particularly in long-horizon tasks where it is challenging to evaluate actions at intermediate time steps. We introduce Temporal-Agent Reward Redistribution (TAR$^2$), a novel approach designed to address the agent-temporal credit assignment problem by redistributing sparse rewards both temporally and across agents. TAR$^2$ decomposes sparse global rewards into time-step-specific rewards and calculates agent-specific contributions to these rewards. We theoretically prove that TAR$^2$ is equivalent to potential-based reward shaping, ensuring that the optimal policy remains unchanged. Empirical results demonstrate that TAR$^2$ stabilizes and accelerates the learning process. Additionally, we show that when TAR$^2$ is integrated with single-agent reinforcement learning algorithms, it performs as well as or better than traditional multi-agent reinforcement learning methods.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-19T12:05:13Z</published>
+    <arxiv:comment>12 pages, 1 figure</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Aditya Kapoor</name>
+    </author>
+    <author>
+      <name>Sushant Swamy</name>
+    </author>
+    <author>
+      <name>Kale-ab Tessera</name>
+    </author>
+    <author>
+      <name>Mayank Baranwal</name>
+    </author>
+    <author>
+      <name>Mingfei Sun</name>
+    </author>
+    <author>
+      <name>Harshad Khadilkar</name>
+    </author>
+    <author>
+      <name>Stefano V. Albrecht</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2206.01207v1</id>
+    <title>RACA: Relation-Aware Credit Assignment for Ad-Hoc Cooperation in Multi-Agent Deep Reinforcement Learning</title>
+    <updated>2022-06-02T03:39:27Z</updated>
+    <link href="https://arxiv.org/abs/2206.01207v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2206.01207v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In recent years, reinforcement learning has faced several challenges in the multi-agent domain, such as the credit assignment issue. Value function factorization emerges as a promising way to handle the credit assignment issue under the centralized training with decentralized execution (CTDE) paradigm. However, existing value function factorization methods cannot deal with ad-hoc cooperation, that is, adapting to new configurations of teammates at test time. Specifically, these methods do not explicitly utilize the relationship between agents and cannot adapt to different sizes of inputs. To address these limitations, we propose a novel method, called Relation-Aware Credit Assignment (RACA), which achieves zero-shot generalization in ad-hoc cooperation scenarios. RACA takes advantage of a graph-based relation encoder to encode the topological structure between agents. Furthermore, RACA utilizes an attention-based observation abstraction mechanism that can generalize to an arbitrary number of teammates with a fixed number of parameters. Experiments demonstrate that our method outperforms baseline methods on the StarCraftII micromanagement benchmark and ad-hoc cooperation scenarios.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-06-02T03:39:27Z</published>
+    <arxiv:comment>Accepted at IJCNN 2022 (Oral)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hao Chen</name>
+    </author>
+    <author>
+      <name>Guangkai Yang</name>
+    </author>
+    <author>
+      <name>Junge Zhang</name>
+    </author>
+    <author>
+      <name>Qiyue Yin</name>
+    </author>
+    <author>
+      <name>Kaiqi Huang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1810.03779v3</id>
+    <title>Reinforcement Learning for Improving Agent Design</title>
+    <updated>2019-12-02T10:49:36Z</updated>
+    <link href="https://arxiv.org/abs/1810.03779v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1810.03779v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In many reinforcement learning tasks, the goal is to learn a policy to manipulate an agent, whose design is fixed, to maximize some notion of cumulative reward. The design of the agent's physical structure is rarely optimized for the task at hand. In this work, we explore the possibility of learning a version of the agent's design that is better suited for its task, jointly with the policy. We propose an alteration to the popular OpenAI Gym framework, where we parameterize parts of an environment, and allow an agent to jointly learn to modify these environment parameters along with its policy. We demonstrate that an agent can learn a better structure of its body that is not only better suited for the task, but also facilitates policy learning. Joint learning of policy and structure may even uncover design principles that are useful for assisted-design applications. Videos of results at https://designrl.github.io/</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-10-09T02:32:37Z</published>
+    <arxiv:comment>Earlier version appeared at NeurIPS 2018 Deep Reinforcement Learning Workshop. Published in Artificial Life journal</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Artificial Life 25 (4), 352-365, 2019</arxiv:journal_ref>
+    <author>
+      <name>David Ha</name>
+    </author>
+    <arxiv:doi>10.1162/artl_a_00301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1162/artl_a_00301" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2107.08083v1</id>
+    <title>Robust Risk-Sensitive Reinforcement Learning Agents for Trading Markets</title>
+    <updated>2021-07-16T19:15:13Z</updated>
+    <link href="https://arxiv.org/abs/2107.08083v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.08083v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Trading markets represent a real-world financial application to deploy reinforcement learning agents, however, they carry hard fundamental challenges such as high variance and costly exploration. Moreover, markets are inherently a multiagent domain composed of many actors taking actions and changing the environment. To tackle these type of scenarios agents need to exhibit certain characteristics such as risk-awareness, robustness to perturbations and low learning variance. We take those as building blocks and propose a family of four algorithms. First, we contribute with two algorithms that use risk-averse objective functions and variance reduction techniques. Then, we augment the framework to multi-agent learning and assume an adversary which can take over and perturb the learning process. Our third and fourth algorithms perform well under this setting and balance theoretical guarantees with practical use. Additionally, we consider the multi-agent nature of the environment and our work is the first one extending empirical game theory analysis for multi-agent learning by considering risk-sensitive payoffs.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-16T19:15:13Z</published>
+    <arxiv:comment>Reinforcement Learning for Real Life (RL4RealLife) Workshop at ICML 2021</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yue Gao</name>
+    </author>
+    <author>
+      <name>Kry Yik Chau Lui</name>
+    </author>
+    <author>
+      <name>Pablo Hernandez-Leal</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2307.11897v2</id>
+    <title>Hindsight-DICE: Stable Credit Assignment for Deep Reinforcement Learning</title>
+    <updated>2023-08-18T18:35:02Z</updated>
+    <link href="https://arxiv.org/abs/2307.11897v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.11897v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Oftentimes, environments for sequential decision-making problems can be quite sparse in the provision of evaluative feedback to guide reinforcement-learning agents. In the extreme case, long trajectories of behavior are merely punctuated with a single terminal feedback signal, leading to a significant temporal delay between the observation of a non-trivial reward and the individual steps of behavior culpable for achieving said reward. Coping with such a credit assignment challenge is one of the hallmark characteristics of reinforcement learning. While prior work has introduced the concept of hindsight policies to develop a theoretically moxtivated method for reweighting on-policy data by impact on achieving the observed trajectory return, we show that these methods experience instabilities which lead to inefficient learning in complex environments. In this work, we adapt existing importance-sampling ratio estimation techniques for off-policy evaluation to drastically improve the stability and efficiency of these so-called hindsight policy methods. Our hindsight distribution correction facilitates stable, efficient learning across a broad range of environments where credit assignment plagues baseline methods.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-21T20:54:52Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Akash Velu</name>
+    </author>
+    <author>
+      <name>Skanda Vaidyanath</name>
+    </author>
+    <author>
+      <name>Dilip Arumugam</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2211.03994v1</id>
+    <title>Reinforcement Learning with Stepwise Fairness Constraints</title>
+    <updated>2022-11-08T04:06:23Z</updated>
+    <link href="https://arxiv.org/abs/2211.03994v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2211.03994v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>AI methods are used in societally important settings, ranging from credit to employment to housing, and it is crucial to provide fairness in regard to algorithmic decision making. Moreover, many settings are dynamic, with populations responding to sequential decision policies. We introduce the study of reinforcement learning (RL) with stepwise fairness constraints, requiring group fairness at each time step. Our focus is on tabular episodic RL, and we provide learning algorithms with strong theoretical guarantees in regard to policy optimality and fairness violation. Our framework provides useful tools to study the impact of fairness constraints in sequential settings and brings up new challenges in RL.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-11-08T04:06:23Z</published>
+    <arxiv:comment>Fairness, Reinforcement Learning</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zhun Deng</name>
+    </author>
+    <author>
+      <name>He Sun</name>
+    </author>
+    <author>
+      <name>Zhiwei Steven Wu</name>
+    </author>
+    <author>
+      <name>Linjun Zhang</name>
+    </author>
+    <author>
+      <name>David C. Parkes</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18805v1</id>
+    <title>RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents</title>
+    <updated>2026-05-11T18:55:32Z</updated>
+    <link href="https://arxiv.org/abs/2605.18805v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18805v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM recommendation agents increasingly produce structured recommendation reports: sets of items accompanied by natural-language justifications. Yet existing evaluations often reduce this setting to reranking small shortlisted candidate sets or judge reports mainly by semantic plausibility. We introduce Recommendation Atlas (Agentic Tool-Level Assessment for Shopping), or RecoAtlas, a benchmark and toolkit for evaluating shopping agents with behavior-grounded metrics. RecoAtlas complements held-out interaction metrics with learned utility proxies for relevance, complementarity, and diversity derived from interaction data, while separately measuring semantic coherence and explanation quality. Its controlled tool environment exposes agents to either semantic, behavior-aligned, or faulty tools, enabling diagnosis of whether performance gains arise from stronger reasoning, better signals, or more effective tool-use policies. Across controlled experiments, we show that RecoAtlas exhibits key properties of a meaningful benchmark for agentic systems: performance scales with model capacity and test-time compute, improves with stronger and better-aligned tools, degrades under noisy or misaligned signals, and reveals that semantic plausibility does not necessarily capture behavior-grounded utility. RecoAtlas provides a foundation for developing and evaluating shopping assistants that optimize not only for plausible recommendations, but also for coherent, behaviorally grounded recommendation sets.</summary>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-11T18:55:32Z</published>
+    <arxiv:comment>Benchmark on LLM Recommendation Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.IR"/>
+    <author>
+      <name>Imad Aouali</name>
+    </author>
+    <author>
+      <name>Flavian Vasile</name>
+    </author>
+    <author>
+      <name>Otmane Sakhi</name>
+    </author>
+    <author>
+      <name>Alexandre Gilotte</name>
+    </author>
+    <author>
+      <name>Benjamin Heymann</name>
+    </author>
+  </entry>
+</feed>

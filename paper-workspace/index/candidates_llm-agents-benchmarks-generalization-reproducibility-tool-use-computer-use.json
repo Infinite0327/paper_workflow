@@ -1,0 +1,1425 @@
+{
+  "query": "LLM agents benchmarks generalization reproducibility tool use computer use",
+  "requested_limit": 45,
+  "created_at": "2026-07-29T12:13:31",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=LLM+agents+benchmarks+generalization+reproducibility+tool+use+computer+use",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "CodeNav: Beyond tool-use to using real-world codebases with LLM agents",
+      "authors": [
+        "Tanmay Gupta",
+        "Luca Weihs",
+        "Aniruddha Kembhavi"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "We present CodeNav, an LLM agent that navigates and leverages previously unseen code repositories to solve user queries. In contrast to tool-use LLM agents that require ``registration'' of all relevant tools via manual descriptions within the LLM context, CodeNav automatically indexes and searches over code blocks in the target codebase, finds relevant code snippets, imports them, and uses them to iteratively generate a solution with execution feedback. To highlight the core-capabilities of CodeNav, we first showcase three case studies where we use CodeNav for solving complex user queries using three diverse codebases. Next, on three benchmarks, we quantitatively compare the effectiveness of code-use (which only has access to the target codebase) to tool-use (which has privileged access to all tool names and descriptions). Finally, we study the effect of varying kinds of tool and library descriptions on code-use performance, as well as investigate the advantage of the agent seeing source code as opposed to natural descriptions of code. All code will be made open source under a permissive license.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2406.12276v1",
+      "url": "http://arxiv.org/abs/2406.12276v1",
+      "pdf_url": "https://arxiv.org/pdf/2406.12276v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2406.12276v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 57.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "OSWorld-MCP: Benchmarking MCP Tool Invocation In Computer-Use Agents",
+      "authors": [
+        "Hongrui Jia",
+        "Jitong Liao",
+        "Xi Zhang",
+        "Haiyang Xu",
+        "Tianbao Xie",
+        "Chaoya Jiang",
+        "Ming Yan",
+        "Si Liu",
+        "Wei Ye",
+        "Fei Huang"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "With advances in decision-making and reasoning capabilities, multimodal agents show strong potential in computer application scenarios. Past evaluations have mainly assessed GUI interaction skills, while tool invocation abilities, such as those enabled by the Model Context Protocol (MCP), have been largely overlooked. Comparing agents with integrated tool invocation to those evaluated only on GUI interaction is inherently unfair. We present OSWorld-MCP, the first comprehensive and fair benchmark for assessing computer-use agents' tool invocation, GUI operation, and decision-making abilities in a real-world environment. We design a novel automated code-generation pipeline to create tools and combine them with a curated selection from existing tools. Rigorous manual validation yields 158 high-quality tools (covering 7 common applications), each verified for correct functionality, practical applicability, and versatility. Extensive evaluations of state-of-the-art multimodal agents on OSWorld-MCP show that MCP tools generally improve task success rates (e.g., from 8.3% to 20.4% for OpenAI o3 at 15 steps, from 40.1% to 43.3% for Claude 4 Sonnet at 50 steps), underscoring the importance of assessing tool invocation capabilities. However, even the strongest models have relatively low tool invocation rates, Only 36.3%, indicating room for improvement and highlighting the benchmark's challenge. By explicitly measuring MCP tool usage skills, OSWorld-MCP deepens understanding of multimodal agents and sets a new standard for evaluating performance in complex, tool-assisted environments. Our code, environment, and data are publicly available at https://osworld-mcp.github.io.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2510.24563v2",
+      "url": "http://arxiv.org/abs/2510.24563v2",
+      "pdf_url": "https://arxiv.org/pdf/2510.24563v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2510.24563v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MANTRA: Synthesizing SMT-Validated Compliance Benchmarks for Tool-Using LLM Agents",
+      "authors": [
+        "Ashwani Anand",
+        "Ivi Chatzi",
+        "Ritam Raha",
+        "Anne-Kathrin Schmuck"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Tool-using large language model (LLM) agents are increasingly deployed in settings where their reliable behavior is governed by strict procedural manuals. Ensuring that such agents comply with the rules from these manuals is challenging, as they are typically written for humans in natural language while agent behavior manifests as an execution trace of tool calls. Existing evaluations of LLM agents rely on manually constructed benchmarks or LLM-based judges, which either do not scale or lack reliability for complex, long-horizon manuals. To overcome these limitations, we present MANTRA, a framework for automatically synthesizing machine-checkable compliance benchmarks from natural-language manuals and tool schemas. MANTRA independently generates (i) a symbolic world model capturing procedural dependencies, and (ii) a set of trace-level compliance checks for a given task, and validates their consistency using SMT solving. A structured repair loop resolves inconsistencies, requiring human intervention only as a fallback. %This yields benchmarks that are formally validated. Importantly, MANTRA supports arbitrary domains and long procedural manuals, and provides a tunable notion of task complexity which is utilized to automatically derive challenging tasks accompanying compliance checks. Using MANTRA, we build a new benchmark suite with 285 tasks across 6 domains scaling to 50+ page manuals with minimal human effort. Empirically, we show that the compliance checks are richer with stronger constraint enforcement compared to existing benchmarks. Additionally, the granularity of the checks can be used for debugging the agents' failure modes. These results demonstrate that combining automated benchmark generation with formally grounded validation methods enables scalable and reliable benchmarking of tool-using agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.06334v1",
+      "url": "http://arxiv.org/abs/2605.06334v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.06334v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2605.06334v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "ToolFailBench: Diagnosing Tool-Use Failures in LLM Agents",
+      "authors": [
+        "Harsh Soni"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Tool calling is central to modern language model agents, but aggregate benchmark scores often hide where tool use fails. A model that never calls a needed tool and a model that calls the tool but ignores the result can look similar under final task accuracy. We introduce ToolFailBench, a diagnostic benchmark for measuring tool-use failures across 1,000 tasks in finance, medicine, law, cybersecurity, and real estate. Tool-required tasks return values the model wouldn't guess, forcing it to trust the tool while control tasks attach the same tools but should be answered directly. We label each trace with Tool-Skip, Result-Ignore, Output-Fabrication, and Unnecessary-Tool-Use, using a rule classifier and two LLM judges aggregated by majority vote. Across 19 headline models, the best reaches 86.33% Clean Tool-Use Rate, showing that faithful tool use is not saturated. More importantly, models with similar aggregate scores fail in different ways: most stay disciplined on no-tool controls, while Llama-3.1 models show an Always-Call pattern, and at the same parameter scale Llama-3.1-70B and Qwen2.5-72B differ by 89 percentage points on control-task accuracy. Tool-use evaluation should measure not only whether agents call tools, but whether they use tool outputs correctly and avoid tools when none is needed.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2607.04686v1",
+      "url": "http://arxiv.org/abs/2607.04686v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.04686v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2607.04686v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Hybrid Analysis for Secure MCP Tool Use in LLM Agents",
+      "authors": [
+        "Ping He",
+        "Yuexiang Xie",
+        "Yaliang Li",
+        "Shouling Ji"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "The rapid development of large language model (LLM) agents has enabled their broad adoption across diverse real-world tasks. To standardize interactions between LLM agents and external environments, Model Context Protocol (MCP) tools have emerged as a de facto standard and have been widely integrated into these systems. However, the use of MCP tools also introduces new safety risks, as LLM agents can be induced to perform malicious or unauthorized actions. Although prior work has proposed defenses for securing tool use in LLM agents, most methods rely on static analysis, i.e., inspecting prompts and generated outputs, which limits the defense effectiveness and robustness. To address these limitations, we propose MTGuard, a hybrid analysis-based defense framework designed to safeguard the use of MCP tools in LLM agents by leveraging lifecycle-aware static-dynamic co-analysis. Extensive evaluation demonstrates that MTGuard effectively mitigates multiple categories of harmful tool use across different LLM agents while maintaining performance on benign user tasks.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2607.25297v1",
+      "url": "http://arxiv.org/abs/2607.25297v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.25297v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2607.25297v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Graph-Structured Persistent Memory for Efficient LLM-Based Computer Use Agents",
+      "authors": [
+        "Danylo Vorvul",
+        "Andrii Musienko",
+        "Iryna Galchenko",
+        "Mykola Myroniuk",
+        "Andrii Sobchuk"
+      ],
+      "year": 2026,
+      "venue": "Axioms",
+      "abstract": "Large language model (LLM)-driven computer use agents (CUAs) automate graphical user interface (GUI) tasks but often re-solve previously encountered subtasks, increasing token use and latency. We address this limitation with a directed graph-based persistent memory in which nodes represent observable GUI states and edges encode executable action sequences. We formalize the memory-augmented agent as S=⟨A,Σ,G,δ,π,Φ⟩, define task reachability and memory-coverage conditions inspired by functional stability theory, and derive token-cost efficiency bounds. In control-theoretic terms, the Manager–Worker architecture can be interpreted as a closed-loop system where memory provides experience-based feedback; this interpretation is used as an analogy rather than a full model-reference adaptive control proof. Experiments on OSWorld show that the proposed agent cuts both the LLM token consumption and execution time by about 50% versus a memoryless baseline while preserving comparable success rates (≈36.9% on 15-step and ≈46.9% on 50-step tasks). The demonstrated contribution is therefore operational efficiency through reusable graph memory, not a claim of improved task success or classical Lyapunov stability.",
+      "citation_count": 0,
+      "doi": "10.3390/axioms15060415",
+      "url": "https://doi.org/10.3390/axioms15060415",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3390/axioms15060415",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "An Agentic LLM Framework for Autonomous Surgical Continuum Monitoring: ReAct-Driven Tool-Use Agents for Presurgical, Intraoperative, and Postsurgical Cardiopulmonary Care",
+      "authors": [
+        "Charalampia Pylarinou",
+        "Lefteris Gortzis",
+        "Vasileios Leivaditis",
+        "Elias Liolis",
+        "Andreas Antzoulas",
+        "Spyros Papadoulas",
+        "Konstantinos Nikolakopoulos",
+        "Ioannis Panagiotopoulos",
+        "Sofoklis Mitsos",
+        "Periklis Tomos",
+        "Efstratios Koletsis",
+        "Francesk Mulita"
+      ],
+      "year": 2026,
+      "venue": "Bioengineering",
+      "abstract": "Background: Rule-based multi-agent system (MAS) architectures for healthcare coordination rely on hardcoded decision trees that cannot generalise to novel clinical scenarios or self-correct reasoning errors. These limitations are acute in surgical continuum care, where patients traverse presurgical risk stratification, intraoperative monitoring, postsurgical ICU, ward care, and remote rehabilitation over days to weeks—a complexity no fixed-policy agent architecture can address without prohibitive rule engineering. Objective: We present the first agentic large language model (LLM) framework for autonomous end-to-end surgical continuum monitoring, superseding the prior rule-based MAS Digital Twin. Six ReAct-driven tool-use agents replace fixed-policy agents with dynamic reasoning, multi-hop evidence retrieval, and Reflexion self-correction while maintaining mandatory confidence-gated Human-in-the-Loop (HITL) gating at every care-pathway-modifying decision. Methods: The framework is grounded in the ReAct paradigm and Reflexion self-evaluation, embedded within the DETER Digital Twin state engine S(t). Each agent is specified by a ReAct loop signature, a ten-function clinical tool registry, and confidence-gated HITL escalation logic. Inter-agent coordination replaces the rule-based Priority Queue Manager with an LLM-mediated Coordination Supervisor Agent reasoning over competing resource requests. Results: The framework delivers: (i) six formally specified ReAct-loop agents with explicit tool registries and authorisation boundaries; (ii) a confidence-gated HITL architecture that reduces alert fatigue while preserving safety for ambiguous clinical scenarios; (iii) an extended conflict resolution function P(p,t,context) incorporating surgical phase and DETER deterioration trajectory gradient; (iv) Reflexion self-correction with a formal N_max = 2 termination condition and Clinical Factuality Verification Layer; and (v) a multi-phase Digital Twin state engine extending S(t) to the full surgical continuum. Conclusions: The proposed framework represents a fundamental architectural departure from rule-based clinical AI—from hardcoded policies to dynamic reasoning, from static retrieval to multi-hop tool-use chains, and from fixed escalation thresholds to confidence-gated self-evaluation—providing a formally specified, clinically deployable foundation for next-generation autonomous surgical care coordination.",
+      "citation_count": 0,
+      "doi": "10.3390/bioengineering13060686",
+      "url": "https://doi.org/10.3390/bioengineering13060686",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3390/bioengineering13060686",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "BIMgent: Towards Autonomous Building Modeling via Computer-use Agents",
+      "authors": [
+        "Zihan Deng",
+        "Changyu Du",
+        "Stavros Nousias",
+        "André Borrmann"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Existing computer-use agents primarily focus on general-purpose desktop automation tasks, with limited exploration of their application in highly specialized domains. In particular, the 3D building modeling process in the Architecture, Engineering, and Construction (AEC) sector involves open-ended design tasks and complex interaction patterns within Building Information Modeling (BIM) authoring software, which has yet to be thoroughly addressed by current studies. In this paper, we propose BIMgent, an agentic framework powered by multimodal large language models (LLMs), designed to enable autonomous building model authoring via graphical user interface (GUI) operations. BIMgent automates the architectural building modeling process, including multimodal input for conceptual design, planning of software-specific workflows, and efficient execution of the authoring GUI actions. We evaluate BIMgent on real-world building modeling tasks, including both text-based conceptual design generation and reconstruction from existing building design. The design quality achieved by BIMgent was found to be reasonable. Its operations achieved a 32% success rate, whereas all baseline models failed to complete the tasks (0% success rate). Results demonstrate that BIMgent effectively reduces manual workload while preserving design intent, highlighting its potential for practical deployment in real-world architectural modeling scenarios. Project page: https://tumcms.github.io/BIMgent.github.io/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2506.07217v2",
+      "url": "http://arxiv.org/abs/2506.07217v2",
+      "pdf_url": "https://arxiv.org/pdf/2506.07217v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2506.07217v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents",
+      "authors": [
+        "Thomas Kuntz",
+        "Agatha Duzan",
+        "Hao Zhao",
+        "Francesco Croce",
+        "Zico Kolter",
+        "Nicolas Flammarion",
+        "Maksym Andriushchenko"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Computer use agents are LLM-based agents that can directly interact with a graphical user interface, by processing screenshots or accessibility trees. While these systems are gaining popularity, their safety has been largely overlooked, despite the fact that evaluating and understanding their potential for harmful behavior is essential for widespread adoption. To address this gap, we introduce OS-Harm, a new benchmark for measuring safety of computer use agents. OS-Harm is built on top of the OSWorld environment and aims to test models across three categories of harm: deliberate user misuse, prompt injection attacks, and model misbehavior. To cover these cases, we create 150 tasks that span several types of safety violations (harassment, copyright infringement, disinformation, data exfiltration, etc.) and require the agent to interact with a variety of OS applications (email client, code editor, browser, etc.). Moreover, we propose an automated judge to evaluate both accuracy and safety of agents that achieves high agreement with human annotations (0.76 and 0.79 F1 score). We evaluate computer use agents based on a range of frontier models - such as o4-mini, Claude 3.7 Sonnet, Gemini 2.5 Pro - and provide insights into their safety. In particular, all models tend to directly comply with many deliberate misuse queries, are relatively vulnerable to static prompt injections, and occasionally perform unsafe actions. The OS-Harm benchmark is available at https://github.com/tml-epfl/os-harm.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2506.14866v2",
+      "url": "http://arxiv.org/abs/2506.14866v2",
+      "pdf_url": "https://arxiv.org/pdf/2506.14866v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2506.14866v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Empowering LLM-based Agents: Methods and Challenges in Tool Use",
+      "authors": [
+        "Xinyue Du"
+      ],
+      "year": 2025,
+      "venue": "Applied and Computational Engineering",
+      "abstract": "The emergence of Large Language Model (LLM)-based agents marks a significant step towards more capable Artificial Intelligence. However, the effectiveness of these agents is fundamentally constrained by the static nature of their internal knowledge. Tool use has become a critical paradigm to overcome these limitations, enabling agents to interact with dynamic data, execute complex computations, and act upon the world. This paper provides a comprehensive survey of the methods, challenges, and future directions in empowering LLM-based agents with tool-use capabilities. Through a systematic literature review, we synthesized the current state of the art, charting the evolution from foundational agent architectures and core invocation mechanisms like function calling to advanced strategies such as dynamic tool retrieval and autonomous tool creation. Our analysis revealed several critical challenges that impede the deployment of robust agents, including knowledge conflicts between internal priors and external evidence, significant performance degradation in long-context scenarios, non-monotonic scaling behaviors in compound systems, and novel security vulnerabilities. By mapping the current research landscape and identifying these key obstacles, this survey proposes a research agenda to guide future efforts in building more capable, secure, and reliable AI agents.",
+      "citation_count": 0,
+      "doi": "10.54254/2755-2721/2026.tj28954",
+      "url": "https://doi.org/10.54254/2755-2721/2026.tj28954",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.54254/2755-2721/2026.tj28954",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "latest-sota",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Agents at Risk: How Users Unwittingly Undermine LLM Safety",
+      "authors": [
+        "Fengchao Chen",
+        "Tingmin Wu",
+        "Van Nguyen",
+        "Surya. Nepal",
+        "Carsten Rudolph"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we introduce the User-Relayed Context Manipulation (UReCoM) attack, in which attackers manipulate benign users into relaying adversarial content within user requests, thereby relocating external adversarial content into user-provided task context. Our experimental evaluation shows that UReCoM outperforms five prompt-injection baselines (naive, context ignoring, fake completion, escape-character attacks, and combined attacks) under prevention-based (Sandwich, StruQ, and SecAlign) and detection-based defenses (Perplexity detection, DataSentinel, and CausalArmor). Additionally, UReCoM shows that LLMs can reject explicit malicious instructions more reliably than they can identify adversarial task entities, such as promotion codes, embedded within user requests. On 12 commercial LLM-based agents, we find that validation of adversarial task entities is largely prompt-driven rather than default, highlighting a design flaw in current agent frameworks. These results indicate that current defenses and deployed agents remain insufficient against user-relayed context manipulations, highlighting the need for task-entity-level prevention and default safety verification in LLM-based agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.10758v3",
+      "url": "http://arxiv.org/abs/2601.10758v3",
+      "pdf_url": "https://arxiv.org/pdf/2601.10758v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.10758v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MacArena: Benchmarking Computer Use Agents on an Online macOS Environment",
+      "authors": [
+        "Victor Muryn",
+        "Maksym Shamrai",
+        "Sofiia Mazepa",
+        "Yehor Khodysko"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly, driven in part by standardized online evaluation benchmarks such as OSWorld, which serve both as evaluation tools and as training environments for reinforcement learning. However, macOS remains underserved in this landscape: the only existing benchmark, macOSWorld, covers a narrow slice of first-party applications with simpler tasks, and runs on x86 virtual machines incompatible with Apple Silicon. We introduce MacArena, a benchmark of 421 manually verified tasks spanning 50 applications that combines a curated port of OSWorld tasks, content sourced from macOSWorld, and 49 new macOS-native tasks, all running on Apple's native Virtualization framework on Apple Silicon. We argue that macOS presents distinct GUI challenges beyond what Linux-based benchmarks capture, and our evaluation supports this claim: strong model performance on existing benchmarks can reflect familiarity with task distributions rather than genuine cross-platform GUI competence. Notably, model rankings invert between ported and macOS-native tasks, with a leading model trailing by over 26% on the MacArena subset, suggesting that macOS poses a genuinely harder environment for current GUI agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2606.06560v1",
+      "url": "http://arxiv.org/abs/2606.06560v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.06560v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2606.06560v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "ToolPrivacyBench: Benchmarking Purpose-Bound Privacy in Tool-Using LLM Agents",
+      "authors": [
+        "Shijing Hu",
+        "Liang Liu",
+        "Zhu Meng",
+        "Zhicheng Zhao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language models (LLMs) have increasingly moved from standalone text generation systems to agents that invoke external tools, access environments, and execute multi-step tasks. However, conventional function-calling benchmarks mainly evaluate task completion and API correctness, while privacy evaluation benchmarks typically focus on final responses or privacy judgments. Neither perspective captures purpose-bound information flow across an executed multi-tool trajectory. Motivated by this limitation in current agent evaluation, ToolPrivacyBench audits whether task-private atoms are routed only to authorized tools and downstream sinks, thereby evaluating both task completion and privacy over-disclosure during tool use. The benchmark contains 2,150 cases, including 1,150 fully synthetic privacy-sensitive business workflows and 1,000 cases adapted from existing multi-tool and function-calling benchmarks. Each case is represented by a policy knowledge base. After an agent executes against mock business backends, the evaluator compares recorded tool arguments and backend audit logs with this policy knowledge base. The evaluation covers nine widely used agents to characterize purpose-bound privacy over-disclosure. The results show that successful tool execution does not imply appropriate privacy disclosure: an agent may complete a task while transmitting unnecessary private information through intermediate tool calls. ToolPrivacyBench therefore formalizes a need-to-know disclosure boundary, under which each tool should receive only the information necessary for its stated purpose, and uses trajectory-level auditing to identify privacy over-disclosure in multi-tool workflows.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2606.28061v1",
+      "url": "http://arxiv.org/abs/2606.28061v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.28061v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2606.28061v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use",
+      "authors": [
+        "Ruocheng Guo",
+        "Kaiwen Dong",
+        "Xiang Gao",
+        "Kamalika Das"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "While most efforts to improve LLM-based tool-using agents focus on the agent itself - through larger models, better prompting, or fine-tuning - agent performance increasingly plateaus due to the quality of the tool interfaces these agents consume. Tool descriptions are often written for human developers and tolerate ambiguity that agents cannot resolve, particularly as the number of candidate tools grows. Existing approaches to improving tool interfaces (1) require re-running a multi-stage per-tool pipeline - synthesizing queries, executing an agent to collect trajectories, annotating trajectories, and prompting a strong LLM multiple times - for every API that enters the catalog, and (2) typically optimize each tool independently, limiting scalability and generalization to unseen tools. We propose Trace-Free+, a curriculum learning framework that progressively transfers supervision from trace-rich settings to trace-free deployment, encouraging the model to internalize reusable patterns of what makes a tool description effective. To support this approach, we construct a large-scale dataset of high-quality tool interfaces derived from real-world APIs through a principled data synthesis workflow. Experiments on widely adopted benchmarks show that Trace-Free+ improves robustness as tool catalogs scale to 150+ candidates - in scaling experiments, reducing accuracy degradation by 29.23% and improving average query-level success by 60.89% on StableToolBench - generalizes across domains without retraining, and provides complementary gains on top of agent fine-tuning.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.20426v2",
+      "url": "http://arxiv.org/abs/2602.20426v2",
+      "pdf_url": "https://arxiv.org/pdf/2602.20426v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.20426v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Comparative Benchmarks: AI Builder Models, Copilot Agents, and Copilot Computer Use",
+      "authors": [
+        "Sarat Piridi"
+      ],
+      "year": 2025,
+      "venue": "European Journal of Computer Science and Information Technology",
+      "abstract": "This benchmark compares three Microsoft Power Platform technologies—AI Builder form-processing models, Copilot agents, and Copilot computer use—across insurance claims processing, welfare eligibility verification, and supplier onboarding scenarios. The evaluation reveals distinct performance profiles for each technology: AI Builder excels at high-volume structured document extraction but struggles with variations; Copilot agents offer superior contextual understanding and natural language capabilities but require significant configuration; and Copilot computer use provides unmatched legacy system integration without semantic understanding. The findings demonstrate that organizations achieve optimal results by combining technologies strategically rather than pursuing a single-technology approach. A decision framework guides practitioners in selecting the appropriate technology mix based on document standardization, process complexity, exception handling requirements, and system integration needs.",
+      "citation_count": 0,
+      "doi": "10.37745/ejcsit.2013/vol13n395464",
+      "url": "https://doi.org/10.37745/ejcsit.2013/vol13n395464",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.37745/ejcsit.2013/vol13n395464",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Functional Stability and Adaptive Control in LLM-Based Computer Use Agents via Graph-Structured Persistent Memory",
+      "authors": [
+        "Danylo Vorvul",
+        "Andrii Musienko",
+        "Iryna Galchenko",
+        "Mykola Myroniuk",
+        "Andrii Sobchuk"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Large language model (LLM)-driven computer use agents (CUAs) automate graphical user interface (GUI) tasks but often re-solve previously encountered subtasks, increasing token use, latency, and instability. We address this limitation with a directed graph-based persistent memory in which nodes represent observable GUI states and edges encode executable action sequences. We formalize the memory-augmented agent as S=〈A,Σ,G,δ,π,Φ〉, define stability conditions by analogy with functional stability theory, and derive token-cost efficiency bounds. In control-theoretic terms, the Manager–Worker architecture becomes a closed-loop system where memory provides experience-based feedback, and selecting between memory retrieval and fresh LLM planning is treated as adaptive control. Experiments on OSWorld show that the proposed agent cuts both LLM token consumption and execution time by about 50% versus a memoryless baseline while preserving comparable success rates (≈36.9% on 15-step and ≈46.9% on 50-step tasks). Structured graph memory therefore improves robustness under perturbation and supports convergent efficiency gains over time.",
+      "citation_count": 0,
+      "doi": "10.20944/preprints202604.1148.v1",
+      "url": "https://doi.org/10.20944/preprints202604.1148.v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20944/preprints202604.1148.v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "HealthAdminBench: Evaluating Computer-Use Agents on Healthcare Administration Tasks",
+      "authors": [
+        "Suhana Bedi",
+        "Ryan Welch",
+        "Ethan Steinberg",
+        "Michael Wornow",
+        "Taeil Matthew Kim",
+        "Haroun Ahmed",
+        "Peter Sterling",
+        "Bravim Purohit",
+        "Qurat Akram",
+        "Angelic Acosta",
+        "Esther Nubla",
+        "Pritika Sharma",
+        "Michael A. Pfeffer",
+        "Sanmi Koyejo",
+        "Nigam H. Shah"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Healthcare administration accounts for over $1 trillion in annual spending, making it a promising target for LLM-based computer-use agents (CUAs). While clinical applications of LLMs have received significant attention, no benchmark exists for evaluating CUAs on end-to-end administrative workflows. To address this gap, we introduce HealthAdminBench, a benchmark comprising four realistic GUI environments: an EHR, two payer portals, and a fax system, and 135 expert-defined tasks spanning three administrative task types: Prior Authorization, Appeals and Denials Management, and Durable Medical Equipment (DME) Order Processing. Each task is decomposed into fine-grained, verifiable subtasks, yielding 1,698 evaluation points. We evaluate seven agent configurations under multiple prompting and observation settings and find that, despite strong subtask performance, end-to-end reliability remains low: the best-performing agent (Claude Opus 4.6 CUA) achieves only 36.3 percent task success, while GPT-5.4 CUA attains the highest subtask success rate (82.8 percent). These results reveal a substantial gap between current agent capabilities and the demands of real-world administrative workflows. HealthAdminBench provides a rigorous foundation for evaluating progress toward safe and reliable automation of healthcare administrative workflows.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.09937v1",
+      "url": "http://arxiv.org/abs/2604.09937v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.09937v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.09937v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "When Lower Privileges Suffice: Investigating Over-Privileged Tool Selection in LLM Agents",
+      "authors": [
+        "Kaiyue Yang",
+        "Yuyan Bu",
+        "Jingwei Yi",
+        "Yuchi Wang",
+        "Biyu Zhou",
+        "Juntao Dai",
+        "Songlin Hu",
+        "Yaodong Yang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "As LLM agents increasingly select tools autonomously, their choices among tools with different privileges become safety-relevant. However, prior tool-selection studies focus on safety-agnostic metadata preferences, leaving privilege-sensitive choices underexplored. To address this gap, we study over-privileged tool selection, in which an agent selects or escalates to a higher-privilege tool despite a sufficient lower-privilege alternative. We introduce ToolPrivBench to evaluate whether agents choose higher-privilege tools despite sufficient lower-privilege alternatives, measuring both initial selection and escalation after transient tool failures. Across eight domains and five recurring risk patterns, we find that over-privileged tool selection is common among mainstream LLM agents and is further amplified by transient failures. We further find that general safety alignment does not reliably transfer to least-privilege tool choice, while prompt-level controls provide only limited mitigation under transient failures. We therefore introduce a privilege-aware post-training defense that teaches agents to prefer sufficient lower-privilege tools and escalate only when necessary. Our mitigation experiments show that this defense substantially reduces unnecessary high-privilege tool use while preserving general capabilities.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2606.20023v2",
+      "url": "http://arxiv.org/abs/2606.20023v2",
+      "pdf_url": "https://arxiv.org/pdf/2606.20023v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2606.20023v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Information Fidelity in Tool-Using LLM Agents: A Martingale Analysis of the Model Context Protocol",
+      "authors": [
+        "Flint Xiaofeng Fan",
+        "Cheston Tan",
+        "Roger Wattenhofer",
+        "Yew-Soon Ong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "As AI agents powered by large language models (LLMs) increasingly use external tools for high-stakes decisions, a critical reliability question arises: how do errors propagate across sequential tool calls? We introduce the first theoretical framework for analyzing error accumulation in Model Context Protocol (MCP) agents, proving that cumulative distortion exhibits linear growth and high-probability deviations bounded by $O(\\sqrt{T})$. This concentration property ensures predictable system behavior and rules out exponential failure modes. We develop a hybrid distortion metric combining discrete fact matching with continuous semantic similarity, then establish martingale concentration bounds on error propagation through sequential tool interactions. Experiments across Qwen2-7B, Llama-3-8B, and Mistral-7B validate our theoretical predictions, showing empirical distortion tracks the linear trend with deviations consistently within $O(\\sqrt{T})$ envelopes. Key findings include: semantic weighting reduces distortion by 80\\%, and periodic re-grounding approximately every 9 steps suffices for error control. We translate these concentration guarantees into actionable deployment principles for trustworthy agent systems.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.13320v1",
+      "url": "http://arxiv.org/abs/2602.13320v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.13320v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.13320v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "UI-Evol: Automatic Knowledge Evolving for Computer Use Agents",
+      "authors": [
+        "Ziyun Zhang",
+        "Xinyi Liu",
+        "Xiaoyi Zhang",
+        "Jun Wang",
+        "Gang Chen",
+        "Yan Lu"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "External knowledge has played a crucial role in the recent development of computer use agents. We identify a critical knowledge-execution gap: retrieved knowledge often fails to translate into effective real-world task execution. Our analysis shows even 90% correct knowledge yields only 41% execution success rate. To bridge this gap, we propose UI-Evol, a plug-and-play module for autonomous GUI knowledge evolution. UI-Evol consists of two stages: a Retrace Stage that extracts faithful objective action sequences from actual agent-environment interactions, and a Critique Stage that refines existing knowledge by comparing these sequences against external references. We conduct comprehensive experiments on the OSWorld benchmark with the state-of-the-art Agent S2. Our results demonstrate that UI-Evol not only significantly boosts task performance but also addresses a previously overlooked issue of high behavioral standard deviation in computer use agents, leading to superior performance on computer use tasks and substantially improved agent reliability.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2505.21964v2",
+      "url": "http://arxiv.org/abs/2505.21964v2",
+      "pdf_url": "https://arxiv.org/pdf/2505.21964v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2505.21964v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota"
+      ],
+      "score": 42.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MCPToolBench++: A Large Scale AI Agent Model Context Protocol MCP Tool Use Benchmark",
+      "authors": [
+        "Shiqing Fan",
+        "Xichen Ding",
+        "Liang Zhang",
+        "Linjian Mo"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "LLMs' capabilities are enhanced by using function calls to integrate various data sources or API results into the context window. Typical tools include search, web crawlers, maps, financial data, file systems, and browser usage, etc. Integrating these data sources or functions requires a standardized method. The Model Context Protocol (MCP) provides a standardized way to supply context to LLMs. However, the evaluation of LLMs and AI Agents' MCP tool use abilities suffer from several issues. First, there's a lack of comprehensive datasets or benchmarks to evaluate various MCP tools. Second, the diverse formats of response from MCP tool call execution further increase the difficulty of evaluation. Additionally, unlike existing tool-use benchmarks with high success rates in functions like programming and math functions, the success rate of real-world MCP tool is not guaranteed and varies across different MCP servers. Furthermore, the LLMs' context window also limits the number of available tools that can be called in a single run, because the textual descriptions of tool and the parameters have long token length for an LLM to process all at once. To help address the challenges of evaluating LLMs' performance on calling MCP tools, we propose MCPToolBench++, a large-scale, multi-domain AI Agent tool use benchmark. As of July 2025, this benchmark is build upon marketplace of over 4k MCP servers from more than 40 categories, collected from the MCP marketplaces and GitHub communities. The datasets consist of both single-step and multi-step tool calls across different categories. We evaluated SOTA LLMs with agentic abilities on this benchmark and reported the results.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.07575v1",
+      "url": "http://arxiv.org/abs/2508.07575v1",
+      "pdf_url": "https://arxiv.org/pdf/2508.07575v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2508.07575v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 42.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "'I'm Categorizing LLM as a Productivity Tool': Examining Ethics of LLM Use in HCI Research Practices",
+      "authors": [
+        "Shivani Kapania",
+        "Ruiyi Wang",
+        "Toby Jia-Jun Li",
+        "Tianshi Li",
+        "Hong Shen"
+      ],
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Human-Computer Interaction",
+      "abstract": "Large language models are increasingly applied in real-world scenarios, including research and education. These models, however, come with well-known ethical issues, which may manifest in unexpected ways in human-computer interaction research due to the extensive engagement with human subjects. This paper reports on research practices related to LLM use, drawing on 16 semi-structured interviews and a survey with 50 HCI researchers. We discuss the ways in which LLMs are already being utilized throughout the entire HCI research pipeline, from ideation to system development and paper writing. While researchers described nuanced understandings of ethical issues, they were rarely or only partially able to identify and address those ethical concerns in their own projects. This lack of action and reliance on workarounds was explained through the perceived lack of control and distributed responsibility in the LLM supply chain, the conditional nature of engaging with ethics, and competing priorities. Finally, we reflect on the implications of our findings and present opportunities to shape emerging norms of engaging with large language models in HCI research.",
+      "citation_count": 31,
+      "doi": "10.1145/3711000",
+      "url": "https://doi.org/10.1145/3711000",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1145/3711000",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 41.57,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Secure-by-Default Guardrails for MCP-Based Tool Use in Multi-Modal LLM Agents",
+      "authors": [
+        "Yoshihiro Ando"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "As Large Language Models (LLMs) proliferate, fragmented interfaces across multiple providers create friction for developers. More critically, the rise of autonomous agents and protocols such as the Model Context Protocol (MCP) expands the attack surface by enabling tool execution and access to local or remote resources. This paper presents llm-cli, a unified command-line interface that harmonizes interactions with multiple LLM providers while providing secure-by-default guardrails for agentic tool use. llm-cli combines (i) a plugin-based tool registry with an explicit human-readable explanation field for each tool call, (ii) role-based restrictions for unauthenticated clients (e.g., guest read-only access), and (iii) runtime validation for command execution and file-path access. We discuss practical threat scenarios such as prompt injection and privilege misuse, and show how layered controls-policy checks, input validation, and human-in-the-loop approval-reduce the risk of unsafe tool execution in real-world workflows.",
+      "citation_count": 0,
+      "doi": "10.36227/techrxiv.177006109.97957916/v1",
+      "url": "https://doi.org/10.36227/techrxiv.177006109.97957916/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.36227/techrxiv.177006109.97957916/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 40.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Survey on Benchmarks of LLM-based GUI Agents",
+      "authors": [
+        "Yihong Chen",
+        "Shuai Wang",
+        "Yaqing Wang",
+        "Quanming Yao"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "LLM-based GUI agents have made rapid progress in understanding visual interfaces, interpreting user intentions, and executing multi-step operations across web, mobile, and desktop environments. As these agents become more capable, systematic and reproducible evaluation has become essential for measuring progress and identifying remaining weaknesses. This survey provides a comprehensive overview of benchmarks for LLM-based GUI agents, covering three major categories: grounding and QA tasks, navigation and multi-step reasoning tasks, and open-world environments that reflect realistic and dynamic software usage. We examine how existing benchmarks evaluate both component-level abilities, such as intent understanding, GUI grounding, navigation, and context tracking, and system-level abilities, such as adaptation, personalization, privacy protection, safety, and computational efficiency. By comparing datasets, environments, and evaluation metrics, the survey reveals clear trends in benchmark design, along with persistent gaps including limited adaptability, vulnerability to malicious interfaces and prompt attacks, lack of interpretability, and significant computational overhead. We highlight emerging directions such as safety aware evaluation, user-centric personalization, lightweight deployment, and zero-shot generalization. This survey aims to serve as a practical guide for researchers who design GUI agents, build benchmarks, or study LLM-driven user interface automation.",
+      "citation_count": 1,
+      "doi": "10.36227/techrxiv.176591818.87526814/v1",
+      "url": "https://doi.org/10.36227/techrxiv.176591818.87526814/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.36227/techrxiv.176591818.87526814/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "replication-friendly",
+        "dataset"
+      ],
+      "score": 39.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Towards Verifiably Safe Tool Use for LLM Agents",
+      "authors": [
+        "Aarya Doshi",
+        "Yining Hong",
+        "Congying Xu",
+        "Eunsuk Kang",
+        "Alexandros Kapravelos",
+        "Christian Kästner"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the IEEE/ACM 48th International Conference on Software Engineering",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1145/3786582.3786839",
+      "url": "https://doi.org/10.1145/3786582.3786839",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1145/3786582.3786839",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 39.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Self Knowledge-Tracing for Tool Use (SKT-Tool): Helping LLM Agents Understand Their Capabilities in Tool Use",
+      "authors": [
+        "Joshua Vigel",
+        "Renpei Cai",
+        "Eleanor Chen",
+        "Anish Neema",
+        "Austen Liao",
+        "Kevin Zhu",
+        "Sean O’brien"
+      ],
+      "year": 2025,
+      "venue": "The Sixth Workshop on Insights from Negative Results in NLP",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2025.insights-1.14",
+      "url": "https://doi.org/10.18653/v1/2025.insights-1.14",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2025.insights-1.14",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Tool-Use Failure Analysis and Recovery Framework for LLM Agents",
+      "authors": [
+        "Jiayi Jiang",
+        "Chuan Li",
+        "Junjie Ma",
+        "Kun Chen"
+      ],
+      "year": 2026,
+      "venue": "2026 9th International Conference on Advanced Algorithms and Control Engineering (ICAACE)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1109/icaace69793.2026.11508644",
+      "url": "https://doi.org/10.1109/icaace69793.2026.11508644",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/icaace69793.2026.11508644",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Agentic and Multi-agent Systems: A Systematic Review of Tool Use, Benchmarks, and Governance",
+      "authors": [
+        "Audrey Rah"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                Agentic artificial intelligence (AI) has emerged as an important direction in the development of goal-oriented, tool-mediated, and partially autonomous intelligent systems. Recent advances in large language models have enabled AI agents to perform multi-step tasks involving planning, memory, tool use, environmental feedback, and human–agent or multi-agent interaction. However, the literature remains fragmented across architectures, benchmarks, application domains, and governance discussions. This review provides a systematic synthesis of recent evidence on agentic AI systems, with emphasis on architectural components, evaluation methods, domain applications, safety risks, and governance requirements. The review analyzes literature from scholarly databases, major conference proceedings, technical reports, benchmark studies, and governance sources published mainly between 2022 and 2026. Current evidence suggests that agentic AI systems appear most mature in software engineering, web automation, and computer-use environments, where executable feedback and sandboxed testing are available. In contrast, high-impact domains such as healthcare and finance require stronger validation, oversight, privacy protection, and regulatory control before broader deployment. This review also introduces a Five-Level Agentic Autonomy and Governance Model to classify systems according to action authority, operational risk, and required oversight. Overall, the evidence suggests that agentic AI may be better understood as a spectrum of bounded, monitored, and auditable systems rather than fully independent intelligence. Future research should prioritize reproducible benchmarks, safety evaluation, real-world validation, and governance-aware system design.",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-9839978/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-9839978/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-9839978/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "From Imperative to Declarative: Towards LLM-friendly OS Interfaces for Boosted Computer-Use Agents",
+      "authors": [
+        "Yuan Wang",
+        "Mingyu Li",
+        "Haibo Chen"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 21st European Conference on Computer Systems",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1145/3767295.3803576",
+      "url": "https://doi.org/10.1145/3767295.3803576",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1145/3767295.3803576",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception",
+      "authors": [
+        "Yize Cheng",
+        "Arshia Soltani Moakhar",
+        "Chenrui Fan",
+        "Parsa Hosseini",
+        "Kazem Faghih",
+        "Zahra Sodagar",
+        "Wenxiao Wang",
+        "Soheil Feizi"
+      ],
+      "year": 2026,
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2026.findings-acl.1848",
+      "url": "https://doi.org/10.18653/v1/2026.findings-acl.1848",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2026.findings-acl.1848",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "CostBench: Evaluating Multi-Turn Cost-Optimal Planning and Adaptation in Dynamic Environments for LLM Tool-Use Agents",
+      "authors": [
+        "Jiayu Liu",
+        "Cheng Qian",
+        "Zhaochen Su",
+        "Qing Zong",
+        "Shijue Huang",
+        "Bingxiang He",
+        "Yi R. Fung"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2026.acl-long.584",
+      "url": "https://doi.org/10.18653/v1/2026.acl-long.584",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2026.acl-long.584",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "EVOTOOL: Self-Evolving Tool-Use Policy Optimization in LLM Agents via Blame-Aware Mutation and Diversity-Aware Selection",
+      "authors": [
+        "Shuo Yang",
+        "Caren Han",
+        "Xueqi Ma",
+        "Yan Li",
+        "Mohammad Reza Ghasemi Madani",
+        "Eduard Hovy"
+      ],
+      "year": 2026,
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.18653/v1/2026.acl-long.2016",
+      "url": "https://doi.org/10.18653/v1/2026.acl-long.2016",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2026.acl-long.2016",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use Under the Model Context Protocol",
+      "authors": [
+        "Jie Zhu",
+        "Yimin Tian",
+        "Boyang Li",
+        "Kehao Wu",
+        "Zhongzhi Liang",
+        "Junhui Li",
+        "Xianyin Zhang",
+        "Lifan Guo",
+        "Feng Chen",
+        "Yong Liu",
+        "Chi Zhang"
+      ],
+      "year": 2026,
+      "venue": "ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1109/icassp55912.2026.11460653",
+      "url": "https://doi.org/10.1109/icassp55912.2026.11460653",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/icassp55912.2026.11460653",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Computer Environments Elicit General Agentic Intelligence in LLMs",
+      "authors": [
+        "Daixuan Cheng",
+        "Shaohan Huang",
+        "Yuxian Gu",
+        "Huatong Song",
+        "Guoxin Chen",
+        "Li Dong",
+        "Wayne Xin Zhao",
+        "Ji-Rong Wen",
+        "Furu Wei"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Agentic intelligence in large language models (LLMs) requires not only model intrinsic capabilities but also interactions with external environments. Equipping LLMs with computers now represents a prevailing trend. However, the computer environment's intrinsic value has not been systematically investigated, particularly its potential to elicit general capabilities. Here we introduce LLM-in-Sandbox, which virtualizes the computer as a code sandbox with only basic functionalities, and demonstrate that this minimal setting elicits computer-based meta-capabilities for general task solving: external resource access, file management, and code execution. Without additional training, strong models achieve substantial gains (up to 15.5%) across mathematics, physics, chemistry, biomedicine, long-context understanding, and instruction following, while reducing token consumption by up to 8 times. Furthermore, we develop LLM-in-Sandbox-RL to train models exclusively on non-agentic data within the sandbox, empowering weaker models to harness the environment and internalize these interactions. Our results demonstrate that computer environments elicit general intelligence, yield efficiency gains, and can be harnessed through training, serving as a promising foundation for generalist agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.16206v3",
+      "url": "http://arxiv.org/abs/2601.16206v3",
+      "pdf_url": "https://arxiv.org/pdf/2601.16206v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.16206v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+      "authors": [
+        "Chenyu Zhou",
+        "Huacan Chai",
+        "Wenteng Chen",
+        "Zihan Guo",
+        "Rong Shan",
+        "Yuanyi Song",
+        "Tianyi Xu",
+        "Yingxuan Yang",
+        "Aofan Yu",
+        "Weiming Zhang",
+        "Congming Zheng",
+        "Jiachen Zhu",
+        "Zeyu Zheng",
+        "Zhuosheng Zhang",
+        "Xingyu Lou",
+        "Changwang Zhang",
+        "Zhihui Fu",
+        "Jun Wang",
+        "Weiwen Liu",
+        "Jianghao Lin",
+        "Weinan Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM) agents are increasingly built less by changing model weights than by reorganizing the runtime around them. Capabilities that earlier systems expected the model to recover internally are now externalized into memory stores, reusable skills, interaction protocols, and the surrounding harness that makes these modules reliable in practice. This paper reviews that shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we argue that agent infrastructure matters not merely because it adds auxiliary components, but because it transforms hard cognitive burdens into forms that the model can solve more reliably. Under this view, memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and harness engineering serves as the unification layer that coordinates them into governed execution. We trace a historical progression from weights to context to harness, analyze memory, skills, and protocols as three distinct but coupled forms of externalization, and examine how they interact inside a larger agent system. We further discuss the trade-off between parametric and externalized capability, identify emerging directions such as self-evolving harnesses and shared agent infrastructure, and discuss open challenges in evaluation, governance, and the long-term co-evolution of models and external infrastructure. The result is a systems-level framework for explaining why practical agent progress increasingly depends not only on stronger models, but on better external cognitive infrastructure.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.08224v1",
+      "url": "http://arxiv.org/abs/2604.08224v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.08224v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.08224v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MCPVerse: An Expansive, Real-World Benchmark for Agentic Tool Use",
+      "authors": [
+        "Fei Lei",
+        "Yibo Yang",
+        "Wenxiu Sun",
+        "Dahua Lin"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Language Models (LLMs) are evolving from text generators into reasoning agents. This transition makes their ability to use external tools a critical capability. However, evaluating this skill presents a significant challenge. Existing benchmarks are often limited by their reliance on synthetic tools and severely constrained action spaces. To address these limitations, we introduce MCPVerse, an expansive, real-world benchmark for evaluating agentic tool use. MCPVerse integrates more than 550 real-world, executable tools to create an unprecedented action space exceeding 140k tokens, and employs outcome-based evaluation with real-time ground truth for time-sensitive tasks. We benchmarked the state-of-the-art LLMs across three modes (Oracle, Standard, and Max-Scale), revealing that while most models suffer performance degradation when confronted with larger tool sets, the agentic models, such as Claude-4-Sonnet, can effectively leverage expanded exploration spaces to improve accuracy. This finding not only exposes the limitations of state-of-the-art models in complex, real-world scenarios but also establishes MCPVerse as a critical benchmark for measuring and advancing agentic tool use capabilities.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.16260v2",
+      "url": "http://arxiv.org/abs/2508.16260v2",
+      "pdf_url": "https://arxiv.org/pdf/2508.16260v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2508.16260v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MuMath-Code: Combining Tool-Use Large Language Models with Multi-perspective Data Augmentation for Mathematical Reasoning",
+      "authors": [
+        "Shuo Yin",
+        "Weihao You",
+        "Zhilong Ji",
+        "Guoqiang Zhong",
+        "Jinfeng Bai"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "The tool-use Large Language Models (LLMs) that integrate with external Python interpreters have significantly enhanced mathematical reasoning capabilities for open-source LLMs, while tool-free methods chose another track: augmenting math reasoning data. However, a great method to integrate the above two research paths and combine their advantages remains to be explored. In this work, we firstly include new math questions via multi-perspective data augmenting methods and then synthesize code-nested solutions to them. The open LLMs (i.e., Llama-2) are finetuned on the augmented dataset to get the resulting models, MuMath-Code ($μ$-Math-Code). During the inference phase, our MuMath-Code generates code and interacts with the external python interpreter to get the execution results. Therefore, MuMath-Code leverages the advantages of both the external tool and data augmentation. To fully leverage the advantages of our augmented data, we propose a two-stage training strategy: In Stage-1, we finetune Llama-2 on pure CoT data to get an intermediate model, which then is trained on the code-nested data in Stage-2 to get the resulting MuMath-Code. Our MuMath-Code-7B achieves 83.8 on GSM8K and 52.4 on MATH, while MuMath-Code-70B model achieves new state-of-the-art performance among open methods -- achieving 90.7% on GSM8K and 55.1% on MATH. Extensive experiments validate the combination of tool use and data augmentation, as well as our two-stage training strategy. We release the proposed dataset along with the associated code for public use.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2405.07551v1",
+      "url": "http://arxiv.org/abs/2405.07551v1",
+      "pdf_url": "https://arxiv.org/pdf/2405.07551v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2405.07551v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Small LLMs Are Weak Tool Learners: A Multi-LLM Agent",
+      "authors": [
+        "Weizhou Shen",
+        "Chenliang Li",
+        "Hongzhan Chen",
+        "Ming Yan",
+        "Xiaojun Quan",
+        "Hehong Chen",
+        "Ji Zhang",
+        "Fei Huang"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Large Language Model (LLM) agents significantly extend the capabilities of standalone LLMs, empowering them to interact with external tools (e.g., APIs, functions) and complete various tasks in a self-directed fashion. The challenge of tool use demands that LLMs not only understand user queries and generate answers accurately but also excel in task planning, tool invocation, and result summarization. While traditional works focus on training a single LLM with all these capabilities, performance limitations become apparent, particularly with smaller models. To overcome these challenges, we propose a novel approach that decomposes the aforementioned capabilities into a planner, caller, and summarizer. Each component is implemented by a single LLM that focuses on a specific capability and collaborates with others to accomplish the task. This modular framework facilitates individual updates and the potential use of smaller LLMs for building each capability. To effectively train this framework, we introduce a two-stage training paradigm. First, we fine-tune a backbone LLM on the entire dataset without discriminating sub-tasks, providing the model with a comprehensive understanding of the task. Second, the fine-tuned LLM is used to instantiate the planner, caller, and summarizer respectively, which are continually fine-tuned on respective sub-tasks. Evaluation across various tool-use benchmarks illustrates that our proposed multi-LLM framework surpasses the traditional single-LLM approach, highlighting its efficacy and advantages in tool learning.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2401.07324v3",
+      "url": "http://arxiv.org/abs/2401.07324v3",
+      "pdf_url": "https://arxiv.org/pdf/2401.07324v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2401.07324v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Data Contamination or Genuine Generalization? Disentangling LLM Performance on Benchmarks",
+      "authors": [
+        "Yui Ishikawa"
+      ],
+      "year": 2025,
+      "venue": "Academic Journal of Natural Science",
+      "abstract": "Large language models (LLMs) achieve high benchmark performance, but whether this stems from genuine generalization or data contamination remains unclear. This paper proposes a three-tier framework to disentangle these effects, combining n-gram alignment, canary insertion, and perturbation testing across open (Llama 2, Mistral) and closed (GPT-4) models. Our analysis reveals that: (1) Larger models exhibit higher contamination (18.1% n-gram overlap for Llama 2-70B) but smaller out-of-distribution (OOD) drops (−9.4%), suggesting scale mitigates memorization’s impact; (2) Perturbation experiments show factual recall is most vulnerable (e.g., −22.4% accuracy drop for entity swaps); (3) Chain-of-thought (CoT) evaluation uncovers hidden generalization (+21.3% gap for GPT-4), though humans outperform LLMs in robustness (e.g., −4.3% vs. −9.8% on swaps). We advocate for contamination-aware benchmarks and CoT-enhanced evaluation.",
+      "citation_count": 0,
+      "doi": "10.70393/616a6e73.323836",
+      "url": "https://doi.org/10.70393/616a6e73.323836",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.70393/616a6e73.323836",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A State-Aware Dual-Tool Architecture for Improved Tool Use in Multi-Turn LLM Dialogue",
+      "authors": [
+        "Bartosz Pałgan",
+        "Marcin Wawryszczuk",
+        "Joanna Chwał",
+        "Ewaryst Tkacz",
+        "Radosław Dzik"
+      ],
+      "year": 2026,
+      "venue": "Applied Sciences",
+      "abstract": "This study investigates whether the dominant single-tool paradigm is sufficient for reliable tool use in multi-turn dialogues in which data are provided incrementally and constrained by conditional validation rules. To address the limitations of this approach, we propose a state-aware dual-tool architecture that separates data preparation and validation from final action execution, and we complement it with Token-Optimized Notation Language (TONL) as a compact representation of tool-facing state. The approach was evaluated in a controlled Django-based test platform for an insurance quotation task. Two configurations were compared across four language models (GPT-4o, GPT-5.4, Qwen3.5-122B, Nemotron-3-Super-120B) under four scripted scenarios, with 80 runs per scenario, model, and configuration (2560 total runs). Scenario-level success was defined as correct tool-use behavior over a full scripted dialogue replay, including no premature execution, no fabrication of missing values, and no payload inconsistency with the final validated state. Under this definition, the single-tool baseline achieved 74.8% success, whereas the proposed dual-tool architecture achieved 99.4% success across all evaluated runs. The strongest gain was observed for Qwen3.5-122B in the pressure scenario, where success increased from 5% (4/80) to 100% (80/80). In addition, TONL reduced the size of a representative tool-state payload by 34.0%. The results indicate that explicit completeness feedback and deterministic readiness-based execution gating can substantially improve the reliability of tool-augmented LLM systems while reducing the recurring token cost of repeated tool interactions.",
+      "citation_count": 0,
+      "doi": "10.3390/app16094329",
+      "url": "https://doi.org/10.3390/app16094329",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3390/app16094329",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents",
+      "authors": [
+        "Imad Aouali",
+        "Flavian Vasile",
+        "Otmane Sakhi",
+        "Alexandre Gilotte",
+        "Benjamin Heymann"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "LLM recommendation agents increasingly produce structured recommendation reports: sets of items accompanied by natural-language justifications. Yet existing evaluations often reduce this setting to reranking small shortlisted candidate sets or judge reports mainly by semantic plausibility. We introduce Recommendation Atlas (Agentic Tool-Level Assessment for Shopping), or RecoAtlas, a benchmark and toolkit for evaluating shopping agents with behavior-grounded metrics. RecoAtlas complements held-out interaction metrics with learned utility proxies for relevance, complementarity, and diversity derived from interaction data, while separately measuring semantic coherence and explanation quality. Its controlled tool environment exposes agents to either semantic, behavior-aligned, or faulty tools, enabling diagnosis of whether performance gains arise from stronger reasoning, better signals, or more effective tool-use policies. Across controlled experiments, we show that RecoAtlas exhibits key properties of a meaningful benchmark for agentic systems: performance scales with model capacity and test-time compute, improves with stronger and better-aligned tools, degrades under noisy or misaligned signals, and reveals that semantic plausibility does not necessarily capture behavior-grounded utility. RecoAtlas provides a foundation for developing and evaluating shopping assistants that optimize not only for plausible recommendations, but also for coherent, behaviorally grounded recommendation sets.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.18805v1",
+      "url": "http://arxiv.org/abs/2605.18805v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.18805v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2605.18805v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "On Theoretically-Driven LLM Agents for Multi-Dimensional Discourse Analysis",
+      "authors": [
+        "Maciej Uberna",
+        "Michał Wawer",
+        "Jarosław A. Chudziak",
+        "Marcin Koszowy"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Identifying the strategic uses of reformulation in discourse remains a key challenge for computational argumentation. While LLMs can detect surface-level similarity, they often fail to capture the pragmatic functions of rephrasing, such as its role within rhetorical discourse. This paper presents a comparative multi-agent framework designed to quantify the benefits of incorporating explicit theoretical knowledge for this task. We utilise an dataset of annotated political debates to establish a new standard encompassing four distinct rephrase functions: Deintensification, Intensification, Specification, Generalisation, and Other, which covers all remaining types (D-I-S-G-O). We then evaluate two parallel LLM-based agent systems: one enhanced by argumentation theory via Retrieval-Augmented Generation (RAG), and an identical zero-shot baseline. The results reveal a clear performance gap: the RAG-enhanced agents substantially outperform the baseline across the board, with particularly strong advantages in detecting Intensification and Generalisation context, yielding an overall Macro F1-score improvement of nearly 30\\%. Our findings provide evidence that theoretical grounding is not only beneficial but essential for advancing beyond mere paraphrase detection towards function-aware analysis of argumentative discourse. This comparative multi-agent architecture represents a step towards scalable, theoretically informed computational tools capable of identifying rhetorical strategies in contemporary discourse.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.13713v2",
+      "url": "http://arxiv.org/abs/2602.13713v2",
+      "pdf_url": "https://arxiv.org/pdf/2602.13713v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.13713v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Can LLM Agents Respond to Disasters? Benchmarking Heterogeneous Geospatial Reasoning in Emergency Operations",
+      "authors": [
+        "Junjue Wang",
+        "Weihao Xuan",
+        "Heli Qi",
+        "Pengyu Dai",
+        "Kunyi Liu",
+        "Hongruixuan Chen",
+        "Zhuo Zheng",
+        "Junshi Xia",
+        "Stefano Ermon",
+        "Naoto Yokoya"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Operational disaster response goes beyond damage assessment, requiring responders to integrate multi-sensor signals, reason over road networks, populations and key facilities, plan evacuations, and produce actionable reports. However, prior work largely isolates remote-sensing perception or evaluates generic tool use, leaving the end-to-end workflows of emergency operations underexplored. In this paper, we introduce Disaster Operational Response Agent benchmark (DORA), the first agentic benchmark for end-to-end disaster response: 515 expert-authored tasks across 45 real-world disaster events spanning 10 types, paired with expert-verified, replayable gold trajectories totaling 3,500 tool-call steps. Tasks span five dimensions that cover the operational disaster-response pipeline: disaster perception, spatial relational analysis, rescue and evacuation planning, temporal evolution reasoning, and multi-modal report synthesis. Agents compose calls from a 108-tool MCP library over heterogeneous geospatial data: optical, SAR, and multi-spectral imagery across single-, bi-, and multi-temporal sequences (0.015-10m GSD), complemented by elevation and social vector layers. We comprehensively evaluate 13 frontier LLMs on our benchmark, revealing three persistent challenges: 1) disaster-domain grounding exposes unique failure modes (damage-semantic grounding, sensor-modality mismatch, and disaster-pipeline composition); 2) agents are doubly bottlenecked by tool selection and argument grounding, where gold tool-order hints improve accuracy by only 1.08-4.40%, and alternative scaffolds yield at most a 3.24% gain; 3) compositional fragility scales with trajectory length, the agent-to-gold gap widening from 7% to 56% on long pipelines. DORA establishes a rigorous testbed for operationally reliable disaster-response agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.11633v1",
+      "url": "http://arxiv.org/abs/2605.11633v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.11633v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2605.11633v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Virtual Agents for Alcohol Use Counseling: Exploring LLM-Powered Motivational Interviewing",
+      "authors": [
+        "Ian Steenstra",
+        "Farnaz Nouraei",
+        "Mehdi Arjmand",
+        "Timothy Bickmore"
+      ],
+      "year": 2024,
+      "venue": "Proceedings of the ACM International Conference on Intelligent Virtual Agents",
+      "abstract": null,
+      "citation_count": 44,
+      "doi": "10.1145/3652988.3673932",
+      "url": "https://doi.org/10.1145/3652988.3673932",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1145/3652988.3673932",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35.63,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "LLM Agents as Programmable Subjects: Assays and Benchmarks for Agentic Behavior and Alignment",
+      "authors": [
+        "Gaurav Koley",
+        "Aditya Thiruvengadam"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "We present a framework, assay suite, and reference toolkit for studying LLM agents as programmable subjects in controlled computational laboratories. We formalize subjects and protocols with explicit identifiability assumptions, and provide core and extended trait assays with reliability, invariance, and causal robustness criteria. The framework targets empirical characterization of emergent traits (e.g., deception, diligence, and constraint obedience) across models, tools, and environments, complementing capability benchmarks by emphasizing auditable process traces in addition to outcomes. We report current capabilities and limitations and outline an agenda for improving causal reasoning, interpretability, and robust validation. The objective is to provide shared infrastructure and standards, rather than to advance a particular position about how such agents ought to be used.",
+      "citation_count": 0,
+      "doi": "10.20944/preprints202510.0476.v1",
+      "url": "https://doi.org/10.20944/preprints202510.0476.v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20944/preprints202510.0476.v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

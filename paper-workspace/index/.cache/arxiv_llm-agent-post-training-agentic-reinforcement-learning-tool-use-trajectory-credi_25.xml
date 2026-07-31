@@ -1,0 +1,731 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/BHGOkcXwy6UtuDN3gf2wvFGqALQ</id>
+  <title>arXiv Query: search_query=all:LLM OR all:agent OR all:post-training OR all:agentic OR all:reinforcement OR all:learning OR all:tool OR all:use OR all:trajectory OR all:credit OR all:assignment OR all:self-improvement OR all:reflection OR all:experience OR all:lifelong OR all:learning&amp;id_list=&amp;start=0&amp;max_results=25</title>
+  <updated>2026-07-28T14:26:23Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:LLM+OR+(all:agent+OR+(all:post-training+OR+(all:agentic+OR+(all:reinforcement+OR+(all:learning+OR+(all:tool+OR+(all:use+OR+(all:trajectory+OR+(all:credit+OR+(all:assignment+OR+(all:self-improvement+OR+(all:reflection+OR+(all:experience+OR+(all:lifelong+OR+all:learning))))))))))))))&amp;start=0&amp;max_results=25&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>25</opensearch:itemsPerPage>
+  <opensearch:totalResults>1874916</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2602.12375v1</id>
+    <title>Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning</title>
+    <updated>2026-02-12T20:12:17Z</updated>
+    <link href="https://arxiv.org/abs/2602.12375v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.12375v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We show that VBE outperforms Bootstrap DQN and two reward bonus approaches (RND and ACB) on several classic environments used to test exploration and provide demonstrative experiments that it can scale easily to more complex environments like Atari.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-12T20:12:17Z</published>
+    <arxiv:comment>Accepted at Reinforcement Learning Conference (RLC) 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Reinforcement Learning Journal, vol. 6, 2025, pp. 1894-1915</arxiv:journal_ref>
+    <author>
+      <name>Abdul Wahab</name>
+    </author>
+    <author>
+      <name>Raksha Kumaraswamy</name>
+    </author>
+    <author>
+      <name>Martha White</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2103.06224v1</id>
+    <title>An Information-Theoretic Perspective on Credit Assignment in Reinforcement Learning</title>
+    <updated>2021-03-10T17:50:15Z</updated>
+    <link href="https://arxiv.org/abs/2103.06224v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2103.06224v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>How do we formalize the challenge of credit assignment in reinforcement learning? Common intuition would draw attention to reward sparsity as a key contributor to difficult credit assignment and traditional heuristics would look to temporal recency for the solution, calling upon the classic eligibility trace. We posit that it is not the sparsity of the reward itself that causes difficulty in credit assignment, but rather the \emph{information sparsity}. We propose to use information theory to define this notion, which we then use to characterize when credit assignment is an obstacle to efficient learning. With this perspective, we outline several information-theoretic mechanisms for measuring credit under a fixed behavior policy, highlighting the potential of information theory as a key tool towards provably-efficient credit assignment.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-03-10T17:50:15Z</published>
+    <arxiv:comment>Workshop on Biological and Artificial Reinforcement Learning (NeurIPS 2020)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Dilip Arumugam</name>
+    </author>
+    <author>
+      <name>Peter Henderson</name>
+    </author>
+    <author>
+      <name>Pierre-Luc Bacon</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1705.05172v1</id>
+    <title>Emotion in Reinforcement Learning Agents and Robots: A Survey</title>
+    <updated>2017-05-15T11:49:56Z</updated>
+    <link href="https://arxiv.org/abs/1705.05172v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.05172v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This article provides the first survey of computational models of emotion in reinforcement learning (RL) agents. The survey focuses on agent/robot emotions, and mostly ignores human user emotions. Emotions are recognized as functional in decision-making by influencing motivation and action selection. Therefore, computational emotion models are usually grounded in the agent's decision making architecture, of which RL is an important subclass. Studying emotions in RL-based agents is useful for three research fields. For machine learning (ML) researchers, emotion models may improve learning efficiency. For the interactive ML and human-robot interaction (HRI) community, emotions can communicate state and enhance user investment. Lastly, it allows affective modelling (AM) researchers to investigate their emotion theories in a successful AI agent class. This survey provides background on emotion theory and RL. It systematically addresses 1) from what underlying dimensions (e.g., homeostasis, appraisal) emotions can be derived and how these can be modelled in RL-agents, 2) what types of emotions have been derived from these dimensions, and 3) how these emotions may either influence the learning efficiency of the agent or be useful as social signals. We also systematically compare evaluation criteria, and draw connections to important RL sub-domains like (intrinsic) motivation and model-based RL. In short, this survey provides both a practical overview for engineers wanting to implement emotions in their RL agents, and identifies challenges and directions for future emotion-RL research.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-15T11:49:56Z</published>
+    <arxiv:comment>To be published in Machine Learning Journal</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Machine Learning 2017</arxiv:journal_ref>
+    <author>
+      <name>Thomas M. Moerland</name>
+    </author>
+    <author>
+      <name>Joost Broekens</name>
+    </author>
+    <author>
+      <name>Catholijn M. Jonker</name>
+    </author>
+    <arxiv:doi>10.1007/s10994-017-5666-0</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10994-017-5666-0" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.01782v1</id>
+    <title>Multi-agent assignment via state augmented reinforcement learning</title>
+    <updated>2024-06-03T20:56:12Z</updated>
+    <link href="https://arxiv.org/abs/2406.01782v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.01782v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We address the conflicting requirements of a multi-agent assignment problem through constrained reinforcement learning, emphasizing the inadequacy of standard regularization techniques for this purpose. Instead, we recur to a state augmentation approach in which the oscillation of dual variables is exploited by agents to alternate between tasks. In addition, we coordinate the actions of the multiple agents acting on their local states through these multipliers, which are gossiped through a communication network, eliminating the need to access other agent states. By these means, we propose a distributed multi-agent assignment protocol with theoretical feasibility guarantees that we corroborate in a monitoring numerical experiment.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-03T20:56:12Z</published>
+    <arxiv:comment>12 pages, 3 figures, 6th Annual Conference on Learning for Dynamics and Control</arxiv:comment>
+    <arxiv:primary_category term="eess.SY"/>
+    <arxiv:journal_ref>Proceedings of Machine Learning Research vol 242 1 12, 2024. 6th Annual Conference on Learning for Dynamics and Control</arxiv:journal_ref>
+    <author>
+      <name>Leopoldo Agorio</name>
+    </author>
+    <author>
+      <name>Sean Van Alen</name>
+    </author>
+    <author>
+      <name>Miguel Calvo-Fullana</name>
+    </author>
+    <author>
+      <name>Santiago Paternain</name>
+    </author>
+    <author>
+      <name>Juan Andres Bazerque</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.18488v1</id>
+    <title>The Open Ant: A Robot Platform for Reinforcement Learning Research</title>
+    <updated>2026-07-20T20:18:29Z</updated>
+    <link href="https://arxiv.org/abs/2607.18488v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.18488v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) research has demonstrated success in both physical and simulated domains; however, the predominant methodology remains rooted in simulations. The predominance of simulations makes translating research to physical reality uncertain for both algorithms and researchers. We propose a physical platform that is designed to simplify the transition. In this paper, we present the Open Ant: a physical variant of the commonly used Gymnasium Ant environment, along with a simulation. We demonstrate that competent walking policies can be learned from scratch in approximately one hour directly from the physical robot's experience for two substantially different RL algorithms: SARSA($λ$) and Soft Actor-Critic (SAC). Separately, we show policies that were learned in simulation transfer to reality. We also examine how well the platform supports a nimble experimental ecosystem. Specifically, we observe the speed with which new users from diverse backgrounds achieve their first success with the platform, and how easily the platform can be repaired and updated when hardware issues arise. Both the hardware design and software are available as open-source on GitHub for ease of customization. In summary, we advocate for the use of the Open Ant for RL researchers who frequently use simulated environments, so they can more easily include robot experiments in their evaluations.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-20T20:18:29Z</published>
+    <arxiv:comment>Published in the Reinforcement Learning Conference</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <arxiv:journal_ref>Reinforcement Learning Journal (RLJ), 2026</arxiv:journal_ref>
+    <author>
+      <name>Elena Sorina Lupu</name>
+    </author>
+    <author>
+      <name>Patrick Spieler</name>
+    </author>
+    <author>
+      <name>Khurram Javed</name>
+    </author>
+    <author>
+      <name>Kris De Asis</name>
+    </author>
+    <author>
+      <name>John D. Martin</name>
+    </author>
+    <author>
+      <name>Martha Steenstrup</name>
+    </author>
+    <author>
+      <name>Joseph Modayil</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1807.04439v1</id>
+    <title>Will it Blend? Composing Value Functions in Reinforcement Learning</title>
+    <updated>2018-07-12T06:43:12Z</updated>
+    <link href="https://arxiv.org/abs/1807.04439v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1807.04439v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An important property for lifelong-learning agents is the ability to combine existing skills to solve unseen tasks. In general, however, it is unclear how to compose skills in a principled way. We provide a "recipe" for optimal value function composition in entropy-regularised reinforcement learning (RL) and then extend this to the standard RL setting. Composition is demonstrated in a video game environment, where an agent with an existing library of policies is able to solve new tasks without the need for further learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-07-12T06:43:12Z</published>
+    <arxiv:comment>The 2nd Lifelong Learning: A Reinforcement Learning Approach (LLARLA) Workshop, Stockholm, Sweden, FAIM 2018</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Benjamin van Niekerk</name>
+    </author>
+    <author>
+      <name>Steven James</name>
+    </author>
+    <author>
+      <name>Adam Earle</name>
+    </author>
+    <author>
+      <name>Benjamin Rosman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1906.07248v1</id>
+    <title>Iterative Model-Based Reinforcement Learning Using Simulations in the Differentiable Neural Computer</title>
+    <updated>2019-06-17T20:15:02Z</updated>
+    <link href="https://arxiv.org/abs/1906.07248v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1906.07248v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a lifelong learning architecture, the Neural Computer Agent (NCA), where a Reinforcement Learning agent is paired with a predictive model of the environment learned by a Differentiable Neural Computer (DNC). The agent and DNC model are trained in conjunction iteratively. The agent improves its policy in simulations generated by the DNC model and rolls out the policy to the live environment, collecting experiences in new portions or tasks of the environment for further learning. Experiments in two synthetic environments show that DNC models can continually learn from pixels alone to simulate new tasks as they are encountered by the agent, while the agents can be successfully trained to solve the tasks using Proximal Policy Optimization entirely in simulations.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-06-17T20:15:02Z</published>
+    <arxiv:comment>Accepted at the Workshop on Multi-Task and Lifelong Reinforcement Learning, 36th International Conference on Machine Learning, Long Beach, California, 2019</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Adeel Mufti</name>
+    </author>
+    <author>
+      <name>Svetlin Penkov</name>
+    </author>
+    <author>
+      <name>Subramanian Ramamoorthy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2106.14993v3</id>
+    <title>Modularity in Reinforcement Learning via Algorithmic Independence in Credit Assignment</title>
+    <updated>2021-07-21T17:07:10Z</updated>
+    <link href="https://arxiv.org/abs/2106.14993v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2106.14993v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Many transfer problems require re-using previously optimal decisions for solving new tasks, which suggests the need for learning algorithms that can modify the mechanisms for choosing certain actions independently of those for choosing others. However, there is currently no formalism nor theory for how to achieve this kind of modular credit assignment. To answer this question, we define modular credit assignment as a constraint on minimizing the algorithmic mutual information among feedback signals for different decisions. We introduce what we call the modularity criterion for testing whether a learning algorithm satisfies this constraint by performing causal analysis on the algorithm itself. We generalize the recently proposed societal decision-making framework as a more granular formalism than the Markov decision process to prove that for decision sequences that do not contain cycles, certain single-step temporal difference action-value methods meet this criterion while all policy-gradient methods do not. Empirical evidence suggests that such action-value methods are more sample efficient than policy-gradient methods on transfer problems that require only sparse changes to a sequence of previously optimal decisions.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-06-28T21:29:13Z</published>
+    <arxiv:comment>Long Presentation at the Thirty-eighth International Conference on Machine Learning (ICML) 2021. 21 pages, 11 figures. v2: updated acknowledgments. v3: clarified that the internal function nodes of the credit assignment mechanism are not considered O(1)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Michael Chang</name>
+    </author>
+    <author>
+      <name>Sidhant Kaushik</name>
+    </author>
+    <author>
+      <name>Sergey Levine</name>
+    </author>
+    <author>
+      <name>Thomas L. Griffiths</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2207.04354v2</id>
+    <title>An Introduction to Lifelong Supervised Learning</title>
+    <updated>2022-07-12T15:47:04Z</updated>
+    <link href="https://arxiv.org/abs/2207.04354v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.04354v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This primer is an attempt to provide a detailed summary of the different facets of lifelong learning. We start with Chapter 2 which provides a high-level overview of lifelong learning systems. In this chapter, we discuss prominent scenarios in lifelong learning (Section 2.4), provide 8 Introduction a high-level organization of different lifelong learning approaches (Section 2.5), enumerate the desiderata for an ideal lifelong learning system (Section 2.6), discuss how lifelong learning is related to other learning paradigms (Section 2.7), describe common metrics used to evaluate lifelong learning systems (Section 2.8). This chapter is more useful for readers who are new to lifelong learning and want to get introduced to the field without focusing on specific approaches or benchmarks. The remaining chapters focus on specific aspects (either learning algorithms or benchmarks) and are more useful for readers who are looking for specific approaches or benchmarks. Chapter 3 focuses on regularization-based approaches that do not assume access to any data from previous tasks. Chapter 4 discusses memory-based approaches that typically use a replay buffer or an episodic memory to save subset of data across different tasks. Chapter 5 focuses on different architecture families (and their instantiations) that have been proposed for training lifelong learning systems. Following these different classes of learning algorithms, we discuss the commonly used evaluation benchmarks and metrics for lifelong learning (Chapter 6) and wrap up with a discussion of future challenges and important research directions in Chapter 7.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-07-10T00:48:42Z</published>
+    <arxiv:comment>Lifelong Learning Primer</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shagun Sodhani</name>
+    </author>
+    <author>
+      <name>Mojtaba Faramarzi</name>
+    </author>
+    <author>
+      <name>Sanket Vaibhav Mehta</name>
+    </author>
+    <author>
+      <name>Pranshu Malviya</name>
+    </author>
+    <author>
+      <name>Mohamed Abdelsalam</name>
+    </author>
+    <author>
+      <name>Janarthanan Janarthanan</name>
+    </author>
+    <author>
+      <name>Sarath Chandar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1812.00922v1</id>
+    <title>Multi-agent Deep Reinforcement Learning with Extremely Noisy Observations</title>
+    <updated>2018-12-03T17:27:41Z</updated>
+    <link href="https://arxiv.org/abs/1812.00922v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1812.00922v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent reinforcement learning systems aim to provide interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. In many real-world applications, the agents can only acquire a partial view of the world. Here we consider a setting whereby most agents' observations are also extremely noisy, hence only weakly correlated to the true state of the environment. Under these circumstances, learning an optimal policy becomes particularly challenging, even in the unrealistic case that an agent's policy can be made conditional upon all other agents' observations. To overcome these difficulties, we propose a multi-agent deep deterministic policy gradient algorithm enhanced by a communication medium (MADDPG-M), which implements a two-level, concurrent learning mechanism. An agent's policy depends on its own private observations as well as those explicitly shared by others through a communication medium. At any given point in time, an agent must decide whether its private observations are sufficiently informative to be shared with others. However, our environments provide no explicit feedback informing an agent whether a communication action is beneficial, rather the communication policies must also be learned through experience concurrently to the main policies. Our experimental results demonstrate that the algorithm performs well in six highly non-stationary environments of progressively higher complexity, and offers substantial performance gains compared to the baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-12-03T17:27:41Z</published>
+    <arxiv:comment>To appear in Deep Reinforcement Learning Workshop, NIPS 2018</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ozsel Kilinc</name>
+    </author>
+    <author>
+      <name>Giovanni Montana</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2004.08883v4</id>
+    <title>Variational Policy Propagation for Multi-agent Reinforcement Learning</title>
+    <updated>2022-01-29T11:08:12Z</updated>
+    <link href="https://arxiv.org/abs/2004.08883v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.08883v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a \emph{collaborative} multi-agent reinforcement learning algorithm named variational policy propagation (VPP) to learn a \emph{joint} policy through the interactions over agents. We prove that the joint policy is a Markov Random Field under some mild conditions, which in turn reduces the policy space effectively. We integrate the variational inference as special differentiable layers in policy such that the actions can be efficiently sampled from the Markov Random Field and the overall policy is differentiable. We evaluate our algorithm on several large scale challenging tasks and demonstrate that it outperforms previous state-of-the-arts.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-19T15:42:55Z</published>
+    <arxiv:comment>The title of previous version was "Intention Propagation for Multi-agent Reinforcement Learning"</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Chao Qu</name>
+    </author>
+    <author>
+      <name>Hui Li</name>
+    </author>
+    <author>
+      <name>Chang Liu</name>
+    </author>
+    <author>
+      <name>Junwu Xiong</name>
+    </author>
+    <author>
+      <name>James Zhang</name>
+    </author>
+    <author>
+      <name>Wei Chu</name>
+    </author>
+    <author>
+      <name>Weiqiang Wang</name>
+    </author>
+    <author>
+      <name>Yuan Qi</name>
+    </author>
+    <author>
+      <name>Le Song</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2007.06918v1</id>
+    <title>Lifelong Learning using Eigentasks: Task Separation, Skill Acquisition, and Selective Transfer</title>
+    <updated>2020-07-14T09:06:13Z</updated>
+    <link href="https://arxiv.org/abs/2007.06918v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2007.06918v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce the eigentask framework for lifelong learning. An eigentask is a pairing of a skill that solves a set of related tasks, paired with a generative model that can sample from the skill's input space. The framework extends generative replay approaches, which have mainly been used to avoid catastrophic forgetting, to also address other lifelong learning goals such as forward knowledge transfer. We propose a wake-sleep cycle of alternating task learning and knowledge consolidation for learning in our framework, and instantiate it for lifelong supervised learning and lifelong RL. We achieve improved performance over the state-of-the-art in supervised continual learning, and show evidence of forward knowledge transfer in a lifelong RL application in the game Starcraft2.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-07-14T09:06:13Z</published>
+    <arxiv:comment>Accepted at the 4th Lifelong Machine Learning Workshop at the Thirty-seventh International Conference on Machine Learning (ICML) 2020</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aswin Raghavan</name>
+    </author>
+    <author>
+      <name>Jesse Hostetler</name>
+    </author>
+    <author>
+      <name>Indranil Sur</name>
+    </author>
+    <author>
+      <name>Abrar Rahman</name>
+    </author>
+    <author>
+      <name>Ajay Divakaran</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.10997v1</id>
+    <title>Sharing Lifelong Reinforcement Learning Knowledge via Modulating Masks</title>
+    <updated>2023-05-18T14:19:19Z</updated>
+    <link href="https://arxiv.org/abs/2305.10997v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.10997v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lifelong learning agents aim to learn multiple tasks sequentially over a lifetime. This involves the ability to exploit previous knowledge when learning new tasks and to avoid forgetting. Modulating masks, a specific type of parameter isolation approach, have recently shown promise in both supervised and reinforcement learning. While lifelong learning algorithms have been investigated mainly within a single-agent approach, a question remains on how multiple agents can share lifelong learning knowledge with each other. We show that the parameter isolation mechanism used by modulating masks is particularly suitable for exchanging knowledge among agents in a distributed and decentralized system of lifelong learners. The key idea is that the isolation of specific task knowledge to specific masks allows agents to transfer only specific knowledge on-demand, resulting in robust and effective distributed lifelong learning. We assume fully distributed and asynchronous scenarios with dynamic agent numbers and connectivity. An on-demand communication protocol ensures agents query their peers for specific masks to be transferred and integrated into their policies when facing each task. Experiments indicate that on-demand mask communication is an effective way to implement distributed lifelong reinforcement learning and provides a lifelong learning benefit with respect to distributed RL baselines such as DD-PPO, IMPALA, and PPO+EWC. The system is particularly robust to connection drops and demonstrates rapid learning due to knowledge exchange.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-18T14:19:19Z</published>
+    <arxiv:comment>25 pages, 14 figures, 9 tables, to be published in the Second Conference on Lifelong Learning Agents (CoLLAs 2023), code can be found at https://github.com/DMIU-ShELL/deeprl-shell</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Saptarshi Nath</name>
+    </author>
+    <author>
+      <name>Christos Peridis</name>
+    </author>
+    <author>
+      <name>Eseoghene Ben-Iwhiwhu</name>
+    </author>
+    <author>
+      <name>Xinran Liu</name>
+    </author>
+    <author>
+      <name>Shirin Dora</name>
+    </author>
+    <author>
+      <name>Cong Liu</name>
+    </author>
+    <author>
+      <name>Soheil Kolouri</name>
+    </author>
+    <author>
+      <name>Andrea Soltoggio</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1810.03779v3</id>
+    <title>Reinforcement Learning for Improving Agent Design</title>
+    <updated>2019-12-02T10:49:36Z</updated>
+    <link href="https://arxiv.org/abs/1810.03779v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1810.03779v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In many reinforcement learning tasks, the goal is to learn a policy to manipulate an agent, whose design is fixed, to maximize some notion of cumulative reward. The design of the agent's physical structure is rarely optimized for the task at hand. In this work, we explore the possibility of learning a version of the agent's design that is better suited for its task, jointly with the policy. We propose an alteration to the popular OpenAI Gym framework, where we parameterize parts of an environment, and allow an agent to jointly learn to modify these environment parameters along with its policy. We demonstrate that an agent can learn a better structure of its body that is not only better suited for the task, but also facilitates policy learning. Joint learning of policy and structure may even uncover design principles that are useful for assisted-design applications. Videos of results at https://designrl.github.io/</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-10-09T02:32:37Z</published>
+    <arxiv:comment>Earlier version appeared at NeurIPS 2018 Deep Reinforcement Learning Workshop. Published in Artificial Life journal</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Artificial Life 25 (4), 352-365, 2019</arxiv:journal_ref>
+    <author>
+      <name>David Ha</name>
+    </author>
+    <arxiv:doi>10.1162/artl_a_00301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1162/artl_a_00301" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2207.14378v1</id>
+    <title>Latent Properties of Lifelong Learning Systems</title>
+    <updated>2022-07-28T20:58:13Z</updated>
+    <link href="https://arxiv.org/abs/2207.14378v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.14378v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Creating artificial intelligence (AI) systems capable of demonstrating lifelong learning is a fundamental challenge, and many approaches and metrics have been proposed to analyze algorithmic properties. However, for existing lifelong learning metrics, algorithmic contributions are confounded by task and scenario structure. To mitigate this issue, we introduce an algorithm-agnostic explainable surrogate-modeling approach to estimate latent properties of lifelong learning algorithms. We validate the approach for estimating these properties via experiments on synthetic data. To validate the structure of the surrogate model, we analyze real performance data from a collection of popular lifelong learning approaches and baselines adapted for lifelong classification and lifelong reinforcement learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-07-28T20:58:13Z</published>
+    <arxiv:comment>Accepted at 1st Conference on Lifelong Learning Agents (CoLLAs) Workshop Track, 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Corban Rivera</name>
+    </author>
+    <author>
+      <name>Chace Ashcraft</name>
+    </author>
+    <author>
+      <name>Alexander New</name>
+    </author>
+    <author>
+      <name>James Schmidt</name>
+    </author>
+    <author>
+      <name>Gautam Vallabha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2107.12808v2</id>
+    <title>Open-Ended Learning Leads to Generally Capable Agents</title>
+    <updated>2021-07-31T16:55:19Z</updated>
+    <link href="https://arxiv.org/abs/2107.12808v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.12808v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this work we create agents that can perform well beyond a single, individual task, that exhibit much wider generalisation of behaviour to a massive, rich space of challenges. We define a universe of tasks within an environment domain and demonstrate the ability to train agents that are generally capable across this vast space and beyond. The environment is natively multi-agent, spanning the continuum of competitive, cooperative, and independent games, which are situated within procedurally generated physical 3D worlds. The resulting space is exceptionally diverse in terms of the challenges posed to agents, and as such, even measuring the learning progress of an agent is an open research problem. We propose an iterative notion of improvement between successive generations of agents, rather than seeking to maximise a singular objective, allowing us to quantify progress despite tasks being incomparable in terms of achievable rewards. We show that through constructing an open-ended learning process, which dynamically changes the training task distributions and training objectives such that the agent never stops learning, we achieve consistent learning of new behaviours. The resulting agent is able to score reward in every one of our humanly solvable evaluation levels, with behaviour generalising to many held-out points in the universe of tasks. Examples of this zero-shot generalisation include good performance on Hide and Seek, Capture the Flag, and Tag. Through analysis and hand-authored probe tasks we characterise the behaviour of our agent, and find interesting emergent heuristic behaviours such as trial-and-error experimentation, simple tool use, option switching, and cooperation. Finally, we demonstrate that the general capabilities of this agent could unlock larger scale transfer of behaviour through cheap finetuning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-27T13:30:07Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name> Open Ended Learning Team</name>
+    </author>
+    <author>
+      <name>Adam Stooke</name>
+    </author>
+    <author>
+      <name>Anuj Mahajan</name>
+    </author>
+    <author>
+      <name>Catarina Barros</name>
+    </author>
+    <author>
+      <name>Charlie Deck</name>
+    </author>
+    <author>
+      <name>Jakob Bauer</name>
+    </author>
+    <author>
+      <name>Jakub Sygnowski</name>
+    </author>
+    <author>
+      <name>Maja Trebacz</name>
+    </author>
+    <author>
+      <name>Max Jaderberg</name>
+    </author>
+    <author>
+      <name>Michael Mathieu</name>
+    </author>
+    <author>
+      <name>Nat McAleese</name>
+    </author>
+    <author>
+      <name>Nathalie Bradley-Schmieg</name>
+    </author>
+    <author>
+      <name>Nathaniel Wong</name>
+    </author>
+    <author>
+      <name>Nicolas Porcel</name>
+    </author>
+    <author>
+      <name>Roberta Raileanu</name>
+    </author>
+    <author>
+      <name>Steph Hughes-Fitt</name>
+    </author>
+    <author>
+      <name>Valentin Dalibard</name>
+    </author>
+    <author>
+      <name>Wojciech Marian Czarnecki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1912.02877v2</id>
+    <title>Training Agents using Upside-Down Reinforcement Learning</title>
+    <updated>2021-09-03T22:15:10Z</updated>
+    <link href="https://arxiv.org/abs/1912.02877v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1912.02877v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We develop Upside-Down Reinforcement Learning (UDRL), a method for learning to act using only supervised learning techniques. Unlike traditional algorithms, UDRL does not use reward prediction or search for an optimal policy. Instead, it trains agents to follow commands such as "obtain so much total reward in so much time." Many of its general principles are outlined in a companion report; the goal of this paper is to develop a practical learning algorithm and show that this conceptually simple perspective on agent training can produce a range of rewarding behaviors for multiple episodic environments. Experiments show that on some tasks UDRL's performance can be surprisingly competitive with, and even exceed that of some traditional baseline algorithms developed over decades of research. Based on these results, we suggest that alternative approaches to expected reward maximization have an important role to play in training useful autonomous agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-12-05T21:13:36Z</published>
+    <arxiv:comment>Extends NeurIPS 2019 Deep Reinforcement Learning workshop presentation</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Rupesh Kumar Srivastava</name>
+    </author>
+    <author>
+      <name>Pranav Shyam</name>
+    </author>
+    <author>
+      <name>Filipe Mutz</name>
+    </author>
+    <author>
+      <name>Wojciech Jaśkowski</name>
+    </author>
+    <author>
+      <name>Jürgen Schmidhuber</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2001.03354v2</id>
+    <title>Learning credit assignment</title>
+    <updated>2020-10-03T09:35:22Z</updated>
+    <link href="https://arxiv.org/abs/2001.03354v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2001.03354v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep learning has achieved impressive prediction accuracies in a variety of scientific and industrial domains. However, the nested non-linear feature of deep learning makes the learning highly non-transparent, i.e., it is still unknown how the learning coordinates a huge number of parameters to achieve a decision making. To explain this hierarchical credit assignment, we propose a mean-field learning model by assuming that an ensemble of sub-networks, rather than a single network, are trained for a classification task. Surprisingly, our model reveals that apart from some deterministic synaptic weights connecting two neurons at neighboring layers, there exist a large number of connections that can be absent, and other connections can allow for a broad distribution of their weight values. Therefore, synaptic connections can be classified into three categories: very important ones, unimportant ones, and those of variability that may partially encode nuisance factors. Therefore, our model learns the credit assignment leading to the decision, and predicts an ensemble of sub-networks that can accomplish the same task, thereby providing insights toward understanding the macroscopic behavior of deep learning through the lens of distinct roles of synaptic weights.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.dis-nn" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.stat-mech" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.NC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-01-10T09:06:46Z</published>
+    <arxiv:comment>5 pages, 4 figures, a generalized BackProp proposed to learn credit assignment from an network ensemble perspective, to appear in Phys Rev Lett (2020)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 125, 178301 (2020)</arxiv:journal_ref>
+    <author>
+      <name>Chan Li</name>
+    </author>
+    <author>
+      <name>Haiping Huang</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.125.178301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.125.178301" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1912.03905v2</id>
+    <title>ChainerRL: A Deep Reinforcement Learning Library</title>
+    <updated>2021-04-12T03:24:48Z</updated>
+    <link href="https://arxiv.org/abs/1912.03905v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1912.03905v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we introduce ChainerRL, an open-source deep reinforcement learning (DRL) library built using Python and the Chainer deep learning framework. ChainerRL implements a comprehensive set of DRL algorithms and techniques drawn from state-of-the-art research in the field. To foster reproducible research, and for instructional purposes, ChainerRL provides scripts that closely replicate the original papers' experimental settings and reproduce published benchmark results for several algorithms. Lastly, ChainerRL offers a visualization tool that enables the qualitative inspection of trained agents. The ChainerRL source code can be found on GitHub: https://github.com/chainer/chainerrl.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-12-09T08:59:15Z</published>
+    <arxiv:comment>Journal of Machine Learning Research</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Journal of Machine Learning Research 22(77) (2021) 1-14;</arxiv:journal_ref>
+    <author>
+      <name>Yasuhiro Fujita</name>
+    </author>
+    <author>
+      <name>Prabhat Nagarajan</name>
+    </author>
+    <author>
+      <name>Toshiki Kataoka</name>
+    </author>
+    <author>
+      <name>Takahiro Ishikawa</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1909.13839v1</id>
+    <title>RLCache: Automated Cache Management Using Reinforcement Learning</title>
+    <updated>2019-09-30T17:03:51Z</updated>
+    <link href="https://arxiv.org/abs/1909.13839v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1909.13839v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This study investigates the use of reinforcement learning to guide a general purpose cache manager decisions. Cache managers directly impact the overall performance of computer systems. They govern decisions about which objects should be cached, the duration they should be cached for, and decides on which objects to evict from the cache if it is full. These three decisions impact both the cache hit rate and size of the storage that is needed to achieve that cache hit rate. An optimal cache manager will avoid unnecessary operations, maximise the cache hit rate which results in fewer round trips to a slower backend storage system, and minimise the size of storage needed to achieve a high hit-rate.
+  This project investigates using reinforcement learning in cache management by designing three separate agents for each of the cache manager tasks. Furthermore, the project investigates two advanced reinforcement learning architectures for multi-decision problems: a single multi-task agent and a multi-agent. We also introduce a framework to simplify the modelling of computer systems problems as a reinforcement learning task. The framework abstracts delayed experiences observations and reward assignment in computer systems while providing a flexible way to scale to multiple agents.
+  Simulation results based on an established database benchmark system show that reinforcement learning agents can achieve a higher cache hit rate over heuristic driven algorithms while minimising the needed space. They are also able to adapt to a changing workload and dynamically adjust their caching strategy accordingly. The proposed cache manager model is generic and applicable to other types of caches, such as file system caches. This project is the first, to our knowledge, to model cache manager decisions as a multi-task control problem.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-09-30T17:03:51Z</published>
+    <arxiv:comment>MPhil Thesis, 76 pages, Reinforcement Learning, Multi-agent, multi-task</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Sami Alabed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.20579v7</id>
+    <title>The challenge of hidden gifts in multi-agent reinforcement learning</title>
+    <updated>2026-07-18T20:07:20Z</updated>
+    <link href="https://arxiv.org/abs/2505.20579v7" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.20579v7" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Sometimes we benefit from actions that others have taken even when we are unaware that they took those actions. For example, if your neighbor chooses not to take a parking spot in front of your house when you are not there, you can benefit, even without being aware that they took this action. These ``hidden gifts'' represent an interesting challenge for multi-agent reinforcement learning (MARL), since assigning credit when the beneficial actions of others are hidden is non-trivial. Here, we study the impact of hidden gifts with a simple MARL task. In this task, agents in a grid-world environment have individual doors to unlock in order to obtain individual rewards. As well, if all the agents unlock their door the group receives a larger collective reward. However, there is only one key for all of the doors, such that the collective reward can only be obtained when the agents drop the key for others after they use it. Notably, there is nothing to indicate to an agent that the other agents have dropped the key, thus this act for others is a ``hidden gift''. We show that several different state-of-the-art MARL algorithms, including MARL specific architectures, fail to learn how to obtain the collective reward in this simple task. Interestingly, we find that decentralized actor-critic policy gradient agents can succeed when we provide them with information about their own action history, but MARL agents still cannot solve the task with action history. Finally, we derive a correction term for policy gradient agents, inspired by learning aware approaches, which reduces the variance in learning and helps them to converge to collective success more reliably. These results show that credit assignment in multi-agent settings can be particularly challenging in the presence of ``hidden gifts'', and demonstrate that self learning-awareness in decentralized agents can benefit these settings.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-26T23:28:52Z</published>
+    <arxiv:comment>Published at the third Reinforcement Learning Conference 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Dane Malenfant</name>
+    </author>
+    <author>
+      <name>Blake A. Richards</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2208.05056v2</id>
+    <title>Model-Free Generative Replay for Lifelong Reinforcement Learning: Application to Starcraft-2</title>
+    <updated>2022-08-16T17:01:57Z</updated>
+    <link href="https://arxiv.org/abs/2208.05056v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2208.05056v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>One approach to meet the challenges of deep lifelong reinforcement learning (LRL) is careful management of the agent's learning experiences, to learn (without forgetting) and build internal meta-models (of the tasks, environments, agents, and world). Generative replay (GR) is a biologically inspired replay mechanism that augments learning experiences with self-labelled examples drawn from an internal generative model that is updated over time. We present a version of GR for LRL that satisfies two desiderata: (a) Introspective density modelling of the latent representations of policies learned using deep RL, and (b) Model-free end-to-end learning. In this paper, we study three deep learning architectures for model-free GR, starting from a naïve GR and adding ingredients to achieve (a) and (b). We evaluate our proposed algorithms on three different scenarios comprising tasks from the Starcraft-2 and Minigrid domains. We report several key findings showing the impact of the design choices on quantitative metrics that include transfer learning, generalization to unseen tasks, fast adaptation after task change, performance wrt task expert, and catastrophic forgetting. We observe that our GR prevents drift in the features-to-action mapping from the latent vector space of a deep RL agent. We also show improvements in established lifelong learning metrics. We find that a small random replay buffer significantly increases the stability of training. Overall, we find that "hidden replay" (a well-known architecture for class-incremental classification) is the most promising approach that pushes the state-of-the-art in GR for LRL and observe that the architecture of the sleep model might be more important for improving performance than the types of replay used. Our experiments required only 6% of training samples to achieve 80-90% of expert performance in most Starcraft-2 scenarios.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-08-09T22:00:28Z</published>
+    <arxiv:comment>Accepted to the First Conference on Lifelong Learning Agents (CoLLAs 2022)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zachary Daniels</name>
+    </author>
+    <author>
+      <name>Aswin Raghavan</name>
+    </author>
+    <author>
+      <name>Jesse Hostetler</name>
+    </author>
+    <author>
+      <name>Abrar Rahman</name>
+    </author>
+    <author>
+      <name>Indranil Sur</name>
+    </author>
+    <author>
+      <name>Michael Piacentino</name>
+    </author>
+    <author>
+      <name>Ajay Divakaran</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1902.03657v1</id>
+    <title>A Bandit Framework for Optimal Selection of Reinforcement Learning Agents</title>
+    <updated>2019-02-10T19:39:28Z</updated>
+    <link href="https://arxiv.org/abs/1902.03657v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1902.03657v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep Reinforcement Learning has been shown to be very successful in complex games, e.g. Atari or Go. These games have clearly defined rules, and hence allow simulation. In many practical applications, however, interactions with the environment are costly and a good simulator of the environment is not available. Further, as environments differ by application, the optimal inductive bias (architecture, hyperparameters, etc.) of a reinforcement agent depends on the application. In this work, we propose a multi-arm bandit framework that selects from a set of different reinforcement learning agents to choose the one with the best inductive bias. To alleviate the problem of sparse rewards, the reinforcement learning agents are augmented with surrogate rewards. This helps the bandit framework to select the best agents early, since these rewards are smoother and less sparse than the environment reward. The bandit has the double objective of maximizing the reward while the agents are learning and selecting the best agent after a finite number of learning steps. Our experimental results on standard environments show that the proposed framework is able to consistently select the optimal agent after a finite number of steps, while collecting more cumulative reward compared to selecting a sub-optimal architecture or uniformly alternating between different agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-02-10T19:39:28Z</published>
+    <arxiv:comment>Published at the 32nd Conference on Neural Information Processing Systems (NIPS 2018), Montreal, Canada. Deep Reinforcement Learning Workshop</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Andreas Merentitis</name>
+    </author>
+    <author>
+      <name>Kashif Rasul</name>
+    </author>
+    <author>
+      <name>Roland Vollgraf</name>
+    </author>
+    <author>
+      <name>Abdul-Saboor Sheikh</name>
+    </author>
+    <author>
+      <name>Urs Bergmann</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.02910v1</id>
+    <title>Causal-Paced Deep Reinforcement Learning</title>
+    <updated>2025-06-24T20:15:01Z</updated>
+    <link href="https://arxiv.org/abs/2507.02910v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.02910v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Designing effective task sequences is crucial for curriculum reinforcement learning (CRL), where agents must gradually acquire skills by training on intermediate tasks. A key challenge in CRL is to identify tasks that promote exploration, yet are similar enough to support effective transfer. While recent approach suggests comparing tasks via their Structural Causal Models (SCMs), the method requires access to ground-truth causal structures, an unrealistic assumption in most RL settings. In this work, we propose Causal-Paced Deep Reinforcement Learning (CP-DRL), a curriculum learning framework aware of SCM differences between tasks based on interaction data approximation. This signal captures task novelty, which we combine with the agent's learnability, measured by reward gain, to form a unified objective. Empirically, CP-DRL outperforms existing curriculum methods on the Point Mass benchmark, achieving faster convergence and higher returns. CP-DRL demonstrates reduced variance with comparable final returns in the Bipedal Walker-Trivial setting, and achieves the highest average performance in the Infeasible variant. These results indicate that leveraging causal relationships between tasks can improve the structure-awareness and sample efficiency of curriculum reinforcement learning. We provide the full implementation of CP-DRL to facilitate the reproduction of our main results at https://github.com/Cho-Geonwoo/CP-DRL.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-24T20:15:01Z</published>
+    <arxiv:comment>Workshop on Causal Reinforcement Learning, Reinforcement Learning Conference (RLC) 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Geonwoo Cho</name>
+    </author>
+    <author>
+      <name>Jaegyun Im</name>
+    </author>
+    <author>
+      <name>Doyoon Kim</name>
+    </author>
+    <author>
+      <name>Sundong Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2105.05155v3</id>
+    <title>TAG: Task-based Accumulated Gradients for Lifelong learning</title>
+    <updated>2022-08-29T19:58:32Z</updated>
+    <link href="https://arxiv.org/abs/2105.05155v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2105.05155v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When an agent encounters a continual stream of new tasks in the lifelong learning setting, it leverages the knowledge it gained from the earlier tasks to help learn the new tasks better. In such a scenario, identifying an efficient knowledge representation becomes a challenging problem. Most research works propose to either store a subset of examples from the past tasks in a replay buffer, dedicate a separate set of parameters to each task or penalize excessive updates over parameters by introducing a regularization term. While existing methods employ the general task-agnostic stochastic gradient descent update rule, we propose a task-aware optimizer that adapts the learning rate based on the relatedness among tasks. We utilize the directions taken by the parameters during the updates by accumulating the gradients specific to each task. These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. We empirically show that our proposed adaptive learning rate not only accounts for catastrophic forgetting but also allows positive backward transfer. We also show that our method performs better than several state-of-the-art methods in lifelong learning on complex datasets with a large number of tasks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-05-11T16:10:32Z</published>
+    <arxiv:comment>Published at 1st Conference on Lifelong Learning Agents, 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Pranshu Malviya</name>
+    </author>
+    <author>
+      <name>Balaraman Ravindran</name>
+    </author>
+    <author>
+      <name>Sarath Chandar</name>
+    </author>
+  </entry>
+</feed>

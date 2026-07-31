@@ -1,0 +1,1324 @@
+
+
+--- Page 1 ---
+CM2: Reinforcement Learning with Checklist
+Rewards for Multi-Turn and Multi-Step
+Agentic Tool Use
+Zhen Zhang1 Kaiqiang Song2 Xun Wang2 Yebowen Hu3 Weixiang Yan1
+Chenyang Zhao4 Henry Peng Zou5 Haoyun Deng2 Sathish Reddy Indurthi2
+Shujian Liu2 Simin Ma2 Xiaoyang Wang2 Xin Eric Wang†1 Song Wang†2
+1 University of California, Santa Barbara 2 Zoom Video Communications 3 University of Central
+Florida 4 University of California, Los Angeles 5 University of Illinois Chicago
+Abstract
+AI agents are increasingly used to solve real-world tasks by reasoning over multi-turn user interactions and
+invoking external tools. However, applying reinforcement learning to such settings remains difficult: realistic
+objectives often lack verifiable rewards and instead emphasize open-ended behaviors; moreover, RL for
+multi-turn, multi-step agentic tool use is still underexplored; and building and maintaining executable tool
+environments is costly, limiting scale and coverage. We proposeCM2, an RL framework that replaces
+verifiable outcome rewards with checklist rewards.CM2decomposes each turn’s intended behavior into
+fine-grained binary criteria with explicit evidence grounding and structured metadata, turning open-ended
+judging into more stable classification-style decisions. To balance stability and informativeness, our method
+adopts a strategy of sparse reward assignment but dense evaluation criteria. Training is performed in a
+scalable LLM-simulated tool environment, avoiding heavy engineering for large tool sets. Experiments show
+thatCM2consistently improves over supervised fine-tuning. Starting from a 8B Base model and training on
+an 8k-example RL dataset,CM2improves over the SFT counterpart by8points onτ2-Bench, by10points
+on BFCL-V4, and by12points on ToolSandbox. The results match or even outperform similarly sized
+open-source baselines, including the judging model.CM2thus provides a scalable recipe for optimizing
+multi-turn, multi-step tool-using agents without relying on verifiable rewards. Code provided by the open
+source community:https://github.com/namezhenzhang/CM2-RLCR-Tool-Agent
+1. Introduction
+AI Agents are emerging as a promising paradigm for solving complex, real-world tasks [1, 2, 3]. By reasoning
+and invoking external tools, such as search engines, databases, proprietary APIs, and compilers, an agent
+can interact with external environments to transcend the limitations of its parametric knowledge [4, 5].
+Unlike traditional question answering [6], these agents require the ability to navigatemulti-turndialogues
+with users and executemulti-stepreasoning with tool use [7]. However, training general-purpose agents to
+master such interactions through reinforcement learning (RL) remains a huge challenge.
+Three primary limitations hinder current RL research in this domain. First, existing work largely relies
+onverifiable rewards[ 8]. Typical setups supervise agents based on the rule-based correctness of final
+answers or the exact match of the tool execution trace against ground-truth [9]. However, such signals
+are often not applicable in realistic, open-ended scenarios, where objectives may include asking clarifying
+questions, maintaining a helpful tone, or providing suggestions [10, 11, 12]. Second, RL for multi-turn and
+arXiv:2602.12268v2  [cs.AI]  20 Feb 2026
+
+--- Page 2 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Tools Schema & System
+User Query 1.1
+Reasoning 1.2
+Tool Calls 1.3
+Tool Responses 1.4
+Reasoning 1.5
+Tool Calls 1.6
+Tool Responses 1.7
+Final Reply 1.9
+Reasoning t.2
+Tool Calls t.3
+Tool Responses t.4
+Final Reply t.s+1
+User Query t.1
+Reasoning t.s
+Reasoning 1.8
+Multi-Turn Multi-Step  Trajectory 
+⋮
+TurnStep
+Data
+Filtering
+CoT
+Compress
+Cold Start
+SFT
+Checklist
+Labeling
+LLM
+Judge
+Tool
+Simulation
+RL
+Training
+Checklist 1
+Item 1.1
+⋮
+Traj. Level
+Turn Level
+Step Level
+Binary Question
+Meta data
+Item 1.2
+Binary Question
+Meta data
+Checklist t
+Item t.1
+Binary Question
+Meta data
+Item t.2
+Binary Question
+Meta data
+Trajectory
+Checklist Reward
+Pipeline
+⋮
+⋮
+⋮
+Turn 1 Turn t
+Few-shot 
+Examples
+LLM
+Simulator
+Tool Schema
+Tool calls
+Tool Responses
+Tool
+Assignment Granularity
+Step
+ Step
+Step
+ Step
+Criteria 
+Granularity
+Figure 1:Overview of ourCM2. Starting from multi-turn, multi-step tool-use trajectories, we perform data
+filtering, CoT compression, and cold-start SFT, then annotate a per-turn checklist with evidence-grounded
+binary criteria and structured metadata. RL training is carried out in an LLM-simulated tool environment,
+where a LLM simulator produces tool responses and an LLM-as-a-Judge evaluates checklist items to compute
+rewards. The bottom panel contrasts dense criteria granularity with sparse reward assignment at different
+assignment granularities.
+multi-step interactions is underexplored. Most current works rely heavily on supervised fine-tuning (SFT)
+with synthetic data [13], simulated environment [14, 15] or RL limited to multi-step reasoning without
+multi-turn dynamics [16]. While these methods endow models with basic capabilities, they often struggle
+to generalize to unseen tools, extended horizons, and richer user interactions. Third, scaling tool-use RL
+is fundamentally constrained by tool environment construction. Implementing tool APIs and maintaining
+reliable execution environments incurs substantial engineering overhead and makes it difficult to scale to
+large and diverse tools [17, 18].
+To address these challenges, we proposeCM2(Checklist Reward forMulti-turn Multi-step AgenticToolUse),
+an RL training framework formulti-turnandmulti-steptool-use agent,without relying on rule-based
+verifiable rewards. The RL training is performed in ascalable LLM-simulated tool environmentcontaining
+5,000 tools. The workflow is illustrated in Figure 1.
+The core idea ofCM2is to replace the verifiable rewards with checklist rewards, decomposing the agent’s
+intended behavior in each turn into fine-grainedbinaryevaluation criteria, where each criterion is equipped
+with explicit evidence grounding, dependencies, and weights. This formulation turns open-ended judging into
+more stable classification-style decisions, while retaining interpretability and compositionality for complex
+objectives.
+A central design question is how to trade off signal density and training stability under noisy tool simulations
+and LLM-based judging. We find that simply making rewards denser along the trajectory can amplify noise
+and destabilize optimization.CM2therefore adopts a strategy:Sparse in assignment; Dense in criteria.
+Rewards are assigned conservatively, while supervision remains informative. To study assignment granularity
+2
+
+--- Page 3 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+systematically, we instantiate three advantage estimation variants: trajectory-level, turn-level, and step-level.
+We also introduce a reward backfilling mechanism that attributes delayed checklist satisfaction to earlier
+critical steps when dependencies are met, improving credit assignment in long interactions.
+To enablescalabletraining across diverse tools without heavy engineering,CM2performs RL in anLLM-
+simulated tool environmentcontaining 5,000+ tools. The simulator supports hybrid execution by replaying
+recorded tool I/O when available and falling back to LLM-based tool response simulation otherwise. This
+method enables large-scale, execution-free interaction while maintaining contextual consistency, thereby
+improving training robustness [17, 18].
+Empirically,CM2yields significant improvements across multiple challenging benchmarks. Starting from
+a 8B base model and training on an 8k-example RL dataset, CM2 improves over the SFT counterpart by8
+points on τ2-Bench [19, 20], by 10 points on BFCL-V4 [21], and by12 points on ToolSandbox [22]. The
+results match or even outperform similarly sized open-source baselines. More importantly,CM2enables
+robust reinforcement learning for agentic systems without requiring manual environment-specific reward
+engineering, demonstrating that Checklist rewards provide an effective and scalable supervision signal
+for training general-purpose agents capable of multi-turn, multi-step tool use, particularly invaluable in
+domains where explicit and verifiable rewards are unavailable, offering a practical pathway toward large-scale
+optimization of agentic tool use capabilities.
+2. Related Work
+2.1 Reward for RL
+Recent advances have shifted from SFT toward RL to enhance the generalization and robustness of agent
+behavior. A dominant paradigm is Reinforcement Learning with Verifiable Rewards (RLVR) [8], which
+leverages deterministic signals to guide optimization. However, applying RLVR to open-ended problems
+remains challenging due to the absence of ground-truth verifiers. Traditionally, Reinforcement Learning from
+Human Feedback [23, 24] addresses this limitation by training reward models on human preference data to
+provide scalar signals [25, 26]. Yet these holistic scalar rewards are often opaque and insufficient for guiding
+complex multi-step reasoning. To overcome this issue, recent work has turned to criterion-based rewards.
+Frameworks such as Reinforcement Learning with Rubric-based Rewards [10, 11, 27] and Reinforcement
+Learning from checklist Feedback [12] decompose instruction execution into fine-grained checklist items
+or criteria, which are then evaluated by LLMs serving as judges. These studies demonstrate that dense,
+structured feedback substantially outperforms opaque scalar rewards from standard reward models.
+2.2 Multi-Turn Multi-Step Agent RL
+The evolution from single-step to multi-turn, multi-step agent interactions poses significant challenges for
+state tracking and credit assignment in RL training. Recent benchmarks [22, 20, 21, 28] emphasize the
+importance of stateful dynamics, requiring agents to maintain contextual consistency and execute coherent
+tool-calling sequences over extended horizons. While these benchmarks effectively evaluate multi-turn
+dialogue or multi-step reasoning capabilities, existing work largely treats these two aspects in isolation,
+with few studies using RL to simultaneously optimize the compositional complexity arising from multi-turn
+dialogue dynamics and multi-step tool-use trajectories. Recently, MUA-RL [29] first integrated LLM-simulated
+users into RL loops but relies on binary outcome rewards and optimizes on in-domain evaluation data, failing
+to address sparse reward challenges in long interactions. In contrast,CM2employs fine-grained checklist
+3
+
+--- Page 4 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+rewards to explicitly reinforce correct intermediate steps, effectively mitigating credit assignment problems
+and enabling more robust dialogue policies and tool-use patterns.
+2.3 LLM-Simulated Tool Environments
+The fundamental limitation in extending RL to tool-use domains lies in the engineering overhead of main-
+taining real-world APIs [22, 5]. To address this challenge, LLM-based environment simulation has become
+the dominant paradigm. SynthAgent [30] proposes a fully synthetic supervision framework for web agents
+with trajectory optimization to enhance performance; ToolEmu [18] demonstrates the effectiveness of
+LLM-simulated sandboxes in identifying risky behaviors, enabling safety evaluation without actual tool
+infrastructure. Simia [31] shows that powerful LLMs can faithfully simulate environment feedback based on
+tool definitions and interaction history, while Generalist Tool Model (GTM) [32] introduces a specialized
+1.5B parameter model to simulate the execution of over 20,000 tools. In contrast,CM2scales to arbitrary
+tools, enabling large-scale training across diverse domains and synthetic edge cases that improve robustness.
+3. RL via Checklist Rewards for Agentic Tool Use
+In this section, we introduce ourCM2method. We first formulate the problem of multi-turn and multi-step
+agentic tool calling in Section 3.1 and then define two dimensions of granularity in reward modeling for
+agentic tasks in Section 3.2. Subsequently, Section 3.3 describes the shaping and labeling process of the
+Checklist rewards. Finally, we detail how to do RL training with Checklist rewards in Section 3.4.
+3.1 Problem Formulation
+As shown in the upper left part of Figure 1, we consider amulti-turn and multi-stepdialogueD between a
+user u and an agentπθ equipped with a set of toolsT={T 1,T 2, . . . ,T K}. A dialogue is composed of multiple
+turns: D={τ 1,τ 2, . . . ,τ L}, where each turnτt consists of a sequence ofsteps:τt ={σ t,1,σ t,2, . . . ,σt,M t }.
+Each step σt,s is categorized into one of three types:(1) User Query, marking the initiation of a turn;(2)
+Agent Action, which comprises: (i) an internalReasoning processzt,s that precedes an action, and (ii) an
+explicitaction at,s, which may be tool calls or a final reply;(3) Tool Responses, which are the output returned
+by the tool invoked in the preceding agent action.
+WeemployInterleavedThinking[ 33]tomaintaincontext, andkeepthethinkingprocessfrompreviousturns.
+The dialogue contextht,s is defined as the complete observable history up to stepσt,s: ht,s ={τ 1, . . . ,τt−1} ∪
+{σt,1, . . . ,σt,s}. At each agent action step, the model first generates reasoningzt,s ∼π θ(z|h t,s), followed by
+an action at,s ∼π θ(a|h t,s,z t,s). If the actionat,s is a tool call, the tool environment executes the selected
+tool Ti with arguments and returns an observationrtool
+t,s =T i(at,s), which is then appended to the history to
+form ht,s+1. If the action is a final reply, the current turn terminates, and any subsequent user query initiates
+a new turn.
+3.2 Two Types of Granularity in Reward Modeling
+Before detailing our Checklist reward shaping, we define two orthogonal dimensions of reward granularity:
+Assignment GranularityandCriteria Granularity. These dimensions address two fundamental questions:
+whererewards are assigned along the trajectory, andwhatcriteria are used for evaluation.
+Assignment Granularityrefers to the credit assignment of reward signals across the sequence of outputs.
+This dimension distinguishes between sparse and dense reward signals. At the coarse-grained level, the
+4
+
+--- Page 5 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+{
+"id": "D3",
+"evidence": [{
+"turn": 1, "step": 2,
+"from": "assistant.final_reply",
+"snippet": "which exceeds your $500 target.\n\n### Recommendations for
+Budget-Friendly Alternatives:",→
+}],
+"focus_on": "assistant.final_reply",
+"question": "Does the assistant propose alternative budget-friendly van
+options or adjustments instead of generating a caption?",,→
+"pass_condition": "The final reply offers at least one cost-lowering
+alternative (e.g., cheaper van, longer term, smaller vehicle) and does not
+proceed to caption/hashtags.",
+,→
+,→
+"failure_examples":[
+"Assistant generates caption/hashtags despite payment > $500",
+"Assistant provides no alternative options"
+],
+"strictness": true,
+"dependency": ["D1"],
+"weight": 0.2
+}
+Figure 2:Example of One Checklist Item
+Table 1:Components of a checklist item.
+Component Description
+EvidencePointers to the specific segment(s) in the original trajectory that this item is annotated from.
+Focus The step type this item targets (e.g., tool calls, reasoning, final reply, or tool response), to help
+the judge localize the relevant context.
+QuestionA binary checklist question to be answered for this item.
+Pass/FailExplicit criteria defining when the item passes or fails.
+Strictness A boolean flag (required_for_next_turn) indicating whether this item must pass for the conver-
+sation to proceed to the next turn since user query is fixed.
+Dependency Dependencies indicating whether this item can only be satisfied after other item(s) are satisfied.
+Weight(w) The item’s relative weight within a turn, with∑︀
+i wi =1.
+reward is assigned to the final state of a trajectory, treating the entire sequence as a single unit of evaluation.
+In contrast, the fine-grained level distributes reward signals across intermediate steps to evaluate the
+incremental progress of the generation.
+Criteria Granularityconcerns the specificity of the evaluative metrics. Coarse-grained evaluation is holistic,
+where the reward reflects a single judgment, such as task completion or correctness. Fine-grained criteria
+decompose evaluation into multiple sub-dimensions (e.g., helpfulness, harmfulness, accuracy), each weighted
+according to a specific rubric.
+While increasing granularity in both dimensions theoretically provides denser signals, our empirical obser-
+5
+
+--- Page 6 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+vations in agentic scenarios suggest a decoupled strategy. Due to the inherent noise in the environment,
+coarse-grained assignmentyields a more stable training curve. Concurrently,fine-grained criteriadeliver
+the essential, task-specific guidance required to navigate complex tool-use logic. Consequently, we adopt a
+strategy characterized asSparse in assignment; Dense in criteria.
+3.3 Checklist Reward Shaping
+In this section, we introduce theChecklist-based Reward Shapingthat can provide two types of fine-grained
+reward signals for multi-turn and multi-step RL training for agentic tool use.
+CompositionoftheChecklist.As shown in the bottom left of Figure 1, for each turnτt, we label aChecklistΓt
+that contains several items{γ1, . . . ,γ Nt }. The annotator LLM is prompted to decompose the agent’s intended
+behavior in each turn into multiple fine-grained subtasks. Each subtask, which is called a Checklist item, has
+one binary question and is enriched with detailed metadata that defines its semantics and constraints as
+shown in Table 1. The example of one Checklist item is illustrated in Figure 2.
+Why Checklist Rewards?Checklist formulates each criterion as abinarypass/fail decision with explicit
+evidence and conditions, turning LLM judging from open-ended scoring (regression) into a morestable
+and easy classification-style evaluation. This substantially reduces judge randomness; otherwise, small
+stochastic score differences can be amplified by per-batch return or advantage normalization in RL, changing
+within-batch rankings and leading to unstable or even contradictory gradients [?]. Besides, this structured
+metadata ensures that the Checklist isinterpretable, allowing automated and consistent evaluation across
+turns with less noise.
+Post-hoc Checklist Annotation.In practice, we label the Checklist bypost-hocstructuring an existing
+multi-turn and multi-step tool use trajectory rather than from scratch. For each turn, we prompt an LLM
+to (i) infer the turn-level intent and required outcomes from the user query and the assistant/tool traces,
+and (ii) decompose them into a concise set ofbinary, observableChecklist items grounded in the trajectory.
+Each trajectory only costs approximately $0.1 on average, making it practical to scale checklist labeling
+to large datasets without significant overhead compared with training costs and manual annotation. The
+prompt and annotation details are provided in Appendix .1.1.
+Rollout and Reward Computation.During rollout, at each step within turnτt, we query a judge LLM
+with the trajectory prefix (history so far) together with the checklist items for that turn. The judge returns
+a Boolean label for each item, indicating whether it is currently satisfied by the partial trajectory. After
+the agent produces the final user-visible response for the turn, we enforce the strictness constraints: if all
+strictness items are satisfied, we issue the next user query from the reference trajectory; otherwise, we
+terminate the rollout early.
+3.4 Checklist-based RL Optimization
+RL algorithm based on Group Relative Policy Optimization (GRPO) are typically formulated around outcome
+rewards. However, our Checklist-based framework enables the extraction of dense reward signals down to
+the individual step level. To systematically investigate the impact ofAssignment Granularity, we instantiate
+three distinct advantage estimation variants: (i) Trajectory-level, (ii) Turn-level, and (iii) Step-level. These
+variants differ primarily in how to assign the reward and calculate the advantage accordingly.
+6
+
+--- Page 7 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+3.4.1. Checklist-based Reward
+Let xs denote the state before steps and xs+1 the state after steps. For dialoguei, turn t, and checklist item
+c, letSat (i)
+t,c (xs)∈ {0, 1}denote whetherγ (i)
+t,c is satisfied in statexs. Let
+Dept,c ={c ′ |γ t,c′ is a dependency (prerequisite) ofγt,c },(1)
+be the set of dependency items ofγ(i)
+t,c. Once γ(i)
+t,c switches from unsatisfied to satisfied at steps, and all its
+dependencies are already satisfied in the pre-step statexs, we assign a binary reward to that step:
+r(i)
+t,s,c =1
+[︁∏︁
+c′∈Dept,c
+Sat(i)
+t,c′ (xs) =1
+⏟  ⏞  
+all deps. satisfied inxs
+∧Sat (i)
+t,c (xs) =0
+⏟  ⏞  
+unsatisfied inx s
+∧Sat (i)
+t,c (xs+1) =1
+⏟  ⏞  
+satisfied inx s+1
+]︁
+.(2)
+Since satisfying an item may require multiple steps, we furtherbackfillthe reward to every earlier step where
+all the dependencies were already satisfied. The backfilled reward is defined as
+˜r(i)
+t,s,c =1
+[︁∏︁
+c′∈Dept,c
+Sat(i)
+t,c′ (xs) =1
+⏟  ⏞  
+all deps. satisfied befores
+∧Sat (i)
+t,c (xs) =0
+⏟  ⏞  
+unsatisfied befores
+∧ ∃u≥ss.t.Sat (i)
+t,c (xu+1) =1
+⏟  ⏞  
+satisfied afters
+]︁
+.(3)
+Note that we only usebackfilledreward in step-level advantage.
+3.4.2. Trajectory-level Advantage
+Given a dialogue (rollout)D(i) ={τ 1, . . . ,τ L(i) }, we first aggregate all Checklist-based rewards across turns,
+steps, and items as
+R(i) = 1
+L(i)
+L(i)
+∑︁
+t=1
+∑︁
+s
+∑︁
+c
+wt,c ·r (i)
+t,s,c,(4)
+where s ranges over steps in turnt and c ranges over checklist items for turnt and R(i) ∈[0, 1] since∑︀
+s r(i)
+t,s,c ≤1 (it only flips once) and∑︀
+s
+∑︀
+c wt,c ·r (i)
+t,s,c ≤ ∑︀
+c wt,c =1 . For the group ofG rollouts of the same
+prompt, we define the trajectory-level advantage as
+A(i)
+traj = R(i) −mean({R (i)}G
+i=1)
+Fnorm({R (i)}G
+i=1) .(5)
+3.4.3. Turn-level Advantage
+To get the turn-level advantage, we aggregate Checklist-based rewardswithineach turn. For dialoguei and
+turnt, we define the turn reward as
+R(i)
+t =
+∑︁
+s
+∑︁
+c
+wt,c ·r (i)
+t,s,c,(6)
+where s ranges over steps in turnt and c ranges over checklist items for turnt and R(i)
+t ∈[0, 1] . Given a
+group ofGrollouts of the same question, we compute a turn-level GRPO advantage as
+A(i)
+turn,t =
+R(i)
+t −mean
+(︁
+{R(i)
+t }G
+i=1
+)︁
+Fnorm
+(︁
+{R(i)
+t }G
+i=1
+)︁ .(7)
+7
+
+--- Page 8 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+3.4.4. Step-level Advantage
+For the step-level reward baseline, we first calculate a baseline in one group satisfy a certain Checklist item:
+bt,c = 1
+G
+G∑︁
+i=1
+I
+[︀
+∃s′ s.t.r (i)
+t,s′,c =1
+]︀
+.(8)
+At step (t,s) in rollout i, multiple checklist items may be applicable simultaneously. We first compute an
+item-wise step advantage:
+A(i)
+t,s,c =
+˜r(i)
+t,s,c −b t,c
+Fnorm({I
+[︀
+∃s′ s.t.r (i)
+t,s′,c =1
+]︀
+}G
+i=1)
+,(9)
+and then aggregate them using the checklist weights:
+A(i)
+step,t,s =
+∑︀
+c∈E (i)
+t,s
+wt,c A(i)
+t,s,c
+∑︀
+c∈E (i)
+t,s
+wt,c
+. (10)
+Here E (i)
+t,s =
+{︀
+c
+⃒⃒ ∏︀
+c′∈Dept,c
+Sat(i)
+t,c′ (xs) =1∧Sat (i)
+t,c (xs) =0
+}︀
+denotes the set of checklist items that are eligible
+to be satisfied at steps(i.e., all dependencies are already satisfied and itemcis not yet satisfied).
+4. Training Pipeline
+In this section, we outline the training pipeline ofCM2, which encompasses data filtering, Chain-of-Thought
+(CoT) compression, cold-start SFT, checklist labeling, tool simulation, and RL training guided by an LLM-as-
+a-Judge. The overall workflow is illustrated in the top right of Figure 1.
+4.1 Data Filtering
+We start from the tool-calling subset of thenvidia/Nemotron-Post-Training-Dataset-v1dataset [34,
+35], which contains 310k synthetic tool-use dialogues spanning single-turn, multi-turn, and multi-step
+settings across diverse domains (e.g., shopping, financial analysis, and web search). Since all samples are
+distilled from an LLM, the data contains substantial noise. We therefore apply a two-stage filtering pipeline
+to ensure quality: (1)Rule-based filteringremoves examples with structural and formatting violations
+(criteria in Appendix .4); (2)LLM-based filteringuses GPT-5[36] to further discard samples with deeper
+semantic or reasoning errors. The prompt and details are provided in Appendix .1.2.
+We also conducted additional experiments on the APIGen-MT-5k dataset[37], but we did not clean it.
+Data statistics.Rule-based filtering reduces the dataset from 310k to 280k examples, and LLM-based
+filtering further narrows it to 30k high-quality samples. From this set, we randomly sample8k examplesfor
+cold-start SFT, and the remaining 22k form the candidate pool for RL, from which we additionally exclude
+simpler cases (e.g., single-turn or single-tool interactions) and retain another8k complex multi-turn,
+multi-step dialoguesfor RL training, with 500 held out for validation.
+8
+
+--- Page 9 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+4.2 CoT Compression and Cold Start
+Before finalizing the training sets, we compress the original chain-of-thought (CoT) to improve inference
+efficiency and reduce context length. Specifically, we use GPT-5 to rewrite the thinking content into a shorter
+form while preserving the key planning and decisions (prompt in Appendix .1.3). After compression, the
+resulting datasets are denoted asDCS (cold-start SFT) andDRL (RL training), respectively.
+Finally, we fine-tune a 8B base model on theDCS. Hyperparameters and other training details are provided
+in Appendix .2.
+4.3 Tool Simulation and LLM-as-a-Judge
+Because trajectories are synthetic, there is no executable environment available during RL. To avoid building
+and maintaining 5,000+ unique tools, we implement a hybrid tool simulator. Upon a tool invocation, the
+simulator first performs anexact matchagainst the original tool name and arguments; if matched, it returns
+the recorded tool response. Otherwise, we fall back toLLM-based simulation: we prompt an LLM with
+in-dialogue tool I/O exemplars as few-shot learning to generate a response that remains consistent with the
+trajectory context, enabling scalable, execution-free interaction. ForLLM-as-a-Judgefor checklist rewards,
+we prompt an LLM at each step to answer each question in checklist. Then we aggregate reward as in
+Section 3. The judging prompt is provided in Appendix .1.4. We use a 30B model with 3B Activate parameters
+for both tool simulation and LLM-as-a-Judge, chosen to balance quality and throughput. Later experiments
+show that even a lightweight judge with merely 3B active parameters enables the model to attain highly
+competitive or even surpassing results.
+4.4 Checklist Labeling and RL Training
+Following Section 3.3, we use GPT-5 to annotate a per-turn Checklist for each dialogue (prompts in Ap-
+pendix .1.1). We then optimize from the cold-start SFT checkpoint using GRPO based on VeRL, and apply
+the multi-level advantage comparison described in Section 3.4. The RL model is trained on 64 GPUs for 680
+hours. Additional implementation details and hyperparameters are deferred to Appendix .3.
+5. Results
+5.1 Effect of Allocation Granularity
+Figure3acomparestherewardcurveonvalidationsetunderdifferentassignmentgranularities. Finer-grained
+allocation yields faster early improvements: step-level advantages outperform turn-level, which in turn
+outperform trajectory-level in the initial phase. As training continues, however, finer granularities exhibit
+earlier and more severe training collapse, while trajectory-level advantages remain more stable and continue
+to improve.
+We attribute this trade-off to noise amplification in agentic RL. Checklist rewards reduce judge variance by
+turning open-ended scoring into binary, evidence-grounded decisions, but they do not eliminate stochasticity.
+With finer-grained assignment, this residual noise enters optimization more frequently and can be amplified
+by group-relative normalization, yielding higher-variance or sometimes misleading gradients. This motivates
+our principle ofSparse in assignment; Dense in criteria: we keep evaluation criteria fine-grained for informative
+supervision, while assigning rewards at coarser granularity to average out residual noise and improve stability.
+9
+
+--- Page 10 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+0 100 200 300 400 500
+Step
+0.74
+0.76
+0.78
+0.80
+0.82
+0.84
+0.86
+0.88Reward
+Smoothing: SMA (window=7)
+Step
+T urn
+Traj
+aReward curves on the validation set for different
+advantage assignment granularities.
+0 200 400 600 800 1000
+Step
+0.74
+0.76
+0.78
+0.80
+0.82
+0.84
+0.86
+0.88Reward
+Smoothing: SMA (window=11)
+Traj(n=48)
+Traj(n=24)
+bReward curves on the validation set between different
+group sizes (n).
+Figure 3:Comparison results under different settings.
+5.2 Effect of Group Size
+Figure 3b shows the impact of group sizeG (e.g., G=24 vs. G=48) with trajectory-level Checklist rewards. A
+larger group size consistently achieves higher rewards. Intuitively, for multi-turn, multi-step trajectories,
+increasing G provides more samples for later turns, leading to a lower-variance advantage estimate more
+reliable gradient updates.
+5.3 Results on Benchmarks
+10
+
+--- Page 11 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Model / Method Airline Retail Telecom Avg.
+Open-source Baselines
+30B-A3B-Instruct 32.50 50.88 12.72 32.03
+8B-Thinking 30.00 43.64 22.37 32.00
+Ours(from8B-Base)
+Cold-start SFT onDCS 25.50 18.42 11.84 18.59
+,→SFT onDRL 23.50 19.52 12.06 18.36
+,→RL onDRL(CM2) 27.00 36.40 16.8926.76
+Ours(from 8B-Thinking)
+SFT onDIn-domain 30.00 44.74 23.68 32.81
+RL onDIn-domain(CM2-τ2) 33.00 54.17 37.0041.39
+Table 2:Results on theτ2-Bench benchmark. We run evaluation four times and report the average accuracy
+We follow the default evaluation setting ofτ2-Bench, except that we retain the thinking content for our
+models to align with our training setup. We further conduct SFT and RL with a sythetic 5k in domain data of
+τ2-Bench. It shares the same tool functions on airline and retail subset while telecom is not covered.
+Multi-Turn Web Search
+Model / Method Base Miss Func Miss Param Long Ctx Overall Base No Snippet Overall
+Open-source Baselines
+30B-A3B-Instruct-2507 45.0 28.0 21.0 42.534.2524.00 17.00 20.50
+8B-Thinking 42.5 38.5 31.5 35.537.0019.00 11.00 15.00
+Ours(from8B-Base)
+Cold-start SFT onDCS 24.5 19.0 14.5 19.519.3718.00 10.00 14.00
+,→SFT onDRL 30.0 27.5 24.5 25.026.7518.00 9.00 13.50
+,→RL onDRL(CM2) 44.5 32.0 35.0 34.536.5041.00 14.0027.50
+Table 3:Results on the BFCL-V4 benchmark (Multi-Turn and Web Search subset).
+Model / Method Scenario Categories Tool Augmentations Overall Score↑
+STC MTC SUT MUT SD C II 0-DT 3-DT 10-DT AT TNS TDS ADS ATS
+Open-source Baselines
+30B-A3B-Instruct-2507 84.18 69.14 74.52 65.33 75.11 66.95 40.97 64.29 68.23 60.98 66.62 68.56 63.32 66.17 63.74 65.24
+8B-Thinking 77.12 58.91 64.07 57.82 60.65 56.71 76.77 70.96 67.69 64.55 60.79 69.00 56.98 65.08 68.71 65.47
+Ours(from8B-Base)
+Cold-start SFT onDCS 71.65 47.89 54.91 45.72 63.08 45.93 69.97 55.44 56.68 56.03 53.86 60.34 55.81 52.82 58.53 56.19
+,→SFT onDRL 74.89 46.66 55.71 42.22 59.25 44.35 67.41 55.69 54.09 55.23 50.42 62.42 55.27 53.42 56.04 55.32
+,→RL onDRL(CM2) 78.46 66.12 69.23 63.40 67.36 63.41 70.31 69.82 63.97 65.89 65.25 74.06 67.03 67.78 71.8168.20
+Table 4:Performance of ToolSandbox on various scenarios and tool augmentations. Our models are trained
+from8B-Base; we do not report results for the base checkpoint since it is not instruction-tuned under this
+evaluation protocol. Here,DCS denotes the 8k cold-start SFT set, andDRL denotes the 8k complex
+multi-turn, multi-step RL training set.
+We evaluate our proposedCM2using our final configuration (trajectory-level advantage estimation with
+group size G=48 ) on three challenging multi-turn, multi-step tool-use benchmarks:τ2-Bench, BFCL-V4,
+11
+
+--- Page 12 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+and ToolSandbox. We compare against the SFT counterparts and open-source models of similar size.
+τ2-Bench Benchmark.The results on τ2-Bench are summarized in Table 2. For each question, we run
+evaluation four times and report average accuracy. As shown in Table 2, starting from an8B base model,
+our RL model outperforms SFT by over 8 points, demonstrating the effectiveness ofCM2. However, our RL
+training uses a maximum context length of 10k and up to 30 turns, whereasτ2-Bench can require>30k
+context and up to 200 turns. Under this mismatch,CM2lags behind some open-source models such as an
+30B instruct model with 3B activation parameters, and a 8B reasoning model.
+To mitigate this, we further perform RL on an in-domain dataset with 5k data, which substantially improves
+average performance and surpasses the open-source baselines. Overall, these results indicate thatCM2is
+particularly effective when paired with in-domain data.
+BFCL Benchmark.Table 3 summarizes the results on BFCL-V4 (Multi-Turn and Web Search). Overall, our
+RL model trained onDRL (CM2) substantially improves over SFT variants: on Multi-Turn, it achieves 36.50
+overall accuracy, outperforming cold-start SFT and further SFT onDRL by 10 points. On Web Search, RL also
+yields the best overall performance, improving over cold-start SFT and SFT onDRL by 13.5 and 14 points,
+respectively. Compared with open-source baselines, our RL model performs better than 30B-A3B-Instruct
+model (judging model) on Multi-Turn and is comparable to 8B-Thinking model, while significantly surpassing
+both baselines on Web Search.
+ToolSandbox Benchmark.Table 4 reports performance on ToolSandbox Benchmark. RL onDRL (CM2)
+yields a large improvement over both SFT variants, increasing the overall score by more than 12 points. It also
+improves consistently across nearly all scenario categories, with particularly notable gains on multi-turn and
+multi-tool settings. Our RL model (CM2) also outperforms the open-source models, including the judging
+model.
+Summary.Our method consistently yields substantial gains over SFT, with improvements that are stable
+across benchmarks. Notably, the resulting policy matches and often surpasses the LLM-as-a-judge model
+on most evaluation measures, while remaining competitive with or exceeding similarly sized open-source
+baselines. We further find that a lightweight judge is sufficient to drive strong RL improvements, and the
+learned behavior generalizes well to previously unseen benchmarks.
+6. Discussion: Scaling Up
+There are several natural axes to scale upCM2. First, we can increase thenumber of checklists per turnby
+generating multiple, independently instantiated checklists for the same turn (e.g., with different paraphrases
+or decompositions). Aggregating their outcomes (e.g., averaging or majority voting) can further reduce
+residual stochasticity and improve robustness to occasional missing or ambiguous criteria, at the cost of
+additional judging compute. Second, we can reduce judge noise more directly viamajority vote(or other
+ensembling schemes) over multiple independent judgments of the same checklist. Third,CM2can benefit
+fromstronger judge models, which provide more reliable evidence grounding and more consistent binary
+decisions. Beyond checklist-specific knobs, standard scaling strategies also apply, including using astronger
+base modeland alarger group sizefor advantage estimation, both of which typically improve optimization
+stability.
+12
+
+--- Page 13 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+We expect these scaling directions to further stabilize training by suppressing residual stochasticity in tool
+use and judging. With sufficiently low-noise rewards, finer-grained reward assignment (e.g., step-level) may
+become viable, potentially retaining its fast early learning while avoiding premature collapse.
+7. Conclusion
+CM2presents a scalable reinforcement learning framework for multi-turn, multi-step tool-using agents by
+replacing verifiable rewards with checklist rewards, which is fine-grained, binary, evidence-grounded criteria
+that make LLM judging more stable and interpretable. By adopting a “sparse in reward assignment, dense
+in evaluation criteria” strategy and training within an LLM-simulated tool environment,CM2improves
+over supervised fine-tuning across multiple benchmarks and shows stronger generalization to complex,
+long-horizon tool-use behaviors where verifiable rewards are unavailable.
+References
+[1] Carlos E Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik
+Narasimhan. Swe-bench: Can language models resolve real-world github issues?arXiv preprint
+arXiv:2310.06770, 2023.
+[2] Long Phan, Alice Gatti, Ziwen Han, Nathaniel Li, Josephina Hu, Hugh Zhang, Chen Bo Calvin Zhang,
+Mohamed Shaaban, John Ling, Sean Shi, et al. Humanity’s last exam.arXiv preprint arXiv:2501.14249,
+2025.
+[3] Jason Wei, Zhiqing Sun, Spencer Papay, Scott McKinney, Jeffrey Han, Isa Fulford, Hyung Won Chung,
+Alex Tachard Passos, William Fedus, and Amelia Glaese. Browsecomp: A simple yet challenging
+benchmark for browsing agents.arXiv preprint arXiv:2504.12516, 2025.
+[4] Bowen Jin, Hansi Zeng, Zhenrui Yue, Jinsung Yoon, Sercan Arik, Dong Wang, Hamed Zamani, and
+Jiawei Han. Search-r1: Training llms to reason and leverage search engines with reinforcement learning.
+arXiv preprint arXiv:2503.09516, 2025.
+[5] Naman Jain, Jaskirat Singh, Manish Shetty, Liang Zheng, Koushik Sen, and Ion Stoica. R2e-gym:
+Procedural environments and hybrid verifiers for scaling open-weights swe agents.arXiv preprint
+arXiv:2504.07164, 2025.
+[6] Ehsan Kamalloo, Nouha Dziri, Charles Clarke, and Davood Rafiei. Evaluating open-domain question
+answering in the era of large language models. InProceedings of the 61st Annual Meeting of the
+Association for Computational Linguistics (Volume 1: Long Papers), pages 5591–5606, 2023.
+[7] Chen Zhang, Xinyi Dai, Yaxiong Wu, Qu Yang, Yasheng Wang, Ruiming Tang, and Yong Liu. A survey
+on multi-turn interaction capabilities of large language models.arXiv preprint arXiv:2501.09959, 2025.
+[8] Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong
+Ma, Peiyi Wang, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement
+learning.arXiv preprint arXiv:2501.12948, 2025.
+[9] Yuxiang Wei, Olivier Duchenne, Jade Copet, Quentin Carbonneaux, Lingming Zhang, Daniel Fried,
+Gabriel Synnaeve, Rishabh Singh, and Sida I Wang. Swe-rl: Advancing llm reasoning via reinforcement
+learning on open software evolution.arXiv preprint arXiv:2502.18449, 2025.
+13
+
+--- Page 14 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+[10] Anisha Gunjal, Anthony Wang, Elaine Lau, Vaskar Nath, Yunzhong He, Bing Liu, and Sean Hendryx.
+Rubricsasrewards: Reinforcementlearningbeyondverifiabledomains.arXivpreprintarXiv:2507.17746,
+2025.
+[11] Tianci Liu, Ran Xu, Tony Yu, Ilgee Hong, Carl Yang, Tuo Zhao, and Haoyu Wang. Openrubrics:
+Towards scalable synthetic rubric generation for reward modeling and llm alignment.arXiv preprint
+arXiv:2510.07743, 2025.
+[12] Vijay Viswanathan, Yanchao Sun, Shuang Ma, Xiang Kong, Meng Cao, Graham Neubig, and Tong-
+shuang Wu. Checklists are better than reward models for aligning language models.arXiv preprint
+arXiv:2507.18624, 2025.
+[13] Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin, Xin Cong, Xiangru Tang,
+Bill Qian, et al. Toolllm: Facilitating large language models to master 16000+ real-world apis.arXiv
+preprint arXiv:2307.16789, 2023.
+[14] Wujiang Xu, Wentian Zhao, Zhenting Wang, Yu-Jhe Li, Can Jin, Mingyu Jin, Kai Mei, Kun Wan, and
+DimitrisNMetaxas. Epo: Entropy-regularizedpolicyoptimizationforllmagentsreinforcementlearning.
+arXiv preprint arXiv:2509.22576, 2025.
+[15] Mohit Shridhar, Xingdi Yuan, Marc-Alexandre Côté, Yonatan Bisk, Adam Trischler, and Matthew
+Hausknecht. ALFWorld: Aligning Text and Embodied Environments for Interactive Learning. In
+Proceedings of the International Conference on Learning Representations (ICLR), 2021. URLhttps:
+//arxiv.org/abs/2010.03768.
+[16] Yuanqing Yu, Zhefan Wang, Weizhi Ma, Shuai Wang, Chuhan Wu, Zhiqiang Guo, and Min Zhang.
+Steptool: Enhancing multi-step tool usage in llms through step-grained reinforcement learning.arXiv
+preprint arXiv:2410.07745, 2024.
+[17] Weiwen Liu, Xu Huang, Xingshan Zeng, Xinlong Hao, Shuai Yu, Dexun Li, Shuai Wang, Weinan Gan,
+Zhengying Liu, Yuanqing Yu, et al. Toolace: Winning the points of llm function calling.arXiv preprint
+arXiv:2409.00920, 2024.
+[18] Yangjun Ruan, Honghua Dong, Andrew Wang, Silviu Pitis, Yongchao Zhou, Jimmy Ba, Yann Dubois,
+Chris J Maddison, and Tatsunori Hashimoto. Identifying the risks of lm agents with an lm-emulated
+sandbox.arXiv preprint arXiv:2309.15817, 2023.
+[19] Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan.τ-bench: A benchmark for tool-
+agent-user interaction in real-world domains, 2024. URLhttps://arxiv.org/abs/2406.12045.
+[20] Victor Barres, Honghua Dong, Soham Ray, Xujie Si, and Karthik Narasimhan. tau2-bench: Evaluating
+conversational agents in a dual-control environment.arXiv preprint arXiv:2506.07982, 2025.
+[21] Shishir G. Patil, Huanzhi Mao, Charlie Cheng-Jie Ji, Fanjia Yan, Vishnu Suresh, Ion Stoica, and Joseph
+E. Gonzalez. The berkeley function calling leaderboard (bfcl): From tool use to agentic evaluation of
+large language models. InForty-second International Conference on Machine Learning, 2025.
+[22] Jiarui Lu, Thomas Holleis, Yizhe Zhang, Bernhard Aumayer, Feng Nan, Haoping Bai, Shuang Ma,
+Shen Ma, Mengyu Li, Guoli Yin, et al. Toolsandbox: A stateful, conversational, interactive evaluation
+benchmark for llm tool use capabilities. InFindings of the Association for Computational Linguistics:
+NAACL 2025, pages 1160–1183, 2025.
+14
+
+--- Page 15 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+[23] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. Proximal policy
+optimization algorithms.arXiv preprint arXiv:1707.06347, 2017.
+[24] Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea
+Finn. Direct preference optimization: Your language model is secretly a reward model.Advances in
+neural information processing systems, 36:53728–53741, 2023.
+[25] Ilgee Hong, Changlong Yu, Liang Qiu, Weixiang Yan, Zhenghao Xu, Haoming Jiang, Qingru Zhang,
+Qin Lu, Xin Liu, Chao Zhang, et al. Think-rm: Enabling long-horizon reasoning in generative reward
+models.arXiv preprint arXiv:2505.16265, 2025.
+[26] Dakota Mahan, Duy Van Phung, Rafael Rafailov, Chase Blagden, Nathan Lile, Louis Castricato,
+Jan-Philipp Fränken, Chelsea Finn, and Alon Albalak. Generative reward models.arXiv preprint
+arXiv:2410.12832, 2024.
+[27] Aditya Pathak, Rachit Gandhi, Vaibhav Uttam, Arnav Ramamoorthy, Pratyush Ghosh, Aaryan Raj Jindal,
+Shreyash Verma, Aditya Mittal, Aashna Ased, Chirag Khatri, et al. Rubric is all you need: Improving
+llm-based code evaluation with question-specific rubrics. InProceedings of the 2025 ACM Conference on
+International Computing Education Research V. 1, pages 181–195, 2025.
+[28] Yang Zhou, Mingyu Zhao, Zhenting Wang, Difei Gu, Bangwei Guo, Ruosong Ye, Ligong Han, Can Jin,
+and Dimitris N Metaxas. Mˆ 3-bench: Multi-modal, multi-hop, multi-threaded tool-using mllm agent
+benchmark.arXiv preprint arXiv:2511.17729, 2025.
+[29] Weikang Zhao, Xili Wang, Chengdi Ma, Lingbin Kong, Zhaohua Yang, Mingxiang Tuo, Xiaowei Shi,
+Yitao Zhai, and Xunliang Cai. Mua-rl: Multi-turn user-interacting agent reinforcement learning for
+agentic tool use.arXiv preprint arXiv:2508.18669, 2025.
+[30] Zhaoyang Wang, Yiming Liang, Xuchao Zhang, Qianhui Wu, Siwei Han, Anson Bastos, Rujia Wang,
+Chetan Bansal, Baolin Peng, Jianfeng Gao, et al. Adapting web agents with synthetic supervision.arXiv
+preprint arXiv:2511.06101, 2025.
+[31] Yuetai Li, Huseyin A Inan, Xiang Yue, Wei-Ning Chen, Lukas Wutschitz, Janardhan Kulkarni, Radha
+Poovendran, Robert Sim, and Saravan Rajmohan. Simulating environments with reasoning models for
+agent training.arXiv preprint arXiv:2511.01824, 2025.
+[32] Zhenzhen Ren, Xinpeng Zhang, Zhenxing Qian, Yan Gao, Yu Shi, Shuxin Zheng, and Jiyan He. Gtm:
+Simulating the world of tools for ai agents.arXiv preprint arXiv:2512.04535, 2025.
+[33] Roy Xie, David Qiu, Deepak Gopinath, Dong Lin, Yanchao Sun, Chong Wang, Saloni Potdar, and Bhuwan
+Dhingra. Interleaved reasoning for large language models via reinforcement learning.arXiv preprint
+arXiv:2505.19640, 2025.
+[34] Dhruv Nathawani, Igor Gitman, Somshubra Majumdar, Evelina Bakhturina, Ameya Sunil Mahabalesh-
+warkar, , Jian Zhang, and Jane Polak Scowcroft. Nemotron-Post-Training-Dataset-v1, 2025. URL
+https://huggingface.co/datasets/nvidia/Nemotron-Post-Training-Dataset-v1.
+[35] Akhiad Bercovich, Itay Levy, Izik Golan, Mohammad Dabbah, Ran El-Yaniv, Omri Puny, Ido Galil, Zach
+Moshe, Tomer Ronen, Najeeb Nabwani, Ido Shahaf, Oren Tropp, Ehud Karpas, Ran Zilberstein, Jiaqi
+Zeng, Soumye Singhal, Alexander Bukharin, Yian Zhang, Tugrul Konuk, Gerald Shen, Ameya Sunil
+Mahabaleshwarkar, Bilal Kartal, Yoshi Suhara, Olivier Delalleau, Zijia Chen, Zhilin Wang, David
+15
+
+--- Page 16 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Mosallanezhad, Adi Renduchintala, Haifeng Qian, Dima Rekesh, Fei Jia, Somshubra Majumdar, Vahid
+Noroozi, Wasi Uddin Ahmad, Sean Narenthiran, Aleksander Ficek, Mehrzad Samadi, Jocelyn Huang,
+Siddhartha Jain, Igor Gitman, Ivan Moshkov, Wei Du, Shubham Toshniwal, George Armstrong, Branislav
+Kisacanin, Matvei Novikov, Daria Gitman, Evelina Bakhturina, Jane Polak Scowcroft, John Kamalu, Dan
+Su, Kezhi Kong, Markus Kliegl, Rabeeh Karimi, Ying Lin, Sanjeev Satheesh, Jupinder Parmar, Pritam
+Gundecha, Brandon Norick, Joseph Jennings, Shrimai Prabhumoye, Syeda Nahida Akter, Mostofa
+Patwary, Abhinav Khattar, Deepak Narayanan, Roger Waleffe, Jimmy Zhang, Bor-Yiing Su, Guyue
+Huang, Terry Kong, Parth Chadha, Sahil Jain, Christine Harvey, Elad Segal, Jining Huang, Sergey
+Kashirsky, Robert McQueen, Izzy Putterman, George Lam, Arun Venkatesan, Sherry Wu, Vinh Nguyen,
+Manoj Kilaru, Andrew Wang, Anna Warno, Abhilash Somasamudramath, Sandip Bhaskar, Maka Dong,
+Nave Assaf, Shahar Mor, Omer Ullman Argov, Scot Junkin, Oleksandr Romanenko, Pedro Larroy,
+Monika Katariya, Marco Rovinelli, Viji Balas, Nicholas Edelman, Anahita Bhiwandiwalla, Muthu
+Subramaniam, Smita Ithape, Karthik Ramamoorthy, Yuting Wu, Suguna Varshini Velury, Omri Almog,
+Joyjit Daw, Denys Fridman, Erick Galinkin, Michael Evans, Katherine Luna, Leon Derczynski, Nikki Pope,
+Eileen Long, Seth Schneider, Guillermo Siman, Tomasz Grzegorzek, Pablo Ribalta, Monika Katariya,
+Joey Conway, Trisha Saar, Ann Guan, Krzysztof Pawelec, Shyamala Prayaga, Oleksii Kuchaiev, Boris
+Ginsburg, Oluwatobi Olabiyi, Kari Briski, Jonathan Cohen, Bryan Catanzaro, Jonah Alben, Yonatan
+Geifman, Eric Chung, and Chris Alexiuk. Llama-nemotron: Efficient reasoning models, 2025. URL
+https://arxiv.org/abs/2505.00949.
+[36] OpenAI. Introducing GPT-5. https://openai.com/index/introducing-gpt-5/, 2025. Ac-
+cessed: 2026-01-05.
+[37] Akshara Prabhakar, Zuxin Liu, Ming Zhu, Jianguo Zhang, Tulika Awalgaonkar, Shiyu Wang, Zhiwei Liu,
+Haolin Chen, Thai Hoang, Juan Carlos Niebles, et al. Apigen-mt: Agentic pipeline for multi-turn data
+generation via simulated agent-human interplay.arXiv preprint arXiv:2504.03601, 2025.
+[38] Lang Feng, Zhenghai Xue, Tingcong Liu, and Bo An. Group-in-group policy optimization for llm agent
+training.arXiv preprint arXiv:2505.10978, 2025.
+16
+
+--- Page 17 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Appendix
+.1 Prompts
+We force models to generate output in JSON format to ensure instruction following and the output can be
+parsed.
+.1.1. Prompt of Checklist Labeling
+The prompt for Checklist Annotation is shown in Prompt .4. We use GPT-5 to label the Checklist. The
+parameter “effort” is set to “high” for high quality. Each trajectory only costs approximately $0.1 on average,
+making it practical to scale checklist labeling to large datasets without significant overhead.
+.1.2. Prompt of LLM-based Filtering
+The prompt for LLM-based Filtering is shown in Prompt .4 We use GPT-5 [36] as the filter model. To reduce
+API costs while maintaining high filtering quality, we adopt an aggressive, progressive evaluation strategy:
+each sample is sequentially evaluated twice atlow effort, twice atmedium effort, and twice athigh effort. If
+any single evaluation flags the sample as problematic, it is immediately discarded without further processing.
+This aggressive early-exit mechanism ensures that only high-confidence, high-quality samples survive the
+filtering pipeline, at the cost of potentially discarding some borderline cases.
+.1.3. Prompt of CoT Compression
+The prompt for CoT Compression is shown in Prompt .4. We use the default setting of GPT-5
+.1.4. Prompt of LLM Judge
+The prompt for LLM judge is shown in Prompt .4
+.1.5. Prompt of Tool Simulation
+The prompt for LLM judge is shown in Prompt .4
+.2 Cold Start hyper-parameters
+For cold-start training, we utilize theLLaMAFactoryframework. The model is trained on the cold-start
+dataset for 2 epochs. We adopt the AdamW optimizer and a cosine learning rate schedule. The learning rate
+is set to1e-6 with a warmup ratio of0.1. The batch size is64. The cold-start training is conducted on 8
+H100 GPUs.
+To better handle special tokens (e.g.,<think>,<tool_call>) that are not trained during pre-training,
+we explicitly initialize their embeddings using the average of semantically related tokens. For example, the
+embedding of<think> is initialized as the mean of the embeddings forthink andbegin. This stabilizes
+optimization and speeds up convergence.
+17
+
+--- Page 18 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+The initialization is as follows:
+<think>←avg("think", "begin")
+</think>←avg("think", "finish")
+<tool_call>←avg("tool", "call", "start")
+</tool_call>←avg("tool", "call", "end")
+<im_start>←avg("role", "enter")
+<im_end>←avg("role", "exit")
+The training loss curve is shown in Figure??
+.3 RL Training Details
+For reinforcement learning, we set the mini-batch size to 128 and the learning rate to 3e-6. The KL divergence
+loss coefficient is set to 0.001, and we sample 24 or 48 trajectories for one question as a group size. We adopt
+GRPO as our RL algorithm with the standard deviation term in the denominator set to 1, following [38].
+This improves the stability of the policy updates during training as we use a larger group size to ensure that
+later turns also receive a sufficient number of samples for sampling. We set the group number of 48 and use
+trajectory level reward for our finalCM2model.
+.4 Rule-based Filtering Criteria
+The criteria include: (1) violations of tool schemas; (2) incorrect role ordering; (3) mismatches between
+tool calls and subsequent responses; (4) tool responses erroneously placed within assistant messages; (5)
+invalid JSON formatting; (6) duplicate tool schemas or names; and (7) missing or redundant thinking tags
+(<think>).
+18
+
+--- Page 19 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Prompt for Checklist Labeling
+# Instruction
+You are an evaluation designer for **multi-turn, multi-step tool-use** dialogues.
+## Your Task
+Given a reference message list containing user, assistant, and tool steps,
+**produce a concise, per-turn checklist** of binary, observable criteria for
+judgment.
+,→
+,→
+The checklist is used to judge whether another assistant meets the user's
+requirements.,→
+One checklist per turn.
+## Target of the assistant
+The assistant needs to resolve the user's query in each turn.
+It must analyze the user's intent in the private thinking, use tools to gather new
+information if necessary, plan the next steps based on the updated information
+and provide an user-visible reply to user.
+,→
+,→
+## Input Format
+### Conversation structure (multi-turn, multi-step)
+* The conversation is chronological and split into **turns**.
+* In each **turn**, there may be several steps from user, assistant, and tool:
+1. The **user** message appears **once** with questions or requirements.
+2. The **assistant** may think privately (Note: assistant content includes
+private thinking between <think> and </think>) and then either:,→
+* call one single tool or call multiple tools, **or**
+* generate a user-visible reply directly without calling tools.
+3. **Tool** messages return results to the preceding assistant message with tool
+calls.,→
+4. Repeat steps 2 and 3 until the turn ends.
+* A turn **ends** when the assistant produces a user-visible reply after thinking.
+* Only the **user-visible reply** is seen by the user.
+### Candidate tools
+You will also be given the schema of candidate tools for conversation. The tool
+calling should follow the schema (function name, required parameters, type of
+parameter)
+,→
+,→
+### Message JSON schema (per step)
+```json
+{
+"role": "user|assistant|tool",
+"turn": 0,
+"step": 0,
+19
+
+--- Page 20 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+"content": "string containing either hidden thinking, user-visible reply, or
+tool output",,→
+"tool_calls": [
+{
+"id": "",
+"type": "function",
+"function": {
+"name": "TOOL_NAME",
+"arguments": { "Param": "Value", "...": "..." }
+}
+}
+] # or None and []
+}
+```
+*`turn`indexes start at **0**;`step`indexes start at **0** within each turn.
+## Rules for the Checklist
+1. Each item must be a **YES/NO** question with an **objective pass condition**.
+2. Items must be **observable** from user messages, assistant private
+thinking/tool calls/user-visible reply, and tool responses.,→
+3. For each item, specify **evidence pointers** that reference specific assistant
+or tool step, not user at step 0.,→
+4. If the task has prerequisite tool response (e.g., "search before analyze"),
+encode them via **`depends_on`**. The dependence must be a tool step.,→
+5. Within a turn, the checklist should cover **key requirements** implied by that
+turn’s user request, tool usage, constraints, and final reply (correctness,
+comprehensiveness, no hallucination, constraints, formatting, key reasoning
+steps, etc.).
+,→
+,→
+,→
+6. Keep items atomic: ensure each checklist item evaluates a single, independent
+condition without combining multiple actions or operations.,→
+7. Avoid purely stylistic or format checks; focus on key step to solve the user's
+requirements.,→
+8. The question should focus on a specific part of the response, such as
+assistant.tool_calls, assistant.content.thinking,
+assistant.content.user_visible_reply, or tool.content (focus_on).
+,→
+,→
+9. Allow procedurally different operations, intermediate conclusions, or derived
+facts **as long as they produce the same verifiable result and strictly follow
+the user's requirements**.
+,→
+,→
+10. Provide a **weight** for every item (0–1) and normalize weights so they **sum
+to 1.0 per turn**, reflecting each requirement’s contribution and necessity to
+the final user-visible reply.
+,→
+,→
+11. For each item, include a must_pass_to_continue boolean. True means this item
+must pass; otherwise the conversation should not proceed to the next turn
+(critical failure). False means non-critical; failure is tolerable but counted
+against quality.
+,→
+,→
+,→
+12. The reference messages may contain some failed attempts. The checklist should
+not mention anything about those unsuccessful attempts or self-correction.,→
+13. Assume there is no error in tool calling.
+20
+
+--- Page 21 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+### Supplementary rules
+1. Do not limit the number of tool calling.
+2. Determine whether the value must match exactly or if a certain tolerance is
+acceptable.,→
+3. Determine whether the parameter of tool calling must match exactly or if a
+certain tolerance is acceptable,→
+4. The question about tool should align with the schema of candidate tool, e.g.,
+argument with default value is not necessary.,→
+5. Do not make any assumptions in the question, e.g., using if or when is
+question.,→
+6. turn and step index should not appear or be refered to in checklist focus_on,
+question, pass_condition or failure_examples.,→
+## How the Checklist Will Be Used
+We evaluate **every assistant step with possible following tool response steps**
+within a turn to determine which checklist items become newly satisfied
+**relative to the previous assistant step** (for`step=0`there is no previous
+step). We **do not** require the model to complete items at specific,
+pre-ordained steps from the input log; instead, we assess whether **all
+requirements for that turn** are satisfied **by the end of the turn**,
+regardless of which assistant step achieved them or how assistant achieved
+them.
+,→
+,→
+,→
+,→
+,→
+,→
+,→
+## Examples
+from should be one of user.content|assistant.tool_calls|assistant.content.thinkin ⌋
+g|assistant.content.user_visible_reply|tool.content,→
+[
+{
+"turn": 0,
+"checklist": [
+{
+"id": "C0", # start from 0 in each turn
+"evidence": [{
+"turn": TURN_INDEX,
+"step": STEP_INDEX,
+"from": "...",
+"snippet": "..."
+}],
+"focus_on": "assistant.tool_calls",
+"question": "Did the assistant call the required tool TOOL_NAME with the
+correct parameter Param=Value?",,→
+"pass_condition": "There exists an assistant tool call with name=TOOL_NAME
+and arguments.Param == Value or similar value.",,→
+"failure_examples": [
+"No tool call observed",
+"Wrong parameter value"
+],
+"required_for_next_turn": true,
+21
+
+--- Page 22 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+},
+{
+"id": "C1",
+"evidence": [{
+"turn": TURN_INDEX,
+"step": STEP_INDEX,
+"from": "...",
+"snippet": "..."
+}],
+"focus_on": "tool.content",
+"question": "Did the assistant get xxx by calling the tool TOOL_NAME?",
+"pass_condition": "The assistant gets xxx from the tool response",
+"failure_examples": [
+"No tool response observed",
+"Wrong information from the tool"
+],
+"required_for_next_turn": true,
+},
+{
+"id": "C2",
+"evidence": [{
+"turn": TURN_INDEX,
+"step": STEP_INDEX,
+"from": "...",
+"snippet": "..."
+}],
+"focus_on": "assistant.content.user_visible_reply",
+"question": "Does the final user-visible answer mentioned xxx?",
+"pass_condition": "The assistant’s final reply content mentions xxx that
+answers user's question.",,→
+"failure_examples": [
+"Assistant does not mention xxx",
+"Numeric/text mismatch between answer and tool output"
+],
+"required_for_next_turn": true,
+}
+// ...more items
+],
+"dependence": {
+"C0": [], // if no dependence, use a empty list
+"C1": [],
+"C2": ["C1"] // dependence (e.g. C1 here) must focus on tool.content
+},
+"weight": {
+"C0": 0.3,
+"C1": 0.3,
+"C2": 0.4
+} // ... must match item weights and sum to 1.0
+},
+// ... next turn checklist
+]
+22
+
+--- Page 23 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Prompt for LLM-based Filtering
+This is a simulated set of messages among a user, an assistant, and tools. The
+tools listed are the candidate tools. The assistant will first think (inside
+<think> and </think>; this part will be removed in post-processing and not
+shown to the user, and it should not be considered when judging whether there
+is an error), then decide whether to call a tool or produce a final response.
+,→
+,→
+,→
+,→
+Does the logic for tool calling by the assistant follow the user's query, have no
+ambiguities, and can realistically occur in real scenarios? Are there any
+mistakes or flaws? Is it something that could exist in reality?
+,→
+,→
+If there is no problem, answer true; if there is a problem, answer false.
+You should be very strict.
+Response format:
+{
+"Reasoning": string,
+"NoError": true or false
+}
+Prompt for CoT Compression
+# Instruction
+You are given a multi-turn multi-step conversation consisting of messages. Each
+message has:,→
+- role: one of [system | user | assistant | tool]
+- content: textual content
+- thinking (for assistant messages, there is a thinking section)
+- tool_call / tool_result
+# Task:
+For every assistant message that contains a thinking section, produce a concise
+rewritten thinking section that preserves all essential reasoning, decisions,
+constraints, and references needed to justify the reply, while removing
+verbosity, filler, repetitions, speculative or unneeded self-talk.
+,→
+,→
+,→
+# Important Requirements:
+1. Preserve Meaning: Do not change conclusions, assumptions, selected tools, or
+rationale ordering unless reordering improves clarity without altering logic.,→
+2. Keep Necessary Steps: Retain key logical steps, intermediate conditions,
+disambiguations, and any constraints that influence the final answer or tool
+choice.
+,→
+,→
+3. Do NOT invent new facts or reasoning not present in the original thinking.
+4. Do NOT shorten so aggressively that causal links or justification for tool
+calls become unclear.,→
+5. Maintain references to tool names, parameters, or required outputs if they
+affect the final answer.,→
+6. If the original thinking is already minimal, keep it (possibly with tiny
+clarity edits).,→
+7. If a thinking section is empty or missing, output one for that item.
+8. Output Format must be strict JSON as described below (no extra commentary).
+23
+
+--- Page 24 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+# Input JSON Schema (example):
+{
+"tools": [
+// tool schemas
+]
+"messages": [
+{
+"role": "user",
+"content": "...",
+"tool_calls": []
+},
+{
+"role": "assistant",
+"content": {
+"thinking": "Reason for choosing tool ...",
+"reply": "(May be empty if just a tool call step)"
+}
+"tool_calls": [ ... ],
+},
+{
+"role": "tool",
+"content": "Tool result ...",
+"tool_calls": []
+},
+{
+"role": "assistant",
+"content": {
+"thinking": "LONG INTERNAL REASONING TEXT ...",
+"reply": "Visible answer to user ..."
+}
+}
+]
+}
+# Output format:
+Return a JSON array aligned with assistant messages order. Each element
+corresponds to one assistant message.,→
+The total number should be the same.
+[
+{
+"thinking": "..."
+},
+...
+]
+24
+
+--- Page 25 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Prompt for LLM-as-a-Judge
+# Role
+You are a precise checklist evaluator. Your sole task is to judge whether the
+messages between user, assistant and tool satisfie the provided criteria.,→
+# Objective
+Produce a strict JSON verdict (no extra text) based on the instructions below.
+# Criteria
+**Question:** {this_turn_checklist['question']}
+**Focus on:** {this_turn_checklist['focus_on']}
+**Pass condition:** {this_turn_checklist['pass_condition']}
+**Failure examples:** {this_turn_checklist['failure_examples']}
+**Reference snippet:** {reference_snippet}
+# Previous Messages
+{{messages_str_before_this_turn}}
+# Current Messages to Evaluate
+{{messages_str_in_this_turn}}
+# Special rule of tool call
+If there is no tool call in tool_call part but there are some tool calls in
+content.thinking part, it means these tools'format are not correct and all
+tool calls are not valid.If there is error in tool response. The previous tool
+calls in latest assistant (only the latest one) are not valid.# Evaluation
+Process (Align each step to a JSON output field)
+,→
+,→
+,→
+,→
+1. high_level_understanding_of_the_question:
+- Briefly restate what is being evaluated (the intent of the question + what
+compliance means here).,→
+2. analysis_of_if_focus_on:
+- Check whether Focus on part presents in the Current Messages.
+3. analysis_of_pass_condition:
+- Determine if the'Pass condition'is fully satisfied.
+4. analysis_of_failure_examples:
+- For EACH failure example pattern: state clearly'triggered'or'not
+triggered'with a brief justification.,→
+5. answer:
+- Return true ONLY IF:
+* Focus on part is present.
+* The'Pass condition'is fully met.
+* No failure example pattern is triggered.
+- Otherwise return false.
+# Output Format
+Return ONLY a single JSON object with exactly these keys:
+{
+"high_level_understanding_of_the_question": str,
+"analysis_of_if_focus_on": str,
+"analysis_of_pass_condition": str,
+"analysis_of_failure_examples": str,
+"answer": bool
+}
+25
+
+--- Page 26 ---
+CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use
+Prompt for Tool Simulation
+# SYSTEM PROMPT
+You are a precise tool executor that learns from examples.
+You will be given:
+- Tool call JSON Schema
+- Few-shot examples showing tool calls and their execution results
+- A new tool call with specific arguments
+Your task:
+1) Learn the OUTPUT FORMAT from the provided examples - follow the exact
+structure, data types, and response patterns,→
+2) Ensure FACTUAL CONSISTENCY - your output should align with the factual
+information demonstrated in the examples,→
+3) For the new tool call:
+- Apply the learned format to the new arguments
+- Maintain factual consistency with example patterns
+- If arguments are similar to examples, adapt the example results appropriately
+- If arguments are significantly different, generate new results following the
+learned format and factual patterns,→
+- May need to fix some type or error in the examples
+4) Handle errors gracefully - if arguments are invalid or missing, return error
+messages in the same format as examples,→
+Critical constraints:
+- Act as a silent function executor - NO explanations, suggestions, or hints
+- NO guidance on how to fix errors or improve calls
+- NO references to examples or comparisons
+- Return ONLY the raw execution result as valid JSON
+- For errors, return minimal error information without instructional content
+Output requirements:
+- First do some analysis on how to mock the execution results. Then return ONLY
+the execution result as valid JSON array or object,→
+- No explanations, markdown, or code fences
+- Follow the exact output structure learned from examples
+- Maintain factual consistency with the example patterns
+Format:
+{
+"analysis": str,
+"execution_result": JSON array or object,
+}
+# USER PROMPT
+{"\n".join(examples_lines)}
+Current tool name: {tool.name}
+Current tool input schema (JSON Schema):
+{schema_str}
+Current arguments (JSON):
+{parameters}
+Generate tool execution result in JSON format.
+26

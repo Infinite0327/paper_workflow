@@ -1,0 +1,173 @@
+{
+  "query": "SWE-bench Can Language Models Resolve Real-World GitHub Issues",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:18:16",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=SWE-bench+Can+Language+Models+Resolve+Real-World+GitHub+Issues",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "authors": [
+        "Carlos E. Jimenez",
+        "John Yang",
+        "Alexander Wettig",
+        "Shunyu Yao",
+        "Kexin Pei",
+        "Ofir Press",
+        "Karthik Narasimhan"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere $1.96$% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2310.06770v3",
+      "url": "http://arxiv.org/abs/2310.06770v3",
+      "pdf_url": "https://arxiv.org/pdf/2310.06770v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2310.06770v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 114.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Can structural correspondences ground real‐world representational content in large language models?",
+      "authors": [
+        "Iwan Williams"
+      ],
+      "year": 2026,
+      "venue": "Mind &amp; Language",
+      "abstract": "\n                    Basic large language models (LLMs) have no direct contact with extra‐linguistic reality: Their inputs, outputs and training data consist solely of text. Can they represent the world beyond that text, nevertheless? This paper considers whether LLMs represent real‐world domains partly thanks to\n                    structural correspondences\n                    between their internal states and those domains. I clarify the requirements for a structural correspondence to play a genuinely content‐grounding role, and argue (i) that it is a live empirical possibility that text‐based LLMs meet those requirements with respect to real‐world contents, but (ii) that this requires carefully eliminating alternative, more deflationary, content assignments.\n                  ",
+      "citation_count": 2,
+      "doi": "10.1111/mila.70018",
+      "url": "https://doi.org/10.1111/mila.70018",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1111/mila.70018",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 57.41,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "ECom-Bench: Can LLM Agent Resolve Real-World E-commerce Customer Support Issues?",
+      "authors": [
+        "Haoxin Wang",
+        "Xianhan Peng",
+        "Huang Cheng",
+        "Yizhe Huang",
+        "Ming Gong",
+        "Chenghan Yang",
+        "Yang Liu",
+        "Jiang Lin"
+      ],
+      "year": 2025,
+      "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.18653/v1/2025.emnlp-industry.19",
+      "url": "https://doi.org/10.18653/v1/2025.emnlp-industry.19",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2025.emnlp-industry.19",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 55.41,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "CG-Bench: Can Language Models Assist Call Graph Construction in the Real World?",
+      "authors": [
+        "Ting Yuan",
+        "Wenrui Zhang",
+        "Dong Chen",
+        "Jie Wang"
+      ],
+      "year": 2025,
+      "venue": "Proceedings of the 1st ACM SIGPLAN International Workshop on Language Models and Programming Languages",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1145/3759425.3763379",
+      "url": "https://doi.org/10.1145/3759425.3763379",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1145/3759425.3763379",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 55.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "SWE-Fixer: Training Open-Source LLMs for Effective and Efficient GitHub Issue Resolution",
+      "authors": [
+        "Chengxing Xie",
+        "Bowen Li",
+        "Chang Gao",
+        "He Du",
+        "Wai Lam",
+        "Difan Zou",
+        "Kai Chen"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable proficiency across a variety of complex tasks. One significant application of LLMs is in tackling software engineering challenges, particularly in resolving real-world tasks on GitHub by fixing code based on the issues reported by the users. However, many current approaches rely on proprietary LLMs, which limits reproducibility, accessibility, and transparency. The critical components of LLMs for addressing software engineering issues and how their capabilities can be effectively enhanced remain unclear. To address these challenges, we introduce SWE-Fixer, a novel open-source framework designed to effectively and efficiently resolve GitHub issues. SWE-Fixer comprises two essential modules: a code file retrieval module and a code editing module. The retrieval module employs BM25 along with a lightweight model to achieve coarse-to-fine file retrieval. Subsequently, the code editing module utilizes the other model to generate patches for the identified files. To mitigate the lack of publicly available datasets, we compile an extensive dataset that includes 110K GitHub issues along with their corresponding patches and train the two models of SWE-Fixer separately. We assess our approach on the SWE-Bench Lite and Verified benchmarks, achieving competitive performance among open-source models with scores of 22.0% and 30.2%. Furthermore, SWE-Fixer reaches state-of-the-art performance (24.7% on Lite and 32.8% on Verified) with PASS_TO_PASS (P2P) filtering. Additionally, our approach requires only two model calls per instance, making it significantly more efficient than existing methods. These results highlight the effectiveness of SWE-Fixer in real-world code-fixing scenarios. We will make our model, dataset, and code publicly available at https://github.com/InternLM/SWE-Fixer.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2501.05040v3",
+      "url": "http://arxiv.org/abs/2501.05040v3",
+      "pdf_url": "https://arxiv.org/pdf/2501.05040v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2501.05040v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

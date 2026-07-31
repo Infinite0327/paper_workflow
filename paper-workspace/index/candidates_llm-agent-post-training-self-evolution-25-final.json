@@ -1,0 +1,1053 @@
+{
+  "query": "LLM agent post-training agentic reinforcement learning tool use trajectory credit assignment self-improvement reflection experience lifelong learning",
+  "requested_limit": 25,
+  "created_at": "2026-07-28",
+  "manual_sources": [
+    "OpenAlex and arXiv API retrieval",
+    "Google Scholar manual browser audit",
+    "official arXiv and OpenReview pages"
+  ],
+  "scholar_audit": {
+    "status": "completed_manual_browser_audit",
+    "query_url": "https://scholar.google.com/scholar?q=LLM+agent+post-training+agentic+reinforcement+learning+tool+use+self-evolving+experience+learning&as_ylo=2025",
+    "checked_at": "2026-07-28",
+    "changed_set": true,
+    "notes": "Scholar confirmed the three-cluster structure and added recent self-evolving and unified agentic-RL work; traditional MARL records were excluded.",
+    "additions": [
+      "VerlTool: Towards Holistic Agentic Reinforcement Learning with Tool Use",
+      "AgentEvolver: Towards Efficient Self-Evolving Agent System",
+      "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark"
+    ]
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use",
+      "authors": [
+        "Zhen Zhang",
+        "Kaiqiang Song",
+        "Xun Wang",
+        "Yebowen Hu",
+        "Weixiang Yan",
+        "Chenyang Zhao",
+        "Henry Peng Zou",
+        "Haoyun Deng",
+        "Sathish Reddy Indurthi",
+        "Shujian Liu",
+        "Simin Ma",
+        "Xiaoyang Wang",
+        "Xin Eric Wang",
+        "Song Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "AI agents are increasingly used to solve real-world tasks by reasoning over multi-turn user interactions and invoking external tools. However, applying reinforcement learning to such settings remains difficult: realistic objectives often lack verifiable rewards and instead emphasize open-ended behaviors; moreover, RL for multi-turn, multi-step agentic tool use is still underexplored; and building and maintaining executable tool environments is costly, limiting scale and coverage. We propose CM2, an RL framework that replaces verifiable outcome rewards with checklist rewards. CM2 decomposes each turn's intended behavior into fine-grained binary criteria with explicit evidence grounding and structured metadata, turning open-ended judging into more stable classification-style decisions. To balance stability and informativeness, our method adopts a strategy of sparse reward assignment but dense evaluation criteria. Training is performed in a scalable LLM-simulated tool environment, avoiding heavy engineering for large tool sets. Experiments show that CM2 consistently improves over supervised fine-tuning. Starting from an 8B Base model and training on an 8k-example RL dataset, CM2 improves over the SFT counterpart by 8 points on tau^-Bench, by 10 points on BFCL-V4, and by 12 points on ToolSandbox. The results match or even outperform similarly sized open-source baselines, including the judging model. CM2 thus provides a scalable recipe for optimizing multi-turn, multi-step tool-using agents without relying on verifiable rewards. Code provided by the open-source community: https://github.com/namezhenzhang/CM2-RLCR-Tool-Agent.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.12268v2",
+      "url": "http://arxiv.org/abs/2602.12268v2",
+      "pdf_url": "https://arxiv.org/pdf/2602.12268v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.12268v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 112.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_repository:sierra-research/tau-bench",
+        "github_repository:ShishirPatil/gorilla",
+        "github_repository:apple/ToolSandbox"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "RLFactory: A Plug-and-Play Reinforcement Learning Post-Training Framework for LLM Multi-Turn Tool-Use",
+      "authors": [
+        "Jiajun Chai",
+        "Guojun Yin",
+        "Zekun Xu",
+        "Chuhuai Yue",
+        "Yi Jia",
+        "Siyu Xia",
+        "Xiaohan Wang",
+        "Jiwen Jiang",
+        "Xiaoguang Li",
+        "Chengqi Dong",
+        "Hang He",
+        "Wei Lin"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large language models excel at basic reasoning but struggle with tasks that require interaction with external tools. We present RLFactory, a plug-and-play reinforcement learning post-training framework for multi-round tool use. RLFactory tackles (i) tool-call stability and adaptability amid tool heterogeneity and interface issues via an asyncio-based asynchronous caller and a decoupled tool/training architecture, and (ii) diverse evaluation needs via a reward layer supporting rule-based, model-judgment, and tool-verification signals. It reconstructs the MDP by introducing observation markers from tool feedback, closing the loop among model, tools, and environment, and implements a generate-parse-invoke-update workflow for dynamic policy optimization. On Search-R1 with Qwen3-4B, RLFactory achieves a 0.486 test score on the Natural Questions (NQ) dataset, surpassing larger models trained with similar techniques (e.g., Qwen2.5-7B-Instruct-GRPO at 0.473), and increases training throughput by 6.8x. RLFactory provides a low-barrier, highly adaptable framework for strengthening multi-round tool use of LLMs in real-world scenarios. Code: https://github.com/Simple-Efficient/RL-Factory.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2509.06980v1",
+      "url": "http://arxiv.org/abs/2509.06980v1",
+      "pdf_url": "https://arxiv.org/pdf/2509.06980v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2509.06980v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 106.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "huggingface:google-research-datasets/natural_questions",
+        "github_repository:PeterGriffinJin/Search-R1"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "MUA-RL: Multi-turn User-interacting Agent Reinforcement Learning for agentic tool use",
+      "authors": [
+        "Weikang Zhao",
+        "Xili Wang",
+        "Chengdi Ma",
+        "Lingbin Kong",
+        "Zhaohua Yang",
+        "Mingxiang Tuo",
+        "Xiaowei Shi",
+        "Yitao Zhai",
+        "Xunliang Cai"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "With the recent rapid advancement of Agentic Intelligence, agentic tool use in LLMs has become increasingly important. During multi-turn interactions between agents and users, the dynamic, uncertain, and stochastic nature of user demands poses significant challenges to the agent's tool invocation capabilities. Agents are no longer expected to simply call tools to deliver a result; rather, they must iteratively refine their understanding of user needs through communication while simultaneously invoking tools to resolve user queries. Existing reinforcement learning (RL) approaches for tool use lack the integration of genuinely dynamic users during the RL training process. To bridge this gap, we introduce MUA-RL (Multi-turn User-interacting Agent Reinforcement Learning for agentic tool use), a novel reinforcement learning framework that, for the first time in the field of agentic tool use, integrates LLM-simulated users into the reinforcement learning loop. MUA-RL aims to enable autonomous learning of models to communicate with users efficiently and use various tools to solve practical problems in dynamic multi-turn interactions. Evaluations are done on several multi-turn tool-using benchmarks (see Figure 1). Specifically, MUA-RL-32B achieves 67.3 on TAU2 Retail, 45.4 on TAU2 Airline, 28.3 on TAU2 Telecom, 28.4 on BFCL-V3 Multi Turn, and 82.5 on ACEBench Agent -- outperforming or matching the performance of larger open-source models such as DeepSeek-V3-0324 and Qwen3-235B-A22B in non-thinking settings.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.18669v1",
+      "url": "http://arxiv.org/abs/2508.18669v1",
+      "pdf_url": "https://arxiv.org/pdf/2508.18669v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2508.18669v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 96.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "huggingface:zzwkk/MUA-RL-Dataset",
+        "github_repository:ShishirPatil/gorilla",
+        "huggingface:ACEBench"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": [
+        "https://huggingface.co/datasets/ACEBench/ACEBench: HTTP Error 401: Unauthorized"
+      ]
+    },
+    {
+      "title": "From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents",
+      "authors": [
+        "Jiaxuan Gao",
+        "Jiaao Chen",
+        "Chuyi He",
+        "Shusheng Xu",
+        "Di Jin",
+        "Yi Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Interactive tool-using agents must solve real-world tasks via multi-turn interaction with both humans and external environments, requiring dialogue state tracking, multi-step tool execution, while following complex instructions. Post-training such agents is challenging because synthesis for high-quality multi-turn tool-use data is difficult to scale, and reinforcement learning (RL) could face noisy signals caused by user simulation, leading to degraded training efficiency. We propose a unified framework that combines a self-evolving data agent with verifier-based RL. Our system, EigenData, is a hierarchical multi-agent engine that synthesizes tool-grounded dialogues together with executable per-instance checkers, and improves generation reliability via closed-loop self-evolving process that updates prompts and workflow. Building on the synthetic data, we develop an RL recipe that first fine-tunes the user model and then applies GRPO-style training with trajectory-level group-relative advantages and dynamic filtering, yielding consistent improvements beyond SFT. Evaluated on tau^2-bench, our best model reaches 73.0% pass^1 on Airline and 98.3% pass^1 on Telecom, matching or exceeding frontier models. Overall, our results suggest a scalable pathway for bootstrapping complex tool-using behaviors without expensive human annotation.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.22607v3",
+      "url": "http://arxiv.org/abs/2601.22607v3",
+      "pdf_url": "https://arxiv.org/pdf/2601.22607v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.22607v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 94.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_repository:sierra-research/tau-bench"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "Multi-Turn Reinforcement Learning for Tool-Calling Agents with Iterative Reward Calibration",
+      "authors": [
+        "Wachiravit Modecrua",
+        "Krittanon Kaewtawee",
+        "Krittin Pachtrachai",
+        "Touchapon Kraisingkorn"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Training tool-calling agents with reinforcement learning on multi-turn tasks remains challenging due to sparse outcome rewards and difficult credit assignment across conversation turns. We present the first application of MT-GRPO (Multi-Turn Group Relative Policy Optimization) combined with GTPO (Generalized Token-level Policy Optimization) for training a tool-calling agent on realistic customer service tasks with an LLM-based user simulator. Through systematic analysis of training rollouts, we discover that naively designed dense per-turn rewards degrade performance by up to 14 percentage points due to misalignment between reward discriminativeness and advantage direction. We introduce Iterative Reward Calibration, a methodology for designing per-turn rewards using empirical discriminative analysis of rollout data, and show that our GTPO hybrid advantage formulation eliminates the advantage misalignment problem. Applied to the Tau-Bench airline benchmark, our approach improves Qwen3.5-4B from 63.8 percent to 66.7 percent (+2.9pp) and Qwen3-30B-A3B from 58.0 percent to 69.5 percent (+11.5pp) -- with the trained 4B model exceeding GPT-4.1 (49.4 percent) and GPT-4o (42.8 percent) despite being 50 times smaller, and the 30.5B MoE model approaching Claude Sonnet 4.5 (70.0 percent). To our knowledge, these are the first published RL training results on Tau-Bench. We release our code, reward calibration analysis, and training recipes.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.02869v1",
+      "url": "http://arxiv.org/abs/2604.02869v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.02869v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.02869v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 92.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_repository:sierra-research/tau-bench"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "Training Task Reasoning LLM Agents for Multi-turn Task Planning via Single-turn Reinforcement Learning",
+      "authors": [
+        "Hanjiang Hu",
+        "Changliu Liu",
+        "Na Li",
+        "Yebin Wang"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities in knowledge acquisition, reasoning, and tool use, making them promising candidates for autonomous agent applications. However, training LLM agents for complex multi-turn task planning faces significant challenges, including sparse episode-wise rewards, credit assignment across long horizons, and the computational overhead of reinforcement learning in multi-turn interaction settings. To this end, this paper introduces a novel approach that transforms multi-turn task planning into single-turn task reasoning problems, enabling efficient policy optimization through Group Relative Policy Optimization (GRPO) with dense and verifiable reward from expert trajectories. Our theoretical analysis shows that GRPO improvement on single-turn task reasoning results in a lower bound of the multi-turn success probability under the minimal turns, as well as the generalization to subtasks with shorter horizons. Experimental evaluation on the complex task planning benchmark demonstrates that our 1.5B parameter model trained with single-turn GRPO achieves superior performance compared to larger baseline models up to 14B parameters, with success rates of 70% for long-horizon planning tasks.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2509.20616v2",
+      "url": "http://arxiv.org/abs/2509.20616v2",
+      "pdf_url": "https://arxiv.org/pdf/2509.20616v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2509.20616v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 90.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "Reinforcement Learning for Long-Horizon Multi-Turn Search Agents",
+      "authors": [
+        "Vivek Kalyan",
+        "Martin Andrews"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Language Model (LLM) agents can leverage multiple turns and tools to solve complex tasks, with prompt-based approaches achieving strong performance. This work demonstrates that Reinforcement Learning (RL) can push capabilities significantly further by learning from experience. Through experiments on a legal document search benchmark, we show that our RL-trained 14 Billion parameter model outperforms frontier class models (85% vs 78% accuracy). In addition, we explore turn-restricted regimes, during training and at test-time, that show these agents achieve better results if allowed to operate over longer multi-turn horizons.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2510.24126v1",
+      "url": "http://arxiv.org/abs/2510.24126v1",
+      "pdf_url": "https://arxiv.org/pdf/2510.24126v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2510.24126v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 68.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "Demystifying Reinforcement Learning for Long-Horizon Tool-Using Agents: A Comprehensive Recipe",
+      "authors": [
+        "Xixi Wu",
+        "Qianguo Sun",
+        "Ruiyang Zhang",
+        "Chao Song",
+        "Junlong Wu",
+        "Yiyan Qi",
+        "Hong Cheng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Reinforcement Learning (RL) is essential for evolving Large Language Models (LLMs) into autonomous agents capable of long-horizon planning, yet a practical recipe for scaling RL in complex, multi-turn environments remains elusive. This paper presents a systematic empirical study using TravelPlanner, a challenging testbed requiring tool orchestration to satisfy multifaceted constraints. We decompose the agentic RL design space along 5 axes: reward shaping, model scaling, data composition, algorithm selection, and environmental stability. Our controlled experiments yield 7 key takeaways, e.g., (1) reward and algorithm choices are scale-dependent as smaller models benefit from staged rewards and enhanced exploration, whereas larger models converge efficiently with simpler dense rewards, (2) ~ 1K training samples with a balanced difficulty mixture mark a sweet spot for both in-domain and out-of-domain performance, and (3) environmental stability is critical to prevent policy degradation. Based on our distilled recipe, our RL-trained models achieve state-of-the-art performance on TravelPlanner, significantly outperforming leading LLMs.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.21972v1",
+      "url": "http://arxiv.org/abs/2603.21972v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.21972v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.21972v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "method"
+      ],
+      "score": 64.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_repository:OSU-NLP-Group/TravelPlanner"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning",
+      "authors": [
+        "Yulei Qin",
+        "Xiaoyu Tan",
+        "Zhengbao He",
+        "Gang Li",
+        "Haojia Lin",
+        "Zongyi Li",
+        "Zihan Xu",
+        "Yuchen Shi",
+        "Siqi Cai",
+        "Renting Rui",
+        "Shaofei Cai",
+        "Yuzheng Cai",
+        "Xuan Zhang",
+        "Sheng Ye",
+        "Ke Li",
+        "Xing Sun"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Reinforcement learning (RL) is the dominant paradigm for sharpening strategic tool use capabilities of LLMs on long-horizon, sparsely-rewarded agent tasks, yet it faces a fundamental challenge of exploration-exploitation trade-off. Existing studies stimulate exploration through the lens of policy entropy, but such mechanical entropy maximization is prone to RL instability due to the multi-turn distribution shifting. In this paper, we target the progressive exploration-exploitation balance under the guidance of the agent's own experiences without succumbing to either entropy collapsing or runaway divergence. We propose SPEAR, a self-imitation learning (SIL) recipe for training agentic LLMs. It extends the vanilla SIL, where a replay buffer stores good experience for off-policy update, by gradually steering the policy entropy across stages. Specifically, the proposed curriculum scheduling harmonizes intrinsic reward shaping and self-imitation to 1) expedite exploration via frequent tool interactions at the beginning, and 2) strengthen exploitation of successful tactics upon convergence towards familiarity with the environment. We also combine bag-of-tricks of industrial RL optimizations for a strong baseline Dr.BoT to demonstrate our effectiveness. In ALFWorld and WebShop, SPEAR increases the success rates of GRPO/GiGPO/Dr.BoT by up to 16.1%/5.1%/8.6% and 20.7%/11.8%/13.9%, respectively. In AIME24 and AIME25, SPEAR boosts Dr.BoT by up to 3.8% and 6.1%, respectively. Such gains incur only 10%-25% extra theoretical complexity and negligible runtime overhead in practice, demonstrating the plug-and-play scalability of SPEAR.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2509.22601v4",
+      "url": "http://arxiv.org/abs/2509.22601v4",
+      "pdf_url": "https://arxiv.org/pdf/2509.22601v4",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2509.22601v4",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 68.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_release:alfworld/alfworld@0.4.2",
+        "github_release:alfworld/alfworld@0.4.0",
+        "github_release:alfworld/alfworld@0.2.2",
+        "huggingface:HuggingFaceH4/aime_2024",
+        "github_repository:alfworld/alfworld",
+        "github_repository:princeton-nlp/WebShop",
+        "paper_dataset:AIME-2024-2025"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning",
+      "authors": [
+        "Xin Cheng",
+        "Shuo He",
+        "Lang Feng",
+        "HaiYang Xu",
+        "Ming Yan",
+        "Lei Feng",
+        "Bo An"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Group-based reinforcement learning (RL) methods have achieved remarkable success in improving the performance of large language models (LLMs) and have been rapidly extended to agentic tasks. However, their credit assignment relies heavily on coarse-grained trajectory-level attribution according to final outcomes, making it difficult to capture the contribution of individual steps, such as valuable steps obscured within failed trajectories. To uncover latent information and enable more faithful step-level credit assignment, we propose Graph-based Group Policy Optimization (GraphGPO), which first aggregates all rollout trajectories into a unified state-transition graph and then estimates the distance from each state to the task goal using the global information encoded in the graph. Finally, GraphGPO assigns credit to each edge by estimating a graph-based advantage, based on how much the transition reduces the distance to the task goal. In this way, GraphGPO significantly improves training efficiency and achieves state-of-the-art performance across a range of challenging benchmarks.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.26684v2",
+      "url": "http://arxiv.org/abs/2605.26684v2",
+      "pdf_url": "https://arxiv.org/pdf/2605.26684v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2605.26684v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 70.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "error",
+      "dataset_errors": [
+        "https://github.com/langfengQ/ver: HTTP Error 404: Not Found"
+      ]
+    },
+    {
+      "title": "STeCa: Step-level Trajectory Calibration for LLM Agent Learning",
+      "authors": [
+        "Hanlin Wang",
+        "Jian Wang",
+        "Chak Tou Leong",
+        "Wenjie Li"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM)-based agents have shown promise in tackling complex tasks by interacting dynamically with the environment. Existing work primarily focuses on behavior cloning from expert demonstrations or preference learning through exploratory trajectory sampling. However, these methods often struggle to address long-horizon tasks, where suboptimal actions accumulate step by step, causing agents to deviate from correct task trajectories. To address this, we highlight the importance of timely calibration and the need to automatically construct calibration trajectories for training agents. We propose Step-Level Trajectory Calibration (STeCa), a novel framework for LLM agent learning. Specifically, STeCa identifies suboptimal actions through a step-level reward comparison during exploration. It constructs calibrated trajectories using LLM-driven reflection, enabling agents to learn from improved decision-making processes. We finally leverage these calibrated trajectories with successful trajectories for reinforced training. Extensive experiments demonstrate that STeCa significantly outperforms existing methods. Further analysis highlights that timely calibration enables agents to complete tasks with greater robustness. Our code and data are available at https://github.com/WangHanLinHenry/STeCa.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2502.14276v2",
+      "url": "http://arxiv.org/abs/2502.14276v2",
+      "pdf_url": "https://arxiv.org/pdf/2502.14276v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2502.14276v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 60.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_repository:WangHanLinHenry/STeCa"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "Hindsight Credit Assignment for Long-Horizon LLM Agents",
+      "authors": [
+        "Hui-Ze Tan",
+        "Xiao-Wen Yang",
+        "Hao Chen",
+        "Jie-Jing Shao",
+        "Yi Wen",
+        "Yuteng Shen",
+        "Weihong Luo",
+        "Xiku Du",
+        "Lan-Zhe Guo",
+        "Yu-Feng Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large Language Model (LLM) agents often face significant credit assignment challenges in long-horizon, multi-step tasks due to sparse rewards. Existing value-free methods, such as Group Relative Policy Optimization (GRPO), encounter two fundamental bottlenecks: inaccurate step-level Q-value estimation and misaligned value baselines for intermediate states. To address these limitations, we introduce HCAPO, the first framework to integrate hindsight credit assignment into LLM agents. HCAPO leverages the LLM itself as a post-hoc critic to refine step-level Q-values through hindsight reasoning. Furthermore, HCAPO's multi-scale advantage mechanism effectively supplements the inaccurate value baselines at critical decision states. Evaluations across three challenging benchmarks, including WebShop and ALFWorld, demonstrate that HCAPO consistently outperforms state-of-the-art RL methods. Notably, HCAPO achieves a 7.7% improvement in success rate on WebShop and a 13.8% on ALFWorld over GRPO using the Qwen2.5-7B-Instruct model. These results indicate that HCAPO significantly enhances exploration efficiency, promotes concise decision-making, and ensures scalability in complex, long-horizon tasks.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.08754v1",
+      "url": "http://arxiv.org/abs/2603.08754v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.08754v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.08754v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 58.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_release:alfworld/alfworld@0.4.2",
+        "github_release:alfworld/alfworld@0.4.0",
+        "github_release:alfworld/alfworld@0.2.2",
+        "github_repository:alfworld/alfworld",
+        "github_repository:princeton-nlp/WebShop"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents",
+      "authors": [
+        "Jiangweizhi Peng",
+        "Yuanxin Liu",
+        "Ruida Zhou",
+        "Charles Fleming",
+        "Zhaoran Wang",
+        "Alfredo Garcia",
+        "Mingyi Hong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Training LLMs as interactive agents for multi-turn decision-making remains challenging, particularly in long-horizon tasks with sparse and delayed rewards, where agents must execute extended sequences of actions before receiving meaningful feedback. Most existing reinforcement learning (RL) approaches model LLM agents as flat policies operating at a single time scale, selecting one action at each turn. In sparse-reward settings, such flat policies must propagate credit across the entire trajectory without explicit temporal abstraction, which often leads to unstable optimization and inefficient credit assignment. We propose HiPER, a novel Hierarchical Plan-Execute RL framework that explicitly separates high-level planning from low-level execution. HiPER factorizes the policy into a high-level planner that proposes subgoals and a low-level executor that carries them out over multiple action steps. To align optimization with this structure, we introduce a key technique called hierarchical advantage estimation (HAE), which carefully assigns credit at both the planning and execution levels. By aggregating returns over the execution of each subgoal and coordinating updates across the two levels, HAE provides an unbiased gradient estimator and provably reduces variance compared to flat generalized advantage estimation. Empirically, HiPER achieves state-of-the-art performance on challenging interactive benchmarks, reaching 97.4\\% success on ALFWorld and 83.3\\% on WebShop with Qwen2.5-7B-Instruct (+6.6\\% and +8.3\\% over the best prior method), with especially large gains on long-horizon tasks requiring multiple dependent subtasks. These results highlight the importance of explicit hierarchical decomposition for scalable RL training of multi-turn LLM agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.16165v2",
+      "url": "http://arxiv.org/abs/2602.16165v2",
+      "pdf_url": "https://arxiv.org/pdf/2602.16165v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.16165v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 58.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_release:alfworld/alfworld@0.4.2",
+        "github_release:alfworld/alfworld@0.4.0",
+        "github_release:alfworld/alfworld@0.2.2",
+        "github_repository:alfworld/alfworld",
+        "github_repository:princeton-nlp/WebShop"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "Memory-R2: Fair Credit Assignment for Long-Horizon Memory-Augmented LLM Agents",
+      "authors": [
+        "Sikuan Yan",
+        "Ahmed Bahloul",
+        "Ercong Nie",
+        "Susanna Schwarzmann",
+        "Riccardo Trivisonno",
+        "Volker Tresp",
+        "Yunpu Ma"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Memory-augmented LLM agents enable interactions that extend beyond finite context windows by storing, updating, and reusing information across sessions. However, training such agents with reinforcement learning in multi-session environments is challenging because memory turns the agent's past actions into part of its future environment. Once different rollouts write, update, or delete different memories, they no longer share the same intermediate memory state, making trajectory-level comparisons fundamentally unfair. This violates a key assumption behind group-relative methods such as GRPO, where rollouts are compared as if they were sampled from the same effective environment. Consequently, trajectory-level rewards provide noisy or biased credit signals for long-horizon memory operations. To address this challenge, we introduce Memory-R2, a training framework for long-horizon memory-augmented LLM agents. Its core algorithm, LoGo-GRPO, combines local and global group-relative optimization. The global objective preserves end-to-end learning from long-horizon trajectory-level rewards, while local rerollouts compare different memory-operation outcomes from the same intermediate memory state, yielding fairer group comparisons and more precise supervision for memory construction. Beyond credit assignment, Memory-R2 jointly optimizes memory formation and memory evolution with a shared-parameter co-learning design, where a fact extractor and a memory manager are instantiated from the same LLM backbone through role-specific prompts. To stabilize multi-step RL over long memory horizons, we adopt a progressive curriculum that increases the training horizon from 8 to 16 to 32 sessions. Together, these components provide an effective training paradigm for memory-augmented LLM agents in long-horizon multi-session settings.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.21768v1",
+      "url": "http://arxiv.org/abs/2605.21768v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.21768v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2605.21768v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 58.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "Trial and Error: Exploration-Based Trajectory Optimization for LLM Agents",
+      "authors": [
+        "Yifan Song",
+        "Da Yin",
+        "Xiang Yue",
+        "Jie Huang",
+        "Sujian Li",
+        "Bill Yuchen Lin"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "Large Language Models (LLMs) have become integral components in various autonomous agent systems. In this study, we present an exploration-based trajectory optimization approach, referred to as ETO. This learning method is designed to enhance the performance of open LLM agents. Contrary to previous studies that exclusively train on successful expert trajectories, our method allows agents to learn from their exploration failures. This leads to improved performance through an iterative optimization framework. During the exploration phase, the agent interacts with the environment while completing given tasks, gathering failure trajectories to create contrastive trajectory pairs. In the subsequent training phase, the agent utilizes these trajectory preference pairs to update its policy using contrastive learning methods like DPO. This iterative cycle of exploration and training fosters continued improvement in the agents. Our experiments on three complex tasks demonstrate that ETO consistently surpasses baseline performance by a large margin. Furthermore, an examination of task-solving efficiency and potential in scenarios lacking expert trajectory underscores the effectiveness of our approach.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2403.02502v2",
+      "url": "http://arxiv.org/abs/2403.02502v2",
+      "pdf_url": "https://arxiv.org/pdf/2403.02502v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2403.02502v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 55.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+      "authors": [
+        "Tianxin Wei",
+        "Noveen Sachdeva",
+        "Benjamin Coleman",
+        "Zhankui He",
+        "Yuanchen Bei",
+        "Xuying Ning",
+        "Mengting Ai",
+        "Yunzhe Li",
+        "Jingrui He",
+        "Ed H. Chi",
+        "Chi Wang",
+        "Shuo Chen",
+        "Fernando Pereira",
+        "Wang-Cheng Kang",
+        "Derek Zhiyuan Cheng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Statefulness is essential for large language model (LLM) agents to perform long-term planning and problem-solving. This makes memory a critical component, yet its management and evolution remain largely underexplored. Existing evaluations mostly focus on static conversational settings, where memory is passively retrieved from dialogue to answer queries, overlooking the dynamic ability to accumulate and reuse experience across evolving task streams. In real-world environments such as interactive problem assistants or embodied agents, LLMs are required to handle continuous task streams, yet often fail to learn from accumulated interactions, losing valuable contextual insights, a limitation that calls for test-time evolution, where LLMs retrieve, integrate, and update memory continuously during deployment. To bridge this gap, we introduce Evo-Memory, a comprehensive streaming benchmark and framework for evaluating self-evolving memory in LLM agents. Evo-Memory structures datasets into sequential task streams, requiring LLMs to search, adapt, and evolve memory after each interaction. We unify and implement over ten representative memory modules and evaluate them across 10 diverse multi-turn goal-oriented and single-turn reasoning and QA datasets. To better benchmark experience reuse, we provide a baseline method, ExpRAG, for retrieving and utilizing prior experience, and further propose ReMem, an action-think-memory refine pipeline that tightly integrates reasoning, task actions, and memory updates to achieve continual improvement.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2511.20857v2",
+      "url": "http://arxiv.org/abs/2511.20857v2",
+      "pdf_url": "https://arxiv.org/pdf/2511.20857v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2511.20857v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 84.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "paper_dataset:Evo-Memory"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+      "authors": [
+        "Jinyuan Fang",
+        "Yanwen Peng",
+        "Xi Zhang",
+        "Yingxu Wang",
+        "Xinhao Yi",
+        "Guibin Zhang",
+        "Yi Xu",
+        "Bin Wu",
+        "Siwei Liu",
+        "Zihao Li",
+        "Zhaochun Ren",
+        "Nikos Aletras",
+        "Xi Wang",
+        "Han Zhou",
+        "Zaiqiao Meng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Recent advances in large language models have sparked growing interest in AI agents capable of solving complex, real-world tasks. However, most existing agent systems rely on manually crafted configurations that remain static after deployment, limiting their ability to adapt to dynamic and evolving environments. To this end, recent research has explored agent evolution techniques that aim to automatically enhance agent systems based on interaction data and environmental feedback. This emerging direction lays the foundation for self-evolving AI agents, which bridge the static capabilities of foundation models with the continuous adaptability required by lifelong agentic systems. In this survey, we provide a comprehensive review of existing techniques for self-evolving agentic systems. Specifically, we first introduce a unified conceptual framework that abstracts the feedback loop underlying the design of self-evolving agentic systems. The framework highlights four key components: System Inputs, Agent System, Environment, and Optimisers, serving as a foundation for understanding and comparing different strategies. Based on this framework, we systematically review a wide range of self-evolving techniques that target different components of the agent system. We also investigate domain-specific evolution strategies developed for specialised fields such as biomedicine, programming, and finance, where optimisation objectives are tightly coupled with domain constraints. In addition, we provide a dedicated discussion on the evaluation, safety, and ethical considerations for self-evolving agentic systems, which are critical to ensuring their effectiveness and reliability. This survey aims to provide researchers and practitioners with a systematic understanding of self-evolving AI agents, laying the foundation for the development of more adaptive, autonomous, and lifelong agentic systems.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.07407v2",
+      "url": "http://arxiv.org/abs/2508.07407v2",
+      "pdf_url": "https://arxiv.org/pdf/2508.07407v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2508.07407v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "SEVerA: Verified Synthesis of Self-Evolving Agents",
+      "authors": [
+        "Debangshu Banerjee",
+        "Changming Xu",
+        "Eugene Ie",
+        "Ming Zhang",
+        "Daiyi Peng",
+        "Chu-Cheng Lin",
+        "Gagandeep Singh"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Recent advances have shown the effectiveness of self-evolving LLM agents on tasks such as program repair and scientific discovery. In this paradigm, a planner LLM synthesizes an agent program that invokes parametric models, including LLMs, which are then tuned per task to improve performance. However, existing self-evolving agent frameworks provide no formal guarantees of safety or correctness. Because such programs are often executed autonomously on unseen inputs, this lack of guarantees raises reliability and security concerns. We formulate agentic code generation as a constrained learning problem, combining hard formal specifications with soft objectives capturing task utility. We introduce Formally Guarded Generative Models (FGGM), which allow the planner LLM to specify a formal output contract for each generative model call using first-order logic. Each FGGM call wraps the underlying model in a rejection sampler with a verified fallback, ensuring every returned output satisfies the contract for any input and parameter setting. Building on FGGM, we present SEVerA (Self-Evolving Verified Agents), a three-stage framework: Search synthesizes candidate parametric programs containing FGGM calls; Verification proves correctness with respect to hard constraints for all parameter values, reducing the problem to unconstrained learning; and Learning applies scalable gradient-based optimization, including GRPO-style fine-tuning, to improve the soft objective while preserving correctness. We evaluate SEVerA on Dafny program verification, symbolic math synthesis, and policy-compliant agentic tool use ($τ^2$-bench). Across tasks, SEVerA achieves zero constraint violations while improving performance over unconstrained and SOTA baselines, showing that formal behavioral constraints not only guarantee correctness but also steer synthesis toward higher-quality agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.25111v2",
+      "url": "http://arxiv.org/abs/2603.25111v2",
+      "pdf_url": "https://arxiv.org/pdf/2603.25111v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.25111v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "paper_dataset:SEVerA-evaluation"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "VerlTool: Towards Holistic Agentic Reinforcement Learning with Tool Use",
+      "authors": [
+        "Dongfu Jiang",
+        "Yi Lu",
+        "Zhuofeng Li",
+        "Zhiheng Lyu",
+        "Ping Nie",
+        "Haozhe Wang",
+        "Alex Su",
+        "Hui Chen",
+        "Kai Zou",
+        "Chao Du",
+        "Tianyu Pang",
+        "Wenhu Chen"
+      ],
+      "year": 2026,
+      "venue": "LLA 2026",
+      "abstract": "VerlTool is a unified modular framework for agentic reinforcement learning with tool use. It aligns with VeRL, standardizes tool APIs across code execution, search, SQL, and vision, supports asynchronous rollouts, and evaluates six domains. The paper reports nearly twofold rollout speedup and performance comparable to task-specific systems.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": null,
+      "url": "https://openreview.net/forum?id=z9MXthgwQf",
+      "pdf_url": "https://openreview.net/pdf?id=z9MXthgwQf",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "openreview:z9MXthgwQf",
+      "relevance_status": "relevant",
+      "tags": [
+        "method",
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark",
+      "authors": [
+        "Yuxuan Cai",
+        "Yipeng Hao",
+        "Jie Zhou",
+        "Hang Yan",
+        "Zhikai Lei",
+        "Rui Zhen",
+        "Zhenhua Han",
+        "Yutao Yang",
+        "Junsong Li",
+        "Qianjun Pan",
+        "Tianyu Huai",
+        "Qin Chen",
+        "Xin Li",
+        "Kai Chen",
+        "Bo Zhang",
+        "Xipeng Qiu",
+        "Liang He"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "The paper proposes Experience-driven Lifelong Learning with four components: experience exploration, long-term memory, skill learning, and knowledge internalization. It also introduces StuLife, a benchmark simulating a student's college journey across three phases and ten sub-scenarios to evaluate memory retention, skill transfer, and self-motivated behavior.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.19005",
+      "url": "https://arxiv.org/abs/2508.19005",
+      "pdf_url": "https://arxiv.org/pdf/2508.19005",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "arxiv_id:2508.19005",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "paper_dataset:StuLife"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "BenchTrace: A Benchmark for Testing Reflection Ability and Controlled Evolution in LLM Agents",
+      "authors": [
+        "Jiahao Huang",
+        "Fei Cheng",
+        "Junfeng Jiang",
+        "Zefan Yu",
+        "Akiko Aizawa"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "BenchTrace evaluates self-evolution through reflection evaluation and controlled evolution evaluation. It contains 1,821 annotated episodes over six tasks and introduces failure avoidance rate. Qwen3-32B and GPT-4.1 both score below 30 percent on end-to-end reflection, with diagnosis as the main bottleneck.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.29225",
+      "url": "https://arxiv.org/abs/2605.29225",
+      "pdf_url": "https://arxiv.org/pdf/2605.29225",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "arxiv_id:2605.29225",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "dataset",
+        "latest-sota"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "paper_dataset:BenchTrace"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "EXG: Self-Evolving Agents with Experience Graphs",
+      "authors": [
+        "Yuxin Jin",
+        "Siyuan Zhang",
+        "Hanchen Wang",
+        "Lu Qin",
+        "Ying Zhang",
+        "Wenjie Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "EXG organizes successes and failures into a relational experience graph. It supports online graph growth for immediate cross-task reuse and offline reuse as a plug-in memory. Experiments on code generation and reasoning tasks report better performance-efficiency trade-offs than reflection and unstructured memory baselines.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.17721",
+      "url": "https://arxiv.org/abs/2605.17721",
+      "pdf_url": "https://arxiv.org/pdf/2605.17721",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "arxiv_id:2605.17721",
+      "relevance_status": "relevant",
+      "tags": [
+        "method",
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    },
+    {
+      "title": "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective",
+      "authors": [
+        "Yuyao Wang",
+        "Zhongjian Zhang",
+        "Mo Chi",
+        "Kaichi Yu",
+        "Yuhan Li",
+        "Miao Peng",
+        "Bing Tong",
+        "Chen Zhang",
+        "Yan Zhou",
+        "Jia Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "EvoMemBench evaluates agent memory along memory scope and memory content. It compares 15 memory methods with long-context baselines and finds that no memory form dominates: retrieval works well for knowledge tasks, while procedural and long-term memory help execution tasks when stored experience matches task structure.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.18421",
+      "url": "https://arxiv.org/abs/2605.18421",
+      "pdf_url": "https://arxiv.org/pdf/2605.18421",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "arxiv_id:2605.18421",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "dataset",
+        "replication-friendly"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "github_repository:DSAIL-Memory/EvoMemBench"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory",
+      "authors": [
+        "Yishuo Cai",
+        "Xingyu Guo",
+        "Xuancheng Huang",
+        "Jinhua Du",
+        "Can Huang",
+        "Wenxuan Huang",
+        "Wenhan Ma",
+        "Yuyang Hu",
+        "Aohan Zeng",
+        "Jie Tang",
+        "Xu Sun"
+      ],
+      "year": 2026,
+      "venue": "ICML 2026",
+      "abstract": "MemoPilot trains a plug-in memory updater while freezing the acting LLM. It formulates memory writing as a multi-turn decision process and optimizes it with turn-wise rewards and turn-level advantage estimates. It ranks first by Elo on both limit hold'em and rock-paper-scissors.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": null,
+      "url": "https://openreview.net/forum?id=gNWNtstp3r",
+      "pdf_url": "https://openreview.net/pdf?id=gNWNtstp3r",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "openreview:gNWNtstp3r",
+      "relevance_status": "relevant",
+      "tags": [
+        "method",
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [
+        "paper_dataset:MemoPilot-RPS-LHE"
+      ],
+      "dataset_status": "metadata_only",
+      "dataset_errors": []
+    },
+    {
+      "title": "AgentEvolver: Towards Efficient Self-Evolving Agent System",
+      "authors": [
+        "Yunpeng Zhai",
+        "Shuchang Tao",
+        "Cheng Chen",
+        "Anni Zou",
+        "Ziqian Chen",
+        "Qingxu Fu",
+        "Shinji Mai",
+        "Li Yu",
+        "Jiaji Deng",
+        "Zouying Cao",
+        "Zhaoyang Liu",
+        "Bolin Ding",
+        "Jingren Zhou"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "AgentEvolver reduces handcrafted task data and inefficient random exploration through self-questioning, self-navigating, and self-attributing. These mechanisms generate tasks, reuse experience for exploration, and assign differentiated credit to trajectory states and actions, forming a unified continual improvement loop.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2511.10395",
+      "url": "https://arxiv.org/abs/2511.10395",
+      "pdf_url": "https://arxiv.org/pdf/2511.10395",
+      "sources": [
+        "google_scholar_manual_audit",
+        "official_primary_page"
+      ],
+      "id": "arxiv_id:2511.10395",
+      "relevance_status": "relevant",
+      "tags": [
+        "method",
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 100.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "主题高度相关，进入统一精读总结流程。",
+      "dataset_ids": [],
+      "dataset_status": "none_found",
+      "dataset_errors": []
+    }
+  ]
+}

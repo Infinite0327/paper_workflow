@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Qega399UG3Z6hwalGiDmSNpH+JM</id>
+  <title>arXiv Query: search_query=all:Toolformer OR all:Language OR all:Models OR all:Can OR all:Teach OR all:Themselves OR all:to OR all:Use OR all:Tools&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-07-29T04:18:24Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:Toolformer+OR+(all:Language+OR+(all:Models+OR+(all:Can+OR+(all:Teach+OR+(all:Themselves+OR+(all:to+OR+(all:Use+OR+all:Tools)))))))&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>2318808</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2302.04761v1</id>
+    <title>Toolformer: Language Models Can Teach Themselves to Use Tools</title>
+    <updated>2023-02-09T16:49:57Z</updated>
+    <link href="https://arxiv.org/abs/2302.04761v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2302.04761v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\&amp;A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-02-09T16:49:57Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Timo Schick</name>
+    </author>
+    <author>
+      <name>Jane Dwivedi-Yu</name>
+    </author>
+    <author>
+      <name>Roberto Dessì</name>
+    </author>
+    <author>
+      <name>Roberta Raileanu</name>
+    </author>
+    <author>
+      <name>Maria Lomeli</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Nicola Cancedda</name>
+    </author>
+    <author>
+      <name>Thomas Scialom</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2201.06255v3</id>
+    <title>FastRemap: A Tool for Quickly Remapping Reads between Genome Assemblies</title>
+    <updated>2022-09-04T22:46:38Z</updated>
+    <link href="https://arxiv.org/abs/2201.06255v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2201.06255v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A genome read data set can be quickly and efficiently remapped from one reference to another similar reference (e.g., between two reference versions or two similar species) using a variety of tools, e.g., the commonly-used CrossMap tool. With the explosion of available genomic data sets and references, high-performance remapping tools will be even more important for keeping up with the computational demands of genome assembly and analysis.
+  We provide FastRemap, a fast and efficient tool for remapping reads between genome assemblies. FastRemap provides up to a 7.82$\times$ speedup (6.47$\times$, on average) and uses as low as 61.7% (80.7%, on average) of the peak memory consumption compared to the state-of-the-art remapping tool, CrossMap.
+  FastRemap is written in C++. The source code and user manual are freely available at: github.com/CMU-SAFARI/FastRemap. Docker image available at: https://hub.docker.com/r/alkanlab/fast. Also available in Bioconda at: https://anaconda.org/bioconda/fastremap-bio.</summary>
+    <category term="q-bio.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-01-17T07:43:30Z</published>
+    <arxiv:comment>FastRemap is open source and all scripts needed to replicate the results in this paper can be found at https://github.com/CMU-SAFARI/FastRemap</arxiv:comment>
+    <arxiv:primary_category term="q-bio.GN"/>
+    <arxiv:journal_ref>Bioinformatics, Sep 30; 38(19):4633-4635, 2022</arxiv:journal_ref>
+    <author>
+      <name>Jeremie S. Kim</name>
+    </author>
+    <author>
+      <name>Can Firtina</name>
+    </author>
+    <author>
+      <name>Meryem Banu Cavlak</name>
+    </author>
+    <author>
+      <name>Damla Senol Cali</name>
+    </author>
+    <author>
+      <name>Can Alkan</name>
+    </author>
+    <author>
+      <name>Onur Mutlu</name>
+    </author>
+    <arxiv:doi>10.1093/bioinformatics/btac554</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1093/bioinformatics/btac554" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2403.05789v1</id>
+    <title>ItD: Large Language Models Can Teach Themselves Induction through Deduction</title>
+    <updated>2024-03-09T04:20:46Z</updated>
+    <link href="https://arxiv.org/abs/2403.05789v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.05789v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Although Large Language Models (LLMs) are showing impressive performance on a wide range of Natural Language Processing tasks, researchers have found that they still have limited ability to conduct induction. Recent works mainly adopt ``post processes'' paradigms to improve the performance of LLMs on induction (e.g., the hypothesis search &amp; refinement methods), but their performance is still constrained by the inherent inductive capability of the LLMs. In this paper, we propose a novel framework, Induction through Deduction (ItD), to enable the LLMs to teach themselves induction through deduction. The ItD framework is composed of two main components: a Deductive Data Generation module to generate induction data and a Naive Bayesian Induction module to optimize the fine-tuning and decoding of LLMs. Our empirical results showcase the effectiveness of ItD on two induction benchmarks, achieving relative performance improvement of 36% and 10% compared with previous state-of-the-art, respectively. Our ablation study verifies the effectiveness of two key modules of ItD. We also verify the effectiveness of ItD across different LLMs and deductors. The data and code of this paper can be found at https://anonymous.4open.science/r/ItD-E844.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-09T04:20:46Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Wangtao Sun</name>
+    </author>
+    <author>
+      <name>Haotian Xu</name>
+    </author>
+    <author>
+      <name>Xuanqing Yu</name>
+    </author>
+    <author>
+      <name>Pei Chen</name>
+    </author>
+    <author>
+      <name>Shizhu He</name>
+    </author>
+    <author>
+      <name>Jun Zhao</name>
+    </author>
+    <author>
+      <name>Kang Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1907.10292v1</id>
+    <title>Zero-Shot Sign Language Recognition: Can Textual Data Uncover Sign Languages?</title>
+    <updated>2019-07-24T08:12:41Z</updated>
+    <link href="https://arxiv.org/abs/1907.10292v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1907.10292v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce the problem of zero-shot sign language recognition (ZSSLR), where the goal is to leverage models learned over the seen sign class examples to recognize the instances of unseen signs. To this end, we propose to utilize the readily available descriptions in sign language dictionaries as an intermediate-level semantic representation for knowledge transfer. We introduce a new benchmark dataset called ASL-Text that consists of 250 sign language classes and their accompanying textual descriptions. Compared to the ZSL datasets in other domains (such as object recognition), our dataset consists of limited number of training examples for a large number of classes, which imposes a significant challenge. We propose a framework that operates over the body and hand regions by means of 3D-CNNs, and models longer temporal relationships via bidirectional LSTMs. By leveraging the descriptive text embeddings along with these spatio-temporal representations within a zero-shot learning framework, we show that textual data can indeed be useful in uncovering sign languages. We anticipate that the introduced approach and the accompanying dataset will provide a basis for further exploration of this new zero-shot learning problem.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-07-24T08:12:41Z</published>
+    <arxiv:comment>To appear in British Machine Vision Conference (BMVC) 2019</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Yunus Can Bilge</name>
+    </author>
+    <author>
+      <name>Nazli Ikizler-Cinbis</name>
+    </author>
+    <author>
+      <name>Ramazan Gokberk Cinbis</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.21676v2</id>
+    <title>How do language models learn facts? Dynamics, curricula and hallucinations</title>
+    <updated>2025-07-24T14:04:20Z</updated>
+    <link href="https://arxiv.org/abs/2503.21676v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.21676v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models accumulate vast knowledge during pre-training, yet the dynamics governing this acquisition remain poorly understood. This work investigates the learning dynamics of language models on a synthetic factual recall task, uncovering three key findings: First, language models learn in three phases, exhibiting a performance plateau before acquiring precise factual knowledge. Mechanistically, this plateau coincides with the formation of attention-based circuits that support recall. Second, the training data distribution significantly impacts learning dynamics, as imbalanced distributions lead to shorter plateaus. Finally, hallucinations emerge simultaneously with knowledge, and integrating new knowledge into the model through fine-tuning is challenging, as it quickly corrupts its existing parametric memories. Our results emphasize the importance of data distribution in knowledge acquisition and suggest novel data scheduling strategies to accelerate neural network training.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-27T16:43:45Z</published>
+    <arxiv:comment>Accepted at the 2nd Conference on Language Modeling (2025)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <arxiv:journal_ref>Conference on Language Modeling (2025)</arxiv:journal_ref>
+    <author>
+      <name>Nicolas Zucchet</name>
+    </author>
+    <author>
+      <name>Jörg Bornschein</name>
+    </author>
+    <author>
+      <name>Stephanie Chan</name>
+    </author>
+    <author>
+      <name>Andrew Lampinen</name>
+    </author>
+    <author>
+      <name>Razvan Pascanu</name>
+    </author>
+    <author>
+      <name>Soham De</name>
+    </author>
+  </entry>
+</feed>

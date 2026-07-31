@@ -1,0 +1,679 @@
+{
+  "query": "autonomous LLM agents",
+  "requested_limit": 20,
+  "created_at": "2026-07-22T17:24:45",
+  "errors": [
+    {
+      "source": "semantic_scholar",
+      "error": "HTTP Error 429: "
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Nuclear Deployed: Analyzing Catastrophic Risks in Decision-making of Autonomous LLM Agents",
+      "authors": [
+        "Rongwu Xu",
+        "Xiaojian Li",
+        "Shuo Chen",
+        "Wei Xu"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large language models (LLMs) are evolving into autonomous decision-makers, raising concerns about catastrophic risks in high-stakes scenarios, particularly in Chemical, Biological, Radiological and Nuclear (CBRN) domains. Based on the insight that such risks can originate from trade-offs between the agent's Helpful, Harmlessness and Honest (HHH) goals, we build a novel three-stage evaluation framework, which is carefully constructed to effectively and naturally expose such risks. We conduct 14,400 agentic simulations across 12 advanced LLMs, with extensive experiments and analysis. Results reveal that LLM agents can autonomously engage in catastrophic behaviors and deception, without being deliberately induced. Furthermore, stronger reasoning abilities often increase, rather than mitigate, these risks. We also show that these agents can violate instructions and superior commands. On the whole, we empirically prove the existence of catastrophic risks in autonomous LLM agents. We release our code to foster further research.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2502.11355v3",
+      "url": "http://arxiv.org/abs/2502.11355v3",
+      "pdf_url": "https://arxiv.org/pdf/2502.11355v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2502.11355v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Personality-Driven Decision-Making in LLM-Based Autonomous Agents",
+      "authors": [
+        "Lewis Newsham",
+        "Daniel Prince"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "The embedding of Large Language Models (LLMs) into autonomous agents is a rapidly developing field which enables dynamic, configurable behaviours without the need for extensive domain-specific training. In our previous work, we introduced SANDMAN, a Deceptive Agent architecture leveraging the Five-Factor OCEAN personality model, demonstrating that personality induction significantly influences agent task planning. Building on these findings, this study presents a novel method for measuring and evaluating how induced personality traits affect task selection processes - specifically planning, scheduling, and decision-making - in LLM-based agents. Our results reveal distinct task-selection patterns aligned with induced OCEAN attributes, underscoring the feasibility of designing highly plausible Deceptive Agents for proactive cyber defense strategies.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2504.00727v1",
+      "url": "http://arxiv.org/abs/2504.00727v1",
+      "pdf_url": "https://arxiv.org/pdf/2504.00727v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2504.00727v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 42.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "LLM Agents can Autonomously Exploit One-day Vulnerabilities",
+      "authors": [
+        "Richard Fang",
+        "Rohan Bindu",
+        "Akul Gupta",
+        "Daniel Kang"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 12,
+      "doi": "10.48550/arxiv.2404.08144",
+      "url": "https://openalex.org/W4394838745",
+      "pdf_url": "https://arxiv.org/pdf/2404.08144",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2404.08144",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.46,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "LLM Agents can Autonomously Hack Websites",
+      "authors": [
+        "Richard Fang",
+        "Rohan Bindu",
+        "Akul Gupta",
+        "Qiusi Zhan",
+        "Daniel Kang"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 10,
+      "doi": "10.48550/arxiv.2402.06664",
+      "url": "https://openalex.org/W4391800306",
+      "pdf_url": "https://arxiv.org/pdf/2402.06664",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2402.06664",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.16,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Nuclear Deployed: Analyzing Catastrophic Risks in Decision-making of Autonomous LLM Agents",
+      "authors": [
+        "Rufeng Xu",
+        "Xiaojian Li",
+        "Shuo Chen",
+        "Wei Xu"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 3,
+      "doi": "10.48550/arxiv.2502.11355",
+      "url": "https://openalex.org/W4407699660",
+      "pdf_url": "https://arxiv.org/pdf/2502.11355",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2502.11355",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.73,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Personality-Driven Decision Making in LLM-Based Autonomous Agents",
+      "authors": [
+        "Lewis Newsham",
+        "Daniel Prince"
+      ],
+      "year": 2025,
+      "venue": "International Joint Conference on Autonomous Agents and Multiagent Systems Proceedings of the Third International Joint Conference on Autonomous Agents and Multiagent Systems - Volume 1",
+      "abstract": "The embedding of Large Language Models (LLMs) into autonomous agents is a rapidly developing field which enables dynamic, configurable behaviours without the need for extensive domain-specific training. In our previous work, we introduced SANDMAN, a Deceptive Agent architecture leveraging the Five-Factor OCEAN personality model, demonstrating that personality induction significantly influences agent task planning. Building on these findings, this study presents a novel method for measuring and evaluating how induced personality traits affect task selection processes-specifically planning, scheduling, and decision-making-in LLM-based agents. Our results reveal distinct task-selection patterns aligned with induced OCEAN attributes, underscoring the feasibility of designing highly plausible Deceptive Agents for proactive cyber defense strategies.",
+      "citation_count": 3,
+      "doi": "10.65109/upog9306",
+      "url": "https://doi.org/10.65109/upog9306",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.65109/upog9306",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.73,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A survey on large language model based autonomous agents",
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng",
+        "Zeyu Zhang",
+        "Hao Yang",
+        "Jingsen Zhang",
+        "Zhiyuan Chen",
+        "Jiakai Tang",
+        "Xu Chen",
+        "Yankai Lin",
+        "Wayne Xin Zhao",
+        "Zhewei Wei",
+        "Ji-Rong Wen"
+      ],
+      "year": 2024,
+      "venue": "Frontiers of Computer Science",
+      "abstract": null,
+      "citation_count": 1270,
+      "doi": "10.1007/s11704-024-40231-1",
+      "url": "https://openalex.org/W4393065402",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11704-024-40231-1.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s11704-024-40231-1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 37,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A review of large language models and autonomous agents in chemistry",
+      "authors": [
+        "Mayk Caldas Ramos",
+        "Christopher J. Collison",
+        "Andrew Dickson White"
+      ],
+      "year": 2024,
+      "venue": "Chemical Science",
+      "abstract": null,
+      "citation_count": 210,
+      "doi": "10.1039/d4sc03921a",
+      "url": "https://openalex.org/W4405185373",
+      "pdf_url": "https://doi.org/10.1039/d4sc03921a",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1039/d4sc03921a",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 37,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Fundamentals of Building Autonomous LLM Agents",
+      "authors": [
+        "Victor de Lamo Castrillo",
+        "Habtom Kahsay Gidey",
+        "Alexander Lenz",
+        "Alois Knoll"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.48550/arxiv.2510.09244",
+      "url": "https://openalex.org/W4417127534",
+      "pdf_url": "https://arxiv.org/pdf/2510.09244",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2510.09244",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Breaking Agents: Compromising Autonomous LLM Agents Through Malfunction Amplification",
+      "authors": [
+        "Boyang Zhang",
+        "Yicong Tan",
+        "Yun Shen",
+        "Ahmed Salem",
+        "Michael Backes",
+        "Savvas Zannettou",
+        "Yang Zhang"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 3,
+      "doi": "10.48550/arxiv.2407.20859",
+      "url": "https://openalex.org/W4401203303",
+      "pdf_url": "https://arxiv.org/pdf/2407.20859",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2407.20859",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 36.73,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "A Survey on Large Language Model based Autonomous Agents",
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng",
+        "Zeyu Zhang",
+        "Hao Yang",
+        "Jingsen Zhang",
+        "Zhiyuan Chen",
+        "Jiakai Tang",
+        "Xu Chen",
+        "Yankai Lin",
+        "Wayne Xin Zhao",
+        "Zhewei Wei",
+        "Ji-Rong Wen"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 114,
+      "doi": "10.48550/arxiv.2308.11432",
+      "url": "https://openalex.org/W4386184788",
+      "pdf_url": "https://arxiv.org/pdf/2308.11432",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2308.11432",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 36,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agents at Risk: How Users Unwittingly Undermine LLM Safety",
+      "authors": [
+        "Fengchao Chen",
+        "Tingmin Wu",
+        "Van Nguyen",
+        "Surya. Nepal",
+        "Carsten Rudolph"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we introduce the User-Relayed Context Manipulation (UReCoM) attack, in which attackers manipulate benign users into relaying adversarial content within user requests, thereby relocating external adversarial content into user-provided task context. Our experimental evaluation shows that UReCoM outperforms five prompt-injection baselines (naive, context ignoring, fake completion, escape-character attacks, and combined attacks) under prevention-based (Sandwich, StruQ, and SecAlign) and detection-based defenses (Perplexity detection, DataSentinel, and CausalArmor). Additionally, UReCoM shows that LLMs can reject explicit malicious instructions more reliably than they can identify adversarial task entities, such as promotion codes, embedded within user requests. On 12 commercial LLM-based agents, we find that validation of adversarial task entities is largely prompt-driven rather than default, highlighting a design flaw in current agent frameworks. These results indicate that current defenses and deployed agents remain insufficient against user-relayed context manipulations, highlighting the need for task-entity-level prevention and default safety verification in LLM-based agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.10758v3",
+      "url": "http://arxiv.org/abs/2601.10758v3",
+      "pdf_url": "https://arxiv.org/pdf/2601.10758v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.10758v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+      "authors": [
+        "Chenyu Zhou",
+        "Huacan Chai",
+        "Wenteng Chen",
+        "Zihan Guo",
+        "Rong Shan",
+        "Yuanyi Song",
+        "Tianyi Xu",
+        "Yingxuan Yang",
+        "Aofan Yu",
+        "Weiming Zhang",
+        "Congming Zheng",
+        "Jiachen Zhu",
+        "Zeyu Zheng",
+        "Zhuosheng Zhang",
+        "Xingyu Lou",
+        "Changwang Zhang",
+        "Zhihui Fu",
+        "Jun Wang",
+        "Weiwen Liu",
+        "Jianghao Lin",
+        "Weinan Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM) agents are increasingly built less by changing model weights than by reorganizing the runtime around them. Capabilities that earlier systems expected the model to recover internally are now externalized into memory stores, reusable skills, interaction protocols, and the surrounding harness that makes these modules reliable in practice. This paper reviews that shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we argue that agent infrastructure matters not merely because it adds auxiliary components, but because it transforms hard cognitive burdens into forms that the model can solve more reliably. Under this view, memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and harness engineering serves as the unification layer that coordinates them into governed execution. We trace a historical progression from weights to context to harness, analyze memory, skills, and protocols as three distinct but coupled forms of externalization, and examine how they interact inside a larger agent system. We further discuss the trade-off between parametric and externalized capability, identify emerging directions such as self-evolving harnesses and shared agent infrastructure, and discuss open challenges in evaluation, governance, and the long-term co-evolution of models and external infrastructure. The result is a systems-level framework for explaining why practical agent progress increasingly depends not only on stronger models, but on better external cognitive infrastructure.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.08224v1",
+      "url": "http://arxiv.org/abs/2604.08224v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.08224v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.08224v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Agents: An Open-source Framework for Autonomous Language Agents",
+      "authors": [
+        "Wangchunshu Zhou",
+        "Yuchen Eleanor Jiang",
+        "Long Li",
+        "Jialong Wu",
+        "Tiannan Wang",
+        "Shi Qiu",
+        "Jintian Zhang",
+        "Jing Chen",
+        "Ruipu Wu",
+        "Shuai Wang",
+        "Shiding Zhu",
+        "Jiyu Chen",
+        "Wentao Zhang",
+        "Xiangru Tang",
+        "Ningyu Zhang",
+        "Huajun Chen",
+        "Peng Cui",
+        "Mrinmaya Sachan"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Recent advances on large language models (LLMs) enable researchers and developers to build autonomous language agents that can automatically solve various tasks and interact with environments, humans, and other agents using natural language interfaces. We consider language agents as a promising direction towards artificial general intelligence and release Agents, an open-source library with the goal of opening up these advances to a wider non-specialist audience. Agents is carefully engineered to support important features including planning, memory, tool usage, multi-agent communication, and fine-grained symbolic control. Agents is user-friendly as it enables non-specialists to build, customize, test, tune, and deploy state-of-the-art autonomous language agents without much coding. The library is also research-friendly as its modularized design makes it easily extensible for researchers. Agents is available at https://github.com/aiwaves-cn/agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2309.07870v3",
+      "url": "http://arxiv.org/abs/2309.07870v3",
+      "pdf_url": "https://arxiv.org/pdf/2309.07870v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2309.07870v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "AIoT Smart Home via Autonomous LLM Agents",
+      "authors": [
+        "Dmitriy Rivkin",
+        "Francois R. Hogan",
+        "Amal Feriani",
+        "Abhisek Konar",
+        "Adam Sigal",
+        "Xue Liu",
+        "Gregory Dudek"
+      ],
+      "year": 2024,
+      "venue": "IEEE Internet of Things Journal",
+      "abstract": null,
+      "citation_count": 47,
+      "doi": "10.1109/jiot.2024.3471904",
+      "url": "https://openalex.org/W4403674743",
+      "pdf_url": null,
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1109/jiot.2024.3471904",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35.86,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures",
+      "authors": [
+        "Yao, Shunyu",
+        "Jeffrey Zhao",
+        "Dian Yu",
+        "Nan Du",
+        "Izhak Shafran",
+        "Karthik Narasimhan",
+        "Yuan Cao"
+      ],
+      "year": 2022,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 563,
+      "doi": "10.48550/arxiv.2210.03629",
+      "url": "https://openalex.org/W4304195432",
+      "pdf_url": "https://arxiv.org/pdf/2210.03629",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2210.03629",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "The Modality Paradox in Autonomous LLM Engineering: Asymmetric Agent Loops and Mathematical Halting.",
+      "authors": [
+        "Jajoo, Sanskar"
+      ],
+      "year": 2026,
+      "venue": "PubMed",
+      "abstract": null,
+      "citation_count": 44,
+      "doi": "10.5281/zenodo.20364203",
+      "url": "https://openalex.org/W2157559498",
+      "pdf_url": "https://doi.org/10.5281/zenodo.20364203",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.5281/zenodo.20364203",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 34.63,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Layered Convergence in Autonomous Agent Memory: A Multi-Model Cognitive Architecture for Persistent Recall in Long-Running LLM Agents",
+      "authors": [
+        "Lance Harris"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "&lt;p&gt;Autonomous agents built on large language models (LLMs) operate under a structural limitation that constrains their utility in sustained, multi-domain environments: each session begins with no episodic, procedural, or declarative memory of prior sessions. Existing memory augmentation systems address this limitation through single-model approaches, including vector-based extraction (Mem0), temporal knowledge graphs (Zep/Graphiti), multi-strategy retrieval (Hindsight), OS-inspired tiered management (Letta/MemGPT), and framework-coupled recall (LangMem), each optimizing for one category of recall while leaving others unaddressed. This paper presents a multi-model cognitive architecture in which five complementary memory systems operate concurrently: (1) identity-prompt memory providing behavioral continuity via session-loaded configuration files; (2) structured constraint memory enabling programmatic policy enforcement with audit trails; (3) vector-enhanced semantic memory combining BM25 keyword matching with cosine-similarity search, temporal decay, and maximal marginal relevance re-ranking; (4) relational learning memory closing feedback loops between expert recommendations and their real-world outcomes; and (5) a hierarchical temporal knowledge graph organized into domain-scoped partitions with cross-domain tunnels and dynamic context assembly. Each model was introduced to address a specific failure mode observed during eight weeks of production deployment, and each operates additively without replacing its predecessors.&lt;/p&gt;\n&lt;p&gt;A combinatorial ablation study across all 32 possible subsets of the five models, totaling 3,520 evaluation runs across eight capability dimensions, validates the architecture using Shapley value decomposition. Three findings stand out. First, only two of the five models carry measurable weight under structural evaluation: Model II accounts for 104% of constraint enforcement capability, and Model V accounts for 100% of all retrieval capability, while Models I, III, and IV show near-zero contribution, an expected result given the evaluation's routing through constraint-check and palace-search pathways. Second, upgrading the constraint checker from keyword matching to semantic rule detection raised constraint enforcement from 59.8% to 73.3%, with Model II's Shapley value increasing from 0.286 to 0.430. Third, two new evaluation dimensions reveal previously unmeasured contributions: semantic recall scenarios show Model III (vector search) providing independent recall value (Shapley 0.025, 25% of total), and cross-model flow scenarios confirm that Models II and V contribute additively with zero interaction. The full architecture achieves 80.0% on factual recall with zero policy violations observed across nine weekly advisory council cycles in production. Constraint enforcement, feedback-loop learning, and dynamic context assembly are not present in any evaluated commercial or open-source memory system. The architecture was deployed without modifying the host platform's source code, suggesting portability across agent frameworks.&lt;/p&gt;",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6616122",
+      "url": "https://doi.org/10.2139/ssrn.6616122",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6616122",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "RepoAudit: An Autonomous LLM-Agent for Repository-Level Code Auditing",
+      "authors": [
+        "Jinyao Guo",
+        "Chengpeng Wang",
+        "Xiangzhe Xu",
+        "Zian Su",
+        "Xiangyu Zhang"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 3,
+      "doi": "10.48550/arxiv.2501.18160",
+      "url": "https://openalex.org/W4407012199",
+      "pdf_url": "https://arxiv.org/pdf/2501.18160",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2501.18160",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly"
+      ],
+      "score": 33.73,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    },
+    {
+      "title": "Design and evaluation of an Autonomous Cyber Defence agent using DRL and an augmented LLM",
+      "authors": [
+        "Johannes F. Loevenich",
+        "Erik Adler",
+        "Tobias Hürten",
+        "Roberto Rigolin F. Lopes"
+      ],
+      "year": 2025,
+      "venue": "Computer Networks",
+      "abstract": null,
+      "citation_count": 27,
+      "doi": "10.1016/j.comnet.2025.111162",
+      "url": "https://openalex.org/W4408165425",
+      "pdf_url": "https://doi.org/10.1016/j.comnet.2025.111162",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1016/j.comnet.2025.111162",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.2,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-22",
+      "value_judgment": "Needs human review before deep reading.",
+      "dataset_ids": [],
+      "dataset_status": "none_found"
+    }
+  ]
+}

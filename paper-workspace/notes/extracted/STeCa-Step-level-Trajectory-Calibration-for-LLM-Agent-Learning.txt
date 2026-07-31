@@ -1,0 +1,1753 @@
+
+
+--- Page 1 ---
+arXiv:2502.14276v2  [cs.LG]  29 May 2025
+STeCa: Step-level Trajectory Calibration for LLM Agent Learning
+Hanlin Wang, Jian Wang †, Chak Tou Leong, Wenjie Li
+Department of Computing, The Hong Kong Polytechnic University
+{hanlin-henry.wang,chak-tou.leong}@connect.polyu.hk
+jian51.wang@polyu.edu.hk cswjli@comp.polyu.edu.hk
+Abstract
+Large language model (LLM)-based agents
+have shown promise in tackling complex tasks
+by interacting dynamically with the environ-
+ment. Existing work primarily focuses on be-
+havior cloning from expert demonstrations or
+preference learning through exploratory tra-
+jectory sampling. However, these methods
+often struggle to address long-horizon tasks,
+where suboptimal actions accumulate step by
+step, causing agents to deviate from correct
+task trajectories. To address this, we high-
+light the importance of timely calibration and
+the need to automatically construct calibration
+trajectories for training agents. We propose
+Step-Level Trajectory Calibration ( STeCa),
+a novel framework for LLM agent learning.
+Specifically, STeCa identifies suboptimal ac-
+tions through a step-level reward comparison
+during exploration. It constructs calibrated
+trajectories using LLM-driven reflection, en-
+abling agents to learn from improved decision-
+making processes. We finally leverage these
+calibrated trajectories with successful trajecto-
+ries for reinforced training. Extensive exper-
+iments demonstrate that STeCa significantly
+outperforms existing methods. Further analy-
+sis highlights that timely calibration enables
+agents to complete tasks with greater robust-
+ness. Our code and data are available at https:
+//github.com/WangHanLinHenry/STeCa.
+1 Introduction
+Large language models (LLMs) have recently
+demonstrated impressive capabilities in reasoning
+and planning, leading to the development of vari-
+ous LLM-based agents that tackle real-world tasks
+such as household assistance (Puig et al., 2018;
+Shridhar et al., 2020b), web browsing (Yao et al.,
+2022; Deng et al., 2023), and complex scientific
+reasoning (Wang et al., 2022a). These agents typi-
+cally engage in long-horizon interactions with en-
+†Corresponding author.
+	𝑨𝟏	𝑨𝟐
+	𝑨𝟑$
+	𝑨𝟑	𝑨𝟒	𝑨𝟓
+	𝑨𝟏	𝑨𝟐
+	𝑨𝟑
+	𝑨𝟒	𝑨𝟓
+Successful 
+trajectory
+Explored trajectory	𝑨𝟒	𝑨𝟓
+calibration
+𝜋!𝜋!𝜋!
+𝜋!𝜋!
+	𝑨𝒏DeviatedCalibrated	𝑨𝒏Deviation  Distance
+Figure 1: Step-level calibration enables LLM agents to
+construct calibrated trajectories and learn to mitigate the
+accumulation of suboptimal actions.
+vironments, making sequential decisions to accom-
+plish specific goals. Despite their promise, LLM
+agents still face significant challenges in generating
+high-quality task plans for complex scenarios (Xie
+et al., 2024; Wang et al., 2024a). This highlights
+the need for more effective approaches to enhance
+their decision-making capabilities over time.
+Previous work has investigated agent learning
+by leveraging augmented exploratory data (Chen
+et al., 2023; Yin et al., 2023; Zeng et al., 2023;
+Xiang et al., 2024). These methods primarily rely
+on behavior cloning from expert demonstrations,
+training agents exclusively on successful trajec-
+tories. However, this approach prevents agents
+from proactively self-correcting mistakes, leading
+to the accumulation of errors and ultimately subop-
+timal task performance (Xie et al., 2024). To ad-
+dress this limitation, another line of work focuses
+on preference learning (Song et al., 2024; Xiong
+et al., 2024) and reinforcement learning (Carta
+et al., 2023; Tan et al., 2024), integrating failure
+trajectories additionally to refine decision-making.
+These approaches train LLM agents using explicit
+error signals or reward functions. However, many
+long-horizon agentic tasks involve multi-turn inter-
+actions, where errors often only become evident at
+the terminal state (Yuan et al., 2025). As a result,
+these methods fail to address early-stage deviations,
+which may not be immediately apparent but accu-
+mulate incrementally over time, ultimately leading
+to significant errors.
+
+--- Page 2 ---
+To address the above limitations, we highlight
+the importance of timely calibration, which al-
+lows agents to adjust suboptimal actions as they
+occur , rather than deferring correction until after
+the entire exploration. As illustrated in Figure 1,
+when an early suboptimal action occurs, the subse-
+quent actions are prone to deviate from the optimal
+trajectory, significantly increasing the risk of task
+failure. If an agent can engage in self-reflection
+and calibrate its behavior in real time, it stands a
+much better chance of successfully completing the
+task. However, implementing step-level calibra-
+tions presents significant challenges. 1) Unlike in
+mathematical reasoning tasks (Kumar et al., 2024;
+Xi et al., 2025), where well-defined rules simplify
+error detection, identifying deviations at each step
+in long-horizon agentic tasks is considerably more
+complex. This complexity stems from the dynamic
+and diverse nature of task execution in interactive
+environments. 2) As far as we know, the lack of
+step-level calibration trajectory data poses a major
+obstacle to training agents to effectively recognize
+and mitigate deviations.
+In this work, we propose Step-level Trajectory
+Calibration (STeCa), a novel agent learning frame-
+work that enables LLM agents to perform real-time
+calibration. STeCa operates by interacting with the
+environment to perform explorations and utilizes
+Monte Carlo (MC) sampling (Kakade and Lang-
+ford, 2002) to estimate step reward for each ac-
+tion. By comparing the rewards of adjacent actions,
+STeCa effectively identifies deviated actions that
+lead to suboptimal performance. Then, we utilize
+off-the-shelf LLMs for reflection, which revises a
+deviated action into its ground-truth counterpart
+while generating a reflective thought. The result-
+ing action and its thought, along with subsequent
+expert trajectory, form a calibrated trajectory. All
+calibrated trajectories, combined with successful
+trajectories during exploration, are then used to
+reinforce the agent’s training, optimizing its learn-
+ing process. We evaluate STeCa on two widely-
+used agent benchmarks (Puig et al., 2018; Shrid-
+har et al., 2020b). Extensive experimental results
+demonstrate that STeCa significantly outperforms
+existing methods, achieving higher success rates
+across a variety of tasks.
+In summary, our contributions are as follows:
+• We highlight the importance of timely calibra-
+tion in interactive agentic tasks, a crucial aspect
+largely overlooked by previous methods. Unlike
+existing approaches that rely on terminal-state
+error signals or reward functions, we emphasize
+the need for real-time adjustments to prevent the
+accumulation of deviations, which can lead to
+significant errors in long-horizon tasks.
+• We introduce STeCa, a novel learning frame-
+work that enhances LLM agents by integrating
+an automated deviation detection mechanism
+and calibrated trajectory construction. It equips
+agents with essential calibration capabilities for
+improvement during task execution.
+• Extensive experiments demonstrate that STeCa
+significantly outperforms existing methods. By
+detecting deviations in real-time, STeCa enables
+agents to effectively mitigate the accumulation
+of suboptimal actions and handle long-horizon
+tasks more robustly.
+2 Preliminaries
+Task Formulation. This work investigates how
+LLM-based agents tackle long-horizon tasks within
+specific environments through interactions. Fol-
+lowing previous studies (Song et al., 2024; Xiong
+et al., 2024), we formalize these agentic tasks
+as a partially observable Markov decision pro-
+cess (POMDP), which contains the key elements
+(U , S, A, O, T , R). Here, U denotes the instruc-
+tion space, S the state space, A the action space,
+O the observation space, T the transition function
+(T : S × A → S ), and R the reward function
+(R : S × A → [0, 1]). Since the task planning ca-
+pability of LLM agents is our main focus, U , A, O
+are subsets of natural language space.
+Given a task instruction u ∈ U , the LLM agent
+πθ at time step t takes an action at ∼ πθ(·|u, et−1)
+and receives the environmental feedback as the ob-
+servation ot ∈ O. et−1 denotes the historical inter-
+action trajectory (a1, o1, ..., at−1, ot−1). Each ac-
+tion at incurs the environment state to st ∈ S . The
+interaction loop terminates when either the agent
+completes the task or the maximum step is reached.
+The final trajectory is em = (u, a1, o1, ..., am, om),
+where m denotes the trajectory length. The out-
+come reward ro(u, em) ∈ [0, 1] indicates the suc-
+cess or failure of the task.
+Step-level Reward Acquisition. It is crucial to
+acquire step-level rewards as feedback to improve
+decision-making for LLM agents. Following prior
+work (Kakade and Langford, 2002; Salimans and
+Chen, 2018; Xiong et al., 2024), we leverage ex-
+pert trajectories as demonstrations and ask an LLM
+
+--- Page 3 ---
+Deviated Action Detection
+𝑨𝟏
+Task
+𝑨𝟐 𝑨𝟑
+𝑨𝟏 𝑨𝟐 𝑨𝟑 𝑨𝟒
+Expert Sub
+-
+trajectory
+0.5
+0.3
+MC Step Reward
+Deviated Action 
+Step 4:
+𝑨𝟏 𝑨𝟐 𝑨𝟑 𝑨𝟒 𝑨𝟓 𝑨m. . .
+Explored trajectory:
+Deviated Action
+𝑨𝟏 𝑨𝟐 𝑨𝟑 𝑨𝟒 𝑨𝟓 𝑨𝒎. . .
+Expert trajectory:
+Reflection 𝑨𝟓 𝑨𝒎. . . Calibrated  
+Trajectory
+Deviation distance
+𝑨𝟏
+𝑨𝟐
+𝑨𝒎
+.
+.
+𝑟𝑐
+. . .
+Calibration 
+Data
+Reinforced 
+Training
+𝑨𝟒′
+Reflective
+Thought
+Step 1
+Step 2
+Step 3
+Calibration Trajectory Construction
+Successful 
+Data
+𝑨𝟏
+𝑨𝟔
+𝑨𝒎
+.
+.
+.
+.
+Explored 
+Trajectory
+Expert
+Sub-trajectory
+>
+Deviated  
+Trajectory
+𝑨𝒏
+𝑨𝒏
+Expert Action
+Explored Action
+Figure 2: Overview of the Step-level Trajectory Calibration (STeCa) framework for LLM agent learning.
+agent to begin exploration from the specific state
+st−1 ∈ S toward the target state for a given demon-
+stration. At each t-step, the agent’s policyπθ gen-
+erates an action at, and we define a step-level re-
+ward rstep(st−1, at) to quantify the contribution
+of at to future success. Specifically, at t-th step,
+the agent generates N new subsequent trajectories
+{e(i)
+t+1:m}N
+i=1 using the widely-used Monte Carlo
+sampling, conditioned on the historical trajectory
+et. Each trajectory receives an outcome reward
+ro(u, em) from the environment. The step-level
+reward rstep(st−1, at) is computed as the expected
+value of these outcome rewards:
+rstep(st−1, at) = Eem∼πθ(et+1:m|et)[ro(u, em)].
+(1)
+Normalized Dynamic Time Warping. The nor-
+malized Dynamic Time Warping (nDTW) algo-
+rithm (Müller, 2007), implemented via dynamic
+programming (DP), effectively measures the dis-
+tance between two trajectories containing multiple
+time steps. Formally, given a pair of trajectories
+(x, y), this computation process is computed as:
+D(i, j) = d(xi, yj) + min
+
+
+
+D(i − 1, j)
+D(i, j − 1),
+D(i − 1, j − 1)
+(2)
+where d(xi, yi) denotes a distance function such
+as L2 or cosine distance, D(0, 0) = d(x0, y0). xi
+denotes the action at the i-th step in the trajectory
+x, while yj denotes the action at the j-th step in the
+trajectory y. With a normalization operation, the
+nDTW distance dnDTW is given by:
+dnDTW(x, y) = D(x − 1, y − 1)q
+n2x + n2y
+, (3)
+where dnDTW ∈ [0, 1], nx and ny denote the num-
+ber of steps in the trajectory x and y, respectively.
+3 Method
+In this section, we present Step-level Trajectory
+Calibration (STeCa), a novel learning framework
+for LLM agents. First, we warm up agent training
+with supervised fine-tuning (§3.1), equipping LLM
+agents with necessary task planning capabilities.
+Then, we focus on calibration trajectory construc-
+tion (§3.2), which detects deviated actions for an
+explored trajectory through step-level reward com-
+parison and calibrates them by reflection. Finally,
+we utilize these calibrated trajectories as a crucial
+part of data for reinforced training (§3.3). Figure 2
+illustrates the overview of STeCa.
+3.1 Warm-up via Supervised Fine-tuning
+Supervised fine-tuning (SFT) on the expert trajec-
+tory data has demonstrated promising results, serv-
+
+--- Page 4 ---
+ing as an effective initial step for developing strong
+agents. We employ ReAct-style (Yao et al., 2023)
+trajectory to conduct SFT, which additionally gen-
+erates a Chain-of-Thought (CoT) (Wei et al., 2022)
+rationale before each action. Considering that the
+CoT and the corresponding action are generated to-
+gether, we represent both as a single unit, denoted
+as at, for simplicity. Given an expert trajectory
+dataset D =
+n
+(u, e)(i)
+o|D|
+i=1
+, where each trajectory
+e = (u, a1, o1, ..., am, om), u represents the initial
+task instruction, at denotes the action (including
+its rationale) at step t, ot is the corresponding ob-
+servation, and |D| is the number of trajectories, the
+SFT loss function is formulated as:
+LSFT(θ) = −Ee∼D
+ nX
+t=1
+log πθ(at|et−1)
+
+. (4)
+This warm-up process equips the LLM agent with
+the necessary task-planning capabilities, enabling
+it to generate both rationales and actions, resulting
+in a base agent πbase.
+3.2 Calibration Trajectory Construction
+To construct the calibration trajectories, we utilize
+the base agent πbase to explore the environment
+through interaction. During this exploration, sub-
+optimal actions often lead to a cascade of further
+suboptimal decisions, causing the trajectory to de-
+viate from successful task completion. We define
+these actions, which are likely to cause deviations
+from the optimal trajectory and increase the risk of
+task failure, as deviated actions. Below, we intro-
+duce the details of detecting deviated actions and
+constructing calibrated trajectories accordingly.
+Deviated Action Detection via Step-level Re-
+ward Comparison. Since long-horizon tasks can
+be modeled as a partially observable Markov de-
+cision process (POMDP), where the future action
+in a task execution process depends on the cur-
+rent action, we must consider this Markov property
+when detecting deviated actions. To illustrate this,
+we define the probability of an agent successfully
+completing a task based on a “good” historical tra-
+jectory (e.g., an expert trajectory) at time step t
+as p(a>t|a≤t), where we omit the environmental
+states for simplicity. After executing a subsequent
+action at+1, the probability of task completion be-
+comes p(a>t+1|a≤t+1). If at+1 is a “good” action
+(e.g., an expert action), p(a>t+1|a≤t+1) will gen-
+erally be greater than p(a>t|a≤t). This is because
+agentic tasks typically consist of sequential actions,
+where each action contributes to task completion
+as the sequence progresses. Thus, by comparing
+the task completion probabilities before and after
+executing an action, we can determine whether the
+action is deviated.
+Specifically, we employ step-level rewards, cal-
+culated via Monte Carlo (MC) sampling introduced
+in §2, as an approximate estimation of the task
+completion probabilities. The base agent would
+conduct an explored action ˆat+1 based on the ex-
+pert sub-trajectory e1:t. The explored action ˆat+1
+is classified as a deviated action if its step reward is
+significantly lower than that of the previous expert
+action at by a predefined threshold δ; otherwise,
+it is considered a non-deviated action. The formal
+detection criterion is defined as follows:
+
+
+
+Deviated Action:
+rstep(st, ˆat+1) − rstep(st−1, at) < δ,
+Non-deviated Action:
+rstep(st, ˆat+1) − rstep(st−1, at) ≥ δ,
+(5)
+where rstep(st−1, at) represents the step reward for
+the expert action at at the t-th step, rstep(st, ˆat+1)
+denotes the step reward for the explored action
+ˆat+1, and δ ≥ 0 is a threshold parameter. Step
+rewards rstep constructed by MC sampling are only
+utilized to detect the deviated actions.
+Calibrated Trajectory Collection with Reflective
+Thoughts. As shown in Figure 2, after identify-
+ing a deviated action in an explored trajectory, our
+goal is to enable the LLM agent to “know” that
+the action is deviated and learn how to realign with
+the task objective. Achieving this goal requires
+calibrated trajectories for training the agent. In-
+spired by many previous studies on LLM reflec-
+tions (Shinn et al., 2023), we employ off-the-shelf
+LLMs to generate reflective thoughts for calibra-
+tion. Formally, we concatenate the preceding ex-
+pert sub-trajectory e1:t−1, the deviated action ˆat,
+and the corresponding ground-truth action at in
+the expert trajectory, and prompt a state-of-the-art
+LLM (e.g., GPT-4o (OpenAI, 2024)) for reflection,
+transforming the deviated action ˆat into the ground-
+truth action along with its reflective thought, which
+is denoted as a
+′
+t. This formulates the subsequent
+calibrated trajectory ec(t:m) = (a
+′
+t, et+1:m), where
+et+1:m represents the expert sub-trajectory from the
+step t + 1 to the end step m. The detailed prompt
+for this reflection is provided in Appendix E.2.
+
+--- Page 5 ---
+Our calibration dataset Dc is constructed as:
+Dc = {e(j)
+c(t:m)} ∪ {e(j)
+d(1:m)}, (6)
+where ed(1:m) = ( e1:t−1, ˆat, ˆet+1:m) denotes a de-
+viated trajectory, which will be used in subsequent
+reinforced training. Note that we perform trajec-
+tory calibration immediately when detecting the
+first deviated action, rather than waiting until the
+trajectory concludes. This approach ensures timely
+calibration and reduces unnecessary exploration.
+3.3 Reinforced Training
+While training on calibration trajectories enhances
+an agent’s calibration capability, relying exclu-
+sively on these trajectories may hinder their ability
+to recognize correctness. To mitigate this, we in-
+troduce two types of successful data during explo-
+ration. First, we construct the explored successful
+trajectory dataset, De, by collecting successful tra-
+jectories that the base agent independently explores
+from the beginning, along with their corresponding
+expert trajectories. Not that these explored success-
+ful trajectories are not completely the same as the
+expert trajectories, because they include trial-and-
+error actions during explorations. Second, we build
+the expert sub-trajectory dataset, Ds. Specifically,
+for a failed trajectory, where the first erroneous ac-
+tion occurs at step t, we extract the corresponding
+expert action and the subsequent trajectory, fol-
+lowing Xiong et al. (2024). These sub-trajectories
+guide the agent in learning from challenging cases
+more effectively.
+Using the collected data, we perform reinforced
+training to enhance LLM agents. Our goal is to
+guide the agent toward generating optimal trajec-
+tories that maximize task performance while min-
+imizing suboptimal outcomes. We introduce tra-
+jectory deviation distance (TDD), a measure that
+quantifies how much a suboptimal trajectory de-
+viates from an optimal one at the trajectory level.
+Drawing inspiration from Xu et al. (2024), we uti-
+lize the nDTW distance dnDTW (as detailed in §2),
+to quantify the deviation distance between a subop-
+timal trajectory es and its corresponding optimal
+trajectory eo. A smaller dnDTW(es, eo) indicates a
+lower deviation. This deviation distance will be
+utilized as a trajectory-level reward signal in rein-
+forced training.
+To ensure balanced training across the datasets,
+we refine the reward mechanism by incorporating
+the trajectory deviation distance. The reward func-
+tions for each type of data are defined as follows:
+rc = 1 + η · dnDTW(ec(t:m), ed(t:m)), (7)
+rs = 1 + η · dnDTW(et:m, ˆet:m), (8)
+re = 1 − η · dnDTW(˜e1:m, e1:m), (9)
+where for the calibration trajectory ec(t:m) and the
+expert sub-trajectory et:m, we increase the reward
+as the deviation distance grows, encouraging the
+agent to calibrate larger deviations. For the ex-
+plored successful trajectory ˜e1:m, we reduce the
+reward for unnecessary explorations when the de-
+viation distance increases, discouraging deviations
+from optimal behavior. η is a temperature coeffi-
+cient that controls the impact of deviation distance
+on the reward. Finally, we integrate these rewards
+into reinforcement training using the policy gra-
+dient (Peters and Schaal, 2007) algorithm. The
+overall training objective is given by:
+L(θ) =
+E(ec(t:m),e1:t−1)∼Dc
+h
+rc · log πθ(ec(t:m) | e1:t−1)
+i
++ E(et:m,e1:t−1)∼Ds
+h
+rs · log πθ(et:m | e1:t−1)
+i
+(10)
++ E(˜e1:m,u)∼De
+h
+re · log πθ
+ 
+˜e1:m
+u
+i
+.
+4 Experiments
+4.1 Experimental Settings
+Datasets. We conduct experiments on two repre-
+sentative agentic task datasets: VirtualHome (Puig
+et al., 2018) and ALFWorld (Shridhar et al.,
+2020b). For ALFWorld, we utilize datasets con-
+structed by Song et al., 2024. For the Virtual-
+Home dataset, we leverage the predefined tasks
+from the ActivityPrograms knowledge base (Puig
+et al., 2018) and construct a corresponding dataset
+in a manner closely aligned with the ALFWorld
+dataset. Please refer to Appendix A for further de-
+tails regarding the dataset construction process and
+associated statistical information.
+Baseline Methods. We evaluate STeCa against
+the following two categories of baselines: (1)
+prompting-based approaches, including GPT-3.5-
+turbo (Ouyang et al., 2022) and GPT-4 (Achiam
+et al., 2023). (2) tuning-based methods, which in-
+clude supervised fine-tuning (SFT) methods, such
+as pure SFT (Chen et al., 2023), RFT (Yuan et al.,
+2023), and E2CL (Wang et al., 2024a), reinforce-
+ment learning-based methods such as PPO (Schul-
+man et al., 2017) and Step-PPO (Wang et al.,
+
+--- Page 6 ---
+Paradigm Method VirtualHome ALFWorld Average
+Seen Unseen Seen Unseen
+Prompting-based
+GPT-3.5-Turbo (Ouyang et al., 2022) 6.3 2.6 7.9 10.5 6.8
+GPT-4 (Achiam et al., 2023) 34.2 9.4 42.9 38.1 31.2
+Tuning-based
+Llama-2-7B-Chat + PPO (Schulman et al., 2017) 23.9 25.0 22.1 29.1 25.0
+Llama-2-7B-Chat + SFT (Chen et al., 2023) 64.9 57.7 60.0 67.2 63.3
+Llama-2-7B-Chat + RFT (Yuan et al., 2023) 65.1 58.3 62.9 66.4 63.2
+Llama-2-7B-Chat + Step-PPO (Wang et al., 2024b) 65.7 59.6 65.7 69.4 65.1
+Llama-2-7B-Chat + ETO (Song et al., 2024) 66.6 60.1 68.6 72.4 66.9
+Llama-2-7B-Chat + E2CL (Wang et al., 2024a) 67.1 61.8 70.1 73.9 68.2
+Llama-2-7B-Chat + IPR (Xiong et al., 2024) 67.6 61.9 70.3 74.7 68.6
+Llama-2-7B-Chat + STeCa (Ours) 69.6 63.6 74.3 76.1 70.9
+Llama-2-7B-Chat + STeCa w/ SFT+DPO 66.8 63.5 74.1 75.5 70.0
+Llama-2-7B-Chat + STeCa w/o RT 68.8 62.4 72.1 74.9 69.6
+Table 1: Performance of different methods on two agent datasets. “Seen” refers to the held-out test set containing
+tasks present during training, while “Unseen” refers to the test set with unseen task variations.
+2024b), as well as preference learning methods
+like ETO (Song et al., 2024) and IPR (Xiong et al.,
+2024). Additional details about the baselines are
+provided in Appendix B.
+Implementation Details. We utilize Llama-2-
+7B-Chat (Touvron et al., 2023) as the base model
+for training LLM agents. We set δ = 0 as the
+threshold to detect deviated actions in two envi-
+ronments. We use η = 1 for VirtualHome and
+η = 0.01 for ALFWorld to weight the contribution
+of trajectory deviation to the reward. To obtain
+step-level rewards with MC sampling, we set the
+temperature to 1 and the number of samples N to
+5. More details are presented in Appendix C.
+Evaluation Metrics. Following existing stud-
+ies (Song et al., 2024; Xiong et al., 2024), we adopt
+the Average Final Reward as our evaluation met-
+ric. This metric measures the success rate of test
+tasks. In ALFWorld, the environment provides bi-
+nary final rewards, where a reward of 1 indicates
+task completion and 0 indicates failure. Similarly,
+in VirtualHome, a trajectory is deemed successful if
+the final environment state aligns with a predefined
+target state and yields a reward of 1; otherwise, the
+reward is 0. This metric ensures a consistent mea-
+sure of task performance across both environments.
+4.2 Main Results
+Table 1 summarizes the performance of various
+methods on long-horizon tasks in the Virtual-
+Home and ALFWorld environments. The proposed
+method, STeCa, achieves the highest overall per-
+formance, with an average reward of 70.9, signifi-
+cantly outperforming the baseline methods. Com-
+pared to prompting-based methods, which exhibit
+relatively poor performance, STeCa demonstrates
+a significant improvement. These results highlight
+the inherent limitations of closed-source LLMs re-
+lying solely on prompt engineering. As a tuning-
+based method, STeCa demonstrates consistent su-
+periority over prior approaches. Specifically, it
+achieves an average final reward of 70.9, surpass-
+ing IPR, the previous state-of-the-art method with
+an average reward of 68.6, by 3.4%. This improve-
+ment highlights the effectiveness of trajectory cal-
+ibration in enhancing generalization and overall
+performance. Moreover, STeCa outperforms E2CL,
+a method that incorporates self-reflection mech-
+anisms, by 4.0%. Notably, STeCa achieves this
+without requiring additional iterative training, un-
+derscoring its superior training efficiency.
+To further validate our method, we conducted
+an ablation study by designing two variants of the
+training process. In the first variant, we applied
+supervised fine-tuning (SFT) followed by Direct
+Preference Optimization (DPO) (Rafailov et al.,
+2024) on both optimal and suboptimal trajectories
+in the collected dataset (denoted as w/ SFT + DPO).
+In the second variant, we performed SFT on the
+collected dataset but restricted the training to only
+the optimal trajectories, omitting reward tuning (de-
+noted as w/o RT). The experimental results showed
+that employing both SFT and DPO led to a slight
+decrease in the average reward to 70.0, while SFT
+without reward tuning (w/o RT) resulted in a further
+drop to 69.6. Although both variants demonstrated
+competitive performance, neither surpassed the re-
+
+--- Page 7 ---
+Base Model Method Seen Unseen
+Mistral-7B
+SFT 67.1 58.2
+IPR 71.4 73.9
+STeCa 73.3 75.3
+Llama-3-8B-Instruct
+SFT 68.6 62.7
+IPR 72.3 75.8
+STeCa 74.9 77.0
+Table 2: Performance of SFT, IPR, and our STeCa with
+different base models on the ALFWorld dataset.
+sults achieved by STeCa, thereby underscoring the
+effectiveness of the mechanisms proposed in our
+method.
+5 Discussions and Analyses
+In this section, we provide detailed analyses of the
+STeCa framework from the following aspects.
+5.1 Effectiveness with Different Base Models
+To validate the broad effectiveness of our method,
+we evaluate STeCa with different base models, in-
+cluding Mistral-7B and Llama-3-8B-Instruct, on
+the ALFWorld environment. We compare its per-
+formance with SFT and IPR across both seen and
+unseen tasks. As shown in Table 2, STeCa con-
+sistently outperforms both SFT and IPR across
+multiple base models. Notably, in unseen tasks,
+STeCa achieves a 17.1% improvement over SFT
+on Mistral-7B, highlighting its generalization abil-
+ity for developing LLM-based agents. Furthermore,
+with Llama-3-8B-Instruct, a stronger backbone
+model, STeCa further achieves better performance,
+underscoring its potential for building advanced
+agents in the future.
+5.2 Comparisons between Variants of STeCa
+Variants of Step-Level Reward Acquisition. To
+investigate the impact of different methods for re-
+ward acquisition, we conducted experiments us-
+ing GPT-4o and a trained reward model to anno-
+tate reward for each step action while keeping all
+other processes unchanged. The detailed process
+of step action reward acquisition is described in
+Appendix D.1. As shown in Table 3, our method
+utilizing MC sampling for step reward acquisition
+achieves superior performance compared to alter-
+native variants, highlighting the effectiveness of
+MC sampling for reward acquisition. Notably, em-
+ploying GPT-4o to directly annotate rewards for
+step actions demonstrates performance comparable
+Variants VirtualHome ALFWorld
+Seen Unseen Seen Unseen
+Step-level Reward Acquisition
+MC Sampling 69.6 63.6 74.3 76.1
+GPT-4o Annotation 69.1 62.5 74.1 74.9
+RM Prediction 68.2 61.8 74.0 73.3
+Reflective Thought Generation
+GPT-4o Generation 69.6 63.6 74.3 76.1
+Self-generation 66.0 61.1 71.4 73.3
+Table 3: Comparisons between variants of STeCa.
+1 3 5 7 9 11 13 15 17 19
+Remaining steps from task completion
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0MC Step Reward
+ALFWorld
+VirtualHome
+Figure 3: Variations in Monte Carlo (MC) step rewards
+with respect to the number of remaining steps until task
+completion for expert trajectories.
+to our method, suggesting that step rewards can
+be effectively obtained through more computation-
+ally efficient approaches. This finding provides a
+promising direction for future research into opti-
+mizing the efficiency of reward acquisition.
+Variants of Reflective Thought Generation. In
+STeCa, we employ GPT-4o to generate reflection
+thoughts for constructing calibration trajectories.
+To evaluate the impact of reflection quality on per-
+formance, we attempted to prompt the base agent
+πbase to generate reflections while keeping all other
+processes unchanged. The results, summarized in
+Table 3, reveal a significant performance degrada-
+tion, underscoring the critical importance of high-
+quality reflection generation for achieving optimal
+results. This finding also suggests that the base
+agent, trained solely on expert trajectories, lacks
+effective reflection capabilities.
+5.3 Analyses of Deviated Action Detection
+To validate the empirical Markov property intro-
+duced in Section 3.2, i.e., non-deviated “good” ac-
+tions increase the likelihood of task completion, we
+conducted a statistical analysis using expert trajec-
+tories. Specifically, we compared task completion
+probabilities at varying distances from task com-
+pletion, employing MC step rewards as a proxy for
+
+--- Page 8 ---
+these probabilities. As illustrated in Figure 3, MC
+step rewards monotonically increase as the agent
+progresses toward task completion in both environ-
+ments. This trend demonstrates that the accumu-
+lation of optimal actions significantly contributes
+to task completion. Conversely, deviated actions
+consistently reduce the task completion probabil-
+ity, further supporting our approach of using step
+reward comparisons between adjacent steps as a
+reliable criterion for detecting deviated actions.
+5.4 Analyses of Calibration
+In this section, we compare the calibration capabil-
+ities of STeCa and baseline methods. We evaluate
+calibration performance using the average final re-
+ward achieved upon successful task completion in
+the presence of deviated actions. To enable this
+analysis, we constructed datasets containing his-
+torical trajectories with deviated actions, catego-
+rized into seen and unseen scenarios across both
+environments. Additional details are provided in
+Appendix D.2. As shown in Figure 4, STeCa out-
+performs baseline methods by a significant margin.
+For instance, it achieves a 14.8% relative improve-
+ment over IPR on unseen tasks in the VirtualHome
+environment, highlighting its superior calibration
+performance. To comprehensively illustrate the per-
+formance of different agent learning methods, we
+provide some concrete examples in Appendix F.
+To examine the impact of deviated actions on
+LLM agent performance, we evaluate these agents
+trained with different methods under two settings:
+one with deviated actions included in historical tra-
+jectories and another without. The construction
+process of the testing datasets is detailed in Ap-
+pendix D.2. As shown in Figure 5, STeCa exhibits
+minimal performance variation between the two
+settings, unlike other methods, which show signif-
+icant differences. This suggests that the presence
+of deviated actions has little effect on STeCa’s per-
+formance, as it effectively calibrates subsequent
+trajectories. These findings highlight STeCa’s ro-
+bustness and its potential for reliable performance
+in diverse and challenging environments.
+6 Related Work
+LLM Agent Learning. LLM agents are widely
+used for tackling complex real-world tasks (Wang
+et al., 2023a; Hu et al., 2024; Wang et al., 2024a),
+relying on iterative interactions with their environ-
+ment guided by task objectives and constraints.
+VirtualHome
+(seen)
+VirtualHome
+(unseen)
+ALFWorld
+(seen)
+ALFWorld
+(unseen)
+55
+60
+65
+70
+75
+80
+85
+90
+95Avg. Final Reward
+66.0
+60.0
+62.0
+69.069.0
+63.0
+73.0 72.073.0
+61.0
+75.0
+71.0
+83.0
+70.0
+86.0
+80.0
+SFT E2CL IPR ST eCa (Ours)
+Figure 4: Calibration performance of different methods
+on the VirtualHome and ALFWorld datasets.
+0.60 0.62 0.64 0.66 0.68 0.70 0.72
+Avg. Final Reward
+0.05
+0.10
+0.15
+0.20
+0.25
+Deviation Distance
+Method
+SFT
+E2CL
+IPR
+ST eCa (Ours)
+Setting
+w/ Deviated Action
+w/o Deviated Action
+Setting
+w/ Deviated Action
+w/o Deviated Action
+Figure 5: Correlation between the deviation distance
+and success rate (measured by average final reward).
+However, in long-horizon planning, excessive in-
+teractions make them prone to suboptimal ac-
+tions, increasing the risk of failure. While closed-
+source LLMs demonstrate strong intelligence,
+open-source counterparts still lag behind (Liu et al.,
+2023; Wang et al., 2023b). To address this gap,
+some studies focus on improving task success rates
+by increasing the likelihood of generating optimal
+actions (Chen et al., 2023; Yuan et al., 2023). Alter-
+natively, another line of research seeks to mitigate
+suboptimal actions by collecting them and apply-
+ing preference learning methods to reduce their
+occurrence (Song et al., 2024; Xiong et al., 2024).
+Recently, researchers have explored the capacity of
+LLM agents to self-correct errors, enhancing their
+ability to ensure successful task completion (Wang
+et al., 2024a; Qu et al., 2024). However, these
+methods primarily focus on self-correction after
+errors have already occurred, lacking the ability to
+detect suboptimal actions in advance and calibrate
+subsequent planning accordingly.
+Process Supervision. Process supervision pro-
+vides fine-grained guidance, making it a promis-
+ing approach for addressing long-horizon prob-
+lems (Uesato et al., 2022). Early studies have ex-
+plored obtaining step-level rewards and using them
+
+--- Page 9 ---
+to optimize intermediate processes through rein-
+forcement learning (Lightman et al., 2023; Deng
+et al., 2024; Wang et al., 2024b). Others have
+focused on constructing step-level positive and
+negative data pairs and applying preference learn-
+ing techniques to achieve more precise optimiza-
+tion (Xiong et al., 2024; Jiao et al., 2024). However,
+existing studies have yet to address the construc-
+tion of step-level reflection data. Such data could
+empower LLM agents to detect suboptimal actions,
+analyze the reasons for their suboptimality, and de-
+termine how to calibrate them to ensure successful
+task completion.
+7 Conclusion
+In this paper, we introduce STeCa, a novel agent
+learning framework designed to enhance the perfor-
+mance of LLM agents in long-horizon tasks. STeCa
+identifies deviated actions through step-level re-
+ward comparisons and constructs calibration tra-
+jectories via reflection. These trajectories serve as
+critical data for reinforced training. Extensive ex-
+periments demonstrate that STeCa significantly out-
+performs baseline methods, with additional analy-
+ses underscoring its robust calibration capabilities.
+Limitations
+While our approach demonstrates superior perfor-
+mance compared to baseline methods, it is impor-
+tant to acknowledge the limitations of our current
+work as follows:
+(1) Computational Inefficiency: Although the
+Monte Carlo (MC) sampling approach in STeCa
+achieves superior performance in constructing step
+rewards compared to alternative methods, it re-
+quires a substantial number of sampling iterations,
+resulting in significant computational overhead.
+This inefficiency represents a notable limitation
+of our current implementation. Future work should
+focus on developing more efficient methods for
+constructing step rewards while preserving the per-
+formance advantages of our approach.
+(2) Limited Utilization of Step Rewards: While
+our approach leverages step rewards to identify
+and evaluate deviated actions effectively, it does
+not fully exploit the potential of step rewards for
+broader decision-making or optimization tasks.
+This constrained utilization may limit the overall
+performance improvements that could be achieved
+by incorporating step rewards into other aspects
+of the framework. Future research should explore
+strategies to better harness the rich information
+embedded in step rewards to enhance the overall
+effectiveness and adaptability of the system.
+(3) Handling Multiple Deviated Actions: Our
+method primarily focuses on “timely” calibration,
+wherein the LLM agent identifies a deviated action
+and immediately adjusts its subsequent trajectory
+to prevent further deviations. This approach ef-
+fectively mitigates the accumulation of errors over
+time. Nonetheless, our current framework does not
+explicitly address multi-step calibration for mul-
+tiple deviated actions. Systematically handling
+such cases presents an opportunity for future work,
+which could further enhance the robustness of our
+method in more complex scenarios.
+Ethics Statement
+This work aims to develop LLM agents within sim-
+ulated environments. The VirtualHome and ALF-
+World environment setup and related data strictly
+follow the specifications of VirtualHome (Puig
+et al., 2018) and ALFWorld (Shridhar et al., 2020b).
+We utilize VirtualHome v2.3.01 (MIT license2) and
+ALFWorld3 (MIT license4) to conduct our exper-
+iments. All the LLMs we use for fine-tuning are
+open-source, and we strictly follow the protocols
+for the academic use of these models. Additionally,
+we acknowledge the use of AI assistants, including
+GitHub Copilot and ChatGPT, in supporting our
+coding and writing processes.
+Acknowledgements
+This work was supported by the Research Grants
+Council of Hong Kong (15209724). The authors
+would like to thank the anonymous reviewers for
+their valuable feedback and constructive sugges-
+tions.
+References
+Marwa Abdulhai, Isadora White, Charlie Snell, Charles
+Sun, Joey Hong, Yuexiang Zhai, Kelvin Xu, and
+Sergey Levine. 2023. Lmrl gym: Benchmarks
+for multi-turn reinforcement learning with language
+models. arXiv preprint arXiv:2311.18232.
+1https://github.com/xavierpuigf/virtualhome/
+tree/master
+2https://github.com/xavierpuigf/virtualhome/
+blob/master/LICENSE
+3https://github.com/alfworld/alfworld
+4https://github.com/alfworld/alfworld/blob/
+master/LICENSE
+
+--- Page 10 ---
+Josh Achiam, Steven Adler, Sandhini Agarwal, Lama
+Ahmad, Ilge Akkaya, Florencia Leoni Aleman,
+Diogo Almeida, Janko Altenschmidt, Sam Altman,
+Shyamal Anadkat, et al. 2023. Gpt-4 technical report.
+arXiv preprint arXiv:2303.08774.
+Thomas Carta, Clément Romac, Thomas Wolf, Sylvain
+Lamprier, Olivier Sigaud, and Pierre-Yves Oudeyer.
+2023. Grounding large language models in interac-
+tive environments with online reinforcement learning.
+In International Conference on Machine Learning ,
+pages 3676–3713. PMLR.
+Baian Chen, Chang Shu, Ehsan Shareghi, Nigel Collier,
+Karthik Narasimhan, and Shunyu Yao. 2023. Fireact:
+Toward language agent fine-tuning. arXiv preprint
+arXiv:2310.05915.
+Xiang Deng, Yu Gu, Boyuan Zheng, Shijie Chen, Sam
+Stevens, Boshi Wang, Huan Sun, and Yu Su. 2023.
+Mind2web: Towards a generalist agent for the web.
+Advances in Neural Information Processing Systems ,
+36:28091–28114.
+Zhirui Deng, Zhicheng Dou, Yutao Zhu, Ji-Rong Wen,
+Ruibin Xiong, Mang Wang, and Weipeng Chen. 2024.
+From novice to expert: Llm agent policy optimization
+via step-wise reinforcement learning. arXiv preprint
+arXiv:2411.03817.
+Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan
+Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang,
+and Weizhu Chen. 2021. Lora: Low-rank adap-
+tation of large language models. arXiv preprint
+arXiv:2106.09685.
+Siyuan Hu, Mingyu Ouyang, Difei Gao, and
+Mike Zheng Shou. 2024. The dawn of gui agent:
+A preliminary case study with claude 3.5 computer
+use. arXiv preprint arXiv:2411.10323.
+Albert Q Jiang, Alexandre Sablayrolles, Arthur Men-
+sch, Chris Bamford, Devendra Singh Chaplot, Diego
+de las Casas, Florian Bressand, Gianna Lengyel, Guil-
+laume Lample, Lucile Saulnier, et al. 2023. Mistral
+7b. arXiv preprint arXiv:2310.06825.
+Fangkai Jiao, Chengwei Qin, Zhengyuan Liu, Nancy F
+Chen, and Shafiq Joty. 2024. Learning planning-
+based reasoning by trajectories collection and
+process reward synthesizing. arXiv preprint
+arXiv:2402.00658.
+Sham Kakade and John Langford. 2002. Approximately
+optimal approximate reinforcement learning. In Pro-
+ceedings of the Nineteenth International Conference
+on Machine Learning, pages 267–274.
+Aviral Kumar, Vincent Zhuang, Rishabh Agarwal,
+Yi Su, John D Co-Reyes, Avi Singh, Kate Baumli,
+Shariq Iqbal, Colton Bishop, Rebecca Roelofs,
+et al. 2024. Training language models to self-
+correct via reinforcement learning. arXiv preprint
+arXiv:2409.12917.
+Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying
+Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E.
+Gonzalez, Hao Zhang, and Ion Stoica. 2023. Effi-
+cient memory management for large language model
+serving with pagedattention. In Proceedings of the
+ACM SIGOPS 29th Symposium on Operating Systems
+Principles.
+Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri
+Edwards, Bowen Baker, Teddy Lee, Jan Leike,
+John Schulman, Ilya Sutskever, and Karl Cobbe.
+2023. Let’s verify step by step. arXiv preprint
+arXiv:2305.20050.
+Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Xuanyu
+Lei, Hanyu Lai, Yu Gu, Hangliang Ding, Kaiwen
+Men, Kejuan Yang, et al. 2023. Agentbench: Evaluat-
+ing llms as agents. arXiv preprint arXiv:2308.03688.
+Chang Ma, Junlei Zhang, Zhihao Zhu, Cheng Yang,
+Yujiu Yang, Yaohui Jin, Zhenzhong Lan, Lingpeng
+Kong, and Junxian He. 2024. Agentboard: An analyt-
+ical evaluation board of multi-turn llm agents. arXiv
+preprint arXiv:2401.13178.
+Meinard Müller. 2007. Dynamic time warping. Infor-
+mation retrieval for music and motion , pages 69–84.
+OpenAI. 2024. Hello GPT-4o. https://openai.com/
+index/hello-gpt-4o/.
+Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida,
+Carroll Wainwright, Pamela Mishkin, Chong Zhang,
+Sandhini Agarwal, Katarina Slama, Alex Ray, et al.
+2022. Training language models to follow instruc-
+tions with human feedback. Advances in neural in-
+formation processing systems, 35:27730–27744.
+Jan Peters and Stefan Schaal. 2007. Reinforcement
+learning by reward-weighted regression for opera-
+tional space control. In Proceedings of the 24th in-
+ternational conference on Machine learning , pages
+745–750.
+Xavier Puig, Kevin Ra, Marko Boben, Jiaman Li,
+Tingwu Wang, Sanja Fidler, and Antonio Torralba.
+2018. Virtualhome: Simulating household activities
+via programs. In Proceedings of the IEEE conference
+on computer vision and pattern recognition , pages
+8494–8502.
+Yuxiao Qu, Tianjun Zhang, Naman Garg, and Aviral
+Kumar. 2024. Recursive introspection: Teaching
+language model agents how to self-improve. arXiv
+preprint arXiv:2407.18219.
+Rafael Rafailov, Archit Sharma, Eric Mitchell, Christo-
+pher D Manning, Stefano Ermon, and Chelsea Finn.
+2024. Direct preference optimization: Your language
+model is secretly a reward model. Advances in Neu-
+ral Information Processing Systems, 36.
+Tim Salimans and Richard Chen. 2018. Learning mon-
+tezuma’s revenge from a single demonstration.arXiv
+preprint arXiv:1812.03381.
+
+--- Page 11 ---
+John Schulman, Filip Wolski, Prafulla Dhariwal,
+Alec Radford, and Oleg Klimov. 2017. Proximal
+policy optimization algorithms. ArXiv preprint ,
+abs/1707.06347.
+Noah Shinn, Federico Cassano, Beck Labash, Ash-
+win Gopinath, Karthik Narasimhan, and Shunyu
+Yao. 2023. Reflexion: Language agents with ver-
+bal reinforcement learning.(2023). arXiv preprint
+cs.AI/2303.11366.
+Mohit Shridhar, Jesse Thomason, Daniel Gordon,
+Yonatan Bisk, Winson Han, Roozbeh Mottaghi, Luke
+Zettlemoyer, and Dieter Fox. 2020a. ALFRED: A
+benchmark for interpreting grounded instructions
+for everyday tasks. In 2020 IEEE/CVF Conference
+on Computer Vision and Pattern Recognition, pages
+10737–10746. IEEE.
+Mohit Shridhar, Xingdi Yuan, Marc-Alexandre Côté,
+Yonatan Bisk, Adam Trischler, and Matthew
+Hausknecht. 2020b. Alfworld: Aligning text and em-
+bodied environments for interactive learning. arXiv
+preprint arXiv:2010.03768.
+Yifan Song, Da Yin, Xiang Yue, Jie Huang, Sujian
+Li, and Bill Yuchen Lin. 2024. Trial and error:
+Exploration-based trajectory optimization for llm
+agents. arXiv preprint arXiv:2403.02502.
+Weihao Tan, Wentao Zhang, Shanqi Liu, Longtao
+Zheng, Xinrun Wang, and Bo An. 2024. True knowl-
+edge comes from practice: Aligning llms with embod-
+ied environments via reinforcement learning. arXiv
+preprint arXiv:2401.14151.
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Al-
+bert, Amjad Almahairi, Yasmine Babaei, Nikolay
+Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti
+Bhosale, et al. 2023. Llama 2: Open founda-
+tion and fine-tuned chat models. arXiv preprint
+arXiv:2307.09288.
+Jonathan Uesato, Nate Kushman, Ramana Kumar, Fran-
+cis Song, Noah Siegel, Lisa Wang, Antonia Creswell,
+Geoffrey Irving, and Irina Higgins. 2022. Solv-
+ing math word problems with process-and outcome-
+based feedback. arXiv preprint arXiv:2211.14275.
+Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Man-
+dlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and An-
+ima Anandkumar. 2023a. V oyager: An open-ended
+embodied agent with large language models. arXiv
+preprint arXiv:2305.16291.
+Hanlin Wang, Chak Tou Leong, Jian Wang, and Wenjie
+Li. 2024a. E 2CL: Exploration-based error correction
+learning for embodied agents. In Findings of the
+Association for Computational Linguistics: EMNLP
+2024, pages 7626–7639, Miami, Florida, USA. Asso-
+ciation for Computational Linguistics.
+Peiyi Wang, Lei Li, Zhihong Shao, Runxin Xu, Damai
+Dai, Yifei Li, Deli Chen, Yu Wu, and Zhifang Sui.
+2024b. Math-shepherd: Verify and reinforce LLMs
+step-by-step without human annotations. In Proceed-
+ings of the 62nd Annual Meeting of the Association
+for Computational Linguistics (V olume 1: Long Pa-
+pers), pages 9426–9439, Bangkok, Thailand. Associ-
+ation for Computational Linguistics.
+Ruoyao Wang, Peter Jansen, Marc-Alexandre Côté, and
+Prithviraj Ammanabrolu. 2022a. ScienceWorld: Is
+your agent smarter than a 5th grader? In Proceedings
+of the 2022 Conference on Empirical Methods in
+Natural Language Processing, pages 11279–11298,
+Abu Dhabi, United Arab Emirates. Association for
+Computational Linguistics.
+Ruoyao Wang, Peter Jansen, Marc-Alexandre Côté, and
+Prithviraj Ammanabrolu. 2022b. Scienceworld: Is
+your agent smarter than a 5th grader? arXiv preprint
+arXiv:2203.07540.
+Xingyao Wang, Zihan Wang, Jiateng Liu, Yangyi
+Chen, Lifan Yuan, Hao Peng, and Heng Ji. 2023b.
+Mint: Evaluating llms in multi-turn interaction
+with tools and language feedback. arXiv preprint
+arXiv:2309.10691.
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten
+Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou,
+et al. 2022. Chain-of-thought prompting elicits rea-
+soning in large language models. In Advances in
+neural information processing systems , volume 35,
+pages 24824–24837.
+Zhiheng Xi, Wenxiang Chen, Xin Guo, Wei He, Yiwen
+Ding, Boyang Hong, Ming Zhang, Junzhe Wang, Sen-
+jie Jin, Enyu Zhou, et al. 2025. The rise and potential
+of large language model based agents: A survey. Sci-
+ence China Information Sciences , 68(2):121101.
+Jiannan Xiang, Tianhua Tao, Yi Gu, Tianmin Shu, Zirui
+Wang, Zichao Yang, and Zhiting Hu. 2024. Language
+models meet world models: Embodied experiences
+enhance language models. Advances in neural infor-
+mation processing systems, 36.
+Jian Xie, Kexun Zhang, Jiangjie Chen, Siyu Yuan, Kai
+Zhang, Yikai Zhang, Lei Li, and Yanghua Xiao. 2024.
+Revealing the barriers of language agents in planning.
+arXiv preprint arXiv:2410.12409.
+Weimin Xiong, Yifan Song, Xiutian Zhao, Wenhao Wu,
+Xun Wang, Ke Wang, Cheng Li, Wei Peng, and Su-
+jian Li. 2024. Watch every step! llm agent learning
+via iterative step-level process refinement. arXiv
+preprint arXiv:2406.11176.
+Yunzhe Xu, Yiyuan Pan, Zhe Liu, and Hesheng Wang.
+2024. Flame: Learning to navigate with multi-
+modal llm in urban environments. arXiv preprint
+arXiv:2408.11051.
+Shunyu Yao, Howard Chen, John Yang, and Karthik
+Narasimhan. 2022. Webshop: Towards scalable real-
+world web interaction with grounded language agents.
+Advances in Neural Information Processing Systems ,
+35:20744–20757.
+
+--- Page 12 ---
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak
+Shafran, Karthik Narasimhan, and Yuan Cao. 2023.
+React: synergizing reasoning and acting in language
+models (2022). arXiv preprint arXiv:2210.03629.
+Da Yin, Faeze Brahman, Abhilasha Ravichander, Khy-
+athi Chandu, Kai-Wei Chang, Yejin Choi, and
+Bill Yuchen Lin. 2023. Lumos: Learning agents
+with unified data, modular design, and open-source
+llms. arXiv preprint arXiv:2311.05657.
+Siyu Yuan, Zehui Chen, Zhiheng Xi, Junjie Ye,
+Zhengyin Du, and Jiecao Chen. 2025. Agent-r: Train-
+ing language model agents to reflect via iterative self-
+training. arXiv preprint arXiv:2501.11425.
+Zheng Yuan, Hongyi Yuan, Chengpeng Li, Guanting
+Dong, Chuanqi Tan, and Chang Zhou. 2023. Scal-
+ing relationship on learning mathematical reason-
+ing with large language models. arXiv preprint
+arXiv:2308.01825.
+Aohan Zeng, Mingdao Liu, Rui Lu, Bowen Wang, Xiao
+Liu, Yuxiao Dong, and Jie Tang. 2023. Agenttuning:
+Enabling generalized agent abilities for llms. arXiv
+preprint arXiv:2310.12823.
+
+--- Page 13 ---
+A Datasets and Preprocessing
+ALFWorld ALFWorld (Shridhar et al., 2020b)
+offers interactive TextWorld environments that are
+meticulously aligned with the embodied environ-
+ments introduced in ALFRED (Shridhar et al.,
+2020a). This framework challenges agents to navi-
+gate complex household settings and execute high-
+level instructions, thereby testing their ability to
+perform practical tasks. The dataset is structured
+into two distinct evaluation sets: a seen set, de-
+signed to assess in-distribution generalization, and
+an unseen set, which comprises novel task in-
+stances to evaluate out-of-distribution generaliza-
+tion capabilities. At the conclusion of each tra-
+jectory, the environment provides a binary reward,
+indicating whether the agent has successfully com-
+pleted the assigned task. This setup facilitates a
+clear and measurable assessment of agent perfor-
+mance in both familiar and novel scenarios.
+VirtualHome VirtualHome (Puig et al., 2018) is
+a comprehensive dataset comprising 292 high-level
+household tasks and 1,374 unique action plans, dis-
+tributed across 6,201 diverse environments. The
+dataset was meticulously curated through manual
+annotations provided by Amazon Mechanical Turk
+workers, who labeled tasks and their corresponding
+action plans in detail. Each entry in the dataset is
+structured into three components: a high-level task,
+a descriptive explanation, and executable action
+programs compatible with the VirtualHome envi-
+ronment. To evaluate task completion, we executed
+all tasks and recorded the final state of the envi-
+ronment upon completion. A task is considered
+successfully completed if the state of the environ-
+ment after exploration by the LLM agent matches
+the predefined target state. To ensure data quality,
+the dataset was filtered by retaining only trajec-
+tories with successful final outcome rewards and
+verifying that every action in the planning sequence
+is executable within the environment. Furthermore,
+to maintain an appropriate level of task complex-
+ity, the dataset was restricted to trajectories with
+planning lengths ranging from 3 to 20 steps. This
+rigorous filtering process ensures a robust and reli-
+able subset of data, suitable for in-depth analysis
+and model training.
+Dataset Construction Since the original trajec-
+tories do not include reasoning processes preced-
+ing each action, we adopt established methodolo-
+gies from prior work (Song et al., 2024; Xiong
+Dataset Train Test #Actions #Avg./Max. Turns
+ALFWorld 2,851 274 13 10.1 / 20
+VirtualHome 4,920 494 40 11.5 / 20
+Table 4: Statistics of the datasets for experiments.
+et al., 2024) to enrich the data. Specifically, we
+incorporate relevant task information and expert
+action trajectories to prompt GPT-4o to generate
+plausible reasoning steps (thoughts) before each
+action. This approach ensures that the dataset cap-
+tures the cognitive processes underlying decision-
+making. Ultimately, the datasets are structured in a
+thought-action format, following the ReAct frame-
+work (Yao et al., 2023). Detailed statistics for the
+two datasets are provided in Table 4, highlighting
+their key characteristics and composition.
+B Baseline Methods
+Our baseline methods are as follows: 1) SFT (Chen
+et al., 2023), which employs behavior cloning
+on expert trajectories alone, serving as the base
+agent for STeCa and other baseline methods. 2)
+PPO (Schulman et al., 2017), a widely-used re-
+inforcement learning algorithm, optimizes final
+trajectory rewards. Additionally, we apply PPO
+for stepwise action optimization. 3) RFT (Yuan
+et al., 2023), which extends expert trajectories by
+incorporating successful trajectories discovered by
+the base agent, followed by fine-tuning on the ex-
+panded dataset. 4) ETO (Song et al., 2024), which
+constructs positive and negative trajectory pairs and
+optimizes them using Direct Preference Optimiza-
+tion (DPO) (Rafailov et al., 2024). 5) E 2CL (Wang
+et al., 2024a), which leverages planning data, feed-
+back data, and correction data to supervise the fine-
+tuning of LLM agents. 6) IPR (Xiong et al., 2024),
+which enhances trajectory pairs by augmenting sub-
+trajectory pairs based on step rewards, building
+upon ETO’s framework, and trains LLM agents
+using preference learning methods.
+C Additional Implementation Details
+During the construction of the base agent, we train
+the model for 3 epochs with a batch size of 16
+and a learning rate of 3e-6, employing the AdamW
+optimizer and a cosine learning rate scheduler. For
+reinforced training, the model is fine-tuned for only
+1 epoch.
+During the inference phase, all methods are eval-
+uated using the ReAct-style interaction format,
+
+--- Page 14 ---
+where the agent generates a rationale before execut-
+ing each action. Specifically, we include a one-shot
+example in the instruction prompt for each task.
+Detailed prompts are provided in Appendix E. For
+text generation, we apply greedy decoding with
+the temperature set to 0. To accelerate inference,
+we utilize vLLM (Kwon et al., 2023) libribray to
+optimize the generation process of LLMs.
+All experiments were conducted on a compu-
+tational cluster equipped with 8 NVIDIA A6000
+48GB GPUs. For fine-tuning, we employed sev-
+eral open-source models, including Llama-2-7B-
+Chat (Touvron et al., 2023), Mistral-7B (Jiang et al.,
+2023), and Llama-3-8B-Instruct. We strictly com-
+plied with the licensing terms for academic use
+associated with these models: Llama-2-7B-Chat
+is governed by the Llama 2 Community License5,
+Mistral-7B is licensed under the Apache-2.0 Li-
+cense6, and Llama-3-8B-Instruct adheres to the
+Llama 3 License7. This adherence ensures that our
+use of these models aligns with their respective
+legal and ethical guidelines.
+D Experimental Settings about Analyses
+D.1 Variants of Step-level Reward Acquisition
+In addition to the Monte Carlo (MC) sampling for
+step-level reward acquisition, we further employ
+the following two variants: (1) GPT-4o Anno-
+tation: In Section 3.2, we collect Monte Carlo
+(MC) step rewards corresponding to various step
+actions. To annotate all explored step actions, we
+randomly select several samples as in-context ex-
+amples and utilize GPT-4 for annotation. The de-
+tailed prompt used for this process is provided in
+Appendix E.3. (2) Reward Model Prediction:
+We also leverage the data collected in Section 3.2,
+where each step action is associated with an MC
+step reward, to train a reward model capable of
+predicting scores for step actions. Specifically, we
+use the Llama-2-7B-Chat (Touvron et al., 2023)
+model as the base architecture. To mitigate over-
+fitting, we add a dropout layer to the output layer,
+followed by a linear layer to map the output to a
+scalar score. Additionally, we employ Low-Rank
+Adaptation (LoRA) (Hu et al., 2021) for efficient
+fine-tuning. The model is trained for 3 epochs, and
+5https://huggingface.co/meta-llama/
+Llama-2-7b-chat-hf/blob/main/LICENSE.txt
+6https://huggingface.co/mistralai/
+Mistral-7B-v0.1
+7https://huggingface.co/meta-llama/
+Meta-Llama-3-8B/blob/main/LICENSE
+during testing, we set the random seed to 42 to
+ensure reproducibility and score all step actions.
+D.2 Detailed Settings for Calibration Analysis
+We randomly select 100 pieces of data from
+Dc(e1:t−1, ˆat, ec(t:m), ˆet+1:m) for both ALFWorld
+and VirtualHome to serve as the seen test set. Addi-
+tionally, we randomly select 100 pieces of data
+from the unseen test set. Following the proce-
+dure outlined in Section 3.2, we construct the cali-
+bration dataset (e1:t−1, ˆat, ec(t:m), ˆet+1:m) derived
+from unseen scenarios. After assembling the cali-
+bration datasets for both seen and unseen scenar-
+ios in VirtualHome and ALFWorld, we use these
+datasets to evaluate the calibration performance
+of the LLM agent. Specifically, we traverse the
+step actions from (e1:t−1, ˆat) to obtain the initial
+environment state. We then deploy the LLM agent
+to explore the environment starting from this state
+and assess whether it can successfully complete the
+task.
+For the second experiment, we reuse the previ-
+ously collected calibration dataset. However, in
+this case, we traverse the step actions only from
+e1:t−1, excluding the deviated action ˆat. We refer
+to this configuration as the “w/o deviated action”
+setting.
+E Prompt Templates
+E.1 Inference Prompt
+As shown in Figure 6, we provide the inference
+prompt for each task, which include a general in-
+struction, a one-shot example, the specific task in-
+struction and history trajectory.
+Inference Prompt
+# General Instruction:
+Human: Interact with a household to solve
+a task. Imagine you are an intelligent agent
+in a household environment and your target
+is to perform actions to complete the task
+goal...
+Your response should use the following
+format:
+Thought: <your thoughts>
+Action: <your next action>
+Agent: OK
+# In-Context Example:
+Human: The task is Drink (Drink water).
+
+--- Page 15 ---
+...
+# Task Instruction:
+Human: The task is xxx.
+(History trajectory)
+...
+Figure 6: Inference prompt template.
+E.2 Reflection Prompt
+As shown in Figure 7, the reflection prompt in-
+cludes history trajectory (containing deviated ac-
+tion) and reflection instruction. This prompt is
+then used to request GPT-4o to generate reflective
+thoughts.
+Reflection Prompt
+# Historical Trajectory:
+Human: Interact with a household to solve
+a task. Imagine you are an intelligent agent
+in a household environment and your target
+is to perform actions to complete the task
+goal...
+Agent: OK
+Human: Your task is write an email...
+Agent: Thought: ... Action: ...
+... (Interaction with multi-turns)
+Agent: Thought: ... Action: ... (# error
+action at this step)
+# Reflection Instruction:
+Above is the interaction history. However,
+the last step is not optimal and may lead to a
+wrong direction. The next step ground-truth
+action is [ ground truth action at this step].
+Please provide the thought which would
+lead the agent to generate the ground truth
+action and be aware of the last non-optimal
+action. The thought should follow the for-
+mat of the interaction history.
+Figure 7: Prompt template for reflection.
+E.3 Prompt for Step Reward Prediction
+Figure 8 presents the prompt template designed
+for predicting step rewards, which consists of an
+instruction and several in-context examples.
+Prompt for Step Reward Prediction
+# Instruction:
+Based on the historical interaction tra-
+jectory, the agent has generated its final
+action. Evaluate whether this action is
+conducive to the completion of the ultimate
+task and provide a score. The score should
+range from 0 to 1, with scores closer to
+1 indicating a higher likelihood of task
+completion. Generate only the score,
+without any additional commentary or
+explanation.
+# History trajectory1:
+xxx
+# Score1:
+xx
+# History trajectory2:
+xxx
+# Score2:
+xx
+# History trajectory3:
+xx
+# Score3:
+...
+Figure 8: Prompt template for step reward prediction.
+F Case study
+Figure 9 provides an example demonstrating
+STeCa’s calibration capability during the planning
+process. As illustrated, STeCa autonomously iden-
+tifies deviated actions, reflects on them, and suc-
+cessfully completes the task. In contrast, the other
+two agents fail to achieve the same level of per-
+formance, further highlighting the effectiveness of
+STeCa in addressing such challenges.
+
+--- Page 16 ---
+Case Study on the ALFWorld Benchmark
+Task Instruction: Your task is to find two pans
+and put them on the countertop.
+Thought 1: I need to find two pans for the task.
+The first step is to search the cabinets as they
+are likely places where pans are stored.
+Action 1: go to cabinet 1
+Observation 1: On cabinet 1, you see: a plate
+1, a bowl 1, and a glass 1.
+Thought 2: Cabinet 1 contains a plate, a bowl,
+and a glass, but no pan. I should check the next
+cabinet for a pan.
+Action 2: go to cabinet 2
+Observation 2: On cabinet 2, you see: a cut-
+tingboard 1, a knife 1, and a pan 1.
+Thought 3: Cabinet 2 also doesn’t have a pan,
+just a saltshaker. I’ll continue searching the
+cabinets.
+Action 3: go to cabinet 3 (# Deviated Action)
+Observation 3: The cabinet 3 is closed.
+Agent w/ SFT
+Thought 4: Cabinet 3 is closed. I need to open
+it to see if there’s a pan inside.
+Action 4: open cabinet 3
+Observation 4: You open the cabinet 3. The
+cabinet 3 is open. In it, you see a plate 2.
+Thought 5: Inside cabinet 3, there’s only a
+plate. I should close this cabinet and keep look-
+ing for a pan.
+Action 5: close cabinet 3
+Observation 5: You close the cabinet 3.
+. . .
+Failure!
+Agent w/ IPR
+Thought 4: Cabinet 3 is closed. I’ll open it to
+see if there’s a pan inside.
+Action 4: open cabinet 3
+Observation 4: You open the cabinet 3. The
+cabinet 3 is open. In it, you see a plate 2.
+Thought 5: There’s a plate 2 in cabinet 3, but
+no pan. I’ll close it and check the next cabinet.
+Action 5: close cabinet 3
+Observation 5: You close the cabinet 3.
+. . .
+Failure!
+Agent w/ STeCa (Ours)
+Thought 4: Cabinet 2 has a pan. I should take
+pan 1 from cabinet 2 instead of moving to cabi-
+net 3. This will allow me to accomplish part of
+my task to find two pans. (# Self-reflection)
+Action 4: take pan 1 from cabinet 2
+Observation 4: You pick up the pan 1 from
+cabinet 2.
+Thought 5: With pan 1 in hand, I need to place
+it on a countertop to keep it accessible while I
+search for the second pan.
+Action 5: go to countertop 1
+Observation 5: On the countertop 1, you see:
+a bread 1, a cup 1, a fork 2, a fork 1, a knife 3, .
+. .
+Thought 6: I am at countertop 1. I should place
+pan 1 here and ensure it is securely positioned
+so it doesn’t fall off.
+Action 6: put pan 1 in/on countertop 1
+Observation 6: You put the pan 1 in/on the
+countertop 1.
+Thought 7: Pan 1 is now on the countertop.
+I need to find the second pan. I will continue
+searching the cabinets.
+Action 7: go to cabinet 3
+Observation 7: On cabinet 3, you see: a pot 1
+and a pan 2.
+Thought 8: In cabinet 3, I found another pan.
+I should take pan 2 to complete the task of find-
+ing two pans.
+Action 8: take pan 2 from cabinet 3
+Observation 8: You pick up the pan 2 from
+cabinet 3.
+Thought 9: I have pan 2 now and need to place
+it on the same countertop as pan 1 to complete
+the task.
+Action 9: go to countertop 1
+Observation 9: On the countertop 1, you see:
+a bread 1, a cup 1, a fork 2, a fork 1, a knife 3, .
+. .
+Thought 10: I am back at countertop 1 with
+pan 2. I should place it next to pan 1, ensuring
+both are ready for use.
+Action 10: put pan 2 in/on countertop 1
+Success!
+Figure 9: Case study on the ALFWorld benchmark.
+
+--- Page 17 ---
+G Supplementary Experiments
+G.1 Additional Evaluation on ScienceWorld
+To deeply validate our proposed method, we now
+additionally conducted experiments on the Sci-
+enceWorld (Wang et al., 2022b) environment. It
+contains various long-horizon science experiment
+tasks, with an average steps of 14.4 in the collected
+trajectories. We compare our method with two
+repersentative baseline method: SFT and IPR. As
+shown in Table 5, the evaluation results reported
+below show that our method outperforms the com-
+pared mehtods. These reuslts consistently demon-
+strate the effectiveness of our method.
+Seen Tasks Unseen Tasks
+SFT 67.4 53.0
+IPR 75.0 66.8
+STeCa (Ours) 77.3 68.9
+Table 5: Performance comparison of SFT, IPR, and
+STeCa on seen and unseen test-tasks in ScienceWorld.
+G.2 Affordance Analyses for LLM Agents
+To make our assessments more comprehensive,
+we additionally utilized the affordance rate (Wang
+et al., 2024a; Ma et al., 2024) metric to evaluate
+the execution success rate of actions generated by
+LLM agents in VirtualHome and ALFWorld envi-
+ronments. The evaluation results are presented in
+Figure 10. Our method consistently outperforms
+baseline methods in terms of affordance rate, gen-
+erating more executable actions that satisfy envi-
+ronmental constraints.
+Seen (VH) Unseen (VH) Seen (AW) Unseen (AW)
+82
+84
+86
+88
+90
+92Affordance Rate (%)
+SFT
+IPR
+ST eCa (Ours)
+Figure 10: Comparison of affordance rates (%) across
+different methods on seen and unseen tasks in Virtual-
+Home (VH) and ALFWorld (AW).
+G.3 Ablation Studies
+We conducted an additional ablation study by indi-
+vidually removing different training losses, namely
+LDc (calibration loss), LDe (exploration loss), and
+LDs (success-guided loss), and reported the corre-
+sponding results in the Table 6. Our findings show
+that removing any of the loss terms results in a
+noticeable drop in performance, highlighting the
+complementary roles of the three components: 1)
+helps the agent develop self-reflection capabilities,
+enabling it to adjust and calibrate its trajectories
+more effectively. 2) enhances the agent’s ability
+to explore efficiently; removing it leads to reduced
+exploration effectiveness. 3) improves the agent’s
+ability to complete more challenging tasks. These
+results underscore the importance of each loss term
+in contributing to the agent’s overall performance.
+Unseen (VH) Unseen (A W)
+STeCa 63.6 76.1
+w/o LDc 62.2 75.1
+w/o LDe 60.5 71.2
+w/o LDb 61.5 73.9
+Table 6: Ablation study on the success rate (%) for un-
+seen tasks in VirtualHome (VH) and ALFWorld (AW).
+The study evaluates the impact of individually removing
+different training losses: calibration loss (LDc), explo-
+ration loss (LDe), and success-guided loss (LDb).
+G.4 Hyperparameter Analyses
+To analyze the impact of the hyperparameter δ, we
+conducted additional experiments on the unseen
+test sets of ALFWorld and VirtualHome. The re-
+sults, shown in Table 7, demonstrate that the choice
+of δ significantly influences the model’s perfor-
+mance. Specifically, setting δ = 0 consistently
+yields the best results for both datasets, achieving
+a success rate of 76.1% on ALFWorld and 63.6%
+on VirtualHome.
+Increasing δ slightly reduces performance, likely
+due to over-filtering valid calibration opportunities,
+which limits the agent’s ability to identify and self-
+correct deviated actions. Conversely, setting δ to a
+negative value also degrades performance, as it may
+tolerate suboptimal actions excessively, leading to
+less precise deviation detection.
+These findings highlight the importance of care-
+fully tuning δ to balance between filtering subopti-
+mal actions and retaining sufficient calibration op-
+portunities. In our experiments, δ = 0 emerges as
+
+--- Page 18 ---
+A W VH
+δ = −0.01 75.8 63.3
+δ = 0 76.1 63.6
+δ = 0.05 75.5 63.0
+δ = 0.1 75.2 62.6
+Table 7: Hyperparameter analyses of δ on the test sets
+of ALFWorld (AW) and VirtualHome (VH). The table
+reports the success rate (%) across different values of δ.
+The best results are highlighted in bold.
+the optimal setting, providing robust performance
+across both datasets.
+G.5 Discussions on Long-horizon Tasks
+Long-horizon tasks are a significant challenge in
+trajectory calibration, requiring agents to perform
+a relatively large number of sequential interaction
+steps. These tasks are especially prevalent in en-
+vironments such as ALFWorld and VirtualHome,
+where tasks often involve complex sub-task se-
+quences to achieve high-level objectives. For in-
+stance, in ALFWorld, tasks include subtasks such
+as placing clean potatoes into a microwave, cooling
+mugs, and arranging them into a coffee machine.
+Similarly, tasks in VirtualHome often require intri-
+cate action sequences, such as writing emails using
+a laptop or performing household cleaning.
+To better characterize long-horizon tasks, we
+compare the average interaction steps required
+across multiple environments. As shown in Ta-
+ble 8, ALFWorld and VirtualHome demand sig-
+nificantly higher average steps (10.1 and 11.5, re-
+spectively) compared to other environments like
+WebShop, Maze, Wordle, and ToolQuery. These
+results highlight their suitability as benchmarks for
+long-horizon task evaluation.
+Environment Avg. Turn
+WebShop (Yao et al., 2022) 5.1
+Maze (Abdulhai et al., 2023) 4.3
+Wordle (Abdulhai et al., 2023) 4.3
+ToolQuery (Ma et al., 2024) 5.0
+ALFWorld (Shridhar et al., 2020b) 10.1
+VirtualHome (Puig et al., 2018) 11.5
+Table 8: Average interaction steps required for tasks
+across different environments. ALFWorld and Virtual-
+Home exhibit significantly longer task horizons com-
+pared to other environments.
+To evaluate the effectiveness of our STeCa in
+addressing long-horizon tasks, we conducted ex-
+periments on the unseen set of VirtualHome tasks.
+Steps SFT IPR STeCa (Ours)
+≤ 7 76.2 74.3 76.2
+7–13 50.5 59.4 60.0
+> 13 40.0 42.2 48.9
+Table 9: Success rate (%) for tasks of varying lengths in
+the VirtualHome environment. STeCa consistently out-
+performs baselines, particularly in long-horizon tasks.
+Tasks were categorized into three groups based on
+the number of interaction steps required for com-
+pletion: short-horizon tasks (≤ 7 steps), medium-
+horizon tasks (7–13 steps), and long-horizon tasks
+(> 13 steps). The results, shown in Table 9, demon-
+strate that STeCa consistently outperforms base-
+line methods (SFT and IPR) as task complexity
+increases. For short-horizon tasks, all methods per-
+form similarly, with STeCa achieving a success
+rate of 76.2%, matching the best baseline (SFT).
+However, for medium-horizon tasks, STeCa outper-
+forms the baselines, achieving 60.0%, compared to
+50.5% (SFT) and 59.4% (IPR). The advantage be-
+comes most evident for long-horizon tasks, where
+STeCa achieves 48.9%, compared to 40.0% (SFT)
+and 42.2% (IPR).
+These findings confirm the robustness of STeCa
+in long-horizon scenarios. As the task horizon in-
+creases, the performance gap between STeCa and
+baseline methods widens, highlighting the increas-
+ing importance of an agent’s calibration capability
+for maintaining effective trajectory adjustments in
+more complex and extended tasks. This demon-
+strates that STeCa is superior in addressing the
+challenges posed by long-horizon tasks.

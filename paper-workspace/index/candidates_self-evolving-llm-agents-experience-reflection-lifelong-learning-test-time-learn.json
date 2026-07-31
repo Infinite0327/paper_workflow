@@ -1,0 +1,1243 @@
+{
+  "query": "self-evolving LLM agents experience reflection lifelong learning test-time learning memory",
+  "requested_limit": 40,
+  "created_at": "2026-07-28T22:27:12",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=self-evolving+LLM+agents+experience+reflection+lifelong+learning+test-time+learning+memory",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+      "authors": [
+        "Tianxin Wei",
+        "Noveen Sachdeva",
+        "Benjamin Coleman",
+        "Zhankui He",
+        "Yuanchen Bei",
+        "Xuying Ning",
+        "Mengting Ai",
+        "Yunzhe Li",
+        "Jingrui He",
+        "Ed H. Chi",
+        "Chi Wang",
+        "Shuo Chen",
+        "Fernando Pereira",
+        "Wang-Cheng Kang",
+        "Derek Zhiyuan Cheng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Statefulness is essential for large language model (LLM) agents to perform long-term planning and problem-solving. This makes memory a critical component, yet its management and evolution remain largely underexplored. Existing evaluations mostly focus on static conversational settings, where memory is passively retrieved from dialogue to answer queries, overlooking the dynamic ability to accumulate and reuse experience across evolving task streams. In real-world environments such as interactive problem assistants or embodied agents, LLMs are required to handle continuous task streams, yet often fail to learn from accumulated interactions, losing valuable contextual insights, a limitation that calls for test-time evolution, where LLMs retrieve, integrate, and update memory continuously during deployment. To bridge this gap, we introduce Evo-Memory, a comprehensive streaming benchmark and framework for evaluating self-evolving memory in LLM agents. Evo-Memory structures datasets into sequential task streams, requiring LLMs to search, adapt, and evolve memory after each interaction. We unify and implement over ten representative memory modules and evaluate them across 10 diverse multi-turn goal-oriented and single-turn reasoning and QA datasets. To better benchmark experience reuse, we provide a baseline method, ExpRAG, for retrieving and utilizing prior experience, and further propose ReMem, an action-think-memory refine pipeline that tightly integrates reasoning, task actions, and memory updates to achieve continual improvement.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2511.20857v2",
+      "url": "http://arxiv.org/abs/2511.20857v2",
+      "pdf_url": "https://arxiv.org/pdf/2511.20857v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2511.20857v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 84.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance",
+      "authors": [
+        "Narjes Nourzad",
+        "Carlee Joe-Wong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Reinforcement learning (RL) agents often suffer from high sample complexity in sparse or delayed reward settings due to limited prior structure. Large language models (LLMs) can provide subgoal decompositions, plausible trajectories, and abstract priors that facilitate early learning. However, heavy reliance on LLM supervision introduces scalability constraints and dependence on potentially unreliable signals. We propose MIRA (Memory-Integrated Reinforcement Learning Agent), which incorporates a structured, evolving memory graph to guide early training. The graph stores decision-relevant information, including trajectory segments and subgoal structures, and is constructed from both the agent's high-return experiences and LLM outputs. This design amortizes LLM queries into a persistent memory rather than requiring continuous real-time supervision. From this memory graph, we derive a utility signal that softly adjusts advantage estimation to influence policy updates without modifying the underlying reward function. As training progresses, the agent's policy gradually surpasses the initial LLM-derived priors, and the utility term decays, preserving standard convergence guarantees. We provide theoretical analysis showing that utility-based shaping improves early-stage learning in sparse-reward environments. Empirically, MIRA outperforms RL baselines and achieves returns comparable to approaches that rely on frequent LLM supervision, while requiring substantially fewer online LLM queries. Project webpage: https://narjesno.github.io/MIRA/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.17930v1",
+      "url": "http://arxiv.org/abs/2602.17930v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.17930v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.17930v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+      "authors": [
+        "Jinyuan Fang",
+        "Yanwen Peng",
+        "Xi Zhang",
+        "Yingxu Wang",
+        "Xinhao Yi",
+        "Guibin Zhang",
+        "Yi Xu",
+        "Bin Wu",
+        "Siwei Liu",
+        "Zihao Li",
+        "Zhaochun Ren",
+        "Nikos Aletras",
+        "Xi Wang",
+        "Han Zhou",
+        "Zaiqiao Meng"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Recent advances in large language models have sparked growing interest in AI agents capable of solving complex, real-world tasks. However, most existing agent systems rely on manually crafted configurations that remain static after deployment, limiting their ability to adapt to dynamic and evolving environments. To this end, recent research has explored agent evolution techniques that aim to automatically enhance agent systems based on interaction data and environmental feedback. This emerging direction lays the foundation for self-evolving AI agents, which bridge the static capabilities of foundation models with the continuous adaptability required by lifelong agentic systems. In this survey, we provide a comprehensive review of existing techniques for self-evolving agentic systems. Specifically, we first introduce a unified conceptual framework that abstracts the feedback loop underlying the design of self-evolving agentic systems. The framework highlights four key components: System Inputs, Agent System, Environment, and Optimisers, serving as a foundation for understanding and comparing different strategies. Based on this framework, we systematically review a wide range of self-evolving techniques that target different components of the agent system. We also investigate domain-specific evolution strategies developed for specialised fields such as biomedicine, programming, and finance, where optimisation objectives are tightly coupled with domain constraints. In addition, we provide a dedicated discussion on the evaluation, safety, and ethical considerations for self-evolving agentic systems, which are critical to ensuring their effectiveness and reliability. This survey aims to provide researchers and practitioners with a systematic understanding of self-evolving AI agents, laying the foundation for the development of more adaptive, autonomous, and lifelong agentic systems.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2508.07407v2",
+      "url": "http://arxiv.org/abs/2508.07407v2",
+      "pdf_url": "https://arxiv.org/pdf/2508.07407v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2508.07407v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong Learning of Spatiotemporal Representations with Dual-Memory Recurrent Self-Organization",
+      "authors": [
+        "German I. Parisi",
+        "Jun Tani",
+        "Cornelius Weber",
+        "Stefan Wermter"
+      ],
+      "year": 2018,
+      "venue": "arXiv",
+      "abstract": "Artificial autonomous agents and robots interacting in complex environments are required to continually acquire and fine-tune knowledge over sustained periods of time. The ability to learn from continuous streams of information is referred to as lifelong learning and represents a long-standing challenge for neural network models due to catastrophic forgetting. Computational models of lifelong learning typically alleviate catastrophic forgetting in experimental scenarios with given datasets of static images and limited complexity, thereby differing significantly from the conditions artificial agents are exposed to. In more natural settings, sequential information may become progressively available over time and access to previous experience may be restricted. In this paper, we propose a dual-memory self-organizing architecture for lifelong learning scenarios. The architecture comprises two growing recurrent networks with the complementary tasks of learning object instances (episodic memory) and categories (semantic memory). Both growing networks can expand in response to novel sensory experience: the episodic memory learns fine-grained spatiotemporal representations of object instances in an unsupervised fashion while the semantic memory uses task-relevant signals to regulate structural plasticity levels and develop more compact representations from episodic experience. For the consolidation of knowledge in the absence of external sensory input, the episodic memory periodically replays trajectories of neural reactivations. We evaluate the proposed model on the CORe50 benchmark dataset for continuous object recognition, showing that we significantly outperform current methods of lifelong learning in three different incremental learning scenarios",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "1805.10966v4",
+      "url": "http://arxiv.org/abs/1805.10966v4",
+      "pdf_url": "https://arxiv.org/pdf/1805.10966v4",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:1805.10966v4",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Active Dreaming Memory: Biologically-Inspired Episodic Consolidation for Lifelong Learning in Autonomous Agents",
+      "authors": [
+        "Dudekula Kasim Vali"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Autonomous agents powered by Large Language Models (LLMs) often suffer from catastrophic forgetting and lack temporal continuity. We present Active Dreaming Memory (ADM), a biologically-inspired dual-store memory system that enables agents to learn from execution failures without fine-tuning. Our key innovation is a counterfactual verification mechanism that validates candidate rules through synthetic scenario simulation before committing them to long-term memory. Experiments across six diverse domains demonstrate that ADM improves first-episode learning efficiency by 2× and achieves 83% success rate, significantly outperforming Reflexion, MemGPT, and Self-RAG. Catastrophic forgetting stress tests show 95% retention after 500 episodes. Theoretical analysis proves bounded forgetting guarantees and logarithmic memory growth. We release open-source code to support reproducible lifelong learning research.",
+      "citation_count": 0,
+      "doi": "10.31224/5919",
+      "url": "https://doi.org/10.31224/5919",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.31224/5919",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "SEVerA: Verified Synthesis of Self-Evolving Agents",
+      "authors": [
+        "Debangshu Banerjee",
+        "Changming Xu",
+        "Eugene Ie",
+        "Ming Zhang",
+        "Daiyi Peng",
+        "Chu-Cheng Lin",
+        "Gagandeep Singh"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Recent advances have shown the effectiveness of self-evolving LLM agents on tasks such as program repair and scientific discovery. In this paradigm, a planner LLM synthesizes an agent program that invokes parametric models, including LLMs, which are then tuned per task to improve performance. However, existing self-evolving agent frameworks provide no formal guarantees of safety or correctness. Because such programs are often executed autonomously on unseen inputs, this lack of guarantees raises reliability and security concerns. We formulate agentic code generation as a constrained learning problem, combining hard formal specifications with soft objectives capturing task utility. We introduce Formally Guarded Generative Models (FGGM), which allow the planner LLM to specify a formal output contract for each generative model call using first-order logic. Each FGGM call wraps the underlying model in a rejection sampler with a verified fallback, ensuring every returned output satisfies the contract for any input and parameter setting. Building on FGGM, we present SEVerA (Self-Evolving Verified Agents), a three-stage framework: Search synthesizes candidate parametric programs containing FGGM calls; Verification proves correctness with respect to hard constraints for all parameter values, reducing the problem to unconstrained learning; and Learning applies scalable gradient-based optimization, including GRPO-style fine-tuning, to improve the soft objective while preserving correctness. We evaluate SEVerA on Dafny program verification, symbolic math synthesis, and policy-compliant agentic tool use ($τ^2$-bench). Across tasks, SEVerA achieves zero constraint violations while improving performance over unconstrained and SOTA baselines, showing that formal behavioral constraints not only guarantee correctness but also steer synthesis toward higher-quality agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.25111v2",
+      "url": "http://arxiv.org/abs/2603.25111v2",
+      "pdf_url": "https://arxiv.org/pdf/2603.25111v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.25111v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Beyond Static Agents: A Six-Dimensional Taxonomy and Survey of Self-Evolving LLM Agents for Healthcare",
+      "authors": [
+        "Shubham Vatsal",
+        "Ahsaas Bajaj",
+        "Harsh Dubey"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Large language model (LLM)-based agents are increasingly being explored for healthcare tasks such as clinical decision support, care coordination and autonomous workflow execution. Beyond static pipelines, recent systems claim to self-evolve by adapting their tools, memory, reasoning, policy, context and coordination strategies over time. However, what constitutes true self-evolution in healthcare agents remains unclear and is inconsistently evaluated. In this work, we introduce a six-dimensional taxonomy to rigorously characterize self-evolving LLM agents in healthcare, comprising Tools &amp;amp; Capabilities, Memory &amp;amp; Knowledge, Context &amp;amp; Prompt, Policy &amp;amp; Strategy, Multi-Agent Coordination and Reasoning. Using this taxonomy, we systematically evaluate 18 representative healthcare agent papers under strict mechanism-level criteria that separate genuine selfevolution from surface-level performance improvements. Our results reveal that memory evolution is the most common capability with over half of the surveyed systems exhibiting reflective or distilled memory growth, while only 5.6% demonstrates memory refactoring. In contrast, prompt self-revision appears in 33.3% of the papers and tool-selection evolution appears in only 5.6%. Multi-agent architectures (i.e., systems with multiple interacting agent roles/modules) are frequent, yet learned coordination remains limited, with only 16.7% exhibiting evolving protocols or topologies. We find no evidence of formal policy optimization or reasoning-mechanism evolution across these 18 papers. Overall, our analysis shows a clear gap between claimed adaptivity and verifiable self-evolution in current healthcare agents. This taxonomy provides a principled foundation for evaluating future self-evolving LLM systems and supports more rigorous, reproducible progress toward adaptive clinical AI.",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6796558",
+      "url": "https://doi.org/10.2139/ssrn.6796558",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6796558",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Dynamic nested hierarchies: self-evolving machine learning architectures for lifelong learning",
+      "authors": [
+        "Akbar Anbar Jafari",
+        "Cagri Ozcinar",
+        "Gholamreza Anbarjafari"
+      ],
+      "year": 2026,
+      "venue": "Frontiers in Artificial Intelligence",
+      "abstract": "\n                    Contemporary machine learning models, including large language models, exhibit remarkable capabilities in static tasks yet falter in non-stationary environments due to rigid architectures that hinder continual adaptation and lifelong learning. Building upon the nested learning (NL) paradigm, which decomposes models into multi-level optimization problems with fixed update frequencies, this work proposes Dynamic Nested Hierarchies (DNH) as an extension enabling autonomous structural adaptation. Unlike static nested learning where hierarchy depth and update frequencies are fixed at initialization, DNH introduces three biologically-grounded mechanisms: (1) level addition triggered by meta-loss thresholds, analogous to adult neurogenesis in the hippocampal dentate gyrus; (2) level pruning based on gradient contribution, analogous to synaptic elimination; and (3) frequency modulation driven by local surprise signals, analogous to neural oscillation adaptation. We provide explicit mappings between these mechanisms and neuroplasticity processes, moving beyond superficial analogy to principled design. Through rigorous mathematical formulations, we prove convergence bounds of\n                    O\n                    (1/\n                    T\n                    + δ\n                    2\n                    ) in non-stationary environments, expressivity improvements bounded by ϵ ≤\n                    O\n                    (1/\n                    L\n                    \n                      t\n                    \n                    ) + γδ, and sublinear regret\n                    \n                      \n                        O\n                        \n                          (\n                          \n                            \n                              \n                                T\n                              \n                            \n                          \n                          )\n                        \n                      \n                    \n                    compared to static architectures' linear regret. Empirical evaluations on language modeling, continual learning benchmarks—including comparisons with Elastic Weight Consolidation (EWC) and Synaptic Intelligence (SI) as well as modern methods (DER++, MEMO) on Split ImageNet, CLEAR-100, and CORe50—and long-context reasoning validate the theoretical advantages. Comprehensive ablation studies verify the contribution of each component, including the Self-Modifying Memory (SMM) module and Evolutionary Adam (EAdam) optimizer. We provide detailed computational cost analysis and parameter trajectory visualizations demonstrating bounded growth through self-regulating pruning.\n                  ",
+      "citation_count": 1,
+      "doi": "10.3389/frai.2026.1804338",
+      "url": "https://doi.org/10.3389/frai.2026.1804338",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3389/frai.2026.1804338",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 47.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Methodological Framework for Self-Evolving Multi-Agent Systems: Toward Adaptive and Continuous Learning in LLM-Based Architectures",
+      "authors": [
+        "Cheonsu Jeong"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                This study proposes the Self-Evolving Multi-Agent Framework (SEMAF) to address the prevalent issues of rigidity and knowledge drift in current Large Language Model (LLM)-based multi-agent systems. While existing frameworks rely on static, role-based collaboration, SEMAF introduces a dynamic and adaptive architecture that allows agents to continuously learn, self-diagnose, and reorganize their structure within dynamic environments. The core of SEMAF integrates three innovative components: a knowledge graph Layer for structured continuous knowledge integration and catastrophic forgetting mitigation, a multi-source feedback collector for generating quantitative reinforcement signals, and an Evolution Engine that drives self-improvement through collective reflection and policy optimization. Notably, SEMAF implements an Adaptation Layer that executes dynamic role reorganization to maintain collaborative efficiency when communication bottlenecks are detected. To enable systematic validation of self-evolving systems, this study proposes a comprehensive experimental methodology that includes three novel meta-metrics: the learning rate of adaptation (LRA), which measures adaptation speed; the collaboration efficiency (CE), which evaluates result quality against communication cost; and the knowledge retention index (KRI), which assesses knowledge consistency during continuous learning. The proposed evaluation framework provides protocols for environmental simulation, baseline comparison, statistical validation, and ablation studies. By offering both a theoretical framework for self-evolution and a rigorous methodology for empirical validation, this study makes a significant contribution to the advancement of autonomous, robust, and trustworthy AI systems. The proposed approach lays the foundation for future research on adaptive multi-agent architectures and provides generalized evaluation criteria applicable to various self-evolving AI systems.",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-8139402/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-8139402/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-8139402/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Methodological Framework for Self-Evolving Multi-Agent Systems: Toward Adaptive and Continuous Learning in LLM-Based Architectures",
+      "authors": [
+        "Cheonsu Jeong"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                This study proposes the Self-Evolving Multi-Agent Framework (SEMAF) to address the prevalent issues of rigidity and knowledge drift in current Large Language Model (LLM)-based multi-agent systems. While existing frameworks rely on static, role-based collaboration, SEMAF introduces a dynamic and adaptive architecture that allows agents to continuously learn, self-diagnose, and reorganize their structure within dynamic environments. The core of SEMAF integrates three innovative components: a knowledge graph Layer for structured continuous knowledge integration and catastrophic forgetting mitigation, a multi-source feedback collector for generating quantitative reinforcement signals, and an Evolution Engine that drives self-improvement through collective reflection and policy optimization. Notably, SEMAF implements an Adaptation Layer that executes dynamic role reorganization to maintain collaborative efficiency when communication bottlenecks are detected. To enable systematic validation of self-evolving systems, this study proposes a comprehensive experimental methodology that includes three novel meta-metrics: the learning rate of adaptation (LRA), which measures adaptation speed; the collaboration efficiency (CE), which evaluates result quality against communication cost; and the knowledge retention index (KRI), which assesses knowledge consistency during continuous learning. The proposed evaluation framework provides protocols for environmental simulation, baseline comparison, statistical validation, and ablation studies. By offering both a theoretical framework for self-evolution and a rigorous methodology for empirical validation, this study makes a significant contribution to the advancement of autonomous, robust, and trustworthy AI systems. The proposed approach lays the foundation for future research on adaptive multi-agent architectures and provides generalized evaluation criteria applicable to various self-evolving AI systems.",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-8139402/v2",
+      "url": "https://doi.org/10.21203/rs.3.rs-8139402/v2",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-8139402/v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Adaptive Self-Evolving Neural Networks a Meta-Learning Approach for Continual Lifelong Learning in Dynamic Environments",
+      "authors": [
+        "Kamal Kant Joshi",
+        "K. Kokulavani"
+      ],
+      "year": 2025,
+      "venue": "SSRN Electronic Journal",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.2139/ssrn.5142382",
+      "url": "https://doi.org/10.2139/ssrn.5142382",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.5142382",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 39.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Patch-Based Contrastive Learning and Memory Consolidation for Online Unsupervised Continual Learning",
+      "authors": [
+        "Cameron Taylor",
+        "Vassilis Vassiliades",
+        "Constantine Dovrolis"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "We focus on a relatively unexplored learning paradigm known as {\\em Online Unsupervised Continual Learning} (O-UCL), where an agent receives a non-stationary, unlabeled data stream and progressively learns to identify an increasing number of classes. This paradigm is designed to model real-world applications where encountering novelty is the norm, such as exploring a terrain with several unknown and time-varying entities. Unlike prior work in unsupervised, continual, or online learning, O-UCL combines all three areas into a single challenging and realistic learning paradigm. In this setting, agents are frequently evaluated and must aim to maintain the best possible representation at any point of the data stream, rather than at the end of pre-specified offline tasks. The proposed approach, called \\textbf{P}atch-based \\textbf{C}ontrastive learning and \\textbf{M}emory \\textbf{C}onsolidation (PCMC), builds a compositional understanding of data by identifying and clustering patch-level features. Embeddings for these patch-level features are extracted with an encoder trained via patch-based contrastive learning. PCMC incorporates new data into its distribution while avoiding catastrophic forgetting, and it consolidates memory examples during ``sleep\" periods. We evaluate PCMC's performance on streams created from the ImageNet and Places365 datasets. Additionally, we explore various versions of the PCMC algorithm and compare its performance against several existing methods and simple baselines.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2409.16391v1",
+      "url": "http://arxiv.org/abs/2409.16391v1",
+      "pdf_url": "https://arxiv.org/pdf/2409.16391v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2409.16391v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 39.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The Learning Way: Learning from Experience as the Path to Lifelong Learning and Development",
+      "authors": [
+        "Angela M. Passarelli",
+        "David A. Kolb"
+      ],
+      "year": 2011,
+      "venue": "The Oxford Handbook of Lifelong Learning",
+      "abstract": "Lifelong learning requires the ability to learn from life experiences. This chapter describes the theory of experiential learning, whereby knowledge is generated from experience through a cycle of learning driven by the resolution of dual dialectics of action/reflection and experience/abstraction. We provide an overview of stylistic preferences that arise from patterns of choosing among these modes of learning, as well as the spaces in which learning occurs. Movement through these modes and spaces link one experience to the next, creating a learning spiral that guides growth and development through a lifetime. Lifelong learning is also shaped by an individual’s learning identity, the extent to which one believes he or she can learn, and learning relationships, connections that promote movement through the learning spiral. Strategies for enhancing the learning process are provided for each of these topics.",
+      "citation_count": 19,
+      "doi": "10.1093/oxfordhb/9780195390483.013.0028",
+      "url": "https://doi.org/10.1093/oxfordhb/9780195390483.013.0028",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1093/oxfordhb/9780195390483.013.0028",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 38.36,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Self-Evolving Neural Networks for Lifelong Learning Applications",
+      "authors": [],
+      "year": 2025,
+      "venue": "World Journal of Future Technologies in Computer Science and Engineering",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.63345/wjftcse.v1.i4.102",
+      "url": "https://doi.org/10.63345/wjftcse.v1.i4.102",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.63345/wjftcse.v1.i4.102",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Self-Evolving, Reinforcement Learning-Driven Architecture for Cost-Aware and Self-Healing Real-Time Data Pipelines",
+      "authors": [
+        "Venkat Alamuri"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                Dynamic data distributions, system failures, and low-latency, cost-effective processing are becoming more of a challenge to modern real-time data pipelines. Current streaming architectures are based on relatively static settings and reactive processes and are thus not capable of responding to changing conditions and ensuring consistent performance. In this paper, a smart and responsive framework that combines real-time validation, predictive anomaly detection and autonomous recovery, and learning-based optimization is proposed in one pipeline architecture. The suggested solution allows to maintain constant monitoring and decision making with the help of the closed-loop system balancing dynamically the latency, computational cost, and the quality of the data. An integrated verification system maximizes the effectiveness of anomaly detection and an independent recovery system guarantees the quick recovery of faults and the recovery of the system with the lowest downtimes. Experimental assessment of various situations proves to be dramatically better than traditional systems with lower latency diversity, shorter recovery period, greater detection precision, and more economical in limited situations. The findings indicate the possibility of turning the conventional reactive pipelines into proactive and self-adaptive systems, which provides a scalable and robust solution to the current data-intensive applications like financial analytics, IoT monitoring, and large-scale cloud environments.",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-9455617/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-9455617/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-9455617/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Extended TAM based acceptance of AI-Powered ChatGPT for supporting metacognitive self-regulated learning in education: A mixed-methods study",
+      "authors": [
+        "Nisar Ahmed Dahri",
+        "Noraffandy Yahaya",
+        "Waleed Mugahed Al-Rahmi",
+        "Ahmed Aldraiweesh",
+        "Uthman Alturki",
+        "Sultan Almutairy",
+        "Anna Shutaleva",
+        "Rahim Bux Soomro"
+      ],
+      "year": 2024,
+      "venue": "Heliyon",
+      "abstract": null,
+      "citation_count": 197,
+      "doi": "10.1016/j.heliyon.2024.e29317",
+      "url": "https://openalex.org/W4394611033",
+      "pdf_url": "http://www.cell.com/article/S2405844024053489/pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1016/j.heliyon.2024.e29317",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The Manifesto for Teaching and Learning in a Time of Generative AI: A Critical Collective Stance to Better Navigate the Future",
+      "authors": [
+        "Aras Bozkurt",
+        "Junhong Xiao",
+        "Robert Farrow",
+        "John Y. H. Bai",
+        "Chrissi Nerantzi",
+        "Stephanie Moore",
+        "Jon Dron",
+        "Christian M. Stracke",
+        "Lenandlar Singh",
+        "Helen Crompton",
+        "Apostolos Koutropoulos",
+        "Evgeniy Terentev",
+        "Angelica Pazurek",
+        "Mark Nichols",
+        "Alexander M. Sidorkin",
+        "Eamon Costello",
+        "Steven Watson",
+        "Dorothy Mulligan",
+        "Sarah Honeychurch",
+        "Charles B. Hodges",
+        "Mike Sharples",
+        "Andrew Swindell",
+        "Isak Froumin",
+        "Ahmed Tlili",
+        "Patricia J. Slagter van Tryon",
+        "Melissa Bond",
+        "Maha Bali",
+        "Jing Leng",
+        "Kai Zhang",
+        "Mutlu Cukurova",
+        "Thomas K. F. Chiu",
+        "Kyungmee Lee",
+        "Stefan Hrastinski",
+        "Manuel B. Garcia",
+        "Ramesh C. Sharma",
+        "Bryan Alexander",
+        "Olaf Zawacki‐Richter",
+        "Henk Huijser",
+        "Petar Jandrić",
+        "Chanjin Zheng",
+        "Peter Shea",
+        "Josep M. Duart",
+        "Chryssa Themelis",
+        "Anton Vorochkov",
+        "Sunagül Sani-Bozkurt",
+        "Robert L. Moore",
+        "Tutaleni I. Asino"
+      ],
+      "year": 2024,
+      "venue": "Open Praxis",
+      "abstract": null,
+      "citation_count": 158,
+      "doi": "10.55982/openpraxis.16.4.777",
+      "url": "https://openalex.org/W4404857974",
+      "pdf_url": "https://openpraxis.org/articles/777/files/6749b446d17e9.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.55982/openpraxis.16.4.777",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Model-Free Generative Replay for Lifelong Reinforcement Learning: Application to Starcraft-2",
+      "authors": [
+        "Zachary Daniels",
+        "Aswin Raghavan",
+        "Jesse Hostetler",
+        "Abrar Rahman",
+        "Indranil Sur",
+        "Michael Piacentino",
+        "Ajay Divakaran"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "One approach to meet the challenges of deep lifelong reinforcement learning (LRL) is careful management of the agent's learning experiences, to learn (without forgetting) and build internal meta-models (of the tasks, environments, agents, and world). Generative replay (GR) is a biologically inspired replay mechanism that augments learning experiences with self-labelled examples drawn from an internal generative model that is updated over time. We present a version of GR for LRL that satisfies two desiderata: (a) Introspective density modelling of the latent representations of policies learned using deep RL, and (b) Model-free end-to-end learning. In this paper, we study three deep learning architectures for model-free GR, starting from a naïve GR and adding ingredients to achieve (a) and (b). We evaluate our proposed algorithms on three different scenarios comprising tasks from the Starcraft-2 and Minigrid domains. We report several key findings showing the impact of the design choices on quantitative metrics that include transfer learning, generalization to unseen tasks, fast adaptation after task change, performance wrt task expert, and catastrophic forgetting. We observe that our GR prevents drift in the features-to-action mapping from the latent vector space of a deep RL agent. We also show improvements in established lifelong learning metrics. We find that a small random replay buffer significantly increases the stability of training. Overall, we find that \"hidden replay\" (a well-known architecture for class-incremental classification) is the most promising approach that pushes the state-of-the-art in GR for LRL and observe that the architecture of the sleep model might be more important for improving performance than the types of replay used. Our experiments required only 6% of training samples to achieve 80-90% of expert performance in most Starcraft-2 scenarios.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2208.05056v2",
+      "url": "http://arxiv.org/abs/2208.05056v2",
+      "pdf_url": "https://arxiv.org/pdf/2208.05056v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2208.05056v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Exploring Structured Self-Reflection and Expertise in a Playful Learning Experience",
+      "authors": [
+        "Yilang Zhao"
+      ],
+      "year": 2023,
+      "venue": "AERA 2023",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.3102/ip.23.2018517",
+      "url": "https://doi.org/10.3102/ip.23.2018517",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3102/ip.23.2018517",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Diffusion Augmented Agents: A Framework for Efficient Exploration and Transfer Learning",
+      "authors": [
+        "Norman Di Palo",
+        "Leonard Hasenclever",
+        "Jan Humplik",
+        "Arunkumar Byravan"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "We introduce Diffusion Augmented Agents (DAAG), a novel framework that leverages large language models, vision language models, and diffusion models to improve sample efficiency and transfer learning in reinforcement learning for embodied agents. DAAG hindsight relabels the agent's past experience by using diffusion models to transform videos in a temporally and geometrically consistent way to align with target instructions with a technique we call Hindsight Experience Augmentation. A large language model orchestrates this autonomous process without requiring human supervision, making it well-suited for lifelong learning scenarios. The framework reduces the amount of reward-labeled data needed to 1) finetune a vision language model that acts as a reward detector, and 2) train RL agents on new tasks. We demonstrate the sample efficiency gains of DAAG in simulated robotics environments involving manipulation and navigation. Our results show that DAAG improves learning of reward detectors, transferring past experience, and acquiring new tasks - key abilities for developing efficient lifelong learning agents. Supplementary material and visualizations are available on our website https://sites.google.com/view/diffusion-augmented-agents/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2407.20798v1",
+      "url": "http://arxiv.org/abs/2407.20798v1",
+      "pdf_url": "https://arxiv.org/pdf/2407.20798v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2407.20798v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 35.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Exploring Self-Reflection in a Playful Learning Experience",
+      "authors": [
+        "Yilang Zhao"
+      ],
+      "year": 2021,
+      "venue": "Proceedings of the 2021 AERA Annual Meeting",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.3102/1685852",
+      "url": "https://doi.org/10.3102/1685852",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3102/1685852",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Sharing Lifelong Reinforcement Learning Knowledge via Modulating Masks",
+      "authors": [
+        "Saptarshi Nath",
+        "Christos Peridis",
+        "Eseoghene Ben-Iwhiwhu",
+        "Xinran Liu",
+        "Shirin Dora",
+        "Cong Liu",
+        "Soheil Kolouri",
+        "Andrea Soltoggio"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Lifelong learning agents aim to learn multiple tasks sequentially over a lifetime. This involves the ability to exploit previous knowledge when learning new tasks and to avoid forgetting. Modulating masks, a specific type of parameter isolation approach, have recently shown promise in both supervised and reinforcement learning. While lifelong learning algorithms have been investigated mainly within a single-agent approach, a question remains on how multiple agents can share lifelong learning knowledge with each other. We show that the parameter isolation mechanism used by modulating masks is particularly suitable for exchanging knowledge among agents in a distributed and decentralized system of lifelong learners. The key idea is that the isolation of specific task knowledge to specific masks allows agents to transfer only specific knowledge on-demand, resulting in robust and effective distributed lifelong learning. We assume fully distributed and asynchronous scenarios with dynamic agent numbers and connectivity. An on-demand communication protocol ensures agents query their peers for specific masks to be transferred and integrated into their policies when facing each task. Experiments indicate that on-demand mask communication is an effective way to implement distributed lifelong reinforcement learning and provides a lifelong learning benefit with respect to distributed RL baselines such as DD-PPO, IMPALA, and PPO+EWC. The system is particularly robust to connection drops and demonstrates rapid learning due to knowledge exchange.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2305.10997v1",
+      "url": "http://arxiv.org/abs/2305.10997v1",
+      "pdf_url": "https://arxiv.org/pdf/2305.10997v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2305.10997v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "IBSEAD: - A Self-Evolving Self-Obsessed Learning Algorithm for Machine Learning",
+      "authors": [
+        "Jitesh Dundas",
+        "David Chik"
+      ],
+      "year": 2011,
+      "venue": "arXiv",
+      "abstract": "We present IBSEAD or distributed autonomous entity systems based Interaction - a learning algorithm for the computer to self-evolve in a self-obsessed manner. This learning algorithm will present the computer to look at the internal and external environment in series of independent entities, which will interact with each other, with and/or without knowledge of the computer's brain. When a learning algorithm interacts, it does so by detecting and understanding the entities in the human algorithm. However, the problem with this approach is that the algorithm does not consider the interaction of the third party or unknown entities, which may be interacting with each other. These unknown entities in their interaction with the non-computer entities make an effect in the environment that influences the information and the behaviour of the computer brain. Such details and the ability to process the dynamic and unsettling nature of these interactions are absent in the current learning algorithm such as the decision tree learning algorithm. IBSEAD is able to evaluate and consider such algorithms and thus give us a better accuracy in simulation of the highly evolved nature of the human brain. Processes such as dreams, imagination and novelty, that exist in humans are not fully simulated by the existing learning algorithms. Also, Hidden Markov models (HMM) are useful in finding \"hidden\" entities, which may be known or unknown. However, this model fails to consider the case of unknown entities which maybe unclear or unknown. IBSEAD is better because it considers three types of entities- known, unknown and invisible. We present our case with a comparison of existing algorithms in known environments and cases and present the results of the experiments using dry run of the simulated runs of the existing machine learning algorithms versus IBSEAD.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "1106.6186v1",
+      "url": "http://arxiv.org/abs/1106.6186v1",
+      "pdf_url": "https://arxiv.org/pdf/1106.6186v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:1106.6186v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "How Self-Regulated Learning Is Affected by Feedback Based on Large Language Models: Data-Driven Sustainable Development in Computer Programming Learning",
+      "authors": [
+        "Di Sun",
+        "Pengfei Xu",
+        "Jing Zhang",
+        "Jing Zhang",
+        "Ruqi Liu",
+        "Jun Zhang",
+        "Jun Zhang"
+      ],
+      "year": 2025,
+      "venue": "Electronics",
+      "abstract": null,
+      "citation_count": 25,
+      "doi": "10.3390/electronics14010194",
+      "url": "https://openalex.org/W4406102215",
+      "pdf_url": "https://www.mdpi.com/2079-9292/14/1/194/pdf?version=1736074579",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.3390/electronics14010194",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Forgetting and Imbalance in Robot Lifelong Learning with Off-policy Data",
+      "authors": [
+        "Wenxuan Zhou",
+        "Steven Bohez",
+        "Jan Humplik",
+        "Abbas Abdolmaleki",
+        "Dushyant Rao",
+        "Markus Wulfmeier",
+        "Tuomas Haarnoja",
+        "Nicolas Heess"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Robots will experience non-stationary environment dynamics throughout their lifetime: the robot dynamics can change due to wear and tear, or its surroundings may change over time. Eventually, the robots should perform well in all of the environment variations it has encountered. At the same time, it should still be able to learn fast in a new environment. We identify two challenges in Reinforcement Learning (RL) under such a lifelong learning setting with off-policy data: first, existing off-policy algorithms struggle with the trade-off between being conservative to maintain good performance in the old environment and learning efficiently in the new environment, despite keeping all the data in the replay buffer. We propose the Offline Distillation Pipeline to break this trade-off by separating the training procedure into an online interaction phase and an offline distillation phase.Second, we find that training with the imbalanced off-policy data from multiple environments across the lifetime creates a significant performance drop. We identify that this performance drop is caused by the combination of the imbalanced quality and size among the datasets which exacerbate the extrapolation error of the Q-function. During the distillation phase, we apply a simple fix to the issue by keeping the policy closer to the behavior policy that generated the data. In the experiments, we demonstrate these two challenges and the proposed solutions with a simulated bipedal robot walk-ing task across various environment changes. We show that the Offline Distillation Pipeline achieves better performance across all the encountered environments without affecting data collection. We also provide a comprehensive empirical study to support our hypothesis on the data imbalance issue.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2204.05893v2",
+      "url": "http://arxiv.org/abs/2204.05893v2",
+      "pdf_url": "https://arxiv.org/pdf/2204.05893v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2204.05893v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong Reinforcement Learning with Modulating Masks",
+      "authors": [
+        "Eseoghene Ben-Iwhiwhu",
+        "Saptarshi Nath",
+        "Praveen K. Pilly",
+        "Soheil Kolouri",
+        "Andrea Soltoggio"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Lifelong learning aims to create AI systems that continuously and incrementally learn during a lifetime, similar to biological learning. Attempts so far have met problems, including catastrophic forgetting, interference among tasks, and the inability to exploit previous knowledge. While considerable research has focused on learning multiple supervised classification tasks that involve changes in the input distribution, lifelong reinforcement learning (LRL) must deal with variations in the state and transition distributions, and in the reward functions. Modulating masks with a fixed backbone network, recently developed for classification, are particularly suitable to deal with such a large spectrum of task variations. In this paper, we adapted modulating masks to work with deep LRL, specifically PPO and IMPALA agents. The comparison with LRL baselines in both discrete and continuous RL tasks shows superior performance. We further investigated the use of a linear combination of previously learned masks to exploit previous knowledge when learning new tasks: not only is learning faster, the algorithm solves tasks that we could not otherwise solve from scratch due to extremely sparse rewards. The results suggest that RL with modulating masks is a promising approach to lifelong learning, to the composition of knowledge to learn increasingly complex tasks, and to knowledge reuse for efficient and faster learning.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2212.11110v3",
+      "url": "http://arxiv.org/abs/2212.11110v3",
+      "pdf_url": "https://arxiv.org/pdf/2212.11110v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2212.11110v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents",
+      "authors": [
+        "Jenny Zhang",
+        "Shengran Hu",
+        "Cong Lu",
+        "R. D. Lange",
+        "Jeff Clune"
+      ],
+      "year": 2025,
+      "venue": "SuperIntelligence - Robotics - Safety & Alignment",
+      "abstract": null,
+      "citation_count": 16,
+      "doi": "10.70777/si.v2i3.15063",
+      "url": "https://openalex.org/W4412505633",
+      "pdf_url": "https://s-rsa.com/index.php/agi/article/download/15063/11061",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.70777/si.v2i3.15063",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "EvoNet: A Self-Evolving Neural Architecture with Dynamic Topological Adaptation for Lifelong Learning Keywords",
+      "authors": [
+        "Bekir Tolga Tutuncuoglu"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.5377252",
+      "url": "https://doi.org/10.2139/ssrn.5377252",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.5377252",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The relationship between self-determination, achievement goal orientation and satisfaction with the learning experience : working with adult lifelong learners",
+      "authors": [
+        "Jane Rodd"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.54014/hbek-t98d",
+      "url": "https://doi.org/10.54014/hbek-t98d",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.54014/hbek-t98d",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong education: the experience of self-reflection",
+      "authors": [
+        "V A Kuts"
+      ],
+      "year": 2013,
+      "venue": "Lifelong education: the XXI century",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.15393/j5.art.2013.2164",
+      "url": "https://doi.org/10.15393/j5.art.2013.2164",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.15393/j5.art.2013.2164",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Future of Education with Neuro-Symbolic AI Agents in Self-Improving Adaptive Instructional Systems",
+      "authors": [
+        "Richard Jiarui Tong",
+        "Xiangen Hu"
+      ],
+      "year": 2024,
+      "venue": "Frontiers of digital education.",
+      "abstract": null,
+      "citation_count": 17,
+      "doi": "10.1007/s44366-024-0008-9",
+      "url": "https://openalex.org/W4402008951",
+      "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44366-024-0008-9.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1007/s44366-024-0008-9",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 31.12,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Technology, Lifelong Learning, and Effective Foreign Language Instruction Under the Memory Efficient Approach",
+      "authors": [
+        "P. Tokoyo Kang"
+      ],
+      "year": null,
+      "venue": "Online Education for Lifelong Learning",
+      "abstract": "This chapter presents a method for foreign language (FL) teachers to implement currently available technologies as instructional tools in a FL language classroom using the memory efficient approach (MEA) to enhance instruction, and help students to become lifelong FL learners. Providing historical backgrounds of the FL acquisition or learning theory as well as technological implementation for FL instruction, the chapter suggests MEA with eclectic methodology for FL instruction. Under the MEA, the methods for “skill-using” and “skill-getting” (Rivers, 1985) are employed; thus, appropriate methods as well as appropriate instructional tools—technological and nontechnological—are selected according to the learning objective or goal. In addition, introducing emerging technologies that may be utilized for instruction in the FL area, the chapter will demonstrate a method to implement technologies in advanced Japanese courses as well as in elementary Japanese courses using MEA.",
+      "citation_count": 1,
+      "doi": "10.4018/978-1-59904-319-7.ch004",
+      "url": "https://doi.org/10.4018/978-1-59904-319-7.ch004",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.4018/978-1-59904-319-7.ch004",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 31.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "An Introduction to Lifelong Supervised Learning",
+      "authors": [
+        "Shagun Sodhani",
+        "Mojtaba Faramarzi",
+        "Sanket Vaibhav Mehta",
+        "Pranshu Malviya",
+        "Mohamed Abdelsalam",
+        "Janarthanan Janarthanan",
+        "Sarath Chandar"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "This primer is an attempt to provide a detailed summary of the different facets of lifelong learning. We start with Chapter 2 which provides a high-level overview of lifelong learning systems. In this chapter, we discuss prominent scenarios in lifelong learning (Section 2.4), provide 8 Introduction a high-level organization of different lifelong learning approaches (Section 2.5), enumerate the desiderata for an ideal lifelong learning system (Section 2.6), discuss how lifelong learning is related to other learning paradigms (Section 2.7), describe common metrics used to evaluate lifelong learning systems (Section 2.8). This chapter is more useful for readers who are new to lifelong learning and want to get introduced to the field without focusing on specific approaches or benchmarks. The remaining chapters focus on specific aspects (either learning algorithms or benchmarks) and are more useful for readers who are looking for specific approaches or benchmarks. Chapter 3 focuses on regularization-based approaches that do not assume access to any data from previous tasks. Chapter 4 discusses memory-based approaches that typically use a replay buffer or an episodic memory to save subset of data across different tasks. Chapter 5 focuses on different architecture families (and their instantiations) that have been proposed for training lifelong learning systems. Following these different classes of learning algorithms, we discuss the commonly used evaluation benchmarks and metrics for lifelong learning (Chapter 6) and wrap up with a discussion of future challenges and important research directions in Chapter 7.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2207.04354v2",
+      "url": "http://arxiv.org/abs/2207.04354v2",
+      "pdf_url": "https://arxiv.org/pdf/2207.04354v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2207.04354v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "method"
+      ],
+      "score": 31.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents",
+      "authors": [
+        "Shengwei Ren",
+        "Can Xie",
+        "Jian Pu",
+        "Ren, Zhenjiang",
+        "Leng, Chunlin",
+        "Jiajun Zhang"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 6,
+      "doi": "10.48550/arxiv.2503.24047",
+      "url": "https://openalex.org/W4417088765",
+      "pdf_url": "https://arxiv.org/pdf/2503.24047",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2503.24047",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 30.45,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Survey on the Memory Mechanism of Large Language Model based Agents",
+      "authors": [
+        "Zeyu Zhang",
+        "Xiaohe Bo",
+        "Chen Ma",
+        "Rui Li",
+        "Xu Chen",
+        "Quanyu Dai",
+        "Jieming Zhu",
+        "Zhenhua Dong",
+        "Ji-Rong Wen"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 11,
+      "doi": "10.48550/arxiv.2404.13501",
+      "url": "https://openalex.org/W4395065101",
+      "pdf_url": "https://arxiv.org/pdf/2404.13501",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2404.13501",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 30.32,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Meta-Thinking in LLMs via Multi-Agent Reinforcement Learning: A Survey",
+      "authors": [
+        "Ahsan Bilal",
+        "Muhammad Ahmed Mohsin",
+        "Muhammad Umer",
+        "Muhammad Awais Khan Bangash",
+        "Muhammad Ali Jamshed"
+      ],
+      "year": 2026,
+      "venue": "Research Square",
+      "abstract": null,
+      "citation_count": 4,
+      "doi": "10.21203/rs.3.rs-8994957/v1",
+      "url": "https://openalex.org/W7133818764",
+      "pdf_url": "https://www.researchsquare.com/article/rs-8994957/latest.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.21203/rs.3.rs-8994957/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 30.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Evolving Web Based Technologies and their Potential for Developing Online Learning Communities and Support for Lifelong Learning",
+      "authors": [
+        "Catherine McLoughlin"
+      ],
+      "year": 2013,
+      "venue": "Handbook of Research on Technologies for Improving the 21st Century Workforce",
+      "abstract": "Lifelong learning can be broadly defined as purposeful learning that people engage in throughout the lifespan. The proliferation of knowledge, the information society, and the accelerating use of information and communications technologies combine to create a demand for professionals who are flexible, motivated, and self-directed, as well as multiskilled. Recently, there has been an increasing focus on developing generic skills and competencies as part of tertiary learning. Graduates are expected to meet the demands of employers for social communicative and cooperative skills as opposed to abstract disciplinary knowledge, and therefore, the acquisition of lifelong learning skills is imperative if they are to remain productive, competitive, and open minded. As the current information age is characterised by continual dynamic change, graduates need a dynamic set of attributes or competencies. In order to develop as lifelong learners, tertiary learners need to be exposed to activities and tasks that prepare them for the responsibilities that lifelong learning requires. One key strategy for supporting lifelong learning is through pedagogical approaches that recognise that both formal and informal learning have value, and that both forms of learning can be supported in technology-supported learning environments. The raft of social software tools and applications now available offer greater opportunities to support the lifelong building of knowledge and competencies required for learning in the 21st century.",
+      "citation_count": 0,
+      "doi": "10.4018/978-1-4666-2181-7.ch032",
+      "url": "https://doi.org/10.4018/978-1-4666-2181-7.ch032",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.4018/978-1-4666-2181-7.ch032",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 30.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Meta-Learning via Feature-Label Memory Network",
+      "authors": [
+        "Dawit Mureja",
+        "Hyunsin Park",
+        "Chang D. Yoo"
+      ],
+      "year": 2017,
+      "venue": "arXiv",
+      "abstract": "Deep learning typically requires training a very capable architecture using large datasets. However, many important learning problems demand an ability to draw valid inferences from small size datasets, and such problems pose a particular challenge for deep learning. In this regard, various researches on \"meta-learning\" are being actively conducted. Recent work has suggested a Memory Augmented Neural Network (MANN) for meta-learning. MANN is an implementation of a Neural Turing Machine (NTM) with the ability to rapidly assimilate new data in its memory, and use this data to make accurate predictions. In models such as MANN, the input data samples and their appropriate labels from previous step are bound together in the same memory locations. This often leads to memory interference when performing a task as these models have to retrieve a feature of an input from a certain memory location and read only the label information bound to that location. In this paper, we tried to address this issue by presenting a more robust MANN. We revisited the idea of meta-learning and proposed a new memory augmented neural network by explicitly splitting the external memory into feature and label memories. The feature memory is used to store the features of input data samples and the label memory stores their labels. Hence, when predicting the label of a given input, our model uses its feature memory unit as a reference to extract the stored feature of the input, and based on that feature, it retrieves the label information of the input from the label memory unit. In order for the network to function in this framework, a new memory-writingmodule to encode label information into the label memory in accordance with the meta-learning task structure is designed. Here, we demonstrate that our model outperforms MANN by a large margin in supervised one-shot classification tasks using Omniglot and MNIST datasets.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "1710.07110v1",
+      "url": "http://arxiv.org/abs/1710.07110v1",
+      "pdf_url": "https://arxiv.org/pdf/1710.07110v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:1710.07110v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 30.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "From Human Memory to AI Memory: A Survey on Memory Mechanisms in the Era of LLMs",
+      "authors": [
+        "Yaxiong Wu",
+        "Sheng Liang",
+        "Chen Zhang",
+        "Yichao Wang",
+        "Yongyue Zhang",
+        "Huifeng Guo",
+        "Ruiming Tang",
+        "Yong Liu"
+      ],
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.48550/arxiv.2504.15965",
+      "url": "https://openalex.org/W4415064627",
+      "pdf_url": "https://arxiv.org/pdf/2504.15965",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2504.15965",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 29.41,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Long Term Memory: The Foundation of AI Self-Evolution",
+      "authors": [
+        "Xun Jiang",
+        "Feng Li",
+        "Han Zhao",
+        "Qiu, Jiahao",
+        "Jiaying Wang",
+        "Jun Shao",
+        "Shihao Xu",
+        "Shu Zhang",
+        "Weiling Chen",
+        "Tang, Xavier",
+        "Yize Chen",
+        "Mengyue Wu",
+        "Weizhi Ma",
+        "Mengdi Wang",
+        "Tianqiao Chen"
+      ],
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 5,
+      "doi": "10.48550/arxiv.2410.15665",
+      "url": "https://openalex.org/W4404344231",
+      "pdf_url": "https://arxiv.org/pdf/2410.15665",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2410.15665",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 29.24,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

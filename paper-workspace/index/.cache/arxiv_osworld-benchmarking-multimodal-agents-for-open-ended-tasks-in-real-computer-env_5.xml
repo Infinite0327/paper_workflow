@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/lwbIoMarYxbF0pD9Y6/3+d50wNM</id>
+  <title>arXiv Query: search_query=all:OSWorld OR all:Benchmarking OR all:Multimodal OR all:Agents OR all:for OR all:Open-Ended OR all:Tasks OR all:in OR all:Real OR all:Computer OR all:Environments&amp;id_list=&amp;start=0&amp;max_results=5</title>
+  <updated>2026-07-29T04:18:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:OSWorld+OR+(all:Benchmarking+OR+(all:Multimodal+OR+(all:Agents+OR+(all:for+OR+(all:Open-Ended+OR+(all:Tasks+OR+(all:in+OR+(all:Real+OR+(all:Computer+OR+all:Environments)))))))))&amp;start=0&amp;max_results=5&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>5</opensearch:itemsPerPage>
+  <opensearch:totalResults>1331331</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2404.07972v2</id>
+    <title>OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments</title>
+    <updated>2024-05-30T08:55:12Z</updated>
+    <link href="https://arxiv.org/abs/2404.07972v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.07972v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Autonomous agents that accomplish complex computer tasks with minimal human interventions have the potential to transform human-computer interaction, significantly enhancing accessibility and productivity. However, existing benchmarks either lack an interactive environment or are limited to environments specific to certain applications or domains, failing to reflect the diverse and complex nature of real-world computer use, thereby limiting the scope of tasks and agent scalability. To address this issue, we introduce OSWorld, the first-of-its-kind scalable, real computer environment for multimodal agents, supporting task setup, execution-based evaluation, and interactive learning across various operating systems such as Ubuntu, Windows, and macOS. OSWorld can serve as a unified, integrated computer environment for assessing open-ended computer tasks that involve arbitrary applications. Building upon OSWorld, we create a benchmark of 369 computer tasks involving real web and desktop apps in open domains, OS file I/O, and workflows spanning multiple applications. Each task example is derived from real-world computer use cases and includes a detailed initial state setup configuration and a custom execution-based evaluation script for reliable, reproducible evaluation. Extensive evaluation of state-of-the-art LLM/VLM-based agents on OSWorld reveals significant deficiencies in their ability to serve as computer assistants. While humans can accomplish over 72.36% of the tasks, the best model achieves only 12.24% success, primarily struggling with GUI grounding and operational knowledge. Comprehensive analysis using OSWorld provides valuable insights for developing multimodal generalist agents that were not possible with previous benchmarks. Our code, environment, baseline models, and data are publicly available at https://os-world.github.io.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-11T17:56:05Z</published>
+    <arxiv:comment>51 pages, 21 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tianbao Xie</name>
+    </author>
+    <author>
+      <name>Danyang Zhang</name>
+    </author>
+    <author>
+      <name>Jixuan Chen</name>
+    </author>
+    <author>
+      <name>Xiaochuan Li</name>
+    </author>
+    <author>
+      <name>Siheng Zhao</name>
+    </author>
+    <author>
+      <name>Ruisheng Cao</name>
+    </author>
+    <author>
+      <name>Toh Jing Hua</name>
+    </author>
+    <author>
+      <name>Zhoujun Cheng</name>
+    </author>
+    <author>
+      <name>Dongchan Shin</name>
+    </author>
+    <author>
+      <name>Fangyu Lei</name>
+    </author>
+    <author>
+      <name>Yitao Liu</name>
+    </author>
+    <author>
+      <name>Yiheng Xu</name>
+    </author>
+    <author>
+      <name>Shuyan Zhou</name>
+    </author>
+    <author>
+      <name>Silvio Savarese</name>
+    </author>
+    <author>
+      <name>Caiming Xiong</name>
+    </author>
+    <author>
+      <name>Victor Zhong</name>
+    </author>
+    <author>
+      <name>Tao Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.16042v2</id>
+    <title>OSWorld-Human: Benchmarking the Efficiency of Computer-Use Agents</title>
+    <updated>2026-05-18T17:55:59Z</updated>
+    <link href="https://arxiv.org/abs/2506.16042v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.16042v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative AI is being leveraged to solve a variety of computer-use tasks involving desktop applications. State-of-the-art systems have focused solely on improving accuracy on leading benchmarks. However, these systems are practically unusable due to extremely high end-to-end latency (e.g., tens of minutes) for tasks that typically take humans just a few minutes to complete. To understand the cause behind this and to guide future developments of computer agents, we conduct the first study on the temporal performance of computer-use agents on OSWorld, the flagship benchmark in computer-use AI. We find that large model calls for planning, reflection, and judging account for most of the overall latency, and as an agent uses more steps to complete a task, each successive step can take 3x longer than steps at the beginning of a task. We then construct OSWorld Human, a manually annotated version of the original OSWorld dataset that contains a human-determined trajectory for each task. We evaluate 16 agents on their efficiency using OSWorld Human and found that even the best agents take 2.7-4.3x more steps than necessary.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-19T05:26:40Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Reyna Abhyankar</name>
+    </author>
+    <author>
+      <name>Qi Qi</name>
+    </author>
+    <author>
+      <name>Yiying Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.29537v2</id>
+    <title>OSWorld 2.0: Benchmarking Computer Use Agents on Long-Horizon Real-World Tasks</title>
+    <updated>2026-07-13T10:30:17Z</updated>
+    <link href="https://arxiv.org/abs/2606.29537v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.29537v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing computer-use benchmarks fail to capture the realism, complexity, and long-horizon demands of real-world computer use, limiting their ability to reveal the limitations of frontier agents. We introduce OSWorld 2.0, a benchmark of 108 long-horizon computer-use workflows across everyday and professional tasks, designed to capture complex and challenging real-world phenomena. Each task represents a realistic end-to-end workflow that takes human users a median of about 1.6 hours to complete and requires an average of 318 tool calls with Claude Opus 4.7 using maximum thinking, compared with about 30 in OSWorld 1.0. OSWorld 2.0 targets challenge phenomena that are common in real workflows yet underrepresented in prior benchmarks, spanning interaction-design challenges such as streaming interaction and dynamic environments, as well as agent-pattern challenges such as cross-source reasoning, implicit-state inference, and visual-spatial precision. Tasks are grounded in authentic input artifacts and cross-referenced against realistic stateful user profile data, and include separate safety reports auditing safety-sensitive execution. Under our primary binary-completion metric at 500 steps, Claude Opus 4.8 with maximum thinking and batched tool calls scores best but still completes only 20.6% of tasks at a 54.8% partial score; GPT-5.5 is far more token-efficient yet plateaus near 13%. These results show that current agents are still far from professional-level computer use: rather than stumbling on basic GUI control or coding, they lose track of constraints, miss information that arrives mid-task, guess rather than ask the user, and skip verification, struggling most when a task hinges on hidden state they must recover.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-28T17:59:17Z</published>
+    <arxiv:comment>68 pages, 42 figures. Equal contribution: Mengqi Yuan, Zilong Zhou, and Xinzhuang Xiong</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mengqi Yuan</name>
+    </author>
+    <author>
+      <name>Zilong Zhou</name>
+    </author>
+    <author>
+      <name>Xinzhuang Xiong</name>
+    </author>
+    <author>
+      <name>Weiming Wu</name>
+    </author>
+    <author>
+      <name>Jiayang Sun</name>
+    </author>
+    <author>
+      <name>Jiamin Song</name>
+    </author>
+    <author>
+      <name>Kaiqian Cui</name>
+    </author>
+    <author>
+      <name>Bowen Wang</name>
+    </author>
+    <author>
+      <name>Haoyuan Wu</name>
+    </author>
+    <author>
+      <name>Yitong Li</name>
+    </author>
+    <author>
+      <name>Dunjie Lu</name>
+    </author>
+    <author>
+      <name>Haikong Lu</name>
+    </author>
+    <author>
+      <name>Qi Zhen</name>
+    </author>
+    <author>
+      <name>Xinyuan Wang</name>
+    </author>
+    <author>
+      <name>Jiaqi Deng</name>
+    </author>
+    <author>
+      <name>Yuhao Yang</name>
+    </author>
+    <author>
+      <name>Cheng Chen</name>
+    </author>
+    <author>
+      <name>Boyuan Zheng</name>
+    </author>
+    <author>
+      <name>Alex Su</name>
+    </author>
+    <author>
+      <name>Xiao Yu</name>
+    </author>
+    <author>
+      <name>Hao Zou</name>
+    </author>
+    <author>
+      <name>Saaket Agashe</name>
+    </author>
+    <author>
+      <name>Xing Han Lu</name>
+    </author>
+    <author>
+      <name>Manpreet Kaur</name>
+    </author>
+    <author>
+      <name>Zhengyang Qi</name>
+    </author>
+    <author>
+      <name>Vincent Sunn Chen</name>
+    </author>
+    <author>
+      <name>Frederic Sala</name>
+    </author>
+    <author>
+      <name>Dayiheng Liu</name>
+    </author>
+    <author>
+      <name>Junyang Lin</name>
+    </author>
+    <author>
+      <name>Zhou Yu</name>
+    </author>
+    <author>
+      <name>Yu Su</name>
+    </author>
+    <author>
+      <name>Siva Reddy</name>
+    </author>
+    <author>
+      <name>Xin Eric Wang</name>
+    </author>
+    <author>
+      <name>Peng Qi</name>
+    </author>
+    <author>
+      <name>Tianbao Xie</name>
+    </author>
+    <author>
+      <name>Tao Yu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.06560v1</id>
+    <title>MacArena: Benchmarking Computer Use Agents on an Online macOS Environment</title>
+    <updated>2026-06-04T14:01:32Z</updated>
+    <link href="https://arxiv.org/abs/2606.06560v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.06560v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly, driven in part by standardized online evaluation benchmarks such as OSWorld, which serve both as evaluation tools and as training environments for reinforcement learning. However, macOS remains underserved in this landscape: the only existing benchmark, macOSWorld, covers a narrow slice of first-party applications with simpler tasks, and runs on x86 virtual machines incompatible with Apple Silicon. We introduce MacArena, a benchmark of 421 manually verified tasks spanning 50 applications that combines a curated port of OSWorld tasks, content sourced from macOSWorld, and 49 new macOS-native tasks, all running on Apple's native Virtualization framework on Apple Silicon. We argue that macOS presents distinct GUI challenges beyond what Linux-based benchmarks capture, and our evaluation supports this claim: strong model performance on existing benchmarks can reflect familiarity with task distributions rather than genuine cross-platform GUI competence. Notably, model rankings invert between ported and macOS-native tasks, with a leading model trailing by over 26% on the MacArena subset, suggesting that macOS poses a genuinely harder environment for current GUI agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T14:01:32Z</published>
+    <arxiv:comment>Accepted to the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD) at ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Victor Muryn</name>
+    </author>
+    <author>
+      <name>Maksym Shamrai</name>
+    </author>
+    <author>
+      <name>Sofiia Mazepa</name>
+    </author>
+    <author>
+      <name>Yehor Khodysko</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2402.04578v4</id>
+    <title>S-Agents: Self-organizing Agents in Open-ended Environments</title>
+    <updated>2024-09-13T19:40:12Z</updated>
+    <link href="https://arxiv.org/abs/2402.04578v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2402.04578v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Leveraging large language models (LLMs), autonomous agents have significantly improved, gaining the ability to handle a variety of tasks. In open-ended settings, optimizing collaboration for efficiency and effectiveness demands flexible adjustments. Despite this, current research mainly emphasizes fixed, task-oriented workflows and overlooks agent-centric organizational structures. Drawing inspiration from human organizational behavior, we introduce a self-organizing agent system (S-Agents) with a "tree of agents" structure for dynamic workflow, an "hourglass agent architecture" for balancing information priorities, and a "non-obstructive collaboration" method to allow asynchronous task execution among agents. This structure can autonomously coordinate a group of agents, efficiently addressing the challenges of open and dynamic environments without human intervention. Our experiments demonstrate that S-Agents proficiently execute collaborative building tasks and resource collection in the Minecraft environment, validating their effectiveness.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-02-07T04:36:31Z</published>
+    <arxiv:comment>ICLR 2024 Workshop on Large Language Model (LLM) Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jiaqi Chen</name>
+    </author>
+    <author>
+      <name>Yuxian Jiang</name>
+    </author>
+    <author>
+      <name>Jiachen Lu</name>
+    </author>
+    <author>
+      <name>Li Zhang</name>
+    </author>
+  </entry>
+</feed>

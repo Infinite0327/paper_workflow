@@ -1,0 +1,193 @@
+{
+  "query": "GAIA benchmark general AI assistants",
+  "requested_limit": 5,
+  "created_at": "2026-07-29T12:18:12",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=GAIA+benchmark+general+AI+assistants",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "GAIA: a benchmark for General AI Assistants",
+      "authors": [
+        "Grégoire Mialon",
+        "Clémentine Fourrier",
+        "Craig Swift",
+        "Thomas Wolf",
+        "Yann LeCun",
+        "Thomas Scialom"
+      ],
+      "year": 2023,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 9,
+      "doi": "10.48550/arxiv.2311.12983",
+      "url": "https://openalex.org/W4388964563",
+      "pdf_url": "https://arxiv.org/pdf/2311.12983",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.48550/arxiv.2311.12983",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 45.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "GenAIPABench: A Benchmark for Generative AI-based Privacy Assistants",
+      "authors": [
+        "Aamir Hamid",
+        "Hemanth Reddy Samidi",
+        "Primal Pappachan",
+        "Tim Finin",
+        "Roberto Yus"
+      ],
+      "year": 2024,
+      "venue": "Proceedings on Privacy Enhancing Technologies",
+      "abstract": "Website privacy policies are often lengthy and intricate. Privacy assistants assist in simplifying policies and making them more accessible and user-friendly. The emergence of generative AI (genAI) offers new opportunities to build privacy assistants that can answer users’ questions about privacy policies. However, genAI’s reliability is a concern due to its potential for producing inaccurate information. This study introduces GenAIPABench, a benchmark for evaluating Generative AI-based Privacy Assistants (GenAIPAs). GenAIPABench includes: 1) A set of curated questions about privacy policies along with annotated answers for various organizations and regulations; 2) Metrics to assess the accuracy, relevance, and consistency of responses; and 3) A tool for generating prompts to introduce privacy policies and paraphrased variants of the curated questions. We evaluated 3 leading genAI systems—ChatGPT-4, Bard, and Bing AI—using GenAIPABench to gauge their effectiveness as GenAIPAs. Our results demonstrate significant promise in genAI capabilities in the privacy domain while also highlighting challenges in managing complex queries, ensuring consistency, and verifying source accuracy.",
+      "citation_count": 8,
+      "doi": "10.56553/popets-2024-0081",
+      "url": "https://doi.org/10.56553/popets-2024-0081",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.56553/popets-2024-0081",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 27.83,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "PersonaLens: A Benchmark for Personalization Evaluation in Conversational AI Assistants",
+      "authors": [
+        "Zheng Zhao",
+        "Clara Vania",
+        "Subhradeep Kayal",
+        "Naila Khan",
+        "Shay B Cohen",
+        "Emine Yilmaz"
+      ],
+      "year": 2025,
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2025",
+      "abstract": null,
+      "citation_count": 4,
+      "doi": "10.18653/v1/2025.findings-acl.927",
+      "url": "https://doi.org/10.18653/v1/2025.findings-acl.927",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.18653/v1/2025.findings-acl.927",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark"
+      ],
+      "score": 24.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "AI-Augmented Predictions: LLM Assistants Improve Human Forecasting Accuracy",
+      "authors": [
+        "Philipp Schoenegger",
+        "Peter S. Park",
+        "Ezra Karger",
+        "Sean Trott",
+        "Philip E. Tetlock"
+      ],
+      "year": 2024,
+      "venue": "ACM Transactions on Interactive Intelligent Systems",
+      "abstract": null,
+      "citation_count": 18,
+      "doi": "10.1145/3707649",
+      "url": "https://openalex.org/W4405372230",
+      "pdf_url": "https://doi.org/10.1145/3707649",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1145/3707649",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 23.24,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Gaia Data Release 3: The Galaxy in your preferred colours. Synthetic photometry from Gaia low-resolution spectra",
+      "authors": [
+        " Gaia Collaboration",
+        "P. Montegriffo",
+        "M. Bellazzini",
+        "F. De Angeli",
+        "R. Andrae",
+        "M. A. Barstow",
+        "D. Bossini",
+        "A. Bragaglia",
+        "P. W. Burgess",
+        "C. Cacciari",
+        "J. M. Carrasco",
+        "N. Chornay",
+        "L. Delchambre",
+        "D. W. Evans",
+        "M. Fouesneau",
+        "Y. Fremat",
+        "D. Garabato",
+        "C. Jordi",
+        "M. Manteiga",
+        "D. Massari",
+        "L. Palaversa",
+        "E. Pancino",
+        "M. Riello",
+        "D. Ruz Mieres",
+        "N. Sanna",
+        "R. Santovena",
+        "R. Sordo",
+        "A. Vallenari",
+        "N. Walton",
+        "Gaia DPAC"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Gaia Data Release 3 provides novel flux-calibrated low-resolution spectrophotometry for about 220 million sources in the wavelength range 330nm - 1050nm (XP spectra). Synthetic photometry directly tied to a flux in physical units can be obtained from these spectra for any passband fully enclosed in this wavelength range. We describe how synthetic photometry can be obtained from XP spectra, illustrating the performance that can be achieved under a range of different conditions - for example passband width and wavelength range - as well as the limits and the problems affecting it. Existing top-quality photometry can be reproduced within a few per cent over a wide range of magnitudes and colour, for wide and medium bands, and with up to millimag accuracy when synthetic photometry is standardised with respect to these external sources. Some examples of potential scientific application are presented, including the detection of multiple populations in globular clusters, the estimation of metallicity extended to the very metal-poor regime, and the classification of white dwarfs. A catalogue providing standardised photometry for ~220 million sources in several wide bands of widely used photometric systems is provided (Gaia Synthetic Photometry Catalogue; GSPC) as well as a catalogue of $\\simeq 10^5$ white dwarfs with DA/non-DA classification obtained with a Random Forest algorithm (Gaia Synthetic Photometry Catalogue for White Dwarfs; GSPC-WD).",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2206.06215v2",
+      "url": "http://arxiv.org/abs/2206.06215v2",
+      "pdf_url": "https://arxiv.org/pdf/2206.06215v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2206.06215v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 23.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

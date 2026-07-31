@@ -1,0 +1,1378 @@
+{
+  "query": "LLM agents memory lifelong learning experience reuse computer use",
+  "requested_limit": 45,
+  "created_at": "2026-07-29T12:13:41",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=LLM+agents+memory+lifelong+learning+experience+reuse+computer+use",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents",
+      "authors": [
+        "Qisheng Hu",
+        "Quanyu Long",
+        "Wenya Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Memory-augmented LLM agents offer an appealing shortcut to continual learning: rather than updating model parameters, they accumulate experience in external memory, seemingly sidestepping the stability-plasticity dilemma of parametric learning. We show that this challenge does not disappear but resurfaces at the memory level. Under a limited context window, old and new experiences compete during retrieval, relocating the continual-learning bottleneck from parameter updates to memory access. To study this phenomenon, we introduce a (k,v) framework that disentangles two fundamental design axes of external memory: how experience is represented and how it is organized for retrieval. Across sequential-task experiments in ALFWorld and BabyAI, we find that abstract procedural memories transfer more reliably than detailed trajectories, while negative transfer disproportionately harms the hard cases. Moreover, finer-grained memory organization is not universally beneficial: designs that yield strong forward transfer can simultaneously induce severe forgetting. Together, these results reveal that external memory does not resolve the continual-learning problem; it reshapes it into a problem of memory representation and retrieval design.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.27003v1",
+      "url": "http://arxiv.org/abs/2604.27003v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.27003v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.27003v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 78.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Graph-Structured Persistent Memory for Efficient LLM-Based Computer Use Agents",
+      "authors": [
+        "Danylo Vorvul",
+        "Andrii Musienko",
+        "Iryna Galchenko",
+        "Mykola Myroniuk",
+        "Andrii Sobchuk"
+      ],
+      "year": 2026,
+      "venue": "Axioms",
+      "abstract": "Large language model (LLM)-driven computer use agents (CUAs) automate graphical user interface (GUI) tasks but often re-solve previously encountered subtasks, increasing token use and latency. We address this limitation with a directed graph-based persistent memory in which nodes represent observable GUI states and edges encode executable action sequences. We formalize the memory-augmented agent as S=⟨A,Σ,G,δ,π,Φ⟩, define task reachability and memory-coverage conditions inspired by functional stability theory, and derive token-cost efficiency bounds. In control-theoretic terms, the Manager–Worker architecture can be interpreted as a closed-loop system where memory provides experience-based feedback; this interpretation is used as an analogy rather than a full model-reference adaptive control proof. Experiments on OSWorld show that the proposed agent cuts both the LLM token consumption and execution time by about 50% versus a memoryless baseline while preserving comparable success rates (≈36.9% on 15-step and ≈46.9% on 50-step tasks). The demonstrated contribution is therefore operational efficiency through reusable graph memory, not a claim of improved task success or classical Lyapunov stability.",
+      "citation_count": 0,
+      "doi": "10.3390/axioms15060415",
+      "url": "https://doi.org/10.3390/axioms15060415",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.3390/axioms15060415",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 62.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MemoryCD: Benchmarking Long-Context User Memory of LLM Agents for Lifelong Cross-Domain Personalization",
+      "authors": [
+        "Weizhi Zhang",
+        "Xiaokai Wei",
+        "Wei-Chieh Huang",
+        "Zheng Hui",
+        "Chen Wang",
+        "Michelle Gong",
+        "Philip S. Yu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Recent advancements in Large Language Models (LLMs) have expanded context windows to million-token scales, yet benchmarks for evaluating memory remain limited to short-session synthetic dialogues. We introduce \\textsc{MemoryCD}, the first large-scale, user-centric, cross-domain memory benchmark derived from lifelong real-world behaviors in the Amazon Review dataset. Unlike existing memory datasets that rely on scripted personas to generate synthetic user data, \\textsc{MemoryCD} tracks authentic user interactions across years and multiple domains. We construct a multi-faceted long-context memory evaluation pipeline of 14 state-of-the-art LLM base models with 6 memory method baselines on 4 distinct personalization tasks over 12 diverse domains to evaluate an agent's ability to simulate real user behaviors in both single and cross-domain settings. Our analysis reveals that existing memory methods are far from user satisfaction in various domains, offering the first testbed for cross-domain life-long personalization evaluation.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2603.25973v1",
+      "url": "http://arxiv.org/abs/2603.25973v1",
+      "pdf_url": "https://arxiv.org/pdf/2603.25973v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2603.25973v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "latest-sota",
+        "method",
+        "dataset"
+      ],
+      "score": 60.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Scaling Teams or Scaling Time? Memory Enabled Lifelong Learning in LLM Multi-Agent Systems",
+      "authors": [
+        "Shanglin Wu",
+        "Yuyang Luo",
+        "Yueqing Liang",
+        "Kaiwen Shi",
+        "Yanfang Ye",
+        "Ali Payani",
+        "Kai Shu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM) multi-agent systems can scale along two distinct dimensions: by increasing the number of agents and by improving through accumulated experience over time. Although prior work has studied these dimensions separately, their interaction under realistic cost constraints remains unclear. In this paper, we introduce a conceptual scaling view of multi-agent systems that jointly considers team size and lifelong learning ability, and we study how memory design shares this landscape. To this end, we propose \\textbf{LLMA-Mem}, a lifelong memory framework for LLM multi-agent systems under flexible memory topologies. We evaluate LLMA-Mem on \\textsc{MultiAgentBench} across coding, research, and database environments. Empirically, LLMA-Mem consistently improves long-horizon performance over baselines while reducing cost. Our analysis further reveals a non-monotonic scaling landscape: larger teams do not always produce better long-term performance, and smaller teams can outperform larger ones when memory better supports the reuse of experience. These findings position memory design as a practical path for scaling multi-agent systems more effectively and more efficiently over time.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.03295v1",
+      "url": "http://arxiv.org/abs/2604.03295v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.03295v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.03295v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 60.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Functional Stability and Adaptive Control in LLM-Based Computer Use Agents via Graph-Structured Persistent Memory",
+      "authors": [
+        "Danylo Vorvul",
+        "Andrii Musienko",
+        "Iryna Galchenko",
+        "Mykola Myroniuk",
+        "Andrii Sobchuk"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Large language model (LLM)-driven computer use agents (CUAs) automate graphical user interface (GUI) tasks but often re-solve previously encountered subtasks, increasing token use, latency, and instability. We address this limitation with a directed graph-based persistent memory in which nodes represent observable GUI states and edges encode executable action sequences. We formalize the memory-augmented agent as S=〈A,Σ,G,δ,π,Φ〉, define stability conditions by analogy with functional stability theory, and derive token-cost efficiency bounds. In control-theoretic terms, the Manager–Worker architecture becomes a closed-loop system where memory provides experience-based feedback, and selecting between memory retrieval and fresh LLM planning is treated as adaptive control. Experiments on OSWorld show that the proposed agent cuts both LLM token consumption and execution time by about 50% versus a memoryless baseline while preserving comparable success rates (≈36.9% on 15-step and ≈46.9% on 50-step tasks). Structured graph memory therefore improves robustness under perturbation and supports convergent efficiency gains over time.",
+      "citation_count": 0,
+      "doi": "10.20944/preprints202604.1148.v1",
+      "url": "https://doi.org/10.20944/preprints202604.1148.v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20944/preprints202604.1148.v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Learning Hierarchical Procedural Memory for LLM Agents through Bayesian Selection and Contrastive Refinement",
+      "authors": [
+        "Saman Forouzandeh",
+        "Wei Peng",
+        "Parham Moradi",
+        "Xinghuo Yu",
+        "Mahdi Jalili"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "We present MACLA, a framework that decouples reasoning from learning by maintaining a frozen large language model while performing all adaptation in an external hierarchical procedural memory. MACLA extracts reusable procedures from trajectories, tracks reliability via Bayesian posteriors, selects actions through expected-utility scoring, and refines procedures by contrasting successes and failures. Across four benchmarks (ALFWorld, WebShop, TravelPlanner, InterCodeSQL), MACLA achieves 78.1 percent average performance, outperforming all baselines. On ALFWorld unseen tasks, MACLA reaches 90.3 percent with 3.1 percent positive generalization. The system constructs memory in 56 seconds, 2800 times faster than the state-of-the-art LLM parameter-training baseline, compressing 2851 trajectories into 187 procedures. Experimental results demonstrate that structured external memory with Bayesian selection and contrastive refinement enables sample-efficient, interpretable, and continually improving agents without LLM parameter updates.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2512.18950v1",
+      "url": "http://arxiv.org/abs/2512.18950v1",
+      "pdf_url": "https://arxiv.org/pdf/2512.18950v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2512.18950v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "LifelongAgentBench: Evaluating LLM Agents as Lifelong Learners",
+      "authors": [
+        "Junhao Zheng",
+        "Xidi Cai",
+        "Qiuke Li",
+        "Duzhen Zhang",
+        "ZhongZhi Li",
+        "Yingying Zhang",
+        "Le Song",
+        "Qianli Ma"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Lifelong learning is essential for intelligent agents operating in dynamic environments. Current large language model (LLM)-based agents, however, remain stateless and unable to accumulate or transfer knowledge over time. Existing benchmarks treat agents as static systems and fail to evaluate lifelong learning capabilities. We present LifelongAgentBench, the first unified benchmark designed to systematically assess the lifelong learning ability of LLM agents. It provides skill-grounded, interdependent tasks across three interactive environments, Database, Operating System, and Knowledge Graph, with automatic label verification, reproducibility, and modular extensibility. Extensive experiments reveal that conventional experience replay has limited effectiveness for LLM agents due to irrelevant information and context length constraints. We further introduce a group self-consistency mechanism that significantly improves lifelong learning performance. We hope LifelongAgentBench will advance the development of adaptive, memory-capable LLM agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2505.11942v3",
+      "url": "http://arxiv.org/abs/2505.11942v3",
+      "pdf_url": "https://arxiv.org/pdf/2505.11942v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2505.11942v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "PLACEMEM: Toward a Compute-Aware Memory Plane for Lifelong Agents",
+      "authors": [
+        "Sukanta Ganguly"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Lifelong agents need more than larger context windows and better retrieval. They need memories that can persist, evolve, and be corrected without forcing the serving stack to recompute the same history on every turn or silently reuse stale runtime state. We present PLACEMEM as a systems position on lifelong-agent memory, instantiated by an executable control-plane prototype. The central claim is that agent memory should be represented as versioned capsules that unify semantics, provenance, validity, and reusable runtime state under one correction-aware identity. In the current prototype, capsules drive prompt-level text retrieval, KV-aware routing, and cascading invalidation over live streamed backends; prospective layer-frontier replay is intentionally framed as a deeper integration agenda rather than a claimed engine feature. We describe a vLLM-first prototype with persistent capsule state, concurrency-safe invalidation, an OpenAI-compatible routing sidecar, a typed metadata contract, and a benchmark harness that measures live first-token latency, reuse, and post-correction behavior. The result is both an executable artifact that demonstrates correction-aware control-plane behavior today and a concrete roadmap for replay-aware serving integration in future lifelong-agent systems.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2607.04089v1",
+      "url": "http://arxiv.org/abs/2607.04089v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.04089v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2607.04089v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly"
+      ],
+      "score": 52.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance",
+      "authors": [
+        "Narjes Nourzad",
+        "Carlee Joe-Wong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Reinforcement learning (RL) agents often suffer from high sample complexity in sparse or delayed reward settings due to limited prior structure. Large language models (LLMs) can provide subgoal decompositions, plausible trajectories, and abstract priors that facilitate early learning. However, heavy reliance on LLM supervision introduces scalability constraints and dependence on potentially unreliable signals. We propose MIRA (Memory-Integrated Reinforcement Learning Agent), which incorporates a structured, evolving memory graph to guide early training. The graph stores decision-relevant information, including trajectory segments and subgoal structures, and is constructed from both the agent's high-return experiences and LLM outputs. This design amortizes LLM queries into a persistent memory rather than requiring continuous real-time supervision. From this memory graph, we derive a utility signal that softly adjusts advantage estimation to influence policy updates without modifying the underlying reward function. As training progresses, the agent's policy gradually surpasses the initial LLM-derived priors, and the utility term decays, preserving standard convergence guarantees. We provide theoretical analysis showing that utility-based shaping improves early-stage learning in sparse-reward environments. Empirically, MIRA outperforms RL baselines and achieves returns comparable to approaches that rely on frequent LLM supervision, while requiring substantially fewer online LLM queries. Project webpage: https://narjesno.github.io/MIRA/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.17930v1",
+      "url": "http://arxiv.org/abs/2602.17930v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.17930v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.17930v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "WebATLAS: An LLM Agent with Experience-Driven Memory and Action Simulation",
+      "authors": [
+        "Jiali Cheng",
+        "Anjishnu Kumar",
+        "Roshan Lal",
+        "Rishi Rajasekaran",
+        "Hani Ramezani",
+        "Omar Zia Khan",
+        "Oleg Rokhlenko",
+        "Sunny Chiu-Webster",
+        "Gang Hua",
+        "Hadi Amiri"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Large Language Model (LLM) web agents often struggle with long-horizon web navigation and web task completion in new websites, producing inefficient action sequences unless fine-tuned on environment-specific data. We show that experience-driven memory, combined with look-ahead action simulation, is sufficient for LLM agents to adapt to unseen web environments by remembering past failures and predicting the consequences of future actions. We introduce WebATLAS (Actor-Critic Task-completion with Look-ahead Action Simulation), a memory-augmented LLM web agent that learns a lightweight internal model of the environment from interaction experience and performs hypothetical action rollouts before acting in the real world. WebATLAS builds a persistent cognitive map via curiosity-driven exploration, stores interaction outcomes as experience-based memory, and evaluates candidate actions in cognitive space using a planner--simulator--critic loop. This enables the agent to reuse past experience, avoid previously unsuccessful behaviors, and generate more efficient plans. We evaluate WebATLAS on the WebArena-Lite benchmark for autonomous web navigation and demonstrate a success rate of 63%, outperforming the previous state-of-the-art at 53.9%. Unlike previous systems, our modular architecture requires no website-specific LLM fine-tuning. Ablation studies confirm that experience-driven memory, look-ahead action simulation, and hierarchical replanning play complementary roles in enabling robust, training-free web agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2510.22732v2",
+      "url": "http://arxiv.org/abs/2510.22732v2",
+      "pdf_url": "https://arxiv.org/pdf/2510.22732v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2510.22732v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+      "authors": [
+        "Chenyu Zhou",
+        "Huacan Chai",
+        "Wenteng Chen",
+        "Zihan Guo",
+        "Rong Shan",
+        "Yuanyi Song",
+        "Tianyi Xu",
+        "Yingxuan Yang",
+        "Aofan Yu",
+        "Weiming Zhang",
+        "Congming Zheng",
+        "Jiachen Zhu",
+        "Zeyu Zheng",
+        "Zhuosheng Zhang",
+        "Xingyu Lou",
+        "Changwang Zhang",
+        "Zhihui Fu",
+        "Jun Wang",
+        "Weiwen Liu",
+        "Jianghao Lin",
+        "Weinan Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM) agents are increasingly built less by changing model weights than by reorganizing the runtime around them. Capabilities that earlier systems expected the model to recover internally are now externalized into memory stores, reusable skills, interaction protocols, and the surrounding harness that makes these modules reliable in practice. This paper reviews that shift through the lens of externalization. Drawing on the idea of cognitive artifacts, we argue that agent infrastructure matters not merely because it adds auxiliary components, but because it transforms hard cognitive burdens into forms that the model can solve more reliably. Under this view, memory externalizes state across time, skills externalize procedural expertise, protocols externalize interaction structure, and harness engineering serves as the unification layer that coordinates them into governed execution. We trace a historical progression from weights to context to harness, analyze memory, skills, and protocols as three distinct but coupled forms of externalization, and examine how they interact inside a larger agent system. We further discuss the trade-off between parametric and externalized capability, identify emerging directions such as self-evolving harnesses and shared agent infrastructure, and discuss open challenges in evaluation, governance, and the long-term co-evolution of models and external infrastructure. The result is a systems-level framework for explaining why practical agent progress increasingly depends not only on stronger models, but on better external cognitive infrastructure.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2604.08224v1",
+      "url": "http://arxiv.org/abs/2604.08224v1",
+      "pdf_url": "https://arxiv.org/pdf/2604.08224v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2604.08224v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "BIMgent: Towards Autonomous Building Modeling via Computer-use Agents",
+      "authors": [
+        "Zihan Deng",
+        "Changyu Du",
+        "Stavros Nousias",
+        "André Borrmann"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Existing computer-use agents primarily focus on general-purpose desktop automation tasks, with limited exploration of their application in highly specialized domains. In particular, the 3D building modeling process in the Architecture, Engineering, and Construction (AEC) sector involves open-ended design tasks and complex interaction patterns within Building Information Modeling (BIM) authoring software, which has yet to be thoroughly addressed by current studies. In this paper, we propose BIMgent, an agentic framework powered by multimodal large language models (LLMs), designed to enable autonomous building model authoring via graphical user interface (GUI) operations. BIMgent automates the architectural building modeling process, including multimodal input for conceptual design, planning of software-specific workflows, and efficient execution of the authoring GUI actions. We evaluate BIMgent on real-world building modeling tasks, including both text-based conceptual design generation and reconstruction from existing building design. The design quality achieved by BIMgent was found to be reasonable. Its operations achieved a 32% success rate, whereas all baseline models failed to complete the tasks (0% success rate). Results demonstrate that BIMgent effectively reduces manual workload while preserving design intent, highlighting its potential for practical deployment in real-world architectural modeling scenarios. Project page: https://tumcms.github.io/BIMgent.github.io/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2506.07217v2",
+      "url": "http://arxiv.org/abs/2506.07217v2",
+      "pdf_url": "https://arxiv.org/pdf/2506.07217v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2506.07217v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Active Dreaming Memory: Biologically-Inspired Episodic Consolidation for Lifelong Learning in Autonomous Agents",
+      "authors": [
+        "Dudekula Kasim Vali"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Autonomous agents powered by Large Language Models (LLMs) often suffer from catastrophic forgetting and lack temporal continuity. We present Active Dreaming Memory (ADM), a biologically-inspired dual-store memory system that enables agents to learn from execution failures without fine-tuning. Our key innovation is a counterfactual verification mechanism that validates candidate rules through synthetic scenario simulation before committing them to long-term memory. Experiments across six diverse domains demonstrate that ADM improves first-episode learning efficiency by 2× and achieves 83% success rate, significantly outperforming Reflexion, MemGPT, and Self-RAG. Catastrophic forgetting stress tests show 95% retention after 500 episodes. Theoretical analysis proves bounded forgetting guarantees and logarithmic memory growth. We release open-source code to support reproducible lifelong learning research.",
+      "citation_count": 0,
+      "doi": "10.31224/5919",
+      "url": "https://doi.org/10.31224/5919",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.31224/5919",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Plan Reuse Mechanism for LLM-Driven Agent",
+      "authors": [
+        "Guopeng Li",
+        "Ruiqi Wu",
+        "Haisheng Tan"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Integrating large language models (LLMs) into personal assistants, like Xiao Ai and Blue Heart V, effectively enhances their ability to interact with humans, solve complex tasks, and manage IoT devices. Such assistants are also termed LLM-driven agents. Upon receiving user requests, the LLM-driven agent generates plans using an LLM, executes these plans through various tools, and then returns the response to the user. During this process, the latency for generating a plan with an LLM can reach tens of seconds, significantly degrading user experience. Real-world dataset analysis shows that about 30% of the requests received by LLM-driven agents are identical or similar, which allows the reuse of previously generated plans to reduce latency. However, it is difficult to accurately define the similarity between the request texts received by the LLM-driven agent through directly evaluating the original request texts. Moreover, the diverse expressions of natural language and the unstructured format of plan texts make implementing plan reuse challenging. To address these issues, we present and implement a plan reuse mechanism for LLM-driven agents called AgentReuse. AgentReuse leverages the similarities and differences among requests' semantics and uses intent classification to evaluate the similarities between requests and enable the reuse of plans. Experimental results based on a real-world dataset demonstrate that AgentReuse achieves a 93% effective plan reuse rate, an F1 score of 0.9718, and an accuracy of 0.9459 in evaluating request similarities, reducing latency by 93.12% compared with baselines without using the reuse mechanism.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2512.21309v2",
+      "url": "http://arxiv.org/abs/2512.21309v2",
+      "pdf_url": "https://arxiv.org/pdf/2512.21309v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2512.21309v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Agents at Risk: How Users Unwittingly Undermine LLM Safety",
+      "authors": [
+        "Fengchao Chen",
+        "Tingmin Wu",
+        "Van Nguyen",
+        "Surya. Nepal",
+        "Carsten Rudolph"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Large language model (LLM)-based agents are increasingly deployed in applications, such as trip-planning agents and web-use agents, to perform complex planning and execution tasks. Prior work has shown that LLM-based agents are vulnerable to context confusion, where external adversarial content incorporated into the agent's reasoning context may be treated as task-relevant constraints. However, external malicious content can enter the agent context via channels beyond retrieval. In this work, we introduce the User-Relayed Context Manipulation (UReCoM) attack, in which attackers manipulate benign users into relaying adversarial content within user requests, thereby relocating external adversarial content into user-provided task context. Our experimental evaluation shows that UReCoM outperforms five prompt-injection baselines (naive, context ignoring, fake completion, escape-character attacks, and combined attacks) under prevention-based (Sandwich, StruQ, and SecAlign) and detection-based defenses (Perplexity detection, DataSentinel, and CausalArmor). Additionally, UReCoM shows that LLMs can reject explicit malicious instructions more reliably than they can identify adversarial task entities, such as promotion codes, embedded within user requests. On 12 commercial LLM-based agents, we find that validation of adversarial task entities is largely prompt-driven rather than default, highlighting a design flaw in current agent frameworks. These results indicate that current defenses and deployed agents remain insufficient against user-relayed context manipulations, highlighting the need for task-entity-level prevention and default safety verification in LLM-based agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2601.10758v3",
+      "url": "http://arxiv.org/abs/2601.10758v3",
+      "pdf_url": "https://arxiv.org/pdf/2601.10758v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2601.10758v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 46.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong Learning of Spatiotemporal Representations with Dual-Memory Recurrent Self-Organization",
+      "authors": [
+        "German I. Parisi",
+        "Jun Tani",
+        "Cornelius Weber",
+        "Stefan Wermter"
+      ],
+      "year": 2018,
+      "venue": "arXiv",
+      "abstract": "Artificial autonomous agents and robots interacting in complex environments are required to continually acquire and fine-tune knowledge over sustained periods of time. The ability to learn from continuous streams of information is referred to as lifelong learning and represents a long-standing challenge for neural network models due to catastrophic forgetting. Computational models of lifelong learning typically alleviate catastrophic forgetting in experimental scenarios with given datasets of static images and limited complexity, thereby differing significantly from the conditions artificial agents are exposed to. In more natural settings, sequential information may become progressively available over time and access to previous experience may be restricted. In this paper, we propose a dual-memory self-organizing architecture for lifelong learning scenarios. The architecture comprises two growing recurrent networks with the complementary tasks of learning object instances (episodic memory) and categories (semantic memory). Both growing networks can expand in response to novel sensory experience: the episodic memory learns fine-grained spatiotemporal representations of object instances in an unsupervised fashion while the semantic memory uses task-relevant signals to regulate structural plasticity levels and develop more compact representations from episodic experience. For the consolidation of knowledge in the absence of external sensory input, the episodic memory periodically replays trajectories of neural reactivations. We evaluate the proposed model on the CORe50 benchmark dataset for continuous object recognition, showing that we significantly outperform current methods of lifelong learning in three different incremental learning scenarios",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "1805.10966v4",
+      "url": "http://arxiv.org/abs/1805.10966v4",
+      "pdf_url": "https://arxiv.org/pdf/1805.10966v4",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:1805.10966v4",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 42.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "UI-Evol: Automatic Knowledge Evolving for Computer Use Agents",
+      "authors": [
+        "Ziyun Zhang",
+        "Xinyi Liu",
+        "Xiaoyi Zhang",
+        "Jun Wang",
+        "Gang Chen",
+        "Yan Lu"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "External knowledge has played a crucial role in the recent development of computer use agents. We identify a critical knowledge-execution gap: retrieved knowledge often fails to translate into effective real-world task execution. Our analysis shows even 90% correct knowledge yields only 41% execution success rate. To bridge this gap, we propose UI-Evol, a plug-and-play module for autonomous GUI knowledge evolution. UI-Evol consists of two stages: a Retrace Stage that extracts faithful objective action sequences from actual agent-environment interactions, and a Critique Stage that refines existing knowledge by comparing these sequences against external references. We conduct comprehensive experiments on the OSWorld benchmark with the state-of-the-art Agent S2. Our results demonstrate that UI-Evol not only significantly boosts task performance but also addresses a previously overlooked issue of high behavioral standard deviation in computer use agents, leading to superior performance on computer use tasks and substantially improved agent reliability.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2505.21964v2",
+      "url": "http://arxiv.org/abs/2505.21964v2",
+      "pdf_url": "https://arxiv.org/pdf/2505.21964v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2505.21964v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota"
+      ],
+      "score": 42.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Generative Memory for Lifelong Reinforcement Learning",
+      "authors": [
+        "Aswin Raghavan",
+        "Jesse Hostetler",
+        "Sek Chai"
+      ],
+      "year": 2019,
+      "venue": "arXiv",
+      "abstract": "Our research is focused on understanding and applying biological memory transfers to new AI systems that can fundamentally improve their performance, throughout their fielded lifetime experience. We leverage current understanding of biological memory transfer to arrive at AI algorithms for memory consolidation and replay. In this paper, we propose the use of generative memory that can be recalled in batch samples to train a multi-task agent in a pseudo-rehearsal manner. We show results motivating the need for task-agnostic separation of latent space for the generative memory to address issues of catastrophic forgetting in lifelong learning.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "1902.08349v1",
+      "url": "http://arxiv.org/abs/1902.08349v1",
+      "pdf_url": "https://arxiv.org/pdf/1902.08349v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:1902.08349v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 40.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Dual Cognitive Architecture: Incorporating Biases and Multi-Memory Systems for Lifelong Learning",
+      "authors": [
+        "Shruthi Gowda",
+        "Bahram Zonooz",
+        "Elahe Arani"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Artificial neural networks (ANNs) exhibit a narrow scope of expertise on stationary independent data. However, the data in the real world is continuous and dynamic, and ANNs must adapt to novel scenarios while also retaining the learned knowledge to become lifelong learners. The ability of humans to excel at these tasks can be attributed to multiple factors ranging from cognitive computational structures, cognitive biases, and the multi-memory systems in the brain. We incorporate key concepts from each of these to design a novel framework, Dual Cognitive Architecture (DUCA), which includes multiple sub-systems, implicit and explicit knowledge representation dichotomy, inductive bias, and a multi-memory system. The inductive bias learner within DUCA is instrumental in encoding shape information, effectively countering the tendency of ANNs to learn local textures. Simultaneously, the inclusion of a semantic memory submodule facilitates the gradual consolidation of knowledge, replicating the dynamics observed in fast and slow learning systems, reminiscent of the principles underpinning the complementary learning system in human cognition. DUCA shows improvement across different settings and datasets, and it also exhibits reduced task recency bias, without the need for extra information. To further test the versatility of lifelong learning methods on a challenging distribution shift, we introduce a novel domain-incremental dataset DN4IL. In addition to improving performance on existing benchmarks, DUCA also demonstrates superior performance on this complex dataset.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2310.11341v1",
+      "url": "http://arxiv.org/abs/2310.11341v1",
+      "pdf_url": "https://arxiv.org/pdf/2310.11341v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2310.11341v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 40.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Methodical Advice Collection and Reuse in Deep Reinforcement Learning",
+      "authors": [
+        " Sahir",
+        "Ercüment İlhan",
+        "Srijita Das",
+        "Matthew E. Taylor"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Reinforcement learning (RL) has shown great success in solving many challenging tasks via use of deep neural networks. Although using deep learning for RL brings immense representational power, it also causes a well-known sample-inefficiency problem. This means that the algorithms are data-hungry and require millions of training samples to converge to an adequate policy. One way to combat this issue is to use action advising in a teacher-student framework, where a knowledgeable teacher provides action advice to help the student. This work considers how to better leverage uncertainties about when a student should ask for advice and if the student can model the teacher to ask for less advice. The student could decide to ask for advice when it is uncertain or when both it and its model of the teacher are uncertain. In addition to this investigation, this paper introduces a new method to compute uncertainty for a deep RL agent using a secondary neural network. Our empirical results show that using dual uncertainties to drive advice collection and reuse may improve learning performance across several Atari games.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2204.07254v1",
+      "url": "http://arxiv.org/abs/2204.07254v1",
+      "pdf_url": "https://arxiv.org/pdf/2204.07254v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2204.07254v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 39.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Reverse Prompting: A Memory-Efficient Paradigm for LLM Agents Through Structural Regeneration",
+      "authors": [
+        "Ünver Çiftçi"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Large language model (LLM) agents face a fundamental challenge: how to maintain memory and context across extended interactions when constrained by limited context windows. Current approaches rely on external storage systems, vector databases, or retrieval mechanisms that are often complex and opaque. We introduce reverse prompting, a simple alternative where agents store compact, human-readable recipes instead of raw outputs. These recipes capture the essential structure and intent of generated content—such as code, documents, or plans—and can be used to regenerate functionally equivalent outputs when needed. For example, a 50-line machine learning script can be compressed into a 15-line recipe specifying the model architecture, dataset, and training parameters. When fed back to an LLM, this recipe produces new code that accomplishes the same task. We demonstrate the concept with practical examples across different domains and discuss its potential applications, limitations, and advantages over existing memory mechanisms. Reverse prompting offers a transparent, model-agnostic approach to agent memory that maintains human interpretability while enabling efficient storage and cross-session continuity.",
+      "citation_count": 0,
+      "doi": "10.20944/preprints202508.1424.v1",
+      "url": "https://doi.org/10.20944/preprints202508.1424.v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.20944/preprints202508.1424.v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Longitudinal Study of the Use of Computer Supported Collaborative Learning in Promoting Lifelong Learning Skills",
+      "authors": [
+        "Ada Wai Wing MA"
+      ],
+      "year": 2009,
+      "venue": "InSITE Conference Proceedings of the 2009 InSITE Conference",
+      "abstract": "To survive and thrive in the challenging context of the 21st century, education must keep abreast of global trends, including the priority of developing in learners the capability of lifelong learning for enhanced cooperation, care, reflective abilities, critical capacities and creativity. As a potential approach to achieve this goal, Computer Supported Collaborative Learning (CSCL) is receiving increasing attention, as it revolutionizes the way of learning. The ultimate success of CSCL, however, often depends upon resolving the question of how it can be assessed in ways that are credible and reliable and how the technology-driven environment can enhance learning. Little guidance is found in the literature on the assessment of CSCL prompts the researcher to re-examine the role of assessment in learning and attempt to devise a peer assessment design in a technology-enhanced environment as part of the learning activities for full-time teacher-educators. In the three studies of this project, the creation of assessment rubrics, the submission of intra-group reflective journals, which formed the basis of the group’s growth (learning process), and the intergroup review, which gained from peers’ feedback to their project presentation and report (learning product) were incorporated as the assessment measures. It was encouraging to witness that learners of the same cohort had improved their lifelong learning skills progressively over the period of three years by engaging in peer assessment tasks. The findings of these studies indicated that skills fostered through peer assessment were highly relevant to their workplace as teachers when teamwork, interpersonal skills and the ability of self-reflection were emphasised. This study has demonstrated some good practice that supports student-centered learning, prepares students to be lifelong learners and which is suitable for adaption to suit other contexts.",
+      "citation_count": 0,
+      "doi": "10.28945/3297",
+      "url": "https://doi.org/10.28945/3297",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.28945/3297",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 38.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees",
+      "authors": [
+        "Yedidel Louck"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "LLM agents increasingly rely on persistent long-term memory, which creates a critical vulnerability that we study here: memory poisoning. An adversary can store untrusted content in one session that later steers a consequential action, such as a payment, a setting change, or data exfiltration, in a future session. Existing defenses base a memory item's authority to act on either its content (detection or trust-scoring) or its derivation history (lineage). We show that both signals are malleable. An attacker can launder an untrusted origin through three channels specific to LLM agents: the agent's own summarization, a trusted-tool echo, and manufactured corroboration. Each makes the content look benign and breaks or flips its derivation edge to ``trusted.'' We formalize malleability for the memory write-retrieve-act pipeline and prove a machine-checked separation theorem. No content- or lineage-based defense is sound under laundering (T1), write-time origin binding is necessary (T2), and non-malleable origin-bound authority with Sybil-resistant corroboration-gated elevation is sufficient (T3). Our construction, TMA-NM (Tamper-evident Memory Authority, Non-Malleable), instantiates non-malleable information-flow control (IFC) for LLM-agent memory. A cross-defense, cross-attack, and cross-model benchmark over eight frontier models shows that existing defenses fail exactly where the theory predicts (up to 68% laundering attack-success), while TMA-NM reaches 0% attack success on both direct and laundering attacks across all models and channels, at full legitimate utility. We release the benchmark, harness, and machine-checked TLA+ models to support reproducibility.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2606.24322v1",
+      "url": "http://arxiv.org/abs/2606.24322v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.24322v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2606.24322v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Continuous Coordination As a Realistic Scenario for Lifelong Learning",
+      "authors": [
+        "Hadi Nekoei",
+        "Akilesh Badrinaaraayanan",
+        "Aaron Courville",
+        "Sarath Chandar"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "abstract": "Current deep reinforcement learning (RL) algorithms are still highly task-specific and lack the ability to generalize to new environments. Lifelong learning (LLL), however, aims at solving multiple tasks sequentially by efficiently transferring and using knowledge between tasks. Despite a surge of interest in lifelong RL in recent years, the lack of a realistic testbed makes robust evaluation of LLL algorithms difficult. Multi-agent RL (MARL), on the other hand, can be seen as a natural scenario for lifelong RL due to its inherent non-stationarity, since the agents' policies change over time. In this work, we introduce a multi-agent lifelong learning testbed that supports both zero-shot and few-shot settings. Our setup is based on Hanabi -- a partially-observable, fully cooperative multi-agent game that has been shown to be challenging for zero-shot coordination. Its large strategy space makes it a desirable environment for lifelong RL tasks. We evaluate several recent MARL methods, and benchmark state-of-the-art LLL algorithms in limited memory and computation regimes to shed light on their strengths and weaknesses. This continual learning paradigm also provides us with a pragmatic way of going beyond centralized training which is the most commonly used training protocol in MARL. We empirically show that the agents trained in our setup are able to coordinate well with unseen agents, without any additional assumptions made by previous works. The code and all pre-trained models are available at https://github.com/chandar-lab/Lifelong-Hanabi.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2103.03216v2",
+      "url": "http://arxiv.org/abs/2103.03216v2",
+      "pdf_url": "https://arxiv.org/pdf/2103.03216v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2103.03216v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 38.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Modular Lifelong Reinforcement Learning via Neural Composition",
+      "authors": [
+        "Jorge A. Mendez",
+        "Harm van Seijen",
+        "Eric Eaton"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Humans commonly solve complex problems by decomposing them into easier subproblems and then combining the subproblem solutions. This type of compositional reasoning permits reuse of the subproblem solutions when tackling future tasks that share part of the underlying compositional structure. In a continual or lifelong reinforcement learning (RL) setting, this ability to decompose knowledge into reusable components would enable agents to quickly learn new RL tasks by leveraging accumulated compositional structures. We explore a particular form of composition based on neural modules and present a set of RL problems that intuitively admit compositional solutions. Empirically, we demonstrate that neural composition indeed captures the underlying structure of this space of problems. We further propose a compositional lifelong RL method that leverages accumulated neural components to accelerate the learning of future tasks while retaining performance on previous tasks via off-line RL over replayed experiences.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2207.00429v1",
+      "url": "http://arxiv.org/abs/2207.00429v1",
+      "pdf_url": "https://arxiv.org/pdf/2207.00429v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2207.00429v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Patch-Based Contrastive Learning and Memory Consolidation for Online Unsupervised Continual Learning",
+      "authors": [
+        "Cameron Taylor",
+        "Vassilis Vassiliades",
+        "Constantine Dovrolis"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "We focus on a relatively unexplored learning paradigm known as {\\em Online Unsupervised Continual Learning} (O-UCL), where an agent receives a non-stationary, unlabeled data stream and progressively learns to identify an increasing number of classes. This paradigm is designed to model real-world applications where encountering novelty is the norm, such as exploring a terrain with several unknown and time-varying entities. Unlike prior work in unsupervised, continual, or online learning, O-UCL combines all three areas into a single challenging and realistic learning paradigm. In this setting, agents are frequently evaluated and must aim to maintain the best possible representation at any point of the data stream, rather than at the end of pre-specified offline tasks. The proposed approach, called \\textbf{P}atch-based \\textbf{C}ontrastive learning and \\textbf{M}emory \\textbf{C}onsolidation (PCMC), builds a compositional understanding of data by identifying and clustering patch-level features. Embeddings for these patch-level features are extracted with an encoder trained via patch-based contrastive learning. PCMC incorporates new data into its distribution while avoiding catastrophic forgetting, and it consolidates memory examples during ``sleep\" periods. We evaluate PCMC's performance on streams created from the ImageNet and Places365 datasets. Additionally, we explore various versions of the PCMC algorithm and compare its performance against several existing methods and simple baselines.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2409.16391v1",
+      "url": "http://arxiv.org/abs/2409.16391v1",
+      "pdf_url": "https://arxiv.org/pdf/2409.16391v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2409.16391v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method",
+        "dataset"
+      ],
+      "score": 37.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Robust Growing Memory Network for Lifelong Learning of Intelligent Agents",
+      "authors": [
+        "Wei Hong Chin",
+        "Wenbang Dou",
+        "Naoyuki Kubota",
+        "Chu Kiong Loo"
+      ],
+      "year": 2022,
+      "venue": "2022 International Joint Conference on Neural Networks (IJCNN)",
+      "abstract": null,
+      "citation_count": 2,
+      "doi": "10.1109/ijcnn55064.2022.9892827",
+      "url": "https://doi.org/10.1109/ijcnn55064.2022.9892827",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/ijcnn55064.2022.9892827",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 36.41,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Perspective Chapter: The Integrated Learning Experience (ILE) Model – Active Pedagogy and Lifelong Learning in Higher Education",
+      "authors": [
+        "Livia Ostafe",
+        "Elena Sechedin"
+      ],
+      "year": 2026,
+      "venue": "Construction of a Learning Society - Theories, Experiences and Future Trends in Lifelong Learning [Working Title]",
+      "abstract": "Higher education today faces a profound tension between credential-driven cultures and the urgent need to prepare adaptable, critical, and resilient lifelong learners. This chapter explores how active pedagogy can serve as a catalyst for reawakening the learner within, moving students beyond passive reception of knowledge toward agency, reflection, and critical engagement. After reviewing key theoretical foundations – adult learning, motivation, transformative and experiential learning, digital literacies, and inclusivity, the chapter introduces the Integrative Learning Experience (ILE) model as an original framework for higher education. The ILE model synthesizes motivational foundations, experiential transformation, digital and epistemic vigilance, and inclusivity and civic growth, providing educators with a holistic, adaptive, and practice-oriented approach. Case studies drawn from psychology teaching demonstrate the practical application of these ideas, including mock trials, gamified puzzle-based learning, and digital media critiques. These examples illustrate how active pedagogy can build resilience, curiosity, empathy, and digital citizenship, while also addressing challenges of equity, confidence, and assessment alignment. The chapter concludes by situating these practices within the wider vision of a learning society, where higher education must prepare graduates not only for employability but also for democratic and ethical participation in uncertain times. By bridging theory, practice, and policy, the chapter argues that reawakening the learner within is both a pedagogical strategy and a social imperative.",
+      "citation_count": 0,
+      "doi": "10.5772/intechopen.1014726",
+      "url": "https://doi.org/10.5772/intechopen.1014726",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5772/intechopen.1014726",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Layered Convergence in Autonomous Agent Memory: A Multi-Model Cognitive Architecture for Persistent Recall in Long-Running LLM Agents",
+      "authors": [
+        "Lance Harris"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "&lt;p&gt;Autonomous agents built on large language models (LLMs) operate under a structural limitation that constrains their utility in sustained, multi-domain environments: each session begins with no episodic, procedural, or declarative memory of prior sessions. Existing memory augmentation systems address this limitation through single-model approaches, including vector-based extraction (Mem0), temporal knowledge graphs (Zep/Graphiti), multi-strategy retrieval (Hindsight), OS-inspired tiered management (Letta/MemGPT), and framework-coupled recall (LangMem), each optimizing for one category of recall while leaving others unaddressed. This paper presents a multi-model cognitive architecture in which five complementary memory systems operate concurrently: (1) identity-prompt memory providing behavioral continuity via session-loaded configuration files; (2) structured constraint memory enabling programmatic policy enforcement with audit trails; (3) vector-enhanced semantic memory combining BM25 keyword matching with cosine-similarity search, temporal decay, and maximal marginal relevance re-ranking; (4) relational learning memory closing feedback loops between expert recommendations and their real-world outcomes; and (5) a hierarchical temporal knowledge graph organized into domain-scoped partitions with cross-domain tunnels and dynamic context assembly. Each model was introduced to address a specific failure mode observed during eight weeks of production deployment, and each operates additively without replacing its predecessors.&lt;/p&gt;\n&lt;p&gt;A combinatorial ablation study across all 32 possible subsets of the five models, totaling 3,520 evaluation runs across eight capability dimensions, validates the architecture using Shapley value decomposition. Three findings stand out. First, only two of the five models carry measurable weight under structural evaluation: Model II accounts for 104% of constraint enforcement capability, and Model V accounts for 100% of all retrieval capability, while Models I, III, and IV show near-zero contribution, an expected result given the evaluation's routing through constraint-check and palace-search pathways. Second, upgrading the constraint checker from keyword matching to semantic rule detection raised constraint enforcement from 59.8% to 73.3%, with Model II's Shapley value increasing from 0.286 to 0.430. Third, two new evaluation dimensions reveal previously unmeasured contributions: semantic recall scenarios show Model III (vector search) providing independent recall value (Shapley 0.025, 25% of total), and cross-model flow scenarios confirm that Models II and V contribute additively with zero interaction. The full architecture achieves 80.0% on factual recall with zero policy violations observed across nine weekly advisory council cycles in production. Constraint enforcement, feedback-loop learning, and dynamic context assembly are not present in any evaluated commercial or open-source memory system. The architecture was deployed without modifying the host platform's source code, suggesting portability across agent frameworks.&lt;/p&gt;",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6616122",
+      "url": "https://doi.org/10.2139/ssrn.6616122",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6616122",
+      "relevance_status": "relevant",
+      "tags": [
+        "replication-friendly",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Learning the Value Systems of Agents with Preference-based and Inverse Reinforcement Learning",
+      "authors": [
+        "Andrés Holgado-Sánchez",
+        "Holger Billhardt",
+        "Alberto Fernández",
+        "Sascha Ossowski"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Agreement Technologies refer to open computer systems in which autonomous software agents interact with one another, typically on behalf of humans, in order to come to mutually acceptable agreements. With the advance of AI systems in recent years, it has become apparent that such agreements, in order to be acceptable to the involved parties, must remain aligned with ethical principles and moral values. However, this is notoriously difficult to ensure, especially as different human users (and their software agents) may hold different value systems, i.e. they may differently weigh the importance of individual moral values. Furthermore, it is often hard to specify the precise meaning of a value in a particular context in a computational manner. Methods to estimate value systems based on human-engineered specifications, e.g. based on value surveys, are limited in scale due to the need for intense human moderation. In this article, we propose a novel method to automatically \\emph{learn} value systems from observations and human demonstrations. In particular, we propose a formal model of the \\emph{value system learning} problem, its instantiation to sequential decision-making domains based on multi-objective Markov decision processes, as well as tailored preference-based and inverse reinforcement learning algorithms to infer value grounding functions and value systems. The approach is illustrated and evaluated by two simulated use cases.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.04518v1",
+      "url": "http://arxiv.org/abs/2602.04518v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.04518v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.04518v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "method"
+      ],
+      "score": 36.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "A Review on Machine Learning Styles in Computer Vision—Techniques and Future Directions",
+      "authors": [
+        "Supriya V. Mahadevkar",
+        "Bharti Khemani",
+        "Shruti Patil",
+        "Ketan Kotecha",
+        "Deepali Vora",
+        "Ajith Abraham",
+        "Lubna A. Gabralla"
+      ],
+      "year": 2022,
+      "venue": "IEEE Access",
+      "abstract": null,
+      "citation_count": 279,
+      "doi": "10.1109/access.2022.3209825",
+      "url": "https://openalex.org/W4297094728",
+      "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/09903420.pdf",
+      "sources": [
+        "openalex"
+      ],
+      "id": "doi:10.1109/access.2022.3209825",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 35,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Diffusion Augmented Agents: A Framework for Efficient Exploration and Transfer Learning",
+      "authors": [
+        "Norman Di Palo",
+        "Leonard Hasenclever",
+        "Jan Humplik",
+        "Arunkumar Byravan"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "We introduce Diffusion Augmented Agents (DAAG), a novel framework that leverages large language models, vision language models, and diffusion models to improve sample efficiency and transfer learning in reinforcement learning for embodied agents. DAAG hindsight relabels the agent's past experience by using diffusion models to transform videos in a temporally and geometrically consistent way to align with target instructions with a technique we call Hindsight Experience Augmentation. A large language model orchestrates this autonomous process without requiring human supervision, making it well-suited for lifelong learning scenarios. The framework reduces the amount of reward-labeled data needed to 1) finetune a vision language model that acts as a reward detector, and 2) train RL agents on new tasks. We demonstrate the sample efficiency gains of DAAG in simulated robotics environments involving manipulation and navigation. Our results show that DAAG improves learning of reward detectors, transferring past experience, and acquiring new tasks - key abilities for developing efficient lifelong learning agents. Supplementary material and visualizations are available on our website https://sites.google.com/view/diffusion-augmented-agents/",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2407.20798v1",
+      "url": "http://arxiv.org/abs/2407.20798v1",
+      "pdf_url": "https://arxiv.org/pdf/2407.20798v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2407.20798v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 35.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Model-Free Generative Replay for Lifelong Reinforcement Learning: Application to Starcraft-2",
+      "authors": [
+        "Zachary Daniels",
+        "Aswin Raghavan",
+        "Jesse Hostetler",
+        "Abrar Rahman",
+        "Indranil Sur",
+        "Michael Piacentino",
+        "Ajay Divakaran"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "One approach to meet the challenges of deep lifelong reinforcement learning (LRL) is careful management of the agent's learning experiences, to learn (without forgetting) and build internal meta-models (of the tasks, environments, agents, and world). Generative replay (GR) is a biologically inspired replay mechanism that augments learning experiences with self-labelled examples drawn from an internal generative model that is updated over time. We present a version of GR for LRL that satisfies two desiderata: (a) Introspective density modelling of the latent representations of policies learned using deep RL, and (b) Model-free end-to-end learning. In this paper, we study three deep learning architectures for model-free GR, starting from a naïve GR and adding ingredients to achieve (a) and (b). We evaluate our proposed algorithms on three different scenarios comprising tasks from the Starcraft-2 and Minigrid domains. We report several key findings showing the impact of the design choices on quantitative metrics that include transfer learning, generalization to unseen tasks, fast adaptation after task change, performance wrt task expert, and catastrophic forgetting. We observe that our GR prevents drift in the features-to-action mapping from the latent vector space of a deep RL agent. We also show improvements in established lifelong learning metrics. We find that a small random replay buffer significantly increases the stability of training. Overall, we find that \"hidden replay\" (a well-known architecture for class-incremental classification) is the most promising approach that pushes the state-of-the-art in GR for LRL and observe that the architecture of the sleep model might be more important for improving performance than the types of replay used. Our experiments required only 6% of training samples to achieve 80-90% of expert performance in most Starcraft-2 scenarios.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2208.05056v2",
+      "url": "http://arxiv.org/abs/2208.05056v2",
+      "pdf_url": "https://arxiv.org/pdf/2208.05056v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2208.05056v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 35.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong Reinforcement Learning with Modulating Masks",
+      "authors": [
+        "Eseoghene Ben-Iwhiwhu",
+        "Saptarshi Nath",
+        "Praveen K. Pilly",
+        "Soheil Kolouri",
+        "Andrea Soltoggio"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Lifelong learning aims to create AI systems that continuously and incrementally learn during a lifetime, similar to biological learning. Attempts so far have met problems, including catastrophic forgetting, interference among tasks, and the inability to exploit previous knowledge. While considerable research has focused on learning multiple supervised classification tasks that involve changes in the input distribution, lifelong reinforcement learning (LRL) must deal with variations in the state and transition distributions, and in the reward functions. Modulating masks with a fixed backbone network, recently developed for classification, are particularly suitable to deal with such a large spectrum of task variations. In this paper, we adapted modulating masks to work with deep LRL, specifically PPO and IMPALA agents. The comparison with LRL baselines in both discrete and continuous RL tasks shows superior performance. We further investigated the use of a linear combination of previously learned masks to exploit previous knowledge when learning new tasks: not only is learning faster, the algorithm solves tasks that we could not otherwise solve from scratch due to extremely sparse rewards. The results suggest that RL with modulating masks is a promising approach to lifelong learning, to the composition of knowledge to learn increasingly complex tasks, and to knowledge reuse for efficient and faster learning.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2212.11110v3",
+      "url": "http://arxiv.org/abs/2212.11110v3",
+      "pdf_url": "https://arxiv.org/pdf/2212.11110v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2212.11110v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 35.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The Learning Way: Learning from Experience as the Path to Lifelong Learning and Development",
+      "authors": [
+        "Angela M. Passarelli",
+        "David A. Kolb"
+      ],
+      "year": 2011,
+      "venue": "The Oxford Handbook of Lifelong Learning",
+      "abstract": "Lifelong learning requires the ability to learn from life experiences. This chapter describes the theory of experiential learning, whereby knowledge is generated from experience through a cycle of learning driven by the resolution of dual dialectics of action/reflection and experience/abstraction. We provide an overview of stylistic preferences that arise from patterns of choosing among these modes of learning, as well as the spaces in which learning occurs. Movement through these modes and spaces link one experience to the next, creating a learning spiral that guides growth and development through a lifetime. Lifelong learning is also shaped by an individual’s learning identity, the extent to which one believes he or she can learn, and learning relationships, connections that promote movement through the learning spiral. Strategies for enhancing the learning process are provided for each of these topics.",
+      "citation_count": 19,
+      "doi": "10.1093/oxfordhb/9780195390483.013.0028",
+      "url": "https://doi.org/10.1093/oxfordhb/9780195390483.013.0028",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1093/oxfordhb/9780195390483.013.0028",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 34.36,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Computer-Supported Reuse of Project Management Experience with an Experience Base",
+      "authors": [
+        "Matthias Brandt",
+        "Markus Nick"
+      ],
+      "year": 2001,
+      "venue": "Lecture Notes in Computer Science Advances in Learning Software Organizations",
+      "abstract": null,
+      "citation_count": 5,
+      "doi": "10.1007/3-540-44814-4_16",
+      "url": "https://doi.org/10.1007/3-540-44814-4_16",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1007/3-540-44814-4_16",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 34.24,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Sharing Lifelong Reinforcement Learning Knowledge via Modulating Masks",
+      "authors": [
+        "Saptarshi Nath",
+        "Christos Peridis",
+        "Eseoghene Ben-Iwhiwhu",
+        "Xinran Liu",
+        "Shirin Dora",
+        "Cong Liu",
+        "Soheil Kolouri",
+        "Andrea Soltoggio"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Lifelong learning agents aim to learn multiple tasks sequentially over a lifetime. This involves the ability to exploit previous knowledge when learning new tasks and to avoid forgetting. Modulating masks, a specific type of parameter isolation approach, have recently shown promise in both supervised and reinforcement learning. While lifelong learning algorithms have been investigated mainly within a single-agent approach, a question remains on how multiple agents can share lifelong learning knowledge with each other. We show that the parameter isolation mechanism used by modulating masks is particularly suitable for exchanging knowledge among agents in a distributed and decentralized system of lifelong learners. The key idea is that the isolation of specific task knowledge to specific masks allows agents to transfer only specific knowledge on-demand, resulting in robust and effective distributed lifelong learning. We assume fully distributed and asynchronous scenarios with dynamic agent numbers and connectivity. An on-demand communication protocol ensures agents query their peers for specific masks to be transferred and integrated into their policies when facing each task. Experiments indicate that on-demand mask communication is an effective way to implement distributed lifelong reinforcement learning and provides a lifelong learning benefit with respect to distributed RL baselines such as DD-PPO, IMPALA, and PPO+EWC. The system is particularly robust to connection drops and demonstrates rapid learning due to knowledge exchange.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2305.10997v1",
+      "url": "http://arxiv.org/abs/2305.10997v1",
+      "pdf_url": "https://arxiv.org/pdf/2305.10997v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2305.10997v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "RecoAtlas: From Semantic Plausibility to Set-Level Utility in LLM Recommendation Agents",
+      "authors": [
+        "Imad Aouali",
+        "Flavian Vasile",
+        "Otmane Sakhi",
+        "Alexandre Gilotte",
+        "Benjamin Heymann"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "LLM recommendation agents increasingly produce structured recommendation reports: sets of items accompanied by natural-language justifications. Yet existing evaluations often reduce this setting to reranking small shortlisted candidate sets or judge reports mainly by semantic plausibility. We introduce Recommendation Atlas (Agentic Tool-Level Assessment for Shopping), or RecoAtlas, a benchmark and toolkit for evaluating shopping agents with behavior-grounded metrics. RecoAtlas complements held-out interaction metrics with learned utility proxies for relevance, complementarity, and diversity derived from interaction data, while separately measuring semantic coherence and explanation quality. Its controlled tool environment exposes agents to either semantic, behavior-aligned, or faulty tools, enabling diagnosis of whether performance gains arise from stronger reasoning, better signals, or more effective tool-use policies. Across controlled experiments, we show that RecoAtlas exhibits key properties of a meaningful benchmark for agentic systems: performance scales with model capacity and test-time compute, improves with stronger and better-aligned tools, degrades under noisy or misaligned signals, and reveals that semantic plausibility does not necessarily capture behavior-grounded utility. RecoAtlas provides a foundation for developing and evaluating shopping assistants that optimize not only for plausible recommendations, but also for coherent, behaviorally grounded recommendation sets.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2605.18805v1",
+      "url": "http://arxiv.org/abs/2605.18805v1",
+      "pdf_url": "https://arxiv.org/pdf/2605.18805v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2605.18805v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Uncertainty Decomposition for Clarification Seeking in LLM Agents",
+      "authors": [
+        "Gregory Matsnev"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Recent position papers argue that the classical aleatoric/epistemic uncertainty framework is insufficient for interactive large language model (LLM) agents and call for underspecification-aware, decomposed, and communicable uncertainty representations that can unlock new agent capabilities such as proactive clarification seeking and shared mental-model building. Practical deployment constraints -- black-box APIs, interactive latency budgets, and the absence of labeled trajectories -- rule out logprob-based, multi-sampling, and training-based methods, leaving prompt-based estimation as the most viable family for surfacing such signals at deployment time. We answer this call with a simple prompt-based decomposition that separates action confidence from request uncertainty (u), enabling the agent to ask for clarification when the task specification is ambiguous. To evaluate it, we introduce two clarification-augmented benchmarks (WebShop-Clarification and ALFWorld-Clarification) in which 50% of tasks are deliberately underspecified, and systematically compare the proposed decomposition against ReAct+UE and Uncertainty-Aware Memory (UAM) across five LLM backbones (GPT-5.1, DeepSeek-v3.2-exp, GLM-4.7, Qwen3.5-35B, GPT-OSS-120B) on these variants together with the standard WebShop, ALFWorld, and REAL benchmarks for fault detection. Averaged across the five backbones, the proposed decomposition improves clarification F1 on ALFWorld-Clarification by 73% over ReAct+UE and by 36% over UAM, and leads clarification F1 on every backbone on WebShop-Clarification and on four of five backbones on ALFWorld-Clarification, indicating that the gains generalize beyond a single LLM.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2606.19559v1",
+      "url": "http://arxiv.org/abs/2606.19559v1",
+      "pdf_url": "https://arxiv.org/pdf/2606.19559v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2606.19559v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 34.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Policy Reuse in Reinforcement Learning for Modular Agents",
+      "authors": [
+        "Sayyed Jaffar Ali Raza",
+        "Mingjie Lin"
+      ],
+      "year": 2019,
+      "venue": "2019 IEEE 2nd International Conference on Information and Computer Technologies (ICICT)",
+      "abstract": null,
+      "citation_count": 1,
+      "doi": "10.1109/infoct.2019.8710861",
+      "url": "https://doi.org/10.1109/infoct.2019.8710861",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/infoct.2019.8710861",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "An Introduction to Lifelong Supervised Learning",
+      "authors": [
+        "Shagun Sodhani",
+        "Mojtaba Faramarzi",
+        "Sanket Vaibhav Mehta",
+        "Pranshu Malviya",
+        "Mohamed Abdelsalam",
+        "Janarthanan Janarthanan",
+        "Sarath Chandar"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "This primer is an attempt to provide a detailed summary of the different facets of lifelong learning. We start with Chapter 2 which provides a high-level overview of lifelong learning systems. In this chapter, we discuss prominent scenarios in lifelong learning (Section 2.4), provide 8 Introduction a high-level organization of different lifelong learning approaches (Section 2.5), enumerate the desiderata for an ideal lifelong learning system (Section 2.6), discuss how lifelong learning is related to other learning paradigms (Section 2.7), describe common metrics used to evaluate lifelong learning systems (Section 2.8). This chapter is more useful for readers who are new to lifelong learning and want to get introduced to the field without focusing on specific approaches or benchmarks. The remaining chapters focus on specific aspects (either learning algorithms or benchmarks) and are more useful for readers who are looking for specific approaches or benchmarks. Chapter 3 focuses on regularization-based approaches that do not assume access to any data from previous tasks. Chapter 4 discusses memory-based approaches that typically use a replay buffer or an episodic memory to save subset of data across different tasks. Chapter 5 focuses on different architecture families (and their instantiations) that have been proposed for training lifelong learning systems. Following these different classes of learning algorithms, we discuss the commonly used evaluation benchmarks and metrics for lifelong learning (Chapter 6) and wrap up with a discussion of future challenges and important research directions in Chapter 7.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2207.04354v2",
+      "url": "http://arxiv.org/abs/2207.04354v2",
+      "pdf_url": "https://arxiv.org/pdf/2207.04354v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2207.04354v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey",
+        "benchmark",
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong Learning of Compositional Structures",
+      "authors": [
+        "Jorge A. Mendez",
+        "Eric Eaton"
+      ],
+      "year": 2020,
+      "venue": "arXiv",
+      "abstract": "A hallmark of human intelligence is the ability to construct self-contained chunks of knowledge and adequately reuse them in novel combinations for solving different yet structurally related problems. Learning such compositional structures has been a significant challenge for artificial systems, due to the combinatorial nature of the underlying search problem. To date, research into compositional learning has largely proceeded separately from work on lifelong or continual learning. We integrate these two lines of work to present a general-purpose framework for lifelong learning of compositional structures that can be used for solving a stream of related tasks. Our framework separates the learning process into two broad stages: learning how to best combine existing components in order to assimilate a novel problem, and learning how to adapt the set of existing components to accommodate the new problem. This separation explicitly handles the trade-off between the stability required to remember how to solve earlier tasks and the flexibility required to solve new tasks, as we show empirically in an extensive evaluation.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2007.07732v2",
+      "url": "http://arxiv.org/abs/2007.07732v2",
+      "pdf_url": "https://arxiv.org/pdf/2007.07732v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2007.07732v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Forgetting and Imbalance in Robot Lifelong Learning with Off-policy Data",
+      "authors": [
+        "Wenxuan Zhou",
+        "Steven Bohez",
+        "Jan Humplik",
+        "Abbas Abdolmaleki",
+        "Dushyant Rao",
+        "Markus Wulfmeier",
+        "Tuomas Haarnoja",
+        "Nicolas Heess"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Robots will experience non-stationary environment dynamics throughout their lifetime: the robot dynamics can change due to wear and tear, or its surroundings may change over time. Eventually, the robots should perform well in all of the environment variations it has encountered. At the same time, it should still be able to learn fast in a new environment. We identify two challenges in Reinforcement Learning (RL) under such a lifelong learning setting with off-policy data: first, existing off-policy algorithms struggle with the trade-off between being conservative to maintain good performance in the old environment and learning efficiently in the new environment, despite keeping all the data in the replay buffer. We propose the Offline Distillation Pipeline to break this trade-off by separating the training procedure into an online interaction phase and an offline distillation phase.Second, we find that training with the imbalanced off-policy data from multiple environments across the lifetime creates a significant performance drop. We identify that this performance drop is caused by the combination of the imbalanced quality and size among the datasets which exacerbate the extrapolation error of the Q-function. During the distillation phase, we apply a simple fix to the issue by keeping the policy closer to the behavior policy that generated the data. In the experiments, we demonstrate these two challenges and the proposed solutions with a simulated bipedal robot walk-ing task across various environment changes. We show that the Offline Distillation Pipeline achieves better performance across all the encountered environments without affecting data collection. We also provide a comprehensive empirical study to support our hypothesis on the data imbalance issue.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2204.05893v2",
+      "url": "http://arxiv.org/abs/2204.05893v2",
+      "pdf_url": "https://arxiv.org/pdf/2204.05893v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2204.05893v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method",
+        "dataset"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Lifelong Inverse Reinforcement Learning",
+      "authors": [
+        "Jorge A. Mendez",
+        "Shashank Shivkumar",
+        "Eric Eaton"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "Methods for learning from demonstration (LfD) have shown success in acquiring behavior policies by imitating a user. However, even for a single task, LfD may require numerous demonstrations. For versatile agents that must learn many tasks via demonstration, this process would substantially burden the user if each task were learned in isolation. To address this challenge, we introduce the novel problem of lifelong learning from demonstration, which allows the agent to continually build upon knowledge learned from previously demonstrated tasks to accelerate the learning of new tasks, reducing the amount of demonstrations required. As one solution to this problem, we propose the first lifelong learning approach to inverse reinforcement learning, which learns consecutive tasks via demonstration, continually transferring knowledge between tasks to improve performance.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2207.00461v1",
+      "url": "http://arxiv.org/abs/2207.00461v1",
+      "pdf_url": "https://arxiv.org/pdf/2207.00461v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2207.00461v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 33.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "SpAIware: Uncovering a novel artificial intelligence attack vector through persistent memory in LLM applications and agents",
+      "authors": [
+        "Manuel Herrador",
+        "Johann Rehberger"
+      ],
+      "year": 2026,
+      "venue": "Future Generation Computer Systems",
+      "abstract": null,
+      "citation_count": 7,
+      "doi": "10.1016/j.future.2025.107994",
+      "url": "https://doi.org/10.1016/j.future.2025.107994",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1016/j.future.2025.107994",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 32.65,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-29",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

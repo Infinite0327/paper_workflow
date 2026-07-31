@@ -1,0 +1,28 @@
+{
+  "artifactToolVersion": "2.8.31",
+  "bundleFormatVersion": 2,
+  "bundleVersion": "26.730.11710",
+  "bundledPlugins": [
+    "plugins/openai-primary-runtime"
+  ],
+  "bundledSkills": [],
+  "libreOfficeVersion": null,
+  "nativeDependencies": [
+    "libheif",
+    "jxrlib",
+    "poppler",
+    "git"
+  ],
+  "nodeVersion": "v24.14.0",
+  "pnpmVersion": "11.9.0",
+  "pythonVersion": "3.12.13",
+  "skillsToRemove": [
+    "codex-primary-runtime/spreadsheets",
+    "codex-primary-runtime/slides",
+    "docs",
+    "spreadsheet",
+    "slides"
+  ],
+  "targetArch": "x64",
+  "targetPlatform": "win32"
+}

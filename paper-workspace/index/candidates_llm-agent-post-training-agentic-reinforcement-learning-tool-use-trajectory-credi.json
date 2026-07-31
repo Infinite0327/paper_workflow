@@ -1,0 +1,759 @@
+{
+  "query": "LLM agent post-training agentic reinforcement learning tool use trajectory credit assignment self-improvement reflection experience lifelong learning",
+  "requested_limit": 25,
+  "created_at": "2026-07-28T22:26:24",
+  "manual_sources": {
+    "google_scholar_url": "https://scholar.google.com/scholar?q=LLM+agent+post-training+agentic+reinforcement+learning+tool+use+trajectory+credit+assignment+self-improvement+reflection+experience+lifelong+learning",
+    "note": "Required every round: manually audit recent, cited-by, and related Scholar results before finalising the shortlist. Do not scrape automatically; provide selected links if CAPTCHA/login appears."
+  },
+  "scholar_audit": {
+    "status": "pending_manual_audit",
+    "scope": "recent results plus relevant cited-by/related-paper checks",
+    "added_or_promoted_papers": [],
+    "notes": []
+  },
+  "errors": [],
+  "candidates": [
+    {
+      "title": "Action-Linked Credit Assignment for Event-Driven Warehouse Management via Multi-Agentic Reinforcement Learning",
+      "authors": [
+        "Huijung Nam",
+        "Seongil Im",
+        "Junseo Lee",
+        "Changhwan Shin",
+        "Hyunsu Ju"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "E-commerce fulfillment warehouses face increasing operational complexity due to rapid order growth and changing product assortments. Traditional rule-based approaches for warehouse slotting and inventory management struggle to adapt to such dynamic environments, often resulting in suboptimal performance. We propose a reinforcement learning (RL)-based framework for warehouse slotting and inventory replenishment where two decision agents interact through a shared warehouse environment within an event-driven architecture. The framework comprises a Slotting Agent (SA) for zone assignment and an Inventory Agent (IA) for replenishment decisions, trained independently and evaluated jointly in an integrated warehouse simulation. To address the delayed feedback structure caused by supplier lead times, we introduce Action-Linked Credit Assignment (ALCA), a dynamic credit assignment mechanism that directly links each replenishment order to its resulting inventory state via a unique order identifier, unlike conventional reward redistribution approaches that distribute credit across the entire trajectory. Additionally, a product embedding-based generalization mechanism enables zero-shot policy transfer to newly introduced products without retraining, addressing a key limitation of existing RL-based warehouse systems. Experimental results demonstrate that the proposed framework achieves over ten times higher cumulative reward than rule-based baselines, reducing replenishment orders by 19% and stockout ratios by 35%. In dynamic environments with new product introductions, the framework maintains stable performance while baseline methods experience severe degradation. Ablation studies confirm that ALCA is essential for learning effective replenishment policies under lead-time uncertainty.",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.7068293",
+      "url": "https://doi.org/10.2139/ssrn.7068293",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.7068293",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 76.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Asynchronous Credit Assignment for Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Yongheng Liang",
+        "Hejun Wu",
+        "Haitao Wang",
+        "Hao Cai"
+      ],
+      "year": 2025,
+      "venue": "Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence",
+      "abstract": "Credit assignment is a critical problem in multi-agent reinforcement learning (MARL), aiming to identify agents' marginal contributions for optimizing cooperative policies. Current credit assignment methods typically assume synchronous decision-making among agents. However, many real-world scenarios require agents to act asynchronously without waiting for others. This asynchrony introduces conditional dependencies between actions, which pose great challenges to current methods. To address this issue, we propose an asynchronous credit assignment framework, incorporating a Virtual Synchrony Proxy (VSP) mechanism and a Multiplicative Value Decomposition (MVD) algorithm. VSP enables physically asynchronous actions to be virtually synchronized during credit assignment. We theoretically prove that VSP preserves both task equilibrium and algorithm convergence. Furthermore, MVD leverages multiplicative interactions to effectively model dependencies among asynchronous actions, offering theoretical advantages in handling asynchronous tasks. Extensive experiments show that our framework consistently outperforms state-of-the-art MARL methods on challenging tasks while providing improved interpretability for asynchronous cooperation.",
+      "citation_count": 2,
+      "doi": "10.24963/ijcai.2025/20",
+      "url": "https://doi.org/10.24963/ijcai.2025/20",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.24963/ijcai.2025/20",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "method"
+      ],
+      "score": 57.41,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Asynchronous Credit Assignment for Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Yongheng Liang",
+        "Hejun Wu",
+        "Haitao Wang",
+        "Hao Cai"
+      ],
+      "year": 2024,
+      "venue": "Proceedings of the Thirty-ThirdInternational Joint Conference on Artificial Intelligence",
+      "abstract": "Credit assignment is a critical problem in multi-agent reinforcement learning (MARL), aiming to identify agents' marginal contributions for optimizing cooperative policies. Current credit assignment methods typically assume synchronous decision-making among agents. However, many real-world scenarios require agents to act asynchronously without waiting for others. This asynchrony introduces conditional dependencies between actions, which pose great challenges to current methods. To address this issue, we propose an asynchronous credit assignment framework, incorporating a Virtual Synchrony Proxy (VSP) mechanism and a Multiplicative Value Decomposition (MVD) algorithm. VSP enables physically asynchronous actions to be virtually synchronized during credit assignment. We theoretically prove that VSP preserves both task equilibrium and algorithm convergence. Furthermore, MVD leverages multiplicative interactions to effectively model dependencies among asynchronous actions, offering theoretical advantages in handling asynchronous tasks. Extensive experiments show that our framework consistently outperforms state-of-the-art MARL methods on challenging tasks while providing improved interpretability for asynchronous cooperation.",
+      "citation_count": 3,
+      "doi": "10.24963/ijcai.2024/20",
+      "url": "https://doi.org/10.24963/ijcai.2024/20",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.24963/ijcai.2024/20",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "method"
+      ],
+      "score": 56.73,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "MARL-CC: A Mathematical Framework forMulti-Agent Reinforcement Learning in ConnectedAutonomous Vehicles: Addressing Nonlinearity,Partial Observability, and Credit Assignment forOptimal Control",
+      "authors": [
+        "Mazyar Taghavi",
+        "Javad Vahidi"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                Multi-Agent Reinforcement Learning (MARL) has emerged as a powerfulparadigm for cooperative decision-making in connected autonomous vehicles(CAVs); however, existing approaches often fail to guarantee stability, optimality,and interpretability in systems characterized by nonlinear dynamics,partial observability, and complex inter-agent coupling. This study addressesthese foundational challenges by introducing MARL-CC, a unified MathematicalFramework for Multi-Agent Reinforcement Learning with Control Coordination.The proposed framework integrates differential geometric control, Bayesian inference,and Shapley-value-based credit assignment within a coherent optimizationarchitecture, ensuring bounded policy updates, decentralized belief estimation,and equitable reward distribution. Theoretical analyses establish convergence andstability guarantees under stochastic disturbances and communication delays.Empirical evaluations across simulation and real-world testbeds demonstrate upto a 40% improvement in convergence rate and enhanced cooperative efficiencyover leading baselines, including PPO, DDPG, and QMIX.These results signify a decisive advance in control-oriented reinforcement learning,bridging the gap between mathematical rigor and practical autonomy.The MARL-CC framework provides a scalable foundation for intelligent transportation,UAV coordination, and distributed robotics, paving the way toward interpretable, safe, and adaptive multi-agent systems. All codes and experimentalconfigurations are publicly available on GitHub to support reproducibilityand future research.",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-7996305/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-7996305/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-7996305/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 56.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "GWAA: Mechanistic Credit Assignment via Gradient-weighted Attention Attribution in Reinforcement Learning Agents",
+      "authors": [
+        "Abraham Itzhak Weinberg"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Reinforcement learning agents trained with policy gradient methods suffer from the credit assignment problem: a single scalar reward propagated backward across a multi-step trajectory provides no information about which decision caused failure. We propose Gradient-Weighted Attention Attribution (GWAA), the first mechanistic credit assignment method for transformer-based RL agents. GWAA computes the gradient of the policy's log-probability with respect to the input embedding at each trajectory timestep and uses the resulting ℓ2-norm as a per-step saliency score, identifying the causal decision without requiring a language-model judge or reward model. We evaluate on stochastic FrozenLake-v1 using a behaviourally-cloned transformer agent and a novel slip-based ground-truth protocol: the causal step t * is the timestep at which environmental stochasticity deflected the agent into a danger zone, recorded with certainty by comparing intended versus actual state transitions. GWAA achieves Blame Precision@3 of 0.624 ± 0.031 versus 0.419 ± 0.007 for Reinforce with discounted returns (p = 0.004, Mann-Whitney U = 25, Cohen's d = 9.19, large effect), while adding zero overhead to the policy optimisation loop. An ablation over four transformer configurations confirms that deeper, wider attention stacks improve attribution precision monotonically.",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6843898",
+      "url": "https://doi.org/10.2139/ssrn.6843898",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6843898",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Multi-Agent Post-Co-Training of Large Language Models via Reinforcement Learning",
+      "authors": [
+        "James L. Carter",
+        "Yuxuan Liu",
+        "Thomas K. Lee"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "This study introduces MAPoRL2, a post-training framework that enhances collaborative LLM performance through multi-agent reinforcement learning and structured discussion. Multiple LLM agents independently generate candidate solutions, engage in iterative discussion rounds, and are jointly optimized using verifier-based rewards that assess both correctness and corrective reasoning. Experiments across 5 reasoning and generation benchmarks with 4,500 training samples demonstrate improvements of 18.9% in answer accuracy and 22.4% in correction efficiency over single-agent post-training, highlighting the effectiveness of discussion-aware RL signals.",
+      "citation_count": 0,
+      "doi": "10.2139/ssrn.6186879",
+      "url": "https://doi.org/10.2139/ssrn.6186879",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.2139/ssrn.6186879",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Learning Explicit Credit Assignment for Cooperative Multi-Agent Reinforcement Learning via Polarization Policy Gradient",
+      "authors": [
+        "Wubing Chen",
+        "Wenbin Li",
+        "Xiao Liu",
+        "Shangdong Yang",
+        "Yang Gao"
+      ],
+      "year": 2023,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "abstract": "Cooperative multi-agent policy gradient (MAPG) algorithms have recently attracted wide attention and are regarded as a general scheme for the multi-agent system. Credit assignment plays an important role in MAPG and can induce cooperation among multiple agents. However, most MAPG algorithms cannot achieve good credit assignment because of the game-theoretic pathology known as centralized-decentralized mismatch. To address this issue, this paper presents a novel method, Multi-Agent Polarization Policy Gradient (MAPPG). MAPPG takes a simple but efficient polarization function to transform the optimal consistency of joint and individual actions into easily realized constraints, thus enabling efficient credit assignment in MAPPG. Theoretically, we prove that individual policies of MAPPG can converge to the global optimum. Empirically, we evaluate MAPPG on the well-known matrix game and differential game, and verify that MAPPG can converge to the global optimum for both discrete and continuous action spaces. We also evaluate MAPPG on a set of StarCraft II micromanagement tasks and demonstrate that MAPPG outperforms the state-of-the-art MAPG algorithms.",
+      "citation_count": 4,
+      "doi": "10.1609/aaai.v37i10.26364",
+      "url": "https://doi.org/10.1609/aaai.v37i10.26364",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1609/aaai.v37i10.26364",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "An Information-Theoretic Perspective on Credit Assignment in Reinforcement Learning",
+      "authors": [
+        "Dilip Arumugam",
+        "Peter Henderson",
+        "Pierre-Luc Bacon"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "abstract": "How do we formalize the challenge of credit assignment in reinforcement learning? Common intuition would draw attention to reward sparsity as a key contributor to difficult credit assignment and traditional heuristics would look to temporal recency for the solution, calling upon the classic eligibility trace. We posit that it is not the sparsity of the reward itself that causes difficulty in credit assignment, but rather the \\emph{information sparsity}. We propose to use information theory to define this notion, which we then use to characterize when credit assignment is an obstacle to efficient learning. With this perspective, we outline several information-theoretic mechanisms for measuring credit under a fixed behavior policy, highlighting the potential of information theory as a key tool towards provably-efficient credit assignment.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2103.06224v1",
+      "url": "http://arxiv.org/abs/2103.06224v1",
+      "pdf_url": "https://arxiv.org/pdf/2103.06224v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2103.06224v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 54.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Agentic AI for Code Quality: A Four-Agent Machine Learning System for Repository Refactoring, Public RAG, Groq Reasoning, and Reinforcement Learning",
+      "authors": [
+        "Abhishek Prithvi Tejs"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "Abstract\n                \n                  Background:\n                  Software repositories continuously accumulate technical debt in the form of code smells, duplicated logic, high complexity, and poor maintainability. Although static analysis tools can identify these issues, they typically stop at diagnosis and do not autonomously perform behavior-preserving repairs or compare multiple repair strategies.\n                  Objective:\n                  This work presents an Agentic AI framework for autonomous code quality improvement that integrates multiple artificial intelligence approaches to detect, analyze, refactor, and validate software repositories while preserving functional correctness.\n                  Methods:\n                  The proposed system implements four complementary agents: (i) a deterministic Rule-Based Agent, (ii) a Retrieval-Augmented Generation (RAG) Agent using public software engineering knowledge and Tavily search, (iii) a Groq-powered Large Language Model Agent for semantic reasoning, and (iv) a Q-Learning Agent for adaptive refactoring policy selection. Python repositories are analyzed using Abstract Syntax Tree (AST)-based static analysis to extract maintainability metrics, detect code smells and clone patterns, and compute repository-level quality indicators. Each agent independently performs refactoring on isolated repository copies, followed by automated syntax checking, test validation, and metric-based evaluation. A Supervisor Agent compares all candidate solutions and selects the best validated outcome.\n                  Results:\n                  The framework was evaluated on four publicly available GitHub repositories: GildedRose, ExpenseReport Refactoring Kata, Theatrical Players Refactoring Kata, and Dependency Breaking Katas. Experimental results demonstrated measurable improvements in repository quality, including quality score gains of up to\n                  64.44%\n                  , issue reductions of up to\n                  66.67%\n                  , and risk reductions approaching\n                  40%\n                  , while preserving software behavior through automated validation. Comparative evaluation further showed that different AI agents exhibit distinct strengths depending on repository characteristics, with Rule-Based, RAG, LLM, and Reinforcement Learning approaches outperforming one another under different software maintenance scenarios.\n                  Conclusion:\n                  The proposed multi-agent architecture demonstrates that combining static analysis, Retrieval-Augmented Generation, large language models, reinforcement learning, and automated validation enables a practical self-healing software engineering pipeline. The framework advances autonomous software maintenance by moving beyond issue detection toward intelligent diagnosis, safe behavior-preserving refactoring, empirical agent comparison, and production-oriented code quality improvement.\n                ",
+      "citation_count": 0,
+      "doi": "10.21203/rs.3.rs-10348169/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-10348169/v1",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.21203/rs.3.rs-10348169/v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "replication-friendly",
+        "method"
+      ],
+      "score": 52.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Multi-agent assignment via state augmented reinforcement learning",
+      "authors": [
+        "Leopoldo Agorio",
+        "Sean Van Alen",
+        "Miguel Calvo-Fullana",
+        "Santiago Paternain",
+        "Juan Andres Bazerque"
+      ],
+      "year": 2024,
+      "venue": "arXiv",
+      "abstract": "We address the conflicting requirements of a multi-agent assignment problem through constrained reinforcement learning, emphasizing the inadequacy of standard regularization techniques for this purpose. Instead, we recur to a state augmentation approach in which the oscillation of dual variables is exploited by agents to alternate between tasks. In addition, we coordinate the actions of the multiple agents acting on their local states through these multipliers, which are gossiped through a communication network, eliminating the need to access other agent states. By these means, we propose a distributed multi-agent assignment protocol with theoretical feasibility guarantees that we corroborate in a monitoring numerical experiment.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2406.01782v1",
+      "url": "http://arxiv.org/abs/2406.01782v1",
+      "pdf_url": "https://arxiv.org/pdf/2406.01782v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2406.01782v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 51.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Model-Free Generative Replay for Lifelong Reinforcement Learning: Application to Starcraft-2",
+      "authors": [
+        "Zachary Daniels",
+        "Aswin Raghavan",
+        "Jesse Hostetler",
+        "Abrar Rahman",
+        "Indranil Sur",
+        "Michael Piacentino",
+        "Ajay Divakaran"
+      ],
+      "year": 2022,
+      "venue": "arXiv",
+      "abstract": "One approach to meet the challenges of deep lifelong reinforcement learning (LRL) is careful management of the agent's learning experiences, to learn (without forgetting) and build internal meta-models (of the tasks, environments, agents, and world). Generative replay (GR) is a biologically inspired replay mechanism that augments learning experiences with self-labelled examples drawn from an internal generative model that is updated over time. We present a version of GR for LRL that satisfies two desiderata: (a) Introspective density modelling of the latent representations of policies learned using deep RL, and (b) Model-free end-to-end learning. In this paper, we study three deep learning architectures for model-free GR, starting from a naïve GR and adding ingredients to achieve (a) and (b). We evaluate our proposed algorithms on three different scenarios comprising tasks from the Starcraft-2 and Minigrid domains. We report several key findings showing the impact of the design choices on quantitative metrics that include transfer learning, generalization to unseen tasks, fast adaptation after task change, performance wrt task expert, and catastrophic forgetting. We observe that our GR prevents drift in the features-to-action mapping from the latent vector space of a deep RL agent. We also show improvements in established lifelong learning metrics. We find that a small random replay buffer significantly increases the stability of training. Overall, we find that \"hidden replay\" (a well-known architecture for class-incremental classification) is the most promising approach that pushes the state-of-the-art in GR for LRL and observe that the architecture of the sleep model might be more important for improving performance than the types of replay used. Our experiments required only 6% of training samples to achieve 80-90% of expert performance in most Starcraft-2 scenarios.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2208.05056v2",
+      "url": "http://arxiv.org/abs/2208.05056v2",
+      "pdf_url": "https://arxiv.org/pdf/2208.05056v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2208.05056v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "benchmark",
+        "latest-sota",
+        "method"
+      ],
+      "score": 51.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The challenge of hidden gifts in multi-agent reinforcement learning",
+      "authors": [
+        "Dane Malenfant",
+        "Blake A. Richards"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "Sometimes we benefit from actions that others have taken even when we are unaware that they took those actions. For example, if your neighbor chooses not to take a parking spot in front of your house when you are not there, you can benefit, even without being aware that they took this action. These ``hidden gifts'' represent an interesting challenge for multi-agent reinforcement learning (MARL), since assigning credit when the beneficial actions of others are hidden is non-trivial. Here, we study the impact of hidden gifts with a simple MARL task. In this task, agents in a grid-world environment have individual doors to unlock in order to obtain individual rewards. As well, if all the agents unlock their door the group receives a larger collective reward. However, there is only one key for all of the doors, such that the collective reward can only be obtained when the agents drop the key for others after they use it. Notably, there is nothing to indicate to an agent that the other agents have dropped the key, thus this act for others is a ``hidden gift''. We show that several different state-of-the-art MARL algorithms, including MARL specific architectures, fail to learn how to obtain the collective reward in this simple task. Interestingly, we find that decentralized actor-critic policy gradient agents can succeed when we provide them with information about their own action history, but MARL agents still cannot solve the task with action history. Finally, we derive a correction term for policy gradient agents, inspired by learning aware approaches, which reduces the variance in learning and helps them to converge to collective success more reliably. These results show that credit assignment in multi-agent settings can be particularly challenging in the presence of ``hidden gifts'', and demonstrate that self learning-awareness in decentralized agents can benefit these settings.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2505.20579v7",
+      "url": "http://arxiv.org/abs/2505.20579v7",
+      "pdf_url": "https://arxiv.org/pdf/2505.20579v7",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2505.20579v7",
+      "relevance_status": "relevant",
+      "tags": [
+        "latest-sota",
+        "method"
+      ],
+      "score": 50.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Modularity in Reinforcement Learning via Algorithmic Independence in Credit Assignment",
+      "authors": [
+        "Michael Chang",
+        "Sidhant Kaushik",
+        "Sergey Levine",
+        "Thomas L. Griffiths"
+      ],
+      "year": 2021,
+      "venue": "arXiv",
+      "abstract": "Many transfer problems require re-using previously optimal decisions for solving new tasks, which suggests the need for learning algorithms that can modify the mechanisms for choosing certain actions independently of those for choosing others. However, there is currently no formalism nor theory for how to achieve this kind of modular credit assignment. To answer this question, we define modular credit assignment as a constraint on minimizing the algorithmic mutual information among feedback signals for different decisions. We introduce what we call the modularity criterion for testing whether a learning algorithm satisfies this constraint by performing causal analysis on the algorithm itself. We generalize the recently proposed societal decision-making framework as a more granular formalism than the Markov decision process to prove that for decision sequences that do not contain cycles, certain single-step temporal difference action-value methods meet this criterion while all policy-gradient methods do not. Empirical evidence suggests that such action-value methods are more sample efficient than policy-gradient methods on transfer problems that require only sparse changes to a sequence of previously optimal decisions.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2106.14993v3",
+      "url": "http://arxiv.org/abs/2106.14993v3",
+      "pdf_url": "https://arxiv.org/pdf/2106.14993v3",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2106.14993v3",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Training Agents using Upside-Down Reinforcement Learning",
+      "authors": [
+        "Rupesh Kumar Srivastava",
+        "Pranav Shyam",
+        "Filipe Mutz",
+        "Wojciech Jaśkowski",
+        "Jürgen Schmidhuber"
+      ],
+      "year": 2019,
+      "venue": "arXiv",
+      "abstract": "We develop Upside-Down Reinforcement Learning (UDRL), a method for learning to act using only supervised learning techniques. Unlike traditional algorithms, UDRL does not use reward prediction or search for an optimal policy. Instead, it trains agents to follow commands such as \"obtain so much total reward in so much time.\" Many of its general principles are outlined in a companion report; the goal of this paper is to develop a practical learning algorithm and show that this conceptually simple perspective on agent training can produce a range of rewarding behaviors for multiple episodic environments. Experiments show that on some tasks UDRL's performance can be surprisingly competitive with, and even exceed that of some traditional baseline algorithms developed over decades of research. Based on these results, we suggest that alternative approaches to expected reward maximization have an important role to play in training useful autonomous agents.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "1912.02877v2",
+      "url": "http://arxiv.org/abs/1912.02877v2",
+      "pdf_url": "https://arxiv.org/pdf/1912.02877v2",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:1912.02877v2",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 48.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Trajectory Design and Bandwidth Assignment for UAVs-enabled Communication Network with Multi - Agent Deep Reinforcement Learning",
+      "authors": [
+        "Weijian Wang",
+        "Yun Lin"
+      ],
+      "year": 2021,
+      "venue": "2021 IEEE 94th Vehicular Technology Conference (VTC2021-Fall)",
+      "abstract": null,
+      "citation_count": 9,
+      "doi": "10.1109/vtc2021-fall52928.2021.9625419",
+      "url": "https://doi.org/10.1109/vtc2021-fall52928.2021.9625419",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/vtc2021-fall52928.2021.9625419",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 45.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Just-In-Time Reinforcement Learning: Continual Learning in LLM Agents Without Gradient Updates",
+      "authors": [
+        "Yibo Li",
+        "Zijie Lin",
+        "Ailin Deng",
+        "Xuan Zhang",
+        "Yufei He",
+        "Shuo Ji",
+        "Tri Cao",
+        "Bryan Hooi"
+      ],
+      "year": 2026,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": null,
+      "url": "https://openalex.org/W7125878236",
+      "pdf_url": "https://arxiv.org/pdf/2601.18510",
+      "sources": [
+        "openalex"
+      ],
+      "id": "title:2bd8ab4c7e72dc94",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Retrospective Progress-Aware Self-Refinement for LLM Agent Training",
+      "authors": [
+        "Xinbei Ma",
+        "Congmin Zheng",
+        "Jiyang Qiu",
+        "Jiale Hong",
+        "Yao Yao",
+        "Xiangmou Qu",
+        "Jiaxin Yin",
+        "Xingyu Lou",
+        "Yi-Xiang Wang",
+        "Liu W",
+        "Wei Zhang",
+        "Zhuosheng Zhang",
+        "Hongyun Zhao"
+      ],
+      "year": 2026,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": null,
+      "url": "https://openalex.org/W7164973297",
+      "pdf_url": "https://arxiv.org/pdf/2606.14302",
+      "sources": [
+        "openalex"
+      ],
+      "id": "title:e3a5051035a1bdf9",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration",
+      "authors": [
+        "Heng Xu",
+        "Chang Li",
+        "Xinyan Ma",
+        "Xianhao Ou",
+        "Zihan Zhang",
+        "Tao He",
+        "Xiangyu Liu",
+        "Zixiang Wang",
+        "Jiafeng Liang",
+        "Zheng Chu",
+        "Runxuan Liu",
+        "Rongchuan Mu",
+        "Tu, Dandan",
+        "M Y Liu",
+        "Bing Qin"
+      ],
+      "year": 2026,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": null,
+      "url": "https://openalex.org/W7140953400",
+      "pdf_url": "https://arxiv.org/pdf/2603.22862",
+      "sources": [
+        "openalex"
+      ],
+      "id": "title:114b06f2f25ec547",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Self-Improvements in Modern Agentic Systems: A Survey",
+      "authors": [
+        "Z Ren",
+        "Yimeng Chen",
+        "Dandan Guo",
+        "Guowei Rong",
+        "Tonghui Li",
+        "R. B. Xiong",
+        "Qingfeng Lan",
+        "Wenyi Wang",
+        "Li Nanbo",
+        "Yibo Yang",
+        "Mingchen Zhuge",
+        "Jürgen Schmidhuber"
+      ],
+      "year": 2026,
+      "venue": "arXiv (Cornell University)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": null,
+      "url": "https://openalex.org/W7169633646",
+      "pdf_url": "https://arxiv.org/pdf/2607.13104",
+      "sources": [
+        "openalex"
+      ],
+      "id": "title:ae1a2f85261f6c14",
+      "relevance_status": "relevant",
+      "tags": [
+        "survey"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Accelerate Training of Reinforcement Learning Agent by Utilization of Current and Previous Experience",
+      "authors": [
+        "Chenxing Li",
+        "Yinlong Liu",
+        "Zhenshan Bing",
+        "Fabian Schreier",
+        "Jan Seyler",
+        "Shahram Eivazi"
+      ],
+      "year": 2023,
+      "venue": "Proceedings of the 15th International Conference on Agents and Artificial Intelligence",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.5220/0011745600003393",
+      "url": "https://doi.org/10.5220/0011745600003393",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.5220/0011745600003393",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning",
+      "authors": [
+        "Abdul Wahab",
+        "Raksha Kumaraswamy",
+        "Martha White"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We show that VBE outperforms Bootstrap DQN and two reward bonus approaches (RND and ACB) on several classic environments used to test exploration and provide demonstrative experiments that it can scale easily to more complex environments like Atari.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2602.12375v1",
+      "url": "http://arxiv.org/abs/2602.12375v1",
+      "pdf_url": "https://arxiv.org/pdf/2602.12375v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2602.12375v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Sharing Lifelong Reinforcement Learning Knowledge via Modulating Masks",
+      "authors": [
+        "Saptarshi Nath",
+        "Christos Peridis",
+        "Eseoghene Ben-Iwhiwhu",
+        "Xinran Liu",
+        "Shirin Dora",
+        "Cong Liu",
+        "Soheil Kolouri",
+        "Andrea Soltoggio"
+      ],
+      "year": 2023,
+      "venue": "arXiv",
+      "abstract": "Lifelong learning agents aim to learn multiple tasks sequentially over a lifetime. This involves the ability to exploit previous knowledge when learning new tasks and to avoid forgetting. Modulating masks, a specific type of parameter isolation approach, have recently shown promise in both supervised and reinforcement learning. While lifelong learning algorithms have been investigated mainly within a single-agent approach, a question remains on how multiple agents can share lifelong learning knowledge with each other. We show that the parameter isolation mechanism used by modulating masks is particularly suitable for exchanging knowledge among agents in a distributed and decentralized system of lifelong learners. The key idea is that the isolation of specific task knowledge to specific masks allows agents to transfer only specific knowledge on-demand, resulting in robust and effective distributed lifelong learning. We assume fully distributed and asynchronous scenarios with dynamic agent numbers and connectivity. An on-demand communication protocol ensures agents query their peers for specific masks to be transferred and integrated into their policies when facing each task. Experiments indicate that on-demand mask communication is an effective way to implement distributed lifelong reinforcement learning and provides a lifelong learning benefit with respect to distributed RL baselines such as DD-PPO, IMPALA, and PPO+EWC. The system is particularly robust to connection drops and demonstrates rapid learning due to knowledge exchange.",
+      "citation_count": 0,
+      "doi": null,
+      "arxiv_id": "2305.10997v1",
+      "url": "http://arxiv.org/abs/2305.10997v1",
+      "pdf_url": "https://arxiv.org/pdf/2305.10997v1",
+      "sources": [
+        "arxiv"
+      ],
+      "id": "arxiv_id:2305.10997v1",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 44.0,
+      "pdf_status": "open_candidate",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Optimizing Agent Training with Deep Q-Learning on a Self-Driving Reinforcement Learning Environment",
+      "authors": [
+        "Pedro Rodrigues",
+        "Susana Vieira"
+      ],
+      "year": 2020,
+      "venue": "2020 IEEE Symposium Series on Computational Intelligence (SSCI)",
+      "abstract": null,
+      "citation_count": 5,
+      "doi": "10.1109/ssci47803.2020.9308525",
+      "url": "https://doi.org/10.1109/ssci47803.2020.9308525",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1109/ssci47803.2020.9308525",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 43.24,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Researches advanced in multi-agent credit assignment in reinforcement learning",
+      "authors": [
+        "Yuzheng Wu"
+      ],
+      "year": 2022,
+      "venue": "2nd International Conference on Artificial Intelligence, Automation, and High-Performance Computing (AIAHPC 2022)",
+      "abstract": null,
+      "citation_count": 0,
+      "doi": "10.1117/12.2641860",
+      "url": "https://doi.org/10.1117/12.2641860",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.1117/12.2641860",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 43.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    },
+    {
+      "title": "Multi-agent communication and behaviour training using reinforcement learning",
+      "authors": [
+        "Simon Vanneste"
+      ],
+      "year": null,
+      "venue": "",
+      "abstract": "There are many real-world problems where distributed systems must work together to achieve a common goal. Artificial intelligence has started to play an important role in our lives. Therefore, we investigated how we can use it to develop these distributed systems. In this research, we explore how different intelligent entities (agents) can work together and communicate with each other. We employ reinforcement learning to allow the agents to learn how to communicate and how to behave. In reinforcement learning, the agent learns which actions it needs to take based on the reward it receives. This training method allows the agents to develop a custom communication protocol that is thoroughly integrated with the trained behaviour. In the first part of the thesis, we investigated how we can use these kinds of methods in real-life applications. Next, we developed multiple algorithms to learn a communication protocol. Finally, we explore how we can train these systems in a decentralized way.",
+      "citation_count": 0,
+      "doi": "10.63028/10067/2067780151162165141",
+      "url": "https://doi.org/10.63028/10067/2067780151162165141",
+      "pdf_url": null,
+      "sources": [
+        "crossref"
+      ],
+      "id": "doi:10.63028/10067/2067780151162165141",
+      "relevance_status": "relevant",
+      "tags": [
+        "method"
+      ],
+      "score": 42.0,
+      "pdf_status": "unknown",
+      "access_date": "2026-07-28",
+      "value_judgment": "Needs human review before deep reading."
+    }
+  ]
+}

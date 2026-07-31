@@ -1,0 +1,356 @@
+{
+  "batch_label": "LLM 智能体后训练与自进化 25",
+  "datasets": [
+    {
+      "name": "tau-Bench 与 tau2-bench",
+      "paper_titles": [
+        "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use",
+        "From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents",
+        "Multi-Turn Reinforcement Learning for Tool-Calling Agents with Iterative Reward Calibration"
+      ],
+      "provider": "github_repository",
+      "identifier": "sierra-research/tau-bench",
+      "landing_url": "https://github.com/sierra-research/tau-bench",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "多轮客服工具智能体",
+      "keywords": [
+        "航空",
+        "零售",
+        "电信",
+        "用户交互",
+        "工具调用"
+      ],
+      "download_instructions": "进入官方仓库，按 README 安装任务环境和数据；tau2 的具体版本入口以关联论文代码页为准。",
+      "evidence": "三篇论文的实验明确使用 tau-Bench 或 tau2-bench。"
+    },
+    {
+      "name": "Berkeley Function Calling Leaderboard",
+      "paper_titles": [
+        "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use",
+        "MUA-RL: Multi-turn User-interacting Agent Reinforcement Learning for agentic tool use"
+      ],
+      "provider": "github_repository",
+      "identifier": "ShishirPatil/gorilla",
+      "landing_url": "https://github.com/ShishirPatil/gorilla",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "函数调用与多轮工具使用",
+      "keywords": [
+        "函数选择",
+        "参数生成",
+        "多轮对话",
+        "工具执行"
+      ],
+      "download_instructions": "从 Gorilla 官方仓库进入 Berkeley Function Calling Leaderboard 目录，按版本说明获取数据和评测脚本。",
+      "evidence": "CM2 使用 BFCL-V4，MUA-RL 使用 BFCL-V3 Multi Turn。"
+    },
+    {
+      "name": "ToolSandbox",
+      "paper_titles": [
+        "CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use"
+      ],
+      "provider": "github_repository",
+      "identifier": "apple/ToolSandbox",
+      "landing_url": "https://github.com/apple/ToolSandbox",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "有状态工具调用评测",
+      "keywords": [
+        "工具状态",
+        "对话",
+        "函数调用",
+        "执行验证"
+      ],
+      "download_instructions": "克隆官方仓库获取任务、工具模拟器和评测脚本。",
+      "evidence": "CM2 主实验明确报告 ToolSandbox 结果。"
+    },
+    {
+      "name": "Search-R1",
+      "paper_titles": [
+        "RLFactory: A Plug-and-Play Reinforcement Learning Post-Training Framework for LLM Multi-Turn Tool-Use"
+      ],
+      "provider": "github_repository",
+      "identifier": "PeterGriffinJin/Search-R1",
+      "landing_url": "https://github.com/PeterGriffinJin/Search-R1",
+      "access": "public",
+      "relationship": "used_for_training",
+      "domain": "检索增强推理智能体",
+      "keywords": [
+        "网页检索",
+        "多轮搜索",
+        "强化学习",
+        "问答"
+      ],
+      "download_instructions": "从官方仓库获取训练脚本、检索环境和数据准备说明。",
+      "evidence": "RLFactory 使用 Search-R1 流程训练。"
+    },
+    {
+      "name": "Natural Questions",
+      "paper_titles": [
+        "RLFactory: A Plug-and-Play Reinforcement Learning Post-Training Framework for LLM Multi-Turn Tool-Use"
+      ],
+      "provider": "huggingface",
+      "identifier": "google-research-datasets/natural_questions",
+      "landing_url": "https://huggingface.co/datasets/google-research-datasets/natural_questions",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "开放域问答与检索",
+      "keywords": [
+        "维基百科",
+        "开放域问答",
+        "检索",
+        "答案抽取"
+      ],
+      "download_instructions": "在 Hugging Face 数据页查看文件和许可，或使用 datasets 库按配置加载。",
+      "evidence": "RLFactory 摘要明确报告 Natural Questions 测试分数。"
+    },
+    {
+      "name": "ACEBench",
+      "paper_titles": [
+        "MUA-RL: Multi-turn User-interacting Agent Reinforcement Learning for agentic tool use"
+      ],
+      "provider": "huggingface",
+      "identifier": "ACEBench",
+      "landing_url": "https://huggingface.co/datasets/ACEBench/ACEBench",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "多领域工具调用",
+      "keywords": [
+        "工具选择",
+        "函数调用",
+        "智能体评测",
+        "多语言"
+      ],
+      "download_instructions": "从 Hugging Face 数据页查看并下载所需配置；运行方式以 ACEBench 官方代码仓库为准。",
+      "evidence": "MUA-RL 报告 ACEBench Agent 结果。"
+    },
+    {
+      "name": "TravelPlanner",
+      "paper_titles": [
+        "Demystifying Reinforcement Learning for Long-Horizon Tool-Using Agents: A Comprehensive Recipe"
+      ],
+      "provider": "github_repository",
+      "identifier": "OSU-NLP-Group/TravelPlanner",
+      "landing_url": "https://github.com/OSU-NLP-Group/TravelPlanner",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "现实旅行规划智能体",
+      "keywords": [
+        "多约束规划",
+        "交通",
+        "住宿",
+        "餐饮",
+        "工具使用"
+      ],
+      "download_instructions": "克隆官方仓库并按 Dataset 说明取得数据库和任务文件。",
+      "evidence": "论文以 TravelPlanner 为五轴控制实验的统一试验台。"
+    },
+    {
+      "name": "ALFWorld",
+      "paper_titles": [
+        "Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning",
+        "Hindsight Credit Assignment for Long-Horizon LLM Agents",
+        "HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents"
+      ],
+      "provider": "github_repository",
+      "identifier": "alfworld/alfworld",
+      "landing_url": "https://github.com/alfworld/alfworld",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "文本具身智能体",
+      "keywords": [
+        "家居任务",
+        "长程规划",
+        "环境交互",
+        "工具执行"
+      ],
+      "download_instructions": "安装 alfworld 后运行官方资源下载命令，取得游戏与任务文件。",
+      "evidence": "三篇论文均在 ALFWorld 报告结果。"
+    },
+    {
+      "name": "WebShop",
+      "paper_titles": [
+        "Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning",
+        "Hindsight Credit Assignment for Long-Horizon LLM Agents",
+        "HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents"
+      ],
+      "provider": "github_repository",
+      "identifier": "princeton-nlp/WebShop",
+      "landing_url": "https://github.com/princeton-nlp/WebShop",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "网页购物智能体",
+      "keywords": [
+        "网页交互",
+        "商品检索",
+        "约束满足",
+        "长程决策"
+      ],
+      "download_instructions": "克隆官方仓库并按 README 下载商品数据、建立索引和启动本地网页环境。",
+      "evidence": "三篇论文均在 WebShop 报告结果。"
+    },
+    {
+      "name": "AIME 2024 与 AIME 2025",
+      "paper_titles": [
+        "Learn the Ropes, Then Trust the Wins: Self-imitation with Progressive Exploration for Agentic Reinforcement Learning"
+      ],
+      "provider": "paper_dataset",
+      "identifier": "AIME-2024-2025",
+      "landing_url": "https://huggingface.co/datasets/HuggingFaceH4/aime_2024",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "竞赛数学推理",
+      "keywords": [
+        "数学证明",
+        "答案验证",
+        "推理",
+        "强化学习"
+      ],
+      "download_instructions": "可从 Hugging Face 的 AIME 2024 数据页取得公开整理版本；AIME 2025 需按论文代码说明确认对应版本。",
+      "evidence": "SPEAR 摘要明确报告 AIME24 与 AIME25 增益。"
+    },
+    {
+      "name": "STeCa 轨迹数据",
+      "paper_titles": [
+        "STeCa: Step-level Trajectory Calibration for LLM Agent Learning"
+      ],
+      "provider": "github_repository",
+      "identifier": "WangHanLinHenry/STeCa",
+      "landing_url": "https://github.com/WangHanLinHenry/STeCa",
+      "access": "public",
+      "relationship": "released_with_paper",
+      "domain": "智能体轨迹校准",
+      "keywords": [
+        "失败轨迹",
+        "步级奖励",
+        "反思",
+        "偏好训练"
+      ],
+      "download_instructions": "进入作者官方仓库，按数据准备说明取得校准轨迹和训练脚本。",
+      "evidence": "论文摘要明确说明代码和数据已公开。"
+    },
+    {
+      "name": "Evo-Memory 流式基准",
+      "paper_titles": [
+        "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory"
+      ],
+      "provider": "paper_dataset",
+      "identifier": "Evo-Memory",
+      "landing_url": "https://arxiv.org/abs/2511.20857",
+      "access": "unknown",
+      "relationship": "released_with_paper",
+      "domain": "自进化记忆与测试时学习",
+      "keywords": [
+        "流式任务",
+        "经验复用",
+        "长期记忆",
+        "持续学习"
+      ],
+      "download_instructions": "当前先从论文页进入项目或代码链接；若作者仓库发布数据，再按仓库说明下载。",
+      "evidence": "论文明确提出 Evo-Memory 基准并重组 10 套任务数据。"
+    },
+    {
+      "name": "StuLife",
+      "paper_titles": [
+        "Building Self-Evolving Agents via Experience-Driven Lifelong Learning: A Framework and Benchmark"
+      ],
+      "provider": "paper_dataset",
+      "identifier": "StuLife",
+      "landing_url": "https://arxiv.org/abs/2508.19005",
+      "access": "unknown",
+      "relationship": "released_with_paper",
+      "domain": "经验驱动终身学习智能体",
+      "keywords": [
+        "大学生活",
+        "长期记忆",
+        "技能迁移",
+        "主动学习"
+      ],
+      "download_instructions": "从论文页跟踪官方项目和代码入口；当前大小与许可未同时确认，因此只登记。",
+      "evidence": "论文明确发布三阶段十子场景的 StuLife 基准。"
+    },
+    {
+      "name": "BenchTrace",
+      "paper_titles": [
+        "BenchTrace: A Benchmark for Testing Reflection Ability and Controlled Evolution in LLM Agents"
+      ],
+      "provider": "paper_dataset",
+      "identifier": "BenchTrace",
+      "landing_url": "https://arxiv.org/abs/2605.29225",
+      "access": "unknown",
+      "relationship": "released_with_paper",
+      "domain": "智能体反思与受控进化评测",
+      "keywords": [
+        "失败诊断",
+        "反思",
+        "失败避免率",
+        "遗忘",
+        "负迁移"
+      ],
+      "download_instructions": "从论文页进入作者提供的数据或代码链接；未确认许可与总大小前不自动下载。",
+      "evidence": "论文明确包含 1821 个标注回合和六类任务。"
+    },
+    {
+      "name": "EvoMemBench",
+      "paper_titles": [
+        "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective"
+      ],
+      "provider": "github_repository",
+      "identifier": "DSAIL-Memory/EvoMemBench",
+      "landing_url": "https://github.com/DSAIL-Memory/EvoMemBench",
+      "access": "public",
+      "relationship": "released_with_paper",
+      "domain": "智能体记忆评测",
+      "keywords": [
+        "回合内记忆",
+        "跨回合记忆",
+        "知识记忆",
+        "执行记忆"
+      ],
+      "download_instructions": "克隆官方仓库；按 README 获取四类任务配置、数据入口和 15 种记忆方法的评测脚本。",
+      "evidence": "论文摘要给出官方代码仓库。"
+    },
+    {
+      "name": "石头剪刀布与有限德州扑克测试环境",
+      "paper_titles": [
+        "From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory"
+      ],
+      "provider": "paper_dataset",
+      "identifier": "MemoPilot-RPS-LHE",
+      "landing_url": "https://openreview.net/forum?id=gNWNtstp3r",
+      "license": "CC BY 4.0",
+      "access": "public",
+      "relationship": "used_for_evaluation",
+      "domain": "测试时学习与策略记忆",
+      "keywords": [
+        "多轮博弈",
+        "记忆更新",
+        "Elo",
+        "强化学习"
+      ],
+      "download_instructions": "从 OpenReview 论文页进入作者代码入口；数据主要由可执行博弈环境生成。",
+      "evidence": "MemoPilot 在两种博弈环境训练和评估记忆更新器。"
+    },
+    {
+      "name": "SEVerA 三任务评测材料",
+      "paper_titles": [
+        "SEVerA: Verified Synthesis of Self-Evolving Agents"
+      ],
+      "provider": "paper_dataset",
+      "identifier": "SEVerA-evaluation",
+      "landing_url": "https://arxiv.org/abs/2603.25111",
+      "access": "unknown",
+      "relationship": "used_for_evaluation",
+      "domain": "形式化验证与合规工具使用",
+      "keywords": [
+        "Dafny",
+        "符号数学",
+        "工具合规",
+        "形式化约束"
+      ],
+      "download_instructions": "从论文页或作者代码入口分别取得任务定义；许可与整体大小未确认前只登记。",
+      "evidence": "论文在 Dafny、符号数学和策略合规工具使用三类任务上评估。"
+    }
+  ]
+}

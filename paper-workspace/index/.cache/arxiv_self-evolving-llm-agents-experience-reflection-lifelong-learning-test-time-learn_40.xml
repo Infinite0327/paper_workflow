@@ -1,0 +1,1194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/7/nyYxGfKAUW0hbWROtuyu6kkfc</id>
+  <title>arXiv Query: search_query=all:self-evolving OR all:LLM OR all:agents OR all:experience OR all:reflection OR all:lifelong OR all:learning OR all:test-time OR all:learning OR all:memory&amp;id_list=&amp;start=0&amp;max_results=40</title>
+  <updated>2026-07-28T14:27:11Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:self-evolving+OR+(all:LLM+OR+(all:agents+OR+(all:experience+OR+(all:reflection+OR+(all:lifelong+OR+(all:learning+OR+(all:test-time+OR+(all:learning+OR+all:memory))))))))&amp;start=0&amp;max_results=40&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>40</opensearch:itemsPerPage>
+  <opensearch:totalResults>929760</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2207.04354v2</id>
+    <title>An Introduction to Lifelong Supervised Learning</title>
+    <updated>2022-07-12T15:47:04Z</updated>
+    <link href="https://arxiv.org/abs/2207.04354v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.04354v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This primer is an attempt to provide a detailed summary of the different facets of lifelong learning. We start with Chapter 2 which provides a high-level overview of lifelong learning systems. In this chapter, we discuss prominent scenarios in lifelong learning (Section 2.4), provide 8 Introduction a high-level organization of different lifelong learning approaches (Section 2.5), enumerate the desiderata for an ideal lifelong learning system (Section 2.6), discuss how lifelong learning is related to other learning paradigms (Section 2.7), describe common metrics used to evaluate lifelong learning systems (Section 2.8). This chapter is more useful for readers who are new to lifelong learning and want to get introduced to the field without focusing on specific approaches or benchmarks. The remaining chapters focus on specific aspects (either learning algorithms or benchmarks) and are more useful for readers who are looking for specific approaches or benchmarks. Chapter 3 focuses on regularization-based approaches that do not assume access to any data from previous tasks. Chapter 4 discusses memory-based approaches that typically use a replay buffer or an episodic memory to save subset of data across different tasks. Chapter 5 focuses on different architecture families (and their instantiations) that have been proposed for training lifelong learning systems. Following these different classes of learning algorithms, we discuss the commonly used evaluation benchmarks and metrics for lifelong learning (Chapter 6) and wrap up with a discussion of future challenges and important research directions in Chapter 7.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-07-10T00:48:42Z</published>
+    <arxiv:comment>Lifelong Learning Primer</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shagun Sodhani</name>
+    </author>
+    <author>
+      <name>Mojtaba Faramarzi</name>
+    </author>
+    <author>
+      <name>Sanket Vaibhav Mehta</name>
+    </author>
+    <author>
+      <name>Pranshu Malviya</name>
+    </author>
+    <author>
+      <name>Mohamed Abdelsalam</name>
+    </author>
+    <author>
+      <name>Janarthanan Janarthanan</name>
+    </author>
+    <author>
+      <name>Sarath Chandar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.25111v2</id>
+    <title>SEVerA: Verified Synthesis of Self-Evolving Agents</title>
+    <updated>2026-04-24T19:01:59Z</updated>
+    <link href="https://arxiv.org/abs/2603.25111v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.25111v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances have shown the effectiveness of self-evolving LLM agents on tasks such as program repair and scientific discovery. In this paradigm, a planner LLM synthesizes an agent program that invokes parametric models, including LLMs, which are then tuned per task to improve performance. However, existing self-evolving agent frameworks provide no formal guarantees of safety or correctness. Because such programs are often executed autonomously on unseen inputs, this lack of guarantees raises reliability and security concerns. We formulate agentic code generation as a constrained learning problem, combining hard formal specifications with soft objectives capturing task utility. We introduce Formally Guarded Generative Models (FGGM), which allow the planner LLM to specify a formal output contract for each generative model call using first-order logic. Each FGGM call wraps the underlying model in a rejection sampler with a verified fallback, ensuring every returned output satisfies the contract for any input and parameter setting. Building on FGGM, we present SEVerA (Self-Evolving Verified Agents), a three-stage framework: Search synthesizes candidate parametric programs containing FGGM calls; Verification proves correctness with respect to hard constraints for all parameter values, reducing the problem to unconstrained learning; and Learning applies scalable gradient-based optimization, including GRPO-style fine-tuning, to improve the soft objective while preserving correctness. We evaluate SEVerA on Dafny program verification, symbolic math synthesis, and policy-compliant agentic tool use ($τ^2$-bench). Across tasks, SEVerA achieves zero constraint violations while improving performance over unconstrained and SOTA baselines, showing that formal behavioral constraints not only guarantee correctness but also steer synthesis toward higher-quality agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-26T07:32:20Z</published>
+    <arxiv:comment>First Formally Verified Self-Evolving LLM Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Debangshu Banerjee</name>
+    </author>
+    <author>
+      <name>Changming Xu</name>
+    </author>
+    <author>
+      <name>Eugene Ie</name>
+    </author>
+    <author>
+      <name>Ming Zhang</name>
+    </author>
+    <author>
+      <name>Daiyi Peng</name>
+    </author>
+    <author>
+      <name>Chu-Cheng Lin</name>
+    </author>
+    <author>
+      <name>Gagandeep Singh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2105.05155v3</id>
+    <title>TAG: Task-based Accumulated Gradients for Lifelong learning</title>
+    <updated>2022-08-29T19:58:32Z</updated>
+    <link href="https://arxiv.org/abs/2105.05155v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2105.05155v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When an agent encounters a continual stream of new tasks in the lifelong learning setting, it leverages the knowledge it gained from the earlier tasks to help learn the new tasks better. In such a scenario, identifying an efficient knowledge representation becomes a challenging problem. Most research works propose to either store a subset of examples from the past tasks in a replay buffer, dedicate a separate set of parameters to each task or penalize excessive updates over parameters by introducing a regularization term. While existing methods employ the general task-agnostic stochastic gradient descent update rule, we propose a task-aware optimizer that adapts the learning rate based on the relatedness among tasks. We utilize the directions taken by the parameters during the updates by accumulating the gradients specific to each task. These task-based accumulated gradients act as a knowledge base that is maintained and updated throughout the stream. We empirically show that our proposed adaptive learning rate not only accounts for catastrophic forgetting but also allows positive backward transfer. We also show that our method performs better than several state-of-the-art methods in lifelong learning on complex datasets with a large number of tasks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-05-11T16:10:32Z</published>
+    <arxiv:comment>Published at 1st Conference on Lifelong Learning Agents, 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Pranshu Malviya</name>
+    </author>
+    <author>
+      <name>Balaraman Ravindran</name>
+    </author>
+    <author>
+      <name>Sarath Chandar</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2207.14378v1</id>
+    <title>Latent Properties of Lifelong Learning Systems</title>
+    <updated>2022-07-28T20:58:13Z</updated>
+    <link href="https://arxiv.org/abs/2207.14378v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.14378v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Creating artificial intelligence (AI) systems capable of demonstrating lifelong learning is a fundamental challenge, and many approaches and metrics have been proposed to analyze algorithmic properties. However, for existing lifelong learning metrics, algorithmic contributions are confounded by task and scenario structure. To mitigate this issue, we introduce an algorithm-agnostic explainable surrogate-modeling approach to estimate latent properties of lifelong learning algorithms. We validate the approach for estimating these properties via experiments on synthetic data. To validate the structure of the surrogate model, we analyze real performance data from a collection of popular lifelong learning approaches and baselines adapted for lifelong classification and lifelong reinforcement learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-07-28T20:58:13Z</published>
+    <arxiv:comment>Accepted at 1st Conference on Lifelong Learning Agents (CoLLAs) Workshop Track, 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Corban Rivera</name>
+    </author>
+    <author>
+      <name>Chace Ashcraft</name>
+    </author>
+    <author>
+      <name>Alexander New</name>
+    </author>
+    <author>
+      <name>James Schmidt</name>
+    </author>
+    <author>
+      <name>Gautam Vallabha</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2007.06918v1</id>
+    <title>Lifelong Learning using Eigentasks: Task Separation, Skill Acquisition, and Selective Transfer</title>
+    <updated>2020-07-14T09:06:13Z</updated>
+    <link href="https://arxiv.org/abs/2007.06918v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2007.06918v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce the eigentask framework for lifelong learning. An eigentask is a pairing of a skill that solves a set of related tasks, paired with a generative model that can sample from the skill's input space. The framework extends generative replay approaches, which have mainly been used to avoid catastrophic forgetting, to also address other lifelong learning goals such as forward knowledge transfer. We propose a wake-sleep cycle of alternating task learning and knowledge consolidation for learning in our framework, and instantiate it for lifelong supervised learning and lifelong RL. We achieve improved performance over the state-of-the-art in supervised continual learning, and show evidence of forward knowledge transfer in a lifelong RL application in the game Starcraft2.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-07-14T09:06:13Z</published>
+    <arxiv:comment>Accepted at the 4th Lifelong Machine Learning Workshop at the Thirty-seventh International Conference on Machine Learning (ICML) 2020</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aswin Raghavan</name>
+    </author>
+    <author>
+      <name>Jesse Hostetler</name>
+    </author>
+    <author>
+      <name>Indranil Sur</name>
+    </author>
+    <author>
+      <name>Abrar Rahman</name>
+    </author>
+    <author>
+      <name>Ajay Divakaran</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2305.10997v1</id>
+    <title>Sharing Lifelong Reinforcement Learning Knowledge via Modulating Masks</title>
+    <updated>2023-05-18T14:19:19Z</updated>
+    <link href="https://arxiv.org/abs/2305.10997v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.10997v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lifelong learning agents aim to learn multiple tasks sequentially over a lifetime. This involves the ability to exploit previous knowledge when learning new tasks and to avoid forgetting. Modulating masks, a specific type of parameter isolation approach, have recently shown promise in both supervised and reinforcement learning. While lifelong learning algorithms have been investigated mainly within a single-agent approach, a question remains on how multiple agents can share lifelong learning knowledge with each other. We show that the parameter isolation mechanism used by modulating masks is particularly suitable for exchanging knowledge among agents in a distributed and decentralized system of lifelong learners. The key idea is that the isolation of specific task knowledge to specific masks allows agents to transfer only specific knowledge on-demand, resulting in robust and effective distributed lifelong learning. We assume fully distributed and asynchronous scenarios with dynamic agent numbers and connectivity. An on-demand communication protocol ensures agents query their peers for specific masks to be transferred and integrated into their policies when facing each task. Experiments indicate that on-demand mask communication is an effective way to implement distributed lifelong reinforcement learning and provides a lifelong learning benefit with respect to distributed RL baselines such as DD-PPO, IMPALA, and PPO+EWC. The system is particularly robust to connection drops and demonstrates rapid learning due to knowledge exchange.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-18T14:19:19Z</published>
+    <arxiv:comment>25 pages, 14 figures, 9 tables, to be published in the Second Conference on Lifelong Learning Agents (CoLLAs 2023), code can be found at https://github.com/DMIU-ShELL/deeprl-shell</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Saptarshi Nath</name>
+    </author>
+    <author>
+      <name>Christos Peridis</name>
+    </author>
+    <author>
+      <name>Eseoghene Ben-Iwhiwhu</name>
+    </author>
+    <author>
+      <name>Xinran Liu</name>
+    </author>
+    <author>
+      <name>Shirin Dora</name>
+    </author>
+    <author>
+      <name>Cong Liu</name>
+    </author>
+    <author>
+      <name>Soheil Kolouri</name>
+    </author>
+    <author>
+      <name>Andrea Soltoggio</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2407.20798v1</id>
+    <title>Diffusion Augmented Agents: A Framework for Efficient Exploration and Transfer Learning</title>
+    <updated>2024-07-30T13:01:31Z</updated>
+    <link href="https://arxiv.org/abs/2407.20798v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.20798v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce Diffusion Augmented Agents (DAAG), a novel framework that leverages large language models, vision language models, and diffusion models to improve sample efficiency and transfer learning in reinforcement learning for embodied agents. DAAG hindsight relabels the agent's past experience by using diffusion models to transform videos in a temporally and geometrically consistent way to align with target instructions with a technique we call Hindsight Experience Augmentation. A large language model orchestrates this autonomous process without requiring human supervision, making it well-suited for lifelong learning scenarios. The framework reduces the amount of reward-labeled data needed to 1) finetune a vision language model that acts as a reward detector, and 2) train RL agents on new tasks. We demonstrate the sample efficiency gains of DAAG in simulated robotics environments involving manipulation and navigation. Our results show that DAAG improves learning of reward detectors, transferring past experience, and acquiring new tasks - key abilities for developing efficient lifelong learning agents. Supplementary material and visualizations are available on our website https://sites.google.com/view/diffusion-augmented-agents/</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-30T13:01:31Z</published>
+    <arxiv:comment>Published at 3rd Conference on Lifelong Learning Agents (CoLLAs), 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Norman Di Palo</name>
+    </author>
+    <author>
+      <name>Leonard Hasenclever</name>
+    </author>
+    <author>
+      <name>Jan Humplik</name>
+    </author>
+    <author>
+      <name>Arunkumar Byravan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.07407v2</id>
+    <title>A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems</title>
+    <updated>2025-08-31T14:55:05Z</updated>
+    <link href="https://arxiv.org/abs/2508.07407v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.07407v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in large language models have sparked growing interest in AI agents capable of solving complex, real-world tasks. However, most existing agent systems rely on manually crafted configurations that remain static after deployment, limiting their ability to adapt to dynamic and evolving environments. To this end, recent research has explored agent evolution techniques that aim to automatically enhance agent systems based on interaction data and environmental feedback. This emerging direction lays the foundation for self-evolving AI agents, which bridge the static capabilities of foundation models with the continuous adaptability required by lifelong agentic systems. In this survey, we provide a comprehensive review of existing techniques for self-evolving agentic systems. Specifically, we first introduce a unified conceptual framework that abstracts the feedback loop underlying the design of self-evolving agentic systems. The framework highlights four key components: System Inputs, Agent System, Environment, and Optimisers, serving as a foundation for understanding and comparing different strategies. Based on this framework, we systematically review a wide range of self-evolving techniques that target different components of the agent system. We also investigate domain-specific evolution strategies developed for specialised fields such as biomedicine, programming, and finance, where optimisation objectives are tightly coupled with domain constraints. In addition, we provide a dedicated discussion on the evaluation, safety, and ethical considerations for self-evolving agentic systems, which are critical to ensuring their effectiveness and reliability. This survey aims to provide researchers and practitioners with a systematic understanding of self-evolving AI agents, laying the foundation for the development of more adaptive, autonomous, and lifelong agentic systems.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-10T16:07:32Z</published>
+    <arxiv:comment>Github Repo: https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Jinyuan Fang</name>
+    </author>
+    <author>
+      <name>Yanwen Peng</name>
+    </author>
+    <author>
+      <name>Xi Zhang</name>
+    </author>
+    <author>
+      <name>Yingxu Wang</name>
+    </author>
+    <author>
+      <name>Xinhao Yi</name>
+    </author>
+    <author>
+      <name>Guibin Zhang</name>
+    </author>
+    <author>
+      <name>Yi Xu</name>
+    </author>
+    <author>
+      <name>Bin Wu</name>
+    </author>
+    <author>
+      <name>Siwei Liu</name>
+    </author>
+    <author>
+      <name>Zihao Li</name>
+    </author>
+    <author>
+      <name>Zhaochun Ren</name>
+    </author>
+    <author>
+      <name>Nikos Aletras</name>
+    </author>
+    <author>
+      <name>Xi Wang</name>
+    </author>
+    <author>
+      <name>Han Zhou</name>
+    </author>
+    <author>
+      <name>Zaiqiao Meng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1705.05172v1</id>
+    <title>Emotion in Reinforcement Learning Agents and Robots: A Survey</title>
+    <updated>2017-05-15T11:49:56Z</updated>
+    <link href="https://arxiv.org/abs/1705.05172v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.05172v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This article provides the first survey of computational models of emotion in reinforcement learning (RL) agents. The survey focuses on agent/robot emotions, and mostly ignores human user emotions. Emotions are recognized as functional in decision-making by influencing motivation and action selection. Therefore, computational emotion models are usually grounded in the agent's decision making architecture, of which RL is an important subclass. Studying emotions in RL-based agents is useful for three research fields. For machine learning (ML) researchers, emotion models may improve learning efficiency. For the interactive ML and human-robot interaction (HRI) community, emotions can communicate state and enhance user investment. Lastly, it allows affective modelling (AM) researchers to investigate their emotion theories in a successful AI agent class. This survey provides background on emotion theory and RL. It systematically addresses 1) from what underlying dimensions (e.g., homeostasis, appraisal) emotions can be derived and how these can be modelled in RL-agents, 2) what types of emotions have been derived from these dimensions, and 3) how these emotions may either influence the learning efficiency of the agent or be useful as social signals. We also systematically compare evaluation criteria, and draw connections to important RL sub-domains like (intrinsic) motivation and model-based RL. In short, this survey provides both a practical overview for engineers wanting to implement emotions in their RL agents, and identifies challenges and directions for future emotion-RL research.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-15T11:49:56Z</published>
+    <arxiv:comment>To be published in Machine Learning Journal</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Machine Learning 2017</arxiv:journal_ref>
+    <author>
+      <name>Thomas M. Moerland</name>
+    </author>
+    <author>
+      <name>Joost Broekens</name>
+    </author>
+    <author>
+      <name>Catholijn M. Jonker</name>
+    </author>
+    <arxiv:doi>10.1007/s10994-017-5666-0</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10994-017-5666-0" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2208.05056v2</id>
+    <title>Model-Free Generative Replay for Lifelong Reinforcement Learning: Application to Starcraft-2</title>
+    <updated>2022-08-16T17:01:57Z</updated>
+    <link href="https://arxiv.org/abs/2208.05056v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2208.05056v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>One approach to meet the challenges of deep lifelong reinforcement learning (LRL) is careful management of the agent's learning experiences, to learn (without forgetting) and build internal meta-models (of the tasks, environments, agents, and world). Generative replay (GR) is a biologically inspired replay mechanism that augments learning experiences with self-labelled examples drawn from an internal generative model that is updated over time. We present a version of GR for LRL that satisfies two desiderata: (a) Introspective density modelling of the latent representations of policies learned using deep RL, and (b) Model-free end-to-end learning. In this paper, we study three deep learning architectures for model-free GR, starting from a naïve GR and adding ingredients to achieve (a) and (b). We evaluate our proposed algorithms on three different scenarios comprising tasks from the Starcraft-2 and Minigrid domains. We report several key findings showing the impact of the design choices on quantitative metrics that include transfer learning, generalization to unseen tasks, fast adaptation after task change, performance wrt task expert, and catastrophic forgetting. We observe that our GR prevents drift in the features-to-action mapping from the latent vector space of a deep RL agent. We also show improvements in established lifelong learning metrics. We find that a small random replay buffer significantly increases the stability of training. Overall, we find that "hidden replay" (a well-known architecture for class-incremental classification) is the most promising approach that pushes the state-of-the-art in GR for LRL and observe that the architecture of the sleep model might be more important for improving performance than the types of replay used. Our experiments required only 6% of training samples to achieve 80-90% of expert performance in most Starcraft-2 scenarios.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-08-09T22:00:28Z</published>
+    <arxiv:comment>Accepted to the First Conference on Lifelong Learning Agents (CoLLAs 2022)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zachary Daniels</name>
+    </author>
+    <author>
+      <name>Aswin Raghavan</name>
+    </author>
+    <author>
+      <name>Jesse Hostetler</name>
+    </author>
+    <author>
+      <name>Abrar Rahman</name>
+    </author>
+    <author>
+      <name>Indranil Sur</name>
+    </author>
+    <author>
+      <name>Michael Piacentino</name>
+    </author>
+    <author>
+      <name>Ajay Divakaran</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1106.6186v1</id>
+    <title>IBSEAD: - A Self-Evolving Self-Obsessed Learning Algorithm for Machine Learning</title>
+    <updated>2011-06-30T11:08:35Z</updated>
+    <link href="https://arxiv.org/abs/1106.6186v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1106.6186v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present IBSEAD or distributed autonomous entity systems based Interaction - a learning algorithm for the computer to self-evolve in a self-obsessed manner. This learning algorithm will present the computer to look at the internal and external environment in series of independent entities, which will interact with each other, with and/or without knowledge of the computer's brain. When a learning algorithm interacts, it does so by detecting and understanding the entities in the human algorithm. However, the problem with this approach is that the algorithm does not consider the interaction of the third party or unknown entities, which may be interacting with each other. These unknown entities in their interaction with the non-computer entities make an effect in the environment that influences the information and the behaviour of the computer brain. Such details and the ability to process the dynamic and unsettling nature of these interactions are absent in the current learning algorithm such as the decision tree learning algorithm. IBSEAD is able to evaluate and consider such algorithms and thus give us a better accuracy in simulation of the highly evolved nature of the human brain. Processes such as dreams, imagination and novelty, that exist in humans are not fully simulated by the existing learning algorithms. Also, Hidden Markov models (HMM) are useful in finding "hidden" entities, which may be known or unknown. However, this model fails to consider the case of unknown entities which maybe unclear or unknown. IBSEAD is better because it considers three types of entities- known, unknown and invisible. We present our case with a comparison of existing algorithms in known environments and cases and present the results of the experiments using dry run of the simulated runs of the existing machine learning algorithms versus IBSEAD.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2011-06-30T11:08:35Z</published>
+    <arxiv:comment>Keywords: Self-evolving algorithm; machine learning; decision-trees; learning algorithms, Hidden Markov Models; http://ijcset.excelingtech.co.uk/vol1issue4/14-vol1issue4.pdf</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>International Journal of Computer Science &amp; Emerging Technologies (E-ISSN: 2044-6004) 74 Volume 1, Issue 4, December 2010</arxiv:journal_ref>
+    <author>
+      <name>Jitesh Dundas</name>
+    </author>
+    <author>
+      <name>David Chik</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2107.12808v2</id>
+    <title>Open-Ended Learning Leads to Generally Capable Agents</title>
+    <updated>2021-07-31T16:55:19Z</updated>
+    <link href="https://arxiv.org/abs/2107.12808v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.12808v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this work we create agents that can perform well beyond a single, individual task, that exhibit much wider generalisation of behaviour to a massive, rich space of challenges. We define a universe of tasks within an environment domain and demonstrate the ability to train agents that are generally capable across this vast space and beyond. The environment is natively multi-agent, spanning the continuum of competitive, cooperative, and independent games, which are situated within procedurally generated physical 3D worlds. The resulting space is exceptionally diverse in terms of the challenges posed to agents, and as such, even measuring the learning progress of an agent is an open research problem. We propose an iterative notion of improvement between successive generations of agents, rather than seeking to maximise a singular objective, allowing us to quantify progress despite tasks being incomparable in terms of achievable rewards. We show that through constructing an open-ended learning process, which dynamically changes the training task distributions and training objectives such that the agent never stops learning, we achieve consistent learning of new behaviours. The resulting agent is able to score reward in every one of our humanly solvable evaluation levels, with behaviour generalising to many held-out points in the universe of tasks. Examples of this zero-shot generalisation include good performance on Hide and Seek, Capture the Flag, and Tag. Through analysis and hand-authored probe tasks we characterise the behaviour of our agent, and find interesting emergent heuristic behaviours such as trial-and-error experimentation, simple tool use, option switching, and cooperation. Finally, we demonstrate that the general capabilities of this agent could unlock larger scale transfer of behaviour through cheap finetuning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-27T13:30:07Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name> Open Ended Learning Team</name>
+    </author>
+    <author>
+      <name>Adam Stooke</name>
+    </author>
+    <author>
+      <name>Anuj Mahajan</name>
+    </author>
+    <author>
+      <name>Catarina Barros</name>
+    </author>
+    <author>
+      <name>Charlie Deck</name>
+    </author>
+    <author>
+      <name>Jakob Bauer</name>
+    </author>
+    <author>
+      <name>Jakub Sygnowski</name>
+    </author>
+    <author>
+      <name>Maja Trebacz</name>
+    </author>
+    <author>
+      <name>Max Jaderberg</name>
+    </author>
+    <author>
+      <name>Michael Mathieu</name>
+    </author>
+    <author>
+      <name>Nat McAleese</name>
+    </author>
+    <author>
+      <name>Nathalie Bradley-Schmieg</name>
+    </author>
+    <author>
+      <name>Nathaniel Wong</name>
+    </author>
+    <author>
+      <name>Nicolas Porcel</name>
+    </author>
+    <author>
+      <name>Roberta Raileanu</name>
+    </author>
+    <author>
+      <name>Steph Hughes-Fitt</name>
+    </author>
+    <author>
+      <name>Valentin Dalibard</name>
+    </author>
+    <author>
+      <name>Wojciech Marian Czarnecki</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2302.08893v4</id>
+    <title>Active learning for data streams: a survey</title>
+    <updated>2023-11-29T21:07:15Z</updated>
+    <link href="https://arxiv.org/abs/2302.08893v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2302.08893v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Online active learning is a paradigm in machine learning that aims to select the most informative data points to label from a data stream. The problem of minimizing the cost associated with collecting labeled observations has gained a lot of attention in recent years, particularly in real-world applications where data is only available in an unlabeled form. Annotating each observation can be time-consuming and costly, making it difficult to obtain large amounts of labeled data. To overcome this issue, many active learning strategies have been proposed in the last decades, aiming to select the most informative observations for labeling in order to improve the performance of machine learning models. These approaches can be broadly divided into two categories: static pool-based and stream-based active learning. Pool-based active learning involves selecting a subset of observations from a closed pool of unlabeled data, and it has been the focus of many surveys and literature reviews. However, the growing availability of data streams has led to an increase in the number of approaches that focus on online active learning, which involves continuously selecting and labeling observations as they arrive in a stream. This work aims to provide an overview of the most recently proposed approaches for selecting the most informative observations from data streams in real time. We review the various techniques that have been proposed and discuss their strengths and limitations, as well as the challenges and opportunities that exist in this area of research.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-02-17T14:24:13Z</published>
+    <arxiv:comment>Published in Machine Learning (2023)</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <arxiv:journal_ref>Machine Learning (2023): 1-55</arxiv:journal_ref>
+    <author>
+      <name>Davide Cacciarelli</name>
+    </author>
+    <author>
+      <name>Murat Kulahci</name>
+    </author>
+    <arxiv:doi>10.1007/s10994-023-06454-2</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10994-023-06454-2" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1805.10966v4</id>
+    <title>Lifelong Learning of Spatiotemporal Representations with Dual-Memory Recurrent Self-Organization</title>
+    <updated>2018-12-19T00:41:53Z</updated>
+    <link href="https://arxiv.org/abs/1805.10966v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1805.10966v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Artificial autonomous agents and robots interacting in complex environments are required to continually acquire and fine-tune knowledge over sustained periods of time. The ability to learn from continuous streams of information is referred to as lifelong learning and represents a long-standing challenge for neural network models due to catastrophic forgetting. Computational models of lifelong learning typically alleviate catastrophic forgetting in experimental scenarios with given datasets of static images and limited complexity, thereby differing significantly from the conditions artificial agents are exposed to. In more natural settings, sequential information may become progressively available over time and access to previous experience may be restricted. In this paper, we propose a dual-memory self-organizing architecture for lifelong learning scenarios. The architecture comprises two growing recurrent networks with the complementary tasks of learning object instances (episodic memory) and categories (semantic memory). Both growing networks can expand in response to novel sensory experience: the episodic memory learns fine-grained spatiotemporal representations of object instances in an unsupervised fashion while the semantic memory uses task-relevant signals to regulate structural plasticity levels and develop more compact representations from episodic experience. For the consolidation of knowledge in the absence of external sensory input, the episodic memory periodically replays trajectories of neural reactivations. We evaluate the proposed model on the CORe50 benchmark dataset for continuous object recognition, showing that we significantly outperform current methods of lifelong learning in three different incremental learning scenarios</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-05-28T15:08:19Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>Parisi GI, Tani J, Weber C and Wermter S (2018) Lifelong Learning of Spatiotemporal Representations With Dual-Memory Recurrent Self-Organization. Front. Neurorobot. 12:78</arxiv:journal_ref>
+    <author>
+      <name>German I. Parisi</name>
+    </author>
+    <author>
+      <name>Jun Tani</name>
+    </author>
+    <author>
+      <name>Cornelius Weber</name>
+    </author>
+    <author>
+      <name>Stefan Wermter</name>
+    </author>
+    <arxiv:doi>10.3389/fnbot.2018.00078</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3389/fnbot.2018.00078" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.09781v2</id>
+    <title>On the Similarities of Embeddings in Contrastive Learning</title>
+    <updated>2025-07-15T05:49:44Z</updated>
+    <link href="https://arxiv.org/abs/2506.09781v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.09781v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Contrastive learning operates on a simple yet effective principle: Embeddings of positive pairs are pulled together, while those of negative pairs are pushed apart. In this paper, we propose a unified framework for understanding contrastive learning through the lens of cosine similarity, and present two key theoretical insights derived from this framework. First, in full-batch settings, we show that perfect alignment of positive pairs is unattainable when negative-pair similarities fall below a threshold, and this misalignment can be mitigated by incorporating within-view negative pairs into the objective. Second, in mini-batch settings, smaller batch sizes induce stronger separation among negative pairs in the embedding space, i.e., higher variance in their similarities, which in turn degrades the quality of learned representations compared to full-batch settings. To address this, we propose an auxiliary loss that reduces the variance of negative-pair similarities in mini-batch settings. Empirical results show that incorporating the proposed loss improves performance in small-batch settings.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-11T14:21:05Z</published>
+    <arxiv:comment>contrastive learning, representation learning, embedding, similarity, negative pair, positive pair</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>International Conference on Machine Learning (ICML) 2025</arxiv:journal_ref>
+    <author>
+      <name>Chungpa Lee</name>
+    </author>
+    <author>
+      <name>Sehee Lim</name>
+    </author>
+    <author>
+      <name>Kibok Lee</name>
+    </author>
+    <author>
+      <name>Jy-yong Sohn</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2311.14028v2</id>
+    <title>Continual Learning of Diffusion Models with Generative Distillation</title>
+    <updated>2024-05-20T17:08:43Z</updated>
+    <link href="https://arxiv.org/abs/2311.14028v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.14028v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Diffusion models are powerful generative models that achieve state-of-the-art performance in image synthesis. However, training them demands substantial amounts of data and computational resources. Continual learning would allow for incrementally learning new tasks and accumulating knowledge, thus enabling the reuse of trained models for further learning. One potentially suitable continual learning approach is generative replay, where a copy of a generative model trained on previous tasks produces synthetic data that are interleaved with data from the current task. However, standard generative replay applied to diffusion models results in a catastrophic loss in denoising capabilities. In this paper, we propose generative distillation, an approach that distils the entire reverse process of a diffusion model. We demonstrate that our approach substantially improves the continual learning performance of generative replay with only a modest increase in the computational costs.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-23T14:33:03Z</published>
+    <arxiv:comment>To appear in the Proceedings of the Third Conference on Lifelong Learning Agents (CoLLAs), 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Proceedings of The 3rd Conference on Lifelong Learning Agents, PMLR 274: 431-456, 2025</arxiv:journal_ref>
+    <author>
+      <name>Sergi Masip</name>
+    </author>
+    <author>
+      <name>Pau Rodriguez</name>
+    </author>
+    <author>
+      <name>Tinne Tuytelaars</name>
+    </author>
+    <author>
+      <name>Gido M. van de Ven</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1805.09921v4</id>
+    <title>Meta-Learning Probabilistic Inference For Prediction</title>
+    <updated>2019-08-06T15:16:42Z</updated>
+    <link href="https://arxiv.org/abs/1805.09921v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1805.09921v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper introduces a new framework for data efficient and versatile learning. Specifically: 1) We develop ML-PIP, a general framework for Meta-Learning approximate Probabilistic Inference for Prediction. ML-PIP extends existing probabilistic interpretations of meta-learning to cover a broad class of methods. 2) We introduce VERSA, an instance of the framework employing a flexible and versatile amortization network that takes few-shot learning datasets as inputs, with arbitrary numbers of shots, and outputs a distribution over task-specific parameters in a single forward pass. VERSA substitutes optimization at test time with forward passes through inference networks, amortizing the cost of inference and relieving the need for second derivatives during training. 3) We evaluate VERSA on benchmark datasets where the method sets new state-of-the-art results, handles arbitrary numbers of shots, and for classification, arbitrary numbers of classes at train and test time. The power of the approach is then demonstrated through a challenging few-shot ShapeNet view reconstruction task.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-05-24T22:08:27Z</published>
+    <arxiv:comment>International Conference on Learning Representations (ICLR) 2019</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <arxiv:journal_ref>International Conference on Learning Representations (2019)</arxiv:journal_ref>
+    <author>
+      <name>Jonathan Gordon</name>
+    </author>
+    <author>
+      <name>John Bronskill</name>
+    </author>
+    <author>
+      <name>Matthias Bauer</name>
+    </author>
+    <author>
+      <name>Sebastian Nowozin</name>
+    </author>
+    <author>
+      <name>Richard E. Turner</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2011.12216v3</id>
+    <title>Energy-Based Models for Continual Learning</title>
+    <updated>2022-12-18T23:06:52Z</updated>
+    <link href="https://arxiv.org/abs/2011.12216v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2011.12216v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We motivate Energy-Based Models (EBMs) as a promising model class for continual learning problems. Instead of tackling continual learning via the use of external memory, growing models, or regularization, EBMs change the underlying training objective to cause less interference with previously learned information. Our proposed version of EBMs for continual learning is simple, efficient, and outperforms baseline methods by a large margin on several benchmarks. Moreover, our proposed contrastive divergence-based training objective can be combined with other continual learning methods, resulting in substantial boosts in their performance. We further show that EBMs are adaptable to a more general continual learning setting where the data distribution changes without the notion of explicitly delineated tasks. These observations point towards EBMs as a useful building block for future continual learning methods.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-11-24T17:08:13Z</published>
+    <arxiv:comment>Project page: https://energy-based-model.github.io/Energy-Based-Models-for-Continual-Learning</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Proceedings of The 1st Conference on Lifelong Learning Agents, PMLR 199: 1-22, 2022</arxiv:journal_ref>
+    <author>
+      <name>Shuang Li</name>
+    </author>
+    <author>
+      <name>Yilun Du</name>
+    </author>
+    <author>
+      <name>Gido M. van de Ven</name>
+    </author>
+    <author>
+      <name>Igor Mordatch</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1905.07435v1</id>
+    <title>Alpha MAML: Adaptive Model-Agnostic Meta-Learning</title>
+    <updated>2019-05-17T18:45:25Z</updated>
+    <link href="https://arxiv.org/abs/1905.07435v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1905.07435v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Model-agnostic meta-learning (MAML) is a meta-learning technique to train a model on a multitude of learning tasks in a way that primes the model for few-shot learning of new tasks. The MAML algorithm performs well on few-shot learning problems in classification, regression, and fine-tuning of policy gradients in reinforcement learning, but comes with the need for costly hyperparameter tuning for training stability. We address this shortcoming by introducing an extension to MAML, called Alpha MAML, to incorporate an online hyperparameter adaptation scheme that eliminates the need to tune meta-learning and learning rates. Our results with the Omniglot database demonstrate a substantial reduction in the need to tune MAML training hyperparameters and improvement to training stability with less sensitivity to hyperparameter choice.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-05-17T18:45:25Z</published>
+    <arxiv:comment>6th ICML Workshop on Automated Machine Learning (2019)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>ICML Workshop on Automated Machine Learning (2019)</arxiv:journal_ref>
+    <author>
+      <name>Harkirat Singh Behl</name>
+    </author>
+    <author>
+      <name>Atılım Güneş Baydin</name>
+    </author>
+    <author>
+      <name>Philip H. S. Torr</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1912.03905v2</id>
+    <title>ChainerRL: A Deep Reinforcement Learning Library</title>
+    <updated>2021-04-12T03:24:48Z</updated>
+    <link href="https://arxiv.org/abs/1912.03905v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1912.03905v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we introduce ChainerRL, an open-source deep reinforcement learning (DRL) library built using Python and the Chainer deep learning framework. ChainerRL implements a comprehensive set of DRL algorithms and techniques drawn from state-of-the-art research in the field. To foster reproducible research, and for instructional purposes, ChainerRL provides scripts that closely replicate the original papers' experimental settings and reproduce published benchmark results for several algorithms. Lastly, ChainerRL offers a visualization tool that enables the qualitative inspection of trained agents. The ChainerRL source code can be found on GitHub: https://github.com/chainer/chainerrl.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-12-09T08:59:15Z</published>
+    <arxiv:comment>Journal of Machine Learning Research</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Journal of Machine Learning Research 22(77) (2021) 1-14;</arxiv:journal_ref>
+    <author>
+      <name>Yasuhiro Fujita</name>
+    </author>
+    <author>
+      <name>Prabhat Nagarajan</name>
+    </author>
+    <author>
+      <name>Toshiki Kataoka</name>
+    </author>
+    <author>
+      <name>Takahiro Ishikawa</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1905.05461v2</id>
+    <title>Learning Generative Models across Incomparable Spaces</title>
+    <updated>2019-05-15T08:27:28Z</updated>
+    <link href="https://arxiv.org/abs/1905.05461v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1905.05461v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative Adversarial Networks have shown remarkable success in learning a distribution that faithfully recovers a reference distribution in its entirety. However, in some cases, we may want to only learn some aspects (e.g., cluster or manifold structure), while modifying others (e.g., style, orientation or dimension). In this work, we propose an approach to learn generative models across such incomparable spaces, and demonstrate how to steer the learned distribution towards target properties. A key component of our model is the Gromov-Wasserstein distance, a notion of discrepancy that compares distributions relationally rather than absolutely. While this framework subsumes current generative models in identically reproducing distributions, its inherent flexibility allows application to tasks in manifold learning, relational learning and cross-domain learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-05-14T08:56:12Z</published>
+    <arxiv:comment>International Conference on Machine Learning (ICML)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Proceedings of Machine Learning Research (PMLR), 97 (2019)</arxiv:journal_ref>
+    <author>
+      <name>Charlotte Bunne</name>
+    </author>
+    <author>
+      <name>David Alvarez-Melis</name>
+    </author>
+    <author>
+      <name>Andreas Krause</name>
+    </author>
+    <author>
+      <name>Stefanie Jegelka</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.17930v1</id>
+    <title>MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance</title>
+    <updated>2026-02-20T01:43:30Z</updated>
+    <link href="https://arxiv.org/abs/2602.17930v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.17930v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reinforcement learning (RL) agents often suffer from high sample complexity in sparse or delayed reward settings due to limited prior structure. Large language models (LLMs) can provide subgoal decompositions, plausible trajectories, and abstract priors that facilitate early learning. However, heavy reliance on LLM supervision introduces scalability constraints and dependence on potentially unreliable signals. We propose MIRA (Memory-Integrated Reinforcement Learning Agent), which incorporates a structured, evolving memory graph to guide early training. The graph stores decision-relevant information, including trajectory segments and subgoal structures, and is constructed from both the agent's high-return experiences and LLM outputs. This design amortizes LLM queries into a persistent memory rather than requiring continuous real-time supervision. From this memory graph, we derive a utility signal that softly adjusts advantage estimation to influence policy updates without modifying the underlying reward function. As training progresses, the agent's policy gradually surpasses the initial LLM-derived priors, and the utility term decays, preserving standard convergence guarantees. We provide theoretical analysis showing that utility-based shaping improves early-stage learning in sparse-reward environments. Empirically, MIRA outperforms RL baselines and achieves returns comparable to approaches that rely on frequent LLM supervision, while requiring substantially fewer online LLM queries. Project webpage: https://narjesno.github.io/MIRA/</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-20T01:43:30Z</published>
+    <arxiv:comment>International Conference on Learning Representations (ICLR'26)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Narjes Nourzad</name>
+    </author>
+    <author>
+      <name>Carlee Joe-Wong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2204.12833v3</id>
+    <title>Transfer Learning with Pre-trained Conditional Generative Models</title>
+    <updated>2025-02-20T14:22:17Z</updated>
+    <link href="https://arxiv.org/abs/2204.12833v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2204.12833v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Transfer learning is crucial in training deep neural networks on new target tasks. Current transfer learning methods always assume at least one of (i) source and target task label spaces overlap, (ii) source datasets are available, and (iii) target network architectures are consistent with source ones. However, holding these assumptions is difficult in practical settings because the target task rarely has the same labels as the source task, the source dataset access is restricted due to storage costs and privacy, and the target architecture is often specialized to each task. To transfer source knowledge without these assumptions, we propose a transfer learning method that uses deep generative models and is composed of the following two stages: pseudo pre-training (PP) and pseudo semi-supervised learning (P-SSL). PP trains a target architecture with an artificial dataset synthesized by using conditional source generative models. P-SSL applies SSL algorithms to labeled target data and unlabeled pseudo samples, which are generated by cascading the source classifier and generative models to condition them with target samples. Our experimental results indicate that our method can outperform the baselines of scratch training and knowledge distillation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-04-27T10:36:32Z</published>
+    <arxiv:comment>Accepted by Machine Learning</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Machine Learning 114, 96 (2025)</arxiv:journal_ref>
+    <author>
+      <name>Shin'ya Yamaguchi</name>
+    </author>
+    <author>
+      <name>Sekitoshi Kanai</name>
+    </author>
+    <author>
+      <name>Atsutoshi Kumagai</name>
+    </author>
+    <author>
+      <name>Daiki Chijiwa</name>
+    </author>
+    <author>
+      <name>Hisashi Kashima</name>
+    </author>
+    <arxiv:doi>10.1007/s10994-025-06748-7</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10994-025-06748-7" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1510.08231v3</id>
+    <title>Operator-valued Kernels for Learning from Functional Response Data</title>
+    <updated>2016-11-02T14:29:29Z</updated>
+    <link href="https://arxiv.org/abs/1510.08231v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1510.08231v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper we consider the problems of supervised classification and regression in the case where attributes and labels are functions: a data is represented by a set of functions, and the label is also a function. We focus on the use of reproducing kernel Hilbert space theory to learn from such functional data. Basic concepts and properties of kernel-based learning are extended to include the estimation of function-valued functions. In this setting, the representer theorem is restated, a set of rigorously defined infinite-dimensional operator-valued kernels that can be valuably applied when the data are functions is described, and a learning algorithm for nonlinear functional data analysis is introduced. The methodology is illustrated through speech and audio signal processing experiments.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-10-28T09:18:50Z</published>
+    <arxiv:comment>in Journal of Machine Learning Research (JMLR), 2016</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Journal of Machine Learning Research 17 (2016) 1-54</arxiv:journal_ref>
+    <author>
+      <name>Hachem Kadri</name>
+      <arxiv:affiliation>LIF</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Emmanuel Duflos</name>
+      <arxiv:affiliation>CRIStAL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Philippe Preux</name>
+      <arxiv:affiliation>CRIStAL, SEQUEL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Stéphane Canu</name>
+      <arxiv:affiliation>LITIS</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alain Rakotomamonjy</name>
+      <arxiv:affiliation>LITIS</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Julien Audiffren</name>
+      <arxiv:affiliation>CMLA</arxiv:affiliation>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2112.09429v2</id>
+    <title>Federated Learning with Superquantile Aggregation for Heterogeneous Data</title>
+    <updated>2022-12-06T06:22:03Z</updated>
+    <link href="https://arxiv.org/abs/2112.09429v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2112.09429v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a federated learning framework that is designed to robustly deliver good predictive performance across individual clients with heterogeneous data. The proposed approach hinges upon a superquantile-based learning objective that captures the tail statistics of the error distribution over heterogeneous clients. We present a stochastic training algorithm that interleaves differentially private client filtering with federated averaging steps. We prove finite time convergence guarantees for the algorithm: $O(1/\sqrt{T})$ in the nonconvex case in $T$ communication rounds and $O(\exp(-T/κ^{3/2}) + κ/T)$ in the strongly convex case with local condition number $κ$. Experimental results on benchmark datasets for federated learning demonstrate that our approach is competitive with classical ones in terms of average error and outperforms them in terms of tail statistics of the error.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-12-17T11:00:23Z</published>
+    <arxiv:comment>Machine Learning Journal, Special Issue on Safe and Fair Machine Learning (To appear)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Machine Learning (2023): 1-68</arxiv:journal_ref>
+    <author>
+      <name>Krishna Pillutla</name>
+    </author>
+    <author>
+      <name>Yassine Laguel</name>
+    </author>
+    <author>
+      <name>Jérôme Malick</name>
+    </author>
+    <author>
+      <name>Zaid Harchaoui</name>
+    </author>
+    <arxiv:doi>10.1007/s10994-023-06332-x</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s10994-023-06332-x" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.20857v2</id>
+    <title>Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory</title>
+    <updated>2026-05-18T16:18:02Z</updated>
+    <link href="https://arxiv.org/abs/2511.20857v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.20857v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Statefulness is essential for large language model (LLM) agents to perform long-term planning and problem-solving. This makes memory a critical component, yet its management and evolution remain largely underexplored. Existing evaluations mostly focus on static conversational settings, where memory is passively retrieved from dialogue to answer queries, overlooking the dynamic ability to accumulate and reuse experience across evolving task streams. In real-world environments such as interactive problem assistants or embodied agents, LLMs are required to handle continuous task streams, yet often fail to learn from accumulated interactions, losing valuable contextual insights, a limitation that calls for test-time evolution, where LLMs retrieve, integrate, and update memory continuously during deployment. To bridge this gap, we introduce Evo-Memory, a comprehensive streaming benchmark and framework for evaluating self-evolving memory in LLM agents. Evo-Memory structures datasets into sequential task streams, requiring LLMs to search, adapt, and evolve memory after each interaction. We unify and implement over ten representative memory modules and evaluate them across 10 diverse multi-turn goal-oriented and single-turn reasoning and QA datasets. To better benchmark experience reuse, we provide a baseline method, ExpRAG, for retrieving and utilizing prior experience, and further propose ReMem, an action-think-memory refine pipeline that tightly integrates reasoning, task actions, and memory updates to achieve continual improvement.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-25T21:08:07Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Tianxin Wei</name>
+    </author>
+    <author>
+      <name>Noveen Sachdeva</name>
+    </author>
+    <author>
+      <name>Benjamin Coleman</name>
+    </author>
+    <author>
+      <name>Zhankui He</name>
+    </author>
+    <author>
+      <name>Yuanchen Bei</name>
+    </author>
+    <author>
+      <name>Xuying Ning</name>
+    </author>
+    <author>
+      <name>Mengting Ai</name>
+    </author>
+    <author>
+      <name>Yunzhe Li</name>
+    </author>
+    <author>
+      <name>Jingrui He</name>
+    </author>
+    <author>
+      <name>Ed H. Chi</name>
+    </author>
+    <author>
+      <name>Chi Wang</name>
+    </author>
+    <author>
+      <name>Shuo Chen</name>
+    </author>
+    <author>
+      <name>Fernando Pereira</name>
+    </author>
+    <author>
+      <name>Wang-Cheng Kang</name>
+    </author>
+    <author>
+      <name>Derek Zhiyuan Cheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2002.04881v3</id>
+    <title>Learning Flat Latent Manifolds with VAEs</title>
+    <updated>2020-08-12T08:18:19Z</updated>
+    <link href="https://arxiv.org/abs/2002.04881v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2002.04881v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Measuring the similarity between data points often requires domain knowledge, which can in parts be compensated by relying on unsupervised methods such as latent-variable models, where similarity/distance is estimated in a more compact latent space. Prevalent is the use of the Euclidean metric, which has the drawback of ignoring information about similarity of data stored in the decoder, as captured by the framework of Riemannian geometry. We propose an extension to the framework of variational auto-encoders allows learning flat latent manifolds, where the Euclidean metric is a proxy for the similarity between data points. This is achieved by defining the latent space as a Riemannian manifold and by regularising the metric tensor to be a scaled identity matrix. Additionally, we replace the compact prior typically used in variational auto-encoders with a recently presented, more expressive hierarchical one---and formulate the learning problem as a constrained optimisation problem. We evaluate our method on a range of data-sets, including a video-tracking benchmark, where the performance of our unsupervised approach nears that of state-of-the-art supervised approaches, while retaining the computational efficiency of straight-line-based approaches.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-02-12T09:54:52Z</published>
+    <arxiv:comment>Thirty-seventh International Conference on Machine Learning (ICML) 2020</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <arxiv:journal_ref>International Conference on Machine Learning 2020</arxiv:journal_ref>
+    <author>
+      <name>Nutan Chen</name>
+    </author>
+    <author>
+      <name>Alexej Klushyn</name>
+    </author>
+    <author>
+      <name>Francesco Ferroni</name>
+    </author>
+    <author>
+      <name>Justin Bayer</name>
+    </author>
+    <author>
+      <name>Patrick van der Smagt</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2204.05893v2</id>
+    <title>Forgetting and Imbalance in Robot Lifelong Learning with Off-policy Data</title>
+    <updated>2022-08-18T06:27:17Z</updated>
+    <link href="https://arxiv.org/abs/2204.05893v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2204.05893v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Robots will experience non-stationary environment dynamics throughout their lifetime: the robot dynamics can change due to wear and tear, or its surroundings may change over time. Eventually, the robots should perform well in all of the environment variations it has encountered. At the same time, it should still be able to learn fast in a new environment. We identify two challenges in Reinforcement Learning (RL) under such a lifelong learning setting with off-policy data: first, existing off-policy algorithms struggle with the trade-off between being conservative to maintain good performance in the old environment and learning efficiently in the new environment, despite keeping all the data in the replay buffer. We propose the Offline Distillation Pipeline to break this trade-off by separating the training procedure into an online interaction phase and an offline distillation phase.Second, we find that training with the imbalanced off-policy data from multiple environments across the lifetime creates a significant performance drop. We identify that this performance drop is caused by the combination of the imbalanced quality and size among the datasets which exacerbate the extrapolation error of the Q-function. During the distillation phase, we apply a simple fix to the issue by keeping the policy closer to the behavior policy that generated the data. In the experiments, we demonstrate these two challenges and the proposed solutions with a simulated bipedal robot walk-ing task across various environment changes. We show that the Offline Distillation Pipeline achieves better performance across all the encountered environments without affecting data collection. We also provide a comprehensive empirical study to support our hypothesis on the data imbalance issue.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-04-12T15:40:53Z</published>
+    <arxiv:comment>Published at 1st Conference on Lifelong Learning Agents, 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Wenxuan Zhou</name>
+    </author>
+    <author>
+      <name>Steven Bohez</name>
+    </author>
+    <author>
+      <name>Jan Humplik</name>
+    </author>
+    <author>
+      <name>Abbas Abdolmaleki</name>
+    </author>
+    <author>
+      <name>Dushyant Rao</name>
+    </author>
+    <author>
+      <name>Markus Wulfmeier</name>
+    </author>
+    <author>
+      <name>Tuomas Haarnoja</name>
+    </author>
+    <author>
+      <name>Nicolas Heess</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1905.13613v2</id>
+    <title>Regression Networks for Meta-Learning Few-Shot Classification</title>
+    <updated>2020-06-18T20:09:01Z</updated>
+    <link href="https://arxiv.org/abs/1905.13613v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1905.13613v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose regression networks for the problem of few-shot classification, where a classifier must generalize to new classes not seen in the training set, given only a small number of examples of each class. In high dimensional embedding spaces the direction of data generally contains richer information than magnitude. Next to this, state-of-the-art few-shot metric methods that compare distances with aggregated class representations, have shown superior performance. Combining these two insights, we propose to meta-learn classification of embedded points by regressing the closest approximation in every class subspace while using the regression error as a distance metric. Similarly to recent approaches for few-shot learning, regression networks reflect a simple inductive bias that is beneficial in this limited-data regime and they achieve excellent results, especially when more aggregate class representations can be formed with multiple shots.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-05-31T13:35:41Z</published>
+    <arxiv:comment>7th ICML Workshop on Automated Machine Learning (2020)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>ICML Workshop on Automated Machine Learning (2020)</arxiv:journal_ref>
+    <author>
+      <name>Arnout Devos</name>
+    </author>
+    <author>
+      <name>Matthias Grossglauser</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1807.04439v1</id>
+    <title>Will it Blend? Composing Value Functions in Reinforcement Learning</title>
+    <updated>2018-07-12T06:43:12Z</updated>
+    <link href="https://arxiv.org/abs/1807.04439v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1807.04439v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An important property for lifelong-learning agents is the ability to combine existing skills to solve unseen tasks. In general, however, it is unclear how to compose skills in a principled way. We provide a "recipe" for optimal value function composition in entropy-regularised reinforcement learning (RL) and then extend this to the standard RL setting. Composition is demonstrated in a video game environment, where an agent with an existing library of policies is able to solve new tasks without the need for further learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-07-12T06:43:12Z</published>
+    <arxiv:comment>The 2nd Lifelong Learning: A Reinforcement Learning Approach (LLARLA) Workshop, Stockholm, Sweden, FAIM 2018</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Benjamin van Niekerk</name>
+    </author>
+    <author>
+      <name>Steven James</name>
+    </author>
+    <author>
+      <name>Adam Earle</name>
+    </author>
+    <author>
+      <name>Benjamin Rosman</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2312.05933v1</id>
+    <title>Temporal Supervised Contrastive Learning for Modeling Patient Risk Progression</title>
+    <updated>2023-12-10T16:43:15Z</updated>
+    <link href="https://arxiv.org/abs/2312.05933v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2312.05933v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the problem of predicting how the likelihood of an outcome of interest for a patient changes over time as we observe more of the patient data. To solve this problem, we propose a supervised contrastive learning framework that learns an embedding representation for each time step of a patient time series. Our framework learns the embedding space to have the following properties: (1) nearby points in the embedding space have similar predicted class probabilities, (2) adjacent time steps of the same time series map to nearby points in the embedding space, and (3) time steps with very different raw feature vectors map to far apart regions of the embedding space. To achieve property (3), we employ a nearest neighbor pairing mechanism in the raw feature space. This mechanism also serves as an alternative to data augmentation, a key ingredient of contrastive learning, which lacks a standard procedure that is adequately realistic for clinical tabular data, to our knowledge. We demonstrate that our approach outperforms state-of-the-art baselines in predicting mortality of septic patients (MIMIC-III dataset) and tracking progression of cognitive impairment (ADNI dataset). Our method also consistently recovers the correct synthetic dataset embedding structure across experiments, a feat not achieved by baselines. Our ablation experiments show the pivotal role of our nearest neighbor pairing.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-12-10T16:43:15Z</published>
+    <arxiv:comment>Machine Learning for Health (ML4H 2023)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>In Machine Learning for Health (ML4H), pages 403-427. PMLR, 2023</arxiv:journal_ref>
+    <author>
+      <name>Shahriar Noroozizadeh</name>
+    </author>
+    <author>
+      <name>Jeremy C. Weiss</name>
+    </author>
+    <author>
+      <name>George H. Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1812.01662v1</id>
+    <title>Feed-Forward Neural Networks Need Inductive Bias to Learn Equality Relations</title>
+    <updated>2018-12-04T20:02:38Z</updated>
+    <link href="https://arxiv.org/abs/1812.01662v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1812.01662v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Basic binary relations such as equality and inequality are fundamental to relational data structures. Neural networks should learn such relations and generalise to new unseen data. We show in this study, however, that this generalisation fails with standard feed-forward networks on binary vectors. Even when trained with maximal training data, standard networks do not reliably detect equality.We introduce differential rectifier (DR) units that we add to the network in different configurations. The DR units create an inductive bias in the networks, so that they do learn to generalise, even from small numbers of examples and we have not found any negative effect of their inclusion in the network. Given the fundamental nature of these relations, we hypothesize that feed-forward neural network learning benefits from inductive bias in other relations as well. Consequently, the further development of suitable inductive biases will be beneficial to many tasks in relational learning with neural networks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-12-04T20:02:38Z</published>
+    <arxiv:comment>Relational Representation Learning Workshop, NeurIPS 2018</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Relational Representation Learning (R2L) Workshop, NeurIPS 2018</arxiv:journal_ref>
+    <author>
+      <name>Tillman Weyde</name>
+    </author>
+    <author>
+      <name>Radha Manisha Kopparti</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2212.11110v3</id>
+    <title>Lifelong Reinforcement Learning with Modulating Masks</title>
+    <updated>2023-08-01T10:43:21Z</updated>
+    <link href="https://arxiv.org/abs/2212.11110v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2212.11110v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Lifelong learning aims to create AI systems that continuously and incrementally learn during a lifetime, similar to biological learning. Attempts so far have met problems, including catastrophic forgetting, interference among tasks, and the inability to exploit previous knowledge. While considerable research has focused on learning multiple supervised classification tasks that involve changes in the input distribution, lifelong reinforcement learning (LRL) must deal with variations in the state and transition distributions, and in the reward functions. Modulating masks with a fixed backbone network, recently developed for classification, are particularly suitable to deal with such a large spectrum of task variations. In this paper, we adapted modulating masks to work with deep LRL, specifically PPO and IMPALA agents. The comparison with LRL baselines in both discrete and continuous RL tasks shows superior performance. We further investigated the use of a linear combination of previously learned masks to exploit previous knowledge when learning new tasks: not only is learning faster, the algorithm solves tasks that we could not otherwise solve from scratch due to extremely sparse rewards. The results suggest that RL with modulating masks is a promising approach to lifelong learning, to the composition of knowledge to learn increasingly complex tasks, and to knowledge reuse for efficient and faster learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-21T15:49:20Z</published>
+    <arxiv:comment>Code available at https://github.com/dlpbc/mask-lrl</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Transactions on Machine Learning Research (2023)</arxiv:journal_ref>
+    <author>
+      <name>Eseoghene Ben-Iwhiwhu</name>
+    </author>
+    <author>
+      <name>Saptarshi Nath</name>
+    </author>
+    <author>
+      <name>Praveen K. Pilly</name>
+    </author>
+    <author>
+      <name>Soheil Kolouri</name>
+    </author>
+    <author>
+      <name>Andrea Soltoggio</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.23450v2</id>
+    <title>Return Augmented Decision Transformer for Off-Dynamics Reinforcement Learning</title>
+    <updated>2026-03-02T18:38:36Z</updated>
+    <link href="https://arxiv.org/abs/2410.23450v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.23450v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study offline off-dynamics reinforcement learning (RL) to utilize data from an easily accessible source domain to enhance policy learning in a target domain with limited data. Our approach centers on return-conditioned supervised learning (RCSL), particularly focusing on Decision Transformer (DT) type frameworks, which can predict actions conditioned on desired return guidance and complete trajectory history. Previous works address the dynamics shift problem by augmenting the reward in the trajectory from the source domain to match the optimal trajectory in the target domain. However, this strategy can not be directly applicable in RCSL owing to (1) the unique form of the RCSL policy class, which explicitly depends on the return, and (2) the absence of a straightforward representation of the optimal trajectory distribution. We propose the Return Augmented (REAG) method for DT type frameworks, where we augment the return in the source domain by aligning its distribution with that in the target domain. We provide the theoretical analysis demonstrating that the RCSL policy learned from REAG achieves the same level of suboptimality as would be obtained without a dynamics shift. We introduce two practical implementations REAG$_\text{Dara}^{*}$ and REAG$_\text{MV}^{*}$ respectively. Thorough experiments on D4RL datasets and various DT-type baselines demonstrate that our methods consistently enhance the performance of DT type frameworks in off-dynamics RL.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-30T20:46:26Z</published>
+    <arxiv:comment>26 pages, 11 tables, 8 figures. Published in Transactions on Machine Learning Research (TMLR)</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Transactions on Machine Learning Research, 2026</arxiv:journal_ref>
+    <author>
+      <name>Ruhan Wang</name>
+    </author>
+    <author>
+      <name>Yu Yang</name>
+    </author>
+    <author>
+      <name>Zhishuai Liu</name>
+    </author>
+    <author>
+      <name>Dongruo Zhou</name>
+    </author>
+    <author>
+      <name>Pan Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1703.03121v2</id>
+    <title>Coordinated Multi-Agent Imitation Learning</title>
+    <updated>2018-05-25T05:07:40Z</updated>
+    <link href="https://arxiv.org/abs/1703.03121v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1703.03121v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the problem of imitation learning from demonstrations of multiple coordinating agents. One key challenge in this setting is that learning a good model of coordination can be difficult, since coordination is often implicit in the demonstrations and must be inferred as a latent variable. We propose a joint approach that simultaneously learns a latent coordination model along with the individual policies. In particular, our method integrates unsupervised structure learning with conventional imitation learning. We illustrate the power of our approach on a difficult problem of learning multiple policies for fine-grained behavior modeling in team sports, where different players occupy different roles in the coordinated team strategy. We show that having a coordination model to infer the roles of players yields substantially improved imitation loss compared to conventional baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-03-09T03:45:42Z</published>
+    <arxiv:comment>International Conference on Machine Learning 2017</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Hoang M. Le, Yisong Yue, Peter Carr, Patrick Lucey ; Proceedings of the 34th International Conference on Machine Learning, PMLR 70:1995-2003, 2017</arxiv:journal_ref>
+    <author>
+      <name>Hoang M. Le</name>
+    </author>
+    <author>
+      <name>Yisong Yue</name>
+    </author>
+    <author>
+      <name>Peter Carr</name>
+    </author>
+    <author>
+      <name>Patrick Lucey</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1906.07248v1</id>
+    <title>Iterative Model-Based Reinforcement Learning Using Simulations in the Differentiable Neural Computer</title>
+    <updated>2019-06-17T20:15:02Z</updated>
+    <link href="https://arxiv.org/abs/1906.07248v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1906.07248v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a lifelong learning architecture, the Neural Computer Agent (NCA), where a Reinforcement Learning agent is paired with a predictive model of the environment learned by a Differentiable Neural Computer (DNC). The agent and DNC model are trained in conjunction iteratively. The agent improves its policy in simulations generated by the DNC model and rolls out the policy to the live environment, collecting experiences in new portions or tasks of the environment for further learning. Experiments in two synthetic environments show that DNC models can continually learn from pixels alone to simulate new tasks as they are encountered by the agent, while the agents can be successfully trained to solve the tasks using Proximal Policy Optimization entirely in simulations.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-06-17T20:15:02Z</published>
+    <arxiv:comment>Accepted at the Workshop on Multi-Task and Lifelong Reinforcement Learning, 36th International Conference on Machine Learning, Long Beach, California, 2019</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Adeel Mufti</name>
+    </author>
+    <author>
+      <name>Svetlin Penkov</name>
+    </author>
+    <author>
+      <name>Subramanian Ramamoorthy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2306.04338v1</id>
+    <title>Changing Data Sources in the Age of Machine Learning for Official Statistics</title>
+    <updated>2023-06-07T11:08:12Z</updated>
+    <link href="https://arxiv.org/abs/2306.04338v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2306.04338v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Data science has become increasingly essential for the production of official statistics, as it enables the automated collection, processing, and analysis of large amounts of data. With such data science practices in place, it enables more timely, more insightful and more flexible reporting. However, the quality and integrity of data-science-driven statistics rely on the accuracy and reliability of the data sources and the machine learning techniques that support them. In particular, changes in data sources are inevitable to occur and pose significant risks that are crucial to address in the context of machine learning for official statistics.
+  This paper gives an overview of the main risks, liabilities, and uncertainties associated with changing data sources in the context of machine learning for official statistics. We provide a checklist of the most prevalent origins and causes of changing data sources; not only on a technical level but also regarding ownership, ethics, regulation, and public perception. Next, we highlight the repercussions of changing data sources on statistical reporting. These include technical effects such as concept drift, bias, availability, validity, accuracy and completeness, but also the neutrality and potential discontinuation of the statistical offering. We offer a few important precautionary measures, such as enhancing robustness in both data sourcing and statistical techniques, and thorough monitoring. In doing so, machine learning-based official statistics can maintain integrity, reliability, consistency, and relevance in policy-making, decision-making, and public discourse.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-07T11:08:12Z</published>
+    <arxiv:comment>Presented at UNECE Machine Learning for Official Statistics Workshop 2023</arxiv:comment>
+    <arxiv:primary_category term="stat.ML"/>
+    <arxiv:journal_ref>UNECE Machine Learning for Official Statistics Workshop 2023</arxiv:journal_ref>
+    <author>
+      <name>Cedric De Boom</name>
+    </author>
+    <author>
+      <name>Michael Reusens</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1812.04145v1</id>
+    <title>Learning Sharing Behaviors with Arbitrary Numbers of Agents</title>
+    <updated>2018-12-10T23:20:45Z</updated>
+    <link href="https://arxiv.org/abs/1812.04145v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1812.04145v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a method for modeling and learning turn-taking behaviors for accessing a shared resource. We model the individual behavior for each agent in an interaction and then use a multi-agent fusion model to generate a summary over the expected actions of the group to render the model independent of the number of agents. The individual behavior models are weighted finite state transducers (WFSTs) with weights dynamically updated during interactions, and the multi-agent fusion model is a logistic regression classifier.
+  We test our models in a multi-agent tower-building environment, where a Q-learning agent learns to interact with rule-based agents. Our approach accurately models the underlying behavior patterns of the rule-based agents with accuracy ranging between 0.63 and 1.0 depending on the stochasticity of the other agent behaviors. In addition we show using KL-divergence that the model accurately captures the distribution of next actions when interacting with both a single agent (KL-divergence &lt; 0.1) and with multiple agents (KL-divergence &lt; 0.37). Finally, we demonstrate that our behavior model can be used by a Q-learning agent to take turns in an interactive turn-taking environment.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-12-10T23:20:45Z</published>
+    <arxiv:comment>14 pages, 9 figures, 3 tables, International Conference on Autonomous Agents and Multiagent Systems (AAMAS), machine learning, Reinforcement learning</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Katherine Metcalf</name>
+    </author>
+    <author>
+      <name>Barry-John Theobald</name>
+    </author>
+    <author>
+      <name>Nicholas Apostoloff</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1710.07110v1</id>
+    <title>Meta-Learning via Feature-Label Memory Network</title>
+    <updated>2017-10-19T12:08:59Z</updated>
+    <link href="https://arxiv.org/abs/1710.07110v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1710.07110v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep learning typically requires training a very capable architecture using large datasets. However, many important learning problems demand an ability to draw valid inferences from small size datasets, and such problems pose a particular challenge for deep learning. In this regard, various researches on "meta-learning" are being actively conducted. Recent work has suggested a Memory Augmented Neural Network (MANN) for meta-learning. MANN is an implementation of a Neural Turing Machine (NTM) with the ability to rapidly assimilate new data in its memory, and use this data to make accurate predictions. In models such as MANN, the input data samples and their appropriate labels from previous step are bound together in the same memory locations. This often leads to memory interference when performing a task as these models have to retrieve a feature of an input from a certain memory location and read only the label information bound to that location. In this paper, we tried to address this issue by presenting a more robust MANN. We revisited the idea of meta-learning and proposed a new memory augmented neural network by explicitly splitting the external memory into feature and label memories. The feature memory is used to store the features of input data samples and the label memory stores their labels. Hence, when predicting the label of a given input, our model uses its feature memory unit as a reference to extract the stored feature of the input, and based on that feature, it retrieves the label information of the input from the label memory unit. In order for the network to function in this framework, a new memory-writingmodule to encode label information into the label memory in accordance with the meta-learning task structure is designed. Here, we demonstrate that our model outperforms MANN by a large margin in supervised one-shot classification tasks using Omniglot and MNIST datasets.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-10-19T12:08:59Z</published>
+    <arxiv:comment>https://github.com/Dawitmu/Meta-Learning-via-Feature-Label-Memory-Network</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Dawit Mureja</name>
+    </author>
+    <author>
+      <name>Hyunsin Park</name>
+    </author>
+    <author>
+      <name>Chang D. Yoo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2409.16391v1</id>
+    <title>Patch-Based Contrastive Learning and Memory Consolidation for Online Unsupervised Continual Learning</title>
+    <updated>2024-09-24T18:46:32Z</updated>
+    <link href="https://arxiv.org/abs/2409.16391v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2409.16391v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We focus on a relatively unexplored learning paradigm known as {\em Online Unsupervised Continual Learning} (O-UCL), where an agent receives a non-stationary, unlabeled data stream and progressively learns to identify an increasing number of classes. This paradigm is designed to model real-world applications where encountering novelty is the norm, such as exploring a terrain with several unknown and time-varying entities. Unlike prior work in unsupervised, continual, or online learning, O-UCL combines all three areas into a single challenging and realistic learning paradigm. In this setting, agents are frequently evaluated and must aim to maintain the best possible representation at any point of the data stream, rather than at the end of pre-specified offline tasks. The proposed approach, called \textbf{P}atch-based \textbf{C}ontrastive learning and \textbf{M}emory \textbf{C}onsolidation (PCMC), builds a compositional understanding of data by identifying and clustering patch-level features. Embeddings for these patch-level features are extracted with an encoder trained via patch-based contrastive learning. PCMC incorporates new data into its distribution while avoiding catastrophic forgetting, and it consolidates memory examples during ``sleep" periods. We evaluate PCMC's performance on streams created from the ImageNet and Places365 datasets. Additionally, we explore various versions of the PCMC algorithm and compare its performance against several existing methods and simple baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-09-24T18:46:32Z</published>
+    <arxiv:comment>Published in Conference on Lifelong Learning Agents (COLLAS) 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Cameron Taylor</name>
+    </author>
+    <author>
+      <name>Vassilis Vassiliades</name>
+    </author>
+    <author>
+      <name>Constantine Dovrolis</name>
+    </author>
+  </entry>
+</feed>
